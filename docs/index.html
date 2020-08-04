@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ua detection | what-browser-am-i</title>
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="HandheldFriendly" content="true">
+<meta name="mobileoptimized" content="0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width,target-densitydpi=medium-dpi,initial-scale=1,minimum-scale=1,shrink-to-fit=no">
+<script>
+    window.onerror = function(errorMsg, url, lineNumber) {
+        return alert( errorMsg + ':' + lineNumber + ',' + url );
+    };
+</script>
+<script>ua={};(function(v,n,L,M,Ba,y,Ca,pb){function ka(k,r){var t=y(k.split(r)[1]);return 0<=t?t:0}function f(k,r){return 0<=k.indexOf(r)}function Y(k,r){for(var t in r)if(t===k)return!0}function c(k,r){var t="",B=-1,H;if(k=k.split(r)[1]){for(;H=k.charCodeAt(++B);)if(48<=H&&57>=H||46===H)t+=k.charAt(B);else break;for(B=t.length;B;)if(46===t.charCodeAt(--B))t=t.substr(0,B);else break}return t}function Da(k,r){var t=0,B;k=k.split(".");r=r.split(".");for(B=Math.min(k.length,r.length);t<B;++t){var H=y(k[t]),Ea=y(r[t]);
+if(H!==Ea)return H>Ea?1:-1}return k.length===r.length?0:k.length>r.length?1:-1}function Fa(){for(var k=arguments,r=1,t=k.length,B=k[0],H;r<t;++r)0>Da(B,H=k[r])&&(B=H);return B}function Z(k){return k===k+""?k:k===k-0?""+k:k.min&&k.max?k.min+"~"+k.max:k.min?k.min+"~":"~"+k.max}function aa(k){return k===k+""?y(k):k}var l,m,a=M.userAgent,q=M.appVersion,la=y(q)|0,p=M.platform,ma=L.documentElement,Ga=ma&&ma.style,na=L.documentMode,oa=Ba.width,pa=Ba.height,Ha=n.HTMLAudioElement,Ia=n.performance,Ja=n.Int8Array,
+eb=void 0!==n.ontouchstart,J=c(q,"Version/")||c(a,"Version/"),Q=void 0!==Ga.MozAppearance,Ka=n.operamini,ba=f(a,"UCWEB"),fb=ba&&c(a," U2/"),gb=ba&&c(a,"; wds "),qa=c(a.split("_").join("."),"; iPh OS "),hb=c(a,"; Adr "),La=f(q,"YJApp-ANDROID"),G=f(p,"Android")||Q&&f(q,"Android")||La,z=c(p,"Android ")||c(q,"Android ")||c(a,"Android ")||hb,ra=f(p,"Linux"),sa="MacIntel"===p&&void 0!==M.standalone,R=!Ka&&n.opera,Ma=R&&(R.version&&"function"===typeof R.version?R.version():Fa(c(a,"Opera "),J,""+la)),Na=
+n.opr,U=!R&&(L.all||na),C=U&&(na?na:n.XMLHttpRequest?L.getElementsByTagName?7:4:L.compatMode?6:(0).toFixed?5.5:n.attachEvent?5:4),ca=!U&&ma.msContentZoomFactor,S=!ca&&n.chrome,ta=Q&&c(a,"Goanna/"),I=!ta&&Q&&c(a,"rv:"),Oa=c(a,"Firefox/"),Pa=c(a,"Opera/"),ib=c(a,"Focus/"),Qa=n.FNRBrowser,u=ka(a,"AppleWebKit/"),N=c(a,"Chrome/"),va=c(a,"OPR/"),jb=c(q,"KHTML/"),Ra=c(a.toLowerCase(),"iris"),wa=c(a,"FxiOS/"),kb=c(a,"CriOS/"),lb=c(a,"EdgiOS/"),T=ka(a,"SamsungBrowser/"),V;if(V=!T)a:{for(var Sa="GT-I9300 GT-I9305 SHV-E210 SGH-T999L SGH-I747 SGH-N064 SC-06D SGH-N035 SC-03E SCH-J021 SCL21 SCH-R530 SCH-I535 SCH-S960L SCH-S968C GT-I9308 SCH-I939 SHV-E210S GT-I8160 GT-I8260 GT-I8262 SM-G350 SM-G352 SM-G386F SM-G386T1GT-N7000 GT-N7005 SHV-E160 SC-05D SGH-N054 SGH-I717 SGH-T879 GT-I9220 GT-I9228 SCH-I889 GT-N7100 GT-N7105 SCH-I605 SCH-R950 SGH-I317 SGH-T889 SPH-L900 SCH-N719 GT-N7102 GT-N7108 SGH-N025 SC-02E SHV-E250 GT-N5100 GT-N5110 GT-N5120 GT-N8000 GT-N8005 GT-N8010 GT-N8013 GT-N8020 GT-I9100 GT-I9108 GT-I9210 SGH-I777 SGH-I757M SGH-I727 SGH-I927 SGH-T989 SHW-M250 SPH-D710 ISW11SC SC-02C SCH-R760 SCH-I929 GT-I9105 GT-I8190 GT-I8200 SM-G730A GT-P3100 GT-P3110 GT-P3113 SCH-I705 GT-P5100 GT-P5110 GT-P5113 SCH-I915 SM-G3508 SM-G3509 GT-S7580 GT-S7582 GT-S6310 GT-S6312 GT-S6313T".split(" "),
+da,xa=Sa.length;da=Sa[--xa];)if(f(a,da)){V=2>y(J)?J:.9;break a}var Ta="SC-02F SGH-N075 GT-S7270 GT-S7272 GT-S7275R GT-I9150 GT-I9152 GT-I9200 GT-I9205 GT-I9500 GT-I9506 SC-04E SGH-N045 GT-I9190 GT-I9192 GT-I9295 GT-I9197 GT-I9198 SGH-I257M SCH-I435 GT-I8666 GT-I8552 GT-I8558 SHV-E500S/L GT-18552B SM-N900 N9000 N9002 SC-01F SCL22 SM-G7100 SM-G7102 SM-G7105 SM-N750 SM-P600 SM-P601 SM-P605 GT-I9301I GT-I9300RWI SGH-T399 SM-P900 SM-P901 SM-P90 SM-P905 GT-I9295 SGH-I537 SHV-E330S GT-I9507V GT-I9505 GT-I9515 SGH-I337 SM-T230 SM-T231 SM-T235 SM-T237 403SC SM-T330NU SM-T331NU SM-T337V SM-T530 SM-T531 SM-T535 M-T320 SM-T321 SM-T325 SM-T520 SM-T525 SM-T900 SM-T905 SM-T700 SM-T705 SM-T707V SM-T800 SM-T805 SM-T807 SM-A300 SM-A5000 SM-A5009 SM-A500F SM-A500F1 SM-A500FQ SM-A500FU SM-A500G SM-A500H SM-A500HQ SM-A500K SM-G850 SM-C115 SM-C111 SM-G750F SM-G7508 SM-G7508Q SM-G750H GT-I9301I SM-900 SC-04F SCL23 SM-G906S SM-G906K SM-G906L SM-G870A SM-N915 SC-02G SM-800".split(" ");
+for(xa=Ta.length;da=Ta[--xa];)if(f(a,da)){V=J;break a}V=void 0}var Ua=V,Va=S&&534.3>=u,Wa=eb&&(u||Q)&&(0===p.indexOf("Linux armv")||0===p.indexOf("Linux aarch")||"Linux i686"===p)&&f(a,"Linux x86_64")||!z&&La,Xa=n.puffinDevice,ea=Xa&&Xa.clientInfo,W=ea&&"iOS"===ea.os&&ea.osVersion,fa=W&&ea.model,ya=!C&&L.registerElement,mb=!C&&L.execCommand,Ya=ra&&ya&&"11.0.696.34"===N,nb=n._firefoxTV_playbackStateObserverJava,O,D,b,X,za,ha,Za,$a,ab;if("Nitro"===p)var h="NDS";else if("Nintendo DSi"===p){h="NDSi";
+var g=Pa}else if("New Nintendo 3DS"===p||f(a,"iPhone OS 6_0")&&320===oa&&240===pa)h="New3DS",g=c(a,"NintendoBrowser/");else if("Nintendo 3DS"===p){h="N3DS";g=c(a,"Version/");u=535;var ob=g}else if("Nintendo Swicth"===p)h="Swicth",g=c(q,"NintendoBrowser/");else if("Nintendo WiiU"===p)h="WiiU",g=c(q,"NintendoBrowser/"),u=c(q,"AppleWebKit/");else if("Nintendo Wii"===p){h="Wii";g=c(a,"Wii; U; ; ");var d=h;var e=g}else if(b=c(a,"PlayStation Vita "))h="PSVita",g=b,d=h,e=b;else if(b=c(a,"(PlayStation Portable); ")){h=
+"PSP";g=b;var bb=3.3;d=h;e=b}else if(b=c(a,"PLAYSTATION 3; ")||c(a,"PLAYSTATION 3 "))h="PS3",g=b,d=h,e=b,0>Da("4.10",b)&&(l="Sony",m=b);else if(f(a,"Xbox One"))h="XboxOne",g=1;else if(f(a,"Xbox"))h="Xbox360",g=1;else if(2===la&&f(a,"Sony/COM2/")){h="Mylo";g=2;bb=3.4;d=h;e=2;var ia=!0}else if(0===p.indexOf("iP")||qa||W||sa){if(W)switch(g=W,fa.substr(0,4)){case "iPho":var E="iPhone";var P=y(fa.substr(6));var F=!0;break;case "iPad":E="iPad";P=y(fa.substr(4));var x=!0;break;case "iPod":E="iPod";P=y(fa.substr(4));
+var cb=!0}else{qa?g=qa:(g=c(q.split("_").join("."),"OS "),Za=!Y("isSecureContext",n),$a=Y("enableWebGL",n),ab=Y("sameOrigin",n));g||(D=!0);if(!g||Qa)g=n.PointerEvent?13:n.HTMLDataListElement?12.2:Array.prototype.flat?12:M.sendBeacon?11.3:n.WebAssembly?11.2:n.HTMLMeterElement?10.3:n.Proxy?10.2:n.HTMLPictureElement?9.3:Ca.isNaN?9.2:n.SharedWorker?Ia&&Ia.now?8:8.4:mb?7.1:n.webkitURL?6.1:n.Worker?5.1:Ja?4.3:Ha?4.1:3.2;var Aa=1===n.devicePixelRatio;var w=oa===1.5*pa||1.5*oa===pa;0===p.indexOf("iPhone")?
+(E="iPhone",P=w?Aa?{max:3}:{min:4,max:5}:{max:6},F=!0):0===p.indexOf("iPad")||sa?(E="iPad",P=Aa?{max:2}:{min:3},x=!0):0===p.indexOf("iPod")&&(E="iPod",P=w?Aa?{max:3}:4:{min:5},cb=!0)}!W&&(M.standalone||(x||12>g)&&Y("webkitFullscreenEnabled",L)||11<=g&&13>g&&M.mediaDevices)?(l="SafariMobile",d="Safari",e=g):(ha=!0,l="iOSWebView");h="iOS";m=g}else if(f(a,"Kobo"))h="Kobo",l="AOSP",m=2.2,d=l,e=m,G=!0;else if(f(a,"EBRD"))h="SonyReader",l="AOSP",m=2.2,d=l,e=m;else if(b=c(a,"CrOS x86_64 ")||c(a,"CrOS aarch64 ")||
+c(a,"CrOS i686 ")||c(a,"CrOS armv7l "))h="ChromeOS",g=b;else if(void 0!==n.onmoztimechange)h="FirefoxOS",g=18.1>I?"1.0.1":19>I?1.1:27>I?1.2:29>I?1.3:31>I?1.4:33>I?2:35>I?2.1:38>I?2.2:45>I?2.5:2.6,f(a,"Mobile")?F=!0:f(a,"Tablet")&&(x=!0);else if(n.palmGetResource)h="webOS",g=c(a,"webOS/")||c(a,"WEBOS")||c(a,"hpwOS/"),d=h,e=g,f(a,"webOS.TV")||f(a,"/SmartTV")||(F=!0);else if(b=c(a,"Tizen "))h="Tizen",g=b,d="Samsung",e=T,l=d,m=e,F=!0;else if(b=c(a,"Windows Phone ")||c(q,"Windows Phone OS ")||gb){var ja=
+!0;g=b;F=!0}else if(ca&&"ARM"===p)ja=!0,g=10,D=F=!0;else if(U&&f(q,"ZuneWP"))ja=!0,g=11===C?8.1:10===C?8:9===C?7.5:7===C?7:"?",D=F=!0;else if(f(a,"FOMA;"))h="FeaturePhone",F=!0;else if(f(a,"SoftBank;"))h="FeaturePhone",F=!0;else if(f(a,"KFMUWI")){var K=!0;g=6.3;var A=x=!0}else if(f(a,"KFKAWI"))K=!0,g=6,A=x=!0;else if(f(a,"KFSUWI")||f(a,"KFAUWI")||f(a,"KFDOWI"))K=!0,g=5,A=x=!0;else if(f(a,"KFGIWI"))K=!0,g=5,A=x=!0;else if(f(a,"KFARWI")||f(a,"KFSAWA")||f(a,"KFSAWI"))K=!0,g=5<=y(z)?5:4,A=x=!0;else if(f(a,
+"KFSOWI")||f(a,"KFTHWA")||f(a,"KFTHWI")||f(a,"KFAPWA")||f(a,"KFAPWI"))K=!0,g=3,A=x=!0;else if(f(a,"KFOT")||f(a,"KFTT")||f(a,"KFJWA")||f(a,"KFJWI"))K=!0,g=2,A=x=!0;else if(f(a,"Kindle Fire"))K=!0,g=1,A=x=!0;else if(b=c(a,"Kindle/"))h="Kindle",g=b,l="AOSP",m=2.2,d=l,e=m;else if(f(a,"AmazonWebAppPlatform")||f(a,"; AFT")||nb)K=!0,g=z,A=!0;else if(f(a,"MeeGo"))h="MeeGo";else if(f(a,"Maemo"))h="Maemo";else if(0===a.indexOf("Windows Mobile;")||Ra)h="WindowsMobile",ia=!0;else if("WinCE"===p)h=p,ia=!0;else if("Win16"===
+p||"Win32"===p||"Win64"===p)h=p,g=c(a,"Windows NT ")||c(a,"Windows ");else if(0===p.indexOf("Mac")){h="MacPowerPC"===p?"MacPPC":p;if(b=c(a.split("_").join("."),"Mac OS X "))g=b;var db=!0}else f(a,"BlackBerry")||f(a,"BB10")?(h="BlackBerry",g=J,F=!0):f(a,"SunOS")||f(a,"Sun Solaris")?h="SunOS":f(a,"FreeBSD")?h="FreeBSD":f(a,"OpenBSD")?h="OpenBSD":f(a,"NetBSD")?h="NetBSD":G&&Q?(f(a,"Android 4.4;")?w={min:2.3}:4<=y(z)?w=z:w={min:2.2},g=w,Wa&&(D=!0)):G&&R?(z?w=z:(w={min:1.6},D=!0),g=w,f(a,"Tablet")?x=!0:
+F=!0):z?(g=z,G=!0):ra&&Wa?(O=!0,T?w={min:4.4}:S&&!Va||Na||va?w={min:4}:(w=z=void 0!==Ga.touchAction?{min:5}:ya?4.4:Ja?M.connection?n.searchBoxJavaBridge_||S?Ca.isNaN?4.1:4:4.2:4.4:534<=u?3:533<=u?Ha?2.3:2.2:530<=u?2:1.5,Ua&&(l="Samsung",m=Ua)),g=w,G=!0):Ya?(g={min:5},O=G=!0):ra&&(f(a,"Ubuntu")?h="Ubuntu":(b=c(a,"Mint/"))?(h="Mint",g=b):(b=c(a,"Fedora/"))?(h="Fedora",g=b):h=f(a,"Gentoo")?"Gentoo":"Linux");K&&(h="FireOS");G&&(h=h||"Android");ja&&(h="WindowsPhone");l||(A=A||G,R?(l=A||ia||F||x?"PrestoMobile":
+"Presto",m=Ma):U?((w=ka(q,"Trident/")+4)&&w!==C&&(d="IEHost",e=w),10<=C&&6.2<=g&&7>g&&0===screenY&&innerHeight+1!==outerHeight&&(d="ModernIE",e=C),ia||F||x||cb?l="TridentMobile":db&&5<=C?(l="Tasman",d="MacIE",e=C):(l="Trident",db&&(d="MacIE",e=C)),m=C):ca?(l=ja?"EdgeMobile":"EdgeHTML",m=c(q,"Edge/")):ta?(l="Goanna",m=ta):Q?(l=A?"Fennec":"Gecko",m=I||Oa):T?(l="Samsung",m=T,O&&(D=!0)):(b=bb||c(a,"NetFront/"))?(l="NetFront",m=b):(b=c(a,"iCab"))?(l="iCab",m=b):(b=Fa(c(a,"Opera Mini/"),c(a,"Opera Mobi/"))||
+Ka&&J)?(l="OperaMini",m=b,h||(f(a,"iPhone")?E="iPhone":f(a,"iPad")?E="iPad":f(a,"iPod")&&(E="iPod"),E&&(h="iOS"))):ba?(l="UCWEB",m=fb):jb?(l="KHTML",m=la):G&&Va?(l="AOSP",m=z,X=!0,O&&(D=!0)):S||Na||va?(l=A?"ChromiumMobile":"Chromium",m=N,O&&(D=!0)):G&&ya?(l="ChromeWebView",m=5>y(z)?z:N,X=!0,n.requestFileSystem||n.webkitRequestFileSystem||(za=!0),O&&(D=!0)):G&&(J||O)?(l="AOSP",m=z,X=!0,O&&(D=!0)):N?(l=A?"ChromiumMobile":"Chromium",m=N):u&&(l="WebKit",m=u));d||((b=ca&&c(a,"Edge/")||c(a,"EdgA/")||lb||
+c(a,"Edg/"))?(d="Edge",e=b):(b=c(q,"Coast/"))?(d="Coast",e=b):Za?d="OperaTurbo":(b=c(q,"OPT/"))?(d="OperaTouch",e=b,D=D||!f(q,"Mobile/")):(b=c(a.toLowerCase(),"ybrowser/"))?(d="Yahoo",e=b):!ba&&(b=c(a,"UCBrowser/"))?(d="UC",e=b):(b=c(a,"Silk/"))?(d="Silk",e=b):(b=c(a,"Vivaldi/"))?(d="Vivaldi",e=b):(b=c(a,"QQBrowser/"))?(d="QQ",e=b):(b=c(a,"YaBrowser/"))?(d="Yandex",e=b):(b=c(a,"coc_coc_browser/"))?(d="coccoc",e=b):(b=c(a,"Camino/"))?(d="Camino",e=b):f(a,"SE 2.X MetaSr 1.0")?d="Sogou":(b=ib||c(a,"Klar/")||
+9>y(wa)&&ha&&11<=y(g)&&wa)?(d="Focus",e=b):(b=c(a,"AOLBUILD/")||c(a,"AOL/")||c(a,"AOL "))?(d="AOL",e=b):(b=c(a,"IceDragon/"))?(d="IceDragon",e=b):(b=c(a,"Iceweasel/"))?(d="Iceweasel",e=b):(b=c(a,"TenFourFox/"))?(d="ITenFourFox",e=b):(b=c(a,"Waterfox/"))?(d="Waterfox",e=b):(b=c(a,"GNUzilla/"))?(d="GNUzilla",e=b):(b=c(a,"SeaMonkey/"))?(d="SeaMonkey",e=b):(b=c(a,"PaleMoon/"))?(d="PaleMoon",e=b):(b=c(a,"Basilisk/"))?(d="Basilisk",e=b):(b=c(a,"Maxthon/")||c(a,"Maxthon ")||c(a,"MXiOS/"))||f(a,"Maxthon")?
+(d="Maxthon",e=b||1):f(a,"Avant Browser;")?d="Avant":(b=c(a,"Lunascape/"))?(d="Lunascape",e=b):(b=c(a,"Konqueror/"))?(d="Konqueror",e=b):(b=c(a,"Midori/"))?(d="Midori",e=b):(b=c(a,"OmniWeb/"))?(d="OmniWeb",e=b):(b=c(a,"Roccat/"))?(d="Roccat",e=b):(b=c(a,"Epiphany/"))?(d="Epiphany",e=b):(b=c(a,"WebPositive/"))?(d="WebPositive",e=b):(b=c(a,"Iron/"))||f(a," Iron ")?(d="Iron",e=b||S&&N):(b=c(a,"Comodo Dragon/"))?(d="ComodoDragon",e=b):(b=c(a,"Brave/"))||f(a," Brave ")||ab?(d="Brave",e=b||S&&N):(b=c(a,
+"Rockmelt/"))?(d="Rockmelt",e=b):(b=c(a,"Sleipnir/"))||Qa?(d="Sleipnir",b&&(e=b)):$a?d="Dolphin":(b=c(a,"Puffin/"))?(d="Puffin",e=b):(b=c(a,"Dooble/"))?(d="Dooble",e=b):(b=c(a,"Flock/"))?(d="Flock",e=b):(b=c(a,"Galeon/"))?(d="Galeon",e=b):(b=c(a,"Falkon/"))?(d="Falkon",e=b):(b=c(a,"Iceape/"))?(d="Iceape",e=b):(b=c(a,"K-Meleon/"))?(d="KMeleon",e=b):(b=ob||c(q,"NX/"))?(d="NetFrontNX",e=b):(b=c(a,"Netscape6/")||c(a,"Netscape/")||c(a,"Navigator/"))?(d="NN",e=b):Ra?(d="Iris",e=b):f(q,"FBAN/")?d="Facebook":
+(b=c(q,"Line/"))?(d="LINE",e=b):(b=c(a,"QtWebEngine/"))?(d="QtWebEngine",e=b):(b=c(a,"QtWebKit/"))?(d="QtWebKit",e=b):(b=wa||Q&&(Oa||m))?(d="Firefox",e=b):(b=Ma||va||Pa)?(d="Opera",e=b):U?(d="IE",e=m):T?(d=l,e=T):(b=kb||(S||Ya&&X)&&N)?(d="Chrome",e=b):X&&!za?(d=l,e=m):ha&&!x?(l="SafariMobile",d="Safari",e=g):ha||za||!f(a,"Safari")&&!J||(d="Safari",e=J||(73>u?.8:85>u?.9:100>u?1:125>u?1.1:312>u?1.2:412>u?1.3:419.3>=u?2:525.13>=u?3:525.25>=u?3.1:3.2)),d=d||"unknown");h&&(v.PLATFORM=h,g?(v.PLATFORM_VERSION=
+Z(g),v[h]=aa(g)):v[h]=!0);l&&(v.ENGINE=l,m?(v.ENGINE_VERSION=Z(m),v[l]=aa(m)):v[l]=!0,d||(d=l,e=m));d&&(v.BRAND=d,e?(v.BRAND_VERSION=Z(e),v[d]=aa(e)):v[d]=!0);E&&(v.DEVICE=E,P?(v.DEVICE_VERSION=Z(P),v[E]=aa(P)):v[E]=!0);if(D||sa)v.PC_MODE=!0})(ua,this,document,navigator,screen,parseFloat,Number);
+</script>
+<script>
+(function(ua){
+    function print(html){
+        document.write(html);
+    };
+    function inObject( name, obj ){
+        for( var k in obj ){
+            if( k === name ) return true;
+        };
+    };
+
+    // print( '<a href="./">top</a>, <a href="clearfix.html">clearfix のテスト</a>, <a href="contentPusedoElement.html">疑似要素のテスト</a><hr>' );
+
+    var k, ary = [
+        '<table border=1 cellspacing=0>' +
+            '<thead>' +
+                '<tr>' +
+                    '<th><th>value<th>version<th>Full version string' +
+            '<tbody>'
+    ];
+
+    ua = ua || {};
+
+    if( ua.ENGINE ){
+        ary.push(
+            '<tr>' +
+                '<th>ua.ENGINE<td>' + ua.ENGINE + '<td align=right>' + ua[ ua.ENGINE ] + '<td>' + ua.ENGINE_VERSION
+        );
+    };
+    if( ua.BRAND ){
+        ary.push(
+            '<tr>' +
+                '<th>ua.BRAND<td>' + ua.BRAND + '<td align=right>' + ua[ ua.BRAND ] + '<td>' + ua.BRAND_VERSION
+        );
+    };
+    if( ua.PLATFORM ){
+        ary.push(
+            '<tr>' +
+                '<th>ua.PLATFORM<td>' + ua.PLATFORM + '<td align=right>' + ua[ ua.PLATFORM ] + '<td>' + ua.PLATFORM_VERSION
+        );
+    };
+    if( ua.DEVICE ){
+        ary.push(
+            '<tr>' +
+                '<th>ua.DEVICE<td>' + ua.DEVICE + '<td align=right>' + ua[ ua.DEVICE ] + '<td>' + ua.DEVICE_VERSION
+        );
+    };
+    if( ua.PC_MODE ){
+        ary.push(
+            '<tr>' +
+                '<th>ua.PC_MODE<td colspan=3>○'
+        );
+    };
+
+    print(
+        '<h1>ua</h1>' + ary.join( '' ) + '</table>'
+    );
+
+    print(
+        '<h1>navigator</h1>' +
+        '<dl>' +
+            '<dt>userAgent' +
+            '<dd>' + navigator.userAgent +
+            '<dt>platform' +
+            '<dd>' + navigator.platform +       
+            '<dt>appCodeName' +
+            '<dd>' + navigator.appCodeName + 
+            '<dt>appName' +
+            '<dd>' + navigator.appName +
+            '<dt>appVersion' +
+            '<dd>' + navigator.appVersion +
+            '<dt>window.chrome' +
+            '<dd>' + ( window.chrome ? 'v' : '-' ) +
+            '<dt>window.opera' +
+            '<dd>' + ( window.opera ? 'v' : '-' ) +
+            '<dt>window.opr' +
+            '<dd>' + ( window.opr ? 'v' : '-' ) +
+            '<dt>window.operamini' +
+            '<dd>' + ( window.operamini ? JSON.stringify( operamini ) : '-' ) +
+            '<dt>window.OperaIce' + // Coast
+            '<dd>' + ( window.OperaIce ? JSON.stringify( OperaIce ) : '-' ) +
+            '<dt>window.oprt' +
+            '<dd>' + ( window.oprt ? JSON.stringify( oprt ) : '-' ) +
+            '<dt>window.searchBoxJavaBridge_' +
+            '<dd>' + ( window.searchBoxJavaBridge_ ? 'v' : '-' ) +
+            '<dt>window.puffinDevice' +
+            '<dd>' + ( window.puffinDevice ? JSON.stringify( puffinDevice ) : '-' ) +
+            '<dt>window.yandex' +
+            '<dd>' + ( window.yandex ? JSON.stringify( yandex ) : '-' ) +
+            '<dt>window.__ybro' +
+            '<dd>' + ( window.__ybro ? JSON.stringify( __ybro ) : '-' ) +
+            '<dt>window.webkit' +
+            '<dd>' + ( window.webkit ? JSON.stringify( webkit ) : '-' ) +
+            '<dt>window.FNRBrowser' +
+            '<dd>' + ( window.FNRBrowser ? JSON.stringify( FNRBrowser ) : '-' ) +
+            '<dt>window.maxthon' +
+            '<dd>' + ( window.maxthon ? JSON.stringify( maxthon ) : '-' ) +
+            '<dt>document.fullscreenEnabled(webkitFullscreenEnabled)' +
+            '<dd>' + ( inObject( 'fullscreenEnabled', document ) ? document.fullscreenEnabled + '(' : '-(' ) + ( inObject( 'webkitFullscreenEnabled', document ) ? document.webkitFullscreenEnabled + ')' : '-)' ) +
+            '<dt>window.requestFileSystem(webkitRequestFileSystem)' +
+            '<dd>' + ( window.requestFileSystem ? 'v (' : '- (' ) + ( window.webkitRequestFileSystem ? 'v)' : '-)' ) +
+            '<dt>navigator.standalone' +
+            '<dd>' + ( inObject( 'standalone', navigator ) ? navigator.standalone : '-' ) +
+            '<dt>window.matchMedia("(display-mode: standalone)").matches' +
+            '<dd>' + ( window.matchMedia && matchMedia('(display-mode: standalone)') && matchMedia('(display-mode: standalone)').matches ? 'v' : '-' ) +
+            '<dt>window.matchMedia("(display-mode: browser)").matches' +
+            '<dd>' + ( window.matchMedia && matchMedia('(display-mode: browser)') && matchMedia('(display-mode: browser)').matches ? 'v' : '-' ) +
+        '</dl>' +
+
+        '<h1>Short URL</h1>' +
+        '<a href="https://goo.gl/PFu3uN">https://goo.gl/PFu3uN</a> <a href="https://goo.gl/VyVM9s">http://goo.gl/VyVM9s</a>'
+    );
+
+    var ary = [], dic = {}, name, nameBefore, value;
+
+    var iOS12members = [
+'addEventListener', 'alert', 'applicationCache', 'atob', 'blur', 'btoa',
+'caches', 'cancelAnimationFrame', 'captureEvents', 'clearInterval', 'clearTimeout', 'clientInformation', 'close', 'closed', 'confirm', 'crypto', 'customElements',
+'defaultStatus', 'defaultstatus', 'devicePixelRatio', 'dispatchEvent', 'document',
+'event',
+'fetch', 'find', 'focus', 'frameElement', 'frames',
+'getComputedStyle', 'getMatchedCSSRules', 'getSelection',
+'history',
+'indexedDB', 'innerHeight', 'innerWidth', 'isSecureContext',
+'length', 'localStorage', 'location', 'locationbar',
+'matchMedia', 'menubar', 'moveBy', 'moveTo',
+'name', 'navigator',
+'offscreenBuffering', 'onabort', 'onanimationcancel', 'onanimationend', 'onanimationiteration', 'onanimationstart', 'onbeforeunload', 'onblur', 'oncanplay', 'oncanplaythrough', 'onchange', 'onclick', 'oncontextmenu', 'oncuechange', 'ondblclick', 'ondrag', 'ondragend', 'ondragenter', 'ondragleave', 'ondragover', 'ondragstart', 'ondrop', 'ondurationchange', 'onemptied', 'onended', 'onerror', 'onfocus', 'onhashchange', 'oninput', 'oninvalid', 'onkeydown', 'onkeypress', 'onkeyup', 'onlanguagechange', 'onload', 'onloadeddata', 'onloadedmetadata', 'onloadstart', 'onmessage', 'onmousedown', 'onmouseenter', 'onmouseleave', 'onmousemove', 'onmouseout', 'onmouseover', 'onmouseup', 'onmousewheel', 'onoffline', 'ononline', 'onpagehide', 'onpageshow', 'onpause', 'onplay', 'onplaying', 'onpopstate', 'onprogress', 'onratechange', 'onrejectionhandled', 'onreset', 'onresize', 'onscroll', 'onseeked', 'onseeking', 'onselect', 'onstalled', 'onstorage', 'onsubmit', 'onsuspend', 'ontimeupdate', 'ontoggle', 'ontransitioncancel', 'ontransitionend', 'ontransitionrun', 'ontransitionstart', 'onunhandledrejection', 'onunload', 'onvolumechange', 'onwaiting', 'open', 'openDatabase', 'opener', 'orientation', 'origin', 'outerHeight', 'outerWidth',
+'pageXOffset', 'pageYOffset', 'parent', 'performance', 'personalbar', 'postMessage', 'print', 'prompt',
+'queueMicrotask',
+'releaseEvents', 'removeEventListener', 'requestAnimationFrame', 'resizeBy', 'resizeTo',
+'screenLeft', 'screenTop', 'screenX', 'screenY', 'screen', 'scroll', 'scrollBy', 'scrollTo', 'scrollX', 'scrollY', 'scrollbars', 'self', 'sessionStorage', 'setInterval', 'setTimeout', 'speechSynthesis', 'status', 'statusbar', 'stop', 'styleMedia',
+'toolbar', 'top',
+'webkitCancelAnimationFrame', 'webkitCancelRequestAnimationFrame', 'webkitConvertPointFromNodeToPage', 'webkitConvertPointFromPageToNode', 'webkitIndexedDB', 'webkitRequestAnimationFrame', 'window'
+    ];
+
+    
+    if( ua.Trident < 5.5 || ua.TridentMobile < 5.5 || ua.Tasman ){
+        collectProps( ary );
+    } else {
+        (new Function( 'collectProps', 'ary', 'try{collectProps(ary)}catch(O_o){ary.length=0;ary[0]=O_o}' ))( collectProps, ary );
+        if( ary.length === 1 ) ary[ 1 ] = 'ERROR AT ' + name + ', BEFORE IS ' + nameBefore;
+    };
+
+    function collectProps( ary ){
+        var k, prop, n, j;
+        
+        for( name in window ){
+            k = name;
+            if( k === 'opener' && 5 <= ua.ChromeWebView ){ // Android ChromeWebView で get するとエラー
+                ary.push( k ); 
+            } else {
+                prop = window[ k ];
+                if( prop !== ua ){
+                    if( ( k === 'localStorage' || k === 'sessionStorage' ) && ua.Gecko < 1.9 ){ // NN9 で for in ループを回すとエラー
+                        k = { k : k, v : prop };
+                    } else if( prop && ( 0 < ' object function'.indexOf( typeof prop ) ) ){
+                        n = 0;
+                        for( j in prop ) ++n;
+                        if( n ) k = { k : k, n : n };
+                    } else {
+                        k = { k : k, v : prop };
+                    };
+                    ary.push( k );
+                };
+            };
+            nameBefore = name;
+        };
+    };
+
+    ary.sort();
+
+    for( var i = -1, k; k = ary[ ++i ]; ){
+        var c = ( ( k && k.k ) || k || '' ).charAt( 0 ).toLowerCase();
+
+        if( 'a'.charCodeAt( 0 ) > c.charCodeAt( 0 ) || c.charCodeAt( 0 ) > 'z'.charCodeAt( 0 ) ){
+            c = '-';
+        };
+        dic[ c ] = dic[ c ] || [];
+        dic[ c ][ dic[ c ].length ] = k;
+    };
+
+    print( '<h1>window members(' + ary.length +')</h1>' );
+
+    for( k in dic ){
+        ary = dic[ k ];
+        print( '<h2>' + k + ' (' + ary.length + ')</h2>' );
+        for( var i = -1, _ary = []; k = ary[ ++i ]; ){
+            var hit = false;
+            for( var j = -1, content; iOS12members[ ++j ]; ){
+               if( ( k.k || k ) === iOS12members[ j ] ){
+                    hit = true;
+                    break;
+               };
+            };
+            content = k.v ? '=' + k.v : k.n ? '[' + k.n + ']' : '';
+            if( hit ){
+                _ary[ _ary.length ] = '<b>' + ( k.k || k ) + content + '</b>';
+            } else {
+                _ary[ _ary.length ] = ( k.k || k ) + content;
+            };
+        };
+        print( '<p>' + _ary.join( ', ' ) + '</p>' );
+    };
+})(ua);
+</script>
+<style>
+    html, body { height : 100%; }
+</style>
+</head>
+<body size="1"><noscript><p>Javascript disabled!</p></noscript></body>
+</html>

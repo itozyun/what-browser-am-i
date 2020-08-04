@@ -1,0 +1,12 @@
+{
+  "name": "what-browser-am-i",
+  "version": "1.0.0",
+  "description": "A library for client-side web browser determination.",
+  "author": "itozyun",
+  "license": "ISC",
+  "devDependencies": {
+    "google-closure-compiler": "^20200719.0.0",
+    "gulp": "^4.0.2",
+    "gulp-cheerio": "^1.0.0"
+  }
+}
