@@ -8,6 +8,9 @@
 
 ## テストページ
 
+[test page](https://itozyun.github.io/what-browser-am-i/) or [bit.ly/39Wvkct](https://bit.ly/39Wvkct), 
+[http version](http://my-http-proxy-856.appspot.com/itozyun.github.io/what-browser-am-i/) or [bit.ly/3ft54YC](http://bit.ly/3ft54YC)
+
 ## 特徴
 
 1. デスクトップ版を表示する、にチェックして UA 偽装されていても正しいブラウザエンジンを取得します。併せて、ユーザーのデスクトップ版を表示して欲しい、という意図も検出します。

@@ -16,6 +16,13 @@
         return alert( errorMsg + ':' + lineNumber + ',' + url );
     };
 </script>
+<style>
+    html, body { height : 100%; }
+</style>
+</head>
+<body size="1">
+<a href="https://github.com/itozyun/waht-browser-am-i/">github</a>, <a href="http://my-http-proxy-856.appspot.com/itozyun.github.io/what-browser-am-i/">http version</a>(<a href="http://bit.ly/3ft54YC">bit.ly/3ft54YC</a>)<hr>
+<noscript><p>Javascript disabled!</p></noscript>
 <script>ua={};(function(v,n,L,M,Ba,y,Ca,pb){function ka(k,r){var t=y(k.split(r)[1]);return 0<=t?t:0}function f(k,r){return 0<=k.indexOf(r)}function Y(k,r){for(var t in r)if(t===k)return!0}function c(k,r){var t="",B=-1,H;if(k=k.split(r)[1]){for(;H=k.charCodeAt(++B);)if(48<=H&&57>=H||46===H)t+=k.charAt(B);else break;for(B=t.length;B;)if(46===t.charCodeAt(--B))t=t.substr(0,B);else break}return t}function Da(k,r){var t=0,B;k=k.split(".");r=r.split(".");for(B=Math.min(k.length,r.length);t<B;++t){var H=y(k[t]),Ea=y(r[t]);
 if(H!==Ea)return H>Ea?1:-1}return k.length===r.length?0:k.length>r.length?1:-1}function Fa(){for(var k=arguments,r=1,t=k.length,B=k[0],H;r<t;++r)0>Da(B,H=k[r])&&(B=H);return B}function Z(k){return k===k+""?k:k===k-0?""+k:k.min&&k.max?k.min+"~"+k.max:k.min?k.min+"~":"~"+k.max}function aa(k){return k===k+""?y(k):k}var l,m,a=M.userAgent,q=M.appVersion,la=y(q)|0,p=M.platform,ma=L.documentElement,Ga=ma&&ma.style,na=L.documentMode,oa=Ba.width,pa=Ba.height,Ha=n.HTMLAudioElement,Ia=n.performance,Ja=n.Int8Array,
 eb=void 0!==n.ontouchstart,J=c(q,"Version/")||c(a,"Version/"),Q=void 0!==Ga.MozAppearance,Ka=n.operamini,ba=f(a,"UCWEB"),fb=ba&&c(a," U2/"),gb=ba&&c(a,"; wds "),qa=c(a.split("_").join("."),"; iPh OS "),hb=c(a,"; Adr "),La=f(q,"YJApp-ANDROID"),G=f(p,"Android")||Q&&f(q,"Android")||La,z=c(p,"Android ")||c(q,"Android ")||c(a,"Android ")||hb,ra=f(p,"Linux"),sa="MacIntel"===p&&void 0!==M.standalone,R=!Ka&&n.opera,Ma=R&&(R.version&&"function"===typeof R.version?R.version():Fa(c(a,"Opera "),J,""+la)),Na=
@@ -50,8 +57,6 @@ Z(g),v[h]=aa(g)):v[h]=!0);l&&(v.ENGINE=l,m?(v.ENGINE_VERSION=Z(m),v[l]=aa(m)):v[
             if( k === name ) return true;
         };
     };
-
-    // print( '<a href="./">top</a>, <a href="clearfix.html">clearfix のテスト</a>, <a href="contentPusedoElement.html">疑似要素のテスト</a><hr>' );
 
     var k, ary = [
         '<table border=1 cellspacing=0>' +
@@ -230,10 +235,10 @@ Z(g),v[h]=aa(g)):v[h]=!0);l&&(v.ENGINE=l,m?(v.ENGINE_VERSION=Z(m),v[l]=aa(m)):v[
         for( var i = -1, _ary = []; k = ary[ ++i ]; ){
             var hit = false;
             for( var j = -1, content; iOS12members[ ++j ]; ){
-               if( ( k.k || k ) === iOS12members[ j ] ){
+                if( ( k.k || k ) === iOS12members[ j ] ){
                     hit = true;
                     break;
-               };
+                };
             };
             content = k.v ? '=' + k.v : k.n ? '[' + k.n + ']' : '';
             if( hit ){
@@ -246,9 +251,5 @@ Z(g),v[h]=aa(g)):v[h]=!0);l&&(v.ENGINE=l,m?(v.ENGINE_VERSION=Z(m),v[l]=aa(m)):v[
     };
 })(ua);
 </script>
-<style>
-    html, body { height : 100%; }
-</style>
-</head>
-<body size="1"><noscript><p>Javascript disabled!</p></noscript></body>
+</body>
 </html>
