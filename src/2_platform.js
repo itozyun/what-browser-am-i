@@ -144,20 +144,20 @@ if( appVersion === 2 && findString( strUserAgent, 'Sony/COM2/' ) ){
 if( fromString( strPlatform, 'iP' ) || versioniOSWithUC || versioniOSWithPuffin || is_iPadOsPcMode ){
     if( versioniOSWithPuffin ){
         platformVersion = versioniOSWithPuffin;
-        switch( puffinDevice.substr( 0, 4 ) ){
+        switch( puffinDeviceModel.substr( 0, 4 ) ){
             case 'iPho' :
                 device        = 'iPhone';
-                deviceVersion = parseFloat( puffinDevice.substr( 6 ) );
+                deviceVersion = parseFloat( puffinDeviceModel.substr( 6 ) );
                 deviceTypeIsPhone = true;
                 break;
             case 'iPad' :
                 device        = 'iPad';
-                deviceVersion = parseFloat( puffinDevice.substr( 4 ) );
+                deviceVersion = parseFloat( puffinDeviceModel.substr( 4 ) );
                 deviceTypeIsTablet = true;
                 break;
             case 'iPod' :
                 device        = 'iPod';
-                deviceVersion = parseFloat( puffinDevice.substr( 4 ) );
+                deviceVersion = parseFloat( puffinDeviceModel.substr( 4 ) );
                 deviceTypeIsMediaPlayer = true;
                 break;
         };

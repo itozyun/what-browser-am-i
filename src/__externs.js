@@ -158,7 +158,7 @@ var UserAgentObject = {
 /**
  * @type {Object}
  */
-Window.prototype.puffinDevice = {};
+var puffinDevice = {};
 
 /**
  * @type {Object}
@@ -177,9 +177,9 @@ var PuffinDeviceClientInfoObject = {
 };
 
 /**
- * @type {*}
+ * @type {function()}
  */
-Window.prototype.onmoztimechange;
+var onmoztimechange = function(){};
 
 /**
  * @type {boolean}
@@ -204,12 +204,12 @@ var outerHeight;
 /**
  * @type {Object}
  */
-Window.prototype.chrome = {};
+var chrome = {};
 
 /**
  * @type {Object}
  */
-Window.prototype.opr = {};
+var opr = {};
 
 /**
  * @type {Object}
@@ -225,22 +225,17 @@ var FNRBrowser = {}
 /**
  * @type {Object}
  */
-Window.prototype.operamini = {};
+var operamini = {};
 
 /**
  * @type {function()}
  */
-Window.prototype.palmGetResource = function(){};
+var palmGetResource = function(){};
 
 /**
  * @type {Object}
  */
-Window.prototype.WebAssembly = {};
-
-/**
- * @type {Object}
- */
-Window.prototype.searchBoxJavaBridge_ = {};
+var searchBoxJavaBridge_ = {};
 
 /**
  * @type {string}

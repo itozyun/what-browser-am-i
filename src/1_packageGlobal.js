@@ -311,7 +311,7 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     hasPuffinObject      = window.puffinDevice,
     puffinClientInfo     = hasPuffinObject && hasPuffinObject.clientInfo,
     versioniOSWithPuffin = puffinClientInfo && puffinClientInfo.os === 'iOS' && puffinClientInfo.osVersion,
-    puffinDevice         = versioniOSWithPuffin && puffinClientInfo.model,
+    puffinDeviceModel    = versioniOSWithPuffin && puffinClientInfo.model,
 
     docRegElm    = !versionTrident && document.registerElement,
     docExecCmd   = !versionTrident && document.execCommand,
