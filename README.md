@@ -15,8 +15,22 @@
 
 1. デスクトップ版を表示する、にチェックして UA 偽装されていても正しいブラウザエンジンを取得します。併せて、ユーザーのデスクトップ版を表示して欲しい、という意図も検出します。
 2. ブランドの判定 Android, iOS 用ブラウザでは同一の WebView を使いつつも、アドレスバーの動作等のビューポートの挙動が異なるため、ブランド名を取得します。
-3. 正規表現を使わない、ES3 の `"hoge" in obj` in 構文と `instanceof` を使用していない為、IE4.01 以降、モバイル IE4 でも動作します
+3. `"hoge" in obj` in 構文と `instanceof` を使用していない為、IE4 以降で動作します。併せて、正規表現を使っていない為、モバイル IE4 移行で動作します。 
 
+## プロパティ
+
+| property         | data type        | example       |
+|:-----------------|:-----------------|:--------------|
+| PLATFORM         | string           |               |
+| PLATFORM_VERSION | string \| object |               |
+| ENGINE           | string           |               |
+| ENGINE_VERSION   | string \| object |               |
+| BRAND            | string           |               |
+| BRAND_VERSION    | string \| object |               |
+| DEVICE           | string           |               |
+| DEVICE_VERSION   | string \| object |               |
+| PC_MODE          | boolean          | true          |
+| DEVICE_TYPE      | number           |               |
 
 ## How to build
 
@@ -25,7 +39,12 @@
 
 ### build options 
 
-
+| property                                     | data type | default value |
+|:---------------------------------------------|:----------|:--------------|
+| WHAT_BROWSER_AM_I_DEFINE_BRAND_ENABLED       | boolean   | true          |
+| WHAT_BROWSER_AM_I_DEFINE_PC_MODE_ENABLED     | boolean   | true          |
+| WHAT_BROWSER_AM_I_DEFINE_IOS_DEVICE_ENABLED  | boolean   | true          |
+| WHAT_BROWSER_AM_I_DEFINE_DEVICE_TYPE_ENABLED | boolean   | true          |
 
 ## links
 

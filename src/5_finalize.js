@@ -47,7 +47,7 @@ if( engine ){
     };
 };
 
-if( brand ){
+if( WHAT_BROWSER_AM_I_DEFINE_BRAND_ENABLED && brand ){
     ua.BRAND = brand;
     if( brandVersion ){
         ua.BRAND_VERSION = toVersionString( brandVersion );
@@ -57,7 +57,7 @@ if( brand ){
     };
 };
 
-if( device ){
+if( WHAT_BROWSER_AM_I_DEFINE_IOS_DEVICE_ENABLED && device ){
     ua.DEVICE = device;
     if( deviceVersion ){
         ua.DEVICE_VERSION = toVersionString( deviceVersion );
@@ -67,4 +67,17 @@ if( device ){
     };
 };
 
-if( isPcMode || is_iPadOsPcMode ) ua.PC_MODE = true;
+if( WHAT_BROWSER_AM_I_DEFINE_PC_MODE_ENABLED ){
+    if( isPcMode || is_iPadOsPcMode ) ua.PC_MODE = true;
+};
+
+if( WHAT_BROWSER_AM_I_DEFINE_DEVICE_TYPE_ENABLED ){
+    ua.DEVICE_TYPE = deviceTypeIsPDA         ? WHAT_BROWSER_AM_I_DEVICE_TYPE_PDA :
+                     deviceTypeIsGame        ? WHAT_BROWSER_AM_I_DEVICE_TYPE_GAME :
+                     deviceTypeIsTV          ? WHAT_BROWSER_AM_I_DEVICE_TYPE_TV   :
+                     deviceTypeIsMediaPlayer ? WHAT_BROWSER_AM_I_DEVICE_TYPE_MEDIA_PLAYER :
+                     deviceTypeIsEBookReader ? WHAT_BROWSER_AM_I_DEVICE_TYPE_EBOOK_READER :
+                     deviceTypeIsPhone       ? WHAT_BROWSER_AM_I_DEVICE_TYPE_PHONE        :
+                     deviceTypeIsTablet      ? WHAT_BROWSER_AM_I_DEVICE_TYPE_TABLET       :
+                     deviceTypeIsPC          ? WHAT_BROWSER_AM_I_DEVICE_TYPE_PC           : 0;
+};

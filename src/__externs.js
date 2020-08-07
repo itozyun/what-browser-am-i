@@ -15,6 +15,7 @@ var UserAgentObject = {
     BRAND_VERSION    : '',
     DEVICE           : '',
     DEVICE_VERSION   : '',
+    DEVICE_TYPE      : 1,
     PC_MODE          : true,
 
 // PLATFORM
