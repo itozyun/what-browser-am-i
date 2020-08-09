@@ -322,6 +322,7 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     // https://github.com/mozilla-mobile/firefox-tv/blob/master/app/src/main/java/org/mozilla/tv/firefox/ext/Js.kt
     // FireTV Firefox
     isFirefoxForFireTV = window._firefoxTV_playbackStateObserverJava,
+    versionFireOSForFirefoxPcMode = getNumber( strUserAgent, 'diordnA ' ),
 
     surelyPcMode, isPcMode, strVersion,
     v, dpRatio,

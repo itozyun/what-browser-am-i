@@ -468,12 +468,18 @@ if( strVersion = getVersionString( strUserAgent, 'Kindle/' ) ){
 /*----------------------------------------------------------------------------//
  *  FireTV
  */
+if( isFirefoxForFireTV ){
+    isFireOS        = true;
+    platformVersion = versionAndroid || versionFireOSForFirefoxPcMode;
+    deviceTypeIsTV  = true;
+    isAndroidBased  = true;
+    isPcMode        = versionFireOSForFirefoxPcMode;
 // https://developer.amazon.com/ja/docs/fire-tv/user-agent-strings.html
-if( findString( strUserAgent, 'AmazonWebAppPlatform' ) || findString( strUserAgent, '; AFT' ) || isFirefoxForFireTV ){
+} else if( findString( strUserAgent, 'AmazonWebAppPlatform' ) || findString( strUserAgent, '; AFT' ) ){
     isFireOS        = true;
     platformVersion = versionAndroid;
     deviceTypeIsTV  = true;
-    isAndroidBased  = true; // Chrome 等のインストールが可能
+    isAndroidBased  = true;
 } else
 /*----------------------------------------------------------------------------//
  *  MeeGo
