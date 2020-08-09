@@ -171,6 +171,7 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     versionFxiOS  = getVersionString( strUserAgent, 'FxiOS/' ),
     versionCriOS  = getVersionString( strUserAgent, 'CriOS/' ),
     versionEdgiOS = getVersionString( strUserAgent, 'EdgiOS/' ),
+    versionSilk   = getVersionString( strUserAgent, 'Silk/' ),
 
     // https://issuetracker.google.com/issues/36957795
     //  Canvas clearRect failing to clear

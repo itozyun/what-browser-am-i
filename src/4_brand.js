@@ -29,9 +29,9 @@ if( !brand ){
             brand        = 'UC';
             brandVersion = strVersion;
         } else
-        if( strVersion = getVersionString( strUserAgent, 'Silk/' ) ){
+        if( versionSilk ){
             brand        = 'Silk';
-            brandVersion = strVersion;
+            brandVersion = versionSilk;
         } else
         if( strVersion = getVersionString( strUserAgent, 'Vivaldi/' ) ){
             brand        = 'Vivaldi';

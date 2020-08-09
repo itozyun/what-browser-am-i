@@ -573,7 +573,6 @@ if( isAndroid && isGecko ){
     };
 
     platformVersion = v;
-    // isAndroid    = true;
     if( maybePCMode ) isPcMode = true;
 } else
 /*----------------------------------------------------------------------------//
@@ -587,7 +586,6 @@ if( isAndroid && isPresto ){
         isPcMode = true;
     };
     platformVersion = v;
-    // isAndroid    = true;
     if( findString( strUserAgent, 'Tablet' ) ){
         deviceTypeIsTablet = true;
     } else {
@@ -676,10 +674,9 @@ if( maybeLinux ){
     };
 };
 
-if( isFireOS ){
+if( isFireOS || ( isAndroid && surelyPcMode && versionSilk ) ){ // Silk & android & pbmode の場合、FireOS
     platform = 'FireOS';
-};
-if( isAndroid ){
+} else if( isAndroid ){
     platform = platform || 'Android';
 };
 if( isWindowsPhone ){
