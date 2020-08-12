@@ -13,6 +13,13 @@ function fromString( str1, str2 ){
 function findString( str1, str2 ){
     return 0 <= str1.indexOf( str2 );
 };
+function findLinuxCPUString( str ){
+    return findString( str, 'Linux armv'   ) || // armv7l, armv8l
+           findString( str, 'Linux aarch'  ) || // aarch32, aarch64
+           findString( str, 'Linux i686'   ) ||
+           findString( str, 'Linux x86_64' )
+};
+
 function inObject( name, obj ){
     for( var k in obj ){
         if( k === name ) return true;
@@ -161,7 +168,7 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     versionFirefox = getVersionString( strUserAgent, 'Firefox/' ), // Android9 + Firefox67.0 + PC_MOEDE で rv: が存在しない！
     versionOpera   = getVersionString( strUserAgent, 'Opera/' ),
     versionFocus   = getVersionString( strUserAgent, 'Focus/' ),
-    isSleipnir     = window.FNRBrowser,
+    isSleipnir_iOS = window.FNRBrowser,
 
     versionWebKit = getNumber( strUserAgent, 'AppleWebKit/' ),
     versionChrome = getVersionString( strUserAgent, 'Chrome/' ),
@@ -182,9 +189,12 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     // https://gist.github.com/poshaughnessy/5718717a04db20a02e9fdb3fc16e2258
     // https://gist.github.com/NielsLeenheer/4daa6a9ce7f4a0f4733d
 
+    // https://developers.whatismybrowser.com/useragents/explore/software_name/samsung-browser/
+    // スマホに登場するのは 4.4.4 以降で SamsungBrowser/2.0 から。
+    // SMART-TV には /1.0 から。Tizen 2.3
+    verSamsung   = getNumber( strUserAgent, 'SamsungBrowser/' ),
     // https://gist.github.com/uupaa/b25c9cf47bbeedea5a7f
     // Android 4.4 から Android Browser は Chrome WebView をベースにしているとのことなので、ちょっと古めの Chrome という扱いで良さそうです。
-    verSamsung   = getNumber( strUserAgent, 'SamsungBrowser/' ),
     maybeSamsung = !verSamsung && (function(){
         var unversionedDevices = (
                 'GT-I9300 GT-I9305 SHV-E210 SGH-T999L SGH-I747 ' +                   // Galaxy S III          , 2012.05, 4.0.4~4.4.4
@@ -296,18 +306,23 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
             if( findString( strUserAgent, device ) ) return verVersion;
         };
     })(),
-// https://developers.whatismybrowser.com/useragents/explore/software_name/samsung-browser/
-// スマホに登場するのは 4.4.4 以降で SamsungBrowser/2.0 から。
-// SMART-TV には /1.0 から。Tizen 2.3
 
     maybeAOSP   = hasChromeObject && versionWebKit <= 534.3, // 4.0 & 3.x には chrome がいる... 534~534.3
-    maybePCMode =
-        ( isTouch && ( versionWebKit || isGecko ) && (
-            fromString( strPlatform, 'Linux armv'  ) || // armv7l, armv8l
-            fromString( strPlatform, 'Linux aarch' ) || // aarch32, aarch64
-            strPlatform === 'Linux i686'
-        ) && findString( strUserAgent, 'Linux x86_64' ) ) ||
-        ( !versionAndroid && isYahooForAandroid ),
+
+    isLinuxCPU     = findLinuxCPUString( strPlatform ),
+    isFakeLinuxCPU = isLinuxCPU && !findString( strUserAgent, strPlatform ) && findLinuxCPUString( strUserAgent ),
+    maybePCMode    = ( isTouch && ( versionWebKit || isGecko ) && isFakeLinuxCPU ) ||
+                     ( !versionAndroid && isYahooForAandroid ),
+
+    // https://twitter.com/itozyun/status/1293628829248794624
+    maybeLunascapeAndroid = window.ReactNativeWebView,
+    // https://twitter.com/itozyun/status/1293633829647708160
+    isSleipnirAndroid     = isLinuxCPU &&
+                              (function( k ){
+                                  for( k in window ){
+                                      if( fromString( k, 'SlexAPI_' ) ) return true;
+                                  };
+                              })(),
 
     hasPuffinObject      = window.puffinDevice,
     puffinClientInfo     = hasPuffinObject && hasPuffinObject.clientInfo,

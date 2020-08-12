@@ -248,3 +248,9 @@ HTMLElement.prototype.msContentZoomFactor;
  * @type {Object}
  */
 var _firefoxTV_playbackStateObserverJava = {}
+
+/**
+ * Maybe Lunascape Android
+ * @type {Object}
+ */
+var ReactNativeWebView = {}

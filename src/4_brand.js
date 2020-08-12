@@ -118,10 +118,6 @@ if( !brand ){
         if( findString( strUserAgent, 'Avant Browser;' ) ){
             brand = 'Avant';
         } else
-        if( strVersion = getVersionString( strUserAgent, 'Lunascape/' ) ){
-            brand        = 'Lunascape';
-            brandVersion = strVersion;
-        } else
         if( strVersion = getVersionString( strUserAgent, 'Konqueror/' ) ){
             brand        = 'Konqueror';
             brandVersion = strVersion;
@@ -162,7 +158,7 @@ if( !brand ){
             brand        = 'Rockmelt';
             brandVersion = strVersion;
         } else
-        if( ( strVersion = getVersionString( strUserAgent, 'Sleipnir/' ) ) || isSleipnir ){
+        if( ( strVersion = getVersionString( strUserAgent, 'Sleipnir/' ) ) || isSleipnir_iOS || isSleipnirAndroid ){
             brand        = 'Sleipnir';
             if( strVersion ){
                 brandVersion = strVersion;
@@ -229,6 +225,12 @@ if( !brand ){
             brandVersion = strVersion;
         } else if( strVersion = getVersionString( strUserAgent, 'QtWebKit/' ) ){
             brand        = 'QtWebKit';
+            brandVersion = strVersion;
+        } else if( strVersion = getVersionString( strUserAgent, 'DuckDuckGo/' ) ){
+            brand        = 'DuckDuckGo';
+            brandVersion = strVersion;
+        } else if( strVersion = getVersionString( strUserAgent, 'Lunascape/' ) || maybeLunascapeAndroid ){
+            brand        = 'Lunascape';
             brandVersion = strVersion;
         } else if( strVersion = versionFxiOS || ( isGecko && ( versionFirefox || engineVersion ) ) ){
             brand        = 'Firefox';

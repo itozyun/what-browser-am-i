@@ -174,7 +174,7 @@ if( fromString( strPlatform, 'iP' ) || versioniOSWithUC || versioniOSWithPuffin 
 
         if( !platformVersion ) isPcMode = true;
 
-        if( !platformVersion || isSleipnir ){ // Sleipnir は嘘のバージョンがUA文字列に設定されている
+        if( !platformVersion || isSleipnir_iOS ){ // Sleipnir は嘘のバージョンがUA文字列に設定されている
             platformVersion =
                 // navigator[ 'mediaDevices'    ] ? 11.2 : // WebView では無効
                 // https://github.com/BasqueVoIPMafia/cordova-plugin-iosrtc/issues/250#issuecomment-336240953
@@ -602,7 +602,7 @@ if( versionAndroid ){
 /*----------------------------------------------------------------------------//
  *  Android PC_MODE
  */
-if( maybeLinux && maybePCMode ){
+if( maybeLinux && maybePCMode || maybeLunascapeAndroid || isSleipnirAndroid ){
     // https://ja.wikipedia.org/wiki/WebKit
     // http://www.au.kddi.com/developer/android/kishu/ua/
     // webkit version to Android version...
