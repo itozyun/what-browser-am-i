@@ -315,7 +315,7 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
                      ( !versionAndroid && isYahooForAandroid ),
 
     // https://twitter.com/itozyun/status/1293628829248794624
-    maybeLunascapeAndroid = window.ReactNativeWebView,
+    maybeLunascapeAndroid = !!window.ReactNativeWebView,
     // https://twitter.com/itozyun/status/1293633829647708160
     isSleipnirAndroid     = isLinuxCPU &&
                               (function( k ){
