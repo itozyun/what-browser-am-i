@@ -54,7 +54,7 @@ if( strPlatform === 'Nintendo WiiU' ){
     // platform始めUA以外のnavigatorのプロパティはいずれの場合も変更されない。
     versionWebKit    = getVersionString( strAppVersion, 'AppleWebKit/' ); // 534:2.1.0J - 3.1.0J, 536:4.0.0J - 
     deviceTypeIsGame = true;
-    // TODO isPcMode
+    // TODO isPcSiteMode
 } else
 /*----------------------------------------------------------------------------//
  *  Wii
@@ -141,23 +141,23 @@ if( appVersion === 2 && findString( strUserAgent, 'Sony/COM2/' ) ){
 /*----------------------------------------------------------------------------//
  *  iOS
  */
-if( fromString( strPlatform, 'iP' ) || versioniOSWithUC || versioniOSWithPuffin || is_iPadOsPcMode ){
+if( fromString( strPlatform, 'iP' ) || versioniOSWithUC || versioniOSWithPuffin || is_iPadOsPcSiteMode ){
     if( versioniOSWithPuffin ){
         platformVersion = versioniOSWithPuffin;
         switch( puffinDeviceModel.substr( 0, 4 ) ){
             case 'iPho' :
                 device        = 'iPhone';
-                deviceVersion = parseFloat( puffinDeviceModel.substr( 6 ) );
+                deviceVersion = getVersionString( puffinDeviceModel, device );
                 deviceTypeIsPhone = true;
                 break;
             case 'iPad' :
                 device        = 'iPad';
-                deviceVersion = parseFloat( puffinDeviceModel.substr( 4 ) );
+                deviceVersion = getVersionString( puffinDeviceModel, device );
                 deviceTypeIsTablet = true;
                 break;
             case 'iPod' :
                 device        = 'iPod';
-                deviceVersion = parseFloat( puffinDeviceModel.substr( 4 ) );
+                deviceVersion = getVersionString( puffinDeviceModel, device );
                 deviceTypeIsMediaPlayer = true;
                 break;
         };
@@ -172,7 +172,7 @@ if( fromString( strPlatform, 'iP' ) || versioniOSWithUC || versioniOSWithPuffin 
             is_iOSBrave      = inObject( 'sameOrigin', window );
         };
 
-        if( !platformVersion ) isPcMode = true;
+        if( !platformVersion ) isPcSiteMode = true;
 
         if( !platformVersion || isSleipnir_iOS ){ // Sleipnir は嘘のバージョンがUA文字列に設定されている
             platformVersion =
@@ -205,7 +205,7 @@ if( fromString( strPlatform, 'iP' ) || versioniOSWithUC || versioniOSWithPuffin 
             device            = 'iPhone';
             deviceVersion     = v ? ( dpRatio ? { max : 3 } : { min : 4, max : 5 } ) : { max : 6 };
             deviceTypeIsPhone = true;
-        } else if( fromString( strPlatform, 'iPad' ) || is_iPadOsPcMode ){ // iPad or iPad Simulator
+        } else if( fromString( strPlatform, 'iPad' ) || is_iPadOsPcSiteMode ){ // iPad or iPad Simulator
             device             = 'iPad';
             deviceVersion      = dpRatio ? { max : 2 } : { min : 3 }; 
             deviceTypeIsTablet = true;
@@ -342,7 +342,7 @@ if( strVersion = getVersionString( strUserAgent, 'Windows Phone ' ) || getVersio
     isWindowsPhone    = true;
     platformVersion   = 10;
     deviceTypeIsPhone = true;
-    isPcMode          = true;
+    isPcSiteMode      = true;
 } else if( isTrident && findString( strAppVersion, 'ZuneWP' ) ){ // ZuneWP はデスクトップモードで登場する
     isWindowsPhone    = true;
     platformVersion   = versionTrident === 11 ? 8.1 :
@@ -350,7 +350,7 @@ if( strVersion = getVersionString( strUserAgent, 'Windows Phone ' ) || getVersio
                         versionTrident ===  9 ? 7.5 :
                         versionTrident ===  7 ? 7   : '?';
     deviceTypeIsPhone = true;
-    isPcMode          = true;
+    isPcSiteMode      = true;
 } else
 /*----------------------------------------------------------------------------//
  *  Feature Phone
@@ -470,10 +470,10 @@ if( strVersion = getVersionString( strUserAgent, 'Kindle/' ) ){
  */
 if( isFirefoxForFireTV ){
     isFireOS        = true;
-    platformVersion = versionAndroid || versionFireOSForFirefoxPcMode;
+    platformVersion = versionAndroid || versionFireOSForFirefoxPcSiteMode;
     deviceTypeIsTV  = true;
     isAndroidBased  = true;
-    isPcMode        = versionFireOSForFirefoxPcMode;
+    isPcSiteMode    = versionFireOSForFirefoxPcSiteMode;
 // https://developer.amazon.com/ja/docs/fire-tv/user-agent-strings.html
 } else if( findString( strUserAgent, 'AmazonWebAppPlatform' ) || findString( strUserAgent, '; AFT' ) ){
     isFireOS        = true;
@@ -573,7 +573,7 @@ if( isAndroid && isGecko ){
     };
 
     platformVersion = v;
-    if( maybePCMode ) isPcMode = true;
+    if( maybePCMode ) isPcSiteMode = true;
 } else
 /*----------------------------------------------------------------------------//
  *  Android Presto
@@ -583,7 +583,7 @@ if( isAndroid && isPresto ){
         v = versionAndroid;
     } else {
         v = { min : 1.6 };
-        isPcMode = true;
+        isPcSiteMode = true;
     };
     platformVersion = v;
     if( findString( strUserAgent, 'Tablet' ) ){
@@ -600,13 +600,13 @@ if( versionAndroid ){
     isAndroid       = true;
 } else
 /*----------------------------------------------------------------------------//
- *  Android PC_MODE
+ *  Android PCSITE_MODE
  */
 if( maybeLinux && maybePCMode || maybeLunascapeAndroid || isSleipnirAndroid ){
     // https://ja.wikipedia.org/wiki/WebKit
     // http://www.au.kddi.com/developer/android/kishu/ua/
     // webkit version to Android version...
-    surelyPcMode = true;
+    surelyPcSiteMode = true;
     // AOSP の判定は Version/ の有無. 但し「デスクトップ版で見る」場合、Version/ が居なくなる...
     // PC版で見る、にチェックが付いている場合、ユーザーエージェント文字列にも platform にも Android の文字列が存在しない(標準ブラウザ&Chrome)
     // Audio でタッチが必要か？の判定にとても困る...
@@ -648,12 +648,12 @@ if( maybeLinux && maybePCMode || maybeLunascapeAndroid || isSleipnirAndroid ){
     isAndroid       = true;
 } else
 /*----------------------------------------------------------------------------//
- *  Android 5 ChromeWebView PC_MODE
+ *  Android 5 ChromeWebView PCSITE_MODE
  */
 if( maybeChromeWebView ){
-    platformVersion = { min : 5 };
-    isAndroid       = true;
-    surelyPcMode    = true;
+    platformVersion  = { min : 5 };
+    isAndroid        = true;
+    surelyPcSiteMode = true;
 } else
 /*----------------------------------------------------------------------------//
  *  Linux
@@ -674,7 +674,7 @@ if( maybeLinux ){
     };
 };
 
-if( isFireOS || ( isAndroid && surelyPcMode && versionSilk ) ){ // Silk & android & pbmode の場合、FireOS
+if( isFireOS || ( isAndroid && surelyPcSiteMode && versionSilk ) ){ // Silk & android & pcmode の場合、FireOS
     platform = 'FireOS';
 } else if( isAndroid ){
     platform = platform || 'Android';

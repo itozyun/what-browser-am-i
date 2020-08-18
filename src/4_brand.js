@@ -17,7 +17,7 @@ if( !brand ){
         } else if( strVersion = getVersionString( strAppVersion, 'OPT/' ) ){
             brand        = 'OperaTouch';
             brandVersion = strVersion;
-            isPcMode     = isPcMode || !findString( strAppVersion, 'Mobile/' );
+            isPcSiteMode = isPcSiteMode || !findString( strAppVersion, 'Mobile/' );
         } else 
     // https://himenaotaro.hatenablog.com/entry/20151011/1444564265
     // YJApp-IOS ユーザエージェント(User Agent)
@@ -237,6 +237,9 @@ if( !brand ){
         } else if( strVersion = versionFxiOS || ( isGecko && ( versionFirefox || engineVersion ) ) ){
             brand        = 'Firefox';
             brandVersion = strVersion;
+        } else if( isOperaGX ){
+            brand        = 'OperaGX';
+            brandVersion = versionOPR;
         } else if( strVersion = versionPresto || versionOPR || versionOpera ){
             brand        = 'Opera';
             brandVersion = strVersion;

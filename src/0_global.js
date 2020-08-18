@@ -2,7 +2,7 @@ var
     /** @define {boolean} */
     WHAT_BROWSER_AM_I_DEFINE_BRAND_ENABLED       = true,
     /** @define {boolean} */
-    WHAT_BROWSER_AM_I_DEFINE_PC_MODE_ENABLED     = true,
+    WHAT_BROWSER_AM_I_DEFINE_PCSITE_MODE_ENABLED = true,
     /** @define {boolean} */
     WHAT_BROWSER_AM_I_DEFINE_IOS_DEVICE_ENABLED  = true,
     /** @define {boolean} */

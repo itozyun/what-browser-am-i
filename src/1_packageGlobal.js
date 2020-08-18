@@ -132,7 +132,7 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     maybeLinux  = findString( strPlatform, 'Linux' ), // Linux or Android
 
     // https://www.bit-hive.com/articles/20190820
-    is_iPadOsPcMode = strPlatform === 'MacIntel' && navigator.standalone !== undefined,
+    is_iPadOsPcSiteMode = strPlatform === 'MacIntel' && navigator.standalone !== undefined,
 
     /*
      * http://help.dottoro.com/ljifbjwf.php
@@ -315,7 +315,7 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
                      ( !versionAndroid && isYahooForAandroid ),
 
     // https://twitter.com/itozyun/status/1293628829248794624
-    maybeLunascapeAndroid = !!window.ReactNativeWebView,
+    maybeLunascapeAndroid = !!window.ReactNativeWebView, // TODO ChromeWebView の version が17に!
     // https://twitter.com/itozyun/status/1293633829647708160
     isSleipnirAndroid     = isLinuxCPU &&
                               (function( k ){
@@ -332,15 +332,18 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     docRegElm    = !versionTrident && document.registerElement,
     docExecCmd   = !versionTrident && document.execCommand,
 
-    // Android 4.4.4~6.x ChromeWebView 33.0.0.0 (Genymotion) PC_MODE の場合、Chrome/のバージョンは常に 11.0.696.34 になる
+    // Android 4.4.4~6.x ChromeWebView 33.0.0.0 (Genymotion) PCSITE_MODE の場合、Chrome/のバージョンは常に 11.0.696.34 になる
     maybeChromeWebView = maybeLinux && docRegElm && versionChrome === '11.0.696.34',
 
     // https://github.com/mozilla-mobile/firefox-tv/blob/master/app/src/main/java/org/mozilla/tv/firefox/ext/Js.kt
     // FireTV Firefox
     isFirefoxForFireTV = window._firefoxTV_playbackStateObserverJava,
-    versionFireOSForFirefoxPcMode = getNumber( strUserAgent, 'diordnA ' ),
+    versionFireOSForFirefoxPcSiteMode = getNumber( strUserAgent, 'diordnA ' ),
 
-    surelyPcMode, isPcMode, strVersion,
+    isOperaGX = window.onoperadetachedviewchange === null, //
+                     //onoperadetachedviewcontrol,
+
+    surelyPcSiteMode, isPcSiteMode, strVersion,
     v, dpRatio,
     
     deviceTypeIsPDA, deviceTypeIsGame, deviceTypeIsTV,

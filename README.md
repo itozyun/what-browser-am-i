@@ -29,7 +29,7 @@
 | BRAND_VERSION    | string \| object |               |
 | DEVICE           | string           |               |
 | DEVICE_VERSION   | string \| object |               |
-| PC_MODE          | boolean          | true          |
+| PCSITE_MODE      | boolean          | true          |
 | DEVICE_TYPE      | number           |               |
 
 ## How to build
@@ -42,7 +42,7 @@
 | property                                     | data type | default value |
 |:---------------------------------------------|:----------|:--------------|
 | WHAT_BROWSER_AM_I_DEFINE_BRAND_ENABLED       | boolean   | true          |
-| WHAT_BROWSER_AM_I_DEFINE_PC_MODE_ENABLED     | boolean   | true          |
+| WHAT_BROWSER_AM_I_DEFINE_PCSITE_MODE_ENABLED | boolean   | true          |
 | WHAT_BROWSER_AM_I_DEFINE_IOS_DEVICE_ENABLED  | boolean   | true          |
 | WHAT_BROWSER_AM_I_DEFINE_DEVICE_TYPE_ENABLED | boolean   | true          |
 

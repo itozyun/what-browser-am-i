@@ -67,8 +67,8 @@ if( WHAT_BROWSER_AM_I_DEFINE_IOS_DEVICE_ENABLED && device ){
     };
 };
 
-if( WHAT_BROWSER_AM_I_DEFINE_PC_MODE_ENABLED ){
-    if( isPcMode || is_iPadOsPcMode ) ua.PC_MODE = true;
+if( WHAT_BROWSER_AM_I_DEFINE_PCSITE_MODE_ENABLED ){
+    if( isPcSiteMode || is_iPadOsPcSiteMode ) ua.PCSITE_MODE = true;
 };
 
 if( WHAT_BROWSER_AM_I_DEFINE_DEVICE_TYPE_ENABLED ){

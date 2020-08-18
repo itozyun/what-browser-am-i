@@ -16,7 +16,7 @@ var UserAgentObject = {
     DEVICE           : '',
     DEVICE_VERSION   : '',
     DEVICE_TYPE      : 1,
-    PC_MODE          : true,
+    PCSITE_MODE      : true,
 
 // PLATFORM
     NDS           : 1,
@@ -27,38 +27,43 @@ var UserAgentObject = {
     WiiU          : 1,
     Wii           : 1,
     PSVita        : 1,
+    PSPGo         : 1,
     PSP           : 1,
     PS3           : 3.5,
+    PS4           : 1,
     XBoxOne       : 1,
     XBox360       : 1,
+
+    FeaturePhone  : true,
     Mylo          : 2,
-    iOS           : 12.2,
     Kobo          : 1,
     SonyReader    : 1,
+    Kindle        : 3.0,
+
+    WinCE         : true,
+    WindowsMobile : true,
+    iOS           : 12.2,
+    Android       : 5,
     ChromeOS      : 1,
     FirefoxOS     : 2.2,
     webOS         : 1,
     Tizen         : 2,
     WindowsPhone  : 8.1,
-    FeaturePhone  : true,
     FireOS        : 6.3,
-    Kindle        : 3.0,
     MeeGo         : true,
     Maemo         : true,
-    WindowsMobile : true,
-    WinCE         : true,
+    BlackBerry    : 10,
+
     Win16         : 3.1,
     Win32         : 5.1,
     Win64         : 10,
     MacPPC        : true,
     Mac68K        : true,
     MacIntel      : 10.12,
-    BlackBerry    : 10,
     SunOS         : true,
     FreeBSD       : true,
     OpenBSD       : true,
     NetBSD        : true,
-    Android       : 5,
     Ubuntu        : true,
     Mint          : true,
     Fedora        : true,
@@ -99,6 +104,7 @@ var UserAgentObject = {
     Edge         : 17,
     Coast        : 1,
     OperaTouch   : 3,
+    OperaGX      : 68,
     Yahoo        : 1,
     UC           : 1,
     Silk         : 1,
@@ -146,6 +152,7 @@ var UserAgentObject = {
     Facebook     : 1,
     QtWebEngine  : 5.12,
     QtWebKit     : 1,
+    DuckDuckGo   : 1,
     Firefox      : 64,
     Chrome       : 74,
     IE           : 11,
@@ -254,3 +261,9 @@ var _firefoxTV_playbackStateObserverJava = {}
  * @type {Object}
  */
 var ReactNativeWebView = {}
+
+/**
+ * Opera GX LVL2 (core: 68.0.3618.206)
+ * @type {function()}
+ */
+var onoperadetachedviewchange = function(){};
