@@ -37,6 +37,19 @@
 1. プロジェクトフォルダにサブモジュールとして追加します。
 2. [./gulpfile.js](./gulpfile.js) を参考に gulp タスク等を作成します。ミニファイには Closure Compiler を使用します。
 
+### To build ./index.js
+
+~~~bat
+gulp dist
+~~~
+
+### To build ./docs/index.html
+
+~~~bat
+gulp docs
+~~~
+
+
 ### build options 
 
 | property                                     | data type | default value |

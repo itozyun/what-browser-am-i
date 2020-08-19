@@ -7,6 +7,42 @@ const gulp            = require('gulp'),
       tempDir         = require('os').tmpdir() + '/' + moduleName,
       globalVariables = 'document,navigator,screen,parseFloat,Number';
 
+      gulp.task('dist', gulp.series(
+        function(){
+            return gulp.src( [ './src/**.js', '!' + externsJs ] )
+                .pipe(
+                    ClosureCompiler(
+                        {
+                            externs           : [ externsJs ],
+                            compilation_level : 'ADVANCED',
+                            //compilation_level : 'WHITESPACE_ONLY',
+                            //formatting        : 'PRETTY_PRINT',
+                            warning_level     : 'VERBOSE',
+                            language_in       : 'ECMASCRIPT3',
+                            language_out      : 'ECMASCRIPT3',
+                            output_wrapper    :
+                                '/** @preserve Copyright 2020 itozyun, https://github.com/itozyun/what-browser-am-i */' +
+                                'ua={};(function(ua,window,' + globalVariables + ',undefined){\n%output%\n})(ua,this,' + globalVariables + ')',
+                            js_output_file    : '_' + tempJsName
+                        }
+                    )
+                )
+                .pipe(
+                    ClosureCompiler(
+                        {
+                            externs           : [ externsJs ],
+                            // compilation_level : 'WHITESPACE_ONLY',
+                            // formatting        : 'PRETTY_PRINT',
+                            language_in       : 'ECMASCRIPT3',
+                            language_out      : 'ECMASCRIPT3',
+                            js_output_file    : 'index.js'
+                        }
+                    )
+                )
+                .pipe(gulp.dest( './' ));
+        }
+    ));
+
 gulp.task('docs', gulp.series(
     function(){
         return gulp.src( [ './src/**.js', '!' + externsJs ] )
