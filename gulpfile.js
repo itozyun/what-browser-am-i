@@ -5,7 +5,8 @@ const gulp            = require('gulp'),
       moduleName      = 'what-browser-am-i',
       tempJsName      = 'temp.js',
       tempDir         = require('os').tmpdir() + '/' + moduleName,
-      globalVariables = 'document,navigator,screen,parseFloat,Number';
+      globalVariables = 'document,navigator,screen,parseFloat,Number',
+      copyright       = '@preserve Copyright 2020 itozyun, https://github.com/itozyun/what-browser-am-i, ISC';
 
       gulp.task('dist', gulp.series(
         function(){
@@ -15,14 +16,12 @@ const gulp            = require('gulp'),
                         {
                             externs           : [ externsJs ],
                             compilation_level : 'ADVANCED',
-                            //compilation_level : 'WHITESPACE_ONLY',
-                            //formatting        : 'PRETTY_PRINT',
                             warning_level     : 'VERBOSE',
                             language_in       : 'ECMASCRIPT3',
                             language_out      : 'ECMASCRIPT3',
                             output_wrapper    :
-                                '/** @preserve Copyright 2020 itozyun, https://github.com/itozyun/what-browser-am-i */' +
-                                'ua={};(function(ua,window,' + globalVariables + ',undefined){\n%output%\n})(ua,this,' + globalVariables + ')',
+                                '/** ' + copyright + ' */' +
+                                'whatBrowserAmI={};(function(ua,window,' + globalVariables + ',undefined){\n%output%\n})(whatBrowserAmI,this,' + globalVariables + ')',
                             js_output_file    : '_' + tempJsName
                         }
                     )
@@ -31,10 +30,38 @@ const gulp            = require('gulp'),
                     ClosureCompiler(
                         {
                             externs           : [ externsJs ],
-                            // compilation_level : 'WHITESPACE_ONLY',
-                            // formatting        : 'PRETTY_PRINT',
                             language_in       : 'ECMASCRIPT3',
                             language_out      : 'ECMASCRIPT3',
+                            js_output_file    : 'whatBrowserAmI.js'
+                        }
+                    )
+                )
+                .pipe(gulp.dest( './' ));
+        },
+        function(){
+            return gulp.src( [ './src/**.js', '!' + externsJs ] )
+                .pipe(
+                    ClosureCompiler(
+                        {
+                            externs           : [ externsJs ],
+                            compilation_level : 'ADVANCED',
+                            warning_level     : 'VERBOSE',
+                            language_in       : 'ECMASCRIPT3',
+                            language_out      : 'ECMASCRIPT3',
+                            output_wrapper    :
+                                '/** ' + copyright + ' */' +
+                                'var ua={};(function(ua,window,' + globalVariables + ',undefined){\n%output%\n})(ua,this,' + globalVariables + ');' +
+                                'module.export=ua;',
+                            js_output_file    : '_' + tempJsName
+                        }
+                    )
+                )
+                .pipe(
+                    ClosureCompiler(
+                        {
+                            externs           : [ externsJs ],
+                            language_in       : 'ECMASCRIPT5',
+                            language_out      : 'ECMASCRIPT5',
                             js_output_file    : 'index.js'
                         }
                     )
@@ -51,8 +78,6 @@ gulp.task('docs', gulp.series(
                     {
                         externs           : [ externsJs ],
                         compilation_level : 'ADVANCED',
-                        //compilation_level : 'WHITESPACE_ONLY',
-                        //formatting        : 'PRETTY_PRINT',
                         warning_level     : 'VERBOSE',
                         language_in       : 'ECMASCRIPT3',
                         language_out      : 'ECMASCRIPT3',
@@ -65,8 +90,6 @@ gulp.task('docs', gulp.series(
                 ClosureCompiler(
                     {
                         externs           : [ externsJs ],
-                        // compilation_level : 'WHITESPACE_ONLY',
-                        // formatting        : 'PRETTY_PRINT',
                         language_in       : 'ECMASCRIPT3',
                         language_out      : 'ECMASCRIPT3',
                         js_output_file    : tempJsName

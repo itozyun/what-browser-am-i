@@ -19,6 +19,26 @@
     * 参照 [尋常でないレベルでブラウザを判定するライブラリ、what-browser-am-iをnpmに公開しました](//outcloud.blogspot.com/2020/08/what-browser-am-i.html)
 3. `"hoge" in obj` in 構文と `instanceof` を使用していない為、IE4 以降で動作します。併せて、正規表現を使っていない為、モバイル IE4 以降で動作します。 
 
+## 使用法
+
+~~~js
+const whatBrowserAmI = require('what-browser-am-i');
+
+console.log(whatBrowserAmI.ENGINE); // Trident
+console.log(whatBrowserAmI.ENGINE_VERSION); // 8
+console.log(whatBrowserAmI[whatBrowserAmI.ENGINE]); // 8
+~~~
+
+~~~html
+<html>
+<script src="./whatBrowserAmI.js"></script>
+<script>
+console.log(whatBrowserAmI.ENGINE); // Trident
+console.log(whatBrowserAmI.ENGINE_VERSION); // 8
+console.log(whatBrowserAmI[whatBrowserAmI.ENGINE]); // 8
+</script>
+~~~
+
 ## プロパティ
 
 | property         | data type        | example       |
@@ -39,7 +59,7 @@
 1. プロジェクトフォルダにサブモジュールとして追加します。
 2. [./gulpfile.js](./gulpfile.js) を参考に gulp タスク等を作成します。ミニファイには Closure Compiler を使用します。
 
-### To build ./index.js
+### To build ./index.js and ./whatBrowserAmI.js
 
 ~~~bat
 gulp dist
