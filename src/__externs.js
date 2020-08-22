@@ -16,7 +16,7 @@ var UserAgentObject = {
     DEVICE           : '',
     DEVICE_VERSION   : '',
     DEVICE_TYPE      : 1,
-    PCSITE_MODE      : true,
+    PCSITE_REQUESTED : true,
 
 // PLATFORM
     NDS           : 1,
@@ -115,7 +115,6 @@ var UserAgentObject = {
     Camino       : 1,
     Sogou        : true,
     Focus        : 1,
-    Klar         : 1,
     AOL          : 1,
     IceDragon    : 1,
     Iceweasel    : 1,

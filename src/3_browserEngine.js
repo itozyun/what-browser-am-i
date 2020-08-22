@@ -63,7 +63,7 @@ if( !engine ){
     } else if( verSamsung ){
         engine        = 'Samsung';
         engineVersion = verSamsung;
-        if( surelyPcSiteMode ) isPcSiteMode = true;
+        if( surelyPcSiteRequested ) isPcSiteRequested = true;
 /*----------------------------------------------------------------------------//
  *  NetFront
  */
@@ -112,14 +112,14 @@ if( !engine ){
         engine           = 'AOSP';
         engineVersion    = versionAndroid;
         isAndroidBrowser = true;
-        if( surelyPcSiteMode ) isPcSiteMode = true;
+        if( surelyPcSiteRequested ) isPcSiteRequested = true;
 /*----------------------------------------------------------------------------//
  *  Chromium or ChromiumMobile
  */
     } else if( hasChromeObject || hasOPRObject || versionOPR ){
         engine        = isAndroidBased ? 'ChromiumMobile' : 'Chromium';
         engineVersion = versionChrome;
-        if( surelyPcSiteMode ) isPcSiteMode = true;
+        if( surelyPcSiteRequested ) isPcSiteRequested = true;
 /*----------------------------------------------------------------------------//
  *  ChromeWebView
  */
@@ -136,15 +136,15 @@ if( !engine ){
         if( !( window.requestFileSystem || window.webkitRequestFileSystem ) ){
             isAndroidChromeWebView = true;
         };
-        if( surelyPcSiteMode ) isPcSiteMode = true;
+        if( surelyPcSiteRequested ) isPcSiteRequested = true;
 /*----------------------------------------------------------------------------//
  *  AOSP PC_Mode
  */
-    } else if( isAndroid && ( verVersion || surelyPcSiteMode ) ){
+    } else if( isAndroid && ( verVersion || surelyPcSiteRequested ) ){
         engine           = 'AOSP';
         engineVersion    = versionAndroid;
         isAndroidBrowser = true;
-        if( surelyPcSiteMode ) isPcSiteMode = true;
+        if( surelyPcSiteRequested ) isPcSiteRequested = true;
 /*----------------------------------------------------------------------------//
  *  Chromium or ChromiumMobile (window.chrome 無)
  */

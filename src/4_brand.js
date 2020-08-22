@@ -15,9 +15,9 @@ if( !brand ){
         } else if( is_iOSOperaTurbo ){
             brand        = 'OperaTurbo';
         } else if( strVersion = getVersionString( strAppVersion, 'OPT/' ) ){
-            brand        = 'OperaTouch';
-            brandVersion = strVersion;
-            isPcSiteMode = isPcSiteMode || !findString( strAppVersion, 'Mobile/' );
+            brand             = 'OperaTouch';
+            brandVersion      = strVersion;
+            isPcSiteRequested = isPcSiteRequested || !findString( strAppVersion, 'Mobile/' );
         } else 
     // https://himenaotaro.hatenablog.com/entry/20151011/1444564265
     // YJApp-IOS ユーザエージェント(User Agent)
@@ -61,12 +61,12 @@ if( !brand ){
     // Mozilla/5.0 (Linux; <Android Version> <Build Tag etc.>) AppleWebKit/<WebKit Rev> (KHTML, like Gecko) Version/4.0 Focus/<focusversion> Chrome/<Chrome Rev> Mobile Safari/<WebKit Rev>
     
         if( strVersion =
-            versionFocus || getVersionString( strUserAgent, 'Klar/' ) ||
+            getVersionString( strUserAgent, 'Focus/' ) || getVersionString( strUserAgent, 'Klar/' ) ||
             // https://apps.apple.com/jp/app/firefox-focus-e3-83-97-e3-83-a9-e3-82-a4-e3-83-90-e3/id1055677337
             // iOS 12.2, Focus 8.1.2, (iOS 11.0以降)
             // https://en.wikipedia.org/wiki/Firefox_for_iOS#cite_note-10
-            // Focus : FxiOS が 8.x にも拘わらず、iOS のバージョンが 11 以上、を使って判定
-            // Firefox : FxiOS が 9.x 移行が、iSO 11+ 対応を持って判定
+            // Focus   : FxiOS が 8.x にも拘わらず、iOS のバージョンが 11 以上、を使って判定
+            // Firefox : FxiOS が 9.x 以降が、iSO 11+ 対応を持って判定
             ( parseFloat( versionFxiOS ) < 9 && maybe_iOSWebView && 11 <= parseFloat( platformVersion ) && versionFxiOS )
         ){
             brand        = 'Focus';
@@ -261,7 +261,7 @@ if( !brand ){
             brand        = 'Safari';
             brandVersion = platformVersion;
         } else if( !maybe_iOSWebView && !isAndroidChromeWebView && ( findString( strUserAgent, 'Safari' ) || verVersion ) ){
-            brand = 'Safari';
+            brand        = 'Safari';
             brandVersion = verVersion || (
                             versionWebKit <   73    ? 0.8 :
                             versionWebKit <   85    ? 0.9 :

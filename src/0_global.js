@@ -1,12 +1,12 @@
 var
     /** @define {boolean} */
-    WHAT_BROWSER_AM_I_DEFINE_BRAND_ENABLED       = true,
+    WHAT_BROWSER_AM_I_DEFINE_BRAND_ENABLED            = true,
     /** @define {boolean} */
-    WHAT_BROWSER_AM_I_DEFINE_PCSITE_MODE_ENABLED = true,
+    WHAT_BROWSER_AM_I_DEFINE_PCSITE_REQUESTED_ENABLED = true,
     /** @define {boolean} */
-    WHAT_BROWSER_AM_I_DEFINE_IOS_DEVICE_ENABLED  = true,
+    WHAT_BROWSER_AM_I_DEFINE_IOS_DEVICE_ENABLED       = true,
     /** @define {boolean} */
-    WHAT_BROWSER_AM_I_DEFINE_DEVICE_TYPE_ENABLED = true,
+    WHAT_BROWSER_AM_I_DEFINE_DEVICE_TYPE_ENABLED      = true,
     
     WHAT_BROWSER_AM_I_DEVICE_TYPE_PC           = 1,
     WHAT_BROWSER_AM_I_DEVICE_TYPE_PHONE        = 2,

@@ -132,7 +132,7 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     maybeLinux  = findString( strPlatform, 'Linux' ), // Linux or Android
 
     // https://www.bit-hive.com/articles/20190820
-    is_iPadOsPcSiteMode = strPlatform === 'MacIntel' && navigator.standalone !== undefined,
+    is_iPadOsPcSiteRequested = strPlatform === 'MacIntel' && navigator.standalone !== undefined,
 
     /*
      * http://help.dottoro.com/ljifbjwf.php
@@ -167,7 +167,6 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     versionGecko   = !versionGoanna && isGecko && getVersionString( strUserAgent, 'rv:' ),
     versionFirefox = getVersionString( strUserAgent, 'Firefox/' ), // Android9 + Firefox67.0 + PC_MOEDE で rv: が存在しない！
     versionOpera   = getVersionString( strUserAgent, 'Opera/' ),
-    versionFocus   = getVersionString( strUserAgent, 'Focus/' ),
     isSleipnir_iOS = window.FNRBrowser,
 
     versionWebKit = getNumber( strUserAgent, 'AppleWebKit/' ),
@@ -332,18 +331,18 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     docRegElm    = !versionTrident && document.registerElement,
     docExecCmd   = !versionTrident && document.execCommand,
 
-    // Android 4.4.4~6.x ChromeWebView 33.0.0.0 (Genymotion) PCSITE_MODE の場合、Chrome/のバージョンは常に 11.0.696.34 になる
+    // Android 4.4.4~6.x ChromeWebView 33.0.0.0 (Genymotion) PCSITE_REQUESTED の場合、Chrome/のバージョンは常に 11.0.696.34 になる
     maybeChromeWebView = maybeLinux && docRegElm && versionChrome === '11.0.696.34',
 
     // https://github.com/mozilla-mobile/firefox-tv/blob/master/app/src/main/java/org/mozilla/tv/firefox/ext/Js.kt
     // FireTV Firefox
     isFirefoxForFireTV = window._firefoxTV_playbackStateObserverJava,
-    versionFireOSForFirefoxPcSiteMode = getNumber( strUserAgent, 'diordnA ' ),
+    versionFireOSForFirefoxPcSiteRequested = getNumber( strUserAgent, 'diordnA ' ),
 
     isOperaGX = window.onoperadetachedviewchange === null, //
                      //onoperadetachedviewcontrol,
 
-    surelyPcSiteMode, isPcSiteMode, strVersion,
+    surelyPcSiteRequested, isPcSiteRequested, strVersion,
     v, dpRatio,
     
     deviceTypeIsPDA, deviceTypeIsGame, deviceTypeIsTV,

@@ -1,10 +1,10 @@
 # what-browser-am-i
 
-クライアントサイド専用の Web ブラウザ判定用ライブラリです。広範な DHTML ブラウザでの動作を目標に開発しています。
+クライアントサイド専用の Web ブラウザ判定用ライブラリです。新旧を問わず、広範な DHTML ブラウザでの動作を目標に開発しています。
 
 ![明恵夫人から「熱意が素晴らしい」と聞いていた学園理事長の名前を失念しかける安倍首相](maybe-kagoike.jpg "籠池さんかな？")
 
-明恵夫人から「熱意が素晴らしい」と聞いていた学園理事長の名前を失念しかける安倍首相 [出典](https://twitter.com/jucnag/status/842259402321145856)
+明恵夫人から「熱意が素晴らしい」と聞いていた学園理事長の名前を失念しかける安倍首相 [TV TOKYO](https://www.tv-tokyo.co.jp/genre_biz/) [出典](https://twitter.com/jucnag/status/842259402321145856)
 
 ## テストページ
 
@@ -13,9 +13,11 @@
 
 ## 特徴
 
-1. デスクトップ版を表示する、にチェックして UA 偽装されていても正しいブラウザエンジンを取得します。併せて、ユーザーのデスクトップ版を表示して欲しい、という意図も検出します。
-2. ブランドの判定 Android, iOS 用ブラウザでは同一の WebView を使いつつも、アドレスバーの動作等のビューポートの挙動が異なるため、ブランド名を取得します。
-3. `"hoge" in obj` in 構文と `instanceof` を使用していない為、IE4 以降で動作します。併せて、正規表現を使っていない為、モバイル IE4 移行で動作します。 
+1. デスクトップ版を表示する、にチェックして UA 偽装されていても正しいエンジンを取得します。併せて、ユーザーのデスクトップ版を表示して欲しい、という意図も検出します。
+    * 参照 [『「デスクトップ版を表示する」にチェックを付けると平然とUAを偽装するAndroid用標準ブラウザの判定をムキになってしてみます』](//outcloud.blogspot.com/2017/10/uaDetector.html)
+2. Android, iOS 用ブラウザでは同一の WebView を使いつつも、アドレスバーの動作等のビューポートの挙動が異なるため、ブランド名を取得します。
+    * 参照 [尋常でないレベルでブラウザを判定するライブラリ、what-browser-am-iをnpmに公開しました](//outcloud.blogspot.com/2020/08/what-browser-am-i.html)
+3. `"hoge" in obj` in 構文と `instanceof` を使用していない為、IE4 以降で動作します。併せて、正規表現を使っていない為、モバイル IE4 以降で動作します。 
 
 ## プロパティ
 
@@ -29,7 +31,7 @@
 | BRAND_VERSION    | string \| object |               |
 | DEVICE           | string           |               |
 | DEVICE_VERSION   | string \| object |               |
-| PCSITE_MODE      | boolean          | true          |
+| PCSITE_REQUESTED | boolean          | true          |
 | DEVICE_TYPE      | number           |               |
 
 ## How to build
@@ -52,12 +54,12 @@ gulp docs
 
 ### build options 
 
-| property                                     | data type | default value |
-|:---------------------------------------------|:----------|:--------------|
-| WHAT_BROWSER_AM_I_DEFINE_BRAND_ENABLED       | boolean   | true          |
-| WHAT_BROWSER_AM_I_DEFINE_PCSITE_MODE_ENABLED | boolean   | true          |
-| WHAT_BROWSER_AM_I_DEFINE_IOS_DEVICE_ENABLED  | boolean   | true          |
-| WHAT_BROWSER_AM_I_DEFINE_DEVICE_TYPE_ENABLED | boolean   | true          |
+| property                                          | data type | default value |
+|:--------------------------------------------------|:----------|:--------------|
+| WHAT_BROWSER_AM_I_DEFINE_BRAND_ENABLED            | boolean   | true          |
+| WHAT_BROWSER_AM_I_DEFINE_PCSITE_REQUESTED_ENABLED | boolean   | true          |
+| WHAT_BROWSER_AM_I_DEFINE_IOS_DEVICE_ENABLED       | boolean   | true          |
+| WHAT_BROWSER_AM_I_DEFINE_DEVICE_TYPE_ENABLED      | boolean   | true          |
 
 ## links
 

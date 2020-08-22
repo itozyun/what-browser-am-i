@@ -54,7 +54,7 @@ if( strPlatform === 'Nintendo WiiU' ){
     // platform始めUA以外のnavigatorのプロパティはいずれの場合も変更されない。
     versionWebKit    = getVersionString( strAppVersion, 'AppleWebKit/' ); // 534:2.1.0J - 3.1.0J, 536:4.0.0J - 
     deviceTypeIsGame = true;
-    // TODO isPcSiteMode
+    // TODO isPcSiteRequested
 } else
 /*----------------------------------------------------------------------------//
  *  Wii
@@ -141,7 +141,7 @@ if( appVersion === 2 && findString( strUserAgent, 'Sony/COM2/' ) ){
 /*----------------------------------------------------------------------------//
  *  iOS
  */
-if( fromString( strPlatform, 'iP' ) || versioniOSWithUC || versioniOSWithPuffin || is_iPadOsPcSiteMode ){
+if( fromString( strPlatform, 'iP' ) || versioniOSWithUC || versioniOSWithPuffin || is_iPadOsPcSiteRequested ){
     if( versioniOSWithPuffin ){
         platformVersion = versioniOSWithPuffin;
         switch( puffinDeviceModel.substr( 0, 4 ) ){
@@ -172,7 +172,7 @@ if( fromString( strPlatform, 'iP' ) || versioniOSWithUC || versioniOSWithPuffin 
             is_iOSBrave      = inObject( 'sameOrigin', window );
         };
 
-        if( !platformVersion ) isPcSiteMode = true;
+        if( !platformVersion ) isPcSiteRequested = true;
 
         if( !platformVersion || isSleipnir_iOS ){ // Sleipnir は嘘のバージョンがUA文字列に設定されている
             platformVersion =
@@ -205,7 +205,7 @@ if( fromString( strPlatform, 'iP' ) || versioniOSWithUC || versioniOSWithPuffin 
             device            = 'iPhone';
             deviceVersion     = v ? ( dpRatio ? { max : 3 } : { min : 4, max : 5 } ) : { max : 6 };
             deviceTypeIsPhone = true;
-        } else if( fromString( strPlatform, 'iPad' ) || is_iPadOsPcSiteMode ){ // iPad or iPad Simulator
+        } else if( fromString( strPlatform, 'iPad' ) || is_iPadOsPcSiteRequested ){ // iPad or iPad Simulator
             device             = 'iPad';
             deviceVersion      = dpRatio ? { max : 2 } : { min : 3 }; 
             deviceTypeIsTablet = true;
@@ -217,15 +217,13 @@ if( fromString( strPlatform, 'iP' ) || versioniOSWithUC || versioniOSWithPuffin 
     };
 
     if( !versioniOSWithPuffin && // iPad iOS12.2 Puffin5.2.2 で fullscreenEnabled が存在の模様
-        //!is_iOSOperaTurbo && !is_iOSDolphin &&
-        //!versioniOSWithUC && !versionEdgiOS && !versionFxiOS && !versionFocus && 
         // ホーム画面から起動したWebページは navigator.standalone === true になっている。fullscreen API は無い。
         ( navigator.standalone ||
         // https://github.com/uupaa/WebApp2/blob/master/app/assets/modules/UserAgent.js
         // _isWebView_iOS(options)
         // iPhone 13 で fullscreenEnabled の判定が出来ない.
         // https://caniuse.com/#feat=fullscreen によると、iOS は12からなので、fullscreenEnabled による Safari/WebView の判定は 11 迄は動いたと仮定する
-            ( ( deviceTypeIsTablet || platformVersion < 12 ) && ( /* inObject( 'fullscreenEnabled', document ) || */ inObject( 'webkitFullscreenEnabled', document ) ) ) ||
+            ( ( deviceTypeIsTablet || platformVersion < 12 ) && inObject( 'webkitFullscreenEnabled', document ) ) ||
             ( 11 <= platformVersion && platformVersion < 13 && navigator.mediaDevices ) // 12迄は mediaDevices は Safari だけだった。
         )
     ){
@@ -342,7 +340,7 @@ if( strVersion = getVersionString( strUserAgent, 'Windows Phone ' ) || getVersio
     isWindowsPhone    = true;
     platformVersion   = 10;
     deviceTypeIsPhone = true;
-    isPcSiteMode      = true;
+    isPcSiteRequested      = true;
 } else if( isTrident && findString( strAppVersion, 'ZuneWP' ) ){ // ZuneWP はデスクトップモードで登場する
     isWindowsPhone    = true;
     platformVersion   = versionTrident === 11 ? 8.1 :
@@ -350,7 +348,7 @@ if( strVersion = getVersionString( strUserAgent, 'Windows Phone ' ) || getVersio
                         versionTrident ===  9 ? 7.5 :
                         versionTrident ===  7 ? 7   : '?';
     deviceTypeIsPhone = true;
-    isPcSiteMode      = true;
+    isPcSiteRequested = true;
 } else
 /*----------------------------------------------------------------------------//
  *  Feature Phone
@@ -469,11 +467,11 @@ if( strVersion = getVersionString( strUserAgent, 'Kindle/' ) ){
  *  FireTV
  */
 if( isFirefoxForFireTV ){
-    isFireOS        = true;
-    platformVersion = versionAndroid || versionFireOSForFirefoxPcSiteMode;
-    deviceTypeIsTV  = true;
-    isAndroidBased  = true;
-    isPcSiteMode    = versionFireOSForFirefoxPcSiteMode;
+    isFireOS          = true;
+    platformVersion   = versionAndroid || versionFireOSForFirefoxPcSiteRequested;
+    deviceTypeIsTV    = true;
+    isAndroidBased    = true;
+    isPcSiteRequested = versionFireOSForFirefoxPcSiteRequested;
 // https://developer.amazon.com/ja/docs/fire-tv/user-agent-strings.html
 } else if( findString( strUserAgent, 'AmazonWebAppPlatform' ) || findString( strUserAgent, '; AFT' ) ){
     isFireOS        = true;
@@ -573,7 +571,7 @@ if( isAndroid && isGecko ){
     };
 
     platformVersion = v;
-    if( maybePCMode ) isPcSiteMode = true;
+    if( maybePCMode ) isPcSiteRequested = true;
 } else
 /*----------------------------------------------------------------------------//
  *  Android Presto
@@ -583,7 +581,7 @@ if( isAndroid && isPresto ){
         v = versionAndroid;
     } else {
         v = { min : 1.6 };
-        isPcSiteMode = true;
+        isPcSiteRequested = true;
     };
     platformVersion = v;
     if( findString( strUserAgent, 'Tablet' ) ){
@@ -600,13 +598,13 @@ if( versionAndroid ){
     isAndroid       = true;
 } else
 /*----------------------------------------------------------------------------//
- *  Android PCSITE_MODE
+ *  Android PCSITE_REQUESTED
  */
 if( maybeLinux && maybePCMode || maybeLunascapeAndroid || isSleipnirAndroid ){
     // https://ja.wikipedia.org/wiki/WebKit
     // http://www.au.kddi.com/developer/android/kishu/ua/
     // webkit version to Android version...
-    surelyPcSiteMode = true;
+    surelyPcSiteRequested = true;
     // AOSP の判定は Version/ の有無. 但し「デスクトップ版で見る」場合、Version/ が居なくなる...
     // PC版で見る、にチェックが付いている場合、ユーザーエージェント文字列にも platform にも Android の文字列が存在しない(標準ブラウザ&Chrome)
     // Audio でタッチが必要か？の判定にとても困る...
@@ -648,12 +646,12 @@ if( maybeLinux && maybePCMode || maybeLunascapeAndroid || isSleipnirAndroid ){
     isAndroid       = true;
 } else
 /*----------------------------------------------------------------------------//
- *  Android 5 ChromeWebView PCSITE_MODE
+ *  Android 5 ChromeWebView PCSITE_REQUESTED
  */
 if( maybeChromeWebView ){
-    platformVersion  = { min : 5 };
-    isAndroid        = true;
-    surelyPcSiteMode = true;
+    platformVersion       = { min : 5 };
+    isAndroid             = true;
+    surelyPcSiteRequested = true;
 } else
 /*----------------------------------------------------------------------------//
  *  Linux
@@ -674,7 +672,7 @@ if( maybeLinux ){
     };
 };
 
-if( isFireOS || ( isAndroid && surelyPcSiteMode && versionSilk ) ){ // Silk & android & pcmode の場合、FireOS
+if( isFireOS || ( isAndroid && surelyPcSiteRequested && versionSilk ) ){ // Silk & android & pcmode の場合、FireOS
     platform = 'FireOS';
 } else if( isAndroid ){
     platform = platform || 'Android';
