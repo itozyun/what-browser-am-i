@@ -1,5 +1,5 @@
 /*
- Copyright 2020 itozyun, https://github.com/itozyun/what-browser-am-i, ISC */
+ Copyright 2020 itozyun, https://github.com/itozyun/what-browser-am-i, MIT License. */
 whatBrowserAmI={};
 (function(r,m,N,O,Ia,H,Ja,Cb){function ba(k,t){var u=H(k.split(t)[1]);return 0<=u?u:0}function f(k,t){return 0<=k.indexOf(t)}function Ka(k){return f(k,"Linux armv")||f(k,"Linux aarch")||f(k,"Linux i686")||f(k,"Linux x86_64")}function ca(k,t){for(var u in t)if(u===k)return!0}function c(k,t){var u="",D=-1,I;if(k=k.split(t)[1]){for(;I=k.charCodeAt(++D);)if(48<=I&&57>=I||46===I)u+=k.charAt(D);else break;for(D=u.length;D;)if(46===u.charCodeAt(--D))u=u.substr(0,D);else break}return u}function La(k,t){var u=
 0,D;k=k.split(".");t=t.split(".");for(D=Math.min(k.length,t.length);u<D;++u){var I=H(k[u]),Ma=H(t[u]);if(I!==Ma)return I>Ma?1:-1}return k.length===t.length?0:k.length>t.length?1:-1}function Na(){for(var k=arguments,t=1,u=k.length,D=k[0],I;t<u;++t)0>La(D,I=k[t])&&(D=I);return D}function da(k){return k===k+""?k:k===k-0?""+k:k.min&&k.max?k.min+"~"+k.max:k.min?k.min+"~":"~"+k.max}function ea(k){return k===k+""?H(k):k}var l,n,a=O.userAgent,q=O.appVersion,ra=H(q)|0,p=O.platform,sa=N.documentElement,Oa=

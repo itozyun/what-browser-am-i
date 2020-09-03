@@ -6,7 +6,7 @@ const gulp            = require('gulp'),
       tempJsName      = 'temp.js',
       tempDir         = require('os').tmpdir() + '/' + moduleName,
       globalVariables = 'document,navigator,screen,parseFloat,Number',
-      copyright       = '@preserve Copyright 2020 itozyun, https://github.com/itozyun/what-browser-am-i, ISC';
+      copyright       = '@preserve Copyright 2020 itozyun, https://github.com/itozyun/what-browser-am-i, MIT License.';
 
       gulp.task('dist', gulp.series(
         function(){
