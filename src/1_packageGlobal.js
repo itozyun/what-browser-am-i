@@ -102,9 +102,37 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
 
     verVersion    = getVersionString( strAppVersion, 'Version/' ) || getVersionString( strUserAgent, 'Version/' ),
 
+    /*
+     * http://help.dottoro.com/ljifbjwf.php
+     * version method (opera)
+     *   window.opera.buildNumber();
+     *   window.opera.version();
+     * 
+     * kQuery.js
+     *   opera.versionは8から実装
+     */
+    isPresto      = !hasOperaMiniObject && window.opera,
+    versionPresto = isPresto && (
+        ( isPresto.version && typeof isPresto.version === 'function' ) ? isPresto.version() : max( getVersionString( strUserAgent, 'Opera ' ), verVersion, '' + appVersion )
+    ),
+    hasOPRObject  = window.opr, // 全ての Blink Opera に存在するわけではない？
+
+    isTrident      = !isPresto && ( document.all || docMode ), // IE11 には .all が居ない .docMode == 11
+    versionTrident = isTrident && (
+        docMode               ? docMode :
+        window.XMLHttpRequest ? ( document.getElementsByTagName ? 7 : 4 ) :
+        document.compatMode   ? 6   :
+        (0).toFixed           ? 5.5 :
+        window.attachEvent    ? 5   : 4 ),
+ 
+    isEdgeHTML      = !isTrident && html.msContentZoomFactor,
+
+    hasChromeObject = !isEdgeHTML && window.chrome, // AOSP 4.1 にもいる！
+
     // https://www.fxsitecompat.com/ja/docs/2017/moz-appearance-property-has-been-removed/
     // -moz-appearance プロパティが廃止されました -> 更新: この変更は Firefox 54 で予定されていましたが、延期されました。
-    isGecko = htmlStyle.MozAppearance !== undefined, // window.Components
+    isGecko = !isTrident && // ie4 でエラーになる為
+                  htmlStyle.MozAppearance !== undefined, // window.Components
 
     /*
      * http://qiita.com/takanamito/items/8c2b6bc24ea01381f1b5#_reference-8eedaa6525b73cd272b7
@@ -133,33 +161,6 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
 
     // https://www.bit-hive.com/articles/20190820
     is_iPadOsPcSiteRequested = strPlatform === 'MacIntel' && navigator.standalone !== undefined,
-
-    /*
-     * http://help.dottoro.com/ljifbjwf.php
-     * version method (opera)
-     *   window.opera.buildNumber();
-     *   window.opera.version();
-     * 
-     * kquery.js
-     *   opera.versionは8から実装
-     */
-    isPresto      = !hasOperaMiniObject && window.opera,
-    versionPresto = isPresto && (
-        ( isPresto.version && typeof isPresto.version === 'function' ) ? isPresto.version() : max( getVersionString( strUserAgent, 'Opera ' ), verVersion, '' + appVersion )
-    ),
-    hasOPRObject  = window.opr, // 全ての Blink Opera に存在するわけではない？
-
-    isTrident      = !isPresto && ( document.all || docMode ), // IE11 には .all が居ない .docMode == 11
-    versionTrident = isTrident && (
-        docMode               ? docMode :
-        window.XMLHttpRequest ? ( document.getElementsByTagName ? 7 : 4 ) :
-        document.compatMode   ? 6 :
-        (0).toFixed           ? 5.5 :
-        window.attachEvent    ? 5 : 4 ),
- 
-    isEdgeHTML  = !isTrident && html.msContentZoomFactor,
-
-    hasChromeObject = !isEdgeHTML && window.chrome, // AOSP 4.1 にもいる！
 
 // https://developers.whatismybrowser.com/useragents/parse/987005-pale-moon-windows-goanna
 // TODO Goanna/20161201 になっている時がある…
