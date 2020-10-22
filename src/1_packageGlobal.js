@@ -74,9 +74,9 @@ function conpareVersionString( v1, v2 ){
  * @return {string}
  */
 function max(){
-    var args = arguments, i = 1, l = args.length, max = args[ 0 ], v;
+    var args = arguments, i = 1, max = args[ 0 ], v;
     
-    for( ; i < l; ++i ){
+    for( ; i < args.length; ++i ){
         if( conpareVersionString( max, v = args[ i ] ) < 0 ) max = v;
     };
     return max;
@@ -86,7 +86,7 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     
     strUserAgent  = navigator.userAgent,
     strAppVersion = navigator.appVersion,
-    appVersion    = parseFloat( strAppVersion ) | 0,
+    appVersion    = parseFloat( strAppVersion ) || 0,
     strPlatform   = navigator.platform,
 
     html          = document.documentElement,
