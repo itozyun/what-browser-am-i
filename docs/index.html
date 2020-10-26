@@ -218,6 +218,8 @@ t[l]=ea(n)):t[l]=!0,d||(d=l,e=n));d&&(t.BRAND=d,e?(t.BRAND_VERSION=da(e),t[d]=ea
                 if( prop !== ua ){
                     if( k === 'external' && ua.Trident < 5 ){
                         k = { k : k, v : prop };
+                    } else if( ( k === 'Packages' || k === 'sun' || k === 'java' || k === 'globalStorage' ) && ua.Gecko < 1.9 ){ // NN9 で for in ループを回すとエラー
+                        k = { k : k, v : prop };
                     } else if( ( k === 'localStorage' || k === 'sessionStorage' ) && ua.Gecko < 1.9 ){ // NN9 で for in ループを回すとエラー
                         k = { k : k, v : prop };
                     } else if( prop && ( 0 < ' object function'.indexOf( typeof prop ) ) ){
@@ -237,7 +239,7 @@ t[l]=ea(n)):t[l]=!0,d||(d=l,e=n));d&&(t.BRAND=d,e?(t.BRAND_VERSION=da(e),t[d]=ea
     ary.sort();
 
     for( var i = -1, k; k = ary[ ++i ]; ){
-        var c = ( ( k && k.k ) || k || '' ).charAt( 0 ).toLowerCase();
+        var c = ( ( k && k.k ) || ( typeof k === 'string' ? k : '' ) ).charAt( 0 ).toLowerCase();
 
         if( 'a'.charCodeAt( 0 ) > c.charCodeAt( 0 ) || c.charCodeAt( 0 ) > 'z'.charCodeAt( 0 ) ){
             c = '-';
