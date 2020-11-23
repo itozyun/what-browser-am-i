@@ -7,6 +7,8 @@ var ua = {};
  * @type {Object}
  */
 var UserAgentObject = {
+    conpare : function(){},
+
     ENGINE           : '',
     ENGINE_VERSION   : '',
     PLATFORM         : '',

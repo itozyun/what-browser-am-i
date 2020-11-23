@@ -41,6 +41,15 @@ console.log(whatBrowserAmI[whatBrowserAmI.ENGINE]); // 8
 </script>
 ~~~
 
+## メソッド
+
+### conpare
+
+~~~js
+if(whatBrowserAmI.ENGINE === 'Gecko')
+    isFirefoxGle35 = 0 <= whatBrowserAmI.conpare(whatBrowserAmI.ENGINE_VERSION, '1.9.1'); // Firefox 3.5<=
+~~~
+
 ## プロパティ
 
 | property         | data type        | example       |
@@ -77,6 +86,7 @@ gulp docs
 
 | property                                          | data type | default value |
 |:--------------------------------------------------|:----------|:--------------|
+| WHAT_BROWSER_AM_I_DEFINE_EXPORT_COMPARE_FUNCTION  | boolean   | true          |
 | WHAT_BROWSER_AM_I_DEFINE_BRAND_ENABLED            | boolean   | true          |
 | WHAT_BROWSER_AM_I_DEFINE_PCSITE_REQUESTED_ENABLED | boolean   | true          |
 | WHAT_BROWSER_AM_I_DEFINE_IOS_DEVICE_ENABLED       | boolean   | true          |

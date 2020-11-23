@@ -1,5 +1,7 @@
 var
     /** @define {boolean} */
+    WHAT_BROWSER_AM_I_DEFINE_EXPORT_COMPARE_FUNCTION  = true,
+    /** @define {boolean} */
     WHAT_BROWSER_AM_I_DEFINE_BRAND_ENABLED            = true,
     /** @define {boolean} */
     WHAT_BROWSER_AM_I_DEFINE_PCSITE_REQUESTED_ENABLED = true,

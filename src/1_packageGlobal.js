@@ -50,23 +50,24 @@ function getVersionString( strTarget, strStart ){
 };
 
 function conpareVersionString( v1, v2 ){
-	var i = 0,
-		l, n1, n2;
-	
-	v1 = v1.split( '.' );
-	v2 = v2.split( '.' );	
-	
-	l = Math.min( v1.length, v2.length );
+    var i = 0,
+        l1, l2,
+        l, n1, n2;
 
-	for( ; i < l; ++i ){
-		n1 = parseFloat( v1[ i ] );
-		n2 = parseFloat( v2[ i ] );
-		if( n1 !== n2 ){
-			return n1 > n2 ? 1 : -1;
-		};
-	};
-	if( v1.length === v2.length ) return 0;
-	return v1.length > v2.length ? 1 : -1;
+    v1 = v1.split( '.' );
+    v2 = v2.split( '.' );
+    l1 = v1.length;
+    l2 = v2.length;
+    l  = l1 < l2 ? l1 : l2;
+
+    for( ; i < l; ++i ){
+        n1 = v1[ i ] - 0;
+        n2 = v2[ i ] - 0;
+        if( n1 !== n2 ){
+            return n1 > n2 ? 1 : -1;
+        };
+    };
+    return l1 > l2 ? 1 : l1 === l2 ? 0 : -1;
 };
 
 /**
