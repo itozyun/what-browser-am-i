@@ -24,7 +24,8 @@ if( WHAT_BROWSER_AM_I_DEFINE_EXPORT_COMPARE_FUNCTION ){
     conpareVersionString = '' + conpareVersionString;
     ua.conpare = new Function(
         conpareVersionString.substring( conpareVersionString.indexOf( '(' ) + 1, conpareVersionString.indexOf( ')' ) ),
-        conpareVersionString.substring( conpareVersionString.indexOf( '{' ) + 1, conpareVersionString.length - 1 )
+        conpareVersionString.substring( conpareVersionString.indexOf( '{' ) + 1, conpareVersionString.lastIndexOf( '}' ) - 1 )
+        // conpareVersionString.length - 1 では Opera 8 でエラー
     );
 };
 
