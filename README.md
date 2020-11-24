@@ -86,7 +86,6 @@ gulp docs
 
 | property                                          | data type | default value |
 |:--------------------------------------------------|:----------|:--------------|
-| WHAT_BROWSER_AM_I_DEFINE_EXPORT_COMPARE_FUNCTION  | boolean   | true          |
 | WHAT_BROWSER_AM_I_DEFINE_BRAND_ENABLED            | boolean   | true          |
 | WHAT_BROWSER_AM_I_DEFINE_PCSITE_REQUESTED_ENABLED | boolean   | true          |
 | WHAT_BROWSER_AM_I_DEFINE_IOS_DEVICE_ENABLED       | boolean   | true          |

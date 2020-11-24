@@ -19,16 +19,6 @@ function toValue( v ){
     return v;
 };
 
-if( WHAT_BROWSER_AM_I_DEFINE_EXPORT_COMPARE_FUNCTION ){
-    // このクロージャへの参照を残さないように、グローバルで定義し直す。
-    conpareVersionString = '' + conpareVersionString;
-    ua.conpare = new Function(
-        conpareVersionString.substring( conpareVersionString.indexOf( '(' ) + 1, conpareVersionString.indexOf( ')' ) ),
-        conpareVersionString.substring( conpareVersionString.indexOf( '{' ) + 1, conpareVersionString.lastIndexOf( '}' ) - 1 )
-        // conpareVersionString.length - 1 では Opera 8 でエラー
-    );
-};
-
 if( platform ){
     ua.PLATFORM = platform;
     if( platformVersion ){

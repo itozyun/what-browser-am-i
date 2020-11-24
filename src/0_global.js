@@ -1,7 +1,5 @@
 var
     /** @define {boolean} */
-    WHAT_BROWSER_AM_I_DEFINE_EXPORT_COMPARE_FUNCTION  = true,
-    /** @define {boolean} */
     WHAT_BROWSER_AM_I_DEFINE_BRAND_ENABLED            = true,
     /** @define {boolean} */
     WHAT_BROWSER_AM_I_DEFINE_PCSITE_REQUESTED_ENABLED = true,
@@ -18,3 +16,26 @@ var
     WHAT_BROWSER_AM_I_DEVICE_TYPE_TV           = 6,
     WHAT_BROWSER_AM_I_DEVICE_TYPE_GAME         = 7,
     WHAT_BROWSER_AM_I_DEVICE_TYPE_PDA          = 8;
+
+    // 続くクロージャへの参照を残さないように、global.js で定義する。
+    ua.conpare = function( v1, v2 ){
+        var i = 0,
+            l1, l2,
+            l, n1, n2;
+
+        v1 = v1.split( '.' );
+        v2 = v2.split( '.' );
+        l1 = v1.length;
+        l2 = v2.length;
+        l  = l1 < l2 ? l1 : l2;
+    
+        for( ; i < l; ++i ){
+            n1 = v1[ i ] - 0;
+            n2 = v2[ i ] - 0;
+            if( n1 !== n2 ){
+                return n1 > n2 ? 1 : -1;
+            };
+        };
+        return l1 > l2 ? 1 : l1 === l2 ? 0 : -1;
+    };
+    

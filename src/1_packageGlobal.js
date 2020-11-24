@@ -49,27 +49,6 @@ function getVersionString( strTarget, strStart ){
     return ret;
 };
 
-function conpareVersionString( v1, v2 ){
-    var i = 0,
-        l1, l2,
-        l, n1, n2;
-
-    v1 = v1.split( '.' );
-    v2 = v2.split( '.' );
-    l1 = v1.length;
-    l2 = v2.length;
-    l  = l1 < l2 ? l1 : l2;
-
-    for( ; i < l; ++i ){
-        n1 = v1[ i ] - 0;
-        n2 = v2[ i ] - 0;
-        if( n1 !== n2 ){
-            return n1 > n2 ? 1 : -1;
-        };
-    };
-    return l1 > l2 ? 1 : l1 === l2 ? 0 : -1;
-};
-
 /**
  * @param {...string}
  * @return {string}
@@ -85,6 +64,8 @@ function max(){
 
 var engine, engineVersion, platform, platformVersion, brand, brandVersion, device, deviceVersion,
     
+    conpareVersionString = ua.conpare,
+
     strUserAgent  = navigator.userAgent,
     strAppVersion = navigator.appVersion,
     appVersion    = parseFloat( strAppVersion ) || 0,
@@ -103,6 +84,11 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
 
     verVersion    = getVersionString( strAppVersion, 'Version/' ) || getVersionString( strUserAgent, 'Version/' ),
 
+    /*
+     * http://qiita.com/takanamito/items/8c2b6bc24ea01381f1b5#_reference-8eedaa6525b73cd272b7
+     * インドネシアの特殊なブラウザ事情(Opera Mini,UC Browser Mini)
+     */
+    hasOperaMiniObject = window.operamini, // iOS Opera Mini には .operamini が無い. iOS 12.2 Opera Mini 16.0.14
     /*
      * http://help.dottoro.com/ljifbjwf.php
      * version method (opera)
@@ -134,12 +120,6 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     // -moz-appearance プロパティが廃止されました -> 更新: この変更は Firefox 54 で予定されていましたが、延期されました。
     isGecko = !isTrident && // ie4 でエラーになる為
                   htmlStyle.MozAppearance !== undefined, // window.Components
-
-    /*
-     * http://qiita.com/takanamito/items/8c2b6bc24ea01381f1b5#_reference-8eedaa6525b73cd272b7
-     * インドネシアの特殊なブラウザ事情(Opera Mini,UC Browser Mini)
-     */
-    hasOperaMiniObject = window.operamini, // iOS Opera Mini には .operamini が無い. iOS 12.2 Opera Mini 16.0.14
 
     isUCWEB      = findString( strUserAgent, 'UCWEB' ),
     versionUCWEB = isUCWEB && getVersionString( strUserAgent, ' U2/' ),

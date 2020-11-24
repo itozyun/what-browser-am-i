@@ -1,17 +1,28 @@
 const gulp            = require('gulp'),
+      gulpDPZ         = require('gulp-diamond-princess-zoning'),
       ClosureCompiler = require('google-closure-compiler').gulp(),
       Cheerio         = require('gulp-cheerio'),
       externsJs       = './src/__externs.js',
       moduleName      = 'what-browser-am-i',
       tempJsName      = 'temp.js',
       tempDir         = require('os').tmpdir() + '/' + moduleName,
-      globalVariables = 'document,navigator,screen,parseFloat,Number',
+      globalVariables = 'ua,window,document,navigator,screen,parseFloat,Number',
       copyright       = '@preserve Copyright 2020 itozyun, https://github.com/itozyun/what-browser-am-i, MIT License.';
 
       gulp.task('dist', gulp.series(
         function(){
             return gulp.src( [ './src/**.js', '!' + externsJs ] )
                 .pipe(
+                    gulpDPZ(
+                        {
+                            labelGlobal        : 'global',
+                            labelPackageGlobal : '###',
+                            labelModuleGlobal  : '###',
+                            packageGlobalArgs  : globalVariables,
+                            basePath           : 'src'
+                        }
+                    )
+                ).pipe(
                     ClosureCompiler(
                         {
                             externs           : [ externsJs ],
@@ -21,7 +32,7 @@ const gulp            = require('gulp'),
                             language_out      : 'ECMASCRIPT3',
                             output_wrapper    :
                                 '/** ' + copyright + ' */' +
-                                'whatBrowserAmI={};(function(ua,window,' + globalVariables + ',undefined){\n%output%\n})(whatBrowserAmI,this,' + globalVariables + ')',
+                                'whatBrowserAmI={};(function(ua){\n%output%\n})(whatBrowserAmI)',
                             js_output_file    : '_' + tempJsName
                         }
                     )
@@ -41,6 +52,16 @@ const gulp            = require('gulp'),
         function(){
             return gulp.src( [ './src/**.js', '!' + externsJs ] )
                 .pipe(
+                    gulpDPZ(
+                        {
+                            labelGlobal        : 'global',
+                            labelPackageGlobal : '###',
+                            labelModuleGlobal  : '###',
+                            packageGlobalArgs  : globalVariables,
+                            basePath           : 'src'
+                        }
+                    )
+                ).pipe(
                     ClosureCompiler(
                         {
                             externs           : [ externsJs ],
@@ -50,7 +71,7 @@ const gulp            = require('gulp'),
                             language_out      : 'ECMASCRIPT3',
                             output_wrapper    :
                                 '/** ' + copyright + ' */' +
-                                'var ua={};(function(ua,window,' + globalVariables + ',undefined){\n%output%\n})(ua,this,' + globalVariables + ');' +
+                                'var ua={};\n%output%\n' +
                                 'module.export=ua;',
                             js_output_file    : '_' + tempJsName
                         }
@@ -74,6 +95,16 @@ gulp.task('docs', gulp.series(
     function(){
         return gulp.src( [ './src/**.js', '!' + externsJs ] )
             .pipe(
+                gulpDPZ(
+                    {
+                        labelGlobal        : 'global',
+                        labelPackageGlobal : '###',
+                        labelModuleGlobal  : '###',
+                        packageGlobalArgs  : globalVariables,
+                        basePath           : 'src'
+                    }
+                )
+            ).pipe(
                 ClosureCompiler(
                     {
                         externs           : [ externsJs ],
@@ -81,7 +112,7 @@ gulp.task('docs', gulp.series(
                         warning_level     : 'VERBOSE',
                         language_in       : 'ECMASCRIPT3',
                         language_out      : 'ECMASCRIPT3',
-                        output_wrapper    : 'ua={};(function(ua,window,' + globalVariables + ',undefined){\n%output%\n})(ua,this,' + globalVariables + ')',
+                        output_wrapper    : 'ua={};\n%output%\n',
                         js_output_file    : '_' + tempJsName
                     }
                 )
