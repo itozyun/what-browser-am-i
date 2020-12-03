@@ -119,8 +119,12 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     // https://www.fxsitecompat.com/ja/docs/2017/moz-appearance-property-has-been-removed/
     // -moz-appearance プロパティが廃止されました -> 更新: この変更は Firefox 54 で予定されていましたが、延期されました。
     isGecko = !isTrident && // ie4 でエラーになる為
-                  htmlStyle.MozAppearance !== undefined, // window.Components
-
+                  (function( k ){
+                      for( k in htmlStyle ){
+                          if( fromString( k, 'Moz' ) ) return true;
+                      };
+                  })(),
+                  // htmlStyle.MozAppearance !== undefined, // window.Components
     isUCWEB      = findString( strUserAgent, 'UCWEB' ),
     versionUCWEB = isUCWEB && getVersionString( strUserAgent, ' U2/' ),
     // https://developers.whatismybrowser.com/useragents/parse/244780-uc-browser-windows
@@ -146,7 +150,10 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
 // https://developers.whatismybrowser.com/useragents/parse/987005-pale-moon-windows-goanna
 // TODO Goanna/20161201 になっている時がある…
     versionGoanna  = isGecko && getVersionString( strUserAgent, 'Goanna/' ),
-    versionGecko   = !versionGoanna && isGecko && getVersionString( strUserAgent, 'rv:' ),
+    versionGecko   = !versionGoanna && isGecko && (
+                         getVersionString( strUserAgent, 'rv:' ) ||
+                         getVersionString( strUserAgent.substr( strUserAgent.indexOf( ') Gecko/' ) - 11 ), '; ' ) // for Gecko ~0.8.1
+                     ),
     versionFirefox = getVersionString( strUserAgent, 'Firefox/' ), // Android9 + Firefox67.0 + PC_MOEDE で rv: が存在しない！
     versionOpera   = getVersionString( strUserAgent, 'Opera/' ),
     isSleipnir_iOS = window.FNRBrowser,
