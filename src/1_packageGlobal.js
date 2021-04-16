@@ -100,7 +100,7 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
      */
     isPresto      = !hasOperaMiniObject && window.opera,
     versionPresto = isPresto && (
-        ( isPresto.version && typeof isPresto.version === 'function' ) ? isPresto.version() : max( getVersionString( strUserAgent, 'Opera ' ), verVersion, '' + appVersion )
+        ( isPresto.version && typeof isPresto.version === 'function' ) ? isPresto.version() : max( getVersionString( strUserAgent, 'Opera ' ), verVersion, appVersion )
     ),
     hasOPRObject  = window.opr, // 全ての Blink Opera に存在するわけではない？
 

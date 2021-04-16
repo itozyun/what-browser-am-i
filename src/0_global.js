@@ -23,10 +23,16 @@ var
             l1, l2,
             l, n1, n2;
 
-        v1 = v1.split( '.' );
-        v2 = v2.split( '.' );
+        v1 = ( v1 + '' ).split( '.' );
+        v2 = ( v2 + '' ).split( '.' );
         l1 = v1.length;
         l2 = v2.length;
+        while( v1[ l1 - 1 ] === '0' ){
+            --l1;
+        };
+        while( v2[ l2 - 1 ] === '0' ){
+            --l2;
+        };
         l  = l1 < l2 ? l1 : l2;
     
         for( ; i < l; ++i ){
