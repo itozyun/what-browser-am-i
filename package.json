@@ -16,6 +16,6 @@
     "google-closure-compiler": "^20200719.0.0",
     "gulp": "^4.0.2",
     "gulp-cheerio": "^1.0.0",
-    "gulp-diamond-princess-zoning": "^0.9.7"
+    "gulp-diamond-princess-zoning": "^0.9.8"
   }
 }

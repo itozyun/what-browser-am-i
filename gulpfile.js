@@ -2,7 +2,7 @@ const gulp            = require('gulp'),
       gulpDPZ         = require('gulp-diamond-princess-zoning'),
       ClosureCompiler = require('google-closure-compiler').gulp(),
       Cheerio         = require('gulp-cheerio'),
-      externsJs       = './src/__externs.js',
+      externsJs       = './src/js-externs/externs.js',
       moduleName      = 'what-browser-am-i',
       tempJsName      = 'temp.js',
       tempDir         = require('os').tmpdir() + '/' + moduleName,
@@ -11,15 +11,14 @@ const gulp            = require('gulp'),
 
       gulp.task('dist', gulp.series(
         function(){
-            return gulp.src( [ './src/**.js', '!' + externsJs ] )
+            return gulp.src( './src/js/**.js' )
                 .pipe(
                     gulpDPZ(
                         {
                             labelGlobal        : 'global',
-                            labelPackageGlobal : '###',
-                            labelModuleGlobal  : '###',
+                            labelPackageGlobal : '*',
                             packageGlobalArgs  : globalVariables,
-                            basePath           : 'src'
+                            basePath           : './src/js'
                         }
                     )
                 ).pipe(
@@ -47,18 +46,17 @@ const gulp            = require('gulp'),
                         }
                     )
                 )
-                .pipe(gulp.dest( './' ));
+                .pipe(gulp.dest( './dist' ));
         },
         function(){
-            return gulp.src( [ './src/**.js', '!' + externsJs ] )
+            return gulp.src( './src/js/**.js' )
                 .pipe(
                     gulpDPZ(
                         {
                             labelGlobal        : 'global',
-                            labelPackageGlobal : '###',
-                            labelModuleGlobal  : '###',
+                            labelPackageGlobal : '*',
                             packageGlobalArgs  : globalVariables,
-                            basePath           : 'src'
+                            basePath           : './src/js'
                         }
                     )
                 ).pipe(
@@ -87,21 +85,20 @@ const gulp            = require('gulp'),
                         }
                     )
                 )
-                .pipe(gulp.dest( './' ));
+                .pipe(gulp.dest( './dist' ));
         }
     ));
 
 gulp.task('docs', gulp.series(
     function(){
-        return gulp.src( [ './src/**.js', '!' + externsJs ] )
+        return gulp.src( './src/js/**.js' )
             .pipe(
                 gulpDPZ(
                     {
                         labelGlobal        : 'global',
-                        labelPackageGlobal : '###',
-                        labelModuleGlobal  : '###',
+                        labelPackageGlobal : '*',
                         packageGlobalArgs  : globalVariables,
-                        basePath           : 'src'
+                        basePath           : './src/js'
                     }
                 )
             ).pipe(
