@@ -89,13 +89,13 @@ isFirefoxGte35 = whatBrowserAmI.Gecko && 0 <= whatBrowserAmI.conpare(whatBrowser
 
 ### How to build ./index.js and ./whatBrowserAmI.js
 
-~~~bat
+~~~
 gulp dist
 ~~~
 
 ### How to build ./docs/index.html
 
-~~~bat
+~~~
 gulp docs
 ~~~
 
@@ -103,10 +103,10 @@ gulp docs
 
 | property                                          | data type | default value |
 |:--------------------------------------------------|:----------|:--------------|
-| WHAT_BROWSER_AM_I_DEFINE_BRAND_ENABLED            | boolean   | true          |
-| WHAT_BROWSER_AM_I_DEFINE_PCSITE_REQUESTED_ENABLED | boolean   | true          |
-| WHAT_BROWSER_AM_I_DEFINE_IOS_DEVICE_ENABLED       | boolean   | true          |
-| WHAT_BROWSER_AM_I_DEFINE_DEVICE_TYPE_ENABLED      | boolean   | true          |
+| DEFINE_WHAT_BROWSER_AM_I__BRAND_ENABLED            | boolean   | true          |
+| DEFINE_WHAT_BROWSER_AM_I__PCSITE_REQUESTED_ENABLED | boolean   | true          |
+| DEFINE_WHAT_BROWSER_AM_I__IOS_DEVICE_ENABLED       | boolean   | true          |
+| DEFINE_WHAT_BROWSER_AM_I__DEVICE_TYPE_ENABLED      | boolean   | true          |
 
 ## links
 

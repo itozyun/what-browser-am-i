@@ -47,7 +47,7 @@ if( engine ){
     };
 };
 
-if( WHAT_BROWSER_AM_I_DEFINE_BRAND_ENABLED && brand ){
+if( DEFINE_WHAT_BROWSER_AM_I__BRAND_ENABLED && brand ){
     ua.BRAND = brand;
     if( brandVersion ){
         ua.BRAND_VERSION = toVersionString( brandVersion );
@@ -57,7 +57,7 @@ if( WHAT_BROWSER_AM_I_DEFINE_BRAND_ENABLED && brand ){
     };
 };
 
-if( WHAT_BROWSER_AM_I_DEFINE_IOS_DEVICE_ENABLED && device ){
+if( DEFINE_WHAT_BROWSER_AM_I__IOS_DEVICE_ENABLED && device ){
     ua.DEVICE = device;
     if( deviceVersion ){
         ua.DEVICE_VERSION = toVersionString( deviceVersion );
@@ -67,17 +67,17 @@ if( WHAT_BROWSER_AM_I_DEFINE_IOS_DEVICE_ENABLED && device ){
     };
 };
 
-if( WHAT_BROWSER_AM_I_DEFINE_PCSITE_REQUESTED_ENABLED ){
+if( DEFINE_WHAT_BROWSER_AM_I__PCSITE_REQUESTED_ENABLED ){
     if( isPcSiteRequested || is_iPadOsPcSiteRequested ) ua.PCSITE_REQUESTED = true;
 };
 
-if( WHAT_BROWSER_AM_I_DEFINE_DEVICE_TYPE_ENABLED ){
-    ua.DEVICE_TYPE = deviceTypeIsPDA         ? WHAT_BROWSER_AM_I_DEVICE_TYPE_PDA :
-                     deviceTypeIsGame        ? WHAT_BROWSER_AM_I_DEVICE_TYPE_GAME :
-                     deviceTypeIsTV          ? WHAT_BROWSER_AM_I_DEVICE_TYPE_TV   :
-                     deviceTypeIsMediaPlayer ? WHAT_BROWSER_AM_I_DEVICE_TYPE_MEDIA_PLAYER :
-                     deviceTypeIsEBookReader ? WHAT_BROWSER_AM_I_DEVICE_TYPE_EBOOK_READER :
-                     deviceTypeIsPhone       ? WHAT_BROWSER_AM_I_DEVICE_TYPE_PHONE        :
-                     deviceTypeIsTablet      ? WHAT_BROWSER_AM_I_DEVICE_TYPE_TABLET       :
-                     deviceTypeIsPC          ? WHAT_BROWSER_AM_I_DEVICE_TYPE_PC           : 0;
+if( DEFINE_WHAT_BROWSER_AM_I__DEVICE_TYPE_ENABLED ){
+    ua.DEVICE_TYPE = deviceTypeIsPDA         ? WHAT_BROWSER_AM_I__DEVICE_TYPE_PDA :
+                     deviceTypeIsGame        ? WHAT_BROWSER_AM_I__DEVICE_TYPE_GAME :
+                     deviceTypeIsTV          ? WHAT_BROWSER_AM_I__DEVICE_TYPE_TV   :
+                     deviceTypeIsMediaPlayer ? WHAT_BROWSER_AM_I__DEVICE_TYPE_MEDIA_PLAYER :
+                     deviceTypeIsEBookReader ? WHAT_BROWSER_AM_I__DEVICE_TYPE_EBOOK_READER :
+                     deviceTypeIsPhone       ? WHAT_BROWSER_AM_I__DEVICE_TYPE_PHONE        :
+                     deviceTypeIsTablet      ? WHAT_BROWSER_AM_I__DEVICE_TYPE_TABLET       :
+                     deviceTypeIsPC          ? WHAT_BROWSER_AM_I__DEVICE_TYPE_PC           : 0;
 };

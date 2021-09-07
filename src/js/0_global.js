@@ -1,21 +1,21 @@
 var
     /** @define {boolean} */
-    WHAT_BROWSER_AM_I_DEFINE_BRAND_ENABLED            = true,
+    DEFINE_WHAT_BROWSER_AM_I__BRAND_ENABLED            = true,
     /** @define {boolean} */
-    WHAT_BROWSER_AM_I_DEFINE_PCSITE_REQUESTED_ENABLED = true,
+    DEFINE_WHAT_BROWSER_AM_I__PCSITE_REQUESTED_ENABLED = true,
     /** @define {boolean} */
-    WHAT_BROWSER_AM_I_DEFINE_IOS_DEVICE_ENABLED       = true,
+    DEFINE_WHAT_BROWSER_AM_I__IOS_DEVICE_ENABLED       = true,
     /** @define {boolean} */
-    WHAT_BROWSER_AM_I_DEFINE_DEVICE_TYPE_ENABLED      = true,
-    
-    WHAT_BROWSER_AM_I_DEVICE_TYPE_PC           = 1,
-    WHAT_BROWSER_AM_I_DEVICE_TYPE_PHONE        = 2,
-    WHAT_BROWSER_AM_I_DEVICE_TYPE_TABLET       = 3,
-    WHAT_BROWSER_AM_I_DEVICE_TYPE_EBOOK_READER = 4,
-    WHAT_BROWSER_AM_I_DEVICE_TYPE_MEDIA_PLAYER = 5,
-    WHAT_BROWSER_AM_I_DEVICE_TYPE_TV           = 6,
-    WHAT_BROWSER_AM_I_DEVICE_TYPE_GAME         = 7,
-    WHAT_BROWSER_AM_I_DEVICE_TYPE_PDA          = 8;
+    DEFINE_WHAT_BROWSER_AM_I__DEVICE_TYPE_ENABLED      = true,
+
+    WHAT_BROWSER_AM_I__DEVICE_TYPE_PC           = 1,
+    WHAT_BROWSER_AM_I__DEVICE_TYPE_PHONE        = 2,
+    WHAT_BROWSER_AM_I__DEVICE_TYPE_TABLET       = 3,
+    WHAT_BROWSER_AM_I__DEVICE_TYPE_EBOOK_READER = 4,
+    WHAT_BROWSER_AM_I__DEVICE_TYPE_MEDIA_PLAYER = 5,
+    WHAT_BROWSER_AM_I__DEVICE_TYPE_TV           = 6,
+    WHAT_BROWSER_AM_I__DEVICE_TYPE_GAME         = 7,
+    WHAT_BROWSER_AM_I__DEVICE_TYPE_PDA          = 8;
 
     // 続くクロージャへの参照を残さないように、global.js で定義する。
     ua.conpare = function( v1, v2 ){
@@ -44,4 +44,3 @@ var
         };
         return l1 > l2 ? 1 : l1 === l2 ? 0 : -1;
     };
-    
