@@ -340,5 +340,5 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     deviceTypeIsPC,
     versionNetFront, versionNX,
     isMac,
-    isWindowsPhone, isFireOS,
+    isFireOS,
     isAndroidBrowser, isAndroidChromeWebView, isAndroidBased, maybe_iOSWebView, is_iOSOperaTurbo, is_iOSDolphin, is_iOSBrave;

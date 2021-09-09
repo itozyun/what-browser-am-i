@@ -6,10 +6,22 @@
 
 明恵夫人から「熱意が素晴らしい」と聞いていた学園理事長の名前を失念しかける安倍首相 [TV TOKYO](https://www.tv-tokyo.co.jp/genre_biz/), [出典](https://twitter.com/jucnag/status/842259402321145856)
 
-## テストページ
+## Index
 
-* [Test page](https://itozyun.github.io/what-browser-am-i/) (or [bit.ly/39Wvkct](https://bit.ly/39Wvkct))
-* [http version](http://my-http-proxy-856.appspot.com/itozyun.github.io/what-browser-am-i/) (or [bit.ly/3ft54YC](http://bit.ly/3ft54YC))
+1. [特徴](#特徴)
+2. [フォルダ構造](#フォルダ構造)
+3. [テストページ](#テストページ)
+4. [links](#links)
+5. [License](#License)
+6. ビルド済の javascript を使う
+   1. [使用法](dist/README.md#使用法)
+   2. [メソッド](dist/README.md#メソッド)
+   3. [プロパティ](dist/README.md#プロパティ)
+7. テスト・開発・最適化ビルド
+   1. [開発環境を用意する](docs/README.md#開発環境を用意する)
+   2. [what-browser-am-i をサブモジュールとしてプロジェクトに組み込む](docs/README.md#what-browser-am-iをサブモジュールとしてプロジェクトに組み込む)
+      1. [最適化オプションを使ってプロジェクトで使用する](docs/README.md#最適化オプションを使ってプロジェクトで使用する)
+      2. [ビルドオプション](docs/README.md#ビルドオプション)
 
 ## 特徴
 
@@ -17,96 +29,21 @@
     * 参照 [『「デスクトップ版を表示する」にチェックを付けると平然とUAを偽装するAndroid用標準ブラウザの判定をムキになってしてみます』](//outcloud.blogspot.com/2017/10/uaDetector.html)
 2. Android, iOS 用ブラウザでは同一の WebView を使いつつも、アドレスバーの動作等のビューポートの挙動が異なるため、ブランド名を取得します。
     * 参照 [『尋常でないレベルでブラウザを判定するライブラリ、what-browser-am-iをnpmに公開しました』](//outcloud.blogspot.com/2020/08/what-browser-am-i.html)
-3. `"hoge" in obj` in 構文と `instanceof` を使用していない為、IE4 以降で動作します。併せて、正規表現を使っていない為、モバイル IE4 以降で動作します。 
+3. `"hoge" in obj` 構文と `instanceof`, `try{}catch(){}` を使用していない為、IE4 以降で動作します。併せて、正規表現を使っていない為、モバイル IE4 以降で動作します。
 
-## 使用法
+## フォルダ構造
 
-~~~js
-const whatBrowserAmI = require('what-browser-am-i');
+| directories | description          |
+|:------------|:------------------------------|
+| [dist/](dist/README.md)       | ビルド済ファイルを配置しています。 |
+| [docs/](docs/README.md)       | ブラウザ判定実行用の index.html を配置しています。npm パッケージには添付しまん。必要であれば内容は [github pages](https://itozyun.github.io/what-browser-am-i/) で確認します。 |
+| [src/](src/README.md)        | ソースファイル |
+| gulpfile.js |  |
 
-console.log(whatBrowserAmI.ENGINE); // Trident
-console.log(whatBrowserAmI.ENGINE_VERSION); // 8
-console.log(whatBrowserAmI[whatBrowserAmI.ENGINE]); // 8
-~~~
+## テストページ
 
-or
-
-~~~html
-<html>
-<script src="./whatBrowserAmI.js"></script>
-<script>
-console.log(whatBrowserAmI.ENGINE); // Gecko
-console.log(whatBrowserAmI.ENGINE_VERSION); // "1.9.1"
-console.log(whatBrowserAmI[whatBrowserAmI.ENGINE]); // 1.9
-</script>
-~~~
-
-## メソッド
-
-### conpare( v1, v2 )
-
-バージョン番号(文字列)の大小を比較をします。後ろの `0` は無視するので、`"2.0.0"` と `2` はイコールと判定します。
-
-~~~js
-// Firefox 3.5<=
-isFirefoxGte35 = whatBrowserAmI.Gecko && 0 <= whatBrowserAmI.conpare(whatBrowserAmI.ENGINE_VERSION, '1.9.1');
-~~~
-
-#### 引数
-
-| name     | data type        | example          |
-|:---------|:-----------------|:-----------------|
-| v1       | string \| number | `"1.9.1"`, `1.9` |
-| v2       | string \| number | `"1.9.1"`, `1.9` |
-
-#### 戻り値
-
-| value     | description | example               |
-|:----------|:------------|:----------------------|
-| `1`       | v1 > v2     | `"1.9.1"` > `1.9`     |
-| `0`       | v1 == v2    | `"1.9.0"` == `1.9`    |
-| `-1`      | v1 < v2     | `"1.9.1"` < `"1.9.2"` |
-
-## プロパティ
-
-| property         | data type        | example       |
-|:-----------------|:-----------------|:--------------|
-| PLATFORM         | string           |               |
-| PLATFORM_VERSION | string \| object |               |
-| ENGINE           | string           |               |
-| ENGINE_VERSION   | string \| object |               |
-| BRAND            | string           |               |
-| BRAND_VERSION    | string \| object |               |
-| DEVICE           | string           |               |
-| DEVICE_VERSION   | string \| object |               |
-| PCSITE_REQUESTED | boolean          | true          |
-| DEVICE_TYPE      | number           |               |
-
-## How to build
-
-1. プロジェクトフォルダにサブモジュールとして追加します。
-2. [./gulpfile.js](./gulpfile.js) を参考に gulp タスク等を作成します。ミニファイには Closure Compiler を使用します。
-
-### How to build ./index.js and ./whatBrowserAmI.js
-
-~~~
-gulp dist
-~~~
-
-### How to build ./docs/index.html
-
-~~~
-gulp docs
-~~~
-
-### build options 
-
-| property                                          | data type | default value |
-|:--------------------------------------------------|:----------|:--------------|
-| DEFINE_WHAT_BROWSER_AM_I__BRAND_ENABLED            | boolean   | true          |
-| DEFINE_WHAT_BROWSER_AM_I__PCSITE_REQUESTED_ENABLED | boolean   | true          |
-| DEFINE_WHAT_BROWSER_AM_I__IOS_DEVICE_ENABLED       | boolean   | true          |
-| DEFINE_WHAT_BROWSER_AM_I__DEVICE_TYPE_ENABLED      | boolean   | true          |
+* [Test page](https://itozyun.github.io/what-browser-am-i/) (or [bit.ly/39Wvkct](https://bit.ly/39Wvkct))
+* [http version](http://my-http-proxy-856.appspot.com/itozyun.github.io/what-browser-am-i/) (or [bit.ly/3ft54YC](http://bit.ly/3ft54YC))
 
 ## links
 

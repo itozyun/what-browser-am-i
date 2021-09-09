@@ -1,4 +1,10 @@
-if( !brand ){
+
+if( !DEFINE_WHAT_BROWSER_AM_I__BRAND_ENABLED ){
+    if( getVersionString( strAppVersion, 'OPT/' ) ){
+        isPcSiteRequested = isPcSiteRequested || !findString( strAppVersion, 'Mobile/' );
+    };
+} else {
+    if( !brand ){
     // https://qiita.com/Ungaahhhh/items/980316d11c55acecbfa5
     // Edge のユーザーエージェントがいろいろとひどい
         if( strVersion =
@@ -7,54 +13,54 @@ if( !brand ){
             versionEdgiOS || // iOS
             getVersionString( strUserAgent, 'Edg/'    )    // Chromium based Microsoft Edge(MSEdge)
         ){
-            brand        = 'Edge';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Edge;
             brandVersion = strVersion;
         } else if( strVersion = getVersionString( strAppVersion, 'Coast/' ) ){
-            brand        = 'Coast';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Coast;
             brandVersion = strVersion;
         } else if( is_iOSOperaTurbo ){
-            brand        = 'OperaTurbo';
+            brand        = WHAT_BROWSER_AM_I__BRAND_OperaTurbo;
         } else if( strVersion = getVersionString( strAppVersion, 'OPT/' ) ){
-            brand             = 'OperaTouch';
+            brand             = WHAT_BROWSER_AM_I__BRAND_OperaTouch;
             brandVersion      = strVersion;
             isPcSiteRequested = isPcSiteRequested || !findString( strAppVersion, 'Mobile/' );
         } else 
     // https://himenaotaro.hatenablog.com/entry/20151011/1444564265
     // YJApp-IOS ユーザエージェント(User Agent)
         if( strVersion = getVersionString( strUserAgent.toLowerCase(), 'ybrowser/' ) ){
-            brand        = 'Yahoo';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Yahoo;
             brandVersion = strVersion;
         } else
         if( !isUCWEB && ( strVersion = getVersionString( strUserAgent, 'UCBrowser/' ) ) ){
-            brand        = 'UC';
+            brand        = WHAT_BROWSER_AM_I__BRAND_UC;
             brandVersion = strVersion;
         } else
         if( versionSilk ){
-            brand        = 'Silk';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Silk;
             brandVersion = versionSilk;
         } else
         if( strVersion = getVersionString( strUserAgent, 'Vivaldi/' ) ){
-            brand        = 'Vivaldi';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Vivaldi;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'QQBrowser/' ) ){
-            brand        = 'QQ';
+            brand        = WHAT_BROWSER_AM_I__BRAND_QQ;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'YaBrowser/' ) ){
-            brand        = 'Yandex';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Yandex;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'coc_coc_browser/' ) ){
-            brand        = 'coccoc';
+            brand        = WHAT_BROWSER_AM_I__BRAND_coccoc;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'Camino/' ) ){
-            brand        = 'Camino';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Camino;
             brandVersion = strVersion;
         } else
         if( findString( strUserAgent, 'SE 2.X MetaSr 1.0' ) ){
-            brand = 'Sogou';
+            brand = WHAT_BROWSER_AM_I__BRAND_Sogou;
         } else
     // https://developer.mozilla.org/ja/docs/Web/HTTP/Gecko_user_agent_string_reference
     // バージョン 6 より前では、 Focus for Android は Android WebView によって実現されていたため、以下の UA 文字列形式を使用していました。
@@ -69,134 +75,134 @@ if( !brand ){
             // Firefox : FxiOS が 9.x 以降が、iSO 11+ 対応を持って判定
             ( parseFloat( versionFxiOS ) < 9 && maybe_iOSWebView && 11 <= parseFloat( platformVersion ) && versionFxiOS )
         ){
-            brand        = 'Focus';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Focus;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'AOLBUILD/' ) || getVersionString( strUserAgent, 'AOL/' ) || getVersionString( strUserAgent, 'AOL ' ) ){
-            brand        = 'AOL';
+            brand        = WHAT_BROWSER_AM_I__BRAND_AOL;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'IceDragon/' ) ){
-            brand        = 'IceDragon';
+            brand        = WHAT_BROWSER_AM_I__BRAND_IceDragon;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'Iceweasel/' ) ){
-            brand        = 'Iceweasel';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Iceweasel;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'TenFourFox/' ) ){
-            brand        = 'ITenFourFox';
+            brand        = WHAT_BROWSER_AM_I__BRAND_ITenFourFox;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'Waterfox/' ) ){
-            brand        = 'Waterfox';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Waterfox;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'GNUzilla/' ) ){
-            brand        = 'GNUzilla';
+            brand        = WHAT_BROWSER_AM_I__BRAND_GNUzilla;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'SeaMonkey/' ) ){
-            brand        = 'SeaMonkey';
+            brand        = WHAT_BROWSER_AM_I__BRAND_SeaMonkey;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'PaleMoon/' ) ){
-            brand        = 'PaleMoon';
+            brand        = WHAT_BROWSER_AM_I__BRAND_PaleMoon;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'Basilisk/' ) ){
-            brand        = 'Basilisk';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Basilisk;
             brandVersion = strVersion;
         } else
         if( ( strVersion = getVersionString( strUserAgent, 'Maxthon/' ) ||
                            getVersionString( strUserAgent, 'Maxthon ' ) ||
                            getVersionString( strUserAgent, 'MXiOS/' )
             ) || findString( strUserAgent, 'Maxthon' ) ){
-            brand        = 'Maxthon';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Maxthon;
             brandVersion = strVersion || 1;
         } else
         if( findString( strUserAgent, 'Avant Browser;' ) ){
-            brand = 'Avant';
+            brand = WHAT_BROWSER_AM_I__BRAND_Avant;
         } else
         if( strVersion = getVersionString( strUserAgent, 'Konqueror/' ) ){
-            brand        = 'Konqueror';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Konqueror;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'Midori/' ) ){
-            brand        = 'Midori';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Midori;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'OmniWeb/' ) ){
-            brand        = 'OmniWeb';
+            brand        = WHAT_BROWSER_AM_I__BRAND_OmniWeb;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'Roccat/' ) ){
-            brand        = 'Roccat';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Roccat;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'Epiphany/' ) ){
-            brand        = 'Epiphany';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Epiphany;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'WebPositive/' ) ){
-            brand        = 'WebPositive';
+            brand        = WHAT_BROWSER_AM_I__BRAND_WebPositive;
             brandVersion = strVersion;
         } else
         if( ( strVersion = getVersionString( strUserAgent, 'Iron/' ) ) || findString( strUserAgent, ' Iron ' ) ){
-            brand        = 'Iron';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Iron;
             brandVersion = strVersion || ( hasChromeObject && versionChrome );
         } else
         if( strVersion = getVersionString( strUserAgent, 'Comodo Dragon/' ) ){
-            brand        = 'ComodoDragon';
+            brand        = WHAT_BROWSER_AM_I__BRAND_ComodoDragon;
             brandVersion = strVersion;
         } else
         if( ( strVersion = getVersionString( strUserAgent, 'Brave/' ) ) || findString( strUserAgent, ' Brave ' ) || is_iOSBrave ){
-            brand        = 'Brave';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Brave;
             brandVersion = strVersion || ( hasChromeObject && versionChrome );
         } else
         if( strVersion = getVersionString( strUserAgent, 'Rockmelt/' ) ){
-            brand        = 'Rockmelt';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Rockmelt;
             brandVersion = strVersion;
         } else
         if( ( strVersion = getVersionString( strUserAgent, 'Sleipnir/' ) ) || isSleipnir_iOS || isSleipnirAndroid ){
-            brand        = 'Sleipnir';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Sleipnir;
             if( strVersion ){
                 brandVersion = strVersion;
             };
         } else
         if( is_iOSDolphin ){
-            brand = 'Dolphin';
+            brand = WHAT_BROWSER_AM_I__BRAND_Dolphin;
         } else
         if( strVersion = getVersionString( strUserAgent, 'Puffin/' ) ){
-            brand        = 'Puffin';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Puffin;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'Dooble/' ) ){
-            brand        = 'Dooble';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Dooble;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'Flock/' ) ){
-            brand        = 'Flock';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Flock;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'Galeon/' ) ){
-            brand        = 'Galeon';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Galeon;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'Falkon/' ) ){
-            brand        = 'Falkon';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Falkon;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'Iceape/' ) ){
-            brand        = 'Iceape';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Iceape;
             brandVersion = strVersion;
         } else
         if( strVersion = getVersionString( strUserAgent, 'K-Meleon/' ) ){
-            brand        = 'KMeleon';
+            brand        = WHAT_BROWSER_AM_I__BRAND_KMeleon;
             brandVersion = strVersion;
         } else
         if( strVersion = versionNX || getVersionString( strAppVersion, 'NX/' ) ){
-            brand        = 'NetFrontNX';
+            brand        = WHAT_BROWSER_AM_I__BRAND_NetFrontNX;
             brandVersion = strVersion;
         } else
     // Netscape Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:0.9.4.1) Gecko/20020508 Netscape6/6.2.3
@@ -208,60 +214,60 @@ if( !brand ){
             getVersionString( strUserAgent, 'Netscape/'  ) || // NN7-8
             getVersionString( strUserAgent, 'Navigator/' )    // NN9
         ){
-            brand        = 'NN';
+            brand        = WHAT_BROWSER_AM_I__BRAND_NetscapeNavigator;
             brandVersion = strVersion;
         } else if( versionIris ){
             // http://archive.is/0trve
             // Mozilla/5.0 (Windows NT; U; en) AppleWebKit/525.18.1 (KHTML, like Gecko) Version/3.1.1 Iris/1.1.7 Safari/525.20
-            brand        = 'Iris';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Iris;
             brandVersion = strVersion;
         // https://twitter.com/itozyun/status/1293709088501555200
         } else if( strVersion = getVersionString( strUserAgent, 'FBAV/' ) || findString( strAppVersion, 'FBAN/' ) ){
-            brand        = 'Facebook';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Facebook;
             brandVersion = strVersion;
         } else if( strVersion = getVersionString( strAppVersion, 'Line/' ) ){
-            brand        = 'LINE';
+            brand        = WHAT_BROWSER_AM_I__BRAND_LINE;
             brandVersion = strVersion;
         } else if( strVersion = getVersionString( strUserAgent, 'QtWebEngine/' ) ){
-            brand        = 'QtWebEngine';
+            brand        = WHAT_BROWSER_AM_I__BRAND_QtWebEngine;
             brandVersion = strVersion;
         } else if( strVersion = getVersionString( strUserAgent, 'QtWebKit/' ) ){
-            brand        = 'QtWebKit';
+            brand        = WHAT_BROWSER_AM_I__BRAND_QtWebKit;
             brandVersion = strVersion;
         } else if( strVersion = getVersionString( strUserAgent, 'DuckDuckGo/' ) ){
-            brand        = 'DuckDuckGo';
+            brand        = WHAT_BROWSER_AM_I__BRAND_DuckDuckGo;
             brandVersion = strVersion;
         } else if( strVersion = getVersionString( strUserAgent, 'Lunascape/' ) || maybeLunascapeAndroid ){
-            brand        = 'Lunascape';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Lunascape;
             brandVersion = strVersion;
         } else if( strVersion = versionFxiOS || ( isGecko && ( versionFirefox || engineVersion ) ) ){
-            brand        = 'Firefox';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Firefox;
             brandVersion = strVersion;
         } else if( isOperaGX ){
-            brand        = 'OperaGX';
+            brand        = WHAT_BROWSER_AM_I__BRAND_OperaGX;
             brandVersion = versionOPR;
         } else if( strVersion = versionPresto || versionOPR || versionOpera ){
-            brand        = 'Opera';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Opera;
             brandVersion = strVersion;
         } else if( isTrident ){
-            brand        = 'IE';
+            brand        = WHAT_BROWSER_AM_I__BRAND_IE;
             brandVersion = engineVersion;
         } else if( verSamsung ){
-            brand        = engine;
+            brand        = WHAT_BROWSER_AM_I__BRAND_SamsungInternet;
             brandVersion = verSamsung;
         } else if( strVersion = versionCriOS ||
             ( hasChromeObject || ( maybeChromeWebView && isAndroidBrowser ) ) && versionChrome ){
-            brand        = 'Chrome';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Chrome;
             brandVersion = strVersion;
         } else if( isAndroidBrowser && !isAndroidChromeWebView ){
-            brand        = engine;
+            brand        = WHAT_BROWSER_AM_I__BRAND_AndroidBrowser;
             brandVersion = engineVersion;
         } else if( maybe_iOSWebView && !deviceTypeIsTablet ){
-            engine       = 'SafariMobile';
-            brand        = 'Safari';
+            engine       = WHAT_BROWSER_AM_I__ENGINE_SafariMobile;
+            brand        = WHAT_BROWSER_AM_I__BRAND_Safari;
             brandVersion = platformVersion;
         } else if( !maybe_iOSWebView && !isAndroidChromeWebView && ( findString( strUserAgent, 'Safari' ) || verVersion ) ){
-            brand        = 'Safari';
+            brand        = WHAT_BROWSER_AM_I__BRAND_Safari;
             brandVersion = verVersion || (
                             versionWebKit <   73    ? 0.8 :
                             versionWebKit <   85    ? 0.9 :
@@ -273,6 +279,6 @@ if( !brand ){
                             versionWebKit <= 525.13 ? 3 :
                             versionWebKit <= 525.25 ? 3.1 : 3.2 );
         };
-        brand = brand || 'unknown';
+        brand = brand || WHAT_BROWSER_AM_I__BRAND_unknown;
     };
-    
+};

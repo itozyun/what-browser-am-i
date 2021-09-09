@@ -4,7 +4,7 @@ if( !engine ){
  *  Presto
  */
     if( isPresto ){
-        engine        = isAndroidBased || deviceTypeIsPDA || deviceTypeIsPhone || deviceTypeIsTablet ? 'PrestoMobile' : 'Presto';
+        engine        = isAndroidBased || deviceTypeIsPDA || deviceTypeIsPhone || deviceTypeIsTablet ? WHAT_BROWSER_AM_I__ENGINE_PrestoMobile : WHAT_BROWSER_AM_I__ENGINE_Presto;
         engineVersion = versionPresto;
 /*----------------------------------------------------------------------------//
  *  Trident or Tasman
@@ -12,7 +12,7 @@ if( !engine ){
     } else if( isTrident ){
         if( v = getNumber( strAppVersion, 'Trident/' ) + 4 ){
             if( v !== versionTrident ){
-                brand        = 'IEHost';
+                brand        = WHAT_BROWSER_AM_I__BRAND_IE;
                 brandVersion = v;
             };
         };
@@ -20,21 +20,21 @@ if( !engine ){
         // https://stackoverflow.com/questions/8751479/detect-metro-ui-version-of-ie
         if( 10 <= versionTrident && 6.2 <= platformVersion && platformVersion < 7 ){ // WinNT6.2 = Win8, WinNT6.3 = Win8.1
             if( screenY === 0 && ( innerHeight + 1 ) !== outerHeight ){
-                brand        = 'ModernIE';
+                brand        = WHAT_BROWSER_AM_I__BRAND_ModernIE;
                 brandVersion = versionTrident;
             };
         };
 
         if( deviceTypeIsPDA || deviceTypeIsPhone || deviceTypeIsTablet || deviceTypeIsMediaPlayer ){ // TODO device:MS Zune
-            engine = 'TridentMobile';
+            engine = WHAT_BROWSER_AM_I__ENGINE_TridentMobile;
         } else if( isMac && 5 <= versionTrident ){
-            engine       = 'Tasman';
-            brand        = 'MacIE';
+            engine       = WHAT_BROWSER_AM_I__ENGINE_Tasman;
+            brand        = WHAT_BROWSER_AM_I__BRAND_MacIE;
             brandVersion = versionTrident;
         } else {
-            engine = 'Trident';
+            engine = WHAT_BROWSER_AM_I__ENGINE_Trident;
             if( isMac ){
-                brand        = 'MacIE';
+                brand        = WHAT_BROWSER_AM_I__BRAND_MacIE;
                 brandVersion = versionTrident;
             };
         };
@@ -43,73 +43,73 @@ if( !engine ){
  *  EdgeHTML
  */
     } else if( isEdgeHTML ){
-        engine        = isWindowsPhone ? 'EdgeMobile' : 'EdgeHTML';
+        engine        = platform === WHAT_BROWSER_AM_I__PLATFORM_WindowsPhone ? WHAT_BROWSER_AM_I__ENGINE_EdgeMobile : WHAT_BROWSER_AM_I__ENGINE_EdgeHTML;
         engineVersion = getVersionString( strAppVersion, 'Edge/' );
 /*----------------------------------------------------------------------------//
  *  Goanna
  */
     } else if( versionGoanna ){
-        engine        = 'Goanna';
+        engine        = WHAT_BROWSER_AM_I__ENGINE_Goanna;
         engineVersion = versionGoanna;
 /*----------------------------------------------------------------------------//
  *  Gecko
  */
     } else if( isGecko ){
-        engine        = isAndroidBased ? 'Fennec' : 'Gecko';
+        engine        = isAndroidBased ? WHAT_BROWSER_AM_I__ENGINE_Fennec : WHAT_BROWSER_AM_I__ENGINE_Gecko;
         engineVersion = versionGecko || versionFirefox;
 /*----------------------------------------------------------------------------//
  *  Samsung Browser
  */
     } else if( verSamsung ){
-        engine        = 'Samsung';
+        engine        = WHAT_BROWSER_AM_I__ENGINE_Samsung;
         engineVersion = verSamsung;
         if( surelyPcSiteRequested ) isPcSiteRequested = true;
 /*----------------------------------------------------------------------------//
  *  NetFront
  */
     } else if( strVersion = versionNetFront || getVersionString( strUserAgent, 'NetFront/' ) ){
-        engine        = 'NetFront';
+        engine        = WHAT_BROWSER_AM_I__ENGINE_NetFront;
         engineVersion = strVersion;
 /*----------------------------------------------------------------------------//
  *  iCab
  */
     } else if( strVersion = getVersionString( strUserAgent, 'iCab' ) ){
-        engine        = 'iCab';
+        engine        = WHAT_BROWSER_AM_I__ENGINE_iCab;
         engineVersion = strVersion;
 /*----------------------------------------------------------------------------//
  *  Opera Mini
  */
     } else if( strVersion = max( getVersionString( strUserAgent, 'Opera Mini/' ), getVersionString( strUserAgent, 'Opera Mobi/' ) ) || ( hasOperaMiniObject && verVersion ) ){
-        engine        = 'OperaMini'; 
+        engine        = WHAT_BROWSER_AM_I__ENGINE_OperaMini; 
         engineVersion = strVersion;
         if( !platform ){
             if( findString( strUserAgent, 'iPhone' ) ){
-                device = 'iPhone';
+                device = WHAT_BROWSER_AM_I__DEVICE_iPhone;
             } else if( findString( strUserAgent, 'iPad' ) ){
-                device = 'iPad';
+                device = WHAT_BROWSER_AM_I__DEVICE_iPad;
             } else if( findString( strUserAgent, 'iPod' ) ){
-                device = 'iPod';
+                device = WHAT_BROWSER_AM_I__DEVICE_iPod;
             };
-            if( device ) platform = 'iOS';
+            if( device ) platform = WHAT_BROWSER_AM_I__PLATFORM_iOS;
         };
 /*----------------------------------------------------------------------------//
  *  UC Browser Speed Mode
  */
     } else if( isUCWEB ){
-        engine        = 'UCWEB';
+        engine        = WHAT_BROWSER_AM_I__ENGINE_UCWEB;
         engineVersion = versionUCWEB;
 /*----------------------------------------------------------------------------//
  *  KHTML
  */
     } else if( versionKHTML ){
-        engine        = 'KHTML';
+        engine        = WHAT_BROWSER_AM_I__ENGINE_KHTML;
         engineVersion = appVersion;
 /*----------------------------------------------------------------------------//
  *  AOSP
  */
 // Android3.x-4.1 のAOSPで window.chrome がいるので AOSP の判定を Blink より先に
     } else if( isAndroid && maybeAOSP ){
-        engine           = 'AOSP';
+        engine           = WHAT_BROWSER_AM_I__ENGINE_AOSP;
         engineVersion    = versionAndroid;
         isAndroidBrowser = true;
         if( surelyPcSiteRequested ) isPcSiteRequested = true;
@@ -117,7 +117,7 @@ if( !engine ){
  *  Chromium or ChromiumMobile
  */
     } else if( hasChromeObject || hasOPRObject || versionOPR ){
-        engine        = isAndroidBased ? 'ChromiumMobile' : 'Chromium';
+        engine        = isAndroidBased ? WHAT_BROWSER_AM_I__ENGINE_ChromiumMobile : WHAT_BROWSER_AM_I__ENGINE_Chromium;
         engineVersion = versionChrome;
         if( surelyPcSiteRequested ) isPcSiteRequested = true;
 /*----------------------------------------------------------------------------//
@@ -129,33 +129,37 @@ if( !engine ){
 // http://caniuse.com/#compare=chrome+40,android+4.2-4.3,android+4.4,android+4.4.3-4.4.4,and_chr+45
     } else if( isAndroid && docRegElm ){
         // Android 標準ブラウザ Chrome WebView ブラウザ
-        engine           = 'ChromeWebView';
+        engine           = WHAT_BROWSER_AM_I__ENGINE_ChromeWebView;
         engineVersion    = parseFloat( versionAndroid ) < 5 ? versionAndroid : versionChrome; // Android 4.4.4- では Android の Version を。5.0+ では Chrome のバージョンを使用。
         // TODO PCモードでは Chrome/11 とあり得ない値が入っている
         isAndroidBrowser = true;
         if( !( window.requestFileSystem || window.webkitRequestFileSystem ) ){
             isAndroidChromeWebView = true;
         };
-        if( surelyPcSiteRequested ) isPcSiteRequested = true;
+        if( surelyPcSiteRequested ){
+            isPcSiteRequested = true;
+        };
 /*----------------------------------------------------------------------------//
  *  AOSP PC_Mode
  */
     } else if( isAndroid && ( verVersion || surelyPcSiteRequested ) ){
-        engine           = 'AOSP';
+        engine           = WHAT_BROWSER_AM_I__ENGINE_AOSP;
         engineVersion    = versionAndroid;
         isAndroidBrowser = true;
-        if( surelyPcSiteRequested ) isPcSiteRequested = true;
+        if( surelyPcSiteRequested ){
+            isPcSiteRequested = true;
+        };
 /*----------------------------------------------------------------------------//
  *  Chromium or ChromiumMobile (window.chrome 無)
  */
     } else if( versionChrome ){
-        engine        = isAndroidBased ? 'ChromiumMobile' : 'Chromium';
+        engine        = isAndroidBased ? WHAT_BROWSER_AM_I__ENGINE_ChromiumMobile : WHAT_BROWSER_AM_I__ENGINE_Chromium;
         engineVersion = versionChrome;
 /*----------------------------------------------------------------------------//
  *  WebKit
  */
     } else if( versionWebKit ){
-        engine        = 'WebKit'
+        engine        = WHAT_BROWSER_AM_I__ENGINE_WebKit;
         engineVersion = versionWebKit;
     };
 };
