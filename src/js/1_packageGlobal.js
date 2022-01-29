@@ -50,10 +50,10 @@ function getVersionString( strTarget, strStart ){
 };
 
 /**
- * @param {...string}
- * @return {string}
+ * @param {...(string|number)} _args
+ * @return {string|number}
  */
-function max(){
+function max( _args ){
     var args = arguments, i = 1, max = args[ 0 ], v;
     
     for( ; i < args.length; ++i ){
@@ -119,8 +119,8 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     // https://www.fxsitecompat.com/ja/docs/2017/moz-appearance-property-has-been-removed/
     // -moz-appearance プロパティが廃止されました -> 更新: この変更は Firefox 54 で予定されていましたが、延期されました。
     isGecko = !isTrident && // ie4 でエラーになる為
-                  (function( k ){
-                      for( k in htmlStyle ){
+                  (function(){
+                      for( var k in htmlStyle ){
                           if( fromString( k, 'Moz' ) ) return true;
                       };
                   })(),
@@ -306,8 +306,8 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     maybeLunascapeAndroid = !!window.ReactNativeWebView, // TODO ChromeWebView の version が17に!
     // https://twitter.com/itozyun/status/1293633829647708160
     isSleipnirAndroid     = isLinuxCPU &&
-                              (function( k ){
-                                  for( k in window ){
+                              (function(){
+                                  for( var k in window ){
                                       if( fromString( k, 'SlexAPI_' ) ) return true;
                                   };
                               })(),
@@ -326,7 +326,7 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     // https://github.com/mozilla-mobile/firefox-tv/blob/master/app/src/main/java/org/mozilla/tv/firefox/ext/Js.kt
     // FireTV Firefox
     isFirefoxForFireTV = window._firefoxTV_playbackStateObserverJava,
-    versionFireOSForFirefoxPcSiteRequested = getNumber( strUserAgent, 'diordnA ' ),
+    versionFireOSThatFirefoxRequestingPcSite = getNumber( strUserAgent, 'diordnA ' ),
 
     isOperaGX = window.onoperadetachedviewchange === null, //
                      //onoperadetachedviewcontrol,

@@ -339,7 +339,7 @@ if( strVersion = getVersionString( strUserAgent, 'Windows Phone ' ) || getVersio
     platform          = WHAT_BROWSER_AM_I__PLATFORM_WindowsPhone;
     platformVersion   = 10;
     deviceTypeIsPhone = true;
-    isPcSiteRequested      = true;
+    isPcSiteRequested = true;
 } else if( isTrident && findString( strAppVersion, 'ZuneWP' ) ){ // ZuneWP はデスクトップモードで登場する
     platform          = WHAT_BROWSER_AM_I__PLATFORM_WindowsPhone;
     platformVersion   = versionTrident === 11 ? 8.1 :
@@ -467,10 +467,10 @@ if( strVersion = getVersionString( strUserAgent, 'Kindle/' ) ){
  */
 if( isFirefoxForFireTV ){
     isFireOS          = true;
-    platformVersion   = versionAndroid || versionFireOSForFirefoxPcSiteRequested;
+    platformVersion   = versionAndroid || versionFireOSThatFirefoxRequestingPcSite;
     deviceTypeIsTV    = true;
     isAndroidBased    = true;
-    isPcSiteRequested = versionFireOSForFirefoxPcSiteRequested;
+    isPcSiteRequested = versionFireOSThatFirefoxRequestingPcSite;
 // https://developer.amazon.com/ja/docs/fire-tv/user-agent-strings.html
 } else if( findString( strUserAgent, 'AmazonWebAppPlatform' ) || findString( strUserAgent, '; AFT' ) ){
     isFireOS        = true;
