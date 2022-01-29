@@ -13,9 +13,9 @@
   },
   "homepage": "https://github.com/itozyun/what-browser-am-i#readme",
   "devDependencies": {
-    "google-closure-compiler": "^20200719.0.0",
+    "google-closure-compiler": "^20220104.0.0",
     "gulp": "^4.0.2",
-    "gulp-diamond-princess-zoning": "^0.9.10",
+    "gulp-diamond-princess-zoning": "^0.9.11",
     "jsdom": "^17.0.0"
   }
 }
