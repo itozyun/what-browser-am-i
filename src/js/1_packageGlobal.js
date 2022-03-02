@@ -114,7 +114,8 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
  
     isEdgeHTML      = !isTrident && html.msContentZoomFactor,
 
-    hasChromeObject = !isEdgeHTML && window.chrome, // AOSP 4.1 にもいる！
+    hasChromeObject = !isEdgeHTML && ( window.chrome ||   // AOSP 4.1 にもいるので注意！
+                                       window.chromium ), // Iron 3 は .chrome が居ない .chromium が居る, 5 では両方存在.
 
     // https://www.fxsitecompat.com/ja/docs/2017/moz-appearance-property-has-been-removed/
     // -moz-appearance プロパティが廃止されました -> 更新: この変更は Firefox 54 で予定されていましたが、延期されました。
@@ -160,6 +161,7 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
 
     versionWebKit = getNumber( strUserAgent, 'AppleWebKit/' ),
     versionChrome = getVersionString( strUserAgent, 'Chrome/' ),
+    versionIron   = getVersionString( strAppVersion, 'Iron/' ), // Iron 3 には Chrome/ が居ない, Iron 5 は Iron/ Chrome/ の併記.
     versionOPR    = getVersionString( strUserAgent, 'OPR/' ),
     versionKHTML  = getVersionString( strAppVersion, 'KHTML/' ),
     versionIris   = getVersionString( strUserAgent.toLowerCase(), 'iris' ),

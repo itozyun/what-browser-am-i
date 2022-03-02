@@ -118,7 +118,7 @@ if( !engine ){
  */
     } else if( hasChromeObject || hasOPRObject || versionOPR ){
         engine        = isAndroidBased ? WHAT_BROWSER_AM_I__ENGINE_ChromiumMobile : WHAT_BROWSER_AM_I__ENGINE_Chromium;
-        engineVersion = versionChrome;
+        engineVersion = versionChrome || versionIron;
         if( surelyPcSiteRequested ) isPcSiteRequested = true;
 /*----------------------------------------------------------------------------//
  *  ChromeWebView

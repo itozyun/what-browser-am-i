@@ -222,6 +222,11 @@ var chrome = {};
 /**
  * @type {Object}
  */
+var chromium = {};
+
+/**
+ * @type {Object}
+ */
 var opr = {};
 
 /**
