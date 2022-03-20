@@ -45,21 +45,26 @@ if( strPlatform === 'Nintendo Swicth' ){
 /*----------------------------------------------------------------------------//
  *  WiiU
  */
-if( strPlatform === 'Nintendo WiiU' ){
+if( window.wiiu /* strPlatform === 'Nintendo WiiU' */ ){
     // https://www.nintendo.co.jp/hardware/wiiu/internetbrowser/index.html
     platform         = WHAT_BROWSER_AM_I__PLATFORM_WiiU;
     platformVersion  = getVersionString( strAppVersion, 'NintendoBrowser/' );
     // https://blog.gutyan.jp/entry/2015/01/31/NintendoBrowser
     // UブラウザにはNew3DS以上のUA切替機能がある。
     // platform始めUA以外のnavigatorのプロパティはいずれの場合も変更されない。
-    versionWebKit    = getVersionString( strAppVersion, 'AppleWebKit/' ); // 534:2.1.0J - 3.1.0J, 536:4.0.0J - 
+    engine        = WHAT_BROWSER_AM_I__ENGINE_WebKit; // UA 偽装で Chromium になるケースがあるのでここで設定
+    engineVersion = getVersionString( strAppVersion, 'AppleWebKit/' ) ||
+                    ( webkitCancelAnimationFrame ? 536 : 534 ); // 534:2.1.0J - 3.1.0J, 536:4.0.0J - 
     deviceTypeIsGame = true;
-    // TODO isPcSiteRequested
+    if( !platformVersion ){
+        platformVersion   = webkitCancelAnimationFrame ? 4 : 2;
+        isPcSiteRequested = findString( strAppVersion, 'Macintosh;' ) || ( findString( strAppVersion, 'Windows NT' ) && !findString( strAppVersion, 'Touch' ) );
+    };
 } else
 /*----------------------------------------------------------------------------//
  *  Wii
  */
-if( strPlatform === 'Nintendo Wii' ){
+if( isPresto && isPresto.wiiremote /* strPlatform === 'Nintendo Wii' */ ){
     // https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%83%81%E3%83%A3%E3%83%B3%E3%83%8D%E3%83%AB
     // 2007年 4月12日版：Opera/9.10（Nintendo Wii; U; ; 1621; ja）
     // 2007年10月10日版：Opera/9.30（Nintendo Wii; U; ; 2047-7; ja）

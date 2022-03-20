@@ -205,6 +205,10 @@ if( !DEFINE_WHAT_BROWSER_AM_I__BRAND_ENABLED ){
             brand        = WHAT_BROWSER_AM_I__BRAND_NetFrontNX;
             brandVersion = strVersion;
         } else
+        if( platform === WHAT_BROWSER_AM_I__PLATFORM_WiiU ){
+            brand        = WHAT_BROWSER_AM_I__BRAND_NetFrontNX;
+            brandVersion = 3;
+        } else
     // Netscape Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:0.9.4.1) Gecko/20020508 Netscape6/6.2.3
     // Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.2) Gecko/20040804 Netscape/7.2 (ax)
     // Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.5) Gecko/20070321 Netscape/8.1.3

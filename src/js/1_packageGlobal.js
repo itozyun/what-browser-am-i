@@ -322,6 +322,9 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     docRegElm    = !versionTrident && document.registerElement,
     docExecCmd   = !versionTrident && document.execCommand,
 
+    // WebKit 534 と 536 の判定に使う
+    webkitCancelAnimationFrame = window.webkitCancelAnimationFrame,
+
     // Android 4.4.4~6.x ChromeWebView 33.0.0.0 (Genymotion) PCSITE_REQUESTED の場合、Chrome/のバージョンは常に 11.0.696.34 になる
     maybeChromeWebView = maybeLinux && docRegElm && versionChrome === '11.0.696.34',
 

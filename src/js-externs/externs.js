@@ -277,3 +277,15 @@ var ReactNativeWebView = {}
  * @type {function()}
  */
 var onoperadetachedviewchange = function(){};
+
+/**
+ * @type {Object}
+ */
+ var wii = {
+    wiiremote : function(){}
+ };
+
+ /**
+ * @type {Object}
+ */
+var wiiu = {};
