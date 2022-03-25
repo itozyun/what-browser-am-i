@@ -1,7 +1,10 @@
+/** @typedef {{min : (string|number), max : (string|number)}} */
+var VersionRange;
+
 /**
- * @type {Object}
+ * @type {!Object.<string,(string|number|boolean|VersionRange)>|!Array.<string|number|boolean|VersionRange>}
  */
-var ua = {};
+var ua;
 
 /**
  * @type {Object}
