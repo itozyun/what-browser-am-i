@@ -50,33 +50,33 @@ f=3):(b=c(a,"Netscape6/")||c(a,"Netscape/")||c(a,"Navigator/"))?(d="NetscapeNavi
 I?"GAME":ba?"TV":Ca?"MEDIA_PLAYER":la?"EBOOK_READER":C?"PHONE":w?"TABLET":ma?"PC":"UNKNOWN"})(ua,this,document,navigator,screen,parseFloat,Number,void 0);
 </script>
 <script>
-function getEngineVersionOf( targetEngine ){
-    var engine  = ua.ENGINE,
-        version = ua.ENGINE_VERSION;
-
-    if( engine === targetEngine ){
-        if( version === version + '' ){
-            return parseFloat( version );
-        } else {
-            return version;
-        };
-    };
-};
-
-function getPlatformVersionOf( targetPlatform ){
-    var platform = ua.PLATFORM,
-        version  = ua.PLATFORM_VERSION;
-
-    if( platform === targetPlatform ){
-        if( version === version + '' ){
-            return parseFloat( version );
-        } else {
-            return version;
-        };
-    };
-};
-
 (function(ua){
+    function getEngineVersionOf( targetEngine ){
+        var engine  = ua.ENGINE,
+            version = ua.ENGINE_VERSION;
+
+        if( engine === targetEngine ){
+            if( version === version + '' ){
+                return parseFloat( version );
+            } else {
+                return version;
+            };
+        };
+    };
+
+    function getPlatformVersionOf( targetPlatform ){
+        var platform = ua.PLATFORM,
+            version  = ua.PLATFORM_VERSION;
+
+        if( platform === targetPlatform ){
+            if( version === version + '' ){
+                return parseFloat( version );
+            } else {
+                return version;
+            };
+        };
+    };
+
     function print(html){
         document.write(html);
     };
