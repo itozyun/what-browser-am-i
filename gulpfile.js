@@ -8,7 +8,7 @@ const gulp            = require('gulp'),
       tempJsName      = 'temp.js',
       tempDir         = require('os').tmpdir() + '/' + moduleName,
       globalVariables = 'document,navigator,screen,parseFloat,Number',
-      copyright       = 'Copyright 2021 itozyun, https://github.com/itozyun/what-browser-am-i, MIT License.';
+      copyright       = '(c) 2021-2023 itozyun, https://github.com/itozyun/what-browser-am-i, MIT License.';
 
       gulp.task('dist', gulp.series(
         function(){
