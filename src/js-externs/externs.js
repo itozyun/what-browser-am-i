@@ -2,15 +2,23 @@
 var VersionRange;
 
 /**
- * @type {!Object.<string,(string|number|boolean|VersionRange)>|!Array.<string|number|boolean|VersionRange>}
+ * @const {!Object.<string,(string|number|boolean|!VersionRange)>|!Array.<string|number|boolean|!VersionRange>}
  */
-var ua;
+var ua = {};
 
 /**
  * @type {Object}
  */
-var UserAgentObject = {
-    conpare : function(){},
+var WhatBrowserAmIObject = {
+    /**
+     * -1: version1 < version2, 0: version1 == version2, 1: version1 > version2
+     * 
+     * @nosideeffects
+     * @param {number|string} version1
+     * @param {number|string} version2
+     * @return {number}
+     */
+    conpare : function(version1, version2){},
 
     ENGINE           : '',
     ENGINE_VERSION   : '',
@@ -172,30 +180,20 @@ var UserAgentObject = {
 };
 
 /**
- * @type {Object}
+ * @const {!Object|undefined}
  */
-var puffinDevice = {};
-
-/**
- * @type {Object}
- */
-var PuffinDeviceObject = {
-    clientInfo : {}
+var puffinDevice = {
+    clientInfo : {
+        os        : '',
+        osVersion : '',
+        model     : ''
+    }
 };
 
 /**
- * @type {Object}
+ * @type {function(!Event)}
  */
-var PuffinDeviceClientInfoObject = {
-    os        : '',
-    osVersion : '',
-    model     : ''
-};
-
-/**
- * @type {function()}
- */
-var onmoztimechange = function(){};
+window.onmoztimechange = function(e){};
 
 /**
  * @type {boolean}
@@ -218,43 +216,43 @@ var innerHeight;
 var outerHeight;
 
 /**
- * @type {Object}
+ * @const {!Object|undefined}
  */
 var chrome = {};
 
 /**
- * @type {Object}
+ * @const {!Object|undefined}
  */
 var chromium = {};
 
 /**
- * @type {Object}
+ * @const {!Object|undefined}
  */
 var opr = {};
 
 /**
- * @type {Object}
+ * @const {!Object|undefined}
  */
 var __opera = {};
 
 /**
  * iOS 12.2 Sleipnir
- * @type {Object}
+ * @const {!Object|undefined}
  */
 var FNRBrowser = {}
 
 /**
- * @type {Object}
+ * @const {!Object|undefined}
  */
 var operamini = {};
 
 /**
- * @type {function()}
+ * @const {function()}
  */
 var palmGetResource = function(){};
 
 /**
- * @type {Object}
+ * @const {!Object|undefined}
  */
 var searchBoxJavaBridge_ = {};
 
@@ -265,30 +263,30 @@ HTMLElement.prototype.msContentZoomFactor;
 
 /**
  * FireTV Firefox
- * @type {Object}
+ * @type {!Object|undefined}
  */
 var _firefoxTV_playbackStateObserverJava = {}
 
 /**
  * Maybe Lunascape Android
- * @type {Object}
+ * @const {!Object|undefined}
  */
 var ReactNativeWebView = {}
 
 /**
  * Opera GX LVL2 (core: 68.0.3618.206)
- * @type {function()}
+ * @type {function(!Event)}
  */
-var onoperadetachedviewchange = function(){};
+window.onoperadetachedviewchange = function(){};
 
 /**
- * @type {Object}
+ * @const {!Object|undefined}
  */
  var wii = {
     wiiremote : function(){}
  };
 
  /**
- * @type {Object}
+ * @const {!Object|undefined}
  */
 var wiiu = {};
