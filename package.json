@@ -12,6 +12,9 @@
     "url": "https://github.com/itozyun/what-browser-am-i/issues"
   },
   "homepage": "https://github.com/itozyun/what-browser-am-i#readme",
+  "scripts": {
+    "prepare": "gulp dist"
+  },
   "devDependencies": {
     "google-closure-compiler": "^20220104.0.0",
     "gulp": "^4.0.2",
