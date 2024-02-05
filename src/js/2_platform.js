@@ -17,7 +17,7 @@ if( strPlatform === 'Nintendo DSi' ){
     deviceTypeIsGame = true;
 } else
 /*----------------------------------------------------------------------------//
- *  New 3DS
+ *  New Nintendo 3DS
  */
 if( strPlatform === 'New Nintendo 3DS' || ( findString( strUserAgent, 'iPhone OS 6_0' ) && screenW === 320 && screenH === 240 ) ){
     platform         = WHAT_BROWSER_AM_I__PLATFORM_New3DS;
@@ -25,7 +25,7 @@ if( strPlatform === 'New Nintendo 3DS' || ( findString( strUserAgent, 'iPhone OS
     deviceTypeIsGame = true;
 } else
 /*----------------------------------------------------------------------------//
- *  3DS
+ *  Nintendo 3DS
  */
 if( strPlatform === 'Nintendo 3DS' ){
     platform         = WHAT_BROWSER_AM_I__PLATFORM_N3DS;
@@ -82,14 +82,14 @@ if( strPlatform === 'PlayStation Vita' ){
     // http://d.hatena.ne.jp/nakamura001/20111221/1324486445
     // Mozilla/5.0 (PlayStation Vita 1.50) AppleWebKit/531.22.8 (KHTML, like Gecko) Silk/3.2
     platform         = WHAT_BROWSER_AM_I__PLATFORM_PSVita;
-    platformVersion  = getVersionString( strUserAgent, strPlatform + ' ' );
+    platformVersion  = getVersionString( strAppVersion, strPlatform + ' ' );
     // versionWebKit = // 531, 536, 537
     brand            = platform;
     brandVersion     = platformVersion;
     deviceTypeIsGame = true;
 } else
 /*----------------------------------------------------------------------------//
- *  PSP
+ *  PlayStation Portable
  */
 if( strVersion = getVersionString( strUserAgent, '(PlayStation Portable); ' ) ){
     // https://github.com/chitoku-k/SystemInfo/blob/master/systeminfo.js
@@ -103,7 +103,7 @@ if( strVersion = getVersionString( strUserAgent, '(PlayStation Portable); ' ) ){
     deviceTypeIsGame = true;
 } else
 /*----------------------------------------------------------------------------//
- *  PLAYSTATION 4
+ *  PlayStation 4
  */
 if( strPlatform === 'PlayStation 4' ){
     platform         = WHAT_BROWSER_AM_I__PLATFORM_PS4;
