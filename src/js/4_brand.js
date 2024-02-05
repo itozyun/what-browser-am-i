@@ -201,7 +201,7 @@ if( !DEFINE_WHAT_BROWSER_AM_I__BRAND_ENABLED ){
             brand        = WHAT_BROWSER_AM_I__BRAND_KMeleon;
             brandVersion = strVersion;
         } else
-        if( strVersion = versionNX || getVersionString( strAppVersion, 'NX/' ) ){
+        if( strVersion = versionNX || getVersionString( strAppVersion, 'NX/' ) || getVersionString( strAppVersion, 'NF/' ) ){
             brand        = WHAT_BROWSER_AM_I__BRAND_NetFrontNX;
             brandVersion = strVersion;
         } else

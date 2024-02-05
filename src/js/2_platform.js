@@ -29,7 +29,7 @@ if( strPlatform === 'New Nintendo 3DS' || ( findString( strUserAgent, 'iPhone OS
  */
 if( strPlatform === 'Nintendo 3DS' ){
     platform         = WHAT_BROWSER_AM_I__PLATFORM_N3DS;
-    platformVersion  = getVersionString( strUserAgent, 'Version/' );
+    platformVersion  = verVersion;
     versionWebKit    = 535; // 534:2.0.0-2J - 9.5.0-22J, 9.5.0-23J -
     versionNX        = platformVersion;
     deviceTypeIsGame = true;
@@ -37,7 +37,7 @@ if( strPlatform === 'Nintendo 3DS' ){
 /*----------------------------------------------------------------------------//
  *  Nintendo Swicth
  */
-if( strPlatform === 'Nintendo Swicth' ){
+if( !strPlatform && findString( strAppVersion, 'Nintendo Switch;' ) ){
     platform         = WHAT_BROWSER_AM_I__PLATFORM_Switch;
     platformVersion  = getVersionString( strAppVersion, 'NintendoBrowser/' );
     deviceTypeIsGame = true;
@@ -78,14 +78,14 @@ if( isPresto && isPresto.wiiremote /* strPlatform === 'Nintendo Wii' */ ){
 /*----------------------------------------------------------------------------//
  *  PlayStation Vita
  */
-if( strVersion = getVersionString( strUserAgent, 'PlayStation Vita ' ) ){
+if( strPlatform === 'PlayStation Vita' ){
     // http://d.hatena.ne.jp/nakamura001/20111221/1324486445
     // Mozilla/5.0 (PlayStation Vita 1.50) AppleWebKit/531.22.8 (KHTML, like Gecko) Silk/3.2
     platform         = WHAT_BROWSER_AM_I__PLATFORM_PSVita;
-    platformVersion  = strVersion;
+    platformVersion  = getVersionString( strUserAgent, strPlatform + ' ' );
     // versionWebKit = // 531, 536, 537
     brand            = platform;
-    brandVersion     = strVersion;
+    brandVersion     = platformVersion;
     deviceTypeIsGame = true;
 } else
 /*----------------------------------------------------------------------------//
@@ -103,16 +103,26 @@ if( strVersion = getVersionString( strUserAgent, '(PlayStation Portable); ' ) ){
     deviceTypeIsGame = true;
 } else
 /*----------------------------------------------------------------------------//
+ *  PLAYSTATION 4
+ */
+if( strPlatform === 'PlayStation 4' ){
+    platform         = WHAT_BROWSER_AM_I__PLATFORM_PS4;
+    platformVersion  = getVersionString( strAppVersion, strPlatform + '/' );
+    brand            = platform;
+    brandVersion     = platformVersion;
+    deviceTypeIsGame = true;
+} else
+/*----------------------------------------------------------------------------//
  *  PLAYSTATION 3
  */
-if( strVersion = getVersionString( strUserAgent, 'PLAYSTATION 3; ' ) || getVersionString( strUserAgent, 'PLAYSTATION 3 ' ) ){
+if( strPlatform === 'PlayStation 3' ){
     platform         = WHAT_BROWSER_AM_I__PLATFORM_PS3;
-    platformVersion  = strVersion;
+    platformVersion  = getVersionString( strUserAgent, 'PLAYSTATION 3; ' ) || getVersionString( strUserAgent, 'PLAYSTATION 3 ' );
     brand            = platform;
-    brandVersion     = strVersion;
-    if( conpareVersionString( '4.10', strVersion ) < 0 ){
+    brandVersion     = platformVersion;
+    if( conpareVersionString( platformVersion, '4.10' ) < 0 ){
         engine        = WHAT_BROWSER_AM_I__ENGINE_Sony;
-        engineVersion = strVersion;
+        engineVersion = platformVersion;
     };
     deviceTypeIsGame = true;
 } else
