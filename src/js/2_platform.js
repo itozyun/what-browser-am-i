@@ -103,6 +103,16 @@ if( strVersion = getVersionString( strUserAgent, '(PlayStation Portable); ' ) ){
     deviceTypeIsGame = true;
 } else
 /*----------------------------------------------------------------------------//
+ *  PlayStation 5
+ */
+if( strPlatform === 'PlayStation 5' ){
+    platform         = WHAT_BROWSER_AM_I__PLATFORM_PS5;
+    platformVersion  = getVersionString( strAppVersion, strPlatform + '/' );
+    brand            = platform;
+    brandVersion     = platformVersion;
+    deviceTypeIsGame = true;
+} else
+/*----------------------------------------------------------------------------//
  *  PlayStation 4
  */
 if( strPlatform === 'PlayStation 4' ){
