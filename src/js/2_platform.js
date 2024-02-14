@@ -58,11 +58,11 @@ if( window.wiiu /* strPlatform === 'Nintendo WiiU' */ ){
     platform         = WHAT_BROWSER_AM_I__PLATFORM_WiiU;
     platformVersion  = getVersionString( strAppVersion, 'NintendoBrowser/' );
     // https://blog.gutyan.jp/entry/2015/01/31/NintendoBrowser
-    // UブラウザにはNew3DS以上のUA切替機能がある。
-    // platform始めUA以外のnavigatorのプロパティはいずれの場合も変更されない。
-    engine        = WHAT_BROWSER_AM_I__ENGINE_WebKit; // UA 偽装で Chromium になるケースがあるのでここで設定
-    engineVersion = getVersionString( strAppVersion, 'AppleWebKit/' ) ||
-                    ( webkitCancelAnimationFrame ? 536 : 534 ); // 534:2.1.0J - 3.1.0J, 536:4.0.0J - 
+    //   UブラウザにはNew3DS以上のUA切替機能がある。
+    //   platform始めUA以外のnavigatorのプロパティはいずれの場合も変更されない。
+    engine           = WHAT_BROWSER_AM_I__ENGINE_WebKit; // UA 偽装で Chromium になるケースがあるのでここで設定
+    engineVersion    = getVersionString( strAppVersion, 'AppleWebKit/' ) ||
+                       ( webkitCancelAnimationFrame ? 536 : 534 ); // 534:2.1.0J - 3.1.0J, 536:4.0.0J - 
     deviceTypeIsGame = true;
     if( !platformVersion ){
         platformVersion   = webkitCancelAnimationFrame ? 4 : 2;
@@ -72,7 +72,7 @@ if( window.wiiu /* strPlatform === 'Nintendo WiiU' */ ){
 /*----------------------------------------------------------------------------//
  *  Wii
  */
-if( isPresto && isPresto.wiiremote /* strPlatform === 'Nintendo Wii' */ ){
+if( operaObject && operaObject.wiiremote /* strPlatform === 'Nintendo Wii' */ ){
     // https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%83%81%E3%83%A3%E3%83%B3%E3%83%8D%E3%83%AB
     // 2007年 4月12日版：Opera/9.10（Nintendo Wii; U; ; 1621; ja）
     // 2007年10月10日版：Opera/9.30（Nintendo Wii; U; ; 2047-7; ja）
@@ -99,15 +99,15 @@ if( strPlatform === 'PlayStation Vita' ){
 /*----------------------------------------------------------------------------//
  *  PlayStation Portable
  */
-if( strVersion = getVersionString( strUserAgent, '(PlayStation Portable); ' ) ){
+if( strPlatform === 'PSP' ){
     // https://github.com/chitoku-k/SystemInfo/blob/master/systeminfo.js
     // http://www.jp.playstation.com/psp/dl/pdf/InternetBrowser_ContentGuideline-J_500.pdf
     // User-Agent: Mozilla/4.0 (PSP (PlayStation Portable); 2.00)
     platform         = WHAT_BROWSER_AM_I__PLATFORM_PSP;
-    platformVersion  = strVersion;
-    versionNetFront  = 3.3; // 多分
+    platformVersion  = getVersionString( strUserAgent, '(PlayStation Portable); ' );
+    versionNetFront  = 3.2; // DHTML ブラウザではない!
     brand            = platform;
-    brandVersion     = strVersion;
+    brandVersion     = platformVersion;
     deviceTypeIsGame = true;
 } else
 /*----------------------------------------------------------------------------//
@@ -615,7 +615,7 @@ if( isAndroid && isGecko ){
 /*----------------------------------------------------------------------------//
  *  Android Presto
  */
-if( isAndroid && isPresto ){
+if( isAndroid && operaObject ){
     if( versionAndroid ){
         v = versionAndroid;
     } else {

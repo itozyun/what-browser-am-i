@@ -1,11 +1,11 @@
 /**
  * @param {string} str1 
  * @param {string} str2 
- * @param {*=} v 
+ * @return {number}
  */
-function getNumber( str1, str2, v ){
-    v = parseFloat( str1.split( str2 )[ 1 ] );
-    return 0 <= v ? v : 0;
+function getNumber( str1, str2 ){
+    var n = parseFloat( str1.split( str2 )[ 1 ] );
+    return 0 <= n ? n : 0;
 };
 function fromString( str1, str2 ){
     return str1.indexOf( str2 ) === 0;
@@ -98,13 +98,13 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
      * kQuery.js
      *   opera.versionは8から実装
      */
-    isPresto      = !hasOperaMiniObject && window.opera,
-    versionPresto = isPresto && (
-        ( isPresto.version && typeof isPresto.version === 'function' ) ? isPresto.version() : max( getVersionString( strUserAgent, 'Opera ' ), verVersion, appVersion )
+    operaObject   = !hasOperaMiniObject && window.opera,
+    versionPresto = operaObject && (
+        ( typeof operaObject.version === 'function' ) ? operaObject.version() : max( getVersionString( strUserAgent, 'Opera ' ), verVersion, appVersion )
     ),
     hasOPRObject  = window.opr, // 全ての Blink Opera に存在するわけではない？
 
-    isTrident      = !isPresto && ( document.all || docMode ), // IE11 には .all が居ない .docMode == 11
+    isTrident      = !operaObject && ( document.all || docMode ), // IE11 には .all が居ない .docMode == 11
     versionTrident = isTrident && (
         docMode               ? docMode :
         window.XMLHttpRequest ? ( document.getElementsByTagName ? 7 : 4 ) :

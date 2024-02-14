@@ -3,7 +3,7 @@ if( !engine ){
 /*----------------------------------------------------------------------------//
  *  Presto
  */
-    if( isPresto ){
+    if( operaObject ){
         engine        = isAndroidBased || deviceTypeIsPDA || deviceTypeIsPhone || deviceTypeIsTablet ? WHAT_BROWSER_AM_I__ENGINE_PrestoMobile : WHAT_BROWSER_AM_I__ENGINE_Presto;
         engineVersion = versionPresto;
 /*----------------------------------------------------------------------------//
