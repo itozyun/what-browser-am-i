@@ -1,6 +1,6 @@
 {
   "name": "what-browser-am-i",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "A library for client-side web browser determination.",
   "author": "itozyun",
   "license": "MIT",
