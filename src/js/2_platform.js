@@ -161,6 +161,18 @@ if( findString( strUserAgent, 'Xbox' ) ){
     deviceTypeIsGame = true;
 } else
 /*----------------------------------------------------------------------------//
+ *  Mylo
+ */
+if( false ){
+    platform         = WHAT_BROWSER_AM_I__PLATFORM_Mylo;
+    platformVersion  = 1;
+    engine           = WHAT_BROWSER_AM_I__ENGINE_PrestoMobile;
+    engineVersion    = versionOpera;
+    brand            = WHAT_BROWSER_AM_I__BRAND_Opera;
+    brandVersion     = versionOpera;
+    deviceTypeIsPDA  = true;
+} else
+/*----------------------------------------------------------------------------//
  *  Mylo2
  */
 if( appVersion === 2 && findString( strUserAgent, 'Sony/COM2/' ) ){
