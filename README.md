@@ -159,4 +159,4 @@ Closure Compiler `@define`.
 
 what-browser-am-i is licensed under [MIT License](https://opensource.org/licenses/MIT).
 
-(C) 2021-2023 [itozyun](https://github.com/itozyun)([outcloud.blogspot.com](//outcloud.blogspot.com/))
+(C) 2021-2024 [itozyun](https://github.com/itozyun)([outcloud.blogspot.com](//outcloud.blogspot.com/))
