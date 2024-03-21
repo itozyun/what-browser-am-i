@@ -1,6 +1,6 @@
 # what-browser-am-i
 
-Library for client-side web browser judgment. It has been developed to work with a wide range of DHTML browsers, both old and new.
+Library for client-side web browser judgment. It has been developed to work with a wide range of DHTML browsers and Flash Player embedded browsers like NetFront on PlayStation Portable, both old and new.
 
 Prior to August 7, 2020, [development was done at itozyun/web-doc-base](https://github.com/itozyun/web-doc-base/commit/0fc3de23cc6c073efe5959ffb9e5381635f89811).
 
@@ -159,4 +159,4 @@ Closure Compiler `@define`.
 
 what-browser-am-i is licensed under [MIT License](https://opensource.org/licenses/MIT).
 
-(C) 2021-2023 [itozyun](https://github.com/itozyun)([outcloud.blogspot.com](//outcloud.blogspot.com/))
+(C) 2021-2024 [itozyun](https://github.com/itozyun)([outcloud.blogspot.com](//outcloud.blogspot.com/))

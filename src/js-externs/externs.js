@@ -1,4 +1,4 @@
-/** @typedef {{min : (string|number), max : (string|number)}} */
+/** @typedef {{min : (string|number|void), max : (string|number|void)}} */
 var VersionRange;
 
 /**
@@ -282,9 +282,7 @@ window.onoperadetachedviewchange = function(){};
 /**
  * @const {!Object|undefined}
  */
- var wii = {
-    wiiremote : function(){}
- };
+opera.wiiremote = {};
 
  /**
  * @const {!Object|undefined}

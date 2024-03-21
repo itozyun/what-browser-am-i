@@ -136,11 +136,11 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     versioniOSWithUC        = getVersionString( strUserAgent.split( '_' ).join( '.' ), '; iPh OS ' ),
     versionAndroidWithUCWEB = getVersionString( strUserAgent, '; Adr ' ), // Android for UC Browser Speed mode
 
-    isYahooForAandroid = findString( strAppVersion, 'YJApp-ANDROID' ), // Android 7, Y!browser 2.5.56
+    isOnAndroid = findString( strAppVersion, 'YJApp-ANDROID' ), // Android 7, Y!browser 2.5.56
     
     isAndroid  = findString( strPlatform, 'Android' ) ||
                  ( isGecko && findString( strAppVersion, 'Android' ) ) || /* Android2.3.5 Firefox3.1 */
-                 isYahooForAandroid,
+                 isOnAndroid,
     versionAndroid = getVersionString( strPlatform , 'Android ' ) || getVersionString( strAppVersion, 'Android ' ) ||
                      getVersionString( strUserAgent, 'Android ' ) || versionAndroidWithUCWEB,
     maybeLinux  = findString( strPlatform, 'Linux' ), // Linux or Android
@@ -155,7 +155,7 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
                          getVersionString( strUserAgent, 'rv:' ) ||
                          getVersionString( strUserAgent.substr( strUserAgent.indexOf( ') Gecko/' ) - 11 ), '; ' ) // for Gecko ~0.8.1
                      ),
-    versionFirefox = getVersionString( strUserAgent, 'Firefox/' ), // Android9 + Firefox67.0 + PC_MOEDE で rv: が存在しない！
+    versionFirefox = getVersionString( strUserAgent, 'Firefox/' ), // Android9 + Firefox67.0 + PC_MODE で rv: が存在しない！
     versionOpera   = getVersionString( strUserAgent, 'Opera/' ),
     isSleipnir_iOS = window.FNRBrowser,
 
@@ -302,7 +302,7 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     isLinuxCPU     = findLinuxCPUString( strPlatform ),
     isFakeLinuxCPU = isLinuxCPU && !findString( strUserAgent, strPlatform ) && findLinuxCPUString( strUserAgent ),
     maybePCMode    = ( isTouch && ( versionWebKit || isGecko ) && isFakeLinuxCPU ) ||
-                     ( !versionAndroid && isYahooForAandroid ),
+                     ( !versionAndroid && isOnAndroid ),
 
     // https://twitter.com/itozyun/status/1293628829248794624
     maybeLunascapeAndroid = !!window.ReactNativeWebView, // TODO ChromeWebView の version が17に!
@@ -343,7 +343,9 @@ var engine, engineVersion, platform, platformVersion, brand, brandVersion, devic
     deviceTypeIsMediaPlayer, deviceTypeIsEBookReader,
     deviceTypeIsPhone, deviceTypeIsTablet,
     deviceTypeIsPC,
+
     versionNetFront, versionNX,
+    
     isMac,
     isFireOS,
     isAndroidBrowser, isAndroidChromeWebView, isAndroidBased, maybe_iOSWebView, is_iOSOperaTurbo, is_iOSDolphin, is_iOSBrave;

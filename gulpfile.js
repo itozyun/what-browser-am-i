@@ -8,65 +8,33 @@ const gulp            = require('gulp'),
       tempJsName      = 'temp.js',
       tempDir         = require('os').tmpdir() + '/' + moduleName,
       globalVariables = 'document,navigator,screen,parseFloat,Number',
-      copyright       = '(c) 2021-2023 itozyun, https://github.com/itozyun/what-browser-am-i, MIT License.';
+      copyright       = '(c) 2021-2024 itozyun, https://github.com/itozyun/what-browser-am-i, MIT License.';
 
-      gulp.task('dist', gulp.series(
-        function(){
-            return gulp.src( './src/js/**/*.js' )
-                .pipe(
-                    gulpDPZ(
-                        {
-                            labelGlobal        : 'global',
-                            labelPackageGlobal : '*',
-                            packageGlobalArgs  : [ 'ua,window,' + globalVariables + ',undefined', 'ua,window,' + globalVariables + ',void 0' ],
-                            basePath           : './src/js'
-                        }
-                    )
-                ).pipe(
-                    ClosureCompiler(
-                        {
-                            externs           : [ externsJs ],
-                            compilation_level : 'ADVANCED',
-                            warning_level     : 'VERBOSE',
-                            language_in       : 'ECMASCRIPT3',
-                            language_out      : 'ECMASCRIPT3',
-                            output_wrapper    :
-                                '/** ' + copyright + ' */\n' +
-                                'whatBrowserAmI={};(function(ua){\n%output%\n})(whatBrowserAmI);',
-                            js_output_file    : 'whatBrowserAmI.js'
-                        }
-                    )
-                ).pipe(gulp.dest( './dist' ));
-        },
-        function(){
-            return gulp.src( './src/js/**/*.js' )
-                .pipe(
-                    gulpDPZ(
-                        {
-                            labelGlobal        : 'global',
-                            labelPackageGlobal : '*',
-                            packageGlobalArgs  : [ 'ua,window,' + globalVariables + ',undefined', 'ua,window,' + globalVariables + ',void 0' ],
-                            basePath           : './src/js'
-                        }
-                    )
-                ).pipe(
-                    ClosureCompiler(
-                        {
-                            externs           : [ externsJs ],
-                            compilation_level : 'ADVANCED',
-                            warning_level     : 'VERBOSE',
-                            language_in       : 'ECMASCRIPT3',
-                            language_out      : 'ECMASCRIPT3',
-                            output_wrapper    :
-                                '/** ' + copyright + ' */\n' +
-                                'var ua={};%output%;' +
-                                'module.export=ua;',
-                            js_output_file    : 'index.js'
-                        }
-                    )
-                ).pipe(gulp.dest( './dist' ));
-        }
-    ));
+gulp.task('dist', gulp.series(
+    function(){
+        return gulp
+            .src(
+                [ './src/closure-primitives/base.js', './src/cjs/**/*.js' ]
+            ).pipe(
+                ClosureCompiler(
+                    {
+                        dependency_mode  : 'PRUNE',
+                        entry_point       : 'goog:entry',
+                        externs           : [ externsJs ],
+                        compilation_level : 'ADVANCED',
+                        formatting        : 'PRETTY_PRINT',
+                        warning_level     : 'VERBOSE',
+                        language_in       : 'ECMASCRIPT3',
+                        language_out      : 'ECMASCRIPT3',
+                        output_wrapper    :
+                            '/** ' + copyright + ' */\n' +
+                            'whatBrowserAmI={};(function(ua){\n%output%\n})(whatBrowserAmI);',
+                        js_output_file    : 'whatBrowserAmI.js'
+                    }
+                )
+            ).pipe(gulp.dest( './test' ));
+    }
+));
 
 gulp.task('docs', gulp.series(
     function(){
