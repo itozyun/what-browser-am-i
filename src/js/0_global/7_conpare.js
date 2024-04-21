@@ -7,14 +7,12 @@
  */
 ua.conpare = function( v1, v2 ){
     var i = 0,
-        a1, a2,
-        l1, l2,
+        a1 = ( v1 + '' ).split( '.' ),
+        a2 = ( v2 + '' ).split( '.' ),
+        l1 = a1.length,
+        l2 = a2.length,
         l, n1, n2;
 
-    a1 = ( v1 + '' ).split( '.' );
-    a2 = ( v2 + '' ).split( '.' );
-    l1 = a1.length;
-    l2 = a2.length;
     while( a1[ l1 - 1 ] === '0' ){
         --l1;
     };

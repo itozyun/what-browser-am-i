@@ -1,99 +1,93 @@
-const gulp            = require('gulp'),
-      gulpDPZ         = require('gulp-diamond-princess-zoning'),
+const pkg             = require('./package.json'),
+      gulp            = require('gulp'),
       ClosureCompiler = require('google-closure-compiler').gulp(),
+      postProcessor   = require( 'es2-postprocessor' );
       fs              = require('fs'),
       JSDOM           = require('jsdom').JSDOM,
       externsJs       = './src/js-externs/externs.js',
-      moduleName      = 'what-browser-am-i',
+      moduleName      = pkg.name,
       tempJsName      = 'temp.js',
       tempDir         = require('os').tmpdir() + '/' + moduleName,
       globalVariables = 'document,navigator,screen,parseFloat,Number',
-      copyright       = '(c) 2021-2023 itozyun, https://github.com/itozyun/what-browser-am-i, MIT License.';
+      copyright       = moduleName + '@' + pkg.version + '\n' +
+                       '(c) 2021-' + (new Date).getFullYear() + ' ' + pkg.author + '(' + pkg.homepage + '), ' + pkg.license + '.';
 
-      gulp.task('dist', gulp.series(
-        function(){
-            return gulp.src( './src/js/**/*.js' )
-                .pipe(
-                    gulpDPZ(
-                        {
-                            labelGlobal        : 'global',
-                            labelPackageGlobal : '*',
-                            packageGlobalArgs  : [ 'ua,window,' + globalVariables + ',undefined', 'ua,window,' + globalVariables + ',void 0' ],
-                            basePath           : './src/js'
-                        }
-                    )
-                ).pipe(
-                    ClosureCompiler(
-                        {
-                            externs           : [ externsJs ],
-                            compilation_level : 'ADVANCED',
-                            warning_level     : 'VERBOSE',
-                            language_in       : 'ECMASCRIPT3',
-                            language_out      : 'ECMASCRIPT3',
-                            output_wrapper    :
-                                '/** ' + copyright + ' */\n' +
-                                'whatBrowserAmI={};(function(ua){\n%output%\n})(whatBrowserAmI);',
-                            js_output_file    : 'whatBrowserAmI.js'
-                        }
-                    )
-                ).pipe(gulp.dest( './dist' ));
-        },
-        function(){
-            return gulp.src( './src/js/**/*.js' )
-                .pipe(
-                    gulpDPZ(
-                        {
-                            labelGlobal        : 'global',
-                            labelPackageGlobal : '*',
-                            packageGlobalArgs  : [ 'ua,window,' + globalVariables + ',undefined', 'ua,window,' + globalVariables + ',void 0' ],
-                            basePath           : './src/js'
-                        }
-                    )
-                ).pipe(
-                    ClosureCompiler(
-                        {
-                            externs           : [ externsJs ],
-                            compilation_level : 'ADVANCED',
-                            warning_level     : 'VERBOSE',
-                            language_in       : 'ECMASCRIPT3',
-                            language_out      : 'ECMASCRIPT3',
-                            output_wrapper    :
-                                '/** ' + copyright + ' */\n' +
-                                'var ua={};%output%;' +
-                                'module.export=ua;',
-                            js_output_file    : 'index.js'
-                        }
-                    )
-                ).pipe(gulp.dest( './dist' ));
-        }
-    ));
+let minify       = false;
+let uaObjectName = 'whatBrowserAmI';
+let fileName     = 'whatBrowserAmI.js';
+let outputDir    = './test';
+let formatting   = 'PRETTY_PRINT';
 
-gulp.task('docs', gulp.series(
+gulp.task( 'dist', gulp.series(
     function(){
-        return gulp.src( './src/js/**/*.js' )
-            .pipe(
-                gulpDPZ(
+        const funcConpare = fs.readFileSync( './src/js-global/conpare.js' ).toString();
+
+        return gulp
+            .src(
+                [ './src/closure-primitives/base.js', './src/cjs/**/*.js' ]
+            ).pipe(
+                ClosureCompiler(
                     {
-                        labelGlobal        : 'global',
-                        labelPackageGlobal : '*',
-                        packageGlobalArgs  : [ 'ua,window,' + globalVariables + ',undefined', 'ua,this,' + globalVariables + ',void 0' ],
-                        basePath           : './src/js'
+                        dependency_mode  : 'PRUNE',
+                        entry_point       : 'goog:allfeatures',
+                        externs           : [ externsJs ],
+                        compilation_level : 'ADVANCED',
+                        define            : [
+                            'whatBrowserAmI.DEFINE.MINIFY=' + minify
+                        ],
+                        warning_level     : 'VERBOSE',
+                        language_in       : 'ECMASCRIPT3',
+                        language_out      : 'ECMASCRIPT3',
+                        output_wrapper    :
+                            'var ' + uaObjectName + '=' + ( minify ? '[]' : '{}' ) + ';' +
+                            funcConpare.split( 'ua.conpare' ).join( uaObjectName + '.conpare' ) +
+                            '(function(ua, window, ' + globalVariables + '){\n' +
+                                '%output%\n' +
+                            '})(' + uaObjectName + ', this, ' + globalVariables + ');'
                     }
                 )
             ).pipe(
                 ClosureCompiler(
                     {
-                        externs           : [ externsJs ],
-                        compilation_level : 'ADVANCED',
-                        warning_level     : 'VERBOSE',
-                        language_in       : 'ECMASCRIPT3',
-                        language_out      : 'ECMASCRIPT3',
-                        output_wrapper    : 'ua={};%output%',
-                        js_output_file    : tempJsName
+                        externs        : [ externsJs ],
+                        warning_level  : 'QUIET',
+                        language_in    : 'ECMASCRIPT3',
+                        language_out   : 'ECMASCRIPT3'
                     }
                 )
-            ).pipe(gulp.dest( tempDir ));
+            ).pipe(
+                postProcessor.gulp(
+                    {
+                        minIEVersion    : 5,
+                        minOperaVersion : 7,
+                        minGeckoVersion : 0.6
+                    }
+                )
+            ).pipe(
+                ClosureCompiler(
+                    {
+                        compilation_level : 'WHITESPACE_ONLY',
+                        warning_level     : 'QUIET',
+                        formatting        : formatting,
+                        js_output_file    : fileName,
+                        output_wrapper    : '\/* ' + copyright + ' *\/\n' + '%output%',
+                    }
+                )
+            ).pipe(
+                gulp.dest( outputDir )
+            );
+    }
+));
+
+gulp.task( 'docs', gulp.series(
+    function( cb ){
+        uaObjectName = 'ua';
+        fileName     = tempJsName;
+        outputDir    = tempDir;
+        formatting   = 'SINGLE_QUOTES';
+        cb();
     },
+    'dist',
     function( cb ){
         fs.readFile( tempDir + '/' + tempJsName,
             function( error, buffer ){

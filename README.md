@@ -1,6 +1,15 @@
 # what-browser-am-i
 
-Library for client-side web browser judgment. It has been developed to work with a wide range of DHTML browsers, both old and new.
+Library for client-side web browser judgment. It has been developed to work with a wide range of DHTML browsers and Flash Player embedded browsers like NetFront on PlayStation Portable, both old and new.
+
+1. 1_platform/* は 1_platform, 2_device, 3_engine, 4_brand に依存する
+2. 2_device/* は 2_device, 3_engine, 4_brand に依存する
+3. 3_engine/* は 3_engine, 4_brand に依存する
+4. 4_brand/* は 4_brand に依存する
+
+例 platform は device.isEinkAndroid を利用することが出来る
+   device.*.is 関数内で platfrom の調査結果を使う場合、p_platformName === PLATFORM.iOS を使用する．platfrom.iOS.is() は不可.
+   p_platformName 等の調査結果を使用する is() 関数は @package を付けて、上位のモジュールから呼ばれないようにする
 
 Prior to August 7, 2020, [development was done at itozyun/web-doc-base](https://github.com/itozyun/web-doc-base/commit/0fc3de23cc6c073efe5959ffb9e5381635f89811).
 
@@ -67,18 +76,18 @@ console.log(whatBrowserAmI.ENGINE_VERSION); // "1.9.1"
 ~~~
 ### 4.1. Properties
 
-| Property           | Data type        | Example       |
-|:-------------------|:-----------------|:--------------|
-| `PLATFORM`         | `string`         |               |
-| `PLATFORM_VERSION` | `string\|object` |               |
-| `ENGINE`           | `string`         |               |
-| `ENGINE_VERSION`   | `string\|object` |               |
-| `BRAND`            | `string`         |               |
-| `BRAND_VERSION`    | `string\|object` |               |
-| `DEVICE`           | `string`         |               |
-| `DEVICE_VERSION`   | `string\|object` |               |
-| `PCSITE_REQUESTED` | `boolean`        | `true`        |
-| `DEVICE_TYPE`      | `number`         |               |
+| Property            | Data type                      | Example       |
+|:--------------------|:-------------------------------|:--------------|
+| `PLATFORM`          | `string`                       |               |
+| `PLATFORM_VERSION`  | `string\|number\|object\|void` |               |
+| `DEVICE`            | `string`                       |               |
+| `DEVICE_GENERATION` | `string\|number\|object\|void` |               |
+| `DEVICE_TYPE`       | `string\|number`               |               |
+| `ENGINE`            | `string`                       |               |
+| `ENGINE_VERSION`    | `string\|number\|object\|void` |               |
+| `BRAND`             | `string`                       |               |
+| `BRAND_VERSION`     | `string\|number\|object\|void` |               |
+| `PCSITE_REQUESTED`  | `boolean`                      | `true`        |
 
 ### 4.2. Method
 
@@ -139,24 +148,12 @@ gulp dist
 
 #### 5.4.1 Use optimization option
 
-1. Compile with `DEFINE_WHAT_BROWSER_AM_I__MINIFY=true`.
+1. Compile with `whatBrowserAmI.DEFINE.MINIFY=true`.
 2. All properties and names are provided numerically. This constant is located in `./src/js/0_global/*.js`.
 3. [web-doc-base/src/js-inline/dynamicViewPort.js](https://github.com/itozyun/web-doc-base/blob/master/src/js-inline/dynamicViewPort.js), etc., to obtain the required values.
-
-#### 5.4.2 Build options
-
-Closure Compiler `@define`.
-
-| Variable                                             | Data type | Default value | Note              |
-|:-----------------------------------------------------|:----------|:--------------|:------------------|
-| `DEFINE_WHAT_BROWSER_AM_I__MINIFY`                   | `boolean` | `false`       | Since version 0.6 |
-| `DEFINE_WHAT_BROWSER_AM_I__BRAND_ENABLED`            | `boolean` | `true`        |                   |
-| `DEFINE_WHAT_BROWSER_AM_I__PCSITE_REQUESTED_ENABLED` | `boolean` | `true`        |                   |
-| `DEFINE_WHAT_BROWSER_AM_I__IOS_DEVICE_ENABLED`       | `boolean` | `true`        |                   |
-| `DEFINE_WHAT_BROWSER_AM_I__DEVICE_TYPE_ENABLED`      | `boolean` | `true`        |                   |
 
 ## 6. License
 
 what-browser-am-i is licensed under [MIT License](https://opensource.org/licenses/MIT).
 
-(C) 2021-2023 [itozyun](https://github.com/itozyun)([outcloud.blogspot.com](//outcloud.blogspot.com/))
+(C) 2021-2024 [itozyun](https://github.com/itozyun)([outcloud.blogspot.com](//outcloud.blogspot.com/))
