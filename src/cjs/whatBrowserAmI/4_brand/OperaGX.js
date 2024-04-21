@@ -17,7 +17,7 @@ whatBrowserAmI.brand.OperaGX.is = function(){
 /** @return {boolean|void} */
 whatBrowserAmI.brand.OperaGX.detect = function(){
     if( whatBrowserAmI.brand.OperaGX.is() ){
-        p_setBrand( BRAND.OperaGX, whatBrowserAmI.brand.Opera.OPR_NAVIGATOR_VERSION );
+        p_setBrand( BRAND.Opera_GX, whatBrowserAmI.brand.Opera.OPR_NAVIGATOR_VERSION );
         return true;
     };
 };

@@ -20,7 +20,7 @@ whatBrowserAmI.engine.NetFront.is = function(){
 whatBrowserAmI.engine.NetFront.detect = function(){
     if( whatBrowserAmI.engine.NetFront.is() ){
         p_setEngine( ENGINE.NetFront, whatBrowserAmI.engine.NetFront.NAVIGATOR_VERSION );
-        p_setBrand( BRAND.NetFront, p_engineVersion );
+        p_setBrand( BRAND.NetFront$R, p_engineVersion );
         return true;
     };
 };

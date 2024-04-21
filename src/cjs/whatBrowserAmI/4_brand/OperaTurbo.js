@@ -21,7 +21,7 @@ whatBrowserAmI.brand.OperaTurbo.is = function(){
 /** @return {boolean|void} */
 whatBrowserAmI.brand.OperaTurbo.detect = function(){
     if( whatBrowserAmI.brand.OperaTurbo.is() ){
-        p_setBrand( BRAND.OperaTurbo, whatBrowserAmI.brand.OperaTurbo.NAVIGATOR_VERSION );
+        p_setBrand( BRAND.Opera_Turbo, whatBrowserAmI.brand.OperaTurbo.NAVIGATOR_VERSION );
         if( !p_isPcSiteRequested ){
             p_isPcSiteRequested = !p_hasSubstring( p_strAppVersion, 'Mobile/' );
         };

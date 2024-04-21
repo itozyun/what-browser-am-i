@@ -44,7 +44,7 @@ whatBrowserAmI.engine.Presto.operaObject = operaObject;
 whatBrowserAmI.engine.Presto.detect = function(){
     if( whatBrowserAmI.engine.Presto.is() ){
         p_setEngine(
-            p_deviceType === DEVICE_TYPE.PC || p_platformName === PLATFORM.Wii$TM ? ENGINE.Presto : ENGINE.PrestoMobile,
+            p_deviceType === DEVICE_TYPE.PC || p_platformName === PLATFORM.Wii$TM ? ENGINE.Presto : ENGINE.Presto_Mobile,
             whatBrowserAmI.engine.Presto.IMPLEMENT_VERSION || whatBrowserAmI.engine.Presto.NAVIGATOR_VERSION
         );
         return true;

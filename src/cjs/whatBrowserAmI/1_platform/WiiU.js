@@ -42,7 +42,7 @@ whatBrowserAmI.platform.WiiU.detect = function(){
             ENGINE.WebKit,
             p_getVersionString( p_strAppVersion, 'AppleWebKit/' ) || ( hasWebkitCancelAnimationFrame ? 536 : 534 )
         );
-        p_setBrand( BRAND.NetFrontNX, 3 );
+        p_setBrand( BRAND.NetFront$R_Browser_NX, 3 );
         return true;
     };
 };

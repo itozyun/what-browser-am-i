@@ -21,7 +21,7 @@ whatBrowserAmI.platform.NintendoDS.detect = function(){
     if( whatBrowserAmI.platform.NintendoDS.is() ){
         p_setPlatform( PLATFORM.NINTENDO_DS$TM );
         p_setDevice( DEVICE.NintendoDS, undefined, DEVICE_TYPE.GAME );
-        p_setEngine( ENGINE.PrestoMobile, 8.5 );
+        p_setEngine( ENGINE.Presto_Mobile, 8.5 );
         return true;
     };
 };

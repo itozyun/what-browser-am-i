@@ -161,7 +161,7 @@ whatBrowserAmI.engine.SamsungInternet.is = function(){
 whatBrowserAmI.engine.SamsungInternet.detect = function(){
     if( whatBrowserAmI.engine.SamsungInternet.is() ){
         p_setEngine(
-            ENGINE.SamsungInternet,
+            ENGINE.Samsung_Internet,
             whatBrowserAmI.engine.SamsungInternet.NAVIGATOR_VERSION || whatBrowserAmI.engine.SamsungInternet.LT2_NAVIGATOR_VERSION
         );
         return true;

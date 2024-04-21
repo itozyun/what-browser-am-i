@@ -30,7 +30,7 @@ whatBrowserAmI.platform.Nintendo3DS.detect = function(){
         p_setPlatform( PLATFORM.NINTENDO_3DS$TM, whatBrowserAmI.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
         p_setDevice( DEVICE.Nintendo3DS, undefined, DEVICE_TYPE.GAME );
         p_setEngine( ENGINE.WebKit, p_numberWebKit || 535 );
-        p_setBrand( BRAND.NetFrontNX, whatBrowserAmI.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
+        p_setBrand( BRAND.NetFront$R_Browser_NX, whatBrowserAmI.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
         return true;
     };
 };

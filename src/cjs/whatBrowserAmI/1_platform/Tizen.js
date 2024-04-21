@@ -22,8 +22,8 @@ whatBrowserAmI.platform.Tizen.is = function(){
 whatBrowserAmI.platform.Tizen.detect = function(){
     if( whatBrowserAmI.platform.Tizen.is() ){
         p_setPlatform( PLATFORM.Tizen, whatBrowserAmI.platform.Tizen.NAVIGATOR_VERSION, DEVICE_TYPE.PHONE ); // TODO deviceTypeIsTV = true;
-        p_setEngine( ENGINE.SamsungInternet, whatBrowserAmI.engine.SamsungInternet.NAVIGATOR_VERSION );
-        p_setBrand( BRAND.SamsungInternet, whatBrowserAmI.engine.SamsungInternet.NAVIGATOR_VERSION );
+        p_setEngine( ENGINE.Samsung_Internet, whatBrowserAmI.engine.SamsungInternet.NAVIGATOR_VERSION );
+        p_setBrand( BRAND.Samsung_Internet, whatBrowserAmI.engine.SamsungInternet.NAVIGATOR_VERSION );
         return true;
     };
 };

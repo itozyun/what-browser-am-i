@@ -41,7 +41,7 @@ whatBrowserAmI.engine.SafariMobile.is = function(){
 /** @return {boolean|void} */
 whatBrowserAmI.engine.SafariMobile.detect = function(){
     if( whatBrowserAmI.engine.SafariMobile.is() ){
-        p_setEngine( ENGINE.SafariMobile, p_platformVersion );
+        p_setEngine( ENGINE.Safari_Mobile, p_platformVersion );
         return true;
     };
 };
@@ -91,7 +91,7 @@ whatBrowserAmI.engine.iOSWebView.is = function(){
 /** @return {boolean|void} */
 whatBrowserAmI.engine.iOSWebView.detect = function(){
     if( whatBrowserAmI.engine.iOSWebView.is() ){
-        p_setEngine( ENGINE.iOSWebView, p_platformVersion );
+        p_setEngine( ENGINE.iOS_WebView, p_platformVersion );
         return true;
     };
 };

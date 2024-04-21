@@ -30,8 +30,8 @@ whatBrowserAmI.brand.Chrome.is = function(){
  * @return {boolean}
  */
 function _isChromeFamily(){
-    return p_engineName === ENGINE.Chromium || p_engineName === ENGINE.ChromiumMobile ||
-           p_engineName === ENGINE.AndroidWebView && p_conpareVersion( 5, p_engineVersion ) < 0;
+    return p_engineName === ENGINE.Chromium || p_engineName === ENGINE.Chromium_Mobile ||
+           p_engineName === ENGINE.Android_WebView && p_conpareVersion( 5, p_engineVersion ) < 0;
 };
 
 /** @return {boolean|void} */

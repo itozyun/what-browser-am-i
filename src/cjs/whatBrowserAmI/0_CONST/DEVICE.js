@@ -6,7 +6,7 @@ goog.require( 'whatBrowserAmI.DEFINE.MINIFY' );
 whatBrowserAmI.DEVICE = {
     Unknown             : whatBrowserAmI.DEFINE.MINIFY ?  0 : '',
 
-    mylo                : whatBrowserAmI.DEFINE.MINIFY ?  1 : 'mylo',
+    SONY_mylo           : whatBrowserAmI.DEFINE.MINIFY ?  1 : 'mylo',
     NewNintendo3DS      : whatBrowserAmI.DEFINE.MINIFY ?  2 : 'NewNintendo3DS',
     Nintendo3DS         : whatBrowserAmI.DEFINE.MINIFY ?  3 : 'Nintendo3DS',
     NintendoDS          : whatBrowserAmI.DEFINE.MINIFY ?  4 : 'NintendoDS',

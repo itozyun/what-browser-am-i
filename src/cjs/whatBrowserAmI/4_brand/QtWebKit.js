@@ -19,7 +19,7 @@ whatBrowserAmI.brand.QtWebKit.is = function(){
 /** @return {boolean|void} */
 whatBrowserAmI.brand.QtWebKit.detect = function(){
     if( whatBrowserAmI.brand.QtWebKit.is() ){
-        p_setBrand( BRAND.QtWebKit, whatBrowserAmI.brand.QtWebKit.NAVIGATOR_VERSION );
+        p_setBrand( BRAND.Qt_WebKit, whatBrowserAmI.brand.QtWebKit.NAVIGATOR_VERSION );
         return true;
     };
 };

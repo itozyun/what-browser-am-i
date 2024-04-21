@@ -23,7 +23,7 @@ whatBrowserAmI.platform.WindowsCE.is = function(){
 whatBrowserAmI.platform.WindowsCE.detect = function(){
     if( whatBrowserAmI.platform.WindowsCE.is() ){
         p_setPlatform(
-            PLATFORM.WindowsCE,
+            PLATFORM.Windows_CE,
             whatBrowserAmI.engine.Trident.IMPLEMENT_VERSION < 5 ? 3.0 : 4.1,
             DEVICE_TYPE.PDA
         );

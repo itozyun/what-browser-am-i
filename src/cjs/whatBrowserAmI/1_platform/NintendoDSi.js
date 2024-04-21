@@ -26,7 +26,7 @@ whatBrowserAmI.platform.NintendoDSi.detect = function(){
             p_getVersionString( p_strUserAgent, p_strPlatform + '; Opera/' )
         );
         p_setDevice( DEVICE.NintendoDSi, undefined, DEVICE_TYPE.GAME );
-        p_setEngine( ENGINE.PrestoMobile, 9.5 );
+        p_setEngine( ENGINE.Presto_Mobile, 9.5 );
         return true;
     };
 };

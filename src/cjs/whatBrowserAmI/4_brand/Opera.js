@@ -23,7 +23,7 @@ whatBrowserAmI.brand.Opera.OPR_NAVIGATOR_VERSION = p_getVersionString( p_strUser
 whatBrowserAmI.brand.Opera.is = function(){
     return !!whatBrowserAmI.brand.Opera.NAVIGATOR_VERSION ||
            !!whatBrowserAmI.brand.Opera.OPR_NAVIGATOR_VERSION ||
-           p_engineName === ENGINE.Presto || p_engineName === ENGINE.PrestoMobile;
+           p_engineName === ENGINE.Presto || p_engineName === ENGINE.Presto_Mobile;
 };
 
 /** @return {boolean|void} */
@@ -31,7 +31,7 @@ whatBrowserAmI.brand.Opera.detect = function(){
     if( whatBrowserAmI.brand.Opera.is() ){
         p_setBrand(
             BRAND.Opera,
-            p_engineName === ENGINE.Presto || p_engineName === ENGINE.PrestoMobile
+            p_engineName === ENGINE.Presto || p_engineName === ENGINE.Presto_Mobile
                 ? p_engineVersion
                 : whatBrowserAmI.brand.Opera.NAVIGATOR_VERSION || whatBrowserAmI.brand.Opera.OPR_NAVIGATOR_VERSION
         );

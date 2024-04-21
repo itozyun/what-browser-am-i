@@ -22,7 +22,7 @@ whatBrowserAmI.brand.NetscapeNavigator.is = function(){
 /** @return {boolean|void} */
 whatBrowserAmI.brand.NetscapeNavigator.detect = function(){
     if( whatBrowserAmI.brand.NetscapeNavigator.is() ){
-        p_setBrand( BRAND.NetscapeNavigator, whatBrowserAmI.brand.NetscapeNavigator.NAVIGATOR_VERSION );
+        p_setBrand( BRAND.Netscape_Navigator, whatBrowserAmI.brand.NetscapeNavigator.NAVIGATOR_VERSION );
         return true;
     };
 };

@@ -20,7 +20,7 @@ whatBrowserAmI.platform.WindowsMobile.is = function(){
 /** @return {boolean|void} */
 whatBrowserAmI.platform.WindowsMobile.detect = function(){
     if( whatBrowserAmI.platform.WindowsMobile.is() ){
-        p_setPlatform( PLATFORM.WindowsMobile, 6.1, DEVICE_TYPE.PDA );
+        p_setPlatform( PLATFORM.Windows_Mobile, 6.1, DEVICE_TYPE.PDA );
         return true;
     };
 };

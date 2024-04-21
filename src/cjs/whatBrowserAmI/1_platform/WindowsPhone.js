@@ -36,13 +36,13 @@ whatBrowserAmI.platform.WindowsPhone.is = function(){
 whatBrowserAmI.platform.WindowsPhone.detect = function(){
     if( whatBrowserAmI.platform.WindowsPhone.is() ){
         if( isWP10PcSiteRequested ){
-            p_setPlatform( PLATFORM.WindowsPhone, 10, DEVICE_TYPE.PHONE );
+            p_setPlatform( PLATFORM.Windows_Phone, 10, DEVICE_TYPE.PHONE );
             p_isPcSiteRequested = true;
         } else if( isWPPcSiteRequested ){
-            p_setPlatform( PLATFORM.WindowsPhone, _tridentVersionToWindowsPhoneVersion( implementVersionTrident ), DEVICE_TYPE.PHONE );
+            p_setPlatform( PLATFORM.Windows_Phone, _tridentVersionToWindowsPhoneVersion( implementVersionTrident ), DEVICE_TYPE.PHONE );
             p_isPcSiteRequested = true;
         } else {
-            p_setPlatform( PLATFORM.WindowsPhone, windowsPhoneVersionWithUCWEB || windowsPhoneVersion, DEVICE_TYPE.PHONE );
+            p_setPlatform( PLATFORM.Windows_Phone, windowsPhoneVersionWithUCWEB || windowsPhoneVersion, DEVICE_TYPE.PHONE );
         };
         return true;
     };

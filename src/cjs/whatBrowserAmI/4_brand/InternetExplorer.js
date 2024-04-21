@@ -11,13 +11,13 @@ goog.require( 'whatBrowserAmI.base' );
  * @package
  * @return {boolean} */
 whatBrowserAmI.brand.InternetExplorer.is = function(){
-    return p_engineName === ENGINE.Trident || p_engineName === ENGINE.TridentMobile || p_engineName === ENGINE.Tasman;
+    return p_engineName === ENGINE.Trident || p_engineName === ENGINE.Trident_Mobile || p_engineName === ENGINE.Tasman;
 };
 
 /** @return {boolean|void} */
 whatBrowserAmI.brand.InternetExplorer.detect = function(){
     if( whatBrowserAmI.brand.InternetExplorer.is() ){
-        p_setBrand( BRAND.InternetExplorer, p_engineVersion );
+        p_setBrand( BRAND.Internet_Explorer, p_engineVersion );
         return true;
     };
 };

@@ -19,7 +19,7 @@ whatBrowserAmI.brand.QtWebEngine.is = function(){
 /** @return {boolean|void} */
 whatBrowserAmI.brand.QtWebEngine.detect = function(){
     if( whatBrowserAmI.brand.QtWebEngine.is() ){
-        p_setBrand( BRAND.QtWebEngine, whatBrowserAmI.brand.QtWebEngine.NAVIGATOR_VERSION );
+        p_setBrand( BRAND.Qt_WebEngine, whatBrowserAmI.brand.QtWebEngine.NAVIGATOR_VERSION );
         return true;
     };
 };

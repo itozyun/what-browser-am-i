@@ -38,7 +38,7 @@ whatBrowserAmI.engine.OperaMini.is = function(){
 /** @return {boolean|void} */
 whatBrowserAmI.engine.OperaMini.detect = function(){
     if( whatBrowserAmI.engine.OperaMini.is() ){
-        p_setEngine( ENGINE.OperaMini, whatBrowserAmI.engine.OperaMini.NAVIGATOR_VERSION );
+        p_setEngine( ENGINE.Opera_Mini, whatBrowserAmI.engine.OperaMini.NAVIGATOR_VERSION );
         p_setBrand( BRAND.Opera, p_engineVersion );
         return true;
     };

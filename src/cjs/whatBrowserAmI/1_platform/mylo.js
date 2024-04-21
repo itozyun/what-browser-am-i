@@ -34,13 +34,13 @@ whatBrowserAmI.platform.mylo.is = function(){
 /** @return {boolean|void} */
 whatBrowserAmI.platform.mylo.detect = function(){
     if( _isMylo1 ){
-        p_setPlatform( PLATFORM.mylo, 1 );
-        p_setDevice( DEVICE.mylo, 1, DEVICE_TYPE.PDA );
-        p_setEngine( ENGINE.PrestoMobile, 8.5 );
+        p_setPlatform( PLATFORM.SONY_mylo, 1 );
+        p_setDevice( DEVICE.SONY_mylo, 1, DEVICE_TYPE.PDA );
+        p_setEngine( ENGINE.Presto_Mobile, 8.5 );
         return true;
     } else if( _isMylo2 ){
-        p_setPlatform( PLATFORM.mylo, 2 );
-        p_setDevice( DEVICE.mylo, 2, DEVICE_TYPE.PDA );
+        p_setPlatform( PLATFORM.SONY_mylo, 2 );
+        p_setDevice( DEVICE.SONY_mylo, 2, DEVICE_TYPE.PDA );
         p_setEngine( ENGINE.NetFront, 3.4 );
         return true;
     };

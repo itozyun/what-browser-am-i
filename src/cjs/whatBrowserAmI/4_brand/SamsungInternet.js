@@ -12,13 +12,13 @@ goog.require( 'whatBrowserAmI.base' );
  * @package
  * @return {boolean} */
 whatBrowserAmI.brand.SamsungInternet.is = function(){
-    return p_engineName === ENGINE.SamsungInternet;
+    return p_engineName === ENGINE.Samsung_Internet;
 };
 
 /** @return {boolean|void} */
 whatBrowserAmI.brand.SamsungInternet.detect = function(){
     if( whatBrowserAmI.brand.SamsungInternet.is() ){
-        p_setBrand( BRAND.SamsungInternet, p_engineVersion );
+        p_setBrand( BRAND.Samsung_Internet, p_engineVersion );
         return true;
     };
 };

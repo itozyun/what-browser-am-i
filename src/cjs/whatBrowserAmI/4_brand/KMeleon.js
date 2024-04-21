@@ -19,7 +19,7 @@ whatBrowserAmI.brand.KMeleon.is = function(){
 /** @return {boolean|void} */
 whatBrowserAmI.brand.KMeleon.detect = function(){
     if( whatBrowserAmI.brand.KMeleon.is() ){
-        p_setBrand( BRAND.KMeleon, whatBrowserAmI.brand.KMeleon.NAVIGATOR_VERSION );
+        p_setBrand( BRAND.K$_Meleon, whatBrowserAmI.brand.KMeleon.NAVIGATOR_VERSION );
         return true;
     };
 };

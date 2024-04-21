@@ -26,7 +26,7 @@ whatBrowserAmI.brand.Edge.NAVIGATOR_VERSION_NOT_EDGE_HTML =
  * @package
  * @return {boolean} */
 whatBrowserAmI.brand.Edge.is = function(){
-    return p_engineName === ENGINE.EdgeHTML || p_engineName === ENGINE.EdgeMobile ||
+    return p_engineName === ENGINE.EdgeHTML || p_engineName === ENGINE.Edge_Mobile ||
            !!whatBrowserAmI.brand.Edge.NAVIGATOR_VERSION ||
            !!whatBrowserAmI.brand.Edge.NAVIGATOR_VERSION_NOT_EDGE_HTML;
 };
@@ -36,7 +36,7 @@ whatBrowserAmI.brand.Edge.detect = function(){
     if( whatBrowserAmI.brand.Edge.is() ){
         p_setBrand(
             BRAND.Edge,
-            p_engineName === ENGINE.EdgeHTML || p_engineName === ENGINE.EdgeMobile
+            p_engineName === ENGINE.EdgeHTML || p_engineName === ENGINE.Edge_Mobile
                 ? p_engineVersion
                 : ( whatBrowserAmI.brand.Edge.NAVIGATOR_VERSION || whatBrowserAmI.brand.Edge.NAVIGATOR_VERSION_NOT_EDGE_HTML )
             );

@@ -34,14 +34,14 @@ whatBrowserAmI.engine.Trident.detect = function(){
         var implementVersion = whatBrowserAmI.engine.Trident.IMPLEMENT_VERSION;
 
         if( p_deviceType !== DEVICE_TYPE.PC ){
-            p_setEngine( ENGINE.TridentMobile, implementVersion );
+            p_setEngine( ENGINE.Trident_Mobile, implementVersion );
         } else if( whatBrowserAmI.platform.Mac.is() ){
             if( 5 <= implementVersion ){
                 p_setEngine( ENGINE.Tasman, implementVersion );
             } else {
                 p_setEngine( ENGINE.Trident, implementVersion );
             };
-            p_setBrand( BRAND.IEForMac, implementVersion );
+            p_setBrand( BRAND.Internet_Explorer_for_Mac, implementVersion );
         } else {
             var navigatorVersion = whatBrowserAmI.engine.Trident.NAVIGATOR_VERSION;
 
@@ -50,12 +50,12 @@ whatBrowserAmI.engine.Trident.detect = function(){
             // https://stackoverflow.com/questions/8751479/detect-metro-ui-version-of-ie
             if( 10 <= implementVersion && 6.2 <= p_platformVersion && p_platformVersion < 7 ){ // WinNT6.2 = Win8, WinNT6.3 = Win8.1
                 if( screenY === 0 && ( innerHeight + 1 ) !== outerHeight ){
-                    p_setBrand( BRAND.ModernIE, implementVersion );
+                    p_setBrand( BRAND.Modern_IE, implementVersion );
                 };
             };
             // Compat Mode IE
             if( 7 <= navigatorVersion && navigatorVersion !== implementVersion ){
-                p_setBrand( BRAND.InternetExplorer, navigatorVersion );
+                p_setBrand( BRAND.Internet_Explorer, navigatorVersion );
             };
         };
         return true;

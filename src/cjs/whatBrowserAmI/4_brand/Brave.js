@@ -17,7 +17,7 @@ whatBrowserAmI.brand.Brave.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersi
  * @return {boolean} */
 whatBrowserAmI.brand.Brave.is = function(){
     return !!whatBrowserAmI.brand.Brave.NAVIGATOR_VERSION || p_hasSubstring( p_strUserAgent, ' Brave ' )
-               || p_engineName === ENGINE.iOSWebView && !!p_inObject( 'sameOrigin', window );
+               || p_engineName === ENGINE.iOS_WebView && !!p_inObject( 'sameOrigin', window );
 };
 
 /** @return {boolean|void} */
@@ -27,7 +27,7 @@ whatBrowserAmI.brand.Brave.detect = function(){
             BRAND.Brave,
             whatBrowserAmI.brand.Brave.NAVIGATOR_VERSION ||
                 (
-                    p_engineName === ENGINE.Chromium || p_engineName === ENGINE.ChromiumMobile
+                    p_engineName === ENGINE.Chromium || p_engineName === ENGINE.Chromium_Mobile
                         ? whatBrowserAmI.brand.Chrome.NAVIGATOR_VERSION
                         : undefined
                 )

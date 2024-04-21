@@ -125,14 +125,14 @@ whatBrowserAmI.engine.ChromiumOrAndroidWebView.detect = function(){
          */
         // Android 3.x-4.1 の Android WebView で window.chrome がいるので AOSP の判定を Chromium より先に
         if( isAndroid && whatBrowserAmI.engine.ChromiumOrAndroidWebView.maybeAOSP ){
-            p_setEngine( ENGINE.AndroidWebView, whatBrowserAmI.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION );
+            p_setEngine( ENGINE.Android_WebView, whatBrowserAmI.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION );
             if( p_surelyPcSiteRequested ) p_isPcSiteRequested = true;
         /*----------------------------------------------------------------------------//
          *  Chromium or ChromiumMobile
          */
         } else if( _hasChromeObject ){
             p_setEngine(
-                p_isAndroidBased() ? ENGINE.ChromiumMobile : ENGINE.Chromium,
+                p_isAndroidBased() ? ENGINE.Chromium_Mobile : ENGINE.Chromium,
                 whatBrowserAmI.brand.Chrome.NAVIGATOR_VERSION || whatBrowserAmI.brand.Iron.NAVIGATOR_VERSION // TODO whatBrowserAmI.engine.ChromiumOrAndroidWebView.CHROMIUM_IMPLEMENT_VERSION
             );
             if( p_surelyPcSiteRequested ) p_isPcSiteRequested = true;
@@ -145,7 +145,7 @@ whatBrowserAmI.engine.ChromiumOrAndroidWebView.detect = function(){
         // http://caniuse.com/#compare=chrome+40,android+4.2-4.3,android+4.4,android+4.4.3-4.4.4,and_chr+45
         } else if( isAndroid && p_hasRegisterElement ){
             // Android 標準ブラウザ Chrome WebView ブラウザ
-            p_setEngine( ENGINE.AndroidWebView, whatBrowserAmI.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION );
+            p_setEngine( ENGINE.Android_WebView, whatBrowserAmI.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION );
 
             // if( !( window.requestFileSystem || window.webkitRequestFileSystem ) ){
                 // isAndroidChromeWebView = true;
@@ -157,7 +157,7 @@ whatBrowserAmI.engine.ChromiumOrAndroidWebView.detect = function(){
          *  Android WebView + PC_site requested
          */
         } else if( isAndroid && ( p_Version.NAVIGATOR_VERSION || p_surelyPcSiteRequested ) ){
-            p_setEngine( ENGINE.AndroidWebView, whatBrowserAmI.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION );
+            p_setEngine( ENGINE.Android_WebView, whatBrowserAmI.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION );
             if( p_surelyPcSiteRequested ){
                 p_isPcSiteRequested = true;
             };
@@ -166,7 +166,7 @@ whatBrowserAmI.engine.ChromiumOrAndroidWebView.detect = function(){
          */
         } else if( whatBrowserAmI.brand.Chrome.NAVIGATOR_VERSION || whatBrowserAmI.brand.Opera.OPR_NAVIGATOR_VERSION ){
             p_setEngine(
-                p_isAndroidBased() ? ENGINE.ChromiumMobile : ENGINE.Chromium,
+                p_isAndroidBased() ? ENGINE.Chromium_Mobile : ENGINE.Chromium,
                 whatBrowserAmI.brand.Chrome.NAVIGATOR_VERSION // TODO whatBrowserAmI.engine.ChromiumOrAndroidWebView.CHROMIUM_IMPLEMENT_VERSION
             );
         };

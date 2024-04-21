@@ -19,7 +19,7 @@ whatBrowserAmI.brand.OperaCoast.is = function(){
 /** @return {boolean|void} */
 whatBrowserAmI.brand.OperaCoast.detect = function(){
     if( whatBrowserAmI.brand.OperaCoast.is() ){
-        p_setBrand( BRAND.OperaCoast, whatBrowserAmI.brand.OperaCoast.NAVIGATOR_VERSION );
+        p_setBrand( BRAND.Opera_Coast, whatBrowserAmI.brand.OperaCoast.NAVIGATOR_VERSION );
         return true;
     };
 };

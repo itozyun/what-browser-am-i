@@ -11,7 +11,7 @@ goog.require( 'whatBrowserAmI.base' );
  * @package
  * @return {boolean} */
 whatBrowserAmI.brand.Dolphin.is = function(){
-    return p_engineName === ENGINE.iOSWebView && !!p_inObject( 'enableWebGL', window );
+    return p_engineName === ENGINE.iOS_WebView && !!p_inObject( 'enableWebGL', window );
 };
 
 /** @return {boolean|void} */

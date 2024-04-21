@@ -19,7 +19,7 @@ whatBrowserAmI.brand.ComodoDragon.is = function(){
 /** @return {boolean|void} */
 whatBrowserAmI.brand.ComodoDragon.detect = function(){
     if( whatBrowserAmI.brand.ComodoDragon.is() ){
-        p_setBrand( BRAND.ComodoDragon, whatBrowserAmI.brand.ComodoDragon.NAVIGATOR_VERSION );
+        p_setBrand( BRAND.Comodo_Dragon, whatBrowserAmI.brand.ComodoDragon.NAVIGATOR_VERSION );
         return true;
     };
 };

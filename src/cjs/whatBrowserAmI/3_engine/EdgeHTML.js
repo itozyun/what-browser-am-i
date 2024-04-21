@@ -17,7 +17,7 @@ whatBrowserAmI.engine.EdgeHTML.is = function(){
 whatBrowserAmI.engine.EdgeHTML.detect = function(){
     if( whatBrowserAmI.engine.EdgeHTML.is() ){
         p_setEngine(
-            p_platformName === PLATFORM.WindowsPhone ? ENGINE.EdgeMobile : ENGINE.EdgeHTML,
+            p_platformName === PLATFORM.Windows_Phone ? ENGINE.Edge_Mobile : ENGINE.EdgeHTML,
             p_getVersionString( p_strAppVersion, 'Edge/' )
         );
         return true;
