@@ -24,7 +24,7 @@ whatBrowserAmI.platform.PlayStationVita.is = function(){
 whatBrowserAmI.platform.PlayStationVita.detect = function(){
     if( whatBrowserAmI.platform.PlayStationVita.is() ){
         p_setPlatform(
-            PLATFORM.PlayStationVita,
+            PLATFORM.PlayStation$RVita,
             p_getVersionString( p_strAppVersion, p_strPlatform + ' ' )
         );
         p_setDevice( DEVICE.PlayStationVita, undefined, DEVICE_TYPE.GAME );

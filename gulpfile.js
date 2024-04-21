@@ -70,7 +70,7 @@ gulp.task( 'dist', gulp.series(
                         warning_level     : 'QUIET',
                         formatting        : formatting,
                         js_output_file    : fileName,
-                        output_wrapper    : '\/* ' + copyright + ' *\/\n' + '%output%',
+                        output_wrapper    : '\/* ' + copyright + ' *\/\n' + '%output%'
                     }
                 )
             ).pipe(

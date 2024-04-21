@@ -23,7 +23,7 @@ whatBrowserAmI.platform.NewNintendo3DS.is = function(){
  */
 whatBrowserAmI.platform.NewNintendo3DS.detect = function(){
     if( whatBrowserAmI.platform.NewNintendo3DS.is() ){
-        p_setPlatform( PLATFORM.NewNintendo3DS, whatBrowserAmI.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
+        p_setPlatform( PLATFORM.New_NINTENDO_3DS$TM, whatBrowserAmI.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
         p_setDevice( DEVICE.NewNintendo3DS, undefined, DEVICE_TYPE.GAME );
         return true;
     };

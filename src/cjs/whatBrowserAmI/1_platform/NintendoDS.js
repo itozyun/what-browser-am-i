@@ -19,7 +19,7 @@ whatBrowserAmI.platform.NintendoDS.is = function(){
  */
 whatBrowserAmI.platform.NintendoDS.detect = function(){
     if( whatBrowserAmI.platform.NintendoDS.is() ){
-        p_setPlatform( PLATFORM.NintendoDS );
+        p_setPlatform( PLATFORM.NINTENDO_DS$TM );
         p_setDevice( DEVICE.NintendoDS, undefined, DEVICE_TYPE.GAME );
         p_setEngine( ENGINE.PrestoMobile, 8.5 );
         return true;

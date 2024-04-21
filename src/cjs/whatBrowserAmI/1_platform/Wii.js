@@ -25,7 +25,7 @@ whatBrowserAmI.platform.Wii.is = function(){
 whatBrowserAmI.platform.Wii.detect = function(){
     if( whatBrowserAmI.platform.Wii.is() ){
         p_setPlatform(
-            PLATFORM.Wii,
+            PLATFORM.Wii$TM,
             p_getVersionString( p_strAppVersion, p_strPlatform + '; U; ; ' )
         );
         p_setDevice( DEVICE.Wii, undefined, DEVICE_TYPE.GAME );

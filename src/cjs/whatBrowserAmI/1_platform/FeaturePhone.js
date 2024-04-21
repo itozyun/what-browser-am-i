@@ -18,7 +18,7 @@ whatBrowserAmI.platform.FeaturePhone.is = function(){
 /** @return {boolean|void} */
 whatBrowserAmI.platform.FeaturePhone.detect = function(){
     if( whatBrowserAmI.platform.FeaturePhone.is() ){
-        p_setPlatform( PLATFORM.FeaturePhone );
+        p_setPlatform( PLATFORM.Feature_Phone );
         p_deviceType = DEVICE_TYPE.PHONE;
         return true;
     };

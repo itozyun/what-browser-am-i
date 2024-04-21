@@ -18,7 +18,7 @@ whatBrowserAmI.platform.NintendoSwitch.is = function(){
  */
 whatBrowserAmI.platform.NintendoSwitch.detect = function(){
     if( whatBrowserAmI.platform.NintendoSwitch.is() ){
-        p_setPlatform( PLATFORM.NintendoSwitch, whatBrowserAmI.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
+        p_setPlatform( PLATFORM.NINTENDO_SWITCH$TM, whatBrowserAmI.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
         p_setDevice( DEVICE.NintendoSwitch, undefined, DEVICE_TYPE.GAME );
         return true;
     };

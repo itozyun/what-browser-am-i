@@ -28,12 +28,12 @@ whatBrowserAmI.platform.WiiU.detect = function(){
         var versionNintendoBrowser = whatBrowserAmI.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION;
 
         if( versionNintendoBrowser ){
-            p_setPlatform( PLATFORM.WiiU, versionNintendoBrowser );
+            p_setPlatform( PLATFORM.WiiU$TM, versionNintendoBrowser );
         } else {
         // https://blog.gutyan.jp/entry/2015/01/31/NintendoBrowser
         //   > Uブラウザには New3DS 以上のUA切替機能がある。
         //   > platform 始め UA 以外の navigator のプロパティはいずれの場合も変更されない。
-            p_setPlatform( PLATFORM.WiiU, hasWebkitCancelAnimationFrame ? 4 : 2.1 );
+            p_setPlatform( PLATFORM.WiiU$TM, hasWebkitCancelAnimationFrame ? 4 : 2.1 );
             p_isPcSiteRequested = p_hasSubstring( p_strAppVersion, 'Macintosh;' ) ||
                                          ( p_hasSubstring( p_strAppVersion, 'Windows NT' ) && !p_hasSubstring( p_strAppVersion, 'Touch' ) );
         };

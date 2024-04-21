@@ -27,7 +27,7 @@ whatBrowserAmI.platform.Nintendo3DS.is = function(){
  */
 whatBrowserAmI.platform.Nintendo3DS.detect = function(){
     if( whatBrowserAmI.platform.Nintendo3DS.is() ){
-        p_setPlatform( PLATFORM.Nintendo3DS, whatBrowserAmI.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
+        p_setPlatform( PLATFORM.NINTENDO_3DS$TM, whatBrowserAmI.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
         p_setDevice( DEVICE.Nintendo3DS, undefined, DEVICE_TYPE.GAME );
         p_setEngine( ENGINE.WebKit, p_numberWebKit || 535 );
         p_setBrand( BRAND.NetFrontNX, whatBrowserAmI.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );

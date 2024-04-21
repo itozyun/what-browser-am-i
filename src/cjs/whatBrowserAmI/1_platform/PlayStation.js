@@ -46,7 +46,7 @@ whatBrowserAmI.platform.PlayStation.is = function(){
 whatBrowserAmI.platform.PlayStation.detect = function(){
     if( _isPlayStation3 ){
         p_setPlatform(
-            PLATFORM.PlayStation3,
+            PLATFORM.PlayStation$R3,
             p_getVersionString( p_strUserAgent, 'PLAYSTATION 3; ' ) || p_getVersionString( p_strUserAgent, 'PLAYSTATION 3 ' )
         );
         p_setDevice( DEVICE.PlayStation, 3, DEVICE_TYPE.GAME );
@@ -55,11 +55,11 @@ whatBrowserAmI.platform.PlayStation.detect = function(){
         };
         return true;
     } else if( _isPlayStation4 ){
-        p_setPlatform( PLATFORM.PlayStation4, p_getVersionString( p_strAppVersion, p_strPlatform + '/' ) );
+        p_setPlatform( PLATFORM.PlayStation$R4, p_getVersionString( p_strAppVersion, p_strPlatform + '/' ) );
         p_setDevice( DEVICE.PlayStation, 4, DEVICE_TYPE.GAME );
         return true;
     } else if( _isPlayStation5 ){
-        p_setPlatform( PLATFORM.PlayStation5, p_getVersionString( p_strAppVersion, p_strPlatform + '/' ) );
+        p_setPlatform( PLATFORM.PlayStation$R5, p_getVersionString( p_strAppVersion, p_strPlatform + '/' ) );
         p_setDevice( DEVICE.PlayStation, 5, DEVICE_TYPE.GAME );
         return true;
     };

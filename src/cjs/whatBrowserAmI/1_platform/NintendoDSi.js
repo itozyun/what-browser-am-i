@@ -22,7 +22,7 @@ whatBrowserAmI.platform.NintendoDSi.is = function(){
 whatBrowserAmI.platform.NintendoDSi.detect = function(){
     if( whatBrowserAmI.platform.NintendoDSi.is() ){
         p_setPlatform(
-            PLATFORM.NintendoDSi,
+            PLATFORM.NINTENDO_DSi$TM,
             p_getVersionString( p_strUserAgent, p_strPlatform + '; Opera/' )
         );
         p_setDevice( DEVICE.NintendoDSi, undefined, DEVICE_TYPE.GAME );

@@ -19,7 +19,7 @@ whatBrowserAmI.platform.PlayStationPortable.is = function(){
 whatBrowserAmI.platform.PlayStationPortable.detect = function(){
     if( whatBrowserAmI.platform.PlayStationPortable.is() ){
         p_setPlatform(
-            PLATFORM.PlayStationPortable,
+            PLATFORM.PlayStation$RPortable,
             p_getVersionString( p_strUserAgent, '(PlayStation Portable); ' )
         );
         p_setDevice( DEVICE.PlayStationPortable, undefined, DEVICE_TYPE.GAME );
