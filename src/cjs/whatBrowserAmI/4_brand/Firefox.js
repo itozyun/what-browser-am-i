@@ -38,7 +38,7 @@ whatBrowserAmI.brand.Firefox.detect = function(){
         p_setBrand(
             BRAND.Firefox,
             p_engineName === ENGINE.Gecko || p_engineName === ENGINE.Fennec
-                ? p_platformVersion
+                ? p_engineVersion
                 : ( whatBrowserAmI.brand.Firefox.NAVIGATOR_VERSION || p_firefoxOnIOS.NAVIGATOR_VERSION )
         );
         return true;
