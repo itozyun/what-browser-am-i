@@ -1,7 +1,13 @@
 goog.provide( 'whatBrowserAmI.util' );
 
-/** @const */
-var p_conpareVersion = ua.conpare;
+/** バージョンの比較
+ * @param {string|number} v1 
+ * @param {string|number} v2 
+ * @return {number}  1:v1 > v2, 0:v1 == v2, -1:v1 < v2
+ */
+var p_conpareVersion = function( v1, v2 ){
+    return !v1 || !v2 ? NaN : ua.conpare( v1, v2 );
+};
 
 /**
  * 

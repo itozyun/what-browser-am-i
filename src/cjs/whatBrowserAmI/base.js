@@ -58,7 +58,7 @@ var p_surelyPcSiteRequested = false;
  */
 function p_isAndroidBased(){
     return p_platformName === PLATFORM.Android ||
-           p_platformName === PLATFORM.FireOS; // TODO GoogleTV, AndroidTV
+           p_platformName === PLATFORM.FireOS; // TODO Google_TV, Android_TV
 };
 
 /**

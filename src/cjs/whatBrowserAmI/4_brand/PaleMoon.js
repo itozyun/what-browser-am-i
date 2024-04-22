@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.PaleMoon.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'PaleMoon/' );
+whatBrowserAmI.brand.PaleMoon.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'PaleMoon/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.PaleMoon.is = function(){
