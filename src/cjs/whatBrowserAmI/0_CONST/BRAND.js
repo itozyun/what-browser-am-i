@@ -52,8 +52,8 @@ whatBrowserAmI.BRAND = {
     PaleMoon                  : whatBrowserAmI.DEFINE.MINIFY ? 45 : 'PaleMoon',
     Puffin                    : whatBrowserAmI.DEFINE.MINIFY ? 46 : 'Puffin',
     QQ                        : whatBrowserAmI.DEFINE.MINIFY ? 47 : 'QQ',
-    Qt_WebEngine              : whatBrowserAmI.DEFINE.MINIFY ? 48 : 'QtWebEngine',
-    Qt_WebKit                 : whatBrowserAmI.DEFINE.MINIFY ? 49 : 'QtWebKit',
+    Servo                     : whatBrowserAmI.DEFINE.MINIFY ? 48 : 'Servo',
+
     Roccat                    : whatBrowserAmI.DEFINE.MINIFY ? 50 : 'Roccat',
     Rockmelt                  : whatBrowserAmI.DEFINE.MINIFY ? 51 : 'Rockmelt',
     Safari                    : whatBrowserAmI.DEFINE.MINIFY ? 52 : 'Safari',

@@ -10,6 +10,9 @@ goog.require( 'whatBrowserAmI.engine.iCab.detect' );
 goog.require( 'whatBrowserAmI.engine.KHTML.detect' );
 goog.require( 'whatBrowserAmI.engine.NetFront.detect' );
 goog.require( 'whatBrowserAmI.engine.UCWEB.detect' );
+goog.require( 'whatBrowserAmI.engine.QtWebEngine.detect' );
+goog.require( 'whatBrowserAmI.engine.QtWebKit.detect' );
+goog.require( 'whatBrowserAmI.engine.Servo.detect' );
 goog.require( 'whatBrowserAmI.engine.SamsungInternet.detect' );
 goog.require( 'whatBrowserAmI.engine.SafariMobile.detect' );
 goog.require( 'whatBrowserAmI.engine.iOSWebView.detect' );
@@ -29,6 +32,9 @@ whatBrowserAmI.engine.detectAll = function(){
         whatBrowserAmI.engine.KHTML.detect() ||
         whatBrowserAmI.engine.NetFront.detect() ||
         whatBrowserAmI.engine.UCWEB.detect() ||
+        whatBrowserAmI.engine.QtWebEngine.detect() ||
+        whatBrowserAmI.engine.QtWebKit.detect() ||
+        whatBrowserAmI.engine.Servo.detect() ||
         whatBrowserAmI.engine.SamsungInternet.detect() ||
         whatBrowserAmI.engine.SafariMobile.detect() ||
         whatBrowserAmI.engine.iOSWebView.detect() ||

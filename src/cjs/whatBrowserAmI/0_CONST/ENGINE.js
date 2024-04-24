@@ -34,20 +34,22 @@ whatBrowserAmI.ENGINE = {
     Android_WebView  : whatBrowserAmI.DEFINE.MINIFY ? 21 : 'AndroidWebView',
     Chromium_Mobile  : whatBrowserAmI.DEFINE.MINIFY ? 22 : 'ChromiumMobile',
     Samsung_Internet : whatBrowserAmI.DEFINE.MINIFY ? 23 : 'SamsungInternet',
-    UCWEB            : whatBrowserAmI.DEFINE.MINIFY ? 24 : 'UCWEB',
-    Sony             : whatBrowserAmI.DEFINE.MINIFY ? 25 : 'Sony',
+    Qt_WebEngine     : whatBrowserAmI.DEFINE.MINIFY ? 24 : 'QtWebEngine',
+    Qt_WebKit        : whatBrowserAmI.DEFINE.MINIFY ? 25 : 'QtWebKit',
+    UCWEB            : whatBrowserAmI.DEFINE.MINIFY ? 26 : 'UCWEB',
+    Sony             : whatBrowserAmI.DEFINE.MINIFY ? 27 : 'Sony',
     // https://www.ekioh.com/flow-browser/
-    flow             : whatBrowserAmI.DEFINE.MINIFY ? 26 : 'flow',
+    flow             : whatBrowserAmI.DEFINE.MINIFY ? 28 : 'flow',
     // 
-    Servo            : whatBrowserAmI.DEFINE.MINIFY ? 27 : 'Servo',
+    Servo            : whatBrowserAmI.DEFINE.MINIFY ? 29 : 'Servo',
     // http://serenityos.org/happy/1st/
-    Serenity         : whatBrowserAmI.DEFINE.MINIFY ? 28 : 'Serenity',
+    Serenity         : whatBrowserAmI.DEFINE.MINIFY ? 30 : 'Serenity',
     // https://github.com/esrille/escudo
-    Escudo           : whatBrowserAmI.DEFINE.MINIFY ? 29 : 'Escudo',
+    Escudo           : whatBrowserAmI.DEFINE.MINIFY ? 31 : 'Escudo',
     // https://github.com/maekawatoshiki/naglfar
-    Naglfar          : whatBrowserAmI.DEFINE.MINIFY ? 30 : 'Naglfar',
+    Naglfar          : whatBrowserAmI.DEFINE.MINIFY ? 32 : 'Naglfar',
     // http://www.litehtml.com/
-    Litehtml         : whatBrowserAmI.DEFINE.MINIFY ? 31 : 'Litehtml',
+    Litehtml         : whatBrowserAmI.DEFINE.MINIFY ? 33 : 'Litehtml',
     // https://lexbor.com/
-    lexbor           : whatBrowserAmI.DEFINE.MINIFY ? 32 : 'lexbor'
+    lexbor           : whatBrowserAmI.DEFINE.MINIFY ? 34 : 'lexbor'
 };

@@ -47,8 +47,6 @@ goog.require( 'whatBrowserAmI.brand.NetscapeNavigator.detect' );
 goog.require( 'whatBrowserAmI.brand.Iris.detect' );
 goog.require( 'whatBrowserAmI.brand.Facebook.detect' );
 goog.require( 'whatBrowserAmI.brand.LINE.detect' );
-goog.require( 'whatBrowserAmI.brand.QtWebEngine.detect' );
-goog.require( 'whatBrowserAmI.brand.QtWebKit.detect' );
 goog.require( 'whatBrowserAmI.brand.DuckDuckGo.detect' );
 goog.require( 'whatBrowserAmI.brand.Lunascape.detect' );
 goog.require( 'whatBrowserAmI.brand.Mozilla.detect' );
@@ -112,8 +110,6 @@ whatBrowserAmI.brand.detectAll = function(){
         whatBrowserAmI.brand.Iris.detect() ||
         whatBrowserAmI.brand.Facebook.detect() ||
         whatBrowserAmI.brand.LINE.detect() ||
-        whatBrowserAmI.brand.QtWebEngine.detect() ||
-        whatBrowserAmI.brand.QtWebKit.detect() ||
         whatBrowserAmI.brand.DuckDuckGo.detect() ||
         whatBrowserAmI.brand.Lunascape.detect() ||
         whatBrowserAmI.brand.Mozilla.detect() ||
