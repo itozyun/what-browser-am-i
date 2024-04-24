@@ -28,7 +28,7 @@ whatBrowserAmI.engine.OperaMini.operaminiObject = _operaminiObject;
 /** @const {string|number|void} */
 whatBrowserAmI.engine.OperaMini.NAVIGATOR_VERSION =
     p_maxVersion( p_getVersionString( p_strUserAgent, 'Opera Mini/' ), p_getVersionString( p_strUserAgent, 'Opera Mobi/' ) )
-    || ( _operaminiObject && p_Version.NAVIGATOR_VERSION );
+    || ( _operaminiObject && p_Something.NAVIGATOR_VERSION );
 
 /** @return {boolean} */
 whatBrowserAmI.engine.OperaMini.is = function(){

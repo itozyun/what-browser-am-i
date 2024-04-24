@@ -35,7 +35,7 @@ whatBrowserAmI.engine.Presto.IMPLEMENT_VERSION = operaObject && operaObject.vers
 
 /** @const {string|number} */
 whatBrowserAmI.engine.Presto.NAVIGATOR_VERSION =
-    p_maxVersion( p_getVersionString( p_strUserAgent, 'Opera ' ), p_Version.NAVIGATOR_VERSION, p_numAppVersion );
+    p_maxVersion( p_getVersionString( p_strUserAgent, 'Opera ' ), p_Something.NAVIGATOR_VERSION, p_numAppVersion );
 
 /** @const {!Object|void} */
 whatBrowserAmI.engine.Presto.operaObject = operaObject;

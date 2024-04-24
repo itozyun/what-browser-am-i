@@ -70,7 +70,7 @@ whatBrowserAmI.engine.SamsungInternet.LT2_NAVIGATOR_VERSION = !whatBrowserAmI.en
         
         while( device = unversionedDevices.pop() ){
             if( p_hasSubstring( p_strUserAgent, device ) ){
-                return parseFloat( p_Version.NAVIGATOR_VERSION ) < 2 ? p_Version.NAVIGATOR_VERSION : 0.9;
+                return parseFloat( p_Something.NAVIGATOR_VERSION ) < 2 ? p_Something.NAVIGATOR_VERSION : 0.9;
             };
         };
 
@@ -144,7 +144,7 @@ whatBrowserAmI.engine.SamsungInternet.LT2_NAVIGATOR_VERSION = !whatBrowserAmI.en
 
         while( device = versionedDevices.pop() ){
             if( p_hasSubstring( p_strUserAgent, device ) ){
-                return p_Version.NAVIGATOR_VERSION;
+                return p_Something.NAVIGATOR_VERSION;
             };
         };
     })() || NaN;

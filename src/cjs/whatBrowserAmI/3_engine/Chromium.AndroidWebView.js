@@ -104,7 +104,7 @@ whatBrowserAmI.engine.ChromiumOrAndroidWebView.is = function(){
     /*----------------------------------------------------------------------------//
      *  Android WebView + PC_site requested
      */
-    } else if( isAndroid && ( p_Version.NAVIGATOR_VERSION || p_surelyPcSiteRequested ) ){
+    } else if( isAndroid && ( p_Something.NAVIGATOR_VERSION || p_surelyPcSiteRequested ) ){
         return true;
     /*----------------------------------------------------------------------------//
      *  Chromium or ChromiumMobile (without .chrome)
@@ -156,7 +156,7 @@ whatBrowserAmI.engine.ChromiumOrAndroidWebView.detect = function(){
         /*----------------------------------------------------------------------------//
          *  Android WebView + PC_site requested
          */
-        } else if( isAndroid && ( p_Version.NAVIGATOR_VERSION || p_surelyPcSiteRequested ) ){
+        } else if( isAndroid && ( p_Something.NAVIGATOR_VERSION || p_surelyPcSiteRequested ) ){
             p_setEngine( ENGINE.Android_WebView, whatBrowserAmI.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION );
             if( p_surelyPcSiteRequested ){
                 p_isPcSiteRequested = true;

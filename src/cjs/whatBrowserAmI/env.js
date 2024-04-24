@@ -41,10 +41,10 @@ var p_isTouch = window.ontouchstart !== undefined;
 var p_standalone = navigator.standalone;
 
 /** @const */
-var p_Version = {};
+var p_Something = {};
 /** @const {string} */
-p_Version.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Version/' ) ||
-                              p_getVersionString( p_strUserAgent , 'Version/' );
+p_Something.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Version/' ) ||
+                                p_getVersionString( p_strUserAgent , 'Version/' );
 
 /** @const */
 var p_firefoxOnIOS = {};

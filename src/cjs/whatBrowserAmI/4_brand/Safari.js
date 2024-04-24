@@ -9,12 +9,12 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.Safari.NAVIGATOR_VERSION = p_Version.NAVIGATOR_VERSION;
+whatBrowserAmI.brand.Safari.NAVIGATOR_VERSION = p_Something.NAVIGATOR_VERSION;
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Safari.is = function(){
     return ( p_engineName === ENGINE.WebKit || p_engineName === ENGINE.Safari_Mobile || p_engineName === ENGINE.iOS_WebView ) &&
-           p_hasSubstring( p_strUserAgent, 'Safari/' ) || !!p_Version.NAVIGATOR_VERSION;
+           p_hasSubstring( p_strUserAgent, 'Safari/' ) || !!p_Something.NAVIGATOR_VERSION;
 };
 
 /** @return {boolean|void} */

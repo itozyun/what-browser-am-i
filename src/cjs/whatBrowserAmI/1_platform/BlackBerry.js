@@ -16,7 +16,7 @@ whatBrowserAmI.platform.BlackBerry.is = function(){
 /** @return {boolean|void} */
 whatBrowserAmI.platform.BlackBerry.detect = function(){
     if( whatBrowserAmI.platform.BlackBerry.is() ){
-        p_setPlatform( PLATFORM.BlackBerry, p_Version.NAVIGATOR_VERSION, DEVICE_TYPE.PHONE );
+        p_setPlatform( PLATFORM.BlackBerry, p_Something.NAVIGATOR_VERSION, DEVICE_TYPE.PHONE );
         return true;
     };
 };
