@@ -15,7 +15,7 @@ goog.require( 'whatBrowserAmI.base' );
 whatBrowserAmI.brand.Chrome.CRIOS_NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'CriOS/' );
 
 /** @const {string} */
-whatBrowserAmI.brand.Chrome.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Chrome/' );
+whatBrowserAmI.brand.Chrome.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Chrome/' );
 
 /**
  * @package

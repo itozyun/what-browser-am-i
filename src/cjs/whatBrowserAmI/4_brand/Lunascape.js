@@ -10,7 +10,9 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.Lunascape.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Lunascape/' );
+whatBrowserAmI.brand.Lunascape.NAVIGATOR_VERSION =
+    p_getVersionString( p_strAppVersion, 'Lunascape ' ) ||
+    p_getVersionString( p_strUserAgent , 'Lunascape/' );
 
 /**
  * https://twitter.com/itozyun/status/1293628829248794624
