@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.DuckDuckGo.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'DuckDuckGo/' );
+whatBrowserAmI.brand.DuckDuckGo.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'DuckDuckGo/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.DuckDuckGo.is = function(){

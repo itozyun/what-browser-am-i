@@ -12,8 +12,8 @@ goog.require( 'whatBrowserAmI.base' );
  * https://twitter.com/itozyun/status/1293709088501555200
  * @const {string} */
 whatBrowserAmI.brand.Facebook.NAVIGATOR_VERSION =
-    p_getVersionString( p_strAppVersion, 'FBAV/' ) ||
-    p_getVersionString( p_strAppVersion, 'FBAN/' );
+    p_getVersionString( p_strUserAgent, 'FBAV/' ) ||
+    p_getVersionString( p_strUserAgent, 'FBAN/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Facebook.is = function(){

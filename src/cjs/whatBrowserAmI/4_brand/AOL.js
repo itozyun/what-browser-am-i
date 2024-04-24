@@ -9,7 +9,9 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.AOL.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'AOLBUILD/' ) || p_getVersionString( p_strAppVersion, 'AOL/' );
+whatBrowserAmI.brand.AOL.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'AOLBUILD/' ) ||
+                                             p_getVersionString( p_strUserAgent, 'AOL/' ) ||
+                                             p_getVersionString( p_strUserAgent, 'AOL ' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.AOL.is = function(){

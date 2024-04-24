@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.Galeon.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Galeon/' );
+whatBrowserAmI.brand.Galeon.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Galeon/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Galeon.is = function(){

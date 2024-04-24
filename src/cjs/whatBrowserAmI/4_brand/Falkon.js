@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.Falkon.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Falkon/' );
+whatBrowserAmI.brand.Falkon.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Falkon/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Falkon.is = function(){

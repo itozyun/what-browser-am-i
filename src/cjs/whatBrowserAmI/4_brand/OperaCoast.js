@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.OperaCoast.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Coast/' );
+whatBrowserAmI.brand.OperaCoast.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Coast/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.OperaCoast.is = function(){

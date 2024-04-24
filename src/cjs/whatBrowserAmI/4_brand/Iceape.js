@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.Iceape.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Iceape/' );
+whatBrowserAmI.brand.Iceape.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Iceape/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Iceape.is = function(){

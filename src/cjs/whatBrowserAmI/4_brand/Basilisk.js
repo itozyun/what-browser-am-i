@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.Basilisk.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Basilisk/' );
+whatBrowserAmI.brand.Basilisk.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Basilisk/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Basilisk.is = function(){

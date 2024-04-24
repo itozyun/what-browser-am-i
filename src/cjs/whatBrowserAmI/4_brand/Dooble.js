@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.Dooble.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Dooble/' );
+whatBrowserAmI.brand.Dooble.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Dooble/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Dooble.is = function(){

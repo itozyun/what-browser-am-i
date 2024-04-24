@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.TenFourFox.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'TenFourFox/' );
+whatBrowserAmI.brand.TenFourFox.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'TenFourFox/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.TenFourFox.is = function(){

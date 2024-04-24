@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.Epiphany.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Epiphany/' );
+whatBrowserAmI.brand.Epiphany.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Epiphany/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Epiphany.is = function(){

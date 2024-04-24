@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.OmniWeb.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'OmniWeb/' );
+whatBrowserAmI.brand.OmniWeb.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'OmniWeb/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.OmniWeb.is = function(){

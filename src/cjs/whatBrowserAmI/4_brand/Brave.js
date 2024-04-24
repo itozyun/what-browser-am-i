@@ -10,7 +10,7 @@ goog.require( 'whatBrowserAmI.brand.Chrome.NAVIGATOR_VERSION' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.Brave.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Brave/' );
+whatBrowserAmI.brand.Brave.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Brave/' );
 
 /**
  * @package

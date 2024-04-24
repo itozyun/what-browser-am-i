@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.Waterfox.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Waterfox/' );
+whatBrowserAmI.brand.Waterfox.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Waterfox/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Waterfox.is = function(){

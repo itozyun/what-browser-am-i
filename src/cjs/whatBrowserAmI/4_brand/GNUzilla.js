@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.GNUzilla.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'GNUzilla/' );
+whatBrowserAmI.brand.GNUzilla.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'GNUzilla/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.GNUzilla.is = function(){

@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.Flock.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Flock/' );
+whatBrowserAmI.brand.Flock.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Flock/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Flock.is = function(){

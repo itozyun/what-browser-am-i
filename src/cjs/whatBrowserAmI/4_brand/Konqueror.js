@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.Konqueror.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Konqueror/' );
+whatBrowserAmI.brand.Konqueror.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Konqueror/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Konqueror.is = function(){

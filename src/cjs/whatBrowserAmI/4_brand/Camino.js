@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.Camino.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Camino/' );
+whatBrowserAmI.brand.Camino.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Camino/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Camino.is = function(){

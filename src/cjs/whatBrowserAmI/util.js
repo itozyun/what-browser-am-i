@@ -1,8 +1,8 @@
 goog.provide( 'whatBrowserAmI.util' );
 
 /** バージョンの比較
- * @param {string|number} v1 
- * @param {string|number} v2 
+ * @param {string|number|void} v1 
+ * @param {string|number|void} v2 
  * @return {number}  1:v1 > v2, 0:v1 == v2, -1:v1 < v2
  */
 var p_conpareVersion = function( v1, v2 ){

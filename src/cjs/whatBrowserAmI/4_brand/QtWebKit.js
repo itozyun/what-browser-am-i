@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.QtWebKit.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'QtWebKit/' );
+whatBrowserAmI.brand.QtWebKit.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'QtWebKit/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.QtWebKit.is = function(){

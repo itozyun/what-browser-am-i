@@ -10,13 +10,13 @@ goog.require( 'whatBrowserAmI.base' );
 
 /** @const {string} */
 whatBrowserAmI.brand.Maxthon.NAVIGATOR_VERSION =
-    p_getVersionString( p_strAppVersion, 'Maxthon/' ) ||
-    p_getVersionString( p_strAppVersion, 'Maxthon ' ) ||
-    p_getVersionString( p_strAppVersion, 'MXiOS/'   );
+    p_getVersionString( p_strUserAgent, 'Maxthon/' ) ||
+    p_getVersionString( p_strUserAgent, 'Maxthon ' ) ||
+    p_getVersionString( p_strUserAgent, 'MXiOS/'   );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Maxthon.is = function(){
-    return !!whatBrowserAmI.brand.Maxthon.NAVIGATOR_VERSION || p_hasSubstring( p_strAppVersion, 'Maxthon' );
+    return !!whatBrowserAmI.brand.Maxthon.NAVIGATOR_VERSION || p_hasSubstring( p_strUserAgent, 'Maxthon' );
 };
 
 /** @return {boolean|void} */

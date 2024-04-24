@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.Yandex.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'YaBrowser/' );
+whatBrowserAmI.brand.Yandex.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'YaBrowser/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Yandex.is = function(){

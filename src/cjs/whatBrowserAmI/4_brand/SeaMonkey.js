@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.SeaMonkey.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'SeaMonkey/' );
+whatBrowserAmI.brand.SeaMonkey.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'SeaMonkey/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.SeaMonkey.is = function(){

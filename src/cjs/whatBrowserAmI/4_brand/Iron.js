@@ -12,7 +12,7 @@ goog.require( 'whatBrowserAmI.brand.Chrome.NAVIGATOR_VERSION' );
 /**
  * Iron 3 には Chrome/ が居ない, Iron 5 は Iron/ Chrome/ の併記.
  * @const {string} */
-whatBrowserAmI.brand.Iron.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Iron/' );
+whatBrowserAmI.brand.Iron.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Iron/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Iron.is = function(){

@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.IceDragon.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'IceDragon/' );
+whatBrowserAmI.brand.IceDragon.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'IceDragon/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.IceDragon.is = function(){

@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.Midori.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Midori/' );
+whatBrowserAmI.brand.Midori.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Midori/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Midori.is = function(){

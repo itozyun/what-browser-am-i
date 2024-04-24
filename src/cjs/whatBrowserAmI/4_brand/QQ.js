@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.QQ.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'QQBrowser/' );
+whatBrowserAmI.brand.QQ.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'QQBrowser/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.QQ.is = function(){

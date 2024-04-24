@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Avant.is = function(){
-    return p_hasSubstring( p_strAppVersion, 'Avant Browser;' );
+    return p_hasSubstring( p_strUserAgent, 'Avant Browser;' );
 };
 
 /** @return {boolean|void} */

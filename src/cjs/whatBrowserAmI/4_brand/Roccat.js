@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.Roccat.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Roccat/' );
+whatBrowserAmI.brand.Roccat.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Roccat/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Roccat.is = function(){

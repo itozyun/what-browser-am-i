@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.Rockmelt.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Rockmelt/' );
+whatBrowserAmI.brand.Rockmelt.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Rockmelt/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Rockmelt.is = function(){

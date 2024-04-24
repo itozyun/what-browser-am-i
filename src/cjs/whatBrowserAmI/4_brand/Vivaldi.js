@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.Vivaldi.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Vivaldi/' );
+whatBrowserAmI.brand.Vivaldi.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Vivaldi/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Vivaldi.is = function(){

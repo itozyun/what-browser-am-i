@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.ComodoDragon.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Comodo Dragon/' );
+whatBrowserAmI.brand.ComodoDragon.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Comodo Dragon/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.ComodoDragon.is = function(){

@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.WebPositive.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'WebPositive/' );
+whatBrowserAmI.brand.WebPositive.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'WebPositive/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.WebPositive.is = function(){

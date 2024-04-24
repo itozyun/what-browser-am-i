@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.KMeleon.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'K-Meleon/' );
+whatBrowserAmI.brand.KMeleon.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'K-Meleon/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.KMeleon.is = function(){

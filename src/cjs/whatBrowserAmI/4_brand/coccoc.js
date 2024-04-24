@@ -9,7 +9,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.coccoc.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'coc_coc_browser/' );
+whatBrowserAmI.brand.coccoc.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'coc_coc_browser/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.coccoc.is = function(){

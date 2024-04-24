@@ -11,7 +11,7 @@ goog.require( 'whatBrowserAmI.base' );
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.Sleipnir.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Sleipnir/' );
+whatBrowserAmI.brand.Sleipnir.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Sleipnir/' );
 
 /** @const {boolean} */
 whatBrowserAmI.brand.Sleipnir.isOnIOS = !!window.FNRBrowser;
