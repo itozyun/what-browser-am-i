@@ -6,10 +6,12 @@ goog.require( 'whatBrowserAmI.base' );
 
 /*----------------------------------------------------------------------------//
  *  QupZilla
+ *
+ *    https://user-agents.net/browsers/qupzilla
  */
 
 /** @const {string} */
-whatBrowserAmI.brand.QupZilla.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'QupZillaBrowser/' );
+whatBrowserAmI.brand.QupZilla.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'QupZilla/' );
 
 /** @return {boolean} */
 whatBrowserAmI.brand.QupZilla.is = function(){

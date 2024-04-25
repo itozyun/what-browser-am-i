@@ -13,7 +13,7 @@ whatBrowserAmI.brand.Falkon.NAVIGATOR_VERSION = p_getVersionString( p_strAppVers
 
 /** @return {boolean} */
 whatBrowserAmI.brand.Falkon.is = function(){
-    return !!whatBrowserAmI.brand.Falkon.NAVIGATOR_VERSION;
+    return !!whatBrowserAmI.brand.Falkon.NAVIGATOR_VERSION || p_engineName === ENGINE.Qt_WebEngine;
 };
 
 /** @return {boolean|void} */

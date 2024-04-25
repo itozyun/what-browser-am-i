@@ -6,6 +6,8 @@ goog.require( 'whatBrowserAmI.engine.Trident.is' );
 
 /*----------------------------------------------------------------------------//
  *  EdgeHTML, EdgeMobile
+ *
+ *    https://en.wikipedia.org/wiki/EdgeHTML
  */
 
 /** @return {boolean} */

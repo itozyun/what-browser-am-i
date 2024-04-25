@@ -1,0 +1,1 @@
+http://vega.pgw.jp/~kabe/WWW/browsers/safari1v85.html

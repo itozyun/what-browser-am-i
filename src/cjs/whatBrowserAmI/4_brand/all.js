@@ -14,6 +14,7 @@ goog.require( 'whatBrowserAmI.brand.Camino.detect' );
 goog.require( 'whatBrowserAmI.brand.Sogou.detect' );
 goog.require( 'whatBrowserAmI.brand.FirefoxFocus.detect' );
 goog.require( 'whatBrowserAmI.brand.AOL.detect' );
+goog.require( 'whatBrowserAmI.brand.Otter.detect' );
 goog.require( 'whatBrowserAmI.brand.QupZilla.detect' );
 goog.require( 'whatBrowserAmI.brand.IceDragon.detect' );
 goog.require( 'whatBrowserAmI.brand.Iceweasel.detect' );
@@ -78,6 +79,7 @@ whatBrowserAmI.brand.detectAll = function(){
         whatBrowserAmI.brand.Sogou.detect() ||
         whatBrowserAmI.brand.FirefoxFocus.detect() ||
         whatBrowserAmI.brand.AOL.detect() ||
+        whatBrowserAmI.brand.Otter.detect() ||
         whatBrowserAmI.brand.QupZilla.detect() ||
         whatBrowserAmI.brand.IceDragon.detect() ||
         whatBrowserAmI.brand.Iceweasel.detect() ||
