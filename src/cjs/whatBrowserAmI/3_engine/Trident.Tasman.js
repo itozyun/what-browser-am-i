@@ -9,6 +9,8 @@ goog.require( 'whatBrowserAmI.platform.Mac.is' );
 
 /*----------------------------------------------------------------------------//
  *  Trident, TridentMobile, Tasman
+ *
+ *    https://en.wikipedia.org/wiki/Trident_(software)
  */
 
 /** @return {boolean} */
