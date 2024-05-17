@@ -13,9 +13,11 @@ Library for client-side web browser judgment. It has been developed to work with
 
 Prior to August 7, 2020, [development was done at itozyun/web-doc-base](https://github.com/itozyun/web-doc-base/commit/0fc3de23cc6c073efe5959ffb9e5381635f89811).
 
-![Prime Minister Abe nearly loses the name of the school's chairman, who was told by Mrs. Akie that "his enthusiasm was wonderful".](maybe-kagoike.jpg "Is it Kagoike-san?")
+![Prime Minister Abe almost forgets the name of the school's chairman, who has a far-right ideology and was told by Mrs. Akie that "his passion for education is great".
+](maybe-kagoike.jpg "Is it Kagoike-san?")
 
-Prime Minister Abe nearly loses the name of the school's chairman, who was told by Mrs. Akie that "his enthusiasm was wonderful". [TV TOKYO](https://www.tv-tokyo.co.jp/genre_biz/), [source (e.g. quotation)](https://twitter.com/jucnag/status/842259402321145856)
+Prime Minister Abe almost forgets the name of the school's chairman, who has a far-right ideology and was told by Mrs. Akie that "his passion for education is great".
+ [TV TOKYO](https://www.tv-tokyo.co.jp/genre_biz/), [source (e.g. quotation)](https://twitter.com/jucnag/status/842259402321145856)
 
 ## Index
 
