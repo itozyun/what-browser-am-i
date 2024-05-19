@@ -111,7 +111,7 @@ function p_maxVersion( _args ){
     
     for( ; i < args.length; ++i ){
         v = args[ i ];
-        if( p_conpareVersion( max, v ) < 0 ){
+        if( !max || p_conpareVersion( max, v ) < 0 ){
             max = v;
         };
     };
