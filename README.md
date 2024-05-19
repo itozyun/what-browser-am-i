@@ -81,14 +81,14 @@ console.log(whatBrowserAmI.ENGINE_VERSION); // "1.9.1"
 | Property            | Data type                      | Example       |
 |:--------------------|:-------------------------------|:--------------|
 | `PLATFORM`          | `string`                       |               |
-| `PLATFORM_VERSION`  | `string\|number\|object\|void` |               |
+| `PLATFORM_VERSION`  | `string\|number\|void` |               |
 | `DEVICE`            | `string`                       |               |
-| `DEVICE_GENERATION` | `string\|number\|object\|void` |               |
+| `DEVICE_GENERATION` | `string\|number\|void` |               |
 | `DEVICE_TYPE`       | `string\|number`               |               |
 | `ENGINE`            | `string`                       |               |
-| `ENGINE_VERSION`    | `string\|number\|object\|void` |               |
+| `ENGINE_VERSION`    | `string\|number\|void` |               |
 | `BRAND`             | `string`                       |               |
-| `BRAND_VERSION`     | `string\|number\|object\|void` |               |
+| `BRAND_VERSION`     | `string\|number\|void` |               |
 | `PCSITE_REQUESTED`  | `boolean`                      | `true`        |
 
 ### 4.2. Method

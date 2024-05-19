@@ -16,13 +16,13 @@ goog.provide( 'iAm.GeckoMobile.Lt' );
 goog.provide( 'iAm.GeckoMobile.Lte' );
 
 goog.require( 'iAm.Goanne' );
-goog.require( 'whatBrowserAmI.ENGINE' );
+goog.require( 'who.ENGINE' );
 
 /**
  * @return {boolean}
  */
 iAm.Gecko = function(){
-    return iAm._engineIs( whatBrowserAmI.ENGINE.Gecko );
+    return iAm._engineIs( who.ENGINE.Gecko );
 };
 
 /*----------------------------------------------------------------------------//
@@ -123,7 +123,7 @@ iAm.AnyGecko.Lte = function( version ){
  * @return {boolean}
  */
 iAm.GeckoMobile = function(){
-    return iAm._engineIs( whatBrowserAmI.ENGINE.Fennec );
+    return iAm._engineIs( who.ENGINE.Fennec );
 };
 
 /**

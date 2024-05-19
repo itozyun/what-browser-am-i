@@ -14,7 +14,7 @@ goog.provide( 'iAm.PrestoMobile.Gte' );
 goog.provide( 'iAm.PrestoMobile.Lt' );
 goog.provide( 'iAm.PrestoMobile.Lte' );
 
-goog.require( 'whatBrowserAmI.ENGINE' );
+goog.require( 'who.ENGINE' );
 
 /*----------------------------------------------------------------------------//
  *  Presto
@@ -24,7 +24,7 @@ goog.require( 'whatBrowserAmI.ENGINE' );
  * @return {boolean}
  */
 iAm.Presto = function(){
-    return iAm._engineIs( whatBrowserAmI.ENGINE.Presto );
+    return iAm._engineIs( who.ENGINE.Presto );
 };
 
 /**
@@ -110,7 +110,7 @@ iAm.AnyPresto.Lte = function( version ){
  * @return {boolean}
  */
 iAm.PrestoMobile = function(){
-    return iAm._engineIs( whatBrowserAmI.ENGINE.Presto_Mobile );
+    return iAm._engineIs( who.ENGINE.Presto_Mobile );
 };
 
 /**

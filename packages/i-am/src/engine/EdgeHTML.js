@@ -14,7 +14,7 @@ goog.provide( 'iAm.EdgeMobile.Gte' );
 goog.provide( 'iAm.EdgeMobile.Lt' );
 goog.provide( 'iAm.EdgeMobile.Lte' );
 
-goog.require( 'whatBrowserAmI.ENGINE' );
+goog.require( 'who.ENGINE' );
 
 /*----------------------------------------------------------------------------//
  *  EdgeHTML
@@ -24,7 +24,7 @@ goog.require( 'whatBrowserAmI.ENGINE' );
  * @return {boolean}
  */
 iAm.EdgeHTML = function(){
-    return iAm._engineIs( whatBrowserAmI.ENGINE.EdgeHTML );
+    return iAm._engineIs( who.ENGINE.EdgeHTML );
 };
 
 /**
@@ -110,7 +110,7 @@ iAm.AnyEdgeHTML.Lte = function( version ){
  * @return {boolean}
  */
 iAm.EdgeMobile = function(){
-    return iAm._engineIs( whatBrowserAmI.ENGINE.Edge_Mobile );
+    return iAm._engineIs( who.ENGINE.Edge_Mobile );
 };
 
 /**

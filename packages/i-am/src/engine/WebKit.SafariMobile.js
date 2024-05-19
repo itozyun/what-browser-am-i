@@ -25,13 +25,13 @@ goog.provide( 'iAm.iOSWebView.Lt' );
 goog.provide( 'iAm.iOSWebView.Lte' );
 
 goog.require( 'iAm.QtWebKit' );
-goog.require( 'whatBrowserAmI.ENGINE' );
+goog.require( 'who.ENGINE' );
 
 /**
  * @return {boolean}
  */
 iAm.WebKit = function(){
-    return iAm._engineIs( whatBrowserAmI.ENGINE.WebKit );
+    return iAm._engineIs( who.ENGINE.WebKit );
 };
 
 /*----------------------------------------------------------------------------//
@@ -171,7 +171,7 @@ iAm.AnySafariMobile.Lte = function( version ){
  * @return {boolean}
  */
 iAm.SafariMobile = function(){
-    return iAm._engineIs( whatBrowserAmI.ENGINE.Safari_Mobile );
+    return iAm._engineIs( who.ENGINE.Safari_Mobile );
 };
 
 /**
@@ -214,7 +214,7 @@ iAm.SafariMobile.Lte = function( version ){
  * @return {boolean}
  */
 iAm.iOSWebView = function(){
-    return iAm._engineIs( whatBrowserAmI.ENGINE.iOS_WebView );
+    return iAm._engineIs( who.ENGINE.iOS_WebView );
 };
 
 /**

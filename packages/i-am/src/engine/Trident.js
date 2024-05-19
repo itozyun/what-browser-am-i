@@ -14,7 +14,7 @@ goog.provide( 'iAm.TridentMobile.Gte' );
 goog.provide( 'iAm.TridentMobile.Lt' );
 goog.provide( 'iAm.TridentMobile.Lte' );
 
-goog.require( 'whatBrowserAmI.ENGINE' );
+goog.require( 'who.ENGINE' );
 
 /*----------------------------------------------------------------------------//
  *  Trident
@@ -24,7 +24,7 @@ goog.require( 'whatBrowserAmI.ENGINE' );
  * @return {boolean}
  */
 iAm.Trident = function(){
-    return iAm._engineIs( whatBrowserAmI.ENGINE.Trident );
+    return iAm._engineIs( who.ENGINE.Trident );
 };
 
 /**
@@ -110,7 +110,7 @@ iAm.AnyTrident.Lte = function( version ){
  * @return {boolean}
  */
 iAm.TridentMobile = function(){
-    return iAm._engineIs( whatBrowserAmI.ENGINE.Trident_Mobile );
+    return iAm._engineIs( who.ENGINE.Trident_Mobile );
 };
 
 /**
