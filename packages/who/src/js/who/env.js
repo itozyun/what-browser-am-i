@@ -59,17 +59,20 @@ var p_numberWebKit = p_getNumber( p_strUserAgent, 'AppleWebKit/' );
 
 /**
  * Gecko(Fennec) or Goanna
- * @const {boolean} */
-var p_isGeckoFamily =
-    !p_hasDocumentAll && // Preventing errors in IE4
-        !!(function(){
-        // https://www.fxsitecompat.com/ja/docs/2017/moz-appearance-property-has-been-removed/
-        // -moz-appearance プロパティが廃止されました -> 更新: この変更は Firefox 54 で予定されていましたが、延期されました。
-        // p_htmlStyle.MozAppearance !== undefined, // window.Components
-            for( var k in p_htmlStyle ){
-                if( p_startWith( k, 'Moz' ) ) return true;
+ * @type {boolean} */
+var p_isGeckoFamily = false;
+
+if( !p_hasDocumentAll ){ // Preventing errors in IE4
+    // https://www.fxsitecompat.com/ja/docs/2017/moz-appearance-property-has-been-removed/
+    // -moz-appearance プロパティが廃止されました -> 更新: この変更は Firefox 54 で予定されていましたが、延期されました。
+    // p_htmlStyle.MozAppearance !== undefined, // window.Components
+        for( var __k in p_htmlStyle ){
+            if( p_startWith( __k, 'Moz' ) ){
+                p_isGeckoFamily = true;
+                break;
             };
-        })();
+        };
+};
 
 /**
  * Maybe Linux or Android
