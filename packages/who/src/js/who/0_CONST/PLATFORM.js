@@ -54,6 +54,6 @@ who.PLATFORM = {
     Ubuntu                : who.DEFINE.MINIFY ? 47 : 'Ubuntu',
     Mint                  : who.DEFINE.MINIFY ? 48 : 'Mint',
     Fedora                : who.DEFINE.MINIFY ? 49 : 'Fedora',
-    Gentoo                : who.DEFINE.MINIFY ? 50 : 'Gento',
+    Gentoo                : who.DEFINE.MINIFY ? 50 : 'Gentoo',
     Linux                 : who.DEFINE.MINIFY ? 51 : 'Linux'
 };
