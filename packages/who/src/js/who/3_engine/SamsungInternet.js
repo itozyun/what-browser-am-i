@@ -32,7 +32,7 @@ who.engine.SamsungInternet.NAVIGATOR_VERSION = p_getNumber( p_strUserAgent, 'Sam
  * SamsungBrowser/2.0 未満のバージョン
  * @const {number} */
 who.engine.SamsungInternet.LT2_NAVIGATOR_VERSION = !who.engine.SamsungInternet.NAVIGATOR_VERSION &&
-    [].pop && // Array.prototype.pop を実装しないブラウザも判定対象なので、ここで除外する
+    [].pop && // Array.prototype.pop を実装しないブラウザも判定対象なので、ここで除外する TODO es2-to-es3 を使う場合がある!!
     (function(){
         var device;
 
