@@ -97,10 +97,12 @@ iAm._engineVersion.Lte = function( version ){
     return 0 <= ua.conpare( ua[ who.INDEX.ENGINE_VERSION ], version );
 };
 
-
-iAm.MIN_SAFARI_VERSION = webKitVersionToSafariVersion( iAm.DEFINE.ASSUME_MIN_VERSION );
-
-iAm.MAX_SAFARI_VERSION = webKitVersionToSafariVersion( iAm.DEFINE.ASSUME_MAX_VERSION );
+if( iAm.DEFINE.ASSUME_MIN_VERSION ){
+    iAm.MIN_SAFARI_VERSION = webKitVersionToSafariVersion( iAm.DEFINE.ASSUME_MIN_VERSION );
+};
+if( iAm.DEFINE.ASSUME_MAX_VERSION ){
+    iAm.MAX_SAFARI_VERSION = webKitVersionToSafariVersion( iAm.DEFINE.ASSUME_MAX_VERSION );
+};
 
 /**
  * @private
@@ -357,8 +359,8 @@ function webKitVersionToSafariVersion( webKitVersion ){
         : ua.conpare( webKitVersion,'617.1.17.11.11') < 0 ? '17.1.2'
         : ua.conpare( webKitVersion,'617.1.17.11.12 ') < 0 ? 17.2
         : ua.conpare( webKitVersion,'617.2.4.11.9') < 0 ? '17.2.1'
-        : ua.conpare( webKitVersion,'617.2.4.11.12') < 0 ? 17.3
-        : ua.conpare( webKitVersion,'618.1.15') < 0 ? '17.3.1'
+        : ua.conpare( webKitVersion,'617.2.4.11.12')  < 0 ? 17.3
+        : ua.conpare( webKitVersion,'618.1.15')       < 0 ? '17.3.1'
         : ua.conpare( webKitVersion,'618.1.15.111.8') < 0 ? 17.4
         : ua.conpare( webKitVersion,'618.2.12') < 0 ? '17.4.1'
         :                                               17.5

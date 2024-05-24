@@ -10,7 +10,7 @@
  *      function(){
  *        if(ua[who.INDEX.ENGINE_NAME] === who.ENGINE.Gecko){
  *          // Only for gecko
- *          if(0 <= ua.conpare('1.9.1', ua[who.INDEX.ENGINE_VERSION])){
+ *          if(0 <= ua.conpare(ua[who.INDEX.ENGINE_VERSION], '1.9.1')){
  *            // Only for firefox 3.5+
  *            if(ua[who.INDEX.PLATFORM_NAME] === who.PLATFORM.Windows){
  *              // Only for firefox 3.5+ and Windows OS
