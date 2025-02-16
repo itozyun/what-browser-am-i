@@ -1,15 +1,15 @@
 goog.provide( 'iAm.UCWEB' );
-goog.provide( 'iAm.UCWEB.Gt' );
-goog.provide( 'iAm.UCWEB.Gte' );
-goog.provide( 'iAm.UCWEB.Lt' );
-goog.provide( 'iAm.UCWEB.Lte' );
+goog.provide( 'iAm.UCWEB.gt' );
+goog.provide( 'iAm.UCWEB.gte' );
+goog.provide( 'iAm.UCWEB.lt' );
+goog.provide( 'iAm.UCWEB.lte' );
 
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.Gt' );
-goog.require( 'iAm._engineVersion.Gte' );
-goog.require( 'iAm._engineVersion.Lt' );
-goog.require( 'iAm._engineVersion.Lte' );
+goog.require( 'iAm._engineVersion.gt' );
+goog.require( 'iAm._engineVersion.gte' );
+goog.require( 'iAm._engineVersion.lt' );
+goog.require( 'iAm._engineVersion.lte' );
 
 /**
  * @return {boolean}
@@ -26,30 +26,30 @@ iAm.UCWEB = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.UCWEB.Gt = function( version ){
-    return iAm.UCWEB() && iAm._engineVersion.Gt( version );
+iAm.UCWEB.gt = function( version ){
+    return iAm.UCWEB() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.UCWEB.Gte = function( version ){
-    return iAm.UCWEB() && iAm._engineVersion.Gte( version );
+iAm.UCWEB.gte = function( version ){
+    return iAm.UCWEB() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.UCWEB.Lt = function( version ){
-    return iAm.UCWEB() && iAm._engineVersion.Lt( version );
+iAm.UCWEB.lt = function( version ){
+    return iAm.UCWEB() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.UCWEB.Lte = function( version ){
-    return iAm.UCWEB() && iAm._engineVersion.Lte( version );
+iAm.UCWEB.lte = function( version ){
+    return iAm.UCWEB() && iAm._engineVersion.lte( version );
 };

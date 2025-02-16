@@ -1,15 +1,15 @@
 goog.provide( 'iAm.Goanna' );
-goog.provide( 'iAm.Goanna.Gt' );
-goog.provide( 'iAm.Goanna.Gte' );
-goog.provide( 'iAm.Goanna.Lt' );
-goog.provide( 'iAm.Goanna.Lte' );
+goog.provide( 'iAm.Goanna.gt' );
+goog.provide( 'iAm.Goanna.gte' );
+goog.provide( 'iAm.Goanna.lt' );
+goog.provide( 'iAm.Goanna.lte' );
 
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.Gt' );
-goog.require( 'iAm._engineVersion.Gte' );
-goog.require( 'iAm._engineVersion.Lt' );
-goog.require( 'iAm._engineVersion.Lte' );
+goog.require( 'iAm._engineVersion.gt' );
+goog.require( 'iAm._engineVersion.gte' );
+goog.require( 'iAm._engineVersion.lt' );
+goog.require( 'iAm._engineVersion.lte' );
 
 /**
  * @return {boolean}
@@ -26,30 +26,30 @@ iAm.Goanna = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Goanna.Gt = function( version ){
-    return iAm.Goanna() && iAm._engineVersion.Gt( version );
+iAm.Goanna.gt = function( version ){
+    return iAm.Goanna() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Goanna.Gte = function( version ){
-    return iAm.Goanna() && iAm._engineVersion.Gte( version );
+iAm.Goanna.gte = function( version ){
+    return iAm.Goanna() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Goanna.Lt = function( version ){
-    return iAm.Goanna() && iAm._engineVersion.Lt( version );
+iAm.Goanna.lt = function( version ){
+    return iAm.Goanna() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Goanna.Lte = function( version ){
-    return iAm.Goanna() && iAm._engineVersion.Lte( version );
+iAm.Goanna.lte = function( version ){
+    return iAm.Goanna() && iAm._engineVersion.lte( version );
 };

@@ -1,15 +1,15 @@
 goog.provide( 'iAm.SamsungInternet' );
-goog.provide( 'iAm.SamsungInternet.Gt' );
-goog.provide( 'iAm.SamsungInternet.Gte' );
-goog.provide( 'iAm.SamsungInternet.Lt' );
-goog.provide( 'iAm.SamsungInternet.Lte' );
+goog.provide( 'iAm.SamsungInternet.gt' );
+goog.provide( 'iAm.SamsungInternet.gte' );
+goog.provide( 'iAm.SamsungInternet.lt' );
+goog.provide( 'iAm.SamsungInternet.lte' );
 
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.Gt' );
-goog.require( 'iAm._engineVersion.Gte' );
-goog.require( 'iAm._engineVersion.Lt' );
-goog.require( 'iAm._engineVersion.Lte' );
+goog.require( 'iAm._engineVersion.gt' );
+goog.require( 'iAm._engineVersion.gte' );
+goog.require( 'iAm._engineVersion.lt' );
+goog.require( 'iAm._engineVersion.lte' );
 
 /**
  * @return {boolean}
@@ -26,30 +26,30 @@ iAm.SamsungInternet = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.SamsungInternet.Gt = function( version ){
-    return iAm.SamsungInternet() && iAm._engineVersion.Gt( version );
+iAm.SamsungInternet.gt = function( version ){
+    return iAm.SamsungInternet() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.SamsungInternet.Gte = function( version ){
-    return iAm.SamsungInternet() && iAm._engineVersion.Gte( version );
+iAm.SamsungInternet.gte = function( version ){
+    return iAm.SamsungInternet() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.SamsungInternet.Lt = function( version ){
-    return iAm.SamsungInternet() && iAm._engineVersion.Lt( version );
+iAm.SamsungInternet.lt = function( version ){
+    return iAm.SamsungInternet() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.SamsungInternet.Lte = function( version ){
-    return iAm.SamsungInternet() && iAm._engineVersion.Lte( version );
+iAm.SamsungInternet.lte = function( version ){
+    return iAm.SamsungInternet() && iAm._engineVersion.lte( version );
 };

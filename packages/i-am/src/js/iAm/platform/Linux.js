@@ -2,10 +2,10 @@ goog.provide( 'iAm.Linux' );
 
 goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
-goog.require( 'iAm._platformVersion.Gt' );
-goog.require( 'iAm._platformVersion.Gte' );
-goog.require( 'iAm._platformVersion.Lt' );
-goog.require( 'iAm._platformVersion.Lte' );
+goog.require( 'iAm._platformVersion.gt' );
+goog.require( 'iAm._platformVersion.gte' );
+goog.require( 'iAm._platformVersion.lt' );
+goog.require( 'iAm._platformVersion.lte' );
 
 /**
  * @return {boolean}
@@ -18,30 +18,30 @@ iAm.Linux = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Linux.Gt = function( version ){
-    return iAm.Linux() && iAm._platformVersion.Gt( version );
+iAm.Linux.gt = function( version ){
+    return iAm.Linux() && iAm._platformVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Linux.Gte = function( version ){
-    return iAm.Linux() && iAm._platformVersion.Gte( version );
+iAm.Linux.gte = function( version ){
+    return iAm.Linux() && iAm._platformVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Linux.Lt = function( version ){
-    return iAm.Linux() && iAm._platformVersion.Lt( version );
+iAm.Linux.lt = function( version ){
+    return iAm.Linux() && iAm._platformVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Linux.Lte = function( version ){
-    return iAm.Linux() && iAm._platformVersion.Lte( version );
+iAm.Linux.lte = function( version ){
+    return iAm.Linux() && iAm._platformVersion.lte( version );
 };

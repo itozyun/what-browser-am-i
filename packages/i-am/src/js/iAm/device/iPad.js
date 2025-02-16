@@ -2,10 +2,10 @@ goog.provide( 'iAm.iPad' );
 
 goog.require( 'iAm.EnumDevice' );
 goog.require( 'iAm._deviceIs' );
-goog.require( 'iAm._deviceVersion.Gt' );
-goog.require( 'iAm._deviceVersion.Gte' );
-goog.require( 'iAm._deviceVersion.Lt' );
-goog.require( 'iAm._deviceVersion.Lte' );
+goog.require( 'iAm._deviceVersion.gt' );
+goog.require( 'iAm._deviceVersion.gte' );
+goog.require( 'iAm._deviceVersion.lt' );
+goog.require( 'iAm._deviceVersion.lte' );
 
 /**
  * @return {boolean}
@@ -18,30 +18,30 @@ iAm.iPad = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.iPad.Gt = function( version ){
-    return iAm.iPad() && iAm._deviceVersion.Gt( version );
+iAm.iPad.gt = function( version ){
+    return iAm.iPad() && iAm._deviceVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.iPad.Gte = function( version ){
-    return iAm.iPad() && iAm._deviceVersion.Gte( version );
+iAm.iPad.gte = function( version ){
+    return iAm.iPad() && iAm._deviceVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.iPad.Lt = function( version ){
-    return iAm.iPad() && iAm._deviceVersion.Lt( version );
+iAm.iPad.lt = function( version ){
+    return iAm.iPad() && iAm._deviceVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.iPad.Lte = function( version ){
-    return iAm.iPad() && iAm._deviceVersion.Lte( version );
+iAm.iPad.lte = function( version ){
+    return iAm.iPad() && iAm._deviceVersion.lte( version );
 };

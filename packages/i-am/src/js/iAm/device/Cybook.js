@@ -2,10 +2,10 @@ goog.provide( 'iAm.Cybook' );
 
 goog.require( 'iAm.EnumDevice' );
 goog.require( 'iAm._deviceIs' );
-goog.require( 'iAm._deviceVersion.Gt' );
-goog.require( 'iAm._deviceVersion.Gte' );
-goog.require( 'iAm._deviceVersion.Lt' );
-goog.require( 'iAm._deviceVersion.Lte' );
+goog.require( 'iAm._deviceVersion.gt' );
+goog.require( 'iAm._deviceVersion.gte' );
+goog.require( 'iAm._deviceVersion.lt' );
+goog.require( 'iAm._deviceVersion.lte' );
 
 /**
  * @return {boolean}
@@ -18,30 +18,30 @@ iAm.Cybook = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Cybook.Gt = function( version ){
-    return iAm.Cybook() && iAm._deviceVersion.Gt( version );
+iAm.Cybook.gt = function( version ){
+    return iAm.Cybook() && iAm._deviceVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Cybook.Gte = function( version ){
-    return iAm.Cybook() && iAm._deviceVersion.Gte( version );
+iAm.Cybook.gte = function( version ){
+    return iAm.Cybook() && iAm._deviceVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Cybook.Lt = function( version ){
-    return iAm.Cybook() && iAm._deviceVersion.Lt( version );
+iAm.Cybook.lt = function( version ){
+    return iAm.Cybook() && iAm._deviceVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Cybook.Lte = function( version ){
-    return iAm.Cybook() && iAm._deviceVersion.Lte( version );
+iAm.Cybook.lte = function( version ){
+    return iAm.Cybook() && iAm._deviceVersion.lte( version );
 };

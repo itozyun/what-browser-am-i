@@ -2,10 +2,10 @@ goog.provide( 'iAm.XboxOne' );
 
 goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
-goog.require( 'iAm._platformVersion.Gt' );
-goog.require( 'iAm._platformVersion.Gte' );
-goog.require( 'iAm._platformVersion.Lt' );
-goog.require( 'iAm._platformVersion.Lte' );
+goog.require( 'iAm._platformVersion.gt' );
+goog.require( 'iAm._platformVersion.gte' );
+goog.require( 'iAm._platformVersion.lt' );
+goog.require( 'iAm._platformVersion.lte' );
 
 /**
  * @return {boolean}
@@ -18,30 +18,30 @@ iAm.XboxOne = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.XboxOne.Gt = function( version ){
-    return iAm.XboxOne() && iAm._platformVersion.Gt( version );
+iAm.XboxOne.gt = function( version ){
+    return iAm.XboxOne() && iAm._platformVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.XboxOne.Gte = function( version ){
-    return iAm.XboxOne() && iAm._platformVersion.Gte( version );
+iAm.XboxOne.gte = function( version ){
+    return iAm.XboxOne() && iAm._platformVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.XboxOne.Lt = function( version ){
-    return iAm.XboxOne() && iAm._platformVersion.Lt( version );
+iAm.XboxOne.lt = function( version ){
+    return iAm.XboxOne() && iAm._platformVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.XboxOne.Lte = function( version ){
-    return iAm.XboxOne() && iAm._platformVersion.Lte( version );
+iAm.XboxOne.lte = function( version ){
+    return iAm.XboxOne() && iAm._platformVersion.lte( version );
 };

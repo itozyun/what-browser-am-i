@@ -2,10 +2,10 @@ goog.provide( 'iAm.Maemo' );
 
 goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
-goog.require( 'iAm._platformVersion.Gt' );
-goog.require( 'iAm._platformVersion.Gte' );
-goog.require( 'iAm._platformVersion.Lt' );
-goog.require( 'iAm._platformVersion.Lte' );
+goog.require( 'iAm._platformVersion.gt' );
+goog.require( 'iAm._platformVersion.gte' );
+goog.require( 'iAm._platformVersion.lt' );
+goog.require( 'iAm._platformVersion.lte' );
 
 /**
  * @return {boolean}
@@ -18,30 +18,30 @@ iAm.Maemo = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Maemo.Gt = function( version ){
-    return iAm.Maemo() && iAm._platformVersion.Gt( version );
+iAm.Maemo.gt = function( version ){
+    return iAm.Maemo() && iAm._platformVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Maemo.Gte = function( version ){
-    return iAm.Maemo() && iAm._platformVersion.Gte( version );
+iAm.Maemo.gte = function( version ){
+    return iAm.Maemo() && iAm._platformVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Maemo.Lt = function( version ){
-    return iAm.Maemo() && iAm._platformVersion.Lt( version );
+iAm.Maemo.lt = function( version ){
+    return iAm.Maemo() && iAm._platformVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Maemo.Lte = function( version ){
-    return iAm.Maemo() && iAm._platformVersion.Lte( version );
+iAm.Maemo.lte = function( version ){
+    return iAm.Maemo() && iAm._platformVersion.lte( version );
 };

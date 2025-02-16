@@ -1,15 +1,15 @@
 goog.provide( 'iAm.iCab' );
-goog.provide( 'iAm.iCab.Gt' );
-goog.provide( 'iAm.iCab.Gte' );
-goog.provide( 'iAm.iCab.Lt' );
-goog.provide( 'iAm.iCab.Lte' );
+goog.provide( 'iAm.iCab.gt' );
+goog.provide( 'iAm.iCab.gte' );
+goog.provide( 'iAm.iCab.lt' );
+goog.provide( 'iAm.iCab.lte' );
 
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.Gt' );
-goog.require( 'iAm._engineVersion.Gte' );
-goog.require( 'iAm._engineVersion.Lt' );
-goog.require( 'iAm._engineVersion.Lte' );
+goog.require( 'iAm._engineVersion.gt' );
+goog.require( 'iAm._engineVersion.gte' );
+goog.require( 'iAm._engineVersion.lt' );
+goog.require( 'iAm._engineVersion.lte' );
 
 /**
  * @return {boolean}
@@ -26,30 +26,30 @@ iAm.iCab = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.iCab.Gt = function( version ){
-    return iAm.iCab() && iAm._engineVersion.Gt( version );
+iAm.iCab.gt = function( version ){
+    return iAm.iCab() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.iCab.Gte = function( version ){
-    return iAm.iCab() && iAm._engineVersion.Gte( version );
+iAm.iCab.gte = function( version ){
+    return iAm.iCab() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.iCab.Lt = function( version ){
-    return iAm.iCab() && iAm._engineVersion.Lt( version );
+iAm.iCab.lt = function( version ){
+    return iAm.iCab() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.iCab.Lte = function( version ){
-    return iAm.iCab() && iAm._engineVersion.Lte( version );
+iAm.iCab.lte = function( version ){
+    return iAm.iCab() && iAm._engineVersion.lte( version );
 };

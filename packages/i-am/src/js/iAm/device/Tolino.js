@@ -2,10 +2,10 @@ goog.provide( 'iAm.Tolino' );
 
 goog.require( 'iAm.EnumDevice' );
 goog.require( 'iAm._deviceIs' );
-goog.require( 'iAm._deviceVersion.Gt' );
-goog.require( 'iAm._deviceVersion.Gte' );
-goog.require( 'iAm._deviceVersion.Lt' );
-goog.require( 'iAm._deviceVersion.Lte' );
+goog.require( 'iAm._deviceVersion.gt' );
+goog.require( 'iAm._deviceVersion.gte' );
+goog.require( 'iAm._deviceVersion.lt' );
+goog.require( 'iAm._deviceVersion.lte' );
 
 /**
  * @return {boolean}
@@ -18,30 +18,30 @@ iAm.Tolino = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Tolino.Gt = function( version ){
-    return iAm.Tolino() && iAm._deviceVersion.Gt( version );
+iAm.Tolino.gt = function( version ){
+    return iAm.Tolino() && iAm._deviceVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Tolino.Gte = function( version ){
-    return iAm.Tolino() && iAm._deviceVersion.Gte( version );
+iAm.Tolino.gte = function( version ){
+    return iAm.Tolino() && iAm._deviceVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Tolino.Lt = function( version ){
-    return iAm.Tolino() && iAm._deviceVersion.Lt( version );
+iAm.Tolino.lt = function( version ){
+    return iAm.Tolino() && iAm._deviceVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Tolino.Lte = function( version ){
-    return iAm.Tolino() && iAm._deviceVersion.Lte( version );
+iAm.Tolino.lte = function( version ){
+    return iAm.Tolino() && iAm._deviceVersion.lte( version );
 };

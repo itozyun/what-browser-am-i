@@ -1,15 +1,15 @@
 goog.provide( 'iAm.KHTML' );
-goog.provide( 'iAm.KHTML.Gt' );
-goog.provide( 'iAm.KHTML.Gte' );
-goog.provide( 'iAm.KHTML.Lt' );
-goog.provide( 'iAm.KHTML.Lte' );
+goog.provide( 'iAm.KHTML.gt' );
+goog.provide( 'iAm.KHTML.gte' );
+goog.provide( 'iAm.KHTML.lt' );
+goog.provide( 'iAm.KHTML.lte' );
 
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.Gt' );
-goog.require( 'iAm._engineVersion.Gte' );
-goog.require( 'iAm._engineVersion.Lt' );
-goog.require( 'iAm._engineVersion.Lte' );
+goog.require( 'iAm._engineVersion.gt' );
+goog.require( 'iAm._engineVersion.gte' );
+goog.require( 'iAm._engineVersion.lt' );
+goog.require( 'iAm._engineVersion.lte' );
 
 /**
  * @return {boolean}
@@ -26,30 +26,30 @@ iAm.KHTML = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.KHTML.Gt = function( version ){
-    return iAm.KHTML() && iAm._engineVersion.Gt( version );
+iAm.KHTML.gt = function( version ){
+    return iAm.KHTML() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.KHTML.Gte = function( version ){
-    return iAm.KHTML() && iAm._engineVersion.Gte( version );
+iAm.KHTML.gte = function( version ){
+    return iAm.KHTML() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.KHTML.Lt = function( version ){
-    return iAm.KHTML() && iAm._engineVersion.Lt( version );
+iAm.KHTML.lt = function( version ){
+    return iAm.KHTML() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.KHTML.Lte = function( version ){
-    return iAm.KHTML() && iAm._engineVersion.Lte( version );
+iAm.KHTML.lte = function( version ){
+    return iAm.KHTML() && iAm._engineVersion.lte( version );
 };

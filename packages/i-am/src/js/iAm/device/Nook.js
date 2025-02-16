@@ -2,10 +2,10 @@ goog.provide( 'iAm.Nook' );
 
 goog.require( 'iAm.EnumDevice' );
 goog.require( 'iAm._deviceIs' );
-goog.require( 'iAm._deviceVersion.Gt' );
-goog.require( 'iAm._deviceVersion.Gte' );
-goog.require( 'iAm._deviceVersion.Lt' );
-goog.require( 'iAm._deviceVersion.Lte' );
+goog.require( 'iAm._deviceVersion.gt' );
+goog.require( 'iAm._deviceVersion.gte' );
+goog.require( 'iAm._deviceVersion.lt' );
+goog.require( 'iAm._deviceVersion.lte' );
 
 /**
  * @return {boolean}
@@ -18,30 +18,30 @@ iAm.Nook = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Nook.Gt = function( version ){
-    return iAm.Nook() && iAm._deviceVersion.Gt( version );
+iAm.Nook.gt = function( version ){
+    return iAm.Nook() && iAm._deviceVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Nook.Gte = function( version ){
-    return iAm.Nook() && iAm._deviceVersion.Gte( version );
+iAm.Nook.gte = function( version ){
+    return iAm.Nook() && iAm._deviceVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Nook.Lt = function( version ){
-    return iAm.Nook() && iAm._deviceVersion.Lt( version );
+iAm.Nook.lt = function( version ){
+    return iAm.Nook() && iAm._deviceVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Nook.Lte = function( version ){
-    return iAm.Nook() && iAm._deviceVersion.Lte( version );
+iAm.Nook.lte = function( version ){
+    return iAm.Nook() && iAm._deviceVersion.lte( version );
 };

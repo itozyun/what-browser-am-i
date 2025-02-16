@@ -2,10 +2,10 @@ goog.provide( 'iAm.NetBSD' );
 
 goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
-goog.require( 'iAm._platformVersion.Gt' );
-goog.require( 'iAm._platformVersion.Gte' );
-goog.require( 'iAm._platformVersion.Lt' );
-goog.require( 'iAm._platformVersion.Lte' );
+goog.require( 'iAm._platformVersion.gt' );
+goog.require( 'iAm._platformVersion.gte' );
+goog.require( 'iAm._platformVersion.lt' );
+goog.require( 'iAm._platformVersion.lte' );
 
 /**
  * @return {boolean}
@@ -18,30 +18,30 @@ iAm.NetBSD = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.NetBSD.Gt = function( version ){
-    return iAm.NetBSD() && iAm._platformVersion.Gt( version );
+iAm.NetBSD.gt = function( version ){
+    return iAm.NetBSD() && iAm._platformVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.NetBSD.Gte = function( version ){
-    return iAm.NetBSD() && iAm._platformVersion.Gte( version );
+iAm.NetBSD.gte = function( version ){
+    return iAm.NetBSD() && iAm._platformVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.NetBSD.Lt = function( version ){
-    return iAm.NetBSD() && iAm._platformVersion.Lt( version );
+iAm.NetBSD.lt = function( version ){
+    return iAm.NetBSD() && iAm._platformVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.NetBSD.Lte = function( version ){
-    return iAm.NetBSD() && iAm._platformVersion.Lte( version );
+iAm.NetBSD.lte = function( version ){
+    return iAm.NetBSD() && iAm._platformVersion.lte( version );
 };

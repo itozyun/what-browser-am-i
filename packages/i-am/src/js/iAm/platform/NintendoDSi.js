@@ -2,10 +2,10 @@ goog.provide( 'iAm.NintendoDSi' );
 
 goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
-goog.require( 'iAm._platformVersion.Gt' );
-goog.require( 'iAm._platformVersion.Gte' );
-goog.require( 'iAm._platformVersion.Lt' );
-goog.require( 'iAm._platformVersion.Lte' );
+goog.require( 'iAm._platformVersion.gt' );
+goog.require( 'iAm._platformVersion.gte' );
+goog.require( 'iAm._platformVersion.lt' );
+goog.require( 'iAm._platformVersion.lte' );
 
 /**
  * @return {boolean}
@@ -18,30 +18,30 @@ iAm.NintendoDSi = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.NintendoDSi.Gt = function( version ){
-    return iAm.NintendoDSi() && iAm._platformVersion.Gt( version );
+iAm.NintendoDSi.gt = function( version ){
+    return iAm.NintendoDSi() && iAm._platformVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.NintendoDSi.Gte = function( version ){
-    return iAm.NintendoDSi() && iAm._platformVersion.Gte( version );
+iAm.NintendoDSi.gte = function( version ){
+    return iAm.NintendoDSi() && iAm._platformVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.NintendoDSi.Lt = function( version ){
-    return iAm.NintendoDSi() && iAm._platformVersion.Lt( version );
+iAm.NintendoDSi.lt = function( version ){
+    return iAm.NintendoDSi() && iAm._platformVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.NintendoDSi.Lte = function( version ){
-    return iAm.NintendoDSi() && iAm._platformVersion.Lte( version );
+iAm.NintendoDSi.lte = function( version ){
+    return iAm.NintendoDSi() && iAm._platformVersion.lte( version );
 };

@@ -2,10 +2,10 @@ goog.provide( 'iAm.Xbox360' );
 
 goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
-goog.require( 'iAm._platformVersion.Gt' );
-goog.require( 'iAm._platformVersion.Gte' );
-goog.require( 'iAm._platformVersion.Lt' );
-goog.require( 'iAm._platformVersion.Lte' );
+goog.require( 'iAm._platformVersion.gt' );
+goog.require( 'iAm._platformVersion.gte' );
+goog.require( 'iAm._platformVersion.lt' );
+goog.require( 'iAm._platformVersion.lte' );
 
 /**
  * @return {boolean}
@@ -18,30 +18,30 @@ iAm.Xbox360 = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Xbox360.Gt = function( version ){
-    return iAm.Xbox360() && iAm._platformVersion.Gt( version );
+iAm.Xbox360.gt = function( version ){
+    return iAm.Xbox360() && iAm._platformVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Xbox360.Gte = function( version ){
-    return iAm.Xbox360() && iAm._platformVersion.Gte( version );
+iAm.Xbox360.gte = function( version ){
+    return iAm.Xbox360() && iAm._platformVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Xbox360.Lt = function( version ){
-    return iAm.Xbox360() && iAm._platformVersion.Lt( version );
+iAm.Xbox360.lt = function( version ){
+    return iAm.Xbox360() && iAm._platformVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Xbox360.Lte = function( version ){
-    return iAm.Xbox360() && iAm._platformVersion.Lte( version );
+iAm.Xbox360.lte = function( version ){
+    return iAm.Xbox360() && iAm._platformVersion.lte( version );
 };

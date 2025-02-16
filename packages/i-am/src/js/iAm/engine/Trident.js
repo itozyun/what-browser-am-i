@@ -1,25 +1,25 @@
 goog.provide( 'iAm.Trident' );
-goog.provide( 'iAm.Trident.Gt' );
-goog.provide( 'iAm.Trident.Gte' );
-goog.provide( 'iAm.Trident.Lt' );
-goog.provide( 'iAm.Trident.Lte' );
+goog.provide( 'iAm.Trident.gt' );
+goog.provide( 'iAm.Trident.gte' );
+goog.provide( 'iAm.Trident.lt' );
+goog.provide( 'iAm.Trident.lte' );
 goog.provide( 'iAm.AnyTrident' );
-goog.provide( 'iAm.AnyTrident.Gt' );
-goog.provide( 'iAm.AnyTrident.Gte' );
-goog.provide( 'iAm.AnyTrident.Lt' );
-goog.provide( 'iAm.AnyTrident.Lte' );
+goog.provide( 'iAm.AnyTrident.gt' );
+goog.provide( 'iAm.AnyTrident.gte' );
+goog.provide( 'iAm.AnyTrident.lt' );
+goog.provide( 'iAm.AnyTrident.lte' );
 goog.provide( 'iAm.TridentMobile' );
-goog.provide( 'iAm.TridentMobile.Gt' );
-goog.provide( 'iAm.TridentMobile.Gte' );
-goog.provide( 'iAm.TridentMobile.Lt' );
-goog.provide( 'iAm.TridentMobile.Lte' );
+goog.provide( 'iAm.TridentMobile.gt' );
+goog.provide( 'iAm.TridentMobile.gte' );
+goog.provide( 'iAm.TridentMobile.lt' );
+goog.provide( 'iAm.TridentMobile.lte' );
 
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.Gt' );
-goog.require( 'iAm._engineVersion.Gte' );
-goog.require( 'iAm._engineVersion.Lt' );
-goog.require( 'iAm._engineVersion.Lte' );
+goog.require( 'iAm._engineVersion.gt' );
+goog.require( 'iAm._engineVersion.gte' );
+goog.require( 'iAm._engineVersion.lt' );
+goog.require( 'iAm._engineVersion.lte' );
 
 /*----------------------------------------------------------------------------//
  *  Trident
@@ -36,32 +36,32 @@ iAm.Trident = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Trident.Gt = function( version ){
-    return iAm.Trident() && iAm._engineVersion.Gt( version );
+iAm.Trident.gt = function( version ){
+    return iAm.Trident() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Trident.Gte = function( version ){
-    return iAm.Trident() && iAm._engineVersion.Gte( version );
+iAm.Trident.gte = function( version ){
+    return iAm.Trident() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Trident.Lt = function( version ){
-    return iAm.Trident() && iAm._engineVersion.Lt( version );
+iAm.Trident.lt = function( version ){
+    return iAm.Trident() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Trident.Lte = function( version ){
-    return iAm.Trident() && iAm._engineVersion.Lte( version );
+iAm.Trident.lte = function( version ){
+    return iAm.Trident() && iAm._engineVersion.lte( version );
 };
 
 /*----------------------------------------------------------------------------//
@@ -79,32 +79,32 @@ iAm.AnyTrident = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.AnyTrident.Gt = function( version ){
-    return iAm.AnyTrident() && iAm._engineVersion.Gt( version );
+iAm.AnyTrident.gt = function( version ){
+    return iAm.AnyTrident() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.AnyTrident.Gte = function( version ){
-    return iAm.AnyTrident() && iAm._engineVersion.Gte( version );
+iAm.AnyTrident.gte = function( version ){
+    return iAm.AnyTrident() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.AnyTrident.Lt = function( version ){
-    return iAm.AnyTrident() && iAm._engineVersion.Lt( version );
+iAm.AnyTrident.lt = function( version ){
+    return iAm.AnyTrident() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.AnyTrident.Lte = function( version ){
-    return iAm.AnyTrident() && iAm._engineVersion.Lte( version );
+iAm.AnyTrident.lte = function( version ){
+    return iAm.AnyTrident() && iAm._engineVersion.lte( version );
 };
 
 /*----------------------------------------------------------------------------//
@@ -122,30 +122,30 @@ iAm.TridentMobile = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.TridentMobile.Gt = function( version ){
-    return iAm.TridentMobile() && iAm._engineVersion.Gt( version );
+iAm.TridentMobile.gt = function( version ){
+    return iAm.TridentMobile() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.TridentMobile.Gte = function( version ){
-    return iAm.TridentMobile() && iAm._engineVersion.Gte( version );
+iAm.TridentMobile.gte = function( version ){
+    return iAm.TridentMobile() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.TridentMobile.Lt = function( version ){
-    return iAm.TridentMobile() && iAm._engineVersion.Lt( version );
+iAm.TridentMobile.lt = function( version ){
+    return iAm.TridentMobile() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.TridentMobile.Lte = function( version ){
-    return iAm.TridentMobile() && iAm._engineVersion.Lte( version );
+iAm.TridentMobile.lte = function( version ){
+    return iAm.TridentMobile() && iAm._engineVersion.lte( version );
 };

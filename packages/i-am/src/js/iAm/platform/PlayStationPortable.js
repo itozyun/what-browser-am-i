@@ -2,10 +2,10 @@ goog.provide( 'iAm.PlayStationPortable' );
 
 goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
-goog.require( 'iAm._platformVersion.Gt' );
-goog.require( 'iAm._platformVersion.Gte' );
-goog.require( 'iAm._platformVersion.Lt' );
-goog.require( 'iAm._platformVersion.Lte' );
+goog.require( 'iAm._platformVersion.gt' );
+goog.require( 'iAm._platformVersion.gte' );
+goog.require( 'iAm._platformVersion.lt' );
+goog.require( 'iAm._platformVersion.lte' );
 
 /**
  * @return {boolean}
@@ -18,30 +18,30 @@ iAm.PlayStationPortable = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.PlayStationPortable.Gt = function( version ){
-    return iAm.PlayStationPortable() && iAm._platformVersion.Gt( version );
+iAm.PlayStationPortable.gt = function( version ){
+    return iAm.PlayStationPortable() && iAm._platformVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.PlayStationPortable.Gte = function( version ){
-    return iAm.PlayStationPortable() && iAm._platformVersion.Gte( version );
+iAm.PlayStationPortable.gte = function( version ){
+    return iAm.PlayStationPortable() && iAm._platformVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.PlayStationPortable.Lt = function( version ){
-    return iAm.PlayStationPortable() && iAm._platformVersion.Lt( version );
+iAm.PlayStationPortable.lt = function( version ){
+    return iAm.PlayStationPortable() && iAm._platformVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.PlayStationPortable.Lte = function( version ){
-    return iAm.PlayStationPortable() && iAm._platformVersion.Lte( version );
+iAm.PlayStationPortable.lte = function( version ){
+    return iAm.PlayStationPortable() && iAm._platformVersion.lte( version );
 };

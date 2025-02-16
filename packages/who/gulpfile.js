@@ -20,12 +20,12 @@ let funcConpare;
 
 gulp.task( 'dist', gulp.series(
     function( cb ){
-        fs.readFile( './src/js/who/conpare.js',
+        fs.readFile( '../i-am/src/js/iAm/conpare.js',
             function( err, buffer ){
                 if( !err ){
                     funcConpare = 'var ' + uaObjectName + '=' + ( minify ? '[]' : '{}' ) + ';' +
                                   uaObjectName + '.conpare' +
-                                  buffer.toString().split( 'who.conpare' )[ 1 ];
+                                  buffer.toString().split( 'iAm.conpare' )[ 1 ];
                     cb();
                 };
             }
@@ -34,12 +34,16 @@ gulp.task( 'dist', gulp.series(
     function(){
         return gulp
             .src(
-                [ './src/closure-primitives/base.js', './src/js/**/*.js' ]
+                [ 
+                    '../i-am/src/closure-primitives/base.js',
+                    '../i-am/src/js/**/*.js',
+                     './src/js/**/*.js'
+                ]
             ).pipe(
                 ClosureCompiler(
                     {
                         dependency_mode  : 'PRUNE',
-                        entry_point       : 'goog:allfeatures',
+                        entry_point       : 'goog:who.all',
                         // externs           : [ externsJs ],
                         compilation_level : 'ADVANCED',
                         define            : [

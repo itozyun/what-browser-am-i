@@ -2,10 +2,10 @@ goog.provide( 'iAm.WindowsMobile' );
 
 goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
-goog.require( 'iAm._platformVersion.Gt' );
-goog.require( 'iAm._platformVersion.Gte' );
-goog.require( 'iAm._platformVersion.Lt' );
-goog.require( 'iAm._platformVersion.Lte' );
+goog.require( 'iAm._platformVersion.gt' );
+goog.require( 'iAm._platformVersion.gte' );
+goog.require( 'iAm._platformVersion.lt' );
+goog.require( 'iAm._platformVersion.lte' );
 
 /**
  * @return {boolean}
@@ -18,30 +18,30 @@ iAm.WindowsMobile = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.WindowsMobile.Gt = function( version ){
-    return iAm.WindowsMobile() && iAm._platformVersion.Gt( version );
+iAm.WindowsMobile.gt = function( version ){
+    return iAm.WindowsMobile() && iAm._platformVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.WindowsMobile.Gte = function( version ){
-    return iAm.WindowsMobile() && iAm._platformVersion.Gte( version );
+iAm.WindowsMobile.gte = function( version ){
+    return iAm.WindowsMobile() && iAm._platformVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.WindowsMobile.Lt = function( version ){
-    return iAm.WindowsMobile() && iAm._platformVersion.Lt( version );
+iAm.WindowsMobile.lt = function( version ){
+    return iAm.WindowsMobile() && iAm._platformVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.WindowsMobile.Lte = function( version ){
-    return iAm.WindowsMobile() && iAm._platformVersion.Lte( version );
+iAm.WindowsMobile.lte = function( version ){
+    return iAm.WindowsMobile() && iAm._platformVersion.lte( version );
 };

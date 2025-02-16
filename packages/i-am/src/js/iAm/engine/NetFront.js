@@ -1,15 +1,15 @@
 goog.provide( 'iAm.NetFront' );
-goog.provide( 'iAm.NetFront.Gt' );
-goog.provide( 'iAm.NetFront.Gte' );
-goog.provide( 'iAm.NetFront.Lt' );
-goog.provide( 'iAm.NetFront.Lte' );
+goog.provide( 'iAm.NetFront.gt' );
+goog.provide( 'iAm.NetFront.gte' );
+goog.provide( 'iAm.NetFront.lt' );
+goog.provide( 'iAm.NetFront.lte' );
 
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.Gt' );
-goog.require( 'iAm._engineVersion.Gte' );
-goog.require( 'iAm._engineVersion.Lt' );
-goog.require( 'iAm._engineVersion.Lte' );
+goog.require( 'iAm._engineVersion.gt' );
+goog.require( 'iAm._engineVersion.gte' );
+goog.require( 'iAm._engineVersion.lt' );
+goog.require( 'iAm._engineVersion.lte' );
 
 /**
  * @return {boolean}
@@ -26,30 +26,30 @@ iAm.NetFront = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.NetFront.Gt = function( version ){
-    return iAm.NetFront() && iAm._engineVersion.Gt( version );
+iAm.NetFront.gt = function( version ){
+    return iAm.NetFront() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.NetFront.Gte = function( version ){
-    return iAm.NetFront() && iAm._engineVersion.Gte( version );
+iAm.NetFront.gte = function( version ){
+    return iAm.NetFront() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.NetFront.Lt = function( version ){
-    return iAm.NetFront() && iAm._engineVersion.Lt( version );
+iAm.NetFront.lt = function( version ){
+    return iAm.NetFront() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.NetFront.Lte = function( version ){
-    return iAm.NetFront() && iAm._engineVersion.Lte( version );
+iAm.NetFront.lte = function( version ){
+    return iAm.NetFront() && iAm._engineVersion.lte( version );
 };

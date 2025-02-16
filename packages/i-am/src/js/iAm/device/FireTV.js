@@ -2,10 +2,10 @@ goog.provide( 'iAm.FireTV' );
 
 goog.require( 'iAm.EnumDevice' );
 goog.require( 'iAm._deviceIs' );
-goog.require( 'iAm._deviceVersion.Gt' );
-goog.require( 'iAm._deviceVersion.Gte' );
-goog.require( 'iAm._deviceVersion.Lt' );
-goog.require( 'iAm._deviceVersion.Lte' );
+goog.require( 'iAm._deviceVersion.gt' );
+goog.require( 'iAm._deviceVersion.gte' );
+goog.require( 'iAm._deviceVersion.lt' );
+goog.require( 'iAm._deviceVersion.lte' );
 
 /**
  * @return {boolean}
@@ -18,30 +18,30 @@ iAm.FireTV = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.FireTV.Gt = function( version ){
-    return iAm.FireTV() && iAm._deviceVersion.Gt( version );
+iAm.FireTV.gt = function( version ){
+    return iAm.FireTV() && iAm._deviceVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.FireTV.Gte = function( version ){
-    return iAm.FireTV() && iAm._deviceVersion.Gte( version );
+iAm.FireTV.gte = function( version ){
+    return iAm.FireTV() && iAm._deviceVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.FireTV.Lt = function( version ){
-    return iAm.FireTV() && iAm._deviceVersion.Lt( version );
+iAm.FireTV.lt = function( version ){
+    return iAm.FireTV() && iAm._deviceVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.FireTV.Lte = function( version ){
-    return iAm.FireTV() && iAm._deviceVersion.Lte( version );
+iAm.FireTV.lte = function( version ){
+    return iAm.FireTV() && iAm._deviceVersion.lte( version );
 };

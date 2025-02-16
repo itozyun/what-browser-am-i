@@ -1,15 +1,15 @@
 goog.provide( 'iAm.Tasman' );
-goog.provide( 'iAm.Tasman.Gt' );
-goog.provide( 'iAm.Tasman.Gte' );
-goog.provide( 'iAm.Tasman.Lt' );
-goog.provide( 'iAm.Tasman.Lte' );
+goog.provide( 'iAm.Tasman.gt' );
+goog.provide( 'iAm.Tasman.gte' );
+goog.provide( 'iAm.Tasman.lt' );
+goog.provide( 'iAm.Tasman.lte' );
 
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.Gt' );
-goog.require( 'iAm._engineVersion.Gte' );
-goog.require( 'iAm._engineVersion.Lt' );
-goog.require( 'iAm._engineVersion.Lte' );
+goog.require( 'iAm._engineVersion.gt' );
+goog.require( 'iAm._engineVersion.gte' );
+goog.require( 'iAm._engineVersion.lt' );
+goog.require( 'iAm._engineVersion.lte' );
 
 /**
  * @return {boolean}
@@ -26,30 +26,30 @@ iAm.Tasman = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Tasman.Gt = function( version ){
-    return iAm.Tasman() && iAm._engineVersion.Gt( version );
+iAm.Tasman.gt = function( version ){
+    return iAm.Tasman() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Tasman.Gte = function( version ){
-    return iAm.Tasman() && iAm._engineVersion.Gte( version );
+iAm.Tasman.gte = function( version ){
+    return iAm.Tasman() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Tasman.Lt = function( version ){
-    return iAm.Tasman() && iAm._engineVersion.Lt( version );
+iAm.Tasman.lt = function( version ){
+    return iAm.Tasman() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Tasman.Lte = function( version ){
-    return iAm.Tasman() && iAm._engineVersion.Lte( version );
+iAm.Tasman.lte = function( version ){
+    return iAm.Tasman() && iAm._engineVersion.lte( version );
 };

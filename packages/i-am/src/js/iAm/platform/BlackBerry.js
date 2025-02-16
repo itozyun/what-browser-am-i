@@ -2,10 +2,10 @@ goog.provide( 'iAm.BlackBerry' );
 
 goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
-goog.require( 'iAm._platformVersion.Gt' );
-goog.require( 'iAm._platformVersion.Gte' );
-goog.require( 'iAm._platformVersion.Lt' );
-goog.require( 'iAm._platformVersion.Lte' );
+goog.require( 'iAm._platformVersion.gt' );
+goog.require( 'iAm._platformVersion.gte' );
+goog.require( 'iAm._platformVersion.lt' );
+goog.require( 'iAm._platformVersion.lte' );
 
 /**
  * @return {boolean}
@@ -18,30 +18,30 @@ iAm.BlackBerry = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.BlackBerry.Gt = function( version ){
-    return iAm.BlackBerry() && iAm._platformVersion.Gt( version );
+iAm.BlackBerry.gt = function( version ){
+    return iAm.BlackBerry() && iAm._platformVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.BlackBerry.Gte = function( version ){
-    return iAm.BlackBerry() && iAm._platformVersion.Gte( version );
+iAm.BlackBerry.gte = function( version ){
+    return iAm.BlackBerry() && iAm._platformVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.BlackBerry.Lt = function( version ){
-    return iAm.BlackBerry() && iAm._platformVersion.Lt( version );
+iAm.BlackBerry.lt = function( version ){
+    return iAm.BlackBerry() && iAm._platformVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.BlackBerry.Lte = function( version ){
-    return iAm.BlackBerry() && iAm._platformVersion.Lte( version );
+iAm.BlackBerry.lte = function( version ){
+    return iAm.BlackBerry() && iAm._platformVersion.lte( version );
 };

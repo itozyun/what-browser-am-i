@@ -1,14 +1,14 @@
 goog.provide( 'iAm._engineIs' );
-goog.provide( 'iAm._engineVersion.Gt' );
-goog.provide( 'iAm._engineVersion.Gte' );
-goog.provide( 'iAm._engineVersion.Lt' );
-goog.provide( 'iAm._engineVersion.Lte' );
+goog.provide( 'iAm._engineVersion.gt' );
+goog.provide( 'iAm._engineVersion.gte' );
+goog.provide( 'iAm._engineVersion.lt' );
+goog.provide( 'iAm._engineVersion.lte' );
 
 goog.require( 'iAm.DEFINE.ASSUME_ENGINE' );
 goog.require( 'iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION' );
 goog.require( 'iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION' );
 goog.require( 'iAm.EnumIndex' );
-goog.require( 'who.conpare' );
+goog.require( 'iAm.conpare' );
 
 /**
  * @packege
@@ -27,14 +27,14 @@ iAm._engineIs = function( engineName ){
  * @param {string | number} version 
  * @return {boolean}
  */
-iAm._engineVersion.Gt = function( version ){
+iAm._engineVersion.gt = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
-        if( who.conpare( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION, version ) === 1 ){
+        if( iAm.conpare( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION, version ) === 1 ){
             return true;
         };
     };
     if( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION ){
-        if( who.conpare( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION, version ) <= 0 ){
+        if( iAm.conpare( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION, version ) <= 0 ){
             return false;
         };
     };
@@ -46,14 +46,14 @@ iAm._engineVersion.Gt = function( version ){
  * @param {string | number} version 
  * @return {boolean}
  */
-iAm._engineVersion.Gte = function( version ){
+iAm._engineVersion.gte = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
-        if( 0 <= who.conpare( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION, version ) ){
+        if( 0 <= iAm.conpare( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION, version ) ){
             return true;
         };
     };
     if( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION ){
-        if( who.conpare( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION, version ) === -1 ){
+        if( iAm.conpare( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION, version ) === -1 ){
             return false;
         };
     };
@@ -65,14 +65,14 @@ iAm._engineVersion.Gte = function( version ){
  * @param {string | number} version 
  * @return {boolean}
  */
-iAm._engineVersion.Lt = function( version ){
+iAm._engineVersion.lt = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
-        if( 0 <= who.conpare( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION, version ) ){
+        if( 0 <= iAm.conpare( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION, version ) ){
             return false;
         };
     };
     if( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION ){
-        if( who.conpare( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION, version ) === -1 ){
+        if( iAm.conpare( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION, version ) === -1 ){
             return true;
         };
     };
@@ -84,14 +84,14 @@ iAm._engineVersion.Lt = function( version ){
  * @param {string | number} version 
  * @return {boolean}
  */
-iAm._engineVersion.Lte = function( version ){
+iAm._engineVersion.lte = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
-        if( who.conpare( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION, version ) === 1 ){
+        if( iAm.conpare( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION, version ) === 1 ){
             return false;
         };
     };
     if( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION ){
-        if( who.conpare( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION, version ) <= 0 ){
+        if( iAm.conpare( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION, version ) <= 0 ){
             return true;
         };
     };
@@ -115,14 +115,14 @@ var asSafariVersion = webKitVersionToSafariVersion( ua[ iAm.EnumIndex.ENGINE_VER
  * @param {string | number} version 
  * @return {boolean}
  */
-iAm._safariVersion.Gt = function( version ){
+iAm._safariVersion.gt = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
-        if( who.conpare( iAm.MIN_SAFARI_VERSION, version ) === 1 ){
+        if( iAm.conpare( iAm.MIN_SAFARI_VERSION, version ) === 1 ){
             return true;
         };
     };
     if( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION ){
-        if( who.conpare( iAm.MAX_SAFARI_VERSION, version ) <= 0 ){
+        if( iAm.conpare( iAm.MAX_SAFARI_VERSION, version ) <= 0 ){
             return false;
         };
     };
@@ -134,14 +134,14 @@ iAm._safariVersion.Gt = function( version ){
  * @param {string | number} version 
  * @return {boolean}
  */
-iAm._safariVersion.Gte = function( version ){
+iAm._safariVersion.gte = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
-        if( 0 <= who.conpare( iAm.MIN_SAFARI_VERSION, version ) ){
+        if( 0 <= iAm.conpare( iAm.MIN_SAFARI_VERSION, version ) ){
             return true;
         };
     };
     if( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION ){
-        if( who.conpare( iAm.MAX_SAFARI_VERSION, version ) === -1 ){
+        if( iAm.conpare( iAm.MAX_SAFARI_VERSION, version ) === -1 ){
             return false;
         };
     };
@@ -153,14 +153,14 @@ iAm._safariVersion.Gte = function( version ){
  * @param {string | number} version 
  * @return {boolean}
  */
-iAm._safariVersion.Lt = function( version ){
+iAm._safariVersion.lt = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
-        if( 0 <= who.conpare( iAm.MIN_SAFARI_VERSION, version ) ){
+        if( 0 <= iAm.conpare( iAm.MIN_SAFARI_VERSION, version ) ){
             return false;
         };
     };
     if( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION ){
-        if( who.conpare( iAm.MAX_SAFARI_VERSION, version ) === -1 ){
+        if( iAm.conpare( iAm.MAX_SAFARI_VERSION, version ) === -1 ){
             return true;
         };
     };
@@ -172,14 +172,14 @@ iAm._safariVersion.Lt = function( version ){
  * @param {string | number} version 
  * @return {boolean}
  */
-iAm._safariVersion.Lte = function( version ){
+iAm._safariVersion.lte = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
-        if( who.conpare( iAm.MIN_SAFARI_VERSION, version ) === 1 ){
+        if( iAm.conpare( iAm.MIN_SAFARI_VERSION, version ) === 1 ){
             return false;
         };
     };
     if( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION ){
-        if( who.conpare( iAm.MAX_SAFARI_VERSION, version ) <= 0 ){
+        if( iAm.conpare( iAm.MAX_SAFARI_VERSION, version ) <= 0 ){
             return true;
         };
     };

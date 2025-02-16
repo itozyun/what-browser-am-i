@@ -1,29 +1,29 @@
 goog.provide( 'iAm.Chromium' );
 goog.provide( 'iAm.Chromium.Based' );
-goog.provide( 'iAm.Chromium.Gt' );
-goog.provide( 'iAm.Chromium.Gte' );
-goog.provide( 'iAm.Chromium.Lt' );
-goog.provide( 'iAm.Chromium.Lte' );
+goog.provide( 'iAm.Chromium.gt' );
+goog.provide( 'iAm.Chromium.gte' );
+goog.provide( 'iAm.Chromium.lt' );
+goog.provide( 'iAm.Chromium.lte' );
 goog.provide( 'iAm.AnyChromium' );
-goog.provide( 'iAm.AnyChromium.Gt' );
-goog.provide( 'iAm.AnyChromium.Gte' );
-goog.provide( 'iAm.AnyChromium.Lt' );
-goog.provide( 'iAm.AnyChromium.Lte' );
+goog.provide( 'iAm.AnyChromium.gt' );
+goog.provide( 'iAm.AnyChromium.gte' );
+goog.provide( 'iAm.AnyChromium.lt' );
+goog.provide( 'iAm.AnyChromium.lte' );
 goog.provide( 'iAm.ChromiumMobile' );
-goog.provide( 'iAm.ChromiumMobile.Gt' );
-goog.provide( 'iAm.ChromiumMobile.Gte' );
-goog.provide( 'iAm.ChromiumMobile.Lt' );
-goog.provide( 'iAm.ChromiumMobile.Lte' );
+goog.provide( 'iAm.ChromiumMobile.gt' );
+goog.provide( 'iAm.ChromiumMobile.gte' );
+goog.provide( 'iAm.ChromiumMobile.lt' );
+goog.provide( 'iAm.ChromiumMobile.lte' );
 
 goog.require( 'iAm.AndroidWebView' );
 goog.require( 'iAm.SamsungInternet' );
 goog.require( 'iAm.QtWebEngine' );
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.Gt' );
-goog.require( 'iAm._engineVersion.Gte' );
-goog.require( 'iAm._engineVersion.Lt' );
-goog.require( 'iAm._engineVersion.Lte' );
+goog.require( 'iAm._engineVersion.gt' );
+goog.require( 'iAm._engineVersion.gte' );
+goog.require( 'iAm._engineVersion.lt' );
+goog.require( 'iAm._engineVersion.lte' );
 
 /**
  * @return {boolean}
@@ -51,32 +51,32 @@ iAm.Chromium.Based = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Chromium.Gt = function( version ){
-    return iAm.Chromium() && iAm._engineVersion.Gt( version );
+iAm.Chromium.gt = function( version ){
+    return iAm.Chromium() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Chromium.Gte = function( version ){
-    return iAm.Chromium() && iAm._engineVersion.Gte( version );
+iAm.Chromium.gte = function( version ){
+    return iAm.Chromium() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Chromium.Lt = function( version ){
-    return iAm.Chromium() && iAm._engineVersion.Lt( version );
+iAm.Chromium.lt = function( version ){
+    return iAm.Chromium() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Chromium.Lte = function( version ){
-    return iAm.Chromium() && iAm._engineVersion.Lte( version );
+iAm.Chromium.lte = function( version ){
+    return iAm.Chromium() && iAm._engineVersion.lte( version );
 };
 
 /*----------------------------------------------------------------------------//
@@ -94,32 +94,32 @@ iAm.AnyChromium = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.AnyChromium.Gt = function( version ){
-    return iAm.AnyChromium() && iAm._engineVersion.Gt( version );
+iAm.AnyChromium.gt = function( version ){
+    return iAm.AnyChromium() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.AnyChromium.Gte = function( version ){
-    return iAm.AnyChromium() && iAm._engineVersion.Gte( version );
+iAm.AnyChromium.gte = function( version ){
+    return iAm.AnyChromium() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.AnyChromium.Lt = function( version ){
-    return iAm.AnyChromium() && iAm._engineVersion.Lt( version );
+iAm.AnyChromium.lt = function( version ){
+    return iAm.AnyChromium() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.AnyChromium.Lte = function( version ){
-    return iAm.AnyChromium() && iAm._engineVersion.Lte( version );
+iAm.AnyChromium.lte = function( version ){
+    return iAm.AnyChromium() && iAm._engineVersion.lte( version );
 };
 
 /*----------------------------------------------------------------------------//
@@ -137,30 +137,30 @@ iAm.ChromiumMobile = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.ChromiumMobile.Gt = function( version ){
-    return iAm.ChromiumMobile() && iAm._engineVersion.Gt( version );
+iAm.ChromiumMobile.gt = function( version ){
+    return iAm.ChromiumMobile() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.ChromiumMobile.Gte = function( version ){
-    return iAm.ChromiumMobile() && iAm._engineVersion.Gte( version );
+iAm.ChromiumMobile.gte = function( version ){
+    return iAm.ChromiumMobile() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.ChromiumMobile.Lt = function( version ){
-    return iAm.ChromiumMobile() && iAm._engineVersion.Lt( version );
+iAm.ChromiumMobile.lt = function( version ){
+    return iAm.ChromiumMobile() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.ChromiumMobile.Lte = function( version ){
-    return iAm.ChromiumMobile() && iAm._engineVersion.Lte( version );
+iAm.ChromiumMobile.lte = function( version ){
+    return iAm.ChromiumMobile() && iAm._engineVersion.lte( version );
 };

@@ -1,15 +1,15 @@
 goog.provide( 'iAm.QtWebEngine' );
-goog.provide( 'iAm.QtWebEngine.Gt' );
-goog.provide( 'iAm.QtWebEngine.Gte' );
-goog.provide( 'iAm.QtWebEngine.Lt' );
-goog.provide( 'iAm.QtWebEngine.Lte' );
+goog.provide( 'iAm.QtWebEngine.gt' );
+goog.provide( 'iAm.QtWebEngine.gte' );
+goog.provide( 'iAm.QtWebEngine.lt' );
+goog.provide( 'iAm.QtWebEngine.lte' );
 
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.Gt' );
-goog.require( 'iAm._engineVersion.Gte' );
-goog.require( 'iAm._engineVersion.Lt' );
-goog.require( 'iAm._engineVersion.Lte' );
+goog.require( 'iAm._engineVersion.gt' );
+goog.require( 'iAm._engineVersion.gte' );
+goog.require( 'iAm._engineVersion.lt' );
+goog.require( 'iAm._engineVersion.lte' );
 
 /**
  * @return {boolean}
@@ -26,30 +26,30 @@ iAm.QtWebEngine = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.QtWebEngine.Gt = function( version ){
-    return iAm.QtWebEngine() && iAm._engineVersion.Gt( version );
+iAm.QtWebEngine.gt = function( version ){
+    return iAm.QtWebEngine() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.QtWebEngine.Gte = function( version ){
-    return iAm.QtWebEngine() && iAm._engineVersion.Gte( version );
+iAm.QtWebEngine.gte = function( version ){
+    return iAm.QtWebEngine() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.QtWebEngine.Lt = function( version ){
-    return iAm.QtWebEngine() && iAm._engineVersion.Lt( version );
+iAm.QtWebEngine.lt = function( version ){
+    return iAm.QtWebEngine() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.QtWebEngine.Lte = function( version ){
-    return iAm.QtWebEngine() && iAm._engineVersion.Lte( version );
+iAm.QtWebEngine.lte = function( version ){
+    return iAm.QtWebEngine() && iAm._engineVersion.lte( version );
 };

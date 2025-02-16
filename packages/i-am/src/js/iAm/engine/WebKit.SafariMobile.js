@@ -1,36 +1,36 @@
 goog.provide( 'iAm.WebKit' );
 goog.provide( 'iAm.WebKit.Based' );
-goog.provide( 'iAm.WebKit.Gt' );
-goog.provide( 'iAm.WebKit.Gte' );
-goog.provide( 'iAm.WebKit.Lt' );
-goog.provide( 'iAm.WebKit.Lte' );
-goog.provide( 'iAm.WebKit.asSafari.Gt' );
-goog.provide( 'iAm.WebKit.asSafari.Gte' );
-goog.provide( 'iAm.WebKit.asSafari.Lt' );
-goog.provide( 'iAm.WebKit.asSafari.Lte' );
+goog.provide( 'iAm.WebKit.gt' );
+goog.provide( 'iAm.WebKit.gte' );
+goog.provide( 'iAm.WebKit.lt' );
+goog.provide( 'iAm.WebKit.lte' );
+goog.provide( 'iAm.WebKit.asSafari.gt' );
+goog.provide( 'iAm.WebKit.asSafari.gte' );
+goog.provide( 'iAm.WebKit.asSafari.lt' );
+goog.provide( 'iAm.WebKit.asSafari.lte' );
 goog.provide( 'iAm.AnySafariMobile' );
-goog.provide( 'iAm.AnySafariMobile.Gt' );
-goog.provide( 'iAm.AnySafariMobile.Gte' );
-goog.provide( 'iAm.AnySafariMobile.Lt' );
-goog.provide( 'iAm.AnySafariMobile.Lte' );
+goog.provide( 'iAm.AnySafariMobile.gt' );
+goog.provide( 'iAm.AnySafariMobile.gte' );
+goog.provide( 'iAm.AnySafariMobile.lt' );
+goog.provide( 'iAm.AnySafariMobile.lte' );
 goog.provide( 'iAm.SafariMobile' );
-goog.provide( 'iAm.SafariMobile.Gt' );
-goog.provide( 'iAm.SafariMobile.Gte' );
-goog.provide( 'iAm.SafariMobile.Lt' );
-goog.provide( 'iAm.SafariMobile.Lte' );
+goog.provide( 'iAm.SafariMobile.gt' );
+goog.provide( 'iAm.SafariMobile.gte' );
+goog.provide( 'iAm.SafariMobile.lt' );
+goog.provide( 'iAm.SafariMobile.lte' );
 goog.provide( 'iAm.iOSWebView' );
-goog.provide( 'iAm.iOSWebView.Gt' );
-goog.provide( 'iAm.iOSWebView.Gte' );
-goog.provide( 'iAm.iOSWebView.Lt' );
-goog.provide( 'iAm.iOSWebView.Lte' );
+goog.provide( 'iAm.iOSWebView.gt' );
+goog.provide( 'iAm.iOSWebView.gte' );
+goog.provide( 'iAm.iOSWebView.lt' );
+goog.provide( 'iAm.iOSWebView.lte' );
 
 goog.require( 'iAm.QtWebKit' );
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.Gt' );
-goog.require( 'iAm._engineVersion.Gte' );
-goog.require( 'iAm._engineVersion.Lt' );
-goog.require( 'iAm._engineVersion.Lte' );
+goog.require( 'iAm._engineVersion.gt' );
+goog.require( 'iAm._engineVersion.gte' );
+goog.require( 'iAm._engineVersion.lt' );
+goog.require( 'iAm._engineVersion.lte' );
 
 /**
  * @return {boolean}
@@ -58,32 +58,32 @@ iAm.WebKit.Based = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.WebKit.Gt = function( version ){
-    return iAm.WebKit() && iAm._engineVersion.Gt( version );
+iAm.WebKit.gt = function( version ){
+    return iAm.WebKit() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.WebKit.Gte = function( version ){
-    return iAm.WebKit() && iAm._engineVersion.Gte( version );
+iAm.WebKit.gte = function( version ){
+    return iAm.WebKit() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.WebKit.Lt = function( version ){
-    return iAm.WebKit() && iAm._engineVersion.Lt( version );
+iAm.WebKit.lt = function( version ){
+    return iAm.WebKit() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.WebKit.Lte = function( version ){
-    return iAm.WebKit() && iAm._engineVersion.Lte( version );
+iAm.WebKit.lte = function( version ){
+    return iAm.WebKit() && iAm._engineVersion.lte( version );
 };
 
 /*----------------------------------------------------------------------------//
@@ -97,32 +97,32 @@ iAm.WebKit.asSafari = {};
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.WebKit.asSafari.Gt = function( version ){
-    return iAm.WebKit() && iAm._safariVersion.Gt( version );
+iAm.WebKit.asSafari.gt = function( version ){
+    return iAm.WebKit() && iAm._safariVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.WebKit.asSafari.Gte = function( version ){
-    return iAm.WebKit() && iAm._safariVersion.Gte( version );
+iAm.WebKit.asSafari.gte = function( version ){
+    return iAm.WebKit() && iAm._safariVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.WebKit.asSafari.Lt = function( version ){
-    return iAm.WebKit() && iAm._safariVersion.Lt( version );
+iAm.WebKit.asSafari.lt = function( version ){
+    return iAm.WebKit() && iAm._safariVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.WebKit.asSafari.Lte = function( version ){
-    return iAm.WebKit() && iAm._safariVersion.Lte( version );
+iAm.WebKit.asSafari.lte = function( version ){
+    return iAm.WebKit() && iAm._safariVersion.lte( version );
 };
 
 /*----------------------------------------------------------------------------//
@@ -140,32 +140,32 @@ iAm.AnySafariMobile = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.AnySafariMobile.Gt = function( version ){
-    return iAm.AnySafariMobile() && iAm._engineVersion.Gt( version );
+iAm.AnySafariMobile.gt = function( version ){
+    return iAm.AnySafariMobile() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.AnySafariMobile.Gte = function( version ){
-    return iAm.AnySafariMobile() && iAm._engineVersion.Gte( version );
+iAm.AnySafariMobile.gte = function( version ){
+    return iAm.AnySafariMobile() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.AnySafariMobile.Lt = function( version ){
-    return iAm.AnySafariMobile() && iAm._engineVersion.Lt( version );
+iAm.AnySafariMobile.lt = function( version ){
+    return iAm.AnySafariMobile() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.AnySafariMobile.Lte = function( version ){
-    return iAm.AnySafariMobile() && iAm._engineVersion.Lte( version );
+iAm.AnySafariMobile.lte = function( version ){
+    return iAm.AnySafariMobile() && iAm._engineVersion.lte( version );
 };
 
 /*----------------------------------------------------------------------------//
@@ -183,32 +183,32 @@ iAm.SafariMobile = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.SafariMobile.Gt = function( version ){
-    return iAm.SafariMobile() && iAm._engineVersion.Gt( version );
+iAm.SafariMobile.gt = function( version ){
+    return iAm.SafariMobile() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.SafariMobile.Gte = function( version ){
-    return iAm.SafariMobile() && iAm._engineVersion.Gte( version );
+iAm.SafariMobile.gte = function( version ){
+    return iAm.SafariMobile() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.SafariMobile.Lt = function( version ){
-    return iAm.SafariMobile() && iAm._engineVersion.Lt( version );
+iAm.SafariMobile.lt = function( version ){
+    return iAm.SafariMobile() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.SafariMobile.Lte = function( version ){
-    return iAm.SafariMobile() && iAm._engineVersion.Lte( version );
+iAm.SafariMobile.lte = function( version ){
+    return iAm.SafariMobile() && iAm._engineVersion.lte( version );
 };
 
 /*----------------------------------------------------------------------------//
@@ -226,30 +226,30 @@ iAm.iOSWebView = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.iOSWebView.Gt = function( version ){
-    return iAm.iOSWebView() && iAm._engineVersion.Gt( version );
+iAm.iOSWebView.gt = function( version ){
+    return iAm.iOSWebView() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.iOSWebView.Gte = function( version ){
-    return iAm.iOSWebView() && iAm._engineVersion.Gte( version );
+iAm.iOSWebView.gte = function( version ){
+    return iAm.iOSWebView() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.iOSWebView.Lt = function( version ){
-    return iAm.iOSWebView() && iAm._engineVersion.Lt( version );
+iAm.iOSWebView.lt = function( version ){
+    return iAm.iOSWebView() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.iOSWebView.Lte = function( version ){
-    return iAm.iOSWebView() && iAm._engineVersion.Lte( version );
+iAm.iOSWebView.lte = function( version ){
+    return iAm.iOSWebView() && iAm._engineVersion.lte( version );
 };

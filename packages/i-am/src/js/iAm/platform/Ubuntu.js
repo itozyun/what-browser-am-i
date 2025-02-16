@@ -2,10 +2,10 @@ goog.provide( 'iAm.Ubuntu' );
 
 goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
-goog.require( 'iAm._platformVersion.Gt' );
-goog.require( 'iAm._platformVersion.Gte' );
-goog.require( 'iAm._platformVersion.Lt' );
-goog.require( 'iAm._platformVersion.Lte' );
+goog.require( 'iAm._platformVersion.gt' );
+goog.require( 'iAm._platformVersion.gte' );
+goog.require( 'iAm._platformVersion.lt' );
+goog.require( 'iAm._platformVersion.lte' );
 
 /**
  * @return {boolean}
@@ -18,30 +18,30 @@ iAm.Ubuntu = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Ubuntu.Gt = function( version ){
-    return iAm.Ubuntu() && iAm._platformVersion.Gt( version );
+iAm.Ubuntu.gt = function( version ){
+    return iAm.Ubuntu() && iAm._platformVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Ubuntu.Gte = function( version ){
-    return iAm.Ubuntu() && iAm._platformVersion.Gte( version );
+iAm.Ubuntu.gte = function( version ){
+    return iAm.Ubuntu() && iAm._platformVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Ubuntu.Lt = function( version ){
-    return iAm.Ubuntu() && iAm._platformVersion.Lt( version );
+iAm.Ubuntu.lt = function( version ){
+    return iAm.Ubuntu() && iAm._platformVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Ubuntu.Lte = function( version ){
-    return iAm.Ubuntu() && iAm._platformVersion.Lte( version );
+iAm.Ubuntu.lte = function( version ){
+    return iAm.Ubuntu() && iAm._platformVersion.lte( version );
 };

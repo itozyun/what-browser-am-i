@@ -1,15 +1,15 @@
 goog.provide( 'iAm.OperaMini' );
-goog.provide( 'iAm.OperaMini.Gt' );
-goog.provide( 'iAm.OperaMini.Gte' );
-goog.provide( 'iAm.OperaMini.Lt' );
-goog.provide( 'iAm.OperaMini.Lte' );
+goog.provide( 'iAm.OperaMini.gt' );
+goog.provide( 'iAm.OperaMini.gte' );
+goog.provide( 'iAm.OperaMini.lt' );
+goog.provide( 'iAm.OperaMini.lte' );
 
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.Gt' );
-goog.require( 'iAm._engineVersion.Gte' );
-goog.require( 'iAm._engineVersion.Lt' );
-goog.require( 'iAm._engineVersion.Lte' );
+goog.require( 'iAm._engineVersion.gt' );
+goog.require( 'iAm._engineVersion.gte' );
+goog.require( 'iAm._engineVersion.lt' );
+goog.require( 'iAm._engineVersion.lte' );
 
 /**
  * @return {boolean}
@@ -26,30 +26,30 @@ iAm.OperaMini = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.OperaMini.Gt = function( version ){
-    return iAm.OperaMini() && iAm._engineVersion.Gt( version );
+iAm.OperaMini.gt = function( version ){
+    return iAm.OperaMini() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.OperaMini.Gte = function( version ){
-    return iAm.OperaMini() && iAm._engineVersion.Gte( version );
+iAm.OperaMini.gte = function( version ){
+    return iAm.OperaMini() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.OperaMini.Lt = function( version ){
-    return iAm.OperaMini() && iAm._engineVersion.Lt( version );
+iAm.OperaMini.lt = function( version ){
+    return iAm.OperaMini() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.OperaMini.Lte = function( version ){
-    return iAm.OperaMini() && iAm._engineVersion.Lte( version );
+iAm.OperaMini.lte = function( version ){
+    return iAm.OperaMini() && iAm._engineVersion.lte( version );
 };

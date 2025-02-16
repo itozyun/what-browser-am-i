@@ -2,10 +2,10 @@ goog.provide( 'iAm.WatchOS' );
 
 goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
-goog.require( 'iAm._platformVersion.Gt' );
-goog.require( 'iAm._platformVersion.Gte' );
-goog.require( 'iAm._platformVersion.Lt' );
-goog.require( 'iAm._platformVersion.Lte' );
+goog.require( 'iAm._platformVersion.gt' );
+goog.require( 'iAm._platformVersion.gte' );
+goog.require( 'iAm._platformVersion.lt' );
+goog.require( 'iAm._platformVersion.lte' );
 
 /**
  * @return {boolean}
@@ -18,30 +18,30 @@ iAm.WatchOS = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.WatchOS.Gt = function( version ){
-    return iAm.WatchOS() && iAm._platformVersion.Gt( version );
+iAm.WatchOS.gt = function( version ){
+    return iAm.WatchOS() && iAm._platformVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.WatchOS.Gte = function( version ){
-    return iAm.WatchOS() && iAm._platformVersion.Gte( version );
+iAm.WatchOS.gte = function( version ){
+    return iAm.WatchOS() && iAm._platformVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.WatchOS.Lt = function( version ){
-    return iAm.WatchOS() && iAm._platformVersion.Lt( version );
+iAm.WatchOS.lt = function( version ){
+    return iAm.WatchOS() && iAm._platformVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.WatchOS.Lte = function( version ){
-    return iAm.WatchOS() && iAm._platformVersion.Lte( version );
+iAm.WatchOS.lte = function( version ){
+    return iAm.WatchOS() && iAm._platformVersion.lte( version );
 };

@@ -1,15 +1,15 @@
 goog.provide( 'iAm.AndroidWebView' );
-goog.provide( 'iAm.AndroidWebView.Gt' );
-goog.provide( 'iAm.AndroidWebView.Gte' );
-goog.provide( 'iAm.AndroidWebView.Lt' );
-goog.provide( 'iAm.AndroidWebView.Lte' );
+goog.provide( 'iAm.AndroidWebView.gt' );
+goog.provide( 'iAm.AndroidWebView.gte' );
+goog.provide( 'iAm.AndroidWebView.lt' );
+goog.provide( 'iAm.AndroidWebView.lte' );
 
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.Gt' );
-goog.require( 'iAm._engineVersion.Gte' );
-goog.require( 'iAm._engineVersion.Lt' );
-goog.require( 'iAm._engineVersion.Lte' );
+goog.require( 'iAm._engineVersion.gt' );
+goog.require( 'iAm._engineVersion.gte' );
+goog.require( 'iAm._engineVersion.lt' );
+goog.require( 'iAm._engineVersion.lte' );
 
 /**
  * @return {boolean}
@@ -26,30 +26,30 @@ iAm.AndroidWebView = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.AndroidWebView.Gt = function( version ){
-    return iAm.AndroidWebView() && iAm._engineVersion.Gt( version );
+iAm.AndroidWebView.gt = function( version ){
+    return iAm.AndroidWebView() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.AndroidWebView.Gte = function( version ){
-    return iAm.AndroidWebView() && iAm._engineVersion.Gte( version );
+iAm.AndroidWebView.gte = function( version ){
+    return iAm.AndroidWebView() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.AndroidWebView.Lt = function( version ){
-    return iAm.AndroidWebView() && iAm._engineVersion.Lt( version );
+iAm.AndroidWebView.lt = function( version ){
+    return iAm.AndroidWebView() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.AndroidWebView.Lte = function( version ){
-    return iAm.AndroidWebView() && iAm._engineVersion.Lte( version );
+iAm.AndroidWebView.lte = function( version ){
+    return iAm.AndroidWebView() && iAm._engineVersion.lte( version );
 };

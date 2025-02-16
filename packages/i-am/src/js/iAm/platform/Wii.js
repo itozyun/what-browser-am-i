@@ -2,10 +2,10 @@ goog.provide( 'iAm.Wii' );
 
 goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
-goog.require( 'iAm._platformVersion.Gt' );
-goog.require( 'iAm._platformVersion.Gte' );
-goog.require( 'iAm._platformVersion.Lt' );
-goog.require( 'iAm._platformVersion.Lte' );
+goog.require( 'iAm._platformVersion.gt' );
+goog.require( 'iAm._platformVersion.gte' );
+goog.require( 'iAm._platformVersion.lt' );
+goog.require( 'iAm._platformVersion.lte' );
 
 /**
  * @return {boolean}
@@ -18,30 +18,30 @@ iAm.Wii = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Wii.Gt = function( version ){
-    return iAm.Wii() && iAm._platformVersion.Gt( version );
+iAm.Wii.gt = function( version ){
+    return iAm.Wii() && iAm._platformVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Wii.Gte = function( version ){
-    return iAm.Wii() && iAm._platformVersion.Gte( version );
+iAm.Wii.gte = function( version ){
+    return iAm.Wii() && iAm._platformVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Wii.Lt = function( version ){
-    return iAm.Wii() && iAm._platformVersion.Lt( version );
+iAm.Wii.lt = function( version ){
+    return iAm.Wii() && iAm._platformVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Wii.Lte = function( version ){
-    return iAm.Wii() && iAm._platformVersion.Lte( version );
+iAm.Wii.lte = function( version ){
+    return iAm.Wii() && iAm._platformVersion.lte( version );
 };

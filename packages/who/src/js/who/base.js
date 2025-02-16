@@ -7,10 +7,10 @@ goog.provide( 'who.base.finalizeBrand' );
 goog.provide( 'who.base.finalizePcSiteRequested' );
 
 goog.require( 'core.all' );
-goog.require( 'iAm.EnumIndex' );
 goog.require( 'who.result' );
-goog.require( 'who.env' );
+goog.require( 'iAm.EnumIndex' );
 goog.require( 'who.util' );
+goog.require( 'who.env' );
 
 /**
  * detectPlatform の決定後に device, engine, brand で使用

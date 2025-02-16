@@ -1,15 +1,15 @@
 goog.provide( 'iAm.Selvo' );
-goog.provide( 'iAm.Selvo.Gt' );
-goog.provide( 'iAm.Selvo.Gte' );
-goog.provide( 'iAm.Selvo.Lt' );
-goog.provide( 'iAm.Selvo.Lte' );
+goog.provide( 'iAm.Selvo.gt' );
+goog.provide( 'iAm.Selvo.gte' );
+goog.provide( 'iAm.Selvo.lt' );
+goog.provide( 'iAm.Selvo.lte' );
 
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.Gt' );
-goog.require( 'iAm._engineVersion.Gte' );
-goog.require( 'iAm._engineVersion.Lt' );
-goog.require( 'iAm._engineVersion.Lte' );
+goog.require( 'iAm._engineVersion.gt' );
+goog.require( 'iAm._engineVersion.gte' );
+goog.require( 'iAm._engineVersion.lt' );
+goog.require( 'iAm._engineVersion.lte' );
 
 /**
  * @return {boolean}
@@ -26,30 +26,30 @@ iAm.Selvo = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Selvo.Gt = function( version ){
-    return iAm.Selvo() && iAm._engineVersion.Gt( version );
+iAm.Selvo.gt = function( version ){
+    return iAm.Selvo() && iAm._engineVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Selvo.Gte = function( version ){
-    return iAm.Selvo() && iAm._engineVersion.Gte( version );
+iAm.Selvo.gte = function( version ){
+    return iAm.Selvo() && iAm._engineVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Selvo.Lt = function( version ){
-    return iAm.Selvo() && iAm._engineVersion.Lt( version );
+iAm.Selvo.lt = function( version ){
+    return iAm.Selvo() && iAm._engineVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Selvo.Lte = function( version ){
-    return iAm.Selvo() && iAm._engineVersion.Lte( version );
+iAm.Selvo.lte = function( version ){
+    return iAm.Selvo() && iAm._engineVersion.lte( version );
 };

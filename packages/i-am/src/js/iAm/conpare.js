@@ -1,4 +1,4 @@
-goog.provide( 'who.conpare' );
+goog.provide( 'iAm.conpare' );
 
 // 続くクロージャへの参照を残さないように、global.js で定義する。
 
@@ -6,7 +6,7 @@ goog.provide( 'who.conpare' );
  * @param {string|number} v1 
  * @param {string|number} v2 
  * @return {number}  1:v1 > v2, 0:v1 == v2, -1:v1 < v2 */
-who.conpare = function( v1, v2 ){
+iAm.conpare = function( v1, v2 ){
     /** @type {number} */
     var i = 0;
     /** @type {!Array.<string>} */

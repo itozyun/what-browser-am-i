@@ -2,10 +2,10 @@ goog.provide( 'iAm.Fedora' );
 
 goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
-goog.require( 'iAm._platformVersion.Gt' );
-goog.require( 'iAm._platformVersion.Gte' );
-goog.require( 'iAm._platformVersion.Lt' );
-goog.require( 'iAm._platformVersion.Lte' );
+goog.require( 'iAm._platformVersion.gt' );
+goog.require( 'iAm._platformVersion.gte' );
+goog.require( 'iAm._platformVersion.lt' );
+goog.require( 'iAm._platformVersion.lte' );
 
 /**
  * @return {boolean}
@@ -18,30 +18,30 @@ iAm.Fedora = function(){
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Fedora.Gt = function( version ){
-    return iAm.Fedora() && iAm._platformVersion.Gt( version );
+iAm.Fedora.gt = function( version ){
+    return iAm.Fedora() && iAm._platformVersion.gt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Fedora.Gte = function( version ){
-    return iAm.Fedora() && iAm._platformVersion.Gte( version );
+iAm.Fedora.gte = function( version ){
+    return iAm.Fedora() && iAm._platformVersion.gte( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Fedora.Lt = function( version ){
-    return iAm.Fedora() && iAm._platformVersion.Lt( version );
+iAm.Fedora.lt = function( version ){
+    return iAm.Fedora() && iAm._platformVersion.lt( version );
 };
 
 /**
  * @param {string|number} version 
  * @return {boolean}
  */
-iAm.Fedora.Lte = function( version ){
-    return iAm.Fedora() && iAm._platformVersion.Lte( version );
+iAm.Fedora.lte = function( version ){
+    return iAm.Fedora() && iAm._platformVersion.lte( version );
 };
