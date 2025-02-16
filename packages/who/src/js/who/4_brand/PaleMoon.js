@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.PaleMoon.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'PaleMoon/' );
+who.brand.PaleMoon.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'PaleMoon/' );
 
 /** @return {boolean} */
 who.brand.PaleMoon.is = function(){
@@ -19,7 +19,7 @@ who.brand.PaleMoon.is = function(){
 /** @return {boolean|void} */
 who.brand.PaleMoon.detect = function(){
     if( who.brand.PaleMoon.is() ){
-        p_setBrand( EnumBrand.PaleMoon, who.brand.PaleMoon.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.PaleMoon, who.brand.PaleMoon.NAVIGATOR_VERSION );
         return true;
     };
 };

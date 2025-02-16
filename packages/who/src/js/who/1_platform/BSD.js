@@ -11,19 +11,19 @@ goog.require( 'who.base' );
  * @private
  * @const {boolean}
  */
-var _isFreeBSD = p_hasSubstring( p_strUserAgent, 'FreeBSD' );
+var _isFreeBSD = who.util.hasSubstring( who.env.strUserAgent, 'FreeBSD' );
 
 /**
  * @private
  * @const {boolean}
  */
-var _isOpenBSD = p_hasSubstring( p_strUserAgent, 'OpenBSD' );
+var _isOpenBSD = who.util.hasSubstring( who.env.strUserAgent, 'OpenBSD' );
 
 /**
  * @private
  * @const {boolean}
  */
-var _isNetBSD = p_hasSubstring( p_strUserAgent, 'NetBSD' );
+var _isNetBSD = who.util.hasSubstring( who.env.strUserAgent, 'NetBSD' );
 
 /** @return {boolean} */
 who.platform.BSD.is = function(){
@@ -33,13 +33,13 @@ who.platform.BSD.is = function(){
 /** @return {boolean|void} */
 who.platform.BSD.detect = function(){
     if( _isFreeBSD ){
-        p_setPlatform( EnumPlatform.FreeBSD );
+        who.base.setPlatform( iAm.EnumPlatform.FreeBSD );
         return true;
     } else if( _isOpenBSD ){
-        p_setPlatform( EnumPlatform.OpenBSD );
+        who.base.setPlatform( iAm.EnumPlatform.OpenBSD );
         return true;
     } else if( _isNetBSD ){
-        p_setPlatform( EnumPlatform.NetBSD );
+        who.base.setPlatform( iAm.EnumPlatform.NetBSD );
         return true;
     };
 };

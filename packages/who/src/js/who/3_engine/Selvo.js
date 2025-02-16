@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string|void} */
-who.engine.Servo.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Servo/' );
+who.engine.Servo.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Servo/' );
 
 /** @return {boolean} */
 who.engine.Servo.is = function(){
@@ -19,8 +19,8 @@ who.engine.Servo.is = function(){
 /** @return {boolean|void} */
 who.engine.Servo.detect = function(){
     if( who.engine.Servo.is() ){
-        p_setEngine( EnumEngine.Servo, who.engine.Servo.NAVIGATOR_VERSION );
-        p_setBrand( EnumBrand.Servo, p_engineVersion );
+        who.base.setEngine( iAm.EnumEngine.Servo, who.engine.Servo.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Servo, who.result.engineVersion );
         return true;
     };
 };

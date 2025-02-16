@@ -17,17 +17,17 @@ goog.require( 'who.base' );
 
 /** @return {boolean} */
 who.platform.PlayStationVita.is = function(){
-    return p_strPlatform === 'PlayStation Vita';
+    return who.env.strPlatform === 'PlayStation Vita';
 };
 
 /** @return {boolean|void} */
 who.platform.PlayStationVita.detect = function(){
     if( who.platform.PlayStationVita.is() ){
-        p_setPlatform(
-            EnumPlatform.PlayStation$RVita,
-            p_getVersionString( p_strAppVersion, p_strPlatform + ' ' )
+        who.base.setPlatform(
+            iAm.EnumPlatform.PlayStation$RVita,
+            who.util.getVersionString( who.env.strAppVersion, who.env.strPlatform + ' ' )
         );
-        p_setDevice( EnumDevice.PlayStationVita, undefined, EnumDeviceType.GAME );
+        who.base.setDevice( iAm.EnumDevice.PlayStationVita, undefined, iAm.EnumDeviceType.GAME );
         return true;
     };
 };

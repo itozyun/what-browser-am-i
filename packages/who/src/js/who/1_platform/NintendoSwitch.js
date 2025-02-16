@@ -10,7 +10,7 @@ goog.require( 'who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION' );
 
 /** @return {boolean} */
 who.platform.NintendoSwitch.is = function(){
-    return !p_strPlatform && p_hasSubstring( p_strAppVersion, 'Nintendo Switch;' );
+    return !who.env.strPlatform && who.util.hasSubstring( who.env.strAppVersion, 'Nintendo Switch;' );
 };
 
 /**
@@ -18,8 +18,8 @@ who.platform.NintendoSwitch.is = function(){
  */
 who.platform.NintendoSwitch.detect = function(){
     if( who.platform.NintendoSwitch.is() ){
-        p_setPlatform( EnumPlatform.NINTENDO_SWITCH$TM, who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
-        p_setDevice( EnumDevice.NintendoSwitch, undefined, EnumDeviceType.GAME );
+        who.base.setPlatform( iAm.EnumPlatform.NINTENDO_SWITCH$TM, who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
+        who.base.setDevice( iAm.EnumDevice.NintendoSwitch, undefined, iAm.EnumDeviceType.GAME );
         return true;
     };
 };

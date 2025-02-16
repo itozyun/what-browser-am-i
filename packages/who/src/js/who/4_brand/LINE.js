@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.LINE.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Line/' );
+who.brand.LINE.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strAppVersion, 'Line/' );
 
 /** @return {boolean} */
 who.brand.LINE.is = function(){
@@ -19,7 +19,7 @@ who.brand.LINE.is = function(){
 /** @return {boolean|void} */
 who.brand.LINE.detect = function(){
     if( who.brand.LINE.is() ){
-        p_setBrand( EnumBrand.LINE, who.brand.LINE.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.LINE, who.brand.LINE.NAVIGATOR_VERSION );
         return true;
     };
 };

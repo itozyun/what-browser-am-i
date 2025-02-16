@@ -15,49 +15,49 @@ goog.require( 'who.platform.Mac.is' );
 
 /** @return {boolean} */
 who.engine.Trident.is = function(){
-    return !who.engine.Presto.is() && p_hasDocumentAll // Presto にも docuemnt.all が定義されている
-           || !!p_documentMode;                                   // document.all:IE4~10, p_documentMode:IE7~11
+    return !who.engine.Presto.is() && who.env.hasDocumentAll // Presto にも docuemnt.all が定義されている
+           || !!who.env.documentMode;                                   // document.all:IE4~10, who.env.documentMode:IE7~11
 };
 
 /** @const {number} */
 who.engine.Trident.IMPLEMENT_VERSION =
-    p_documentMode        ? p_documentMode :
+    who.env.documentMode        ? who.env.documentMode :
     window.XMLHttpRequest ? ( document.getElementsByTagName ? 7 : 4 ) :
     document.compatMode   ? 6   :
     (0).toFixed           ? 5.5 :
     window.attachEvent    ? 5   : 4;
 
 /** @const {number} */
-who.engine.Trident.NAVIGATOR_VERSION = p_getNumber( p_strAppVersion, 'Trident/' ) + 4;
+who.engine.Trident.NAVIGATOR_VERSION = who.util.getNumber( who.env.strAppVersion, 'Trident/' ) + 4;
 
 /** @return {boolean|void} */
 who.engine.Trident.detect = function(){
     if( who.engine.Trident.is() ){
         var implementVersion = who.engine.Trident.IMPLEMENT_VERSION;
 
-        if( p_deviceType !== EnumDeviceType.PC ){
-            p_setEngine( EnumEngine.Trident_Mobile, implementVersion );
+        if( who.result.deviceType !== iAm.EnumDeviceType.PC ){
+            who.base.setEngine( iAm.EnumEngine.Trident_Mobile, implementVersion );
         } else if( who.platform.Mac.is() ){
             if( 5 <= implementVersion ){
-                p_setEngine( EnumEngine.Tasman, implementVersion );
+                who.base.setEngine( iAm.EnumEngine.Tasman, implementVersion );
             } else {
-                p_setEngine( EnumEngine.Trident, implementVersion );
+                who.base.setEngine( iAm.EnumEngine.Trident, implementVersion );
             };
-            p_setBrand( EnumBrand.Internet_Explorer_for_Mac, implementVersion );
+            who.base.setBrand( iAm.EnumBrand.Internet_Explorer_for_Mac, implementVersion );
         } else {
             var navigatorVersion = who.engine.Trident.NAVIGATOR_VERSION;
 
-            p_setEngine( EnumEngine.Trident, implementVersion );
+            who.base.setEngine( iAm.EnumEngine.Trident, implementVersion );
             // Modern UI IE 
             // https://stackoverflow.com/questions/8751479/detect-metro-ui-version-of-ie
-            if( 10 <= implementVersion && 6.2 <= p_platformVersion && p_platformVersion < 7 ){ // WinNT6.2 = Win8, WinNT6.3 = Win8.1
+            if( 10 <= implementVersion && 6.2 <= who.result.platformVersion && who.result.platformVersion < 7 ){ // WinNT6.2 = Win8, WinNT6.3 = Win8.1
                 if( screenY === 0 && ( innerHeight + 1 ) !== outerHeight ){
-                    p_setBrand( EnumBrand.Modern_IE, implementVersion );
+                    who.base.setBrand( iAm.EnumBrand.Modern_IE, implementVersion );
                 };
             };
             // Compat Mode IE
             if( 7 <= navigatorVersion && navigatorVersion !== implementVersion ){
-                p_setBrand( EnumBrand.Internet_Explorer, navigatorVersion );
+                who.base.setBrand( iAm.EnumBrand.Internet_Explorer, navigatorVersion );
             };
         };
         return true;

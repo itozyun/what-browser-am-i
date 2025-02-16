@@ -5,7 +5,7 @@ goog.provide( 'who.util' );
  * @param {string|number|void} v2 
  * @return {number}  1:v1 > v2, 0:v1 == v2, -1:v1 < v2
  */
-var p_conpareVersion = function( v1, v2 ){
+who.util.conpareVersion = function( v1, v2 ){
     return !v1 || !v2 ? NaN : ua.conpare( v1, v2 );
 };
 
@@ -15,7 +15,7 @@ var p_conpareVersion = function( v1, v2 ){
  * @param {string} str2
  * @return {number}
  */
-function p_getNumber( str1, str2 ){
+who.util.getNumber = function( str1, str2 ){
     var n = parseFloat( str1.split( str2 )[ 1 ] );
     return 0 <= n ? n : 0;
 };
@@ -25,7 +25,7 @@ function p_getNumber( str1, str2 ){
  * @param {string} str2
  * @return {boolean}
  */
-function p_startWith( str1, str2 ){
+who.util.startWith = function( str1, str2 ){
     return str1.indexOf( str2 ) === 0;
 };
 
@@ -34,7 +34,7 @@ function p_startWith( str1, str2 ){
  * @param {string} str2 
  * @return {boolean}
  */
-function p_hasSubstring( str1, str2 ){
+who.util.hasSubstring = function( str1, str2 ){
     return 0 <= str1.indexOf( str2 );
 };
 
@@ -42,23 +42,11 @@ function p_hasSubstring( str1, str2 ){
  * @param {string} str 
  * @return {boolean}
  */
-function p_hasLinuxCPUString( str ){
-    return p_hasSubstring( str, 'Linux armv'   ) || // armv7l, armv8l
-           p_hasSubstring( str, 'Linux aarch'  ) || // aarch32, aarch64
-           p_hasSubstring( str, 'Linux i686'   ) ||
-           p_hasSubstring( str, 'Linux x86_64' )
-};
-
-/**
- * `if(name in obj)` が使えない IE ~5 用
- * @param {string} name
- * @param {!Object} obj
- * @return {boolean|void}
- */
-function p_inObject( name, obj ){
-    for( var k in obj ){
-        if( k === name ) return true;
-    };
+who.util.hasLinuxCPUString = function( str ){
+    return who.util.hasSubstring( str, 'Linux armv'   ) || // armv7l, armv8l
+           who.util.hasSubstring( str, 'Linux aarch'  ) || // aarch32, aarch64
+           who.util.hasSubstring( str, 'Linux i686'   ) ||
+           who.util.hasSubstring( str, 'Linux x86_64' )
 };
 
 /**
@@ -67,7 +55,7 @@ function p_inObject( name, obj ){
  * @param {string} strStart
  * @return {string}
  */
-function p_getVersionString( strTarget, strStart ){
+who.util.getVersionString = function( strTarget, strStart ){
     var str = /** @type {string|void} */ (strTarget.split( strStart )[ 1 ]),
         ret = '', i = -1, charCode;
 
@@ -98,20 +86,20 @@ function p_getVersionString( strTarget, strStart ){
  * @param {string} strStart
  * @return {string}
  */
-function p_getAppleVersionString( strTarget, strStart ){
-    return p_getVersionString( strTarget.split( '_' ).join( '.' ), strStart );
+who.util.getAppleVersionString = function( strTarget, strStart ){
+    return who.util.getVersionString( strTarget.split( '_' ).join( '.' ), strStart );
 };
 
 /**
  * @param {...(string|number)} _args
  * @return {string|number}
  */
-function p_maxVersion( _args ){
+who.util.maxVersion = function( _args ){
     var args = arguments, i = 1, max = args[ 0 ], v;
     
     for( ; i < args.length; ++i ){
         v = args[ i ];
-        if( !max || p_conpareVersion( max, v ) < 0 ){
+        if( !max || who.util.conpareVersion( max, v ) < 0 ){
             max = v;
         };
     };
@@ -122,11 +110,11 @@ function p_maxVersion( _args ){
  * @param {string|number|VersionRange} v 
  * @return {string} 
  */
-function p_toVersionString( v ){
-    if( __.isString( v ) ){
+who.util.toVersionString = function( v ){
+    if( core.isString( v ) ){
         return v;
     };
-    if( __.isNumber( v ) ){
+    if( core.isNumber( v ) ){
         return '' + v;
     };
     v = /** @type {VersionRange} */ (v);
@@ -141,8 +129,8 @@ function p_toVersionString( v ){
  * @param {string|number} v 
  * @return {number}
  */
-function p_toVersionNumber( v ){
-    if( __.isString( v ) ){
+who.util.toVersionNumber = function( v ){
+    if( core.isString( v ) ){
         return parseFloat( v );
     };
     return /** @type {number} */ (v);

@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.OmniWeb.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'OmniWeb/' );
+who.brand.OmniWeb.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'OmniWeb/' );
 
 /** @return {boolean} */
 who.brand.OmniWeb.is = function(){
@@ -19,7 +19,7 @@ who.brand.OmniWeb.is = function(){
 /** @return {boolean|void} */
 who.brand.OmniWeb.detect = function(){
     if( who.brand.OmniWeb.is() ){
-        p_setBrand( EnumBrand.OmniWeb, who.brand.OmniWeb.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.OmniWeb, who.brand.OmniWeb.NAVIGATOR_VERSION );
         return true;
     };
 };

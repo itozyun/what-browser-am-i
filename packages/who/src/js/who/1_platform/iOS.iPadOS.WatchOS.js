@@ -34,21 +34,21 @@ who.platform.iOS.is = function(){
 who.platform.iOS.detect = function(){
     if( who.platform.iOS.is() ){
         if( iOSImplementVersionWithPuffin ){
-            p_setPlatform( EnumPlatform.iOS, iOSImplementVersionWithPuffin );
+            who.base.setPlatform( iAm.EnumPlatform.iOS, iOSImplementVersionWithPuffin );
         } else {
-            p_platformName = EnumPlatform.iOS;
+            who.result.platformName = iAm.EnumPlatform.iOS;
 
             if( iOSNavigatorVersionWithUCWEB ){
-                p_platformVersion = iOSNavigatorVersionWithUCWEB;
+                who.result.platformVersion = iOSNavigatorVersionWithUCWEB;
             } else {
-                p_platformVersion = p_getAppleVersionString( p_strAppVersion, 'OS ' );
+                who.result.platformVersion = who.util.getAppleVersionString( who.env.strAppVersion, 'OS ' );
 
-                if( !p_platformVersion ){
-                    p_isPcSiteRequested = true;
+                if( !who.result.platformVersion ){
+                    who.result.isPcSiteRequested = true;
                 };
 
-                if( !p_platformVersion || who.brand.Sleipnir.isOnIOS ){ // iOS + Sleipnir は嘘のバージョンが UA 文字列に設定されている
-                    p_platformVersion = who.engine.iOSWebView.IMPLEMENT_VERSION;
+                if( !who.result.platformVersion || who.brand.Sleipnir.isOnIOS ){ // iOS + Sleipnir は嘘のバージョンが UA 文字列に設定されている
+                    who.result.platformVersion = who.engine.iOSWebView.IMPLEMENT_VERSION;
                 };
             };
         };

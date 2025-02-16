@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.DuckDuckGo.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'DuckDuckGo/' );
+who.brand.DuckDuckGo.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'DuckDuckGo/' );
 
 /** @return {boolean} */
 who.brand.DuckDuckGo.is = function(){
@@ -19,7 +19,7 @@ who.brand.DuckDuckGo.is = function(){
 /** @return {boolean|void} */
 who.brand.DuckDuckGo.detect = function(){
     if( who.brand.DuckDuckGo.is() ){
-        p_setBrand( EnumBrand.DuckDuckGo, who.brand.DuckDuckGo.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.DuckDuckGo, who.brand.DuckDuckGo.NAVIGATOR_VERSION );
         return true;
     };
 };

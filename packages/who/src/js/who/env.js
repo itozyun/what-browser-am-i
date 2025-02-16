@@ -3,72 +3,72 @@ goog.provide( 'who.env' );
 goog.require( 'who.util' );
 
 /** @const {string} */
-var p_strUserAgent  = navigator.userAgent;
+who.env.strUserAgent  = navigator.userAgent;
 /** @const {string} */
-var p_strAppVersion = navigator.appVersion;
+who.env.strAppVersion = navigator.appVersion;
 /** @const {number} */
-var p_numAppVersion = parseFloat( p_strAppVersion ) || 0;
+who.env.numAppVersion = parseFloat( who.env.strAppVersion ) || 0;
 /** @const {string} */
-var p_strPlatform   = navigator.platform;
+who.env.strPlatform   = navigator.platform;
 
 /** @const {number|void} */
-var p_documentMode       = document.documentMode;
+who.env.documentMode       = document.documentMode;
 /** @const {boolean} */
-var p_hasDocumentAll     = !!document.all;
+who.env.hasDocumentAll     = !!document.all;
 /** @const {boolean} */
-var p_hasRegisterElement = !!document.registerElement;
+who.env.hasRegisterElement = !!document.registerElement;
 /** @const {number} */
-var p_screenWidth        = screen.width;
+who.env.screenWidth        = screen.width;
 /** @const {number} */
-var p_screenHeight       = screen.height;
+who.env.screenHeight       = screen.height;
 
 /** @const {HTMLHtmlElement|null|void} */
-var p_htmlElement = document.documentElement;
+who.env.htmlElement = document.documentElement;
 /** @const {CSSStyleDeclaration|void} */
-var p_htmlStyle   = p_htmlElement && p_htmlElement.style;
+who.env.htmlStyle   = who.env.htmlElement && who.env.htmlElement.style;
 
 /** @const {boolean} */
-var p_hasAudioElement = !!window.HTMLAudioElement;
+who.env.hasAudioElement = !!window.HTMLAudioElement;
 /** @const {Performance|void} */
-var p_performance     = window.performance;
+who.env.performance     = window.performance;
 /** @const {boolean} */
-var p_hasInt8Array    = !!window.Int8Array;
+who.env.hasInt8Array    = !!window.Int8Array;
 
 /** @const {boolean} */
-var p_isTouch = window.ontouchstart !== undefined;
+who.env.isTouch = window.ontouchstart !== undefined;
 
 /** @const {boolean|void} */
-var p_standalone = navigator.standalone;
+who.env.standalone = navigator.standalone;
 
 /** @const */
-var p_Something = {};
+who.env.Something = {};
 /** @const {string} */
-p_Something.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Version/' ) ||
-                                p_getVersionString( p_strUserAgent , 'Version/' );
+who.env.Something.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strAppVersion, 'Version/' ) ||
+                                      who.util.getVersionString( who.env.strUserAgent , 'Version/' );
 
 /** @const */
-var p_firefoxOnIOS = {};
+who.env.firefoxOnIOS = {};
 /** @const {string} */
-p_firefoxOnIOS.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent , 'FxiOS/' );
+who.env.firefoxOnIOS.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent , 'FxiOS/' );
 
 /**
  * userAgent から取り出した WebKit のバージョン
  * @const {number}
  */
-var p_numberWebKit = p_getNumber( p_strUserAgent, 'AppleWebKit/' );
+who.env.numberWebKit = who.util.getNumber( who.env.strUserAgent, 'AppleWebKit/' );
 
 /**
  * Gecko(Fennec) or Goanna
  * @type {boolean} */
-var p_isGeckoFamily = false;
+who.env.isGeckoFamily = false;
 
-if( !p_hasDocumentAll ){ // Preventing errors in IE4
+if( !who.env.hasDocumentAll ){ // Preventing errors in IE4
     // https://www.fxsitecompat.com/ja/docs/2017/moz-appearance-property-has-been-removed/
     // -moz-appearance プロパティが廃止されました -> 更新: この変更は Firefox 54 で予定されていましたが、延期されました。
-    // p_htmlStyle.MozAppearance !== undefined, // window.Components
-        for( var __k in p_htmlStyle ){
-            if( p_startWith( __k, 'Moz' ) ){
-                p_isGeckoFamily = true;
+    // who.env.htmlStyle.MozAppearance !== undefined, // window.Components
+        for( var __k in who.env.htmlStyle ){
+            if( who.util.startWith( __k, 'Moz' ) ){
+                who.env.isGeckoFamily = true;
                 break;
             };
         };
@@ -78,19 +78,19 @@ if( !p_hasDocumentAll ){ // Preventing errors in IE4
  * Maybe Linux or Android
  * @const {boolean}
  */
-var p_strPlatformHasLinux = p_hasSubstring( p_strPlatform, 'Linux' );
+who.env.strPlatformHasLinux = who.util.hasSubstring( who.env.strPlatform, 'Linux' );
 
 /**
  * navigator.platform is a Linux+CPU string
  * @const {boolean}
  */
-var p_strPlatformIsLinuxCPU = p_hasLinuxCPUString( p_strPlatform );
+who.env.strPlatformIsLinuxCPU = who.util.hasLinuxCPUString( who.env.strPlatform );
 
 /**
  * Conflicting Linux+CPU strings found
  * @const {boolean}
  */
-var p_isConflictingLinuxCPUStringsFound =
-        p_strPlatformIsLinuxCPU &&
-        !p_hasSubstring( p_strUserAgent, p_strPlatform ) &&
-        p_hasLinuxCPUString( p_strUserAgent );
+who.env.isConflictingLinuxCPUStringsFound =
+    who.env.strPlatformIsLinuxCPU &&
+   !who.util.hasSubstring( who.env.strUserAgent, who.env.strPlatform ) &&
+    who.util.hasLinuxCPUString( who.env.strUserAgent );

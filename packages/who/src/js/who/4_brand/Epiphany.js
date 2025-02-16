@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Epiphany.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Epiphany/' );
+who.brand.Epiphany.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Epiphany/' );
 
 /** @return {boolean} */
 who.brand.Epiphany.is = function(){
@@ -19,7 +19,7 @@ who.brand.Epiphany.is = function(){
 /** @return {boolean|void} */
 who.brand.Epiphany.detect = function(){
     if( who.brand.Epiphany.is() ){
-        p_setBrand( EnumBrand.Epiphany, who.brand.Epiphany.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Epiphany, who.brand.Epiphany.NAVIGATOR_VERSION );
         return true;
     };
 };

@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string|void} */
-who.engine.NetFront.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'NetFront/' );
+who.engine.NetFront.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'NetFront/' );
 
 /** @return {boolean} */
 who.engine.NetFront.is = function(){
@@ -19,8 +19,8 @@ who.engine.NetFront.is = function(){
 /** @return {boolean|void} */
 who.engine.NetFront.detect = function(){
     if( who.engine.NetFront.is() ){
-        p_setEngine( EnumEngine.NetFront, who.engine.NetFront.NAVIGATOR_VERSION );
-        p_setBrand( EnumBrand.NetFront$R, p_engineVersion );
+        who.base.setEngine( iAm.EnumEngine.NetFront, who.engine.NetFront.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.NetFront$R, who.result.engineVersion );
         return true;
     };
 };

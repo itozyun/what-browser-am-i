@@ -12,14 +12,14 @@ goog.require( 'who.base' );
 
 /** @return {boolean} */
 who.platform.FeaturePhone.is = function(){
-    return p_hasSubstring( p_strUserAgent, 'FOMA;' ) || p_hasSubstring( p_strUserAgent, 'SoftBank;' );
+    return who.util.hasSubstring( who.env.strUserAgent, 'FOMA;' ) || who.util.hasSubstring( who.env.strUserAgent, 'SoftBank;' );
 };
 
 /** @return {boolean|void} */
 who.platform.FeaturePhone.detect = function(){
     if( who.platform.FeaturePhone.is() ){
-        p_setPlatform( EnumPlatform.Feature_Phone );
-        p_deviceType = EnumDeviceType.PHONE;
+        who.base.setPlatform( iAm.EnumPlatform.Feature_Phone );
+        who.result.deviceType = iAm.EnumDeviceType.PHONE;
         return true;
     };
 };

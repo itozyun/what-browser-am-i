@@ -11,7 +11,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.QupZilla.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'QupZilla/' );
+who.brand.QupZilla.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'QupZilla/' );
 
 /** @return {boolean} */
 who.brand.QupZilla.is = function(){
@@ -21,7 +21,7 @@ who.brand.QupZilla.is = function(){
 /** @return {boolean|void} */
 who.brand.QupZilla.detect = function(){
     if( who.brand.QupZilla.is() ){
-        p_setBrand( EnumBrand.QupZilla, who.brand.QupZilla.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.QupZilla, who.brand.QupZilla.NAVIGATOR_VERSION );
         return true;
     };
 };

@@ -15,11 +15,11 @@ goog.require( 'who.base' );
 
 
 /** @const {string} */
-who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'NintendoBrowser/' );
+who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'NintendoBrowser/' );
 
 /** @return {boolean} */
 who.platform.Nintendo3DS.is = function(){
-    return p_strPlatform === 'Nintendo 3DS';
+    return who.env.strPlatform === 'Nintendo 3DS';
 };
 
 /**
@@ -27,10 +27,10 @@ who.platform.Nintendo3DS.is = function(){
  */
 who.platform.Nintendo3DS.detect = function(){
     if( who.platform.Nintendo3DS.is() ){
-        p_setPlatform( EnumPlatform.NINTENDO_3DS$TM, who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
-        p_setDevice( EnumDevice.Nintendo3DS, undefined, EnumDeviceType.GAME );
-        p_setEngine( EnumEngine.WebKit, p_numberWebKit || 535 );
-        p_setBrand( EnumBrand.NetFront$R_Browser_NX, who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
+        who.base.setPlatform( iAm.EnumPlatform.NINTENDO_3DS$TM, who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
+        who.base.setDevice( iAm.EnumDevice.Nintendo3DS, undefined, iAm.EnumDeviceType.GAME );
+        who.base.setEngine( iAm.EnumEngine.WebKit, who.env.numberWebKit || 535 );
+        who.base.setBrand( iAm.EnumBrand.NetFront$R_Browser_NX, who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
         return true;
     };
 };

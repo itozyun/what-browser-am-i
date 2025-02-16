@@ -14,7 +14,7 @@ goog.require( 'who.brand.FirefoxFocus.is' );
  * Firefox のバージョンは rv: の値を使用するが、Android9 + Firefox67.0 + PC site requested で rv: が存在しないケースもある
  * @const {string}
  */
-who.brand.Firefox.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Firefox/' );
+who.brand.Firefox.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Firefox/' );
 
 /**
  * https://github.com/mozilla-mobile/firefox-tv/blob/master/app/src/main/java/org/mozilla/tv/firefox/ext/Js.kt
@@ -25,21 +25,21 @@ who.brand.Firefox.isOnFireTV = !!window._firefoxTV_playbackStateObserverJava;
  * @package
  * @return {boolean} */
 who.brand.Firefox.is = function(){
-    return p_engineName === EnumEngine.Gecko         || // Gecko
-           p_engineName === EnumEngine.Fennec        || // Gecko for Mobile
+    return who.result.engineName === iAm.EnumEngine.Gecko         || // Gecko
+           who.result.engineName === iAm.EnumEngine.Fennec        || // Gecko for Mobile
            who.brand.Firefox.isOnFireTV || // AndroidWebView(FireTV)
            !who.brand.FirefoxFocus.is() &&
-               !!p_firefoxOnIOS.NAVIGATOR_VERSION; // iOSWebView
+               !!who.env.firefoxOnIOS.NAVIGATOR_VERSION; // iOSWebView
 };
 
 /** @return {boolean|void} */
 who.brand.Firefox.detect = function(){
     if( who.brand.Firefox.is() ){
-        p_setBrand(
-            EnumBrand.Firefox,
-            p_engineName === EnumEngine.Gecko || p_engineName === EnumEngine.Fennec
-                ? p_engineVersion
-                : ( who.brand.Firefox.NAVIGATOR_VERSION || p_firefoxOnIOS.NAVIGATOR_VERSION )
+        who.base.setBrand(
+            iAm.EnumBrand.Firefox,
+            who.result.engineName === iAm.EnumEngine.Gecko || who.result.engineName === iAm.EnumEngine.Fennec
+                ? who.result.engineVersion
+                : ( who.brand.Firefox.NAVIGATOR_VERSION || who.env.firefoxOnIOS.NAVIGATOR_VERSION )
         );
         return true;
     };

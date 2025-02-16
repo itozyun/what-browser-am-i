@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.KMeleon.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'K-Meleon/' );
+who.brand.KMeleon.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'K-Meleon/' );
 
 /** @return {boolean} */
 who.brand.KMeleon.is = function(){
@@ -19,7 +19,7 @@ who.brand.KMeleon.is = function(){
 /** @return {boolean|void} */
 who.brand.KMeleon.detect = function(){
     if( who.brand.KMeleon.is() ){
-        p_setBrand( EnumBrand.K$_Meleon, who.brand.KMeleon.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.K$_Meleon, who.brand.KMeleon.NAVIGATOR_VERSION );
         return true;
     };
 };

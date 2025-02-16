@@ -11,13 +11,13 @@ goog.require( 'who.base' );
  * @package
  * @return {boolean} */
 who.brand.AndroidBrowser.is = function(){
-    return p_engineName === EnumEngine.Android_WebView && p_conpareVersion( p_engineVersion, 5 ) < 0;
+    return who.result.engineName === iAm.EnumEngine.Android_WebView && who.util.conpareVersion( who.result.engineVersion, 5 ) < 0;
 };
 
 /** @return {boolean|void} */
 who.brand.AndroidBrowser.detect = function(){
     if( who.brand.AndroidBrowser.is() ){
-        p_setBrand( EnumBrand.Android_Browser, p_engineVersion );
+        who.base.setBrand( iAm.EnumBrand.Android_Browser, who.result.engineVersion );
         return true;
     };
 };

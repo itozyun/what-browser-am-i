@@ -9,11 +9,11 @@ goog.require( 'who.base' );
 
 /** @return {boolean} */
 who.platform.Mac.is = function(){
-    return p_strPlatform === 'Mac68K' ||
-           p_strPlatform === 'MacPowerPC' ||
-           p_strPlatform === 'MacPPC' ||
-           p_strPlatform === 'MacIntel' ||
-           p_strPlatform === 'MacM1';
+    return who.env.strPlatform === 'Mac68K' ||
+           who.env.strPlatform === 'MacPowerPC' ||
+           who.env.strPlatform === 'MacPPC' ||
+           who.env.strPlatform === 'MacIntel' ||
+           who.env.strPlatform === 'MacM1';
 };
 
 /**
@@ -21,10 +21,10 @@ who.platform.Mac.is = function(){
  */
 who.platform.Mac.detect = function(){
     if( who.platform.Mac.is() ){
-        p_setPlatform(
-            EnumPlatform.Mac,
-            p_getAppleVersionString( p_strUserAgent, 'Mac OS X ' ),
-            EnumDeviceType.PC
+        who.base.setPlatform(
+            iAm.EnumPlatform.Mac,
+            who.util.getAppleVersionString( who.env.strUserAgent, 'Mac OS X ' ),
+            iAm.EnumDeviceType.PC
         );
         return true;
     };

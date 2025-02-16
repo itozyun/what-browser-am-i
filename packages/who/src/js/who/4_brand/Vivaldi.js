@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Vivaldi.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Vivaldi/' );
+who.brand.Vivaldi.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Vivaldi/' );
 
 /** @return {boolean} */
 who.brand.Vivaldi.is = function(){
@@ -19,7 +19,7 @@ who.brand.Vivaldi.is = function(){
 /** @return {boolean|void} */
 who.brand.Vivaldi.detect = function(){
     if( who.brand.Vivaldi.is() ){
-        p_setBrand( EnumBrand.Vivaldi, who.brand.Vivaldi.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Vivaldi, who.brand.Vivaldi.NAVIGATOR_VERSION );
         return true;
     };
 };

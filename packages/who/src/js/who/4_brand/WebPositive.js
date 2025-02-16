@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.WebPositive.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'WebPositive/' );
+who.brand.WebPositive.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'WebPositive/' );
 
 /** @return {boolean} */
 who.brand.WebPositive.is = function(){
@@ -19,7 +19,7 @@ who.brand.WebPositive.is = function(){
 /** @return {boolean|void} */
 who.brand.WebPositive.detect = function(){
     if( who.brand.WebPositive.is() ){
-        p_setBrand( EnumBrand.WebPositive, who.brand.WebPositive.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.WebPositive, who.brand.WebPositive.NAVIGATOR_VERSION );
         return true;
     };
 };

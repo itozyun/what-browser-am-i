@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Yandex.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'YaBrowser/' );
+who.brand.Yandex.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'YaBrowser/' );
 
 /** @return {boolean} */
 who.brand.Yandex.is = function(){
@@ -19,7 +19,7 @@ who.brand.Yandex.is = function(){
 /** @return {boolean|void} */
 who.brand.Yandex.detect = function(){
     if( who.brand.Yandex.is() ){
-        p_setBrand( EnumBrand.Yandex, who.brand.Yandex.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Yandex, who.brand.Yandex.NAVIGATOR_VERSION );
         return true;
     };
 };

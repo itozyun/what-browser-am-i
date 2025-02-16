@@ -10,12 +10,12 @@ goog.require( 'who.base' );
 /**
  * @private
  * @const {boolean} */
-var _isXboxOne = p_hasSubstring( p_strUserAgent, 'Xbox One' );
+var _isXboxOne = who.util.hasSubstring( who.env.strUserAgent, 'Xbox One' );
 
 /**
  * @private
  * @const {boolean} */
-var _isXbox360 = !_isXboxOne && p_hasSubstring( p_strUserAgent, 'Xbox' );
+var _isXbox360 = !_isXboxOne && who.util.hasSubstring( who.env.strUserAgent, 'Xbox' );
 
 
 /** @return {boolean} */
@@ -26,12 +26,12 @@ who.platform.Xbox.is = function(){
 /** @return {boolean|void} */
 who.platform.Xbox.detect = function(){
     if( _isXbox360 ){
-        p_setPlatform( EnumPlatform.Xbox_360$TM );
-        p_setDevice( EnumDevice.Xbox360, undefined, EnumDeviceType.GAME );
+        who.base.setPlatform( iAm.EnumPlatform.Xbox_360$TM );
+        who.base.setDevice( iAm.EnumDevice.Xbox360, undefined, iAm.EnumDeviceType.GAME );
         return true;
     } else if( _isXboxOne ){
-        p_setPlatform( EnumPlatform.Xbox_One$TM );
-        p_setDevice( EnumDevice.XboxOne, undefined, EnumDeviceType.GAME );
+        who.base.setPlatform( iAm.EnumPlatform.Xbox_One$TM );
+        who.base.setDevice( iAm.EnumDevice.XboxOne, undefined, iAm.EnumDeviceType.GAME );
         return true;
     };
 };

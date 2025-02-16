@@ -11,8 +11,8 @@ goog.require( 'who.base' );
 
 /** @const {string} */
 who.brand.Lunascape.NAVIGATOR_VERSION =
-    p_getVersionString( p_strAppVersion, 'Lunascape ' ) ||
-    p_getVersionString( p_strUserAgent , 'Lunascape/' );
+    who.util.getVersionString( who.env.strAppVersion, 'Lunascape ' ) ||
+    who.util.getVersionString( who.env.strUserAgent , 'Lunascape/' );
 
 /**
  * https://twitter.com/itozyun/status/1293628829248794624
@@ -28,7 +28,7 @@ who.brand.Lunascape.is = function(){
 /** @return {boolean|void} */
 who.brand.Lunascape.detect = function(){
     if( who.brand.Lunascape.is() ){
-        p_setBrand( EnumBrand.Lunascape, who.brand.Lunascape.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Lunascape, who.brand.Lunascape.NAVIGATOR_VERSION );
         return true;
     };
 };

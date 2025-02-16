@@ -11,7 +11,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Sleipnir.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Sleipnir/' );
+who.brand.Sleipnir.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Sleipnir/' );
 
 /** @const {boolean} */
 who.brand.Sleipnir.isOnIOS = !!window.FNRBrowser;
@@ -20,10 +20,10 @@ who.brand.Sleipnir.isOnIOS = !!window.FNRBrowser;
  * https://twitter.com/itozyun/status/1293633829647708160
  * @const {boolean}
  */
-who.brand.Sleipnir.isOnAndroid = p_strPlatformIsLinuxCPU &&
+who.brand.Sleipnir.isOnAndroid = who.env.strPlatformIsLinuxCPU &&
                         (function(){
                             for( var k in window ){
-                                if( p_startWith( k, 'SlexAPI_' ) ) return true;
+                                if( who.util.startWith( k, 'SlexAPI_' ) ) return true;
                             };
                         })();
 
@@ -39,7 +39,7 @@ who.brand.Sleipnir.is = function(){
 /** @return {boolean|void} */
 who.brand.Sleipnir.detect = function(){
     if( who.brand.Sleipnir.is() ){
-        p_setBrand( EnumBrand.Sleipnir, who.brand.Sleipnir.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Sleipnir, who.brand.Sleipnir.NAVIGATOR_VERSION );
         return true;
     };
 };

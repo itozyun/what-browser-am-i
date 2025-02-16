@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Konqueror.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Konqueror/' );
+who.brand.Konqueror.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Konqueror/' );
 
 /** @return {boolean} */
 who.brand.Konqueror.is = function(){
@@ -19,7 +19,7 @@ who.brand.Konqueror.is = function(){
 /** @return {boolean|void} */
 who.brand.Konqueror.detect = function(){
     if( who.brand.Konqueror.is() ){
-        p_setBrand( EnumBrand.Konqueror, who.brand.Konqueror.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Konqueror, who.brand.Konqueror.NAVIGATOR_VERSION );
         return true;
     };
 };

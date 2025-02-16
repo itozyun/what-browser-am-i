@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string|void} */
-who.engine.iCab.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'iCab' );
+who.engine.iCab.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'iCab' );
 
 /** @return {boolean} */
 who.engine.iCab.is = function(){
@@ -19,8 +19,8 @@ who.engine.iCab.is = function(){
 /** @return {boolean|void} */
 who.engine.iCab.detect = function(){
     if( who.engine.iCab.is() ){
-        p_setEngine( EnumEngine.iCab, who.engine.iCab.NAVIGATOR_VERSION );
-        p_setBrand( EnumBrand.iCab, p_engineVersion );
+        who.base.setEngine( iAm.EnumEngine.iCab, who.engine.iCab.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.iCab, who.result.engineVersion );
         return true;
     };
 };

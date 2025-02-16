@@ -16,7 +16,7 @@ goog.require( 'who.brand.Otter.NAVIGATOR_VERSION' );
  * @private
  * @const {string} private browse only
  */
-who.engine.QtWebEngine.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'QtWebEngine/' );
+who.engine.QtWebEngine.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'QtWebEngine/' );
 
 /** @return {boolean} */
 who.engine.QtWebEngine.is = function(){
@@ -26,7 +26,7 @@ who.engine.QtWebEngine.is = function(){
 /** @return {boolean|void} */
 who.engine.QtWebEngine.detect = function(){
     if( who.engine.QtWebEngine.is() ){
-        p_setEngine( EnumEngine.Qt_WebEngine, who.brand.Chrome.NAVIGATOR_VERSION );
+        who.base.setEngine( iAm.EnumEngine.Qt_WebEngine, who.brand.Chrome.NAVIGATOR_VERSION );
         return true;
     };
 };

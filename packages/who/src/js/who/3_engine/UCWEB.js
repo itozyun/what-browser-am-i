@@ -15,7 +15,7 @@ goog.require( 'who.base' );
 
 /** @return {boolean} */
 who.engine.UCWEB.is = function(){
-    return p_hasSubstring( p_strUserAgent, 'UCWEB' );
+    return who.util.hasSubstring( who.env.strUserAgent, 'UCWEB' );
 };
 
 /**
@@ -24,7 +24,7 @@ who.engine.UCWEB.is = function(){
  *                                                                  ^^^^^
  * @const {string} */
 who.engine.UCWEB.NAVIGATOR_VERSION =
-    who.engine.UCWEB.is() ? p_getVersionString( p_strUserAgent, ' U2/' ) : '';
+    who.engine.UCWEB.is() ? who.util.getVersionString( who.env.strUserAgent, ' U2/' ) : '';
 
 /**
  * https://developers.whatismybrowser.com/useragents/parse/244780-uc-browser-windows
@@ -32,7 +32,7 @@ who.engine.UCWEB.NAVIGATOR_VERSION =
  *                              ^^^^
  * @const {string} */
 who.engine.UCWEB.WindowsPhoneVersionWithUCWEB =
-    who.engine.UCWEB.is() ? p_getVersionString( p_strUserAgent, '; wds ' ) : '';
+    who.engine.UCWEB.is() ? who.util.getVersionString( who.env.strUserAgent, '; wds ' ) : '';
 
 /**
  * http://thadafinser.github.io/UserAgentParserComparison/v4/user-agent-detail/d4/26/d4262844-7040-4f5b-8f26-bf0477b215c3.html
@@ -40,19 +40,19 @@ who.engine.UCWEB.WindowsPhoneVersionWithUCWEB =
  *                             ^^^^^
  * @const {string} */
 who.engine.UCWEB.iOSVersionWithUCWEB =
-    who.engine.UCWEB.is() ? p_getAppleVersionString( p_strUserAgent, '; iPh OS ' ) : '';
+    who.engine.UCWEB.is() ? who.util.getAppleVersionString( who.env.strUserAgent, '; iPh OS ' ) : '';
 
 /**
  * Android for UC Browser Speed mode
  * @const {string} */
 who.engine.UCWEB.AndroidVersionWithUCWEB =
-    who.engine.UCWEB.is() ? p_getVersionString( p_strUserAgent, '; Adr ' ) : '';
+    who.engine.UCWEB.is() ? who.util.getVersionString( who.env.strUserAgent, '; Adr ' ) : '';
 
 /** @return {boolean|void} */
 who.engine.UCWEB.detect = function(){
     if( who.engine.UCWEB.is() ){
-        p_setEngine( EnumEngine.UCWEB, who.engine.UCWEB.NAVIGATOR_VERSION );
-        p_setBrand( EnumBrand.UC, p_engineVersion );
+        who.base.setEngine( iAm.EnumEngine.UCWEB, who.engine.UCWEB.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.UC, who.result.engineVersion );
         return true;
     };
 };

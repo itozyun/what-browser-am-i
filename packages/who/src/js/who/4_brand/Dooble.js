@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Dooble.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Dooble/' );
+who.brand.Dooble.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Dooble/' );
 
 /** @return {boolean} */
 who.brand.Dooble.is = function(){
@@ -19,7 +19,7 @@ who.brand.Dooble.is = function(){
 /** @return {boolean|void} */
 who.brand.Dooble.detect = function(){
     if( who.brand.Dooble.is() ){
-        p_setBrand( EnumBrand.Dooble, who.brand.Dooble.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Dooble, who.brand.Dooble.NAVIGATOR_VERSION );
         return true;
     };
 };

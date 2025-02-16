@@ -9,14 +9,14 @@ goog.require( 'who.base' );
  */
 
 /** @const {boolean} */
-who.brand.Yahoo.isOnAndroid = p_hasSubstring( p_strAppVersion, 'YJApp-ANDROID' ); // Android 7, Y!browser 2.5.56
+who.brand.Yahoo.isOnAndroid = who.util.hasSubstring( who.env.strAppVersion, 'YJApp-ANDROID' ); // Android 7, Y!browser 2.5.56
 
 /** 
  * https://himenaotaro.hatenablog.com/entry/20151011/1444564265
  * YJApp-IOS ユーザエージェント(User Agent)
  * @const {string}
  */
-who.brand.Yahoo.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent.toLowerCase(), 'ybrowser/' );
+who.brand.Yahoo.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent.toLowerCase(), 'ybrowser/' );
 
 /** @return {boolean} */
 who.brand.Yahoo.is = function(){
@@ -26,7 +26,7 @@ who.brand.Yahoo.is = function(){
 /** @return {boolean|void} */
 who.brand.Yahoo.detect = function(){
     if( who.brand.Yahoo.is() ){
-        p_setBrand( EnumBrand.Yahoo, who.brand.Yahoo.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Yahoo, who.brand.Yahoo.NAVIGATOR_VERSION );
         return true;
     };
 };

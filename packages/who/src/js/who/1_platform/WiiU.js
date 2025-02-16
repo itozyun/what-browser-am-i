@@ -15,7 +15,7 @@ goog.require( 'who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION' );
 
 /** @return {boolean} */
 who.platform.WiiU.is = function(){
-    return !!window.wiiu; // p_strPlatform === 'Nintendo WiiU'
+    return !!window.wiiu; // who.env.strPlatform === 'Nintendo WiiU'
 };
 
 /**
@@ -28,21 +28,21 @@ who.platform.WiiU.detect = function(){
         var versionNintendoBrowser = who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION;
 
         if( versionNintendoBrowser ){
-            p_setPlatform( EnumPlatform.WiiU$TM, versionNintendoBrowser );
+            who.base.setPlatform( iAm.EnumPlatform.WiiU$TM, versionNintendoBrowser );
         } else {
         // https://blog.gutyan.jp/entry/2015/01/31/NintendoBrowser
         //   > Uブラウザには New3DS 以上のUA切替機能がある。
         //   > platform 始め UA 以外の navigator のプロパティはいずれの場合も変更されない。
-            p_setPlatform( EnumPlatform.WiiU$TM, hasWebkitCancelAnimationFrame ? 4 : 2.1 );
-            p_isPcSiteRequested = p_hasSubstring( p_strAppVersion, 'Macintosh;' ) ||
-                                         ( p_hasSubstring( p_strAppVersion, 'Windows NT' ) && !p_hasSubstring( p_strAppVersion, 'Touch' ) );
+            who.base.setPlatform( iAm.EnumPlatform.WiiU$TM, hasWebkitCancelAnimationFrame ? 4 : 2.1 );
+            who.result.isPcSiteRequested = who.util.hasSubstring( who.env.strAppVersion, 'Macintosh;' ) ||
+                                         ( who.util.hasSubstring( who.env.strAppVersion, 'Windows NT' ) && !who.util.hasSubstring( who.env.strAppVersion, 'Touch' ) );
         };
-        p_setDevice( EnumDevice.WiiU, undefined, EnumDeviceType.GAME );
-        p_setEngine(
-            EnumEngine.WebKit,
-            p_getVersionString( p_strAppVersion, 'AppleWebKit/' ) || ( hasWebkitCancelAnimationFrame ? 536 : 534 )
+        who.base.setDevice( iAm.EnumDevice.WiiU, undefined, iAm.EnumDeviceType.GAME );
+        who.base.setEngine(
+            iAm.EnumEngine.WebKit,
+            who.util.getVersionString( who.env.strAppVersion, 'AppleWebKit/' ) || ( hasWebkitCancelAnimationFrame ? 536 : 534 )
         );
-        p_setBrand( EnumBrand.NetFront$R_Browser_NX, 3 );
+        who.base.setBrand( iAm.EnumBrand.NetFront$R_Browser_NX, 3 );
         return true;
     };
 };

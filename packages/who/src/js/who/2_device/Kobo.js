@@ -11,13 +11,13 @@ goog.require( 'who.base' );
 
 /** @return {boolean} */
 who.device.Kobo.is = function(){
-    return p_hasSubstring( p_strUserAgent, 'Kobo' );
+    return who.util.hasSubstring( who.env.strUserAgent, 'Kobo' );
 };
 
 /** @return {boolean|void} */
 who.device.Kobo.detect = function(){
     if( who.device.Kobo.is() ){
-        p_setDevice( EnumDevice.Kobo, undefined, EnumDeviceType.EINK_READER );
+        who.base.setDevice( iAm.EnumDevice.Kobo, undefined, iAm.EnumDeviceType.EINK_READER );
         return true;
     };
 };

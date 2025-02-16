@@ -23,7 +23,7 @@ goog.require( 'who.base' );
  * SMART-TV には /1.0 から。Tizen 2.3
  * 
  * @const {number} */
-who.engine.SamsungInternet.NAVIGATOR_VERSION = p_getNumber( p_strUserAgent, 'SamsungBrowser/' );
+who.engine.SamsungInternet.NAVIGATOR_VERSION = who.util.getNumber( who.env.strUserAgent, 'SamsungBrowser/' );
 
 /**
  * https://gist.github.com/uupaa/b25c9cf47bbeedea5a7f
@@ -69,8 +69,8 @@ who.engine.SamsungInternet.LT2_NAVIGATOR_VERSION = !who.engine.SamsungInternet.N
             ).split( ' ' );
         
         while( device = unversionedDevices.pop() ){
-            if( p_hasSubstring( p_strUserAgent, device ) ){
-                return parseFloat( p_Something.NAVIGATOR_VERSION ) < 2 ? p_Something.NAVIGATOR_VERSION : 0.9;
+            if( who.util.hasSubstring( who.env.strUserAgent, device ) ){
+                return parseFloat( who.env.Something.NAVIGATOR_VERSION ) < 2 ? who.env.Something.NAVIGATOR_VERSION : 0.9;
             };
         };
 
@@ -143,8 +143,8 @@ who.engine.SamsungInternet.LT2_NAVIGATOR_VERSION = !who.engine.SamsungInternet.N
         ).split( ' ' );
 
         while( device = versionedDevices.pop() ){
-            if( p_hasSubstring( p_strUserAgent, device ) ){
-                return p_Something.NAVIGATOR_VERSION;
+            if( who.util.hasSubstring( who.env.strUserAgent, device ) ){
+                return who.env.Something.NAVIGATOR_VERSION;
             };
         };
     })() || NaN;
@@ -154,14 +154,14 @@ who.engine.SamsungInternet.LT2_NAVIGATOR_VERSION = !who.engine.SamsungInternet.N
  * @return {boolean} */
 who.engine.SamsungInternet.is = function(){
     return !!who.engine.SamsungInternet.NAVIGATOR_VERSION ||
-           p_isAndroidBased() && p_surelyPcSiteRequested && !!who.engine.SamsungInternet.LT2_NAVIGATOR_VERSION;
+           who.base.isAndroidBased() && who.result.surelyPcSiteRequested && !!who.engine.SamsungInternet.LT2_NAVIGATOR_VERSION;
 };
 
 /** @return {boolean|void} */
 who.engine.SamsungInternet.detect = function(){
     if( who.engine.SamsungInternet.is() ){
-        p_setEngine(
-            EnumEngine.Samsung_Internet,
+        who.base.setEngine(
+            iAm.EnumEngine.Samsung_Internet,
             who.engine.SamsungInternet.NAVIGATOR_VERSION || who.engine.SamsungInternet.LT2_NAVIGATOR_VERSION
         );
         return true;

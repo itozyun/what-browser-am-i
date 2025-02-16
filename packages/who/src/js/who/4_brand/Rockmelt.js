@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Rockmelt.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Rockmelt/' );
+who.brand.Rockmelt.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Rockmelt/' );
 
 /** @return {boolean} */
 who.brand.Rockmelt.is = function(){
@@ -19,7 +19,7 @@ who.brand.Rockmelt.is = function(){
 /** @return {boolean|void} */
 who.brand.Rockmelt.detect = function(){
     if( who.brand.Rockmelt.is() ){
-        p_setBrand( EnumBrand.Rockmelt, who.brand.Rockmelt.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Rockmelt, who.brand.Rockmelt.NAVIGATOR_VERSION );
         return true;
     };
 };

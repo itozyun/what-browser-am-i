@@ -10,14 +10,14 @@ goog.require( 'who.base' );
 
 /** @return {boolean} */
 who.platform.Linux.is = function(){
-    return p_strPlatformHasLinux;
+    return who.env.strPlatformHasLinux;
 };
 
 /** @return {boolean|void} */
 who.platform.Linux.detect = function(){
     if( who.platform.Linux.is() ){
-        p_setPlatform( EnumPlatform.Linux );
-        p_deviceType = EnumDeviceType.PC;
+        who.base.setPlatform( iAm.EnumPlatform.Linux );
+        who.result.deviceType = iAm.EnumDeviceType.PC;
         return true;
     };
 };

@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Silk.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Silk/' );
+who.brand.Silk.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strAppVersion, 'Silk/' );
 
 /** @return {boolean} */
 who.brand.Silk.is = function(){
@@ -19,7 +19,7 @@ who.brand.Silk.is = function(){
 /** @return {boolean|void} */
 who.brand.Silk.detect = function(){
     if( who.brand.Silk.is() ){
-        p_setBrand( EnumBrand.Silk, who.brand.Silk.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Silk, who.brand.Silk.NAVIGATOR_VERSION );
         return true;
     };
 };

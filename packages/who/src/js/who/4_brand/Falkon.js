@@ -9,17 +9,17 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Falkon.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Falkon/' );
+who.brand.Falkon.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strAppVersion, 'Falkon/' );
 
 /** @return {boolean} */
 who.brand.Falkon.is = function(){
-    return !!who.brand.Falkon.NAVIGATOR_VERSION || p_engineName === EnumEngine.Qt_WebEngine;
+    return !!who.brand.Falkon.NAVIGATOR_VERSION || who.result.engineName === iAm.EnumEngine.Qt_WebEngine;
 };
 
 /** @return {boolean|void} */
 who.brand.Falkon.detect = function(){
     if( who.brand.Falkon.is() ){
-        p_setBrand( EnumBrand.Falkon, who.brand.Falkon.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Falkon, who.brand.Falkon.NAVIGATOR_VERSION );
         return true;
     };
 };

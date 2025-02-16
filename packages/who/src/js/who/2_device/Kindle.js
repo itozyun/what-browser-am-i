@@ -26,8 +26,8 @@ goog.require( 'who.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VER
  * @private
  * @const {boolean} */
 var _maybeEInkAndroid =
-        p_conpareVersion( 3, who.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION ) < 0
-        && !p_hasAudioElement;
+        who.util.conpareVersion( 3, who.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION ) < 0
+        && !who.env.hasAudioElement;
 
 /**
  * Kindle は userAgent に特徴が無いため、他の Eink デバイスの確認の後に判断する
@@ -40,10 +40,10 @@ who.device.Kindle.is = function(){
 /** @return {boolean|void} */
 who.device.Kindle.detect = function(){
     if( who.device.Kindle.is() ){
-        p_setDevice(
-            EnumDevice.Kindle,
+        who.base.setDevice(
+            iAm.EnumDevice.Kindle,
             _androidWebViewVersionToKindleVersion( who.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION ),
-            EnumDeviceType.EINK_READER
+            iAm.EnumDeviceType.EINK_READER
         );
         return true;
     };

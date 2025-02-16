@@ -24,7 +24,7 @@ var _isMylo1 = false;
  * @private
  * @const {boolean}
  */
-var _isMylo2 = p_numAppVersion === 2 && p_hasSubstring( p_strUserAgent, 'Sony/COM2/' );
+var _isMylo2 = who.env.numAppVersion === 2 && who.util.hasSubstring( who.env.strUserAgent, 'Sony/COM2/' );
 
 /** @return {boolean} */
 who.platform.mylo.is = function(){
@@ -34,14 +34,14 @@ who.platform.mylo.is = function(){
 /** @return {boolean|void} */
 who.platform.mylo.detect = function(){
     if( _isMylo1 ){
-        p_setPlatform( EnumPlatform.SONY_mylo, 1 );
-        p_setDevice( EnumDevice.SONY_mylo, 1, EnumDeviceType.PDA );
-        p_setEngine( EnumEngine.Presto_Mobile, 8.5 );
+        who.base.setPlatform( iAm.EnumPlatform.SONY_mylo, 1 );
+        who.base.setDevice( iAm.EnumDevice.SONY_mylo, 1, iAm.EnumDeviceType.PDA );
+        who.base.setEngine( iAm.EnumEngine.Presto_Mobile, 8.5 );
         return true;
     } else if( _isMylo2 ){
-        p_setPlatform( EnumPlatform.SONY_mylo, 2 );
-        p_setDevice( EnumDevice.SONY_mylo, 2, EnumDeviceType.PDA );
-        p_setEngine( EnumEngine.NetFront, 3.4 );
+        who.base.setPlatform( iAm.EnumPlatform.SONY_mylo, 2 );
+        who.base.setDevice( iAm.EnumDevice.SONY_mylo, 2, iAm.EnumDeviceType.PDA );
+        who.base.setEngine( iAm.EnumEngine.NetFront, 3.4 );
         return true;
     };
 };

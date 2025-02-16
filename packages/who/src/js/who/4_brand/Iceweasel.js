@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Iceweasel.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Iceweasel/' );
+who.brand.Iceweasel.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Iceweasel/' );
 
 /** @return {boolean} */
 who.brand.Iceweasel.is = function(){
@@ -19,7 +19,7 @@ who.brand.Iceweasel.is = function(){
 /** @return {boolean|void} */
 who.brand.Iceweasel.detect = function(){
     if( who.brand.Iceweasel.is() ){
-        p_setBrand( EnumBrand.Iceweasel, who.brand.Iceweasel.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Iceweasel, who.brand.Iceweasel.NAVIGATOR_VERSION );
         return true;
     };
 };

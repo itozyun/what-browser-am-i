@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Iceape.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Iceape/' );
+who.brand.Iceape.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Iceape/' );
 
 /** @return {boolean} */
 who.brand.Iceape.is = function(){
@@ -19,7 +19,7 @@ who.brand.Iceape.is = function(){
 /** @return {boolean|void} */
 who.brand.Iceape.detect = function(){
     if( who.brand.Iceape.is() ){
-        p_setBrand( EnumBrand.Iceape, who.brand.Iceape.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Iceape, who.brand.Iceape.NAVIGATOR_VERSION );
         return true;
     };
 };

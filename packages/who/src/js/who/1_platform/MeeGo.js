@@ -9,13 +9,13 @@ goog.require( 'who.base' );
 
 /** @return {boolean} */
 who.platform.MeeGo.is = function(){
-    return p_hasSubstring( p_strUserAgent, 'MeeGo' );
+    return who.util.hasSubstring( who.env.strUserAgent, 'MeeGo' );
 };
 
 /** @return {boolean|void} */
 who.platform.MeeGo.detect = function(){
     if( who.platform.MeeGo.is() ){
-        p_setPlatform( EnumPlatform.MeeGo );
+        who.base.setPlatform( iAm.EnumPlatform.MeeGo );
         return true;
     };
 };

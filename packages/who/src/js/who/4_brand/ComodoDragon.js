@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.ComodoDragon.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Comodo Dragon/' );
+who.brand.ComodoDragon.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Comodo Dragon/' );
 
 /** @return {boolean} */
 who.brand.ComodoDragon.is = function(){
@@ -19,7 +19,7 @@ who.brand.ComodoDragon.is = function(){
 /** @return {boolean|void} */
 who.brand.ComodoDragon.detect = function(){
     if( who.brand.ComodoDragon.is() ){
-        p_setBrand( EnumBrand.Comodo_Dragon, who.brand.ComodoDragon.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Comodo_Dragon, who.brand.ComodoDragon.NAVIGATOR_VERSION );
         return true;
     };
 };

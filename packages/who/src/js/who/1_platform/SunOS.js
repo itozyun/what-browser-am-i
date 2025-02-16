@@ -10,14 +10,14 @@ goog.require( 'who.base' );
 
 /** @return {boolean} */
 who.platform.SunOS.is = function(){
-    return p_hasSubstring( p_strUserAgent, 'SunOS' ) || p_hasSubstring( p_strUserAgent, 'Sun Solaris' );
+    return who.util.hasSubstring( who.env.strUserAgent, 'SunOS' ) || who.util.hasSubstring( who.env.strUserAgent, 'Sun Solaris' );
 };
 
 /** @return {boolean|void} */
 who.platform.SunOS.detect = function(){
     if( who.platform.SunOS.is() ){
-        p_setPlatform( EnumPlatform.SunOS );
-        p_deviceType = EnumDeviceType.PC;
+        who.base.setPlatform( iAm.EnumPlatform.SunOS );
+        who.result.deviceType = iAm.EnumDeviceType.PC;
         return true;
     };
 };

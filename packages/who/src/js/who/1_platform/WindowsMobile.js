@@ -14,13 +14,13 @@ goog.require( 'who.brand.Iris.NAVIGATOR_VERSION' );
 
 /** @return {boolean} */
 who.platform.WindowsMobile.is = function(){
-    return p_hasSubstring( p_strUserAgent, 'Windows Mobile;' ) || !!who.brand.Iris.NAVIGATOR_VERSION;
+    return who.util.hasSubstring( who.env.strUserAgent, 'Windows Mobile;' ) || !!who.brand.Iris.NAVIGATOR_VERSION;
 };
 
 /** @return {boolean|void} */
 who.platform.WindowsMobile.detect = function(){
     if( who.platform.WindowsMobile.is() ){
-        p_setPlatform( EnumPlatform.Windows_Mobile, 6.1, EnumDeviceType.PDA );
+        who.base.setPlatform( iAm.EnumPlatform.Windows_Mobile, 6.1, iAm.EnumDeviceType.PDA );
         return true;
     };
 };

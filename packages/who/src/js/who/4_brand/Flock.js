@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Flock.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Flock/' );
+who.brand.Flock.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Flock/' );
 
 /** @return {boolean} */
 who.brand.Flock.is = function(){
@@ -19,7 +19,7 @@ who.brand.Flock.is = function(){
 /** @return {boolean|void} */
 who.brand.Flock.detect = function(){
     if( who.brand.Flock.is() ){
-        p_setBrand( EnumBrand.Flock, who.brand.Flock.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Flock, who.brand.Flock.NAVIGATOR_VERSION );
         return true;
     };
 };

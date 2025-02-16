@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.QQ.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'QQBrowser/' );
+who.brand.QQ.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'QQBrowser/' );
 
 /** @return {boolean} */
 who.brand.QQ.is = function(){
@@ -19,7 +19,7 @@ who.brand.QQ.is = function(){
 /** @return {boolean|void} */
 who.brand.QQ.detect = function(){
     if( who.brand.QQ.is() ){
-        p_setBrand( EnumBrand.QQ, who.brand.QQ.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.QQ, who.brand.QQ.NAVIGATOR_VERSION );
         return true;
     };
 };

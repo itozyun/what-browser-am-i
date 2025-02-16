@@ -83,7 +83,7 @@ who.device.isEink = function(){
 
 who.device.detectAll = function(){
     // Kindle は最後!
-    if( !p_deviceName ){
+    if( !who.result.deviceName ){
         who.device.AppleSmartDevice.detect() ||
         who.device.BOOX.detect() ||
         who.device.Cybook.detect() ||

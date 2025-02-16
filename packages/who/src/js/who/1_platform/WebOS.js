@@ -16,14 +16,14 @@ who.platform.WebOS.is = function(){
 /** @return {boolean|void} */
 who.platform.WebOS.detect = function(){
     if( who.platform.WebOS.is() ){
-        p_setPlatform(
-            EnumPlatform.WebOS
-            , p_getVersionString( p_strUserAgent, 'webOS/' )
-                || p_getVersionString( p_strUserAgent, 'WEBOS'  )
-                || p_getVersionString( p_strUserAgent, 'hpwOS/' )
-            , p_hasSubstring( p_strUserAgent, 'webOS.TV' ) || p_hasSubstring( p_strUserAgent, '/SmartTV' )
-                ? EnumDeviceType.TV
-                : EnumDeviceType.PHONE
+        who.base.setPlatform(
+            iAm.EnumPlatform.WebOS
+            , who.util.getVersionString( who.env.strUserAgent, 'webOS/' )
+                || who.util.getVersionString( who.env.strUserAgent, 'WEBOS'  )
+                || who.util.getVersionString( who.env.strUserAgent, 'hpwOS/' )
+            , who.util.hasSubstring( who.env.strUserAgent, 'webOS.TV' ) || who.util.hasSubstring( who.env.strUserAgent, '/SmartTV' )
+                ? iAm.EnumDeviceType.TV
+                : iAm.EnumDeviceType.PHONE
         );
         return true;
     };

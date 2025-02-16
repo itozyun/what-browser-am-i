@@ -11,7 +11,7 @@ goog.require( 'who.base' );
 
 /** @return {boolean} */
 who.platform.NintendoDS.is = function(){
-    return p_strPlatform === 'Nitro';
+    return who.env.strPlatform === 'Nitro';
 };
 
 /**
@@ -19,9 +19,9 @@ who.platform.NintendoDS.is = function(){
  */
 who.platform.NintendoDS.detect = function(){
     if( who.platform.NintendoDS.is() ){
-        p_setPlatform( EnumPlatform.NINTENDO_DS$TM );
-        p_setDevice( EnumDevice.NintendoDS, undefined, EnumDeviceType.GAME );
-        p_setEngine( EnumEngine.Presto_Mobile, 8.5 );
+        who.base.setPlatform( iAm.EnumPlatform.NINTENDO_DS$TM );
+        who.base.setDevice( iAm.EnumDevice.NintendoDS, undefined, iAm.EnumDeviceType.GAME );
+        who.base.setEngine( iAm.EnumEngine.Presto_Mobile, 8.5 );
         return true;
     };
 };

@@ -14,8 +14,8 @@ goog.require( 'who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION' );
 
 /** @return {boolean} */
 who.platform.NewNintendo3DS.is = function(){
-    return p_strPlatform === 'New Nintendo 3DS' ||
-           ( p_hasSubstring( p_strUserAgent, 'iPhone OS 6_0' ) && p_screenWidth === 320 && p_screenHeight === 240 );
+    return who.env.strPlatform === 'New Nintendo 3DS' ||
+           ( who.util.hasSubstring( who.env.strUserAgent, 'iPhone OS 6_0' ) && who.env.screenWidth === 320 && who.env.screenHeight === 240 );
 };
 
 /**
@@ -23,8 +23,8 @@ who.platform.NewNintendo3DS.is = function(){
  */
 who.platform.NewNintendo3DS.detect = function(){
     if( who.platform.NewNintendo3DS.is() ){
-        p_setPlatform( EnumPlatform.New_NINTENDO_3DS$TM, who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
-        p_setDevice( EnumDevice.NewNintendo3DS, undefined, EnumDeviceType.GAME );
+        who.base.setPlatform( iAm.EnumPlatform.New_NINTENDO_3DS$TM, who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
+        who.base.setDevice( iAm.EnumDevice.NewNintendo3DS, undefined, iAm.EnumDeviceType.GAME );
         return true;
     };
 };

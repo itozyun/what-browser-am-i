@@ -9,13 +9,13 @@ goog.require( 'who.base' );
 
 /** @return {boolean} */
 who.brand.Avant.is = function(){
-    return p_hasSubstring( p_strUserAgent, 'Avant Browser;' );
+    return who.util.hasSubstring( who.env.strUserAgent, 'Avant Browser;' );
 };
 
 /** @return {boolean|void} */
 who.brand.Avant.detect = function(){
     if( who.brand.Avant.is() ){
-        p_setBrand( EnumBrand.Avant );
+        who.base.setBrand( iAm.EnumBrand.Avant );
         return true;
     };
 };

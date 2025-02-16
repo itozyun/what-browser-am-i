@@ -35,7 +35,7 @@ who.engine.Presto.IMPLEMENT_VERSION = operaObject && operaObject.version && oper
 
 /** @const {string|number} */
 who.engine.Presto.NAVIGATOR_VERSION =
-    p_maxVersion( p_getVersionString( p_strUserAgent, 'Opera ' ), p_Something.NAVIGATOR_VERSION, p_numAppVersion );
+    who.util.maxVersion( who.util.getVersionString( who.env.strUserAgent, 'Opera ' ), who.env.Something.NAVIGATOR_VERSION, who.env.numAppVersion );
 
 /** @const {!Object|void} */
 who.engine.Presto.operaObject = operaObject;
@@ -43,8 +43,8 @@ who.engine.Presto.operaObject = operaObject;
 /** @return {boolean|void} */
 who.engine.Presto.detect = function(){
     if( who.engine.Presto.is() ){
-        p_setEngine(
-            p_deviceType === EnumDeviceType.PC || p_platformName === EnumPlatform.Wii$TM ? EnumEngine.Presto : EnumEngine.Presto_Mobile,
+        who.base.setEngine(
+            who.result.deviceType === iAm.EnumDeviceType.PC || who.result.platformName === iAm.EnumPlatform.Wii$TM ? iAm.EnumEngine.Presto : iAm.EnumEngine.Presto_Mobile,
             who.engine.Presto.IMPLEMENT_VERSION || who.engine.Presto.NAVIGATOR_VERSION
         );
         return true;

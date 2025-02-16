@@ -19,7 +19,7 @@ who.device.Manta.is = function(){
 /** @return {boolean|void} */
 who.device.Manta.detect = function(){
     if( who.device.Manta.is() ){
-        p_setDevice( EnumDevice.Manta, undefined, EnumDeviceType.EINK_READER );
+        who.base.setDevice( iAm.EnumDevice.Manta, undefined, iAm.EnumDeviceType.EINK_READER );
         return true;
     };
 };

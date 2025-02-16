@@ -9,9 +9,9 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.AOL.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'AOLBUILD/' ) ||
-                                  p_getVersionString( p_strUserAgent, 'AOL/' ) ||
-                                  p_getVersionString( p_strUserAgent, 'AOL ' );
+who.brand.AOL.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'AOLBUILD/' ) ||
+                                  who.util.getVersionString( who.env.strUserAgent, 'AOL/' ) ||
+                                  who.util.getVersionString( who.env.strUserAgent, 'AOL ' );
 
 /** @return {boolean} */
 who.brand.AOL.is = function(){
@@ -21,7 +21,7 @@ who.brand.AOL.is = function(){
 /** @return {boolean|void} */
 who.brand.AOL.detect = function(){
     if( who.brand.AOL.is() ){
-        p_setBrand( EnumBrand.AOL, who.brand.AOL.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.AOL, who.brand.AOL.NAVIGATOR_VERSION );
         return true;
     };
 };

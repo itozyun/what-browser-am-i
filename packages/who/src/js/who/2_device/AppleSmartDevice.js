@@ -17,24 +17,24 @@ goog.require( 'who.engine.iOSWebView.IMPLEMENT_VERSION' );
 /**
  * @private
  * @const {boolean} */
-var isIPhone = p_startWith( p_strPlatform, 'iPhone' );
+var isIPhone = who.util.startWith( who.env.strPlatform, 'iPhone' );
 
 /**
  * @private
  * @const {boolean} */
-var isIPad   = p_startWith( p_strPlatform, 'iPad' );
+var isIPad   = who.util.startWith( who.env.strPlatform, 'iPad' );
 
 /**
  * @private
  * @const {boolean} */
-var isIPod   = p_startWith( p_strPlatform, 'iPod' );
+var isIPod   = who.util.startWith( who.env.strPlatform, 'iPod' );
 
 /**
  * https://www.bit-hive.com/articles/20190820
  *   > macOS上のSafariかiPadOS上のSafariか判定するJavaScriptコード例
  * @private
  * @const {boolean} */
-var isIPadOSPcSiteRequested = p_strPlatform === 'MacIntel' && p_standalone !== undefined;
+var isIPadOSPcSiteRequested = who.env.strPlatform === 'MacIntel' && who.env.standalone !== undefined;
 
 /** @return {boolean} */
 who.device.AppleSmartDevice.is = function(){
@@ -49,26 +49,26 @@ who.device.AppleSmartDevice.detect = function(){
 
             switch( puffinModel.substr( 0, 4 ) ){
                 case 'iPho' :
-                    p_setDevice( EnumDevice.iPhone, p_getVersionString( puffinModel, 'iPhone' ) );
+                    who.base.setDevice( iAm.EnumDevice.iPhone, who.util.getVersionString( puffinModel, 'iPhone' ) );
                     break;
                 case 'iPad' :
-                    p_setDevice( EnumDevice.iPad, p_getVersionString( puffinModel, 'iPad' ) );
+                    who.base.setDevice( iAm.EnumDevice.iPad, who.util.getVersionString( puffinModel, 'iPad' ) );
                     break;
                 case 'iPod' :
-                    p_setDevice( EnumDevice.iPod, p_getVersionString( puffinModel, 'iPod' ) );
+                    who.base.setDevice( iAm.EnumDevice.iPod, who.util.getVersionString( puffinModel, 'iPod' ) );
                     break;
             };
         } else {
             var dpRatioIs1 = window.devicePixelRatio === 1;
             // 4:3 model
-            var is43Model  = p_screenWidth === p_screenHeight * 1.5 || p_screenWidth * 1.5 === p_screenHeight;
+            var is43Model  = who.env.screenWidth === who.env.screenHeight * 1.5 || who.env.screenWidth * 1.5 === who.env.screenHeight;
     
             if( isIPhone ){ // iPhone or iPhone Simulator
-                p_setDevice( EnumDevice.iPhone, is43Model ? ( dpRatioIs1 ? '1~3' : '4~5' ) : '6~' );
+                who.base.setDevice( iAm.EnumDevice.iPhone, is43Model ? ( dpRatioIs1 ? '1~3' : '4~5' ) : '6~' );
             } else if( isIPad || isIPadOSPcSiteRequested ){ // iPad or iPad Simulator
-                p_setDevice( EnumDevice.iPad, dpRatioIs1 ? '~2' : '3~' );
+                who.base.setDevice( iAm.EnumDevice.iPad, dpRatioIs1 ? '~2' : '3~' );
             } else if( isIPod ){
-                p_setDevice( EnumDevice.iPod, is43Model ? ( dpRatioIs1 ? '~3' : 4 ) : '5~' );
+                who.base.setDevice( iAm.EnumDevice.iPod, is43Model ? ( dpRatioIs1 ? '~3' : 4 ) : '5~' );
             };
         };
         return true;

@@ -16,7 +16,7 @@ who.engine.QtWebKit.is = function(){
 /** @return {boolean|void} */
 who.engine.QtWebKit.detect = function(){
     if( who.engine.QtWebKit.is() ){
-        p_setEngine( EnumEngine.Qt_WebKit, p_numberWebKit );
+        who.base.setEngine( iAm.EnumEngine.Qt_WebKit, who.env.numberWebKit );
         return true;
     };
 };

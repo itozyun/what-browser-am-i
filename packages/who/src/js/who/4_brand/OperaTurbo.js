@@ -8,22 +8,22 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.OperaTurbo.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'OPT/' );
+who.brand.OperaTurbo.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strAppVersion, 'OPT/' );
 
 /**
  * @package
  * @return {boolean} */
 who.brand.OperaTurbo.is = function(){
     return !!who.brand.OperaTurbo.NAVIGATOR_VERSION ||
-           p_platformName === EnumPlatform.iOS && !p_inObject( 'isSecureContext', window );
+           who.result.platformName === iAm.EnumPlatform.iOS && !core.hasProperty( window, 'isSecureContext' );
 };
 
 /** @return {boolean|void} */
 who.brand.OperaTurbo.detect = function(){
     if( who.brand.OperaTurbo.is() ){
-        p_setBrand( EnumBrand.Opera_Turbo, who.brand.OperaTurbo.NAVIGATOR_VERSION );
-        if( !p_isPcSiteRequested ){
-            p_isPcSiteRequested = !p_hasSubstring( p_strAppVersion, 'Mobile/' );
+        who.base.setBrand( iAm.EnumBrand.Opera_Turbo, who.brand.OperaTurbo.NAVIGATOR_VERSION );
+        if( !who.result.isPcSiteRequested ){
+            who.result.isPcSiteRequested = !who.util.hasSubstring( who.env.strAppVersion, 'Mobile/' );
         };
         return true;
     };

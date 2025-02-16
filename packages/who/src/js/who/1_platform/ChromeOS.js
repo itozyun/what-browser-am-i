@@ -9,10 +9,10 @@ goog.require( 'who.base' );
 /**
  * @private
  * @const {string} */
-var _versionChromeOS = p_getVersionString( p_strUserAgent, 'CrOS x86_64 '  ) ||
-                       p_getVersionString( p_strUserAgent, 'CrOS aarch64 ' ) ||
-                       p_getVersionString( p_strUserAgent, 'CrOS i686 '    ) ||
-                       p_getVersionString( p_strUserAgent, 'CrOS armv7l '  );
+var _versionChromeOS = who.util.getVersionString( who.env.strUserAgent, 'CrOS x86_64 '  ) ||
+                       who.util.getVersionString( who.env.strUserAgent, 'CrOS aarch64 ' ) ||
+                       who.util.getVersionString( who.env.strUserAgent, 'CrOS i686 '    ) ||
+                       who.util.getVersionString( who.env.strUserAgent, 'CrOS armv7l '  );
 
 /** @return {boolean} */
 who.platform.ChromeOS.is = function(){
@@ -22,7 +22,7 @@ who.platform.ChromeOS.is = function(){
 /** @return {boolean|void} */
 who.platform.ChromeOS.detect = function(){
     if( who.platform.ChromeOS.is() ){
-        p_setPlatform( EnumPlatform.ChromeOS, _versionChromeOS, EnumDeviceType.PC );
+        who.base.setPlatform( iAm.EnumPlatform.ChromeOS, _versionChromeOS, iAm.EnumDeviceType.PC );
         return true;
     };
 };

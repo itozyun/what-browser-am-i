@@ -64,7 +64,7 @@ goog.require( 'who.brand.Safari.detect' );
 who.brand.detectAll = function(){
     // 特徴的な名前からテストする, Chromium, AndroidWebView, Safari, iOSWebView, WebKit が最後
     // Trident, Edge, WebKit 等は WebView を使ったサードパーティ製ブラウザの判定を最初に
-    if( !p_brandName ){
+    if( !who.result.brandName ){
         who.brand.Edge.detect() ||
         who.brand.OperaCoast.detect() ||
         who.brand.OperaTurbo.detect() ||

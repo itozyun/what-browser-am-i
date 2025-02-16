@@ -9,18 +9,18 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Safari.NAVIGATOR_VERSION = p_Something.NAVIGATOR_VERSION;
+who.brand.Safari.NAVIGATOR_VERSION = who.env.Something.NAVIGATOR_VERSION;
 
 /** @return {boolean} */
 who.brand.Safari.is = function(){
-    return ( p_engineName === EnumEngine.WebKit || p_engineName === EnumEngine.Safari_Mobile || p_engineName === EnumEngine.iOS_WebView ) &&
-           p_hasSubstring( p_strUserAgent, 'Safari/' ) || !!p_Something.NAVIGATOR_VERSION;
+    return ( who.result.engineName === iAm.EnumEngine.WebKit || who.result.engineName === iAm.EnumEngine.Safari_Mobile || who.result.engineName === iAm.EnumEngine.iOS_WebView ) &&
+           who.util.hasSubstring( who.env.strUserAgent, 'Safari/' ) || !!who.env.Something.NAVIGATOR_VERSION;
 };
 
 /** @return {boolean|void} */
 who.brand.Safari.detect = function(){
     if( who.brand.Safari.is() ){
-        p_setBrand( EnumBrand.Safari, who.brand.Safari.NAVIGATOR_VERSION || _webKitVersionToSafariVersion( p_numberWebKit ) );
+        who.base.setBrand( iAm.EnumBrand.Safari, who.brand.Safari.NAVIGATOR_VERSION || _webKitVersionToSafariVersion( who.env.numberWebKit ) );
         
         return true;
     };

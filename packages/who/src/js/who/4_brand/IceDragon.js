@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.IceDragon.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'IceDragon/' );
+who.brand.IceDragon.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'IceDragon/' );
 
 /** @return {boolean} */
 who.brand.IceDragon.is = function(){
@@ -19,7 +19,7 @@ who.brand.IceDragon.is = function(){
 /** @return {boolean|void} */
 who.brand.IceDragon.detect = function(){
     if( who.brand.IceDragon.is() ){
-        p_setBrand( EnumBrand.IceDragon, who.brand.IceDragon.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.IceDragon, who.brand.IceDragon.NAVIGATOR_VERSION );
         return true;
     };
 };

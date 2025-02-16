@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.SeaMonkey.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'SeaMonkey/' );
+who.brand.SeaMonkey.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'SeaMonkey/' );
 
 /** @return {boolean} */
 who.brand.SeaMonkey.is = function(){
@@ -19,7 +19,7 @@ who.brand.SeaMonkey.is = function(){
 /** @return {boolean|void} */
 who.brand.SeaMonkey.detect = function(){
     if( who.brand.SeaMonkey.is() ){
-        p_setBrand( EnumBrand.SeaMonkey, who.brand.SeaMonkey.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.SeaMonkey, who.brand.SeaMonkey.NAVIGATOR_VERSION );
         return true;
     };
 };

@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Roccat.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Roccat/' );
+who.brand.Roccat.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Roccat/' );
 
 /** @return {boolean} */
 who.brand.Roccat.is = function(){
@@ -19,7 +19,7 @@ who.brand.Roccat.is = function(){
 /** @return {boolean|void} */
 who.brand.Roccat.detect = function(){
     if( who.brand.Roccat.is() ){
-        p_setBrand( EnumBrand.Roccat, who.brand.Roccat.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Roccat, who.brand.Roccat.NAVIGATOR_VERSION );
         return true;
     };
 };

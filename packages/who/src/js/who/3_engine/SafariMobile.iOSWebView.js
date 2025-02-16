@@ -18,7 +18,7 @@ goog.require( 'who.engine.UCWEB.is' );
  * @return {boolean}
  */
 function _isIOS(){
-    return p_platformName === EnumPlatform.iOS;
+    return who.result.platformName === iAm.EnumPlatform.iOS;
 };
 
 /**
@@ -28,20 +28,20 @@ who.engine.SafariMobile.is = function(){
     return _isIOS() &&
         !who.brand.Puffin.iOSImplementVersion && // iPad iOS12.2 Puffin5.2.2 で fullscreenEnabled が存在の模様
         // ホーム画面から起動したWebページ(A2H)は navigator.standalone === true になっている。fullscreen API は無い。
-        ( p_standalone ||
+        ( who.env.standalone ||
             // https://github.com/uupaa/WebApp2/blob/master/app/assets/modules/UserAgent.js
             // _isWebView_iOS(options)
             // iPhone 13 で fullscreenEnabled の判定が出来ない.
             // https://caniuse.com/#feat=fullscreen によると、iOS は12からなので、fullscreenEnabled による Safari/WebView の判定は 11 迄は動いたと仮定する
-            ( ( p_deviceName === EnumDevice.iPad || p_platformVersion < 12 ) && !!p_inObject( 'webkitFullscreenEnabled', document ) ) ||
-            ( 11 <= p_platformVersion && p_platformVersion < 13 && !!navigator.mediaDevices ) // 12迄は mediaDevices は Safari だけだった。
+            ( ( who.result.deviceName === iAm.EnumDevice.iPad || who.result.platformVersion < 12 ) && core.hasProperty( document, 'webkitFullscreenEnabled' ) ) ||
+            ( 11 <= who.result.platformVersion && who.result.platformVersion < 13 && !!navigator.mediaDevices ) // 12迄は mediaDevices は Safari だけだった。
         );
 };
 
 /** @return {boolean|void} */
 who.engine.SafariMobile.detect = function(){
     if( who.engine.SafariMobile.is() ){
-        p_setEngine( EnumEngine.Safari_Mobile, p_platformVersion );
+        who.base.setEngine( iAm.EnumEngine.Safari_Mobile, who.result.platformVersion );
         return true;
     };
 };
@@ -71,12 +71,12 @@ who.engine.iOSWebView.IMPLEMENT_VERSION =
     Number.isNaN               ?  9.2 :
     // http://uupaa.hatenablog.com/entry/2015/03/03/223344
     window.SharedWorker        ?
-        ( p_performance && p_performance.now ? 8.0 : 8.4 ) :
+        ( who.env.performance && who.env.performance.now ? 8.0 : 8.4 ) :
     document.execCommand       ?  7.1 :
     window.webkitURL           ?  6.1 :
     window.Worker              ?  5.1 :
-    p_hasInt8Array                  ?  4.3 :
-    p_hasAudioElement            ?  4.1 : 3.2;
+    who.env.hasInt8Array                  ?  4.3 :
+    who.env.hasAudioElement            ?  4.1 : 3.2;
 
 /**
  * @package
@@ -91,7 +91,7 @@ who.engine.iOSWebView.is = function(){
 /** @return {boolean|void} */
 who.engine.iOSWebView.detect = function(){
     if( who.engine.iOSWebView.is() ){
-        p_setEngine( EnumEngine.iOS_WebView, p_platformVersion );
+        who.base.setEngine( iAm.EnumEngine.iOS_WebView, who.result.platformVersion );
         return true;
     };
 };

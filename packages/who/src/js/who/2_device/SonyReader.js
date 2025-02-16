@@ -25,9 +25,9 @@ goog.require( 'who.base' );
 
 /** @const {number} */
 who.device.SonyReader.NAVIGATOR_VERSION =
-    p_hasSubstring( p_strUserAgent, 'EBRD1301' ) ? 3 :
-    p_hasSubstring( p_strUserAgent, 'EBRD1201' ) ? 2 :
-    p_hasSubstring( p_strUserAgent, 'EBRD1101' ) ? 1 : 0;
+    who.util.hasSubstring( who.env.strUserAgent, 'EBRD1301' ) ? 3 :
+    who.util.hasSubstring( who.env.strUserAgent, 'EBRD1201' ) ? 2 :
+    who.util.hasSubstring( who.env.strUserAgent, 'EBRD1101' ) ? 1 : 0;
 
 /** @return {boolean} */
 who.device.SonyReader.is = function(){
@@ -37,7 +37,7 @@ who.device.SonyReader.is = function(){
 /** @return {boolean|void} */
 who.device.SonyReader.detect = function(){
     if( who.device.SonyReader.is() ){
-        p_setDevice( EnumDevice.SonyReader, who.device.SonyReader.NAVIGATOR_VERSION, EnumDeviceType.EINK_READER );
+        who.base.setDevice( iAm.EnumDevice.SonyReader, who.device.SonyReader.NAVIGATOR_VERSION, iAm.EnumDeviceType.EINK_READER );
         return true;
     };
 };

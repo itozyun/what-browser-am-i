@@ -12,10 +12,10 @@ goog.require( 'who.base' );
 /**
  * iOS + Chrome
  * @const {string} */
-who.brand.Chrome.CRIOS_NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'CriOS/' );
+who.brand.Chrome.CRIOS_NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'CriOS/' );
 
 /** @const {string} */
-who.brand.Chrome.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Chrome/' );
+who.brand.Chrome.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strAppVersion, 'Chrome/' );
 
 /**
  * @package
@@ -30,17 +30,17 @@ who.brand.Chrome.is = function(){
  * @return {boolean}
  */
 function _isChromeFamily(){
-    return p_engineName === EnumEngine.Chromium || p_engineName === EnumEngine.Chromium_Mobile ||
-           p_engineName === EnumEngine.Android_WebView && p_conpareVersion( 5, p_engineVersion ) < 0;
+    return who.result.engineName === iAm.EnumEngine.Chromium || who.result.engineName === iAm.EnumEngine.Chromium_Mobile ||
+           who.result.engineName === iAm.EnumEngine.Android_WebView && who.util.conpareVersion( 5, who.result.engineVersion ) < 0;
 };
 
 /** @return {boolean|void} */
 who.brand.Chrome.detect = function(){
     if( who.brand.Chrome.is() ){
-        p_setBrand(
-            EnumBrand.Chrome,
+        who.base.setBrand(
+            iAm.EnumBrand.Chrome,
             _isChromeFamily()
-                ? p_engineVersion
+                ? who.result.engineVersion
                 : who.brand.Chrome.NAVIGATOR_VERSION || who.brand.Chrome.CRIOS_NAVIGATOR_VERSION
         );
         return true;

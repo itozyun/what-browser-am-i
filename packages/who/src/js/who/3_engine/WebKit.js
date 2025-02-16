@@ -9,13 +9,13 @@ goog.require( 'who.base' );
 
 /** @return {boolean} */
 who.engine.WebKit.is = function(){
-    return !!p_numberWebKit;
+    return !!who.env.numberWebKit;
 };
 
 /** @return {boolean|void} */
 who.engine.WebKit.detect = function(){
     if( who.engine.WebKit.is() ){
-        p_setEngine( EnumEngine.WebKit, p_numberWebKit );
+        who.base.setEngine( iAm.EnumEngine.WebKit, who.env.numberWebKit );
         return true;
     };
 };

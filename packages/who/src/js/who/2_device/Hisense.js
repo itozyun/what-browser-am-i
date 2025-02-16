@@ -16,7 +16,7 @@ who.device.Hisense.is = function(){
 /** @return {boolean|void} */
 who.device.Hisense.detect = function(){
     if( who.device.Hisense.is() ){
-        p_setDevice( EnumDevice.Hisense, undefined, EnumDeviceType.EINK_READER );
+        who.base.setDevice( iAm.EnumDevice.Hisense, undefined, iAm.EnumDeviceType.EINK_READER );
         return true;
     };
 };

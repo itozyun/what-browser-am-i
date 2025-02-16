@@ -21,7 +21,7 @@ goog.require( 'who.engine.WebKit.detect' );
 
 who.engine.detectAll = function(){
     // 特徴的なエンジンからテストする, Safari Mobile, iOSWebView, Chromium or Android WebView, WebKit が最後
-    if( !p_engineName ){
+    if( !who.result.engineName ){
         who.engine.Presto.detect() ||
         who.engine.OperaMini.detect() ||
         who.engine.Trident.detect() ||

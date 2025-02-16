@@ -10,12 +10,12 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Opera.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Opera/' );
+who.brand.Opera.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Opera/' );
 
 /**
  * Chromium Opera Version
  * @const {string} */
-who.brand.Opera.OPR_NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'OPR/' );
+who.brand.Opera.OPR_NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'OPR/' );
 
 /**
  * @package
@@ -23,16 +23,16 @@ who.brand.Opera.OPR_NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'OPR
 who.brand.Opera.is = function(){
     return !!who.brand.Opera.NAVIGATOR_VERSION ||
            !!who.brand.Opera.OPR_NAVIGATOR_VERSION ||
-           p_engineName === EnumEngine.Presto || p_engineName === EnumEngine.Presto_Mobile;
+           who.result.engineName === iAm.EnumEngine.Presto || who.result.engineName === iAm.EnumEngine.Presto_Mobile;
 };
 
 /** @return {boolean|void} */
 who.brand.Opera.detect = function(){
     if( who.brand.Opera.is() ){
-        p_setBrand(
-            EnumBrand.Opera,
-            p_engineName === EnumEngine.Presto || p_engineName === EnumEngine.Presto_Mobile
-                ? p_engineVersion
+        who.base.setBrand(
+            iAm.EnumBrand.Opera,
+            who.result.engineName === iAm.EnumEngine.Presto || who.result.engineName === iAm.EnumEngine.Presto_Mobile
+                ? who.result.engineVersion
                 : who.brand.Opera.NAVIGATOR_VERSION || who.brand.Opera.OPR_NAVIGATOR_VERSION
         );
         return true;

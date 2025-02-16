@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Basilisk.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Basilisk/' );
+who.brand.Basilisk.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Basilisk/' );
 
 /** @return {boolean} */
 who.brand.Basilisk.is = function(){
@@ -19,7 +19,7 @@ who.brand.Basilisk.is = function(){
 /** @return {boolean|void} */
 who.brand.Basilisk.detect = function(){
     if( who.brand.Basilisk.is() ){
-        p_setBrand( EnumBrand.Basilisk, who.brand.Basilisk.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Basilisk, who.brand.Basilisk.NAVIGATOR_VERSION );
         return true;
     };
 };

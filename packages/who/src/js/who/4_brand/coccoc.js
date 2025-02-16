@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.coccoc.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'coc_coc_browser/' );
+who.brand.coccoc.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'coc_coc_browser/' );
 
 /** @return {boolean} */
 who.brand.coccoc.is = function(){
@@ -19,7 +19,7 @@ who.brand.coccoc.is = function(){
 /** @return {boolean|void} */
 who.brand.coccoc.detect = function(){
     if( who.brand.coccoc.is() ){
-        p_setBrand( EnumBrand.coccoc, who.brand.coccoc.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.coccoc, who.brand.coccoc.NAVIGATOR_VERSION );
         return true;
     };
 };

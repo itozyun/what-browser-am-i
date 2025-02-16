@@ -11,7 +11,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Otter.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Otter/' );
+who.brand.Otter.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Otter/' );
 
 /** @return {boolean} */
 who.brand.Otter.is = function(){
@@ -21,7 +21,7 @@ who.brand.Otter.is = function(){
 /** @return {boolean|void} */
 who.brand.Otter.detect = function(){
     if( who.brand.Otter.is() ){
-        p_setBrand( EnumBrand.Otter, who.brand.Otter.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Otter, who.brand.Otter.NAVIGATOR_VERSION );
         return true;
     };
 };

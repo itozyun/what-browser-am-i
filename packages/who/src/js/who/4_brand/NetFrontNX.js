@@ -10,8 +10,8 @@ goog.require( 'who.base' );
 
 /** @const {string} */
 who.brand.NetFrontNX.NAVIGATOR_VERSION =
-    p_getVersionString( p_strAppVersion, 'NX/' ) ||
-    p_getVersionString( p_strAppVersion, 'NF/' );
+    who.util.getVersionString( who.env.strAppVersion, 'NX/' ) ||
+    who.util.getVersionString( who.env.strAppVersion, 'NF/' );
 
 /** @return {boolean} */
 who.brand.NetFrontNX.is = function(){
@@ -21,7 +21,7 @@ who.brand.NetFrontNX.is = function(){
 /** @return {boolean|void} */
 who.brand.NetFrontNX.detect = function(){
     if( who.brand.NetFrontNX.is() ){
-        p_setBrand( EnumBrand.NetFront$R_Browser_NX, who.brand.NetFrontNX.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.NetFront$R_Browser_NX, who.brand.NetFrontNX.NAVIGATOR_VERSION );
         return true;
     };
 };

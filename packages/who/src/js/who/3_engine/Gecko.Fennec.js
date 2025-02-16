@@ -17,22 +17,22 @@ who.engine.Gecko.IMPLEMENT_VERSION = 0; // TODO
 
 /** @const {string} */
 who.engine.Gecko.NAVIGATOR_VERSION =
-    p_isGeckoFamily
-        ? ( p_getVersionString( p_strUserAgent, 'rv:' ) ||
-            p_getVersionString( p_strUserAgent.substr( p_strUserAgent.indexOf( ') Gecko/' ) - 11 ), '; ' ) // for Gecko ~0.8.1
+    who.env.isGeckoFamily
+        ? ( who.util.getVersionString( who.env.strUserAgent, 'rv:' ) ||
+            who.util.getVersionString( who.env.strUserAgent.substr( who.env.strUserAgent.indexOf( ') Gecko/' ) - 11 ), '; ' ) // for Gecko ~0.8.1
           )
         : '';
 
 /** @return {boolean} */
 who.engine.Gecko.is = function(){
-    return p_isGeckoFamily && !who.engine.Goanna.is();
+    return who.env.isGeckoFamily && !who.engine.Goanna.is();
 };
 
 /** @return {boolean|void} */
 who.engine.Gecko.detect = function(){
     if( who.engine.Gecko.is() ){
-        p_setEngine(
-            p_isAndroidBased() ? EnumEngine.Fennec : EnumEngine.Gecko, // TODO KaiOS
+        who.base.setEngine(
+            who.base.isAndroidBased() ? iAm.EnumEngine.Fennec : iAm.EnumEngine.Gecko, // TODO KaiOS
             who.engine.Gecko.NAVIGATOR_VERSION ||
             who.brand.Firefox.NAVIGATOR_VERSION // Android9 + Firefox67.0 + PC_MODE で rv: が存在しない！
         );

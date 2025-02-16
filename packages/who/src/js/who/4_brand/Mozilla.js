@@ -11,15 +11,15 @@ goog.require( 'who.brand.Firefox.NAVIGATOR_VERSION' );
 
 /** @return {boolean} */
 who.brand.Mozilla.is = function(){
-    return p_engineName === EnumEngine.Gecko &&
-           p_conpareVersion( p_engineVersion, 1.8 ) < 0 &&
+    return who.result.engineName === iAm.EnumEngine.Gecko &&
+           who.util.conpareVersion( who.result.engineVersion, 1.8 ) < 0 &&
            !who.brand.Firefox.NAVIGATOR_VERSION;
 };
 
 /** @return {boolean|void} */
 who.brand.Mozilla.detect = function(){
     if( who.brand.Mozilla.is() ){
-        p_setBrand( EnumBrand.Mozilla, p_engineVersion );
+        who.base.setBrand( iAm.EnumBrand.Mozilla, who.result.engineVersion );
         return true;
     };
 };

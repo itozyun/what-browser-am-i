@@ -18,17 +18,17 @@ who.platform.FirefoxOS.is = function(){
 /** @return {boolean|void} */
 who.platform.FirefoxOS.detect = function(){
     if( who.platform.FirefoxOS.is() ){
-        p_setPlatform(
-            EnumPlatform.FirefoxOS,
+        who.base.setPlatform(
+            iAm.EnumPlatform.FirefoxOS,
             _geckoVersionToFirefoxOSVersion( who.engine.Gecko.IMPLEMENT_VERSION ),
         // https://developer.mozilla.org/ja/docs/Web/HTTP/Gecko_user_agent_string_reference#Firefox_OS
-            p_hasSubstring( p_strUserAgent, 'Mobile' )
-                ? EnumDeviceType.PHONE
-          : p_hasSubstring( p_strUserAgent, 'Tablet' )
-                ? EnumDeviceType.TABLET
-          : p_hasSubstring( p_strUserAgent, 'TV' )
-                ? EnumDeviceType.TV
-                : EnumDeviceType.PHONE
+            who.util.hasSubstring( who.env.strUserAgent, 'Mobile' )
+                ? iAm.EnumDeviceType.PHONE
+          : who.util.hasSubstring( who.env.strUserAgent, 'Tablet' )
+                ? iAm.EnumDeviceType.TABLET
+          : who.util.hasSubstring( who.env.strUserAgent, 'TV' )
+                ? iAm.EnumDeviceType.TV
+                : iAm.EnumDeviceType.PHONE
         );
         // isFirefoxOS = window.pkcs11        /* 1.1 */
         //            || window.SpecialPowers /* 1.4, 2.0, 2.1, 2.2 */
@@ -44,14 +44,14 @@ who.platform.FirefoxOS.detect = function(){
  * @return {string|number}
  */
 function _geckoVersionToFirefoxOSVersion( versionGecko ){
-    return p_conpareVersion( versionGecko, 18.1 ) < 0 ? '1.0.1' :
-           p_conpareVersion( versionGecko, 19   ) < 0 ?  1.1 :
-           p_conpareVersion( versionGecko, 27   ) < 0 ?  1.2 :
-           p_conpareVersion( versionGecko, 29   ) < 0 ?  1.3 :
-           p_conpareVersion( versionGecko, 31   ) < 0 ?  1.4 :
-           p_conpareVersion( versionGecko, 33   ) < 0 ?  2.0 :
-           p_conpareVersion( versionGecko, 35   ) < 0 ?  2.1 :
-           p_conpareVersion( versionGecko, 38   ) < 0 ?  2.2 :
-           p_conpareVersion( versionGecko, 45   ) < 0 ?  2.5 :
+    return who.util.conpareVersion( versionGecko, 18.1 ) < 0 ? '1.0.1' :
+           who.util.conpareVersion( versionGecko, 19   ) < 0 ?  1.1 :
+           who.util.conpareVersion( versionGecko, 27   ) < 0 ?  1.2 :
+           who.util.conpareVersion( versionGecko, 29   ) < 0 ?  1.3 :
+           who.util.conpareVersion( versionGecko, 31   ) < 0 ?  1.4 :
+           who.util.conpareVersion( versionGecko, 33   ) < 0 ?  2.0 :
+           who.util.conpareVersion( versionGecko, 35   ) < 0 ?  2.1 :
+           who.util.conpareVersion( versionGecko, 38   ) < 0 ?  2.2 :
+           who.util.conpareVersion( versionGecko, 45   ) < 0 ?  2.5 :
                                                          2.6; // Gecko 45
 };

@@ -10,19 +10,19 @@ goog.require( 'who.base' );
 
 /** @const {string} */
 who.brand.Maxthon.NAVIGATOR_VERSION =
-    p_getVersionString( p_strUserAgent, 'Maxthon/' ) ||
-    p_getVersionString( p_strUserAgent, 'Maxthon ' ) ||
-    p_getVersionString( p_strUserAgent, 'MXiOS/'   );
+    who.util.getVersionString( who.env.strUserAgent, 'Maxthon/' ) ||
+    who.util.getVersionString( who.env.strUserAgent, 'Maxthon ' ) ||
+    who.util.getVersionString( who.env.strUserAgent, 'MXiOS/'   );
 
 /** @return {boolean} */
 who.brand.Maxthon.is = function(){
-    return !!who.brand.Maxthon.NAVIGATOR_VERSION || p_hasSubstring( p_strUserAgent, 'Maxthon' );
+    return !!who.brand.Maxthon.NAVIGATOR_VERSION || who.util.hasSubstring( who.env.strUserAgent, 'Maxthon' );
 };
 
 /** @return {boolean|void} */
 who.brand.Maxthon.detect = function(){
     if( who.brand.Maxthon.is() ){
-        p_setBrand( EnumBrand.Maxthon, who.brand.Maxthon.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Maxthon, who.brand.Maxthon.NAVIGATOR_VERSION );
         return true;
     };
 };

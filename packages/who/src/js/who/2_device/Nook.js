@@ -64,21 +64,21 @@ goog.require( 'who.base' );
 
 /** @return {boolean} */
 who.device.Nook.is = function(){
-    return p_hasSubstring( p_strUserAgent, 'BNRV300'  ) || // Nook Simple Touch
-           p_hasSubstring( p_strUserAgent, 'BNRV350'  ) || // Nook Simple Touch with GlowLight
-           p_hasSubstring( p_strUserAgent, 'BNRV500'  ) || // Nook GlowLight
-           p_hasSubstring( p_strUserAgent, 'BNRV510'  ) || // Nook GlowLight Plus (6 inch)
-           p_hasSubstring( p_strUserAgent, 'BNRV520'  ) || // Nook Glowlight 3
-           p_hasSubstring( p_strUserAgent, 'BNRV700'  ) || // Nook GlowLight Plus (7.8 inch)
-           p_hasSubstring( p_strUserAgent, 'BNRV1000' ) || // Nook Glowlight 4
-           p_hasSubstring( p_strUserAgent, 'BNRV1100' ) || // Nook Glowlight 4e
-           p_hasSubstring( p_strUserAgent, 'BNRV1300' );   // Nook Glowlight 4 Plus
+    return who.util.hasSubstring( who.env.strUserAgent, 'BNRV300'  ) || // Nook Simple Touch
+           who.util.hasSubstring( who.env.strUserAgent, 'BNRV350'  ) || // Nook Simple Touch with GlowLight
+           who.util.hasSubstring( who.env.strUserAgent, 'BNRV500'  ) || // Nook GlowLight
+           who.util.hasSubstring( who.env.strUserAgent, 'BNRV510'  ) || // Nook GlowLight Plus (6 inch)
+           who.util.hasSubstring( who.env.strUserAgent, 'BNRV520'  ) || // Nook Glowlight 3
+           who.util.hasSubstring( who.env.strUserAgent, 'BNRV700'  ) || // Nook GlowLight Plus (7.8 inch)
+           who.util.hasSubstring( who.env.strUserAgent, 'BNRV1000' ) || // Nook Glowlight 4
+           who.util.hasSubstring( who.env.strUserAgent, 'BNRV1100' ) || // Nook Glowlight 4e
+           who.util.hasSubstring( who.env.strUserAgent, 'BNRV1300' );   // Nook Glowlight 4 Plus
 };
 
 /** @return {boolean|void} */
 who.device.Nook.detect = function(){
     if( who.device.Nook.is() ){
-        p_setDevice( EnumDevice.Nook, undefined, EnumDeviceType.EINK_READER );
+        who.base.setDevice( iAm.EnumDevice.Nook, undefined, iAm.EnumDeviceType.EINK_READER );
         return true;
     };
 };

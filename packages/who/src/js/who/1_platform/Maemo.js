@@ -13,13 +13,13 @@ goog.require( 'who.base' );
 
 /** @return {boolean} */
 who.platform.Maemo.is = function(){
-    return p_hasSubstring( p_strUserAgent, 'Maemo' );
+    return who.util.hasSubstring( who.env.strUserAgent, 'Maemo' );
 };
 
 /** @return {boolean|void} */
 who.platform.Maemo.detect = function(){
     if( who.platform.Maemo.is() ){
-        p_setPlatform( EnumPlatform.Maemo );
+        who.base.setPlatform( iAm.EnumPlatform.Maemo );
         return true;
     };
 };

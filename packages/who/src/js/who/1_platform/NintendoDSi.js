@@ -13,7 +13,7 @@ goog.require( 'who.base' );
 
 /** @return {boolean} */
 who.platform.NintendoDSi.is = function(){
-    return p_strPlatform === 'Nintendo DSi';
+    return who.env.strPlatform === 'Nintendo DSi';
 };
 
 /**
@@ -21,12 +21,12 @@ who.platform.NintendoDSi.is = function(){
  */
 who.platform.NintendoDSi.detect = function(){
     if( who.platform.NintendoDSi.is() ){
-        p_setPlatform(
-            EnumPlatform.NINTENDO_DSi$TM,
-            p_getVersionString( p_strUserAgent, p_strPlatform + '; Opera/' )
+        who.base.setPlatform(
+            iAm.EnumPlatform.NINTENDO_DSi$TM,
+            who.util.getVersionString( who.env.strUserAgent, who.env.strPlatform + '; Opera/' )
         );
-        p_setDevice( EnumDevice.NintendoDSi, undefined, EnumDeviceType.GAME );
-        p_setEngine( EnumEngine.Presto_Mobile, 9.5 );
+        who.base.setDevice( iAm.EnumDevice.NintendoDSi, undefined, iAm.EnumDeviceType.GAME );
+        who.base.setEngine( iAm.EnumEngine.Presto_Mobile, 9.5 );
         return true;
     };
 };

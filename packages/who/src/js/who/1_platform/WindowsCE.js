@@ -16,16 +16,16 @@ goog.require( 'who.engine.Trident.IMPLEMENT_VERSION' );
 
 /** @return {boolean} */
 who.platform.WindowsCE.is = function(){
-    return p_strPlatform === 'WinCE';
+    return who.env.strPlatform === 'WinCE';
 };
 
 /** @return {boolean|void} */
 who.platform.WindowsCE.detect = function(){
     if( who.platform.WindowsCE.is() ){
-        p_setPlatform(
-            EnumPlatform.Windows_CE,
+        who.base.setPlatform(
+            iAm.EnumPlatform.Windows_CE,
             who.engine.Trident.IMPLEMENT_VERSION < 5 ? 3.0 : 4.1,
-            EnumDeviceType.PDA
+            iAm.EnumDeviceType.PDA
         );
         return true;
     };

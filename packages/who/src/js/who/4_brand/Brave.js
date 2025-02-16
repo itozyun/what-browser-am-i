@@ -10,24 +10,24 @@ goog.require( 'who.brand.Chrome.NAVIGATOR_VERSION' );
  */
 
 /** @const {string} */
-who.brand.Brave.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Brave/' );
+who.brand.Brave.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Brave/' );
 
 /**
  * @package
  * @return {boolean} */
 who.brand.Brave.is = function(){
-    return !!who.brand.Brave.NAVIGATOR_VERSION || p_hasSubstring( p_strUserAgent, ' Brave ' )
-               || p_engineName === EnumEngine.iOS_WebView && !!p_inObject( 'sameOrigin', window );
+    return !!who.brand.Brave.NAVIGATOR_VERSION || who.util.hasSubstring( who.env.strUserAgent, ' Brave ' )
+               || who.result.engineName === iAm.EnumEngine.iOS_WebView && core.hasProperty( window, 'sameOrigin' );
 };
 
 /** @return {boolean|void} */
 who.brand.Brave.detect = function(){
     if( who.brand.Brave.is() ){
-        p_setBrand(
-            EnumBrand.Brave,
+        who.base.setBrand(
+            iAm.EnumBrand.Brave,
             who.brand.Brave.NAVIGATOR_VERSION ||
                 (
-                    p_engineName === EnumEngine.Chromium || p_engineName === EnumEngine.Chromium_Mobile
+                    who.result.engineName === iAm.EnumEngine.Chromium || who.result.engineName === iAm.EnumEngine.Chromium_Mobile
                         ? who.brand.Chrome.NAVIGATOR_VERSION
                         : undefined
                 )

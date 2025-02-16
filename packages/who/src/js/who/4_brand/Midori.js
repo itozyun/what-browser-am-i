@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Midori.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Midori/' );
+who.brand.Midori.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Midori/' );
 
 /** @return {boolean} */
 who.brand.Midori.is = function(){
@@ -19,7 +19,7 @@ who.brand.Midori.is = function(){
 /** @return {boolean|void} */
 who.brand.Midori.detect = function(){
     if( who.brand.Midori.is() ){
-        p_setBrand( EnumBrand.Midori, who.brand.Midori.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Midori, who.brand.Midori.NAVIGATOR_VERSION );
         return true;
     };
 };

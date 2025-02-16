@@ -27,8 +27,8 @@ who.engine.OperaMini.operaminiObject = _operaminiObject;
 
 /** @const {string|number|void} */
 who.engine.OperaMini.NAVIGATOR_VERSION =
-    p_maxVersion( p_getVersionString( p_strUserAgent, 'Opera Mini/' ), p_getVersionString( p_strUserAgent, 'Opera Mobi/' ) )
-    || ( _operaminiObject && p_Something.NAVIGATOR_VERSION );
+    who.util.maxVersion( who.util.getVersionString( who.env.strUserAgent, 'Opera Mini/' ), who.util.getVersionString( who.env.strUserAgent, 'Opera Mobi/' ) )
+    || ( _operaminiObject && who.env.Something.NAVIGATOR_VERSION );
 
 /** @return {boolean} */
 who.engine.OperaMini.is = function(){
@@ -38,8 +38,8 @@ who.engine.OperaMini.is = function(){
 /** @return {boolean|void} */
 who.engine.OperaMini.detect = function(){
     if( who.engine.OperaMini.is() ){
-        p_setEngine( EnumEngine.Opera_Mini, who.engine.OperaMini.NAVIGATOR_VERSION );
-        p_setBrand( EnumBrand.Opera, p_engineVersion );
+        who.base.setEngine( iAm.EnumEngine.Opera_Mini, who.engine.OperaMini.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Opera, who.result.engineVersion );
         return true;
     };
 };

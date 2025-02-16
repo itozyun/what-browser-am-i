@@ -272,24 +272,24 @@ goog.require( 'who.base' );
 
 /** @return {boolean} */
 who.device.BOOX.is = function(){
-    return p_hasSubstring( p_strUserAgent, ' MC_FAUST'    ) || // Faust 1, 2, 3
-           p_hasSubstring( p_strUserAgent, ' MC_DARWIN'   ) || // Darwin 6, 7, 8
-           p_hasSubstring( p_strUserAgent, ' DARWIN'      ) || // Darwin 9
-           p_hasSubstring( p_strUserAgent, ' KON_TIKI'    ) || // KON-TIKI
-           p_hasSubstring( p_strUserAgent, ' Kon_Tiki2'   ) || // KON-TIKI 2
-           p_hasSubstring( p_strUserAgent, ' MC_GAME'     ) || // Vasco da Gama 4
-           p_hasSubstring( p_strUserAgent, ' LIVINGSTONE' ) || // Livingstone 1, 2
-           p_hasSubstring( p_strUserAgent, ' Lomonosov'   ) || // Lomonosov
-           p_hasSubstring( p_strUserAgent, ' MC_Cristo'   ) || // Monte Cristo 1, 2, 3, 4
-           p_hasSubstring( p_strUserAgent, ' NoteAir'     ) || // Note Air 1, 2, 3, 2 Plus, 3 C
-           p_hasSubstring( p_strUserAgent, ' MC_NovaPro'  ) || // Nova Pro
-           p_hasSubstring( p_strUserAgent, ' Poke2Color'  );   // Poke 2 Color
+    return who.util.hasSubstring( who.env.strUserAgent, ' MC_FAUST'    ) || // Faust 1, 2, 3
+           who.util.hasSubstring( who.env.strUserAgent, ' MC_DARWIN'   ) || // Darwin 6, 7, 8
+           who.util.hasSubstring( who.env.strUserAgent, ' DARWIN'      ) || // Darwin 9
+           who.util.hasSubstring( who.env.strUserAgent, ' KON_TIKI'    ) || // KON-TIKI
+           who.util.hasSubstring( who.env.strUserAgent, ' Kon_Tiki2'   ) || // KON-TIKI 2
+           who.util.hasSubstring( who.env.strUserAgent, ' MC_GAME'     ) || // Vasco da Gama 4
+           who.util.hasSubstring( who.env.strUserAgent, ' LIVINGSTONE' ) || // Livingstone 1, 2
+           who.util.hasSubstring( who.env.strUserAgent, ' Lomonosov'   ) || // Lomonosov
+           who.util.hasSubstring( who.env.strUserAgent, ' MC_Cristo'   ) || // Monte Cristo 1, 2, 3, 4
+           who.util.hasSubstring( who.env.strUserAgent, ' NoteAir'     ) || // Note Air 1, 2, 3, 2 Plus, 3 C
+           who.util.hasSubstring( who.env.strUserAgent, ' MC_NovaPro'  ) || // Nova Pro
+           who.util.hasSubstring( who.env.strUserAgent, ' Poke2Color'  );   // Poke 2 Color
 };
 
 /** @return {boolean|void} */
 who.device.BOOX.detect = function(){
     if( who.device.BOOX.is() ){
-        p_setDevice( EnumDevice.BOOX, undefined, EnumDeviceType.EINK_READER );
+        who.base.setDevice( iAm.EnumDevice.BOOX, undefined, iAm.EnumDeviceType.EINK_READER );
         return true;
     };
 };

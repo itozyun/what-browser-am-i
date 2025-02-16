@@ -11,13 +11,13 @@ goog.require( 'who.engine.Trident.IMPLEMENT_VERSION' );
  */
 
 /** @const {string} */
-var windowsPhoneVersion = p_getVersionString( p_strUserAgent, 'Windows Phone ' ) || p_getVersionString( p_strAppVersion, 'Windows Phone OS ' );
+var windowsPhoneVersion = who.util.getVersionString( who.env.strUserAgent, 'Windows Phone ' ) || who.util.getVersionString( who.env.strAppVersion, 'Windows Phone OS ' );
 
 /** @const {string} */
 var windowsPhoneVersionWithUCWEB = who.engine.UCWEB.WindowsPhoneVersionWithUCWEB;
 
 /** @const {boolean} */
-var isWP10PcSiteRequested = who.engine.EdgeHTML.is() && p_strPlatform === 'ARM';
+var isWP10PcSiteRequested = who.engine.EdgeHTML.is() && who.env.strPlatform === 'ARM';
 
 /** @const {number} */
 var implementVersionTrident = who.engine.Trident.IMPLEMENT_VERSION;
@@ -25,7 +25,7 @@ var implementVersionTrident = who.engine.Trident.IMPLEMENT_VERSION;
 /**
  * ZuneWP は PC site requested で登場する
  * @const {boolean} */
-var isWPPcSiteRequested = 7 <= implementVersionTrident && p_hasSubstring( p_strAppVersion, 'ZuneWP' );
+var isWPPcSiteRequested = 7 <= implementVersionTrident && who.util.hasSubstring( who.env.strAppVersion, 'ZuneWP' );
 
 /** @return {boolean} */
 who.platform.WindowsPhone.is = function(){
@@ -36,13 +36,13 @@ who.platform.WindowsPhone.is = function(){
 who.platform.WindowsPhone.detect = function(){
     if( who.platform.WindowsPhone.is() ){
         if( isWP10PcSiteRequested ){
-            p_setPlatform( EnumPlatform.Windows_Phone, 10, EnumDeviceType.PHONE );
-            p_isPcSiteRequested = true;
+            who.base.setPlatform( iAm.EnumPlatform.Windows_Phone, 10, iAm.EnumDeviceType.PHONE );
+            who.result.isPcSiteRequested = true;
         } else if( isWPPcSiteRequested ){
-            p_setPlatform( EnumPlatform.Windows_Phone, _tridentVersionToWindowsPhoneVersion( implementVersionTrident ), EnumDeviceType.PHONE );
-            p_isPcSiteRequested = true;
+            who.base.setPlatform( iAm.EnumPlatform.Windows_Phone, _tridentVersionToWindowsPhoneVersion( implementVersionTrident ), iAm.EnumDeviceType.PHONE );
+            who.result.isPcSiteRequested = true;
         } else {
-            p_setPlatform( EnumPlatform.Windows_Phone, windowsPhoneVersionWithUCWEB || windowsPhoneVersion, EnumDeviceType.PHONE );
+            who.base.setPlatform( iAm.EnumPlatform.Windows_Phone, windowsPhoneVersionWithUCWEB || windowsPhoneVersion, iAm.EnumDeviceType.PHONE );
         };
         return true;
     };

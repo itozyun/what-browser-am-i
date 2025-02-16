@@ -16,7 +16,7 @@ goog.require( 'who.engine.Presto.operaObject' );
 who.platform.Wii.is = function(){
     var operaObject = who.engine.Presto.operaObject;
 
-    return !!operaObject && !!operaObject.wiiremote; // p_strPlatform === 'Nintendo Wii'
+    return !!operaObject && !!operaObject.wiiremote; // who.env.strPlatform === 'Nintendo Wii'
 };
 
 /**
@@ -24,11 +24,11 @@ who.platform.Wii.is = function(){
  */
 who.platform.Wii.detect = function(){
     if( who.platform.Wii.is() ){
-        p_setPlatform(
-            EnumPlatform.Wii$TM,
-            p_getVersionString( p_strAppVersion, p_strPlatform + '; U; ; ' )
+        who.base.setPlatform(
+            iAm.EnumPlatform.Wii$TM,
+            who.util.getVersionString( who.env.strAppVersion, who.env.strPlatform + '; U; ; ' )
         );
-        p_setDevice( EnumDevice.Wii, undefined, EnumDeviceType.GAME );
+        who.base.setDevice( iAm.EnumDevice.Wii, undefined, iAm.EnumDeviceType.GAME );
         return true;
     };
 };

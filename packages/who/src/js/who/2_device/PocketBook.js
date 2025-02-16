@@ -39,13 +39,13 @@ goog.require( 'who.base' );
 
 /** @return {boolean} */
 who.device.PocketBook.is = function(){
-    return p_hasSubstring( p_strUserAgent, ' PocketBook' );
+    return who.util.hasSubstring( who.env.strUserAgent, ' PocketBook' );
 };
 
 /** @return {boolean|void} */
 who.device.PocketBook.detect = function(){
     if( who.device.PocketBook.is() ){
-        p_setDevice( EnumDevice.PocketBook, undefined, EnumDeviceType.EINK_READER );
+        who.base.setDevice( iAm.EnumDevice.PocketBook, undefined, iAm.EnumDeviceType.EINK_READER );
         return true;
     };
 };

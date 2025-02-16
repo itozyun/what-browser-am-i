@@ -57,7 +57,7 @@ who.device.Likebook.is = function(){
 /** @return {boolean|void} */
 who.device.Likebook.detect = function(){
     if( who.device.Likebook.is() ){
-        p_setDevice( EnumDevice.Likebook, undefined, EnumDeviceType.EINK_READER );
+        who.base.setDevice( iAm.EnumDevice.Likebook, undefined, iAm.EnumDeviceType.EINK_READER );
         return true;
     };
 };

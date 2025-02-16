@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Camino.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Camino/' );
+who.brand.Camino.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Camino/' );
 
 /** @return {boolean} */
 who.brand.Camino.is = function(){
@@ -19,7 +19,7 @@ who.brand.Camino.is = function(){
 /** @return {boolean|void} */
 who.brand.Camino.detect = function(){
     if( who.brand.Camino.is() ){
-        p_setBrand( EnumBrand.Camino, who.brand.Camino.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Camino, who.brand.Camino.NAVIGATOR_VERSION );
         return true;
     };
 };

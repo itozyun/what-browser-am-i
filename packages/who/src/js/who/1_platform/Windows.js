@@ -15,17 +15,17 @@ who.platform.Windows.is = function(){
     return !who.platform.WindowsCE.is() &&
            !who.platform.WindowsMobile.is() &&
            !who.platform.WindowsPhone.is() &&
-           p_startWith( p_strPlatform, 'Win' );
+           who.util.startWith( who.env.strPlatform, 'Win' );
 };
 
 /** @return {boolean|void} */
 who.platform.Windows.detect = function(){
     if( who.platform.Windows.is() ){
-        p_setPlatform(
-              EnumPlatform.Windows
-            , p_getVersionString( p_strUserAgent, 'Windows NT ' ) ||
-              p_getVersionString( p_strUserAgent, 'Windows ' )
-            , EnumDeviceType.PC
+        who.base.setPlatform(
+              iAm.EnumPlatform.Windows
+            , who.util.getVersionString( who.env.strUserAgent, 'Windows NT ' ) ||
+              who.util.getVersionString( who.env.strUserAgent, 'Windows ' )
+            , iAm.EnumDeviceType.PC
         );
         return true;
     };

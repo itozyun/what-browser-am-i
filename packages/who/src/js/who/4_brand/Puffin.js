@@ -27,7 +27,7 @@ who.brand.Puffin.clientInfo = _puffinClientInfo;
 who.brand.Puffin.iOSImplementVersion = _puffinClientInfo && _puffinClientInfo.os === 'iOS' && _puffinClientInfo.osVersion;
 
 /** @const {string} */
-who.brand.Puffin.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Puffin/' );
+who.brand.Puffin.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Puffin/' );
 
 /** @return {boolean} */
 who.brand.Puffin.is = function(){
@@ -37,7 +37,7 @@ who.brand.Puffin.is = function(){
 /** @return {boolean|void} */
 who.brand.Puffin.detect = function(){
     if( who.brand.Puffin.is() ){
-        p_setBrand( EnumBrand.Puffin, who.brand.Puffin.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Puffin, who.brand.Puffin.NAVIGATOR_VERSION );
         return true;
     };
 };

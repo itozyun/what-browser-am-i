@@ -44,14 +44,14 @@ who.engine.ChromiumOrAndroidWebView.CHROMIUM_IMPLEMENT_VERSION = 0;
  * Android 3.x~4.0 標準ブラウザには .chrome がいる(WebKit 534~534.3)
  * @const {boolean}
  */
-who.engine.ChromiumOrAndroidWebView.maybeAOSP = _hasChromeObject && p_numberWebKit <= 534.3;
+who.engine.ChromiumOrAndroidWebView.maybeAOSP = _hasChromeObject && who.env.numberWebKit <= 534.3;
 
 /**
  * Android 4.4.4~6.x ChromeWebView 33.0.0.0 (Genymotion) PC site requested の場合、Chrome/のバージョンは常に 11.0.696.34 になる
  * @const {boolean}
  */
 who.engine.ChromiumOrAndroidWebView.maybeChromeWebView =
-    p_strPlatformHasLinux && p_hasRegisterElement && who.brand.Chrome.NAVIGATOR_VERSION === '11.0.696.34';
+    who.env.strPlatformHasLinux && who.env.hasRegisterElement && who.brand.Chrome.NAVIGATOR_VERSION === '11.0.696.34';
 
 /**
  * Android WebView のバージョン
@@ -68,23 +68,23 @@ who.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION =
     // https://qiita.com/DriftwoodJP/items/1916d5519857295622b2
     //   Android OS 5.0（Lollipop）から、Chromium WebView が OS から切り離され、Google Play から 「AndroidシステムのWebView」として更新できるようになった。
     //   この結果、端末ベンダー提供のパッチ適用に影響されずに更新されることになったが、この「ブラウザ」と Chrome for Android とは別物であることには注意が必要である。 
-        p_htmlStyle.touchAction !== undefined
+        who.env.htmlStyle.touchAction !== undefined
             ? who.engine.ChromiumOrAndroidWebView.CHROMIUM_IMPLEMENT_VERSION
-      : p_hasRegisterElement
+      : who.env.hasRegisterElement
             ? '4.4.3'
-      : p_hasInt8Array ? (
+      : who.env.hasInt8Array ? (
             !navigator.connection ? 4.4 :
             ( !window.searchBoxJavaBridge_ && !_hasChromeObject ) ? 4.2 : /* 4.1- には searchBoxJavaBridge_ と chrome が存在 */
             Number.isNaN ? 4.1 : 4 ) :
         window.SVGSVGElement ? 3 :
-        window.onhashchange !== undefined ? ( p_hasAudioElement ? 2.3 : 2.2 ) :
-        530 <= p_numberWebKit ? 2.0 : 1.5;
+        window.onhashchange !== undefined ? ( who.env.hasAudioElement ? 2.3 : 2.2 ) :
+        530 <= who.env.numberWebKit ? 2.0 : 1.5;
 
 /**
  * @package
  * @return {boolean} */
 who.engine.ChromiumOrAndroidWebView.is = function(){
-    var isAndroid = p_platformName === EnumPlatform.Android;
+    var isAndroid = who.result.platformName === iAm.EnumPlatform.Android;
 
     /*----------------------------------------------------------------------------//
      *  Android WebView
@@ -99,12 +99,12 @@ who.engine.ChromiumOrAndroidWebView.is = function(){
     /*----------------------------------------------------------------------------//
      *  Android WebView(Chrome WebView)
      */
-    } else if( isAndroid && p_hasRegisterElement ){
+    } else if( isAndroid && who.env.hasRegisterElement ){
         return true;
     /*----------------------------------------------------------------------------//
      *  Android WebView + PC_site requested
      */
-    } else if( isAndroid && ( p_Something.NAVIGATOR_VERSION || p_surelyPcSiteRequested ) ){
+    } else if( isAndroid && ( who.env.Something.NAVIGATOR_VERSION || who.result.surelyPcSiteRequested ) ){
         return true;
     /*----------------------------------------------------------------------------//
      *  Chromium or ChromiumMobile (without .chrome)
@@ -118,24 +118,24 @@ who.engine.ChromiumOrAndroidWebView.is = function(){
 /** @return {boolean|void} */
 who.engine.ChromiumOrAndroidWebView.detect = function(){
     if( who.engine.ChromiumOrAndroidWebView.is() ){
-        var isAndroid = p_platformName === EnumPlatform.Android;
+        var isAndroid = who.result.platformName === iAm.EnumPlatform.Android;
 
         /*----------------------------------------------------------------------------//
          *  Android WebView
          */
         // Android 3.x-4.1 の Android WebView で window.chrome がいるので AOSP の判定を Chromium より先に
         if( isAndroid && who.engine.ChromiumOrAndroidWebView.maybeAOSP ){
-            p_setEngine( EnumEngine.Android_WebView, who.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION );
-            if( p_surelyPcSiteRequested ) p_isPcSiteRequested = true;
+            who.base.setEngine( iAm.EnumEngine.Android_WebView, who.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION );
+            if( who.result.surelyPcSiteRequested ) who.result.isPcSiteRequested = true;
         /*----------------------------------------------------------------------------//
          *  Chromium or ChromiumMobile
          */
         } else if( _hasChromeObject ){
-            p_setEngine(
-                p_isAndroidBased() ? EnumEngine.Chromium_Mobile : EnumEngine.Chromium,
+            who.base.setEngine(
+                who.base.isAndroidBased() ? iAm.EnumEngine.Chromium_Mobile : iAm.EnumEngine.Chromium,
                 who.brand.Chrome.NAVIGATOR_VERSION || who.brand.Iron.NAVIGATOR_VERSION // TODO who.engine.ChromiumOrAndroidWebView.CHROMIUM_IMPLEMENT_VERSION
             );
-            if( p_surelyPcSiteRequested ) p_isPcSiteRequested = true;
+            if( who.result.surelyPcSiteRequested ) who.result.isPcSiteRequested = true;
         /*----------------------------------------------------------------------------//
          *  Android WebView(Chrome WebView)
          */
@@ -143,30 +143,30 @@ who.engine.ChromiumOrAndroidWebView.detect = function(){
         // Chrome WebView は Android 4.4 の時点では WebGL や WebAudio など一部の機能が利用できません(can i use)。
         // また UserAgent が書き換え可能なため、旧来のAOSPブラウザの UserAgent を偽装した形で配布されているケースがあります。
         // http://caniuse.com/#compare=chrome+40,android+4.2-4.3,android+4.4,android+4.4.3-4.4.4,and_chr+45
-        } else if( isAndroid && p_hasRegisterElement ){
+        } else if( isAndroid && who.env.hasRegisterElement ){
             // Android 標準ブラウザ Chrome WebView ブラウザ
-            p_setEngine( EnumEngine.Android_WebView, who.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION );
+            who.base.setEngine( iAm.EnumEngine.Android_WebView, who.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION );
 
             // if( !( window.requestFileSystem || window.webkitRequestFileSystem ) ){
                 // isAndroidChromeWebView = true;
             // };
-            if( p_surelyPcSiteRequested ){
-                p_isPcSiteRequested = true;
+            if( who.result.surelyPcSiteRequested ){
+                who.result.isPcSiteRequested = true;
             };
         /*----------------------------------------------------------------------------//
          *  Android WebView + PC_site requested
          */
-        } else if( isAndroid && ( p_Something.NAVIGATOR_VERSION || p_surelyPcSiteRequested ) ){
-            p_setEngine( EnumEngine.Android_WebView, who.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION );
-            if( p_surelyPcSiteRequested ){
-                p_isPcSiteRequested = true;
+        } else if( isAndroid && ( who.env.Something.NAVIGATOR_VERSION || who.result.surelyPcSiteRequested ) ){
+            who.base.setEngine( iAm.EnumEngine.Android_WebView, who.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION );
+            if( who.result.surelyPcSiteRequested ){
+                who.result.isPcSiteRequested = true;
             };
         /*----------------------------------------------------------------------------//
          *  Chromium or ChromiumMobile (without .chrome)
          */
         } else if( who.brand.Chrome.NAVIGATOR_VERSION || who.brand.Opera.OPR_NAVIGATOR_VERSION ){
-            p_setEngine(
-                p_isAndroidBased() ? EnumEngine.Chromium_Mobile : EnumEngine.Chromium,
+            who.base.setEngine(
+                who.base.isAndroidBased() ? iAm.EnumEngine.Chromium_Mobile : iAm.EnumEngine.Chromium,
                 who.brand.Chrome.NAVIGATOR_VERSION // TODO who.engine.ChromiumOrAndroidWebView.CHROMIUM_IMPLEMENT_VERSION
             );
         };

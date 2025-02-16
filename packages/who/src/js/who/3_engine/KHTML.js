@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string|void} */
-who.engine.KHTML.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'KHTML/' );
+who.engine.KHTML.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'KHTML/' );
 
 /** @return {boolean} */
 who.engine.KHTML.is = function(){
@@ -19,7 +19,7 @@ who.engine.KHTML.is = function(){
 /** @return {boolean|void} */
 who.engine.KHTML.detect = function(){
     if( who.engine.KHTML.is() ){
-        p_setEngine( EnumEngine.KHTML, who.engine.KHTML.NAVIGATOR_VERSION );
+        who.base.setEngine( iAm.EnumEngine.KHTML, who.engine.KHTML.NAVIGATOR_VERSION );
         return true;
     };
 };

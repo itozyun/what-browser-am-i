@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.GNUzilla.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'GNUzilla/' );
+who.brand.GNUzilla.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'GNUzilla/' );
 
 /** @return {boolean} */
 who.brand.GNUzilla.is = function(){
@@ -19,7 +19,7 @@ who.brand.GNUzilla.is = function(){
 /** @return {boolean|void} */
 who.brand.GNUzilla.detect = function(){
     if( who.brand.GNUzilla.is() ){
-        p_setBrand( EnumBrand.GNUzilla, who.brand.GNUzilla.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.GNUzilla, who.brand.GNUzilla.NAVIGATOR_VERSION );
         return true;
     };
 };

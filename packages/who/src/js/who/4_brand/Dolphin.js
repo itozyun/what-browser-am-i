@@ -11,13 +11,13 @@ goog.require( 'who.base' );
  * @package
  * @return {boolean} */
 who.brand.Dolphin.is = function(){
-    return p_engineName === EnumEngine.iOS_WebView && !!p_inObject( 'enableWebGL', window );
+    return who.result.engineName === iAm.EnumEngine.iOS_WebView && core.hasProperty( window, 'enableWebGL' );
 };
 
 /** @return {boolean|void} */
 who.brand.Dolphin.detect = function(){
     if( who.brand.Dolphin.is() ){
-        p_setBrand( EnumBrand.Dolphin );
+        who.base.setBrand( iAm.EnumBrand.Dolphin );
         return true;
     };
 };

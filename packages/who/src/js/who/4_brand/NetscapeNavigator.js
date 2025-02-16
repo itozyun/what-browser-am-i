@@ -10,9 +10,9 @@ goog.require( 'who.base' );
 
 /** @const {string} */
 who.brand.NetscapeNavigator.NAVIGATOR_VERSION =
-    p_getVersionString( p_strUserAgent, 'Netscape6/' ) || // 6
-    p_getVersionString( p_strUserAgent, 'Netscape/'  ) || // 7~8
-    p_getVersionString( p_strUserAgent, 'Navigator/' );   // 9
+    who.util.getVersionString( who.env.strUserAgent, 'Netscape6/' ) || // 6
+    who.util.getVersionString( who.env.strUserAgent, 'Netscape/'  ) || // 7~8
+    who.util.getVersionString( who.env.strUserAgent, 'Navigator/' );   // 9
 
 /** @return {boolean} */
 who.brand.NetscapeNavigator.is = function(){
@@ -22,7 +22,7 @@ who.brand.NetscapeNavigator.is = function(){
 /** @return {boolean|void} */
 who.brand.NetscapeNavigator.detect = function(){
     if( who.brand.NetscapeNavigator.is() ){
-        p_setBrand( EnumBrand.Netscape_Navigator, who.brand.NetscapeNavigator.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Netscape_Navigator, who.brand.NetscapeNavigator.NAVIGATOR_VERSION );
         return true;
     };
 };

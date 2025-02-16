@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Waterfox.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Waterfox/' );
+who.brand.Waterfox.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Waterfox/' );
 
 /** @return {boolean} */
 who.brand.Waterfox.is = function(){
@@ -19,7 +19,7 @@ who.brand.Waterfox.is = function(){
 /** @return {boolean|void} */
 who.brand.Waterfox.detect = function(){
     if( who.brand.Waterfox.is() ){
-        p_setBrand( EnumBrand.Waterfox, who.brand.Waterfox.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Waterfox, who.brand.Waterfox.NAVIGATOR_VERSION );
         return true;
     };
 };

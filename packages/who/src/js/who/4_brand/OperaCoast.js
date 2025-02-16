@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.OperaCoast.NAVIGATOR_VERSION = p_getVersionString( p_strAppVersion, 'Coast/' );
+who.brand.OperaCoast.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strAppVersion, 'Coast/' );
 
 /** @return {boolean} */
 who.brand.OperaCoast.is = function(){
@@ -19,7 +19,7 @@ who.brand.OperaCoast.is = function(){
 /** @return {boolean|void} */
 who.brand.OperaCoast.detect = function(){
     if( who.brand.OperaCoast.is() ){
-        p_setBrand( EnumBrand.Opera_Coast, who.brand.OperaCoast.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Opera_Coast, who.brand.OperaCoast.NAVIGATOR_VERSION );
         return true;
     };
 };

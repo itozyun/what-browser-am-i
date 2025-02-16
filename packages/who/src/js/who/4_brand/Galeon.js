@@ -9,7 +9,7 @@ goog.require( 'who.base' );
  */
 
 /** @const {string} */
-who.brand.Galeon.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Galeon/' );
+who.brand.Galeon.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Galeon/' );
 
 /** @return {boolean} */
 who.brand.Galeon.is = function(){
@@ -19,7 +19,7 @@ who.brand.Galeon.is = function(){
 /** @return {boolean|void} */
 who.brand.Galeon.detect = function(){
     if( who.brand.Galeon.is() ){
-        p_setBrand( EnumBrand.Galeon, who.brand.Galeon.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Galeon, who.brand.Galeon.NAVIGATOR_VERSION );
         return true;
     };
 };

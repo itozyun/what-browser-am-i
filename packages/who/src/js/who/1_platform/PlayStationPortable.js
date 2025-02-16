@@ -12,18 +12,18 @@ goog.require( 'who.base' );
 
 /** @return {boolean} */
 who.platform.PlayStationPortable.is = function(){
-    return p_strPlatform === 'PSP';
+    return who.env.strPlatform === 'PSP';
 };
 
 /** @return {boolean|void} */
 who.platform.PlayStationPortable.detect = function(){
     if( who.platform.PlayStationPortable.is() ){
-        p_setPlatform(
-            EnumPlatform.PlayStation$RPortable,
-            p_getVersionString( p_strUserAgent, '(PlayStation Portable); ' )
+        who.base.setPlatform(
+            iAm.EnumPlatform.PlayStation$RPortable,
+            who.util.getVersionString( who.env.strUserAgent, '(PlayStation Portable); ' )
         );
-        p_setDevice( EnumDevice.PlayStationPortable, undefined, EnumDeviceType.GAME );
-        p_setEngine( EnumEngine.NetFront, 3.2 ); // DHTML ブラウザではないので 3.3 未満、リリース時期から推測
+        who.base.setDevice( iAm.EnumDevice.PlayStationPortable, undefined, iAm.EnumDeviceType.GAME );
+        who.base.setEngine( iAm.EnumEngine.NetFront, 3.2 ); // DHTML ブラウザではないので 3.3 未満、リリース時期から推測
         return true;
     };
 };

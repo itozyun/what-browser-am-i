@@ -15,13 +15,13 @@ goog.require( 'who.base' );
 
 /**
  * @const {string} */
-who.brand.FirefoxFocus.NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'Focus/' ) || p_getVersionString( p_strUserAgent, 'Klar/' );
+who.brand.FirefoxFocus.NAVIGATOR_VERSION = who.util.getVersionString( who.env.strUserAgent, 'Focus/' ) || who.util.getVersionString( who.env.strUserAgent, 'Klar/' );
 
 /**
  * @package
  * @return {boolean} */
 who.brand.FirefoxFocus.is = function(){
-    var versionFxiOS = p_firefoxOnIOS.NAVIGATOR_VERSION;
+    var versionFxiOS = who.env.firefoxOnIOS.NAVIGATOR_VERSION;
 
     return !!who.brand.FirefoxFocus.NAVIGATOR_VERSION ||
         // https://apps.apple.com/jp/app/firefox-focus-e3-83-97-e3-83-a9-e3-82-a4-e3-83-90-e3/id1055677337
@@ -29,13 +29,13 @@ who.brand.FirefoxFocus.is = function(){
         // https://web.archive.org/web/20230203011812/https://en.wikipedia.org/wiki/Firefox_for_iOS#cite_note-10
         // Focus   : FxiOS が 8.x にも拘わらず、iOS のバージョンが 11 以上、を使って判定
         // Firefox : FxiOS が 9.x 以降が、iSO 11+ 対応を持って判定
-           !!versionFxiOS && parseFloat( versionFxiOS ) < 9 && p_engineName === EnumEngine.iOS_WebView && 11 <= parseFloat( p_platformVersion );
+           !!versionFxiOS && parseFloat( versionFxiOS ) < 9 && who.result.engineName === iAm.EnumEngine.iOS_WebView && 11 <= parseFloat( who.result.platformVersion );
 };
 
 /** @return {boolean|void} */
 who.brand.FirefoxFocus.detect = function(){
     if( who.brand.FirefoxFocus.is() ){
-        p_setBrand( EnumBrand.Firefox_Focus, who.brand.FirefoxFocus.NAVIGATOR_VERSION || p_firefoxOnIOS.NAVIGATOR_VERSION );
+        who.base.setBrand( iAm.EnumBrand.Firefox_Focus, who.brand.FirefoxFocus.NAVIGATOR_VERSION || who.env.firefoxOnIOS.NAVIGATOR_VERSION );
         return true;
     };
 };

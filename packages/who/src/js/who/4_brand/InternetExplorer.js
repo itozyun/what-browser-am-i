@@ -11,13 +11,13 @@ goog.require( 'who.base' );
  * @package
  * @return {boolean} */
 who.brand.InternetExplorer.is = function(){
-    return p_engineName === EnumEngine.Trident || p_engineName === EnumEngine.Trident_Mobile || p_engineName === EnumEngine.Tasman;
+    return who.result.engineName === iAm.EnumEngine.Trident || who.result.engineName === iAm.EnumEngine.Trident_Mobile || who.result.engineName === iAm.EnumEngine.Tasman;
 };
 
 /** @return {boolean|void} */
 who.brand.InternetExplorer.detect = function(){
     if( who.brand.InternetExplorer.is() ){
-        p_setBrand( EnumBrand.Internet_Explorer, p_engineVersion );
+        who.base.setBrand( iAm.EnumBrand.Internet_Explorer, who.result.engineVersion );
         return true;
     };
 };

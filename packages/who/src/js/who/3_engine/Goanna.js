@@ -14,7 +14,7 @@ goog.require( 'who.base' );
  * https://developers.whatismybrowser.com/useragents/parse/987005-pale-moon-windows-goanna
  * TODO Goanna/20161201 になっている時がある…
  * @const {string} */
-who.engine.Goanna.NAVIGATOR_VERSION = p_isGeckoFamily ? p_getVersionString( p_strUserAgent, 'Goanna/' ) : '';
+who.engine.Goanna.NAVIGATOR_VERSION = who.env.isGeckoFamily ? who.util.getVersionString( who.env.strUserAgent, 'Goanna/' ) : '';
 
 /** @return {boolean} */
 who.engine.Goanna.is = function(){
@@ -24,7 +24,7 @@ who.engine.Goanna.is = function(){
 /** @return {boolean|void} */
 who.engine.Goanna.detect = function(){
     if( who.engine.Goanna.is() ){
-        p_setEngine( EnumEngine.Goanna, who.engine.Goanna.NAVIGATOR_VERSION );
+        who.base.setEngine( iAm.EnumEngine.Goanna, who.engine.Goanna.NAVIGATOR_VERSION );
         return true;
     };
 };
