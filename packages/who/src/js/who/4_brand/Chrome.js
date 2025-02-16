@@ -30,15 +30,15 @@ who.brand.Chrome.is = function(){
  * @return {boolean}
  */
 function _isChromeFamily(){
-    return p_engineName === ENGINE.Chromium || p_engineName === ENGINE.Chromium_Mobile ||
-           p_engineName === ENGINE.Android_WebView && p_conpareVersion( 5, p_engineVersion ) < 0;
+    return p_engineName === EnumEngine.Chromium || p_engineName === EnumEngine.Chromium_Mobile ||
+           p_engineName === EnumEngine.Android_WebView && p_conpareVersion( 5, p_engineVersion ) < 0;
 };
 
 /** @return {boolean|void} */
 who.brand.Chrome.detect = function(){
     if( who.brand.Chrome.is() ){
         p_setBrand(
-            BRAND.Chrome,
+            EnumBrand.Chrome,
             _isChromeFamily()
                 ? p_engineVersion
                 : who.brand.Chrome.NAVIGATOR_VERSION || who.brand.Chrome.CRIOS_NAVIGATOR_VERSION

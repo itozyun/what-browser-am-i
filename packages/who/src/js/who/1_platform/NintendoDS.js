@@ -19,9 +19,9 @@ who.platform.NintendoDS.is = function(){
  */
 who.platform.NintendoDS.detect = function(){
     if( who.platform.NintendoDS.is() ){
-        p_setPlatform( PLATFORM.NINTENDO_DS$TM );
-        p_setDevice( DEVICE.NintendoDS, undefined, DEVICE_TYPE.GAME );
-        p_setEngine( ENGINE.Presto_Mobile, 8.5 );
+        p_setPlatform( EnumPlatform.NINTENDO_DS$TM );
+        p_setDevice( EnumDevice.NintendoDS, undefined, EnumDeviceType.GAME );
+        p_setEngine( EnumEngine.Presto_Mobile, 8.5 );
         return true;
     };
 };

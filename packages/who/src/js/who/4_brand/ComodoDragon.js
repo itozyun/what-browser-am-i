@@ -19,7 +19,7 @@ who.brand.ComodoDragon.is = function(){
 /** @return {boolean|void} */
 who.brand.ComodoDragon.detect = function(){
     if( who.brand.ComodoDragon.is() ){
-        p_setBrand( BRAND.Comodo_Dragon, who.brand.ComodoDragon.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Comodo_Dragon, who.brand.ComodoDragon.NAVIGATOR_VERSION );
         return true;
     };
 };

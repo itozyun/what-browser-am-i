@@ -19,7 +19,7 @@ who.brand.Basilisk.is = function(){
 /** @return {boolean|void} */
 who.brand.Basilisk.detect = function(){
     if( who.brand.Basilisk.is() ){
-        p_setBrand( BRAND.Basilisk, who.brand.Basilisk.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Basilisk, who.brand.Basilisk.NAVIGATOR_VERSION );
         return true;
     };
 };

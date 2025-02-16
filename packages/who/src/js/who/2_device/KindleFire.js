@@ -128,7 +128,7 @@ who.device.KindleFire.is = function(){
 /** @return {boolean|void} */
 who.device.KindleFire.detect = function(){
     if( who.device.KindleFire.is() ){
-        p_setDevice( DEVICE.KindleFire, fireOSVersionAndKindleFireGeneration[ 1 ], DEVICE_TYPE.TABLET );
+        p_setDevice( EnumDevice.KindleFire, fireOSVersionAndKindleFireGeneration[ 1 ], EnumDeviceType.TABLET );
         return true;
     };
 };

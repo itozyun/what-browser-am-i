@@ -19,7 +19,7 @@ who.brand.GNUzilla.is = function(){
 /** @return {boolean|void} */
 who.brand.GNUzilla.detect = function(){
     if( who.brand.GNUzilla.is() ){
-        p_setBrand( BRAND.GNUzilla, who.brand.GNUzilla.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.GNUzilla, who.brand.GNUzilla.NAVIGATOR_VERSION );
         return true;
     };
 };

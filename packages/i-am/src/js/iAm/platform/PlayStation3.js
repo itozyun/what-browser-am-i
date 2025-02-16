@@ -1,6 +1,6 @@
 goog.provide( 'iAm.PlayStation3' );
 
-goog.require( 'who.PLATFORM' );
+goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
 goog.require( 'iAm._platformVersion.Gt' );
 goog.require( 'iAm._platformVersion.Gte' );
@@ -11,7 +11,7 @@ goog.require( 'iAm._platformVersion.Lte' );
  * @return {boolean}
  */
 iAm.PlayStation3 = function(){
-    return iAm._platformIs( who.PLATFORM.PlayStation$R3 );
+    return iAm._platformIs( iAm.EnumPlatform.PlayStation$R3 );
 };
 
 /**

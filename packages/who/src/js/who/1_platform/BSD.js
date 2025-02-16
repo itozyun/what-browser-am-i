@@ -33,13 +33,13 @@ who.platform.BSD.is = function(){
 /** @return {boolean|void} */
 who.platform.BSD.detect = function(){
     if( _isFreeBSD ){
-        p_setPlatform( PLATFORM.FreeBSD );
+        p_setPlatform( EnumPlatform.FreeBSD );
         return true;
     } else if( _isOpenBSD ){
-        p_setPlatform( PLATFORM.OpenBSD );
+        p_setPlatform( EnumPlatform.OpenBSD );
         return true;
     } else if( _isNetBSD ){
-        p_setPlatform( PLATFORM.NetBSD );
+        p_setPlatform( EnumPlatform.NetBSD );
         return true;
     };
 };

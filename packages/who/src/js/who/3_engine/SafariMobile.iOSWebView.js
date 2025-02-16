@@ -18,7 +18,7 @@ goog.require( 'who.engine.UCWEB.is' );
  * @return {boolean}
  */
 function _isIOS(){
-    return p_platformName === PLATFORM.iOS;
+    return p_platformName === EnumPlatform.iOS;
 };
 
 /**
@@ -33,7 +33,7 @@ who.engine.SafariMobile.is = function(){
             // _isWebView_iOS(options)
             // iPhone 13 で fullscreenEnabled の判定が出来ない.
             // https://caniuse.com/#feat=fullscreen によると、iOS は12からなので、fullscreenEnabled による Safari/WebView の判定は 11 迄は動いたと仮定する
-            ( ( p_deviceName === DEVICE.iPad || p_platformVersion < 12 ) && !!p_inObject( 'webkitFullscreenEnabled', document ) ) ||
+            ( ( p_deviceName === EnumDevice.iPad || p_platformVersion < 12 ) && !!p_inObject( 'webkitFullscreenEnabled', document ) ) ||
             ( 11 <= p_platformVersion && p_platformVersion < 13 && !!navigator.mediaDevices ) // 12迄は mediaDevices は Safari だけだった。
         );
 };
@@ -41,7 +41,7 @@ who.engine.SafariMobile.is = function(){
 /** @return {boolean|void} */
 who.engine.SafariMobile.detect = function(){
     if( who.engine.SafariMobile.is() ){
-        p_setEngine( ENGINE.Safari_Mobile, p_platformVersion );
+        p_setEngine( EnumEngine.Safari_Mobile, p_platformVersion );
         return true;
     };
 };
@@ -91,7 +91,7 @@ who.engine.iOSWebView.is = function(){
 /** @return {boolean|void} */
 who.engine.iOSWebView.detect = function(){
     if( who.engine.iOSWebView.is() ){
-        p_setEngine( ENGINE.iOS_WebView, p_platformVersion );
+        p_setEngine( EnumEngine.iOS_WebView, p_platformVersion );
         return true;
     };
 };

@@ -19,7 +19,7 @@ who.brand.Konqueror.is = function(){
 /** @return {boolean|void} */
 who.brand.Konqueror.detect = function(){
     if( who.brand.Konqueror.is() ){
-        p_setBrand( BRAND.Konqueror, who.brand.Konqueror.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Konqueror, who.brand.Konqueror.NAVIGATOR_VERSION );
         return true;
     };
 };

@@ -46,21 +46,21 @@ who.platform.PlayStation.is = function(){
 who.platform.PlayStation.detect = function(){
     if( _isPlayStation3 ){
         p_setPlatform(
-            PLATFORM.PlayStation$R3,
+            EnumPlatform.PlayStation$R3,
             p_getVersionString( p_strUserAgent, 'PLAYSTATION 3; ' ) || p_getVersionString( p_strUserAgent, 'PLAYSTATION 3 ' )
         );
-        p_setDevice( DEVICE.PlayStation, 3, DEVICE_TYPE.GAME );
+        p_setDevice( EnumDevice.PlayStation, 3, EnumDeviceType.GAME );
         if( p_conpareVersion( p_platformVersion, '4.10' ) < 0 ){
-            p_setEngine( ENGINE.Sony, p_platformVersion );
+            p_setEngine( EnumEngine.Sony, p_platformVersion );
         };
         return true;
     } else if( _isPlayStation4 ){
-        p_setPlatform( PLATFORM.PlayStation$R4, p_getVersionString( p_strAppVersion, p_strPlatform + '/' ) );
-        p_setDevice( DEVICE.PlayStation, 4, DEVICE_TYPE.GAME );
+        p_setPlatform( EnumPlatform.PlayStation$R4, p_getVersionString( p_strAppVersion, p_strPlatform + '/' ) );
+        p_setDevice( EnumDevice.PlayStation, 4, EnumDeviceType.GAME );
         return true;
     } else if( _isPlayStation5 ){
-        p_setPlatform( PLATFORM.PlayStation$R5, p_getVersionString( p_strAppVersion, p_strPlatform + '/' ) );
-        p_setDevice( DEVICE.PlayStation, 5, DEVICE_TYPE.GAME );
+        p_setPlatform( EnumPlatform.PlayStation$R5, p_getVersionString( p_strAppVersion, p_strPlatform + '/' ) );
+        p_setDevice( EnumDevice.PlayStation, 5, EnumDeviceType.GAME );
         return true;
     };
 };

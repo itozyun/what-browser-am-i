@@ -19,7 +19,7 @@ who.brand.LINE.is = function(){
 /** @return {boolean|void} */
 who.brand.LINE.detect = function(){
     if( who.brand.LINE.is() ){
-        p_setBrand( BRAND.LINE, who.brand.LINE.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.LINE, who.brand.LINE.NAVIGATOR_VERSION );
         return true;
     };
 };

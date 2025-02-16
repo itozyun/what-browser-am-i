@@ -23,9 +23,9 @@ who.platform.WindowsCE.is = function(){
 who.platform.WindowsCE.detect = function(){
     if( who.platform.WindowsCE.is() ){
         p_setPlatform(
-            PLATFORM.Windows_CE,
+            EnumPlatform.Windows_CE,
             who.engine.Trident.IMPLEMENT_VERSION < 5 ? 3.0 : 4.1,
-            DEVICE_TYPE.PDA
+            EnumDeviceType.PDA
         );
         return true;
     };

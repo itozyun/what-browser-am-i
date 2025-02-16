@@ -19,8 +19,8 @@ who.engine.Servo.is = function(){
 /** @return {boolean|void} */
 who.engine.Servo.detect = function(){
     if( who.engine.Servo.is() ){
-        p_setEngine( ENGINE.Servo, who.engine.Servo.NAVIGATOR_VERSION );
-        p_setBrand( BRAND.Servo, p_engineVersion );
+        p_setEngine( EnumEngine.Servo, who.engine.Servo.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Servo, p_engineVersion );
         return true;
     };
 };

@@ -23,7 +23,7 @@ who.brand.Iron.is = function(){
 who.brand.Iron.detect = function(){
     if( who.brand.Iron.is() ){
         p_setBrand(
-            BRAND.Iron,
+            EnumBrand.Iron,
             who.brand.Iron.NAVIGATOR_VERSION || who.brand.Chrome.NAVIGATOR_VERSION
         );
         return true;

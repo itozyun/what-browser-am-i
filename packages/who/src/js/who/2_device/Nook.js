@@ -78,7 +78,7 @@ who.device.Nook.is = function(){
 /** @return {boolean|void} */
 who.device.Nook.detect = function(){
     if( who.device.Nook.is() ){
-        p_setDevice( DEVICE.Nook, undefined, DEVICE_TYPE.EINK_READER );
+        p_setDevice( EnumDevice.Nook, undefined, EnumDeviceType.EINK_READER );
         return true;
     };
 };

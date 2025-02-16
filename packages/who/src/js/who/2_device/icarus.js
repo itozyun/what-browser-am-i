@@ -35,7 +35,7 @@ who.device.icarus.is = function(){
 /** @return {boolean|void} */
 who.device.icarus.detect = function(){
     if( who.device.icarus.is() ){
-        p_setDevice( DEVICE.icarus, undefined, DEVICE_TYPE.EINK_READER );
+        p_setDevice( EnumDevice.icarus, undefined, EnumDeviceType.EINK_READER );
         return true;
     };
 };

@@ -19,7 +19,7 @@ who.brand.QQ.is = function(){
 /** @return {boolean|void} */
 who.brand.QQ.detect = function(){
     if( who.brand.QQ.is() ){
-        p_setBrand( BRAND.QQ, who.brand.QQ.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.QQ, who.brand.QQ.NAVIGATOR_VERSION );
         return true;
     };
 };

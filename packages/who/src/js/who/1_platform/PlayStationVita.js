@@ -24,10 +24,10 @@ who.platform.PlayStationVita.is = function(){
 who.platform.PlayStationVita.detect = function(){
     if( who.platform.PlayStationVita.is() ){
         p_setPlatform(
-            PLATFORM.PlayStation$RVita,
+            EnumPlatform.PlayStation$RVita,
             p_getVersionString( p_strAppVersion, p_strPlatform + ' ' )
         );
-        p_setDevice( DEVICE.PlayStationVita, undefined, DEVICE_TYPE.GAME );
+        p_setDevice( EnumDevice.PlayStationVita, undefined, EnumDeviceType.GAME );
         return true;
     };
 };

@@ -19,7 +19,7 @@ who.brand.Rockmelt.is = function(){
 /** @return {boolean|void} */
 who.brand.Rockmelt.detect = function(){
     if( who.brand.Rockmelt.is() ){
-        p_setBrand( BRAND.Rockmelt, who.brand.Rockmelt.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Rockmelt, who.brand.Rockmelt.NAVIGATOR_VERSION );
         return true;
     };
 };

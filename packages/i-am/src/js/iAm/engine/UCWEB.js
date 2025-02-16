@@ -4,7 +4,7 @@ goog.provide( 'iAm.UCWEB.Gte' );
 goog.provide( 'iAm.UCWEB.Lt' );
 goog.provide( 'iAm.UCWEB.Lte' );
 
-goog.require( 'who.ENGINE' );
+goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
 goog.require( 'iAm._engineVersion.Gt' );
 goog.require( 'iAm._engineVersion.Gte' );
@@ -15,7 +15,7 @@ goog.require( 'iAm._engineVersion.Lte' );
  * @return {boolean}
  */
 iAm.UCWEB = function(){
-    return iAm._engineIs( who.ENGINE.UCWEB );
+    return iAm._engineIs( iAm.EnumEngine.UCWEB );
 };
 
 /*----------------------------------------------------------------------------//

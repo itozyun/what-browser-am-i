@@ -19,7 +19,7 @@ who.brand.Flock.is = function(){
 /** @return {boolean|void} */
 who.brand.Flock.detect = function(){
     if( who.brand.Flock.is() ){
-        p_setBrand( BRAND.Flock, who.brand.Flock.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Flock, who.brand.Flock.NAVIGATOR_VERSION );
         return true;
     };
 };

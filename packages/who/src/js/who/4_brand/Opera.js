@@ -23,15 +23,15 @@ who.brand.Opera.OPR_NAVIGATOR_VERSION = p_getVersionString( p_strUserAgent, 'OPR
 who.brand.Opera.is = function(){
     return !!who.brand.Opera.NAVIGATOR_VERSION ||
            !!who.brand.Opera.OPR_NAVIGATOR_VERSION ||
-           p_engineName === ENGINE.Presto || p_engineName === ENGINE.Presto_Mobile;
+           p_engineName === EnumEngine.Presto || p_engineName === EnumEngine.Presto_Mobile;
 };
 
 /** @return {boolean|void} */
 who.brand.Opera.detect = function(){
     if( who.brand.Opera.is() ){
         p_setBrand(
-            BRAND.Opera,
-            p_engineName === ENGINE.Presto || p_engineName === ENGINE.Presto_Mobile
+            EnumBrand.Opera,
+            p_engineName === EnumEngine.Presto || p_engineName === EnumEngine.Presto_Mobile
                 ? p_engineVersion
                 : who.brand.Opera.NAVIGATOR_VERSION || who.brand.Opera.OPR_NAVIGATOR_VERSION
         );

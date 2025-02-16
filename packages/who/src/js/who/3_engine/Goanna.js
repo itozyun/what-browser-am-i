@@ -24,7 +24,7 @@ who.engine.Goanna.is = function(){
 /** @return {boolean|void} */
 who.engine.Goanna.detect = function(){
     if( who.engine.Goanna.is() ){
-        p_setEngine( ENGINE.Goanna, who.engine.Goanna.NAVIGATOR_VERSION );
+        p_setEngine( EnumEngine.Goanna, who.engine.Goanna.NAVIGATOR_VERSION );
         return true;
     };
 };

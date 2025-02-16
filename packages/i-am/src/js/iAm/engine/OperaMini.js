@@ -4,7 +4,7 @@ goog.provide( 'iAm.OperaMini.Gte' );
 goog.provide( 'iAm.OperaMini.Lt' );
 goog.provide( 'iAm.OperaMini.Lte' );
 
-goog.require( 'who.ENGINE' );
+goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
 goog.require( 'iAm._engineVersion.Gt' );
 goog.require( 'iAm._engineVersion.Gte' );
@@ -15,7 +15,7 @@ goog.require( 'iAm._engineVersion.Lte' );
  * @return {boolean}
  */
 iAm.OperaMini = function(){
-    return iAm._engineIs( who.ENGINE.OperaMini );
+    return iAm._engineIs( iAm.EnumEngine.OperaMini );
 };
 
 /*----------------------------------------------------------------------------//

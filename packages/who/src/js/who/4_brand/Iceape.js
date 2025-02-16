@@ -19,7 +19,7 @@ who.brand.Iceape.is = function(){
 /** @return {boolean|void} */
 who.brand.Iceape.detect = function(){
     if( who.brand.Iceape.is() ){
-        p_setBrand( BRAND.Iceape, who.brand.Iceape.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Iceape, who.brand.Iceape.NAVIGATOR_VERSION );
         return true;
     };
 };

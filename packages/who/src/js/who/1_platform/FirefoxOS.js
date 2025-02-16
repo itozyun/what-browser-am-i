@@ -19,16 +19,16 @@ who.platform.FirefoxOS.is = function(){
 who.platform.FirefoxOS.detect = function(){
     if( who.platform.FirefoxOS.is() ){
         p_setPlatform(
-            PLATFORM.FirefoxOS,
+            EnumPlatform.FirefoxOS,
             _geckoVersionToFirefoxOSVersion( who.engine.Gecko.IMPLEMENT_VERSION ),
         // https://developer.mozilla.org/ja/docs/Web/HTTP/Gecko_user_agent_string_reference#Firefox_OS
             p_hasSubstring( p_strUserAgent, 'Mobile' )
-                ? DEVICE_TYPE.PHONE
+                ? EnumDeviceType.PHONE
           : p_hasSubstring( p_strUserAgent, 'Tablet' )
-                ? DEVICE_TYPE.TABLET
+                ? EnumDeviceType.TABLET
           : p_hasSubstring( p_strUserAgent, 'TV' )
-                ? DEVICE_TYPE.TV
-                : DEVICE_TYPE.PHONE
+                ? EnumDeviceType.TV
+                : EnumDeviceType.PHONE
         );
         // isFirefoxOS = window.pkcs11        /* 1.1 */
         //            || window.SpecialPowers /* 1.4, 2.0, 2.1, 2.2 */

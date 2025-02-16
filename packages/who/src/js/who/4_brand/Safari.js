@@ -13,14 +13,14 @@ who.brand.Safari.NAVIGATOR_VERSION = p_Something.NAVIGATOR_VERSION;
 
 /** @return {boolean} */
 who.brand.Safari.is = function(){
-    return ( p_engineName === ENGINE.WebKit || p_engineName === ENGINE.Safari_Mobile || p_engineName === ENGINE.iOS_WebView ) &&
+    return ( p_engineName === EnumEngine.WebKit || p_engineName === EnumEngine.Safari_Mobile || p_engineName === EnumEngine.iOS_WebView ) &&
            p_hasSubstring( p_strUserAgent, 'Safari/' ) || !!p_Something.NAVIGATOR_VERSION;
 };
 
 /** @return {boolean|void} */
 who.brand.Safari.detect = function(){
     if( who.brand.Safari.is() ){
-        p_setBrand( BRAND.Safari, who.brand.Safari.NAVIGATOR_VERSION || _webKitVersionToSafariVersion( p_numberWebKit ) );
+        p_setBrand( EnumBrand.Safari, who.brand.Safari.NAVIGATOR_VERSION || _webKitVersionToSafariVersion( p_numberWebKit ) );
         
         return true;
     };

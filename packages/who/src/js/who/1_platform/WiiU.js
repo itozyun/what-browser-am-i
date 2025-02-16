@@ -28,21 +28,21 @@ who.platform.WiiU.detect = function(){
         var versionNintendoBrowser = who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION;
 
         if( versionNintendoBrowser ){
-            p_setPlatform( PLATFORM.WiiU$TM, versionNintendoBrowser );
+            p_setPlatform( EnumPlatform.WiiU$TM, versionNintendoBrowser );
         } else {
         // https://blog.gutyan.jp/entry/2015/01/31/NintendoBrowser
         //   > Uブラウザには New3DS 以上のUA切替機能がある。
         //   > platform 始め UA 以外の navigator のプロパティはいずれの場合も変更されない。
-            p_setPlatform( PLATFORM.WiiU$TM, hasWebkitCancelAnimationFrame ? 4 : 2.1 );
+            p_setPlatform( EnumPlatform.WiiU$TM, hasWebkitCancelAnimationFrame ? 4 : 2.1 );
             p_isPcSiteRequested = p_hasSubstring( p_strAppVersion, 'Macintosh;' ) ||
                                          ( p_hasSubstring( p_strAppVersion, 'Windows NT' ) && !p_hasSubstring( p_strAppVersion, 'Touch' ) );
         };
-        p_setDevice( DEVICE.WiiU, undefined, DEVICE_TYPE.GAME );
+        p_setDevice( EnumDevice.WiiU, undefined, EnumDeviceType.GAME );
         p_setEngine(
-            ENGINE.WebKit,
+            EnumEngine.WebKit,
             p_getVersionString( p_strAppVersion, 'AppleWebKit/' ) || ( hasWebkitCancelAnimationFrame ? 536 : 534 )
         );
-        p_setBrand( BRAND.NetFront$R_Browser_NX, 3 );
+        p_setBrand( EnumBrand.NetFront$R_Browser_NX, 3 );
         return true;
     };
 };

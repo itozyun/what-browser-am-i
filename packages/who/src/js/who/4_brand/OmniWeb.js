@@ -19,7 +19,7 @@ who.brand.OmniWeb.is = function(){
 /** @return {boolean|void} */
 who.brand.OmniWeb.detect = function(){
     if( who.brand.OmniWeb.is() ){
-        p_setBrand( BRAND.OmniWeb, who.brand.OmniWeb.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.OmniWeb, who.brand.OmniWeb.NAVIGATOR_VERSION );
         return true;
     };
 };

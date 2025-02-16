@@ -436,10 +436,10 @@ who.device.FireTV.is = function(){
 who.device.FireTV.detect = function(){
     if( who.device.FireTV.is() ){
         if( androidVersionWhenFirefoxOnFireOSRequestPcSite ){
-            p_setDevice( DEVICE.FireTV, undefined, DEVICE_TYPE.TV );
+            p_setDevice( EnumDevice.FireTV, undefined, EnumDeviceType.TV );
             p_isPcSiteRequested = true;
         } else {
-            p_setDevice( DEVICE.FireTV, fireOSVersionAndFireTVReleased && fireOSVersionAndFireTVReleased[ 1 ], DEVICE_TYPE.TV );
+            p_setDevice( EnumDevice.FireTV, fireOSVersionAndFireTVReleased && fireOSVersionAndFireTVReleased[ 1 ], EnumDeviceType.TV );
         };
         return true;
     };

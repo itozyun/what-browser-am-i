@@ -21,9 +21,9 @@ who.platform.Tizen.is = function(){
 /** @return {boolean|void} */
 who.platform.Tizen.detect = function(){
     if( who.platform.Tizen.is() ){
-        p_setPlatform( PLATFORM.Tizen, who.platform.Tizen.NAVIGATOR_VERSION, DEVICE_TYPE.PHONE ); // TODO deviceTypeIsTV = true;
-        p_setEngine( ENGINE.Samsung_Internet, who.engine.SamsungInternet.NAVIGATOR_VERSION );
-        p_setBrand( BRAND.Samsung_Internet, who.engine.SamsungInternet.NAVIGATOR_VERSION );
+        p_setPlatform( EnumPlatform.Tizen, who.platform.Tizen.NAVIGATOR_VERSION, EnumDeviceType.PHONE ); // TODO deviceTypeIsTV = true;
+        p_setEngine( EnumEngine.Samsung_Internet, who.engine.SamsungInternet.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Samsung_Internet, who.engine.SamsungInternet.NAVIGATOR_VERSION );
         return true;
     };
 };

@@ -1,6 +1,6 @@
 goog.provide( 'iAm.Linux' );
 
-goog.require( 'who.PLATFORM' );
+goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
 goog.require( 'iAm._platformVersion.Gt' );
 goog.require( 'iAm._platformVersion.Gte' );
@@ -11,7 +11,7 @@ goog.require( 'iAm._platformVersion.Lte' );
  * @return {boolean}
  */
 iAm.Linux = function(){
-    return iAm._platformIs( who.PLATFORM.Linux );
+    return iAm._platformIs( iAm.EnumPlatform.Linux );
 };
 
 /**

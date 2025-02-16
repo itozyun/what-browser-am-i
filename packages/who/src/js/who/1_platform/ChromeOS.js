@@ -22,7 +22,7 @@ who.platform.ChromeOS.is = function(){
 /** @return {boolean|void} */
 who.platform.ChromeOS.detect = function(){
     if( who.platform.ChromeOS.is() ){
-        p_setPlatform( PLATFORM.ChromeOS, _versionChromeOS, DEVICE_TYPE.PC );
+        p_setPlatform( EnumPlatform.ChromeOS, _versionChromeOS, EnumDeviceType.PC );
         return true;
     };
 };

@@ -19,11 +19,11 @@ who.platform.PlayStationPortable.is = function(){
 who.platform.PlayStationPortable.detect = function(){
     if( who.platform.PlayStationPortable.is() ){
         p_setPlatform(
-            PLATFORM.PlayStation$RPortable,
+            EnumPlatform.PlayStation$RPortable,
             p_getVersionString( p_strUserAgent, '(PlayStation Portable); ' )
         );
-        p_setDevice( DEVICE.PlayStationPortable, undefined, DEVICE_TYPE.GAME );
-        p_setEngine( ENGINE.NetFront, 3.2 ); // DHTML ブラウザではないので 3.3 未満、リリース時期から推測
+        p_setDevice( EnumDevice.PlayStationPortable, undefined, EnumDeviceType.GAME );
+        p_setEngine( EnumEngine.NetFront, 3.2 ); // DHTML ブラウザではないので 3.3 未満、リリース時期から推測
         return true;
     };
 };

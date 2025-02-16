@@ -15,7 +15,7 @@ who.platform.MeeGo.is = function(){
 /** @return {boolean|void} */
 who.platform.MeeGo.detect = function(){
     if( who.platform.MeeGo.is() ){
-        p_setPlatform( PLATFORM.MeeGo );
+        p_setPlatform( EnumPlatform.MeeGo );
         return true;
     };
 };

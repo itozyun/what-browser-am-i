@@ -37,7 +37,7 @@ who.device.SonyReader.is = function(){
 /** @return {boolean|void} */
 who.device.SonyReader.detect = function(){
     if( who.device.SonyReader.is() ){
-        p_setDevice( DEVICE.SonyReader, who.device.SonyReader.NAVIGATOR_VERSION, DEVICE_TYPE.EINK_READER );
+        p_setDevice( EnumDevice.SonyReader, who.device.SonyReader.NAVIGATOR_VERSION, EnumDeviceType.EINK_READER );
         return true;
     };
 };

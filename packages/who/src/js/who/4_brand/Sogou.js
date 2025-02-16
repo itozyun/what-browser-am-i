@@ -15,7 +15,7 @@ who.brand.Sogou.is = function(){
 /** @return {boolean|void} */
 who.brand.Sogou.detect = function(){
     if( who.brand.Sogou.is() ){
-        p_setBrand( BRAND.Sogou );
+        p_setBrand( EnumBrand.Sogou );
         return true;
     };
 };

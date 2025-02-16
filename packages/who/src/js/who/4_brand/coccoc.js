@@ -19,7 +19,7 @@ who.brand.coccoc.is = function(){
 /** @return {boolean|void} */
 who.brand.coccoc.detect = function(){
     if( who.brand.coccoc.is() ){
-        p_setBrand( BRAND.coccoc, who.brand.coccoc.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.coccoc, who.brand.coccoc.NAVIGATOR_VERSION );
         return true;
     };
 };

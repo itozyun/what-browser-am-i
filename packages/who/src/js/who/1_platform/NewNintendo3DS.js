@@ -23,8 +23,8 @@ who.platform.NewNintendo3DS.is = function(){
  */
 who.platform.NewNintendo3DS.detect = function(){
     if( who.platform.NewNintendo3DS.is() ){
-        p_setPlatform( PLATFORM.New_NINTENDO_3DS$TM, who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
-        p_setDevice( DEVICE.NewNintendo3DS, undefined, DEVICE_TYPE.GAME );
+        p_setPlatform( EnumPlatform.New_NINTENDO_3DS$TM, who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
+        p_setDevice( EnumDevice.NewNintendo3DS, undefined, EnumDeviceType.GAME );
         return true;
     };
 };

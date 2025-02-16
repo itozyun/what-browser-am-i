@@ -19,7 +19,7 @@ who.brand.IceDragon.is = function(){
 /** @return {boolean|void} */
 who.brand.IceDragon.detect = function(){
     if( who.brand.IceDragon.is() ){
-        p_setBrand( BRAND.IceDragon, who.brand.IceDragon.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.IceDragon, who.brand.IceDragon.NAVIGATOR_VERSION );
         return true;
     };
 };

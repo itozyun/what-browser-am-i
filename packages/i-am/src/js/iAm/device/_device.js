@@ -7,7 +7,7 @@ goog.provide( 'iAm._deviceVersion.Lte' );
 goog.require( 'iAm.DEFINE.ASSUME_DEVICE' );
 goog.require( 'iAm.DEFINE.ASSUME_MIN_DEVICE_VERSION' );
 goog.require( 'iAm.DEFINE.ASSUME_MAX_DEVICE_VERSION' );
-goog.require( 'who.INDEX' );
+goog.require( 'iAm.EnumIndex' );
 goog.require( 'who.conpare' );
 
 /**
@@ -19,7 +19,7 @@ iAm._deviceIs = function( deviceName ){
     if( iAm.DEFINE.ASSUME_DEVICE ){
         return iAm.DEFINE.ASSUME_DEVICE === deviceName;
     };
-    return ua[ who.INDEX.DEVICE ] === deviceName;
+    return ua[ iAm.EnumIndex.DEVICE ] === deviceName;
 };
 
 /**
@@ -38,7 +38,7 @@ iAm._deviceVersion.Gt = function( version ){
             return false;
         };
     };
-    return ua.conpare( ua[ who.INDEX.DEVICE_VERSION ], version ) === 1;
+    return ua.conpare( ua[ iAm.EnumIndex.DEVICE_VERSION ], version ) === 1;
 };
 
 /**
@@ -57,7 +57,7 @@ iAm._deviceVersion.Gte = function( version ){
             return false;
         };
     };
-    return 0 <= ua.conpare( ua[ who.INDEX.DEVICE_VERSION ], version );
+    return 0 <= ua.conpare( ua[ iAm.EnumIndex.DEVICE_VERSION ], version );
 };
 
 /**
@@ -76,7 +76,7 @@ iAm._deviceVersion.Lt = function( version ){
             return true;
         };
     };
-    return ua.conpare( ua[ who.INDEX.DEVICE_VERSION ], version ) === -1;
+    return ua.conpare( ua[ iAm.EnumIndex.DEVICE_VERSION ], version ) === -1;
 };
 
 /**
@@ -95,5 +95,5 @@ iAm._deviceVersion.Lte = function( version ){
             return true;
         };
     };
-    return 0 <= ua.conpare( ua[ who.INDEX.DEVICE_VERSION ], version );
+    return 0 <= ua.conpare( ua[ iAm.EnumIndex.DEVICE_VERSION ], version );
 };

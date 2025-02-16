@@ -23,7 +23,7 @@ who.brand.Facebook.is = function(){
 /** @return {boolean|void} */
 who.brand.Facebook.detect = function(){
     if( who.brand.Facebook.is() ){
-        p_setBrand( BRAND.Facebook, who.brand.Facebook.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Facebook, who.brand.Facebook.NAVIGATOR_VERSION );
         return true;
     };
 };

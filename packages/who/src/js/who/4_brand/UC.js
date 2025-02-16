@@ -19,7 +19,7 @@ who.brand.UC.is = function(){
 /** @return {boolean|void} */
 who.brand.UC.detect = function(){
     if( who.brand.UC.is() ){
-        p_setBrand( BRAND.UC, who.brand.UC.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.UC, who.brand.UC.NAVIGATOR_VERSION );
         return true;
     };
 };

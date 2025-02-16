@@ -22,9 +22,9 @@ who.platform.Mac.is = function(){
 who.platform.Mac.detect = function(){
     if( who.platform.Mac.is() ){
         p_setPlatform(
-            PLATFORM.Mac,
+            EnumPlatform.Mac,
             p_getAppleVersionString( p_strUserAgent, 'Mac OS X ' ),
-            DEVICE_TYPE.PC
+            EnumDeviceType.PC
         );
         return true;
     };

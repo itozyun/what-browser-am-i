@@ -4,7 +4,7 @@ goog.provide( 'iAm.SamsungInternet.Gte' );
 goog.provide( 'iAm.SamsungInternet.Lt' );
 goog.provide( 'iAm.SamsungInternet.Lte' );
 
-goog.require( 'who.ENGINE' );
+goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
 goog.require( 'iAm._engineVersion.Gt' );
 goog.require( 'iAm._engineVersion.Gte' );
@@ -15,7 +15,7 @@ goog.require( 'iAm._engineVersion.Lte' );
  * @return {boolean}
  */
 iAm.SamsungInternet = function(){
-    return iAm._engineIs( who.ENGINE.SamsungInternet );
+    return iAm._engineIs( iAm.EnumEngine.SamsungInternet );
 };
 
 /*----------------------------------------------------------------------------//

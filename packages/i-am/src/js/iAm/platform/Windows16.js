@@ -1,6 +1,6 @@
 goog.provide( 'iAm.Windows16' );
 
-goog.require( 'who.PLATFORM' );
+goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
 goog.require( 'iAm._platformVersion.Gt' );
 goog.require( 'iAm._platformVersion.Gte' );
@@ -11,7 +11,7 @@ goog.require( 'iAm._platformVersion.Lte' );
  * @return {boolean}
  */
 iAm.Windows16 = function(){
-    return iAm._platformIs( who.PLATFORM.Windows16 );
+    return iAm._platformIs( iAm.EnumPlatform.Windows16 );
 };
 
 /**

@@ -12,13 +12,13 @@ goog.require( 'who.base' );
  * @package
  * @return {boolean} */
 who.brand.SamsungInternet.is = function(){
-    return p_engineName === ENGINE.Samsung_Internet;
+    return p_engineName === EnumEngine.Samsung_Internet;
 };
 
 /** @return {boolean|void} */
 who.brand.SamsungInternet.detect = function(){
     if( who.brand.SamsungInternet.is() ){
-        p_setBrand( BRAND.Samsung_Internet, p_engineVersion );
+        p_setBrand( EnumBrand.Samsung_Internet, p_engineVersion );
         return true;
     };
 };

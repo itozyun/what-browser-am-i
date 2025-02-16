@@ -22,7 +22,7 @@ who.brand.NetscapeNavigator.is = function(){
 /** @return {boolean|void} */
 who.brand.NetscapeNavigator.detect = function(){
     if( who.brand.NetscapeNavigator.is() ){
-        p_setBrand( BRAND.Netscape_Navigator, who.brand.NetscapeNavigator.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Netscape_Navigator, who.brand.NetscapeNavigator.NAVIGATOR_VERSION );
         return true;
     };
 };

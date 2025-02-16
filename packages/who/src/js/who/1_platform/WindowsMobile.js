@@ -20,7 +20,7 @@ who.platform.WindowsMobile.is = function(){
 /** @return {boolean|void} */
 who.platform.WindowsMobile.detect = function(){
     if( who.platform.WindowsMobile.is() ){
-        p_setPlatform( PLATFORM.Windows_Mobile, 6.1, DEVICE_TYPE.PDA );
+        p_setPlatform( EnumPlatform.Windows_Mobile, 6.1, EnumDeviceType.PDA );
         return true;
     };
 };

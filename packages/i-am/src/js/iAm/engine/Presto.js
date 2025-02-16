@@ -14,7 +14,7 @@ goog.provide( 'iAm.PrestoMobile.Gte' );
 goog.provide( 'iAm.PrestoMobile.Lt' );
 goog.provide( 'iAm.PrestoMobile.Lte' );
 
-goog.require( 'who.ENGINE' );
+goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
 goog.require( 'iAm._engineVersion.Gt' );
 goog.require( 'iAm._engineVersion.Gte' );
@@ -29,7 +29,7 @@ goog.require( 'iAm._engineVersion.Lte' );
  * @return {boolean}
  */
 iAm.Presto = function(){
-    return iAm._engineIs( who.ENGINE.Presto );
+    return iAm._engineIs( iAm.EnumEngine.Presto );
 };
 
 /**
@@ -115,7 +115,7 @@ iAm.AnyPresto.Lte = function( version ){
  * @return {boolean}
  */
 iAm.PrestoMobile = function(){
-    return iAm._engineIs( who.ENGINE.Presto_Mobile );
+    return iAm._engineIs( iAm.EnumEngine.Presto_Mobile );
 };
 
 /**

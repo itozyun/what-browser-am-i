@@ -22,7 +22,7 @@ who.brand.Iris.is = function(){
 /** @return {boolean|void} */
 who.brand.Iris.detect = function(){
     if( who.brand.Iris.is() ){
-        p_setBrand( BRAND.Iris, who.brand.Iris.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Iris, who.brand.Iris.NAVIGATOR_VERSION );
         return true;
     };
 };

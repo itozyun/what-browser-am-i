@@ -18,8 +18,8 @@ who.platform.NintendoSwitch.is = function(){
  */
 who.platform.NintendoSwitch.detect = function(){
     if( who.platform.NintendoSwitch.is() ){
-        p_setPlatform( PLATFORM.NINTENDO_SWITCH$TM, who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
-        p_setDevice( DEVICE.NintendoSwitch, undefined, DEVICE_TYPE.GAME );
+        p_setPlatform( EnumPlatform.NINTENDO_SWITCH$TM, who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
+        p_setDevice( EnumDevice.NintendoSwitch, undefined, EnumDeviceType.GAME );
         return true;
     };
 };

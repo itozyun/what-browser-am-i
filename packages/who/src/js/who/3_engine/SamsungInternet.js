@@ -161,7 +161,7 @@ who.engine.SamsungInternet.is = function(){
 who.engine.SamsungInternet.detect = function(){
     if( who.engine.SamsungInternet.is() ){
         p_setEngine(
-            ENGINE.Samsung_Internet,
+            EnumEngine.Samsung_Internet,
             who.engine.SamsungInternet.NAVIGATOR_VERSION || who.engine.SamsungInternet.LT2_NAVIGATOR_VERSION
         );
         return true;

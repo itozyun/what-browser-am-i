@@ -18,7 +18,7 @@ goog.provide( 'iAm.ChromiumMobile.Lte' );
 goog.require( 'iAm.AndroidWebView' );
 goog.require( 'iAm.SamsungInternet' );
 goog.require( 'iAm.QtWebEngine' );
-goog.require( 'who.ENGINE' );
+goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
 goog.require( 'iAm._engineVersion.Gt' );
 goog.require( 'iAm._engineVersion.Gte' );
@@ -29,7 +29,7 @@ goog.require( 'iAm._engineVersion.Lte' );
  * @return {boolean}
  */
 iAm.Chromium = function(){
-    return iAm._engineIs( who.ENGINE.Chromium );
+    return iAm._engineIs( iAm.EnumEngine.Chromium );
 };
 
 /*----------------------------------------------------------------------------//
@@ -130,7 +130,7 @@ iAm.AnyChromium.Lte = function( version ){
  * @return {boolean}
  */
 iAm.ChromiumMobile = function(){
-    return iAm._engineIs( who.ENGINE.Chromium_Mobile );
+    return iAm._engineIs( iAm.EnumEngine.Chromium_Mobile );
 };
 
 /**

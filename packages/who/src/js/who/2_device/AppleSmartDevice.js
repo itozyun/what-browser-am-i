@@ -49,13 +49,13 @@ who.device.AppleSmartDevice.detect = function(){
 
             switch( puffinModel.substr( 0, 4 ) ){
                 case 'iPho' :
-                    p_setDevice( DEVICE.iPhone, p_getVersionString( puffinModel, 'iPhone' ) );
+                    p_setDevice( EnumDevice.iPhone, p_getVersionString( puffinModel, 'iPhone' ) );
                     break;
                 case 'iPad' :
-                    p_setDevice( DEVICE.iPad, p_getVersionString( puffinModel, 'iPad' ) );
+                    p_setDevice( EnumDevice.iPad, p_getVersionString( puffinModel, 'iPad' ) );
                     break;
                 case 'iPod' :
-                    p_setDevice( DEVICE.iPod, p_getVersionString( puffinModel, 'iPod' ) );
+                    p_setDevice( EnumDevice.iPod, p_getVersionString( puffinModel, 'iPod' ) );
                     break;
             };
         } else {
@@ -64,11 +64,11 @@ who.device.AppleSmartDevice.detect = function(){
             var is43Model  = p_screenWidth === p_screenHeight * 1.5 || p_screenWidth * 1.5 === p_screenHeight;
     
             if( isIPhone ){ // iPhone or iPhone Simulator
-                p_setDevice( DEVICE.iPhone, is43Model ? ( dpRatioIs1 ? '1~3' : '4~5' ) : '6~' );
+                p_setDevice( EnumDevice.iPhone, is43Model ? ( dpRatioIs1 ? '1~3' : '4~5' ) : '6~' );
             } else if( isIPad || isIPadOSPcSiteRequested ){ // iPad or iPad Simulator
-                p_setDevice( DEVICE.iPad, dpRatioIs1 ? '~2' : '3~' );
+                p_setDevice( EnumDevice.iPad, dpRatioIs1 ? '~2' : '3~' );
             } else if( isIPod ){
-                p_setDevice( DEVICE.iPod, is43Model ? ( dpRatioIs1 ? '~3' : 4 ) : '5~' );
+                p_setDevice( EnumDevice.iPod, is43Model ? ( dpRatioIs1 ? '~3' : 4 ) : '5~' );
             };
         };
         return true;

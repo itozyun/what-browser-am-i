@@ -16,7 +16,7 @@ goog.provide( 'iAm.GeckoMobile.Lt' );
 goog.provide( 'iAm.GeckoMobile.Lte' );
 
 goog.require( 'iAm.Goanne' );
-goog.require( 'who.ENGINE' );
+goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
 goog.require( 'iAm._engineVersion.Gt' );
 goog.require( 'iAm._engineVersion.Gte' );
@@ -27,7 +27,7 @@ goog.require( 'iAm._engineVersion.Lte' );
  * @return {boolean}
  */
 iAm.Gecko = function(){
-    return iAm._engineIs( who.ENGINE.Gecko );
+    return iAm._engineIs( iAm.EnumEngine.Gecko );
 };
 
 /*----------------------------------------------------------------------------//
@@ -128,7 +128,7 @@ iAm.AnyGecko.Lte = function( version ){
  * @return {boolean}
  */
 iAm.GeckoMobile = function(){
-    return iAm._engineIs( who.ENGINE.Fennec );
+    return iAm._engineIs( iAm.EnumEngine.Fennec );
 };
 
 /**

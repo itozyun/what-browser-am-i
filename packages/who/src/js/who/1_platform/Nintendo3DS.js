@@ -27,10 +27,10 @@ who.platform.Nintendo3DS.is = function(){
  */
 who.platform.Nintendo3DS.detect = function(){
     if( who.platform.Nintendo3DS.is() ){
-        p_setPlatform( PLATFORM.NINTENDO_3DS$TM, who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
-        p_setDevice( DEVICE.Nintendo3DS, undefined, DEVICE_TYPE.GAME );
-        p_setEngine( ENGINE.WebKit, p_numberWebKit || 535 );
-        p_setBrand( BRAND.NetFront$R_Browser_NX, who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
+        p_setPlatform( EnumPlatform.NINTENDO_3DS$TM, who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
+        p_setDevice( EnumDevice.Nintendo3DS, undefined, EnumDeviceType.GAME );
+        p_setEngine( EnumEngine.WebKit, p_numberWebKit || 535 );
+        p_setBrand( EnumBrand.NetFront$R_Browser_NX, who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
         return true;
     };
 };

@@ -19,7 +19,7 @@ who.brand.Yandex.is = function(){
 /** @return {boolean|void} */
 who.brand.Yandex.detect = function(){
     if( who.brand.Yandex.is() ){
-        p_setBrand( BRAND.Yandex, who.brand.Yandex.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Yandex, who.brand.Yandex.NAVIGATOR_VERSION );
         return true;
     };
 };

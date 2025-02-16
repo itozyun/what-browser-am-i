@@ -21,7 +21,7 @@ who.brand.QupZilla.is = function(){
 /** @return {boolean|void} */
 who.brand.QupZilla.detect = function(){
     if( who.brand.QupZilla.is() ){
-        p_setBrand( BRAND.QupZilla, who.brand.QupZilla.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.QupZilla, who.brand.QupZilla.NAVIGATOR_VERSION );
         return true;
     };
 };

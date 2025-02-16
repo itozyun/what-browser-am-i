@@ -22,11 +22,11 @@ who.platform.NintendoDSi.is = function(){
 who.platform.NintendoDSi.detect = function(){
     if( who.platform.NintendoDSi.is() ){
         p_setPlatform(
-            PLATFORM.NINTENDO_DSi$TM,
+            EnumPlatform.NINTENDO_DSi$TM,
             p_getVersionString( p_strUserAgent, p_strPlatform + '; Opera/' )
         );
-        p_setDevice( DEVICE.NintendoDSi, undefined, DEVICE_TYPE.GAME );
-        p_setEngine( ENGINE.Presto_Mobile, 9.5 );
+        p_setDevice( EnumDevice.NintendoDSi, undefined, EnumDeviceType.GAME );
+        p_setEngine( EnumEngine.Presto_Mobile, 9.5 );
         return true;
     };
 };

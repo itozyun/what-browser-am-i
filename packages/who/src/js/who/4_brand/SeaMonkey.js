@@ -19,7 +19,7 @@ who.brand.SeaMonkey.is = function(){
 /** @return {boolean|void} */
 who.brand.SeaMonkey.detect = function(){
     if( who.brand.SeaMonkey.is() ){
-        p_setBrand( BRAND.SeaMonkey, who.brand.SeaMonkey.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.SeaMonkey, who.brand.SeaMonkey.NAVIGATOR_VERSION );
         return true;
     };
 };

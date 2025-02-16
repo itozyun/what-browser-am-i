@@ -19,7 +19,7 @@ who.platform.Maemo.is = function(){
 /** @return {boolean|void} */
 who.platform.Maemo.detect = function(){
     if( who.platform.Maemo.is() ){
-        p_setPlatform( PLATFORM.Maemo );
+        p_setPlatform( EnumPlatform.Maemo );
         return true;
     };
 };

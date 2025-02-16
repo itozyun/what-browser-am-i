@@ -4,7 +4,7 @@ goog.provide( 'iAm.NetFront.Gte' );
 goog.provide( 'iAm.NetFront.Lt' );
 goog.provide( 'iAm.NetFront.Lte' );
 
-goog.require( 'who.ENGINE' );
+goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
 goog.require( 'iAm._engineVersion.Gt' );
 goog.require( 'iAm._engineVersion.Gte' );
@@ -15,7 +15,7 @@ goog.require( 'iAm._engineVersion.Lte' );
  * @return {boolean}
  */
 iAm.NetFront = function(){
-    return iAm._engineIs( who.ENGINE.NetFront );
+    return iAm._engineIs( iAm.EnumEngine.NetFront );
 };
 
 /*----------------------------------------------------------------------------//

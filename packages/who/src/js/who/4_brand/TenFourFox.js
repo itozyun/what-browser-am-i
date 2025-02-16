@@ -19,7 +19,7 @@ who.brand.TenFourFox.is = function(){
 /** @return {boolean|void} */
 who.brand.TenFourFox.detect = function(){
     if( who.brand.TenFourFox.is() ){
-        p_setBrand( BRAND.TenFourFox, who.brand.TenFourFox.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.TenFourFox, who.brand.TenFourFox.NAVIGATOR_VERSION );
         return true;
     };
 };

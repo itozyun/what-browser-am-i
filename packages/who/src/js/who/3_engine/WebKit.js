@@ -15,7 +15,7 @@ who.engine.WebKit.is = function(){
 /** @return {boolean|void} */
 who.engine.WebKit.detect = function(){
     if( who.engine.WebKit.is() ){
-        p_setEngine( ENGINE.WebKit, p_numberWebKit );
+        p_setEngine( EnumEngine.WebKit, p_numberWebKit );
         return true;
     };
 };

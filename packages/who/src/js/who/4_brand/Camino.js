@@ -19,7 +19,7 @@ who.brand.Camino.is = function(){
 /** @return {boolean|void} */
 who.brand.Camino.detect = function(){
     if( who.brand.Camino.is() ){
-        p_setBrand( BRAND.Camino, who.brand.Camino.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Camino, who.brand.Camino.NAVIGATOR_VERSION );
         return true;
     };
 };

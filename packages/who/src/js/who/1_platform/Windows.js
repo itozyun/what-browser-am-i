@@ -22,10 +22,10 @@ who.platform.Windows.is = function(){
 who.platform.Windows.detect = function(){
     if( who.platform.Windows.is() ){
         p_setPlatform(
-              PLATFORM.Windows
+              EnumPlatform.Windows
             , p_getVersionString( p_strUserAgent, 'Windows NT ' ) ||
               p_getVersionString( p_strUserAgent, 'Windows ' )
-            , DEVICE_TYPE.PC
+            , EnumDeviceType.PC
         );
         return true;
     };

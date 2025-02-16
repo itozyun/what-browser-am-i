@@ -38,8 +38,8 @@ who.engine.OperaMini.is = function(){
 /** @return {boolean|void} */
 who.engine.OperaMini.detect = function(){
     if( who.engine.OperaMini.is() ){
-        p_setEngine( ENGINE.Opera_Mini, who.engine.OperaMini.NAVIGATOR_VERSION );
-        p_setBrand( BRAND.Opera, p_engineVersion );
+        p_setEngine( EnumEngine.Opera_Mini, who.engine.OperaMini.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Opera, p_engineVersion );
         return true;
     };
 };

@@ -17,7 +17,7 @@ who.brand.OperaGX.is = function(){
 /** @return {boolean|void} */
 who.brand.OperaGX.detect = function(){
     if( who.brand.OperaGX.is() ){
-        p_setBrand( BRAND.Opera_GX, who.brand.Opera.OPR_NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Opera_GX, who.brand.Opera.OPR_NAVIGATOR_VERSION );
         return true;
     };
 };

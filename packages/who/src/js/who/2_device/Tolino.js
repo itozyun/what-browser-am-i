@@ -84,7 +84,7 @@ who.device.Tolino.is = function(){
 /** @return {boolean|void} */
 who.device.Tolino.detect = function(){
     if( who.device.Tolino.is() ){
-        p_setDevice( DEVICE.Tolino, undefined, DEVICE_TYPE.EINK_READER );
+        p_setDevice( EnumDevice.Tolino, undefined, EnumDeviceType.EINK_READER );
         return true;
     };
 };

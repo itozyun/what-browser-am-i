@@ -19,7 +19,7 @@ who.brand.KMeleon.is = function(){
 /** @return {boolean|void} */
 who.brand.KMeleon.detect = function(){
     if( who.brand.KMeleon.is() ){
-        p_setBrand( BRAND.K$_Meleon, who.brand.KMeleon.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.K$_Meleon, who.brand.KMeleon.NAVIGATOR_VERSION );
         return true;
     };
 };

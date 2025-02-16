@@ -4,7 +4,7 @@ goog.provide( 'iAm.QtWebEngine.Gte' );
 goog.provide( 'iAm.QtWebEngine.Lt' );
 goog.provide( 'iAm.QtWebEngine.Lte' );
 
-goog.require( 'who.ENGINE' );
+goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
 goog.require( 'iAm._engineVersion.Gt' );
 goog.require( 'iAm._engineVersion.Gte' );
@@ -15,7 +15,7 @@ goog.require( 'iAm._engineVersion.Lte' );
  * @return {boolean}
  */
 iAm.QtWebEngine = function(){
-    return iAm._engineIs( who.ENGINE.QtWebEngine );
+    return iAm._engineIs( iAm.EnumEngine.QtWebEngine );
 };
 
 /*----------------------------------------------------------------------------//

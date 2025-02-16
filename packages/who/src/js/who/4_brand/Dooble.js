@@ -19,7 +19,7 @@ who.brand.Dooble.is = function(){
 /** @return {boolean|void} */
 who.brand.Dooble.detect = function(){
     if( who.brand.Dooble.is() ){
-        p_setBrand( BRAND.Dooble, who.brand.Dooble.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Dooble, who.brand.Dooble.NAVIGATOR_VERSION );
         return true;
     };
 };

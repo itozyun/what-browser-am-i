@@ -7,7 +7,7 @@ goog.provide( 'iAm._platformVersion.Lte' );
 goog.require( 'iAm.DEFINE.ASSUME_PLATFORM' );
 goog.require( 'iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION' );
 goog.require( 'iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION' );
-goog.require( 'who.INDEX' );
+goog.require( 'iAm.EnumIndex' );
 goog.require( 'who.conpare' );
 
 /**
@@ -19,7 +19,7 @@ iAm._platformIs = function( platformName ){
     if( iAm.DEFINE.ASSUME_PLATFORM ){
         return iAm.DEFINE.ASSUME_PLATFORM === platformName;
     };
-    return ua[ who.INDEX.PLATFORM ] === platformName;
+    return ua[ iAm.EnumIndex.PLATFORM ] === platformName;
 };
 
 /**
@@ -38,7 +38,7 @@ iAm._platformVersion.Gt = function( version ){
             return false;
         };
     };
-    return ua.conpare( ua[ who.INDEX.PLATFORM_VERSION ], version ) === 1;
+    return ua.conpare( ua[ iAm.EnumIndex.PLATFORM_VERSION ], version ) === 1;
 };
 
 /**
@@ -57,7 +57,7 @@ iAm._platformVersion.Gte = function( version ){
             return false;
         };
     };
-    return 0 <= ua.conpare( ua[ who.INDEX.PLATFORM_VERSION ], version );
+    return 0 <= ua.conpare( ua[ iAm.EnumIndex.PLATFORM_VERSION ], version );
 };
 
 /**
@@ -76,7 +76,7 @@ iAm._platformVersion.Lt = function( version ){
             return true;
         };
     };
-    return ua.conpare( ua[ who.INDEX.PLATFORM_VERSION ], version ) === -1;
+    return ua.conpare( ua[ iAm.EnumIndex.PLATFORM_VERSION ], version ) === -1;
 };
 
 /**
@@ -95,5 +95,5 @@ iAm._platformVersion.Lte = function( version ){
             return true;
         };
     };
-    return 0 <= ua.conpare( ua[ who.INDEX.PLATFORM_VERSION ], version );
+    return 0 <= ua.conpare( ua[ iAm.EnumIndex.PLATFORM_VERSION ], version );
 };

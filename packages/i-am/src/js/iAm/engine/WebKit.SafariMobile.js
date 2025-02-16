@@ -25,7 +25,7 @@ goog.provide( 'iAm.iOSWebView.Lt' );
 goog.provide( 'iAm.iOSWebView.Lte' );
 
 goog.require( 'iAm.QtWebKit' );
-goog.require( 'who.ENGINE' );
+goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
 goog.require( 'iAm._engineVersion.Gt' );
 goog.require( 'iAm._engineVersion.Gte' );
@@ -36,7 +36,7 @@ goog.require( 'iAm._engineVersion.Lte' );
  * @return {boolean}
  */
 iAm.WebKit = function(){
-    return iAm._engineIs( who.ENGINE.WebKit );
+    return iAm._engineIs( iAm.EnumEngine.WebKit );
 };
 
 /*----------------------------------------------------------------------------//
@@ -176,7 +176,7 @@ iAm.AnySafariMobile.Lte = function( version ){
  * @return {boolean}
  */
 iAm.SafariMobile = function(){
-    return iAm._engineIs( who.ENGINE.Safari_Mobile );
+    return iAm._engineIs( iAm.EnumEngine.Safari_Mobile );
 };
 
 /**
@@ -219,7 +219,7 @@ iAm.SafariMobile.Lte = function( version ){
  * @return {boolean}
  */
 iAm.iOSWebView = function(){
-    return iAm._engineIs( who.ENGINE.iOS_WebView );
+    return iAm._engineIs( iAm.EnumEngine.iOS_WebView );
 };
 
 /**

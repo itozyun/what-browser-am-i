@@ -37,7 +37,7 @@ who.brand.Puffin.is = function(){
 /** @return {boolean|void} */
 who.brand.Puffin.detect = function(){
     if( who.brand.Puffin.is() ){
-        p_setBrand( BRAND.Puffin, who.brand.Puffin.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Puffin, who.brand.Puffin.NAVIGATOR_VERSION );
         return true;
     };
 };

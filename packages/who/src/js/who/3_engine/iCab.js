@@ -19,8 +19,8 @@ who.engine.iCab.is = function(){
 /** @return {boolean|void} */
 who.engine.iCab.detect = function(){
     if( who.engine.iCab.is() ){
-        p_setEngine( ENGINE.iCab, who.engine.iCab.NAVIGATOR_VERSION );
-        p_setBrand( BRAND.iCab, p_engineVersion );
+        p_setEngine( EnumEngine.iCab, who.engine.iCab.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.iCab, p_engineVersion );
         return true;
     };
 };

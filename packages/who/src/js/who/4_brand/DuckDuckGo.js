@@ -19,7 +19,7 @@ who.brand.DuckDuckGo.is = function(){
 /** @return {boolean|void} */
 who.brand.DuckDuckGo.detect = function(){
     if( who.brand.DuckDuckGo.is() ){
-        p_setBrand( BRAND.DuckDuckGo, who.brand.DuckDuckGo.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.DuckDuckGo, who.brand.DuckDuckGo.NAVIGATOR_VERSION );
         return true;
     };
 };

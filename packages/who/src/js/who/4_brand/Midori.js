@@ -19,7 +19,7 @@ who.brand.Midori.is = function(){
 /** @return {boolean|void} */
 who.brand.Midori.detect = function(){
     if( who.brand.Midori.is() ){
-        p_setBrand( BRAND.Midori, who.brand.Midori.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Midori, who.brand.Midori.NAVIGATOR_VERSION );
         return true;
     };
 };

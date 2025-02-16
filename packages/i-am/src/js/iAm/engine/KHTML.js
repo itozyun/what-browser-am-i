@@ -4,7 +4,7 @@ goog.provide( 'iAm.KHTML.Gte' );
 goog.provide( 'iAm.KHTML.Lt' );
 goog.provide( 'iAm.KHTML.Lte' );
 
-goog.require( 'who.ENGINE' );
+goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
 goog.require( 'iAm._engineVersion.Gt' );
 goog.require( 'iAm._engineVersion.Gte' );
@@ -15,7 +15,7 @@ goog.require( 'iAm._engineVersion.Lte' );
  * @return {boolean}
  */
 iAm.KHTML = function(){
-    return iAm._engineIs( who.ENGINE.KHTML );
+    return iAm._engineIs( iAm.EnumEngine.KHTML );
 };
 
 /*----------------------------------------------------------------------------//

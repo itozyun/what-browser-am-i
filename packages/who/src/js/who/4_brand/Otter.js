@@ -21,7 +21,7 @@ who.brand.Otter.is = function(){
 /** @return {boolean|void} */
 who.brand.Otter.detect = function(){
     if( who.brand.Otter.is() ){
-        p_setBrand( BRAND.Otter, who.brand.Otter.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Otter, who.brand.Otter.NAVIGATOR_VERSION );
         return true;
     };
 };

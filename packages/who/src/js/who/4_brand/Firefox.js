@@ -25,8 +25,8 @@ who.brand.Firefox.isOnFireTV = !!window._firefoxTV_playbackStateObserverJava;
  * @package
  * @return {boolean} */
 who.brand.Firefox.is = function(){
-    return p_engineName === ENGINE.Gecko         || // Gecko
-           p_engineName === ENGINE.Fennec        || // Gecko for Mobile
+    return p_engineName === EnumEngine.Gecko         || // Gecko
+           p_engineName === EnumEngine.Fennec        || // Gecko for Mobile
            who.brand.Firefox.isOnFireTV || // AndroidWebView(FireTV)
            !who.brand.FirefoxFocus.is() &&
                !!p_firefoxOnIOS.NAVIGATOR_VERSION; // iOSWebView
@@ -36,8 +36,8 @@ who.brand.Firefox.is = function(){
 who.brand.Firefox.detect = function(){
     if( who.brand.Firefox.is() ){
         p_setBrand(
-            BRAND.Firefox,
-            p_engineName === ENGINE.Gecko || p_engineName === ENGINE.Fennec
+            EnumBrand.Firefox,
+            p_engineName === EnumEngine.Gecko || p_engineName === EnumEngine.Fennec
                 ? p_engineVersion
                 : ( who.brand.Firefox.NAVIGATOR_VERSION || p_firefoxOnIOS.NAVIGATOR_VERSION )
         );

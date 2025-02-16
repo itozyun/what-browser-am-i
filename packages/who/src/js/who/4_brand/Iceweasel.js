@@ -19,7 +19,7 @@ who.brand.Iceweasel.is = function(){
 /** @return {boolean|void} */
 who.brand.Iceweasel.detect = function(){
     if( who.brand.Iceweasel.is() ){
-        p_setBrand( BRAND.Iceweasel, who.brand.Iceweasel.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Iceweasel, who.brand.Iceweasel.NAVIGATOR_VERSION );
         return true;
     };
 };

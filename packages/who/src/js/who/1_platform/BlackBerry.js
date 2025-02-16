@@ -16,7 +16,7 @@ who.platform.BlackBerry.is = function(){
 /** @return {boolean|void} */
 who.platform.BlackBerry.detect = function(){
     if( who.platform.BlackBerry.is() ){
-        p_setPlatform( PLATFORM.BlackBerry, p_Something.NAVIGATOR_VERSION, DEVICE_TYPE.PHONE );
+        p_setPlatform( EnumPlatform.BlackBerry, p_Something.NAVIGATOR_VERSION, EnumDeviceType.PHONE );
         return true;
     };
 };

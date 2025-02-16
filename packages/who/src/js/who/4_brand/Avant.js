@@ -15,7 +15,7 @@ who.brand.Avant.is = function(){
 /** @return {boolean|void} */
 who.brand.Avant.detect = function(){
     if( who.brand.Avant.is() ){
-        p_setBrand( BRAND.Avant );
+        p_setBrand( EnumBrand.Avant );
         return true;
     };
 };

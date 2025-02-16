@@ -19,7 +19,7 @@ who.brand.Roccat.is = function(){
 /** @return {boolean|void} */
 who.brand.Roccat.detect = function(){
     if( who.brand.Roccat.is() ){
-        p_setBrand( BRAND.Roccat, who.brand.Roccat.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Roccat, who.brand.Roccat.NAVIGATOR_VERSION );
         return true;
     };
 };

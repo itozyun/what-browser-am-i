@@ -22,7 +22,7 @@ who.brand.Maxthon.is = function(){
 /** @return {boolean|void} */
 who.brand.Maxthon.detect = function(){
     if( who.brand.Maxthon.is() ){
-        p_setBrand( BRAND.Maxthon, who.brand.Maxthon.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Maxthon, who.brand.Maxthon.NAVIGATOR_VERSION );
         return true;
     };
 };

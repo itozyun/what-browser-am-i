@@ -16,8 +16,8 @@ who.platform.Linux.is = function(){
 /** @return {boolean|void} */
 who.platform.Linux.detect = function(){
     if( who.platform.Linux.is() ){
-        p_setPlatform( PLATFORM.Linux );
-        p_deviceType = DEVICE_TYPE.PC;
+        p_setPlatform( EnumPlatform.Linux );
+        p_deviceType = EnumDeviceType.PC;
         return true;
     };
 };

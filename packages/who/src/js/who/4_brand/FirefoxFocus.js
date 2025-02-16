@@ -29,13 +29,13 @@ who.brand.FirefoxFocus.is = function(){
         // https://web.archive.org/web/20230203011812/https://en.wikipedia.org/wiki/Firefox_for_iOS#cite_note-10
         // Focus   : FxiOS が 8.x にも拘わらず、iOS のバージョンが 11 以上、を使って判定
         // Firefox : FxiOS が 9.x 以降が、iSO 11+ 対応を持って判定
-           !!versionFxiOS && parseFloat( versionFxiOS ) < 9 && p_engineName === ENGINE.iOS_WebView && 11 <= parseFloat( p_platformVersion );
+           !!versionFxiOS && parseFloat( versionFxiOS ) < 9 && p_engineName === EnumEngine.iOS_WebView && 11 <= parseFloat( p_platformVersion );
 };
 
 /** @return {boolean|void} */
 who.brand.FirefoxFocus.detect = function(){
     if( who.brand.FirefoxFocus.is() ){
-        p_setBrand( BRAND.Firefox_Focus, who.brand.FirefoxFocus.NAVIGATOR_VERSION || p_firefoxOnIOS.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Firefox_Focus, who.brand.FirefoxFocus.NAVIGATOR_VERSION || p_firefoxOnIOS.NAVIGATOR_VERSION );
         return true;
     };
 };

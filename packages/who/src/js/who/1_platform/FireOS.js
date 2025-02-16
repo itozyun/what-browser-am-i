@@ -17,7 +17,7 @@ who.platform.FireOS.is = function(){
 /** @return {boolean|void} */
 who.platform.FireOS.detect = function(){
     if( who.platform.FireOS.is() ){
-        p_setPlatform( PLATFORM.FireOS, who.device.KindleFire.FIRE_OS_VERSION || who.device.FireTV.FIRE_OS_VERSION );
+        p_setPlatform( EnumPlatform.FireOS, who.device.KindleFire.FIRE_OS_VERSION || who.device.FireTV.FIRE_OS_VERSION );
         return true;
     };
 };

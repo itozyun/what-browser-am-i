@@ -19,7 +19,7 @@ who.brand.Silk.is = function(){
 /** @return {boolean|void} */
 who.brand.Silk.detect = function(){
     if( who.brand.Silk.is() ){
-        p_setBrand( BRAND.Silk, who.brand.Silk.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Silk, who.brand.Silk.NAVIGATOR_VERSION );
         return true;
     };
 };

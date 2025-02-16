@@ -6,45 +6,50 @@ goog.provide( 'who.base.finalizeEngine' );
 goog.provide( 'who.base.finalizeBrand' );
 goog.provide( 'who.base.finalizePcSiteRequested' );
 
-goog.require( 'who.ENUM' );
+goog.require( 'iAm.EnumPlatform' );
+goog.require( 'iAm.EnumEngine' );
+goog.require( 'iAm.EnumBrand' );
+goog.require( 'iAm.EnumDevice' );
+goog.require( 'iAm.EnumDeviceType' );
+goog.require( 'iAm.EnumIndex' );
 goog.require( 'who.env' );
 goog.require( 'who.util' );
 
 /** @const */
-var PLATFORM    = who.PLATFORM;
+var EnumPlatform   = iAm.EnumPlatform;
 /** @const */
-var ENGINE      = who.ENGINE;
+var EnumEngine     = iAm.EnumEngine;
 /** @const */
-var BRAND       = who.BRAND;
+var EnumBrand      = iAm.EnumBrand;
 /** @const */
-var DEVICE      = who.DEVICE;
+var EnumDevice     = iAm.EnumDevice;
 /** @const */
-var DEVICE_TYPE = who.DEVICE_TYPE;
+var EnumDeviceType = iAm.EnumDeviceType;
 /** @const */
-var INDEX       = who.INDEX;
+var EnumIndex      = iAm.EnumIndex;
 
 /** @type {string|number} */
-var p_platformName = who.PLATFORM.Unknown;
+var p_platformName = iAm.EnumPlatform.Unknown;
 /** @type {string|number|void} */
 var p_platformVersion;
 
 /** @type {string|number} */
-var p_engineName = who.ENGINE.Unknown;
+var p_engineName = iAm.EnumEngine.Unknown;
 /** @type {string|number|void} */
 var p_engineVersion;
 
 /** @type {string|number} */
-var p_brandName = who.BRAND.Unknown;
+var p_brandName = iAm.EnumBrand.Unknown;
 /** @type {string|number|void} */
 var p_brandVersion;
 
 /** @type {string|number} */
-var p_deviceName = who.DEVICE.Unknown;
+var p_deviceName = iAm.EnumDevice.Unknown;
 /** @type {string|number|void} */
 var p_deviceGeneration;
 
 /** @type {string|number} */
-var p_deviceType = who.DEVICE_TYPE.UNKNOWN;
+var p_deviceType = iAm.EnumDeviceType.UNKNOWN;
 
 /** @type {boolean} */
 var p_isPcSiteRequested = false;
@@ -57,8 +62,8 @@ var p_surelyPcSiteRequested = false;
  * @return {boolean}
  */
 function p_isAndroidBased(){
-    return p_platformName === PLATFORM.Android ||
-           p_platformName === PLATFORM.FireOS; // TODO Google_TV, Android_TV
+    return p_platformName === EnumPlatform.Android ||
+           p_platformName === EnumPlatform.FireOS; // TODO Google_TV, Android_TV
 };
 
 /**
@@ -80,9 +85,9 @@ function p_setPlatform( platform, opt_platformVersion, opt_deviceType ){
 
 who.base.finalizePlatform = function(){
     if( p_platformName ){
-        ua[ INDEX.PLATFORM ] = p_platformName;
+        ua[ EnumIndex.PLATFORM ] = p_platformName;
         if( p_platformVersion ){
-            ua[ INDEX.PLATFORM_VERSION ] = p_toVersionString( p_platformVersion );
+            ua[ EnumIndex.PLATFORM_VERSION ] = p_toVersionString( p_platformVersion );
             // ua[ p_platformName ] = p_toVersionNumber( p_platformVersion );
         } else {
             // ua[ p_platformName ] = true;
@@ -109,9 +114,9 @@ function p_setDevice( device, opt_deviceGeneration, opt_deviceType ){
 
 who.base.finalizeDevice = function(){
     if( p_deviceName ){
-        ua[ INDEX.DEVICE ] = p_deviceName;
+        ua[ EnumIndex.DEVICE ] = p_deviceName;
         if( p_deviceGeneration ){
-            ua[ INDEX.DEVICE_GENERATION ] = p_toVersionString( p_deviceGeneration );
+            ua[ EnumIndex.DEVICE_GENERATION ] = p_toVersionString( p_deviceGeneration );
             // ua[ p_deviceName ] = p_toVersionNumber( p_deviceGeneration );
         } else {
             // ua[ p_deviceName ] = true;
@@ -121,7 +126,7 @@ who.base.finalizeDevice = function(){
 
 who.base.finalizeDeviceType = function(){
     if( p_deviceType ){
-        ua[ INDEX.DEVICE_TYPE ] = p_deviceType;
+        ua[ EnumIndex.DEVICE_TYPE ] = p_deviceType;
         // ua[ p_deviceName ] = p_toVersionNumber( p_deviceGeneration );
     } else {
         // ua[ p_deviceName ] = true;
@@ -143,9 +148,9 @@ function p_setEngine( engine, opt_engineVersion ){
 
 who.base.finalizeEngine = function(){
     if( p_engineName ){
-        ua[ INDEX.ENGINE ] = p_engineName;
+        ua[ EnumIndex.ENGINE ] = p_engineName;
         if( p_engineVersion ){
-            ua[ INDEX.ENGINE_VERSION ] = p_toVersionString( p_engineVersion );
+            ua[ EnumIndex.ENGINE_VERSION ] = p_toVersionString( p_engineVersion );
             // ua[ p_engineName ] = p_toVersionNumber( p_engineVersion );
         } else {
             // ua[ p_engineName ] = true;
@@ -168,9 +173,9 @@ function p_setBrand( brand, opt_brandVersion ){
 
 who.base.finalizeBrand = function(){
     if( p_brandName ){
-        ua[ INDEX.BRAND ] = p_brandName;
+        ua[ EnumIndex.BRAND ] = p_brandName;
         if( p_brandVersion ){
-            ua[ INDEX.BRAND_VERSION ] = p_toVersionString( p_brandVersion );
+            ua[ EnumIndex.BRAND_VERSION ] = p_toVersionString( p_brandVersion );
             // ua[ p_brandName ] = p_toVersionNumber( p_brandVersion );
         } else {
             // ua[ p_brandName ] = true;
@@ -179,5 +184,5 @@ who.base.finalizeBrand = function(){
 };
 
 who.base.finalizePcSiteRequested = function(){
-    ua[ INDEX.PCSITE_REQUESTED ] = p_isPcSiteRequested;
+    ua[ EnumIndex.PCSITE_REQUESTED ] = p_isPcSiteRequested;
 };

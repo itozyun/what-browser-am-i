@@ -26,12 +26,12 @@ who.platform.Xbox.is = function(){
 /** @return {boolean|void} */
 who.platform.Xbox.detect = function(){
     if( _isXbox360 ){
-        p_setPlatform( PLATFORM.Xbox_360$TM );
-        p_setDevice( DEVICE.Xbox360, undefined, DEVICE_TYPE.GAME );
+        p_setPlatform( EnumPlatform.Xbox_360$TM );
+        p_setDevice( EnumDevice.Xbox360, undefined, EnumDeviceType.GAME );
         return true;
     } else if( _isXboxOne ){
-        p_setPlatform( PLATFORM.Xbox_One$TM );
-        p_setDevice( DEVICE.XboxOne, undefined, DEVICE_TYPE.GAME );
+        p_setPlatform( EnumPlatform.Xbox_One$TM );
+        p_setDevice( EnumDevice.XboxOne, undefined, EnumDeviceType.GAME );
         return true;
     };
 };

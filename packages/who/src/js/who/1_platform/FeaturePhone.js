@@ -18,8 +18,8 @@ who.platform.FeaturePhone.is = function(){
 /** @return {boolean|void} */
 who.platform.FeaturePhone.detect = function(){
     if( who.platform.FeaturePhone.is() ){
-        p_setPlatform( PLATFORM.Feature_Phone );
-        p_deviceType = DEVICE_TYPE.PHONE;
+        p_setPlatform( EnumPlatform.Feature_Phone );
+        p_deviceType = EnumDeviceType.PHONE;
         return true;
     };
 };

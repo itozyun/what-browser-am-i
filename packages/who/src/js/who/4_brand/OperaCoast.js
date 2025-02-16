@@ -19,7 +19,7 @@ who.brand.OperaCoast.is = function(){
 /** @return {boolean|void} */
 who.brand.OperaCoast.detect = function(){
     if( who.brand.OperaCoast.is() ){
-        p_setBrand( BRAND.Opera_Coast, who.brand.OperaCoast.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Opera_Coast, who.brand.OperaCoast.NAVIGATOR_VERSION );
         return true;
     };
 };

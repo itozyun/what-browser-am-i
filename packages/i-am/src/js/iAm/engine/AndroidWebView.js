@@ -4,7 +4,7 @@ goog.provide( 'iAm.AndroidWebView.Gte' );
 goog.provide( 'iAm.AndroidWebView.Lt' );
 goog.provide( 'iAm.AndroidWebView.Lte' );
 
-goog.require( 'who.ENGINE' );
+goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
 goog.require( 'iAm._engineVersion.Gt' );
 goog.require( 'iAm._engineVersion.Gte' );
@@ -15,7 +15,7 @@ goog.require( 'iAm._engineVersion.Lte' );
  * @return {boolean}
  */
 iAm.AndroidWebView = function(){
-    return iAm._engineIs( who.ENGINE.AndroidWebView );
+    return iAm._engineIs( iAm.EnumEngine.AndroidWebView );
 };
 
 /*----------------------------------------------------------------------------//

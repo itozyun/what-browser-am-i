@@ -1,6 +1,6 @@
 goog.provide( 'iAm.Nintendo3DS' );
 
-goog.require( 'who.PLATFORM' );
+goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
 goog.require( 'iAm._platformVersion.Gt' );
 goog.require( 'iAm._platformVersion.Gte' );
@@ -11,7 +11,7 @@ goog.require( 'iAm._platformVersion.Lte' );
  * @return {boolean}
  */
 iAm.Nintendo3DS = function(){
-    return iAm._platformIs( who.PLATFORM.NINTENDO_3DS$TM );
+    return iAm._platformIs( iAm.EnumPlatform.NINTENDO_3DS$TM );
 };
 
 /**

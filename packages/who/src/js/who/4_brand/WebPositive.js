@@ -19,7 +19,7 @@ who.brand.WebPositive.is = function(){
 /** @return {boolean|void} */
 who.brand.WebPositive.detect = function(){
     if( who.brand.WebPositive.is() ){
-        p_setBrand( BRAND.WebPositive, who.brand.WebPositive.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.WebPositive, who.brand.WebPositive.NAVIGATOR_VERSION );
         return true;
     };
 };

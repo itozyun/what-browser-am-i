@@ -51,8 +51,8 @@ who.engine.UCWEB.AndroidVersionWithUCWEB =
 /** @return {boolean|void} */
 who.engine.UCWEB.detect = function(){
     if( who.engine.UCWEB.is() ){
-        p_setEngine( ENGINE.UCWEB, who.engine.UCWEB.NAVIGATOR_VERSION );
-        p_setBrand( BRAND.UC, p_engineVersion );
+        p_setEngine( EnumEngine.UCWEB, who.engine.UCWEB.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.UC, p_engineVersion );
         return true;
     };
 };

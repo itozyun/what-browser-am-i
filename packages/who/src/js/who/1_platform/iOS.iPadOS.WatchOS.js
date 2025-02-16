@@ -34,9 +34,9 @@ who.platform.iOS.is = function(){
 who.platform.iOS.detect = function(){
     if( who.platform.iOS.is() ){
         if( iOSImplementVersionWithPuffin ){
-            p_setPlatform( PLATFORM.iOS, iOSImplementVersionWithPuffin );
+            p_setPlatform( EnumPlatform.iOS, iOSImplementVersionWithPuffin );
         } else {
-            p_platformName = PLATFORM.iOS;
+            p_platformName = EnumPlatform.iOS;
 
             if( iOSNavigatorVersionWithUCWEB ){
                 p_platformVersion = iOSNavigatorVersionWithUCWEB;

@@ -19,7 +19,7 @@ who.brand.Epiphany.is = function(){
 /** @return {boolean|void} */
 who.brand.Epiphany.detect = function(){
     if( who.brand.Epiphany.is() ){
-        p_setBrand( BRAND.Epiphany, who.brand.Epiphany.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Epiphany, who.brand.Epiphany.NAVIGATOR_VERSION );
         return true;
     };
 };

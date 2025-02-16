@@ -26,7 +26,7 @@ who.brand.Yahoo.is = function(){
 /** @return {boolean|void} */
 who.brand.Yahoo.detect = function(){
     if( who.brand.Yahoo.is() ){
-        p_setBrand( BRAND.Yahoo, who.brand.Yahoo.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Yahoo, who.brand.Yahoo.NAVIGATOR_VERSION );
         return true;
     };
 };

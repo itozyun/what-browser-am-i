@@ -19,7 +19,7 @@ who.engine.EdgeHTML.is = function(){
 who.engine.EdgeHTML.detect = function(){
     if( who.engine.EdgeHTML.is() ){
         p_setEngine(
-            p_platformName === PLATFORM.Windows_Phone ? ENGINE.Edge_Mobile : ENGINE.EdgeHTML,
+            p_platformName === EnumPlatform.Windows_Phone ? EnumEngine.Edge_Mobile : EnumEngine.EdgeHTML,
             p_getVersionString( p_strAppVersion, 'Edge/' )
         );
         return true;

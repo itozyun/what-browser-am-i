@@ -26,7 +26,7 @@ who.brand.Edge.NAVIGATOR_VERSION_NOT_EDGE_HTML =
  * @package
  * @return {boolean} */
 who.brand.Edge.is = function(){
-    return p_engineName === ENGINE.EdgeHTML || p_engineName === ENGINE.Edge_Mobile ||
+    return p_engineName === EnumEngine.EdgeHTML || p_engineName === EnumEngine.Edge_Mobile ||
            !!who.brand.Edge.NAVIGATOR_VERSION ||
            !!who.brand.Edge.NAVIGATOR_VERSION_NOT_EDGE_HTML;
 };
@@ -35,8 +35,8 @@ who.brand.Edge.is = function(){
 who.brand.Edge.detect = function(){
     if( who.brand.Edge.is() ){
         p_setBrand(
-            BRAND.Edge,
-            p_engineName === ENGINE.EdgeHTML || p_engineName === ENGINE.Edge_Mobile
+            EnumBrand.Edge,
+            p_engineName === EnumEngine.EdgeHTML || p_engineName === EnumEngine.Edge_Mobile
                 ? p_engineVersion
                 : ( who.brand.Edge.NAVIGATOR_VERSION || who.brand.Edge.NAVIGATOR_VERSION_NOT_EDGE_HTML )
             );

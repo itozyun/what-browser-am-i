@@ -44,7 +44,7 @@ who.engine.Presto.operaObject = operaObject;
 who.engine.Presto.detect = function(){
     if( who.engine.Presto.is() ){
         p_setEngine(
-            p_deviceType === DEVICE_TYPE.PC || p_platformName === PLATFORM.Wii$TM ? ENGINE.Presto : ENGINE.Presto_Mobile,
+            p_deviceType === EnumDeviceType.PC || p_platformName === EnumPlatform.Wii$TM ? EnumEngine.Presto : EnumEngine.Presto_Mobile,
             who.engine.Presto.IMPLEMENT_VERSION || who.engine.Presto.NAVIGATOR_VERSION
         );
         return true;

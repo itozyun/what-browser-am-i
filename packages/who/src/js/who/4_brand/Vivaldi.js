@@ -19,7 +19,7 @@ who.brand.Vivaldi.is = function(){
 /** @return {boolean|void} */
 who.brand.Vivaldi.detect = function(){
     if( who.brand.Vivaldi.is() ){
-        p_setBrand( BRAND.Vivaldi, who.brand.Vivaldi.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Vivaldi, who.brand.Vivaldi.NAVIGATOR_VERSION );
         return true;
     };
 };

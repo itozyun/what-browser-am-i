@@ -19,8 +19,8 @@ who.engine.NetFront.is = function(){
 /** @return {boolean|void} */
 who.engine.NetFront.detect = function(){
     if( who.engine.NetFront.is() ){
-        p_setEngine( ENGINE.NetFront, who.engine.NetFront.NAVIGATOR_VERSION );
-        p_setBrand( BRAND.NetFront$R, p_engineVersion );
+        p_setEngine( EnumEngine.NetFront, who.engine.NetFront.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.NetFront$R, p_engineVersion );
         return true;
     };
 };

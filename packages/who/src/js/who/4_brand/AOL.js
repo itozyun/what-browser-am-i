@@ -21,7 +21,7 @@ who.brand.AOL.is = function(){
 /** @return {boolean|void} */
 who.brand.AOL.detect = function(){
     if( who.brand.AOL.is() ){
-        p_setBrand( BRAND.AOL, who.brand.AOL.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.AOL, who.brand.AOL.NAVIGATOR_VERSION );
         return true;
     };
 };

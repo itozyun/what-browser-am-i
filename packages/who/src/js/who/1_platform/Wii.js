@@ -25,10 +25,10 @@ who.platform.Wii.is = function(){
 who.platform.Wii.detect = function(){
     if( who.platform.Wii.is() ){
         p_setPlatform(
-            PLATFORM.Wii$TM,
+            EnumPlatform.Wii$TM,
             p_getVersionString( p_strAppVersion, p_strPlatform + '; U; ; ' )
         );
-        p_setDevice( DEVICE.Wii, undefined, DEVICE_TYPE.GAME );
+        p_setDevice( EnumDevice.Wii, undefined, EnumDeviceType.GAME );
         return true;
     };
 };

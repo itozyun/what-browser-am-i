@@ -43,7 +43,7 @@ gulp.task( 'dist', gulp.series(
                         // externs           : [ externsJs ],
                         compilation_level : 'ADVANCED',
                         define            : [
-                            'who.DEFINE.MINIFY=' + minify
+                            'iAm.DEFINE.MINIFY=' + minify
                         ],
                         warning_level     : 'VERBOSE',
                         language_in       : 'ECMASCRIPT3',

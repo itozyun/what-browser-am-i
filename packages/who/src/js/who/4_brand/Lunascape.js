@@ -28,7 +28,7 @@ who.brand.Lunascape.is = function(){
 /** @return {boolean|void} */
 who.brand.Lunascape.detect = function(){
     if( who.brand.Lunascape.is() ){
-        p_setBrand( BRAND.Lunascape, who.brand.Lunascape.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Lunascape, who.brand.Lunascape.NAVIGATOR_VERSION );
         return true;
     };
 };

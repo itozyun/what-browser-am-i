@@ -26,7 +26,7 @@ who.engine.QtWebEngine.is = function(){
 /** @return {boolean|void} */
 who.engine.QtWebEngine.detect = function(){
     if( who.engine.QtWebEngine.is() ){
-        p_setEngine( ENGINE.Qt_WebEngine, who.brand.Chrome.NAVIGATOR_VERSION );
+        p_setEngine( EnumEngine.Qt_WebEngine, who.brand.Chrome.NAVIGATOR_VERSION );
         return true;
     };
 };

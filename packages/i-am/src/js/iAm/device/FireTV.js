@@ -1,6 +1,6 @@
 goog.provide( 'iAm.FireTV' );
 
-goog.require( 'who.DEVICE' );
+goog.require( 'iAm.EnumDevice' );
 goog.require( 'iAm._deviceIs' );
 goog.require( 'iAm._deviceVersion.Gt' );
 goog.require( 'iAm._deviceVersion.Gte' );
@@ -11,7 +11,7 @@ goog.require( 'iAm._deviceVersion.Lte' );
  * @return {boolean}
  */
 iAm.FireTV = function(){
-    return iAm._deviceIs( who.DEVICE.FireTV );
+    return iAm._deviceIs( iAm.EnumDevice.FireTV );
 };
 
 /**

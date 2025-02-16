@@ -19,7 +19,7 @@ who.brand.Galeon.is = function(){
 /** @return {boolean|void} */
 who.brand.Galeon.detect = function(){
     if( who.brand.Galeon.is() ){
-        p_setBrand( BRAND.Galeon, who.brand.Galeon.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Galeon, who.brand.Galeon.NAVIGATOR_VERSION );
         return true;
     };
 };

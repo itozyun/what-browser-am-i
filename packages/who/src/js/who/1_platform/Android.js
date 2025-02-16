@@ -79,13 +79,13 @@ who.platform.Android.detect = function(){
         // バージョン 41 以降の Android 版 Firefox では platform トークンに Android バージョンが含まれます。
         // 相互運用性向上のため、Android 4 以前のバージョンでブラウザが動作している場合は 4.4 と出力します。
         if( p_hasSubstring( p_strUserAgent, 'Android 4.4;' ) ){
-            p_setPlatform( PLATFORM.Android, '2.2~3', DEVICE_TYPE.PHONE );
+            p_setPlatform( EnumPlatform.Android, '2.2~3', EnumDeviceType.PHONE );
         } else
         // Android バージョン 4 以降では実際のバージョン番号が出力されます。
         if( 4 <= parseFloat( _versionAndroid ) ){
-            p_setPlatform( PLATFORM.Android, _versionAndroid, DEVICE_TYPE.PHONE );
+            p_setPlatform( EnumPlatform.Android, _versionAndroid, EnumDeviceType.PHONE );
         } else {
-            p_setPlatform( PLATFORM.Android, '2.2~3', DEVICE_TYPE.PHONE );
+            p_setPlatform( EnumPlatform.Android, '2.2~3', EnumDeviceType.PHONE );
         };
         if( p_isConflictingLinuxCPUStringsFound ){
             p_isPcSiteRequested = true;
@@ -99,9 +99,9 @@ who.platform.Android.detect = function(){
         var isTablet = p_hasSubstring( p_strUserAgent, 'Tablet' );
 
         if( _versionAndroid ){
-            p_setPlatform( PLATFORM.Android, _versionAndroid, isTablet ? DEVICE_TYPE.TABLET : DEVICE_TYPE.PHONE );
+            p_setPlatform( EnumPlatform.Android, _versionAndroid, isTablet ? EnumDeviceType.TABLET : EnumDeviceType.PHONE );
         } else {
-            p_setPlatform( PLATFORM.Android, '1.6~', isTablet ? DEVICE_TYPE.TABLET : DEVICE_TYPE.PHONE );
+            p_setPlatform( EnumPlatform.Android, '1.6~', isTablet ? EnumDeviceType.TABLET : EnumDeviceType.PHONE );
             p_isPcSiteRequested = true;
         };
         return true;
@@ -110,7 +110,7 @@ who.platform.Android.detect = function(){
      *  Android OS
      */
     if( _versionAndroid ){
-        p_setPlatform( PLATFORM.Android, _versionAndroid, DEVICE_TYPE.PHONE );
+        p_setPlatform( EnumPlatform.Android, _versionAndroid, EnumDeviceType.PHONE );
         return true;
     } else
     /*----------------------------------------------------------------------------//
@@ -128,10 +128,10 @@ who.platform.Android.detect = function(){
         // Audio でタッチが必要か？の判定にとても困る...
         // ua には Linux x86_64 になっている p_strPlatform と矛盾する. ATOM CPU の場合は？
         if( who.engine.SamsungInternet.NAVIGATOR_VERSION ){ // SamsungBrowser/2.0+ が Android4.4.4 から登場する
-            p_setPlatform( PLATFORM.Android, '4.4~', DEVICE_TYPE.PHONE );
+            p_setPlatform( EnumPlatform.Android, '4.4~', EnumDeviceType.PHONE );
         } else
         if( ( hasChromeObject && !maybeAOSP ) || who.brand.Opera.OPR_NAVIGATOR_VERSION ){
-            p_setPlatform( PLATFORM.Android, '4~', DEVICE_TYPE.PHONE );
+            p_setPlatform( EnumPlatform.Android, '4~', EnumDeviceType.PHONE );
         } else {
             var implVersion = who.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION;
 
@@ -146,11 +146,11 @@ who.platform.Android.detect = function(){
             //   Android OS 5.0（Lollipop）から、Chromium WebView が OS から切り離され、Google Play から 「AndroidシステムのWebView」として更新できるようになった。
             //   この結果、端末ベンダー提供のパッチ適用に影響されずに更新されることになったが、この「ブラウザ」と Chrome for Android とは別物であることには注意が必要である。 
             p_setPlatform(
-                PLATFORM.Android,
+                EnumPlatform.Android,
                 p_conpareVersion( implVersion, 5 ) < 0
                     ? implVersion
                     : '5~',
-                DEVICE_TYPE.PHONE
+                EnumDeviceType.PHONE
             );
         };
         p_surelyPcSiteRequested = true;
@@ -160,7 +160,7 @@ who.platform.Android.detect = function(){
      *  Android 5≦ + Chrome for WebView + PCSITE_REQUESTED
      */
     if( who.engine.ChromiumOrAndroidWebView.maybeChromeWebView ){
-        p_setPlatform( PLATFORM.Android );
+        p_setPlatform( EnumPlatform.Android );
         p_surelyPcSiteRequested = true;
         return true;
     };

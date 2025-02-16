@@ -19,7 +19,7 @@ who.brand.Waterfox.is = function(){
 /** @return {boolean|void} */
 who.brand.Waterfox.detect = function(){
     if( who.brand.Waterfox.is() ){
-        p_setBrand( BRAND.Waterfox, who.brand.Waterfox.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Waterfox, who.brand.Waterfox.NAVIGATOR_VERSION );
         return true;
     };
 };

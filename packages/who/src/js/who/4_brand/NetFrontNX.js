@@ -21,7 +21,7 @@ who.brand.NetFrontNX.is = function(){
 /** @return {boolean|void} */
 who.brand.NetFrontNX.detect = function(){
     if( who.brand.NetFrontNX.is() ){
-        p_setBrand( BRAND.NetFront$R_Browser_NX, who.brand.NetFrontNX.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.NetFront$R_Browser_NX, who.brand.NetFrontNX.NAVIGATOR_VERSION );
         return true;
     };
 };

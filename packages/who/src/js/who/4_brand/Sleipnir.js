@@ -39,7 +39,7 @@ who.brand.Sleipnir.is = function(){
 /** @return {boolean|void} */
 who.brand.Sleipnir.detect = function(){
     if( who.brand.Sleipnir.is() ){
-        p_setBrand( BRAND.Sleipnir, who.brand.Sleipnir.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.Sleipnir, who.brand.Sleipnir.NAVIGATOR_VERSION );
         return true;
     };
 };

@@ -16,8 +16,8 @@ who.platform.SunOS.is = function(){
 /** @return {boolean|void} */
 who.platform.SunOS.detect = function(){
     if( who.platform.SunOS.is() ){
-        p_setPlatform( PLATFORM.SunOS );
-        p_deviceType = DEVICE_TYPE.PC;
+        p_setPlatform( EnumPlatform.SunOS );
+        p_deviceType = EnumDeviceType.PC;
         return true;
     };
 };

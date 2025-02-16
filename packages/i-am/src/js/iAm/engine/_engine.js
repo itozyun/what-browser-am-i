@@ -7,7 +7,7 @@ goog.provide( 'iAm._engineVersion.Lte' );
 goog.require( 'iAm.DEFINE.ASSUME_ENGINE' );
 goog.require( 'iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION' );
 goog.require( 'iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION' );
-goog.require( 'who.INDEX' );
+goog.require( 'iAm.EnumIndex' );
 goog.require( 'who.conpare' );
 
 /**
@@ -19,7 +19,7 @@ iAm._engineIs = function( engineName ){
     if( iAm.DEFINE.ASSUME_ENGINE ){
         return iAm.DEFINE.ASSUME_ENGINE === engineName;
     };
-    return ua[ who.INDEX.ENGINE ] === engineName;
+    return ua[ iAm.EnumIndex.ENGINE ] === engineName;
 };
 
 /**
@@ -38,7 +38,7 @@ iAm._engineVersion.Gt = function( version ){
             return false;
         };
     };
-    return ua.conpare( ua[ who.INDEX.ENGINE_VERSION ], version ) === 1;
+    return ua.conpare( ua[ iAm.EnumIndex.ENGINE_VERSION ], version ) === 1;
 };
 
 /**
@@ -57,7 +57,7 @@ iAm._engineVersion.Gte = function( version ){
             return false;
         };
     };
-    return 0 <= ua.conpare( ua[ who.INDEX.ENGINE_VERSION ], version );
+    return 0 <= ua.conpare( ua[ iAm.EnumIndex.ENGINE_VERSION ], version );
 };
 
 /**
@@ -76,7 +76,7 @@ iAm._engineVersion.Lt = function( version ){
             return true;
         };
     };
-    return ua.conpare( ua[ who.INDEX.ENGINE_VERSION ], version ) === -1;
+    return ua.conpare( ua[ iAm.EnumIndex.ENGINE_VERSION ], version ) === -1;
 };
 
 /**
@@ -95,7 +95,7 @@ iAm._engineVersion.Lte = function( version ){
             return true;
         };
     };
-    return 0 <= ua.conpare( ua[ who.INDEX.ENGINE_VERSION ], version );
+    return 0 <= ua.conpare( ua[ iAm.EnumIndex.ENGINE_VERSION ], version );
 };
 
 if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
@@ -108,7 +108,7 @@ if( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION ){
 /**
  * @private
  * @const {string | number} */
-var asSafariVersion = webKitVersionToSafariVersion( ua[ who.INDEX.ENGINE_VERSION ] );
+var asSafariVersion = webKitVersionToSafariVersion( ua[ iAm.EnumIndex.ENGINE_VERSION ] );
 
 /**
  * @packege

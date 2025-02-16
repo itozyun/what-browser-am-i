@@ -19,7 +19,7 @@ who.brand.PaleMoon.is = function(){
 /** @return {boolean|void} */
 who.brand.PaleMoon.detect = function(){
     if( who.brand.PaleMoon.is() ){
-        p_setBrand( BRAND.PaleMoon, who.brand.PaleMoon.NAVIGATOR_VERSION );
+        p_setBrand( EnumBrand.PaleMoon, who.brand.PaleMoon.NAVIGATOR_VERSION );
         return true;
     };
 };
