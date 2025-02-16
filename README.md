@@ -150,7 +150,7 @@ gulp dist
 
 #### 5.4.1 Use optimization option
 
-1. Compile with `whatBrowserAmI.DEFINE.MINIFY=true`.
+1. Compile with `iAm.DEFINE.MINIFY=true`.
 2. All properties and names are provided numerically. This constant is located in `./src/js/0_global/*.js`.
 3. [web-doc-base/src/js-inline/dynamicViewPort.js](https://github.com/itozyun/web-doc-base/blob/master/src/js-inline/dynamicViewPort.js), etc., to obtain the required values.
 

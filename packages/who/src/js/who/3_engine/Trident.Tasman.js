@@ -21,7 +21,7 @@ who.engine.Trident.is = function(){
 
 /** @const {number} */
 who.engine.Trident.IMPLEMENT_VERSION =
-    who.env.documentMode        ? who.env.documentMode :
+    who.env.documentMode  ? /** @type {number} */ (who.env.documentMode) :
     window.XMLHttpRequest ? ( document.getElementsByTagName ? 7 : 4 ) :
     document.compatMode   ? 6   :
     (0).toFixed           ? 5.5 :

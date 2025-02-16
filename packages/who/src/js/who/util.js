@@ -95,7 +95,7 @@ who.util.getAppleVersionString = function( strTarget, strStart ){
  * @return {string|number}
  */
 who.util.maxVersion = function( _args ){
-    var args = arguments, i = 1, max = args[ 0 ], v;
+    var args = arguments, i = 1, max = _args, v;
     
     for( ; i < args.length; ++i ){
         v = args[ i ];
@@ -112,7 +112,7 @@ who.util.maxVersion = function( _args ){
  */
 who.util.toVersionString = function( v ){
     if( core.isString( v ) ){
-        return v;
+        return /** @type {string} */ (v);
     };
     if( core.isNumber( v ) ){
         return '' + v;

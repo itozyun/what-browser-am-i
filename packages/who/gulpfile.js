@@ -24,8 +24,8 @@ gulp.task( 'dist', gulp.series(
             function( err, buffer ){
                 if( !err ){
                     funcConpare = 'var ' + uaObjectName + '=' + ( minify ? '[]' : '{}' ) + ';' +
-                                  uaObjectName + '.conpare' +
-                                  buffer.toString().split( 'iAm.conpare' )[ 1 ];
+                                  uaObjectName + '.conpare = ' +
+                                  buffer.toString().split( 'iAm.conpare = ' )[ 1 ];
                     cb();
                 };
             }
@@ -34,7 +34,8 @@ gulp.task( 'dist', gulp.series(
     function(){
         return gulp
             .src(
-                [ 
+                [
+                    '../../../es2-core/src/js/**/*.js',
                     '../i-am/src/closure-primitives/base.js',
                     '../i-am/src/js/**/*.js',
                      './src/js/**/*.js'
