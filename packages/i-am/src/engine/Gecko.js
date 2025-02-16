@@ -17,6 +17,11 @@ goog.provide( 'iAm.GeckoMobile.Lte' );
 
 goog.require( 'iAm.Goanne' );
 goog.require( 'who.ENGINE' );
+goog.require( 'iAm._engineIs' );
+goog.require( 'iAm._engineVersion.Gt' );
+goog.require( 'iAm._engineVersion.Gte' );
+goog.require( 'iAm._engineVersion.Lt' );
+goog.require( 'iAm._engineVersion.Lte' );
 
 /**
  * @return {boolean}

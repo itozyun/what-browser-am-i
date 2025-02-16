@@ -1,5 +1,25 @@
 goog.provide( 'iAm' );
 
+goog.provide( 'iAm.AndroidWebView' );
+goog.provide( 'iAm.Chromium' );
+goog.provide( 'iAm.EdgeHTML' );
+goog.provide( 'iAm.Gecko' );
+goog.provide( 'iAm.Goanna' );
+goog.provide( 'iAm.iCab' );
+goog.provide( 'iAm.KHTML' );
+goog.provide( 'iAm.NetFront' );
+goog.provide( 'iAm.Netscape' );
+goog.provide( 'iAm.OperaMini' );
+goog.provide( 'iAm.Presto' );
+goog.provide( 'iAm.QtWebEngine' );
+goog.provide( 'iAm.QtWebKit' );
+goog.provide( 'iAm.SamsungInternet' );
+goog.provide( 'iAm.Selvo' );
+goog.provide( 'iAm.Tasman' );
+goog.provide( 'iAm.Trident' );
+goog.provide( 'iAm.UCWEB' );
+goog.provide( 'iAm.WebKit' );
+
 goog.require( 'iAm.NintendoDS' );
 goog.require( 'iAm.NintendoDSi' );
 goog.require( 'iAm.Nintendo3DS' );
@@ -52,3 +72,21 @@ goog.require( 'iAm.Fedora' );
 goog.require( 'iAm.Gentoo' );
 goog.require( 'iAm.Linux' );
 
+goog.require( 'iAm.PlayStation' );
+goog.require( 'iAm.iPhone' );
+goog.require( 'iAm.iPod' );
+goog.require( 'iAm.iPad' );
+goog.require( 'iAm.BOOX' );
+goog.require( 'iAm.Cybook' );
+goog.require( 'iAm.eClicto' );
+goog.require( 'iAm.Fidibook' );
+goog.require( 'iAm.FireTV' );
+goog.require( 'iAm.Hisense' );
+goog.require( 'iAm.icarus' );
+goog.require( 'iAm.KindleFire' );
+goog.require( 'iAm.Likebook' );
+goog.require( 'iAm.Manta' );
+goog.require( 'iAm.Movistar' );
+goog.require( 'iAm.Nook' );
+goog.require( 'iAm.PocketBook' );
+goog.require( 'iAm.Tolino' );

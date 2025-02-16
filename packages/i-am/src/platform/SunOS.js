@@ -1,6 +1,11 @@
 goog.provide( 'iAm.SunOS' );
 
 goog.require( 'who.PLATFORM' );
+goog.require( 'iAm._platformIs' );
+goog.require( 'iAm._platformVersion.Gt' );
+goog.require( 'iAm._platformVersion.Gte' );
+goog.require( 'iAm._platformVersion.Lt' );
+goog.require( 'iAm._platformVersion.Lte' );
 
 /**
  * @return {boolean}

@@ -19,6 +19,11 @@ goog.require( 'iAm.AndroidWebView' );
 goog.require( 'iAm.SamsungInternet' );
 goog.require( 'iAm.QtWebEngine' );
 goog.require( 'who.ENGINE' );
+goog.require( 'iAm._engineIs' );
+goog.require( 'iAm._engineVersion.Gt' );
+goog.require( 'iAm._engineVersion.Gte' );
+goog.require( 'iAm._engineVersion.Lt' );
+goog.require( 'iAm._engineVersion.Lte' );
 
 /**
  * @return {boolean}
@@ -35,7 +40,7 @@ iAm.Chromium = function(){
  * @return {boolean}
  */
 iAm.Chromium.Based = function(){
-    return iAm.AnyChromium() || iAm.ChromiumMobile() || iAm.AndroidWebView() || iAm.SamsungInternet() || iAm.QtWebEngine();
+    return iAm.AnyChromium() || iAm.AndroidWebView() || iAm.SamsungInternet() || iAm.QtWebEngine();
 };
 
 /*----------------------------------------------------------------------------//
