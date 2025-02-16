@@ -16,11 +16,22 @@ let uaObjectName = 'whatBrowserAmI';
 let fileName     = 'whatBrowserAmI.js';
 let outputDir    = './test';
 let formatting   = 'PRETTY_PRINT';
+let funcConpare;
 
 gulp.task( 'dist', gulp.series(
+    function( cb ){
+        fs.readFile( './src/js/who/conpare.js',
+            function( err, buffer ){
+                if( !err ){
+                    funcConpare = 'var ' + uaObjectName + '=' + ( minify ? '[]' : '{}' ) + ';' +
+                                  uaObjectName + '.conpare' +
+                                  buffer.toString().split( 'who.conpare' )[ 1 ];
+                    cb();
+                };
+            }
+        )
+    },
     function(){
-        const funcConpare = fs.readFileSync( './src/js-global/conpare.js' ).toString();
-
         return gulp
             .src(
                 [ './src/closure-primitives/base.js', './src/js/**/*.js' ]
@@ -29,7 +40,7 @@ gulp.task( 'dist', gulp.series(
                     {
                         dependency_mode  : 'PRUNE',
                         entry_point       : 'goog:allfeatures',
-                        externs           : [ externsJs ],
+                        // externs           : [ externsJs ],
                         compilation_level : 'ADVANCED',
                         define            : [
                             'who.DEFINE.MINIFY=' + minify
@@ -38,8 +49,7 @@ gulp.task( 'dist', gulp.series(
                         language_in       : 'ECMASCRIPT3',
                         language_out      : 'ECMASCRIPT3',
                         output_wrapper    :
-                            'var ' + uaObjectName + '=' + ( minify ? '[]' : '{}' ) + ';' +
-                            funcConpare.split( 'ua.conpare' ).join( uaObjectName + '.conpare' ) +
+                            funcConpare +
                             '(function(ua, window, ' + globalVariables + '){\n' +
                                 '%output%\n' +
                             '})(' + uaObjectName + ', this, ' + globalVariables + ');'
@@ -48,7 +58,7 @@ gulp.task( 'dist', gulp.series(
             ).pipe(
                 ClosureCompiler(
                     {
-                        externs        : [ externsJs ],
+                        // externs        : [ externsJs ],
                         warning_level  : 'QUIET',
                         language_in    : 'ECMASCRIPT3',
                         language_out   : 'ECMASCRIPT3'

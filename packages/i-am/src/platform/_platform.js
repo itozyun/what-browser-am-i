@@ -8,6 +8,7 @@ goog.require( 'iAm.DEFINE.ASSUME_PLATFORM' );
 goog.require( 'iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION' );
 goog.require( 'iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION' );
 goog.require( 'who.INDEX' );
+goog.require( 'who.conpare' );
 
 /**
  * @packege
@@ -28,12 +29,12 @@ iAm._platformIs = function( platformName ){
  */
 iAm._platformVersion.Gt = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION ){
-        if( p_conpareVersion( iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION, version ) === 1 ){
+        if( who.conpare( iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION, version ) === 1 ){
             return true;
         };
     };
     if( iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION ){
-        if( p_conpareVersion( iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION, version ) <= 0 ){
+        if( who.conpare( iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION, version ) <= 0 ){
             return false;
         };
     };
@@ -47,12 +48,12 @@ iAm._platformVersion.Gt = function( version ){
  */
 iAm._platformVersion.Gte = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION ){
-        if( 0 <= p_conpareVersion( iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION, version ) ){
+        if( 0 <= who.conpare( iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION, version ) ){
             return true;
         };
     };
     if( iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION ){
-        if( p_conpareVersion( iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION, version ) === -1 ){
+        if( who.conpare( iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION, version ) === -1 ){
             return false;
         };
     };
@@ -66,12 +67,12 @@ iAm._platformVersion.Gte = function( version ){
  */
 iAm._platformVersion.Lt = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION ){
-        if( 0 <= p_conpareVersion( iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION, version ) ){
+        if( 0 <= who.conpare( iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION, version ) ){
             return false;
         };
     };
     if( iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION ){
-        if( p_conpareVersion( iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION, version ) === -1 ){
+        if( who.conpare( iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION, version ) === -1 ){
             return true;
         };
     };
@@ -85,12 +86,12 @@ iAm._platformVersion.Lt = function( version ){
  */
 iAm._platformVersion.Lte = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION ){
-        if( p_conpareVersion( iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION, version ) === 1 ){
+        if( who.conpare( iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION, version ) === 1 ){
             return false;
         };
     };
     if( iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION ){
-        if( p_conpareVersion( iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION, version ) <= 0 ){
+        if( who.conpare( iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION, version ) <= 0 ){
             return true;
         };
     };
