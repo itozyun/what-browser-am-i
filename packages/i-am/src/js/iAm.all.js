@@ -1,4 +1,4 @@
-goog.provide( 'iAm' );
+goog.provide( 'iAm.all' );
 
 goog.require( 'iAm.AndroidWebView' );
 goog.require( 'iAm.Chromium' );

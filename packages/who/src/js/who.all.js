@@ -1,4 +1,4 @@
-goog.provide( 'allfeatures' );
+goog.provide( 'who.all' );
 
 goog.require( 'who.platform.detectAll' );
 goog.require( 'who.device.detectAll' );
