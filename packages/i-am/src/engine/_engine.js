@@ -5,8 +5,8 @@ goog.provide( 'iAm._engineVersion.Lt' );
 goog.provide( 'iAm._engineVersion.Lte' );
 
 goog.require( 'iAm.DEFINE.ASSUME_ENGINE' );
-goog.require( 'iAm.DEFINE.ASSUME_MIN_VERSION' );
-goog.require( 'iAm.DEFINE.ASSUME_MAX_VERSION' );
+goog.require( 'iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION' );
+goog.require( 'iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION' );
 goog.require( 'who.INDEX' );
 
 /**
@@ -27,13 +27,13 @@ iAm._engineIs = function( engineName ){
  * @return {boolean}
  */
 iAm._engineVersion.Gt = function( version ){
-    if( iAm.DEFINE.ASSUME_MIN_VERSION ){
-        if( p_conpareVersion( iAm.DEFINE.ASSUME_MIN_VERSION, version ) === 1 ){
+    if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
+        if( p_conpareVersion( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION, version ) === 1 ){
             return true;
         };
     };
-    if( iAm.DEFINE.ASSUME_MAX_VERSION ){
-        if( p_conpareVersion( iAm.DEFINE.ASSUME_MAX_VERSION, version ) <= 0 ){
+    if( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION ){
+        if( p_conpareVersion( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION, version ) <= 0 ){
             return false;
         };
     };
@@ -46,13 +46,13 @@ iAm._engineVersion.Gt = function( version ){
  * @return {boolean}
  */
 iAm._engineVersion.Gte = function( version ){
-    if( iAm.DEFINE.ASSUME_MIN_VERSION ){
-        if( 0 <= p_conpareVersion( iAm.DEFINE.ASSUME_MIN_VERSION, version ) ){
+    if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
+        if( 0 <= p_conpareVersion( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION, version ) ){
             return true;
         };
     };
-    if( iAm.DEFINE.ASSUME_MAX_VERSION ){
-        if( p_conpareVersion( iAm.DEFINE.ASSUME_MAX_VERSION, version ) === -1 ){
+    if( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION ){
+        if( p_conpareVersion( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION, version ) === -1 ){
             return false;
         };
     };
@@ -65,13 +65,13 @@ iAm._engineVersion.Gte = function( version ){
  * @return {boolean}
  */
 iAm._engineVersion.Lt = function( version ){
-    if( iAm.DEFINE.ASSUME_MIN_VERSION ){
-        if( 0 <= p_conpareVersion( iAm.DEFINE.ASSUME_MIN_VERSION, version ) ){
+    if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
+        if( 0 <= p_conpareVersion( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION, version ) ){
             return false;
         };
     };
-    if( iAm.DEFINE.ASSUME_MAX_VERSION ){
-        if( p_conpareVersion( iAm.DEFINE.ASSUME_MAX_VERSION, version ) === -1 ){
+    if( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION ){
+        if( p_conpareVersion( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION, version ) === -1 ){
             return true;
         };
     };
@@ -84,24 +84,24 @@ iAm._engineVersion.Lt = function( version ){
  * @return {boolean}
  */
 iAm._engineVersion.Lte = function( version ){
-    if( iAm.DEFINE.ASSUME_MIN_VERSION ){
-        if( p_conpareVersion( iAm.DEFINE.ASSUME_MIN_VERSION, version ) === 1 ){
+    if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
+        if( p_conpareVersion( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION, version ) === 1 ){
             return false;
         };
     };
-    if( iAm.DEFINE.ASSUME_MAX_VERSION ){
-        if( p_conpareVersion( iAm.DEFINE.ASSUME_MAX_VERSION, version ) <= 0 ){
+    if( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION ){
+        if( p_conpareVersion( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION, version ) <= 0 ){
             return true;
         };
     };
     return 0 <= ua.conpare( ua[ who.INDEX.ENGINE_VERSION ], version );
 };
 
-if( iAm.DEFINE.ASSUME_MIN_VERSION ){
-    iAm.MIN_SAFARI_VERSION = webKitVersionToSafariVersion( iAm.DEFINE.ASSUME_MIN_VERSION );
+if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
+    iAm.MIN_SAFARI_VERSION = webKitVersionToSafariVersion( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION );
 };
-if( iAm.DEFINE.ASSUME_MAX_VERSION ){
-    iAm.MAX_SAFARI_VERSION = webKitVersionToSafariVersion( iAm.DEFINE.ASSUME_MAX_VERSION );
+if( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION ){
+    iAm.MAX_SAFARI_VERSION = webKitVersionToSafariVersion( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION );
 };
 
 /**
@@ -115,12 +115,12 @@ var asSafariVersion = webKitVersionToSafariVersion( ua[ who.INDEX.ENGINE_VERSION
  * @return {boolean}
  */
 iAm._safariVersion.Gt = function( version ){
-    if( iAm.DEFINE.ASSUME_MIN_VERSION ){
+    if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
         if( p_conpareVersion( iAm.MIN_SAFARI_VERSION, version ) === 1 ){
             return true;
         };
     };
-    if( iAm.DEFINE.ASSUME_MAX_VERSION ){
+    if( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION ){
         if( p_conpareVersion( iAm.MAX_SAFARI_VERSION, version ) <= 0 ){
             return false;
         };
@@ -134,12 +134,12 @@ iAm._safariVersion.Gt = function( version ){
  * @return {boolean}
  */
 iAm._safariVersion.Gte = function( version ){
-    if( iAm.DEFINE.ASSUME_MIN_VERSION ){
+    if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
         if( 0 <= p_conpareVersion( iAm.MIN_SAFARI_VERSION, version ) ){
             return true;
         };
     };
-    if( iAm.DEFINE.ASSUME_MAX_VERSION ){
+    if( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION ){
         if( p_conpareVersion( iAm.MAX_SAFARI_VERSION, version ) === -1 ){
             return false;
         };
@@ -153,12 +153,12 @@ iAm._safariVersion.Gte = function( version ){
  * @return {boolean}
  */
 iAm._safariVersion.Lt = function( version ){
-    if( iAm.DEFINE.ASSUME_MIN_VERSION ){
+    if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
         if( 0 <= p_conpareVersion( iAm.MIN_SAFARI_VERSION, version ) ){
             return false;
         };
     };
-    if( iAm.DEFINE.ASSUME_MAX_VERSION ){
+    if( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION ){
         if( p_conpareVersion( iAm.MAX_SAFARI_VERSION, version ) === -1 ){
             return true;
         };
@@ -172,12 +172,12 @@ iAm._safariVersion.Lt = function( version ){
  * @return {boolean}
  */
 iAm._safariVersion.Lte = function( version ){
-    if( iAm.DEFINE.ASSUME_MIN_VERSION ){
+    if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
         if( p_conpareVersion( iAm.MIN_SAFARI_VERSION, version ) === 1 ){
             return false;
         };
     };
-    if( iAm.DEFINE.ASSUME_MAX_VERSION ){
+    if( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION ){
         if( p_conpareVersion( iAm.MAX_SAFARI_VERSION, version ) <= 0 ){
             return true;
         };

@@ -123,10 +123,10 @@ function p_maxVersion( _args ){
  * @return {string} 
  */
 function p_toVersionString( v ){
-    if( v === v + '' ){
+    if( __.isString( v ) ){
         return v;
     };
-    if( v === v - 0 ){
+    if( __.isNumber( v ) ){
         return '' + v;
     };
     v = /** @type {VersionRange} */ (v);
@@ -142,7 +142,7 @@ function p_toVersionString( v ){
  * @return {number}
  */
 function p_toVersionNumber( v ){
-    if( v === v + '' ){
+    if( __.isString( v ) ){
         return parseFloat( v );
     };
     return /** @type {number} */ (v);
