@@ -1,6 +1,7 @@
 goog.provide( 'iAm.EnumEngine' );
 
 goog.require( 'iAm.DEFINE.MINIFY' );
+goog.require( 'iAm.UNKNOWN_VALUE' );
 
 /**
  *  DHTML ブラウザと Flash Player をサポートするブラウザ
@@ -10,7 +11,7 @@ goog.require( 'iAm.DEFINE.MINIFY' );
  * 
  * @enum {string|number} */
 iAm.EnumEngine = {
-    Unknown          : iAm.DEFINE.MINIFY ?  0 : '',
+    Unknown          : iAm.UNKNOWN_VALUE,
     Netscape         : iAm.DEFINE.MINIFY ?  1 : 'Netscape',
     Trident          : iAm.DEFINE.MINIFY ?  2 : 'Trident',
     Trident_Mobile   : iAm.DEFINE.MINIFY ?  3 : 'TridentMobile',

@@ -1,10 +1,11 @@
 goog.provide( 'iAm.EnumDevice' );
 
 goog.require( 'iAm.DEFINE.MINIFY' );
+goog.require( 'iAm.UNKNOWN_VALUE' );
 
 /** @enum {string|number} */
 iAm.EnumDevice = {
-    Unknown             : iAm.DEFINE.MINIFY ?  0 : '',
+    Unknown             : iAm.UNKNOWN_VALUE,
 
     SONY_mylo           : iAm.DEFINE.MINIFY ?  1 : 'mylo',
     NewNintendo3DS      : iAm.DEFINE.MINIFY ?  2 : 'NewNintendo3DS',

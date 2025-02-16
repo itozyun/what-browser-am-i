@@ -1,10 +1,11 @@
 goog.provide( 'iAm.EnumDeviceType' );
 
 goog.require( 'iAm.DEFINE.MINIFY' );
+goog.require( 'iAm.UNKNOWN_VALUE' );
 
 /** @enum {string|number} */
 iAm.EnumDeviceType = {
-    UNKNOWN      : iAm.DEFINE.MINIFY ? 0 : '',
+    UNKNOWN      : iAm.UNKNOWN_VALUE,
     PC           : iAm.DEFINE.MINIFY ? 1 : 'PC',
     PHONE        : iAm.DEFINE.MINIFY ? 2 : 'PHONE',
     TABLET       : iAm.DEFINE.MINIFY ? 3 : 'TABLET',

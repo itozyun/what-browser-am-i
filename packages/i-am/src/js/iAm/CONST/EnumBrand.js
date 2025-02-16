@@ -1,10 +1,11 @@
 goog.provide( 'iAm.EnumBrand' );
 
 goog.require( 'iAm.DEFINE.MINIFY' );
+goog.require( 'iAm.UNKNOWN_VALUE' );
 
 /** @enum {string|number} */
 iAm.EnumBrand = {
-    Unknown                   : iAm.DEFINE.MINIFY ?  0 : '',
+    Unknown                   : iAm.UNKNOWN_VALUE,
     Android_Browser           : iAm.DEFINE.MINIFY ?  1 : 'AndroidBrowser',
     AOL                       : iAm.DEFINE.MINIFY ?  2 : 'AOL',
     Avant                     : iAm.DEFINE.MINIFY ?  3 : 'Avant',
