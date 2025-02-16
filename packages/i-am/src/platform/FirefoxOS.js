@@ -1,0 +1,42 @@
+goog.provide( 'iAm.FirefoxOS' );
+
+goog.require( 'who.PLATFORM' );
+
+/**
+ * @return {boolean}
+ */
+iAm.FirefoxOS = function(){
+    return iAm._platformIs( who.PLATFORM.FirefoxOS );
+};
+
+/**
+ * @param {string|number} version 
+ * @return {boolean}
+ */
+iAm.FirefoxOS.Gt = function( version ){
+    return iAm.FirefoxOS() && iAm._platformVersion.Gt( version );
+};
+
+/**
+ * @param {string|number} version 
+ * @return {boolean}
+ */
+iAm.FirefoxOS.Gte = function( version ){
+    return iAm.FirefoxOS() && iAm._platformVersion.Gte( version );
+};
+
+/**
+ * @param {string|number} version 
+ * @return {boolean}
+ */
+iAm.FirefoxOS.Lt = function( version ){
+    return iAm.FirefoxOS() && iAm._platformVersion.Lt( version );
+};
+
+/**
+ * @param {string|number} version 
+ * @return {boolean}
+ */
+iAm.FirefoxOS.Lte = function( version ){
+    return iAm.FirefoxOS() && iAm._platformVersion.Lte( version );
+};

@@ -8,3 +8,35 @@ goog.require( 'who.PLATFORM' );
 iAm.Nintendo3DS = function(){
     return iAm._platformIs( who.PLATFORM.NINTENDO_3DS$TM );
 };
+
+/**
+ * @param {string|number} version 
+ * @return {boolean}
+ */
+iAm.Nintendo3DS.Gt = function( version ){
+    return iAm.Nintendo3DS() && iAm._platformVersion.Gt( version );
+};
+
+/**
+ * @param {string|number} version 
+ * @return {boolean}
+ */
+iAm.Nintendo3DS.Gte = function( version ){
+    return iAm.Nintendo3DS() && iAm._platformVersion.Gte( version );
+};
+
+/**
+ * @param {string|number} version 
+ * @return {boolean}
+ */
+iAm.Nintendo3DS.Lt = function( version ){
+    return iAm.Nintendo3DS() && iAm._platformVersion.Lt( version );
+};
+
+/**
+ * @param {string|number} version 
+ * @return {boolean}
+ */
+iAm.Nintendo3DS.Lte = function( version ){
+    return iAm.Nintendo3DS() && iAm._platformVersion.Lte( version );
+};

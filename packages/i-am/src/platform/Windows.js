@@ -1,8 +1,4 @@
 goog.provide( 'iAm.Windows' );
-goog.provide( 'iAm.Windows.Gt' );
-goog.provide( 'iAm.Windows.Gte' );
-goog.provide( 'iAm.Windows.Lt' );
-goog.provide( 'iAm.Windows.Lte' );
 
 goog.require( 'who.PLATFORM' );
 
@@ -12,10 +8,6 @@ goog.require( 'who.PLATFORM' );
 iAm.Windows = function(){
     return iAm._platformIs( who.PLATFORM.Windows );
 };
-
-/*----------------------------------------------------------------------------//
- *  Windows
- */
 
 /**
  * @param {string|number} version 

@@ -8,3 +8,35 @@ goog.require( 'who.PLATFORM' );
 iAm.WiiU = function(){
     return iAm._platformIs( who.PLATFORM.WiiU$TM );
 };
+
+/**
+ * @param {string|number} version 
+ * @return {boolean}
+ */
+iAm.WiiU.Gt = function( version ){
+    return iAm.WiiU() && iAm._platformVersion.Gt( version );
+};
+
+/**
+ * @param {string|number} version 
+ * @return {boolean}
+ */
+iAm.WiiU.Gte = function( version ){
+    return iAm.WiiU() && iAm._platformVersion.Gte( version );
+};
+
+/**
+ * @param {string|number} version 
+ * @return {boolean}
+ */
+iAm.WiiU.Lt = function( version ){
+    return iAm.WiiU() && iAm._platformVersion.Lt( version );
+};
+
+/**
+ * @param {string|number} version 
+ * @return {boolean}
+ */
+iAm.WiiU.Lte = function( version ){
+    return iAm.WiiU() && iAm._platformVersion.Lte( version );
+};
