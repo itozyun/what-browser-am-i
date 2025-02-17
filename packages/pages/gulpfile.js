@@ -13,9 +13,7 @@ const pkg             = require('./package.json'),
                        '(c) 2021-' + (new Date).getFullYear() + ' ' + pkg.author + '(' + pkg.homepage + '), ' + pkg.license + '.';
 
 let minify       = false;
-let uaObjectName = 'whatBrowserAmI';
-let fileName     = 'front.js';
-let outputDir    = './test';
+let uaObjectName = 'ua';
 let formatting   = 'PRETTY_PRINT';
 let target       = 'index';
 let funcConpare;
@@ -100,9 +98,7 @@ gulp.task( '__common', gulp.series(
                     '../i-am/src/closure-primitives/base.js',
                     '../i-am/.submodules/es2-core/src/js/**/*.js',
                     '../i-am/src/js/**/*.js',
-                    '../who/src/js/**/*.js',
-                     './.submodules/es2-json/src/js/**/*.js',
-                     './src/js/**/*.js'
+                    '../who/src/js/**/*.js'
                 ]
             ).pipe(
                 ClosureCompiler(
@@ -111,8 +107,7 @@ gulp.task( '__common', gulp.series(
                         entry_point       : 'goog:who.all',
                         compilation_level : 'ADVANCED',
                         define            : [
-                            'iAm.DEFINE.MINIFY=' + minify,
-                            'JSON2.DEFINE.USE_REPLACER=false'
+                            'iAm.DEFINE.MINIFY=' + minify
                         ],
                         warning_level     : 'VERBOSE',
                         language_in       : 'ECMASCRIPT3',
@@ -138,10 +133,11 @@ gulp.task( '__main', gulp.series(
             .src(
                 [
                     '../i-am/src/closure-primitives/base.js',
+                    '../i-am/.submodules/es2-core/src/js/**/*.js',
                     '../i-am/src/js/**/*.js',
-                    '../who/src/js/**/*.js',
                     tempDir + '/' + uaObjectName + '.js',
-                    './src/js/**/*.js'
+                     './.submodules/es2-json/src/js/**/*.js',
+                     './src/js/**/*.js'
                 ]
             ).pipe(
                 ClosureCompiler(
@@ -150,7 +146,8 @@ gulp.task( '__main', gulp.series(
                         entry_point       : 'goog:page.' + target,
                         compilation_level : 'ADVANCED',
                         define            : [
-                            'iAm.DEFINE.MINIFY=' + minify
+                            'iAm.DEFINE.MINIFY=' + minify,
+                            'JSON2.DEFINE.USE_REPLACER=false'
                         ],
                         warning_level     : 'VERBOSE',
                         language_in       : 'ECMASCRIPT3',
@@ -190,7 +187,7 @@ gulp.task( '__main', gulp.series(
                         compilation_level : 'WHITESPACE_ONLY',
                         warning_level     : 'QUIET',
                         formatting        : formatting,
-                        js_output_file    : fileName,
+                        js_output_file    : target + '.js',
                         output_wrapper    : '\/* ' + copyright + ' *\/\n' + '%output%'
                     }
                 )
@@ -205,14 +202,14 @@ gulp.task( '__main', gulp.series(
             );
     },
     function( cb ){
-        fs.readFile( tempDir + '/' + fileName,
+        fs.readFile( tempDir + '/' + target + '.js',
             function( error, buffer ){
                 if( error ){
                     throw error;
                 };
                 var js = buffer.toString();
 
-                fs.readFile( './src/front/html/' + target + '.html',
+                fs.readFile( './src/html/' + target + '.html',
                     function( error, buffer ){
                         if( error ){
                             throw error;
@@ -223,7 +220,7 @@ gulp.task( '__main', gulp.series(
                             script     = document.getElementsByTagName( 'script' )[ 0 ];
                         
                         script.textContent = js;
-                        fs.writeFile( './docs/' + target + '.html', jsdom.serialize(),
+                        fs.writeFile( '../../docs/' + target + '.html', jsdom.serialize(),
                             function( error ){
                                 if( error ){
                                     throw error;

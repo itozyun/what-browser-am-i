@@ -1,5 +1,6 @@
 goog.provide( 'pageItems.result' );
 
+goog.require( 'iAm.EnumIndex' );
 goog.require( 'util.getElementByName' );
 goog.require( 'util.print' );
 
@@ -72,14 +73,14 @@ goog.scope(
                         '<tr>' +
                             '<th><th>Name' + '<th>Version(Generation)' +
                     '<tbody>' +
-                        createRow( 'Platfrom'   , platformList   , ua.PLATFORM   , ua.PLATFORM_VERSION  ) +
-                        createRow( 'Device'     , deviceList     , ua.DEVICE     , ua.DEVICE_GENERATION ) +
-                        createRow( 'Device Type', device_typeList, ua.DEVICE_TYPE, ''                  , true ) +
-                        createRow( 'Engine'     , engineList     , ua.ENGINE     , ua.ENGINE_VERSION    ) +
-                        createRow( 'Brand'      , brandList      , ua.BRAND      , ua.BRAND_VERSION     ) +
+                        createRow( 'Platfrom'   , platformList   , ua[ iAm.EnumIndex.PLATFORM    ], ua[ iAm.EnumIndex.PLATFORM_VERSION  ] ) +
+                        createRow( 'Device'     , deviceList     , ua[ iAm.EnumIndex.DEVICE      ], ua[ iAm.EnumIndex.DEVICE_GENERATION ] ) +
+                        createRow( 'Device Type', device_typeList, ua[ iAm.EnumIndex.DEVICE_TYPE ], ''                                   , true ) +
+                        createRow( 'Engine'     , engineList     , ua[ iAm.EnumIndex.ENGINE      ], ua[ iAm.EnumIndex.ENGINE_VERSION    ] ) +
+                        createRow( 'Brand'      , brandList      , ua[ iAm.EnumIndex.BRAND       ], ua[ iAm.EnumIndex.BRAND_VERSION     ] ) +
                         '<tr>' +
                             '<th><label for="' + PREFIXED_PCSITE_REQUESTED + '">PC Site Requested</label>' +
-                            '<td colspan=2 align="right"><input type="checkbox"' + nameAndID( PREFIXED_PCSITE_REQUESTED ) + ( ua.PCSITE_REQUESTED ? ' checked' : '' ) + '>' +
+                            '<td colspan=2 align="right"><input type="checkbox"' + nameAndID( PREFIXED_PCSITE_REQUESTED ) + ( ua[ iAm.EnumIndex.PCSITE_REQUESTED ] ? ' checked' : '' ) + '>' +
                 '</table>' +
                 '<button' + nameAndID( PREFIXED_RESET ) + ' type="reset">Reset</button>' +
                 '</form>'
@@ -115,7 +116,7 @@ goog.scope(
             checkbox = util.getElementByName( PREFIXED_PCSITE_REQUESTED );
 
             if( checkbox ){
-                checkbox.checked = !!ua.PCSITE_REQUESTED;
+                checkbox.checked = !!ua[ iAm.EnumIndex.PCSITE_REQUESTED ];
             };
             if( ev ){
                 // ev.preventDefault(); Gecko ~0.9.5 で select.selectedIndex の更新に失敗する
