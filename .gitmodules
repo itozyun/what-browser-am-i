@@ -1,0 +1,6 @@
+[submodule "packages/who/.submodules/es2-core"]
+	path = packages/who/.submodules/es2-core
+	url = https://github.com/ECMAScript2/es2-core.git
+[submodule "packages/pages/.submodules/es2-json"]
+	path = packages/pages/.submodules/es2-json
+	url = https://github.com/ECMAScript2/es2-json.git

@@ -35,7 +35,7 @@ gulp.task( 'dist', gulp.series(
         return gulp
             .src(
                 [
-                    '../../../es2-core/src/js/**/*.js',
+                    './.submodules/es2-core/src/js/**/*.js',
                     '../i-am/src/closure-primitives/base.js',
                     '../i-am/src/js/**/*.js',
                      './src/js/**/*.js'
