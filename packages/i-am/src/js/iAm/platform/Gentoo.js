@@ -2,10 +2,10 @@ goog.provide( 'iAm.Gentoo' );
 
 goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
-goog.require( 'iAm._platformVersion.gt' );
-goog.require( 'iAm._platformVersion.gte' );
-goog.require( 'iAm._platformVersion.lt' );
-goog.require( 'iAm._platformVersion.lte' );
+goog.require( 'iAm._platformVersionGt' );
+goog.require( 'iAm._platformVersionGte' );
+goog.require( 'iAm._platformVersionLt' );
+goog.require( 'iAm._platformVersionLte' );
 
 /**
  * @return {boolean}
@@ -19,7 +19,7 @@ iAm.Gentoo = function(){
  * @return {boolean}
  */
 iAm.Gentoo.gt = function( version ){
-    return iAm.Gentoo() && iAm._platformVersion.gt( version );
+    return iAm.Gentoo() && iAm._platformVersionGt( version );
 };
 
 /**
@@ -27,7 +27,7 @@ iAm.Gentoo.gt = function( version ){
  * @return {boolean}
  */
 iAm.Gentoo.gte = function( version ){
-    return iAm.Gentoo() && iAm._platformVersion.gte( version );
+    return iAm.Gentoo() && iAm._platformVersionGte( version );
 };
 
 /**
@@ -35,7 +35,7 @@ iAm.Gentoo.gte = function( version ){
  * @return {boolean}
  */
 iAm.Gentoo.lt = function( version ){
-    return iAm.Gentoo() && iAm._platformVersion.lt( version );
+    return iAm.Gentoo() && iAm._platformVersionLt( version );
 };
 
 /**
@@ -43,5 +43,5 @@ iAm.Gentoo.lt = function( version ){
  * @return {boolean}
  */
 iAm.Gentoo.lte = function( version ){
-    return iAm.Gentoo() && iAm._platformVersion.lte( version );
+    return iAm.Gentoo() && iAm._platformVersionLte( version );
 };

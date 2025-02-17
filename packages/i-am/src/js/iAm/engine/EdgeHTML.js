@@ -16,10 +16,10 @@ goog.provide( 'iAm.EdgeMobile.lte' );
 
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.gt' );
-goog.require( 'iAm._engineVersion.gte' );
-goog.require( 'iAm._engineVersion.lt' );
-goog.require( 'iAm._engineVersion.lte' );
+goog.require( 'iAm._engineVersionGt' );
+goog.require( 'iAm._engineVersionGte' );
+goog.require( 'iAm._engineVersionLt' );
+goog.require( 'iAm._engineVersionLte' );
 
 /*----------------------------------------------------------------------------//
  *  EdgeHTML
@@ -37,7 +37,7 @@ iAm.EdgeHTML = function(){
  * @return {boolean}
  */
 iAm.EdgeHTML.gt = function( version ){
-    return iAm.EdgeHTML() && iAm._engineVersion.gt( version );
+    return iAm.EdgeHTML() && iAm._engineVersionGt( version );
 };
 
 /**
@@ -45,7 +45,7 @@ iAm.EdgeHTML.gt = function( version ){
  * @return {boolean}
  */
 iAm.EdgeHTML.gte = function( version ){
-    return iAm.EdgeHTML() && iAm._engineVersion.gte( version );
+    return iAm.EdgeHTML() && iAm._engineVersionGte( version );
 };
 
 /**
@@ -53,7 +53,7 @@ iAm.EdgeHTML.gte = function( version ){
  * @return {boolean}
  */
 iAm.EdgeHTML.lt = function( version ){
-    return iAm.EdgeHTML() && iAm._engineVersion.lt( version );
+    return iAm.EdgeHTML() && iAm._engineVersionLt( version );
 };
 
 /**
@@ -61,7 +61,7 @@ iAm.EdgeHTML.lt = function( version ){
  * @return {boolean}
  */
 iAm.EdgeHTML.lte = function( version ){
-    return iAm.EdgeHTML() && iAm._engineVersion.lte( version );
+    return iAm.EdgeHTML() && iAm._engineVersionLte( version );
 };
 
 /*----------------------------------------------------------------------------//
@@ -80,7 +80,7 @@ iAm.AnyEdgeHTML = function(){
  * @return {boolean}
  */
 iAm.AnyEdgeHTML.gt = function( version ){
-    return iAm.AnyEdgeHTML() && iAm._engineVersion.gt( version );
+    return iAm.AnyEdgeHTML() && iAm._engineVersionGt( version );
 };
 
 /**
@@ -88,7 +88,7 @@ iAm.AnyEdgeHTML.gt = function( version ){
  * @return {boolean}
  */
 iAm.AnyEdgeHTML.gte = function( version ){
-    return iAm.AnyEdgeHTML() && iAm._engineVersion.gte( version );
+    return iAm.AnyEdgeHTML() && iAm._engineVersionGte( version );
 };
 
 /**
@@ -96,7 +96,7 @@ iAm.AnyEdgeHTML.gte = function( version ){
  * @return {boolean}
  */
 iAm.AnyEdgeHTML.lt = function( version ){
-    return iAm.AnyEdgeHTML() && iAm._engineVersion.lt( version );
+    return iAm.AnyEdgeHTML() && iAm._engineVersionLt( version );
 };
 
 /**
@@ -104,7 +104,7 @@ iAm.AnyEdgeHTML.lt = function( version ){
  * @return {boolean}
  */
 iAm.AnyEdgeHTML.lte = function( version ){
-    return iAm.AnyEdgeHTML() && iAm._engineVersion.lte( version );
+    return iAm.AnyEdgeHTML() && iAm._engineVersionLte( version );
 };
 
 /*----------------------------------------------------------------------------//
@@ -123,7 +123,7 @@ iAm.EdgeMobile = function(){
  * @return {boolean}
  */
 iAm.EdgeMobile.gt = function( version ){
-    return iAm.EdgeMobile() && iAm._engineVersion.gt( version );
+    return iAm.EdgeMobile() && iAm._engineVersionGt( version );
 };
 
 /**
@@ -131,7 +131,7 @@ iAm.EdgeMobile.gt = function( version ){
  * @return {boolean}
  */
 iAm.EdgeMobile.gte = function( version ){
-    return iAm.EdgeMobile() && iAm._engineVersion.gte( version );
+    return iAm.EdgeMobile() && iAm._engineVersionGte( version );
 };
 
 /**
@@ -139,7 +139,7 @@ iAm.EdgeMobile.gte = function( version ){
  * @return {boolean}
  */
 iAm.EdgeMobile.lt = function( version ){
-    return iAm.EdgeMobile() && iAm._engineVersion.lt( version );
+    return iAm.EdgeMobile() && iAm._engineVersionLt( version );
 };
 
 /**
@@ -147,5 +147,5 @@ iAm.EdgeMobile.lt = function( version ){
  * @return {boolean}
  */
 iAm.EdgeMobile.lte = function( version ){
-    return iAm.EdgeMobile() && iAm._engineVersion.lte( version );
+    return iAm.EdgeMobile() && iAm._engineVersionLte( version );
 };

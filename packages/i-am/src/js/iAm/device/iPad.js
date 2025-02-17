@@ -2,10 +2,10 @@ goog.provide( 'iAm.iPad' );
 
 goog.require( 'iAm.EnumDevice' );
 goog.require( 'iAm._deviceIs' );
-goog.require( 'iAm._deviceVersion.gt' );
-goog.require( 'iAm._deviceVersion.gte' );
-goog.require( 'iAm._deviceVersion.lt' );
-goog.require( 'iAm._deviceVersion.lte' );
+goog.require( 'iAm._deviceVersionGt' );
+goog.require( 'iAm._deviceVersionGte' );
+goog.require( 'iAm._deviceVersionLt' );
+goog.require( 'iAm._deviceVersionLte' );
 
 /**
  * @return {boolean}
@@ -19,7 +19,7 @@ iAm.iPad = function(){
  * @return {boolean}
  */
 iAm.iPad.gt = function( version ){
-    return iAm.iPad() && iAm._deviceVersion.gt( version );
+    return iAm.iPad() && iAm._deviceVersionGt( version );
 };
 
 /**
@@ -27,7 +27,7 @@ iAm.iPad.gt = function( version ){
  * @return {boolean}
  */
 iAm.iPad.gte = function( version ){
-    return iAm.iPad() && iAm._deviceVersion.gte( version );
+    return iAm.iPad() && iAm._deviceVersionGte( version );
 };
 
 /**
@@ -35,7 +35,7 @@ iAm.iPad.gte = function( version ){
  * @return {boolean}
  */
 iAm.iPad.lt = function( version ){
-    return iAm.iPad() && iAm._deviceVersion.lt( version );
+    return iAm.iPad() && iAm._deviceVersionLt( version );
 };
 
 /**
@@ -43,5 +43,5 @@ iAm.iPad.lt = function( version ){
  * @return {boolean}
  */
 iAm.iPad.lte = function( version ){
-    return iAm.iPad() && iAm._deviceVersion.lte( version );
+    return iAm.iPad() && iAm._deviceVersionLte( version );
 };

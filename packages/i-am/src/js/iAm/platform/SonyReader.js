@@ -2,10 +2,10 @@ goog.provide( 'iAm.SonyReader' );
 
 goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
-goog.require( 'iAm._platformVersion.gt' );
-goog.require( 'iAm._platformVersion.gte' );
-goog.require( 'iAm._platformVersion.lt' );
-goog.require( 'iAm._platformVersion.lte' );
+goog.require( 'iAm._platformVersionGt' );
+goog.require( 'iAm._platformVersionGte' );
+goog.require( 'iAm._platformVersionLt' );
+goog.require( 'iAm._platformVersionLte' );
 
 /**
  * @return {boolean}
@@ -19,7 +19,7 @@ iAm.SonyReader = function(){
  * @return {boolean}
  */
 iAm.SonyReader.gt = function( version ){
-    return iAm.SonyReader() && iAm._platformVersion.gt( version );
+    return iAm.SonyReader() && iAm._platformVersionGt( version );
 };
 
 /**
@@ -27,7 +27,7 @@ iAm.SonyReader.gt = function( version ){
  * @return {boolean}
  */
 iAm.SonyReader.gte = function( version ){
-    return iAm.SonyReader() && iAm._platformVersion.gte( version );
+    return iAm.SonyReader() && iAm._platformVersionGte( version );
 };
 
 /**
@@ -35,7 +35,7 @@ iAm.SonyReader.gte = function( version ){
  * @return {boolean}
  */
 iAm.SonyReader.lt = function( version ){
-    return iAm.SonyReader() && iAm._platformVersion.lt( version );
+    return iAm.SonyReader() && iAm._platformVersionLt( version );
 };
 
 /**
@@ -43,5 +43,5 @@ iAm.SonyReader.lt = function( version ){
  * @return {boolean}
  */
 iAm.SonyReader.lte = function( version ){
-    return iAm.SonyReader() && iAm._platformVersion.lte( version );
+    return iAm.SonyReader() && iAm._platformVersionLte( version );
 };

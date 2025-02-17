@@ -6,10 +6,10 @@ goog.provide( 'iAm.NetFront.lte' );
 
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.gt' );
-goog.require( 'iAm._engineVersion.gte' );
-goog.require( 'iAm._engineVersion.lt' );
-goog.require( 'iAm._engineVersion.lte' );
+goog.require( 'iAm._engineVersionGt' );
+goog.require( 'iAm._engineVersionGte' );
+goog.require( 'iAm._engineVersionLt' );
+goog.require( 'iAm._engineVersionLte' );
 
 /**
  * @return {boolean}
@@ -27,7 +27,7 @@ iAm.NetFront = function(){
  * @return {boolean}
  */
 iAm.NetFront.gt = function( version ){
-    return iAm.NetFront() && iAm._engineVersion.gt( version );
+    return iAm.NetFront() && iAm._engineVersionGt( version );
 };
 
 /**
@@ -35,7 +35,7 @@ iAm.NetFront.gt = function( version ){
  * @return {boolean}
  */
 iAm.NetFront.gte = function( version ){
-    return iAm.NetFront() && iAm._engineVersion.gte( version );
+    return iAm.NetFront() && iAm._engineVersionGte( version );
 };
 
 /**
@@ -43,7 +43,7 @@ iAm.NetFront.gte = function( version ){
  * @return {boolean}
  */
 iAm.NetFront.lt = function( version ){
-    return iAm.NetFront() && iAm._engineVersion.lt( version );
+    return iAm.NetFront() && iAm._engineVersionLt( version );
 };
 
 /**
@@ -51,5 +51,5 @@ iAm.NetFront.lt = function( version ){
  * @return {boolean}
  */
 iAm.NetFront.lte = function( version ){
-    return iAm.NetFront() && iAm._engineVersion.lte( version );
+    return iAm.NetFront() && iAm._engineVersionLte( version );
 };

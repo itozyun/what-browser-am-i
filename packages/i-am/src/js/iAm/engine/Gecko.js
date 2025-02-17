@@ -15,13 +15,13 @@ goog.provide( 'iAm.GeckoMobile.gte' );
 goog.provide( 'iAm.GeckoMobile.lt' );
 goog.provide( 'iAm.GeckoMobile.lte' );
 
-goog.require( 'iAm.Goanne' );
+goog.require( 'iAm.Goanna' );
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.gt' );
-goog.require( 'iAm._engineVersion.gte' );
-goog.require( 'iAm._engineVersion.lt' );
-goog.require( 'iAm._engineVersion.lte' );
+goog.require( 'iAm._engineVersionGt' );
+goog.require( 'iAm._engineVersionGte' );
+goog.require( 'iAm._engineVersionLt' );
+goog.require( 'iAm._engineVersionLte' );
 
 /**
  * @return {boolean}
@@ -50,7 +50,7 @@ iAm.Gecko.Based = function(){
  * @return {boolean}
  */
 iAm.Gecko.gt = function( version ){
-    return iAm.Gecko() && iAm._engineVersion.gt( version );
+    return iAm.Gecko() && iAm._engineVersionGt( version );
 };
 
 /**
@@ -58,7 +58,7 @@ iAm.Gecko.gt = function( version ){
  * @return {boolean}
  */
 iAm.Gecko.gte = function( version ){
-    return iAm.Gecko() && iAm._engineVersion.gte( version );
+    return iAm.Gecko() && iAm._engineVersionGte( version );
 };
 
 /**
@@ -66,7 +66,7 @@ iAm.Gecko.gte = function( version ){
  * @return {boolean}
  */
 iAm.Gecko.lt = function( version ){
-    return iAm.Gecko() && iAm._engineVersion.lt( version );
+    return iAm.Gecko() && iAm._engineVersionLt( version );
 };
 
 /**
@@ -74,7 +74,7 @@ iAm.Gecko.lt = function( version ){
  * @return {boolean}
  */
 iAm.Gecko.lte = function( version ){
-    return iAm.Gecko() && iAm._engineVersion.lte( version );
+    return iAm.Gecko() && iAm._engineVersionLte( version );
 };
 
 /*----------------------------------------------------------------------------//
@@ -93,7 +93,7 @@ iAm.AnyGecko = function(){
  * @return {boolean}
  */
 iAm.AnyGecko.gt = function( version ){
-    return iAm.AnyGecko() && iAm._engineVersion.gt( version );
+    return iAm.AnyGecko() && iAm._engineVersionGt( version );
 };
 
 /**
@@ -101,7 +101,7 @@ iAm.AnyGecko.gt = function( version ){
  * @return {boolean}
  */
 iAm.AnyGecko.gte = function( version ){
-    return iAm.AnyGecko() && iAm._engineVersion.gte( version );
+    return iAm.AnyGecko() && iAm._engineVersionGte( version );
 };
 
 /**
@@ -109,7 +109,7 @@ iAm.AnyGecko.gte = function( version ){
  * @return {boolean}
  */
 iAm.AnyGecko.lt = function( version ){
-    return iAm.AnyGecko() && iAm._engineVersion.lt( version );
+    return iAm.AnyGecko() && iAm._engineVersionLt( version );
 };
 
 /**
@@ -117,7 +117,7 @@ iAm.AnyGecko.lt = function( version ){
  * @return {boolean}
  */
 iAm.AnyGecko.lte = function( version ){
-    return iAm.AnyGecko() && iAm._engineVersion.lte( version );
+    return iAm.AnyGecko() && iAm._engineVersionLte( version );
 };
 
 /*----------------------------------------------------------------------------//
@@ -136,7 +136,7 @@ iAm.GeckoMobile = function(){
  * @return {boolean}
  */
 iAm.GeckoMobile.gt = function( version ){
-    return iAm.GeckoMobile() && iAm._engineVersion.gt( version );
+    return iAm.GeckoMobile() && iAm._engineVersionGt( version );
 };
 
 /**
@@ -144,7 +144,7 @@ iAm.GeckoMobile.gt = function( version ){
  * @return {boolean}
  */
 iAm.GeckoMobile.gte = function( version ){
-    return iAm.GeckoMobile() && iAm._engineVersion.gte( version );
+    return iAm.GeckoMobile() && iAm._engineVersionGte( version );
 };
 
 /**
@@ -152,7 +152,7 @@ iAm.GeckoMobile.gte = function( version ){
  * @return {boolean}
  */
 iAm.GeckoMobile.lt = function( version ){
-    return iAm.GeckoMobile() && iAm._engineVersion.lt( version );
+    return iAm.GeckoMobile() && iAm._engineVersionLt( version );
 };
 
 /**
@@ -160,5 +160,5 @@ iAm.GeckoMobile.lt = function( version ){
  * @return {boolean}
  */
 iAm.GeckoMobile.lte = function( version ){
-    return iAm.GeckoMobile() && iAm._engineVersion.lte( version );
+    return iAm.GeckoMobile() && iAm._engineVersionLte( version );
 };

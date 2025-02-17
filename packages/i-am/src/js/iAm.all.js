@@ -14,7 +14,7 @@ goog.require( 'iAm.Presto' );
 goog.require( 'iAm.QtWebEngine' );
 goog.require( 'iAm.QtWebKit' );
 goog.require( 'iAm.SamsungInternet' );
-goog.require( 'iAm.Selvo' );
+goog.require( 'iAm.Servo' );
 goog.require( 'iAm.Tasman' );
 goog.require( 'iAm.Trident' );
 goog.require( 'iAm.UCWEB' );

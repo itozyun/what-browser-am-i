@@ -1,6 +1,7 @@
 goog.provide( 'who.brand.OperaTurbo.is' );
 goog.provide( 'who.brand.OperaTurbo.detect' );
 
+goog.require( 'core.hasProperty' );
 goog.require( 'who.base' );
 
 /*----------------------------------------------------------------------------//

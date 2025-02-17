@@ -2,10 +2,10 @@ goog.provide( 'iAm.NewNintendo3DS' );
 
 goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
-goog.require( 'iAm._platformVersion.gt' );
-goog.require( 'iAm._platformVersion.gte' );
-goog.require( 'iAm._platformVersion.lt' );
-goog.require( 'iAm._platformVersion.lte' );
+goog.require( 'iAm._platformVersionGt' );
+goog.require( 'iAm._platformVersionGte' );
+goog.require( 'iAm._platformVersionLt' );
+goog.require( 'iAm._platformVersionLte' );
 
 /**
  * @return {boolean}
@@ -19,7 +19,7 @@ iAm.NewNintendo3DS = function(){
  * @return {boolean}
  */
 iAm.NewNintendo3DS.gt = function( version ){
-    return iAm.NewNintendo3DS() && iAm._platformVersion.gt( version );
+    return iAm.NewNintendo3DS() && iAm._platformVersionGt( version );
 };
 
 /**
@@ -27,7 +27,7 @@ iAm.NewNintendo3DS.gt = function( version ){
  * @return {boolean}
  */
 iAm.NewNintendo3DS.gte = function( version ){
-    return iAm.NewNintendo3DS() && iAm._platformVersion.gte( version );
+    return iAm.NewNintendo3DS() && iAm._platformVersionGte( version );
 };
 
 /**
@@ -35,7 +35,7 @@ iAm.NewNintendo3DS.gte = function( version ){
  * @return {boolean}
  */
 iAm.NewNintendo3DS.lt = function( version ){
-    return iAm.NewNintendo3DS() && iAm._platformVersion.lt( version );
+    return iAm.NewNintendo3DS() && iAm._platformVersionLt( version );
 };
 
 /**
@@ -43,5 +43,5 @@ iAm.NewNintendo3DS.lt = function( version ){
  * @return {boolean}
  */
 iAm.NewNintendo3DS.lte = function( version ){
-    return iAm.NewNintendo3DS() && iAm._platformVersion.lte( version );
+    return iAm.NewNintendo3DS() && iAm._platformVersionLte( version );
 };

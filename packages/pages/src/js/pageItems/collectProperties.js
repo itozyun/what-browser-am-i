@@ -1,21 +1,22 @@
 goog.provide( 'pageItems.collectProperties' );
 
-goog.provide( 'global.phase' );
+goog.require( 'core.isArray' );
+goog.require( 'core.cloneArray' );
+goog.require( 'global.phase' );
 goog.require( 'global.currentPath' );
 goog.require( 'util.getElementByName' );
-goog.provide( 'util.getKeys' );
-goog.provide( 'util.getOwnPropertyNames' );
-goog.provide( 'util.getOwnPropertySymbols' );
-goog.provide( 'util.isInstanceOfNode' );
+goog.require( 'util.getKeys' );
+goog.require( 'util.getOwnPropertyNames' );
+goog.require( 'util.getOwnPropertySymbols' );
+goog.require( 'util.isInstanceOfNode' );
 goog.require( 'global.ERROR_MESSAGE_AREA_NAME' );
 goog.require( 'global.nodeMessage' );
-goog.provide( 'util.print' );
-goog.provide( 'util.stringify' );
-goog.provide( 'global.errorEventHandler' );
-goog.provide( 'global.originalValueOfOnError' );
+goog.require( 'util.print' );
+goog.require( 'util.stringify' );
+goog.require( 'global.errorEventHandler' );
+goog.require( 'global.originalValueOfOnError' );
 
-goog.scope(
-    function(){
+
         /**
          * @param {string | symbol} val 
          * @return {string} */
@@ -236,7 +237,7 @@ goog.scope(
                     if( nextObject ){
                         if( typeof nextObject === 'function' ){
                             nextCollection = [ ( + getValue( nextObject, 'length', {} ) ) || 'Error!' ];
-                            currentProperty += '()';
+                            currentProperty = symbolToString( currentProperty ) + '()';
                         } else {
                             nextCollection = [];
                         };
@@ -499,5 +500,3 @@ goog.scope(
 
         /** @type {number} */
         var timerID = setInterval( loop, 16 );
-    }
-);

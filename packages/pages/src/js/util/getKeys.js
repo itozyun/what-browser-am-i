@@ -1,5 +1,7 @@
 goog.provide( 'util.getKeys' );
 
+goog.require( 'core.hasOwnProperty' );
+
 /**
  * Object.keys polifill
  * @param {!Object | !Function} obj 

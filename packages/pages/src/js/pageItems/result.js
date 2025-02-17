@@ -1,5 +1,10 @@
 goog.provide( 'pageItems.result' );
 
+goog.require( "catalog.BrandValueToDisplayLabel" );
+goog.require( "catalog.DeviceTypeValueToDisplayLabel" );
+goog.require( "catalog.DeviceValueToDisplayLabel" );
+goog.require( "catalog.EngineValueToDisplayLabel" );
+goog.require( "catalog.PlatformValueToDisplayLabel" );
 goog.require( 'iAm.EnumIndex' );
 goog.require( 'util.getElementByName' );
 goog.require( 'util.print' );
@@ -73,11 +78,11 @@ goog.scope(
                         '<tr>' +
                             '<th><th>Name' + '<th>Version(Generation)' +
                     '<tbody>' +
-                        createRow( 'Platfrom'   , platformList   , ua[ iAm.EnumIndex.PLATFORM    ], ua[ iAm.EnumIndex.PLATFORM_VERSION  ] ) +
-                        createRow( 'Device'     , deviceList     , ua[ iAm.EnumIndex.DEVICE      ], ua[ iAm.EnumIndex.DEVICE_GENERATION ] ) +
-                        createRow( 'Device Type', device_typeList, ua[ iAm.EnumIndex.DEVICE_TYPE ], ''                                   , true ) +
-                        createRow( 'Engine'     , engineList     , ua[ iAm.EnumIndex.ENGINE      ], ua[ iAm.EnumIndex.ENGINE_VERSION    ] ) +
-                        createRow( 'Brand'      , brandList      , ua[ iAm.EnumIndex.BRAND       ], ua[ iAm.EnumIndex.BRAND_VERSION     ] ) +
+                        createRow( 'Platfrom'   , catalog.PlatformValueToDisplayLabel  , ua[ iAm.EnumIndex.PLATFORM    ], ua[ iAm.EnumIndex.PLATFORM_VERSION  ] ) +
+                        createRow( 'Device'     , catalog.DeviceValueToDisplayLabel    , ua[ iAm.EnumIndex.DEVICE      ], ua[ iAm.EnumIndex.DEVICE_GENERATION ] ) +
+                        createRow( 'Device Type', catalog.DeviceTypeValueToDisplayLabel, ua[ iAm.EnumIndex.DEVICE_TYPE ], ''                                   , true ) +
+                        createRow( 'Engine'     , catalog.EngineValueToDisplayLabel    , ua[ iAm.EnumIndex.ENGINE      ], ua[ iAm.EnumIndex.ENGINE_VERSION    ] ) +
+                        createRow( 'Brand'      , catalog.BrandValueToDisplayLabel     , ua[ iAm.EnumIndex.BRAND       ], ua[ iAm.EnumIndex.BRAND_VERSION     ] ) +
                         '<tr>' +
                             '<th><label for="' + PREFIXED_PCSITE_REQUESTED + '">PC Site Requested</label>' +
                             '<td colspan=2 align="right"><input type="checkbox"' + nameAndID( PREFIXED_PCSITE_REQUESTED ) + ( ua[ iAm.EnumIndex.PCSITE_REQUESTED ] ? ' checked' : '' ) + '>' +
@@ -95,6 +100,8 @@ goog.scope(
             setDetectedValues();
         })();
 
+        /**
+         * @param {!Event=} ev */
         function setDetectedValues( ev ){
             var name, elm, checkbox;
 
@@ -118,9 +125,9 @@ goog.scope(
             if( checkbox ){
                 checkbox.checked = !!ua[ iAm.EnumIndex.PCSITE_REQUESTED ];
             };
-            if( ev ){
+            // if( ev ){
                 // ev.preventDefault(); Gecko ~0.9.5 で select.selectedIndex の更新に失敗する
-            };
+            // };
         };
     }
 );

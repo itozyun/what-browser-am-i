@@ -20,10 +20,10 @@ goog.require( 'iAm.SamsungInternet' );
 goog.require( 'iAm.QtWebEngine' );
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.gt' );
-goog.require( 'iAm._engineVersion.gte' );
-goog.require( 'iAm._engineVersion.lt' );
-goog.require( 'iAm._engineVersion.lte' );
+goog.require( 'iAm._engineVersionGt' );
+goog.require( 'iAm._engineVersionGte' );
+goog.require( 'iAm._engineVersionLt' );
+goog.require( 'iAm._engineVersionLte' );
 
 /**
  * @return {boolean}
@@ -52,7 +52,7 @@ iAm.Chromium.Based = function(){
  * @return {boolean}
  */
 iAm.Chromium.gt = function( version ){
-    return iAm.Chromium() && iAm._engineVersion.gt( version );
+    return iAm.Chromium() && iAm._engineVersionGt( version );
 };
 
 /**
@@ -60,7 +60,7 @@ iAm.Chromium.gt = function( version ){
  * @return {boolean}
  */
 iAm.Chromium.gte = function( version ){
-    return iAm.Chromium() && iAm._engineVersion.gte( version );
+    return iAm.Chromium() && iAm._engineVersionGte( version );
 };
 
 /**
@@ -68,7 +68,7 @@ iAm.Chromium.gte = function( version ){
  * @return {boolean}
  */
 iAm.Chromium.lt = function( version ){
-    return iAm.Chromium() && iAm._engineVersion.lt( version );
+    return iAm.Chromium() && iAm._engineVersionLt( version );
 };
 
 /**
@@ -76,7 +76,7 @@ iAm.Chromium.lt = function( version ){
  * @return {boolean}
  */
 iAm.Chromium.lte = function( version ){
-    return iAm.Chromium() && iAm._engineVersion.lte( version );
+    return iAm.Chromium() && iAm._engineVersionLte( version );
 };
 
 /*----------------------------------------------------------------------------//
@@ -95,7 +95,7 @@ iAm.AnyChromium = function(){
  * @return {boolean}
  */
 iAm.AnyChromium.gt = function( version ){
-    return iAm.AnyChromium() && iAm._engineVersion.gt( version );
+    return iAm.AnyChromium() && iAm._engineVersionGt( version );
 };
 
 /**
@@ -103,7 +103,7 @@ iAm.AnyChromium.gt = function( version ){
  * @return {boolean}
  */
 iAm.AnyChromium.gte = function( version ){
-    return iAm.AnyChromium() && iAm._engineVersion.gte( version );
+    return iAm.AnyChromium() && iAm._engineVersionGte( version );
 };
 
 /**
@@ -111,7 +111,7 @@ iAm.AnyChromium.gte = function( version ){
  * @return {boolean}
  */
 iAm.AnyChromium.lt = function( version ){
-    return iAm.AnyChromium() && iAm._engineVersion.lt( version );
+    return iAm.AnyChromium() && iAm._engineVersionLt( version );
 };
 
 /**
@@ -119,7 +119,7 @@ iAm.AnyChromium.lt = function( version ){
  * @return {boolean}
  */
 iAm.AnyChromium.lte = function( version ){
-    return iAm.AnyChromium() && iAm._engineVersion.lte( version );
+    return iAm.AnyChromium() && iAm._engineVersionLte( version );
 };
 
 /*----------------------------------------------------------------------------//
@@ -138,7 +138,7 @@ iAm.ChromiumMobile = function(){
  * @return {boolean}
  */
 iAm.ChromiumMobile.gt = function( version ){
-    return iAm.ChromiumMobile() && iAm._engineVersion.gt( version );
+    return iAm.ChromiumMobile() && iAm._engineVersionGt( version );
 };
 
 /**
@@ -146,7 +146,7 @@ iAm.ChromiumMobile.gt = function( version ){
  * @return {boolean}
  */
 iAm.ChromiumMobile.gte = function( version ){
-    return iAm.ChromiumMobile() && iAm._engineVersion.gte( version );
+    return iAm.ChromiumMobile() && iAm._engineVersionGte( version );
 };
 
 /**
@@ -154,7 +154,7 @@ iAm.ChromiumMobile.gte = function( version ){
  * @return {boolean}
  */
 iAm.ChromiumMobile.lt = function( version ){
-    return iAm.ChromiumMobile() && iAm._engineVersion.lt( version );
+    return iAm.ChromiumMobile() && iAm._engineVersionLt( version );
 };
 
 /**
@@ -162,5 +162,5 @@ iAm.ChromiumMobile.lt = function( version ){
  * @return {boolean}
  */
 iAm.ChromiumMobile.lte = function( version ){
-    return iAm.ChromiumMobile() && iAm._engineVersion.lte( version );
+    return iAm.ChromiumMobile() && iAm._engineVersionLte( version );
 };

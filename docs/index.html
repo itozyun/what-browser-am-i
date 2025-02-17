@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="ja" xmlns:v="urn:schemas-microsoft-com:vml"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>ua detection | what-browser-am-i</title>
+<title>What Browser Am I?</title>
 <meta name="opera-8-to-10-copies-meta-tags-to-window">
 <meta name="msapplication-tap-highlight" content="no">
 <meta name="HandheldFriendly" content="true">
@@ -10,334 +10,1020 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="viewport" content="width=device-width,target-densitydpi=medium-dpi,initial-scale=1,minimum-scale=1,shrink-to-fit=no">
-<script>
-    window.onerror = function(errorMsg, url, lineNumber) {
-        function getEngineVersionOf( targetEngine ){
-            var engine  = ua.ENGINE,
-                version = ua.ENGINE_VERSION;
-
-            if( engine === targetEngine ){
-                if( version === version + '' ){
-                    return parseFloat( version );
-                } else {
-                    return version;
-                };
-            };
-        };
-        if( getEngineVersionOf( 'Gecko' ) < 1 ) return;
-        alert( errorMsg + ':' + lineNumber + ',' + url );
-    };
-</script>
 <style>
-    html, body { height : 100%; }
+    html, body {
+        height : 100%;
+        font-size: 100%;
+        margin-top : 0;
+        margin-bottom : 0;
+        padding-top : 0;
+        padding-bottom : 0;
+        border : 0
+    }
+    select, input {
+        font-size: 100%;
+        border: 1px solid #ddd;
+    }
+    .outer {
+        max-width : 40em;
+        margin : 0 auto;
+    }
+    tr select, tr [type="text"] {
+        display : block;
+        width : 100%;
+        padding: .25em;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    tr input {
+       text-align: right;
+    }
+    tr [type=checkbox] {
+        padding: .5em;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+    }
+    table {
+        width : 100%;
+        border-collapse:  collapse;
+        border-width : 0;
+        background: #eee;
+        table-layout : fixed;
+    }
+    th {
+        font-weight : normal;
+        text-align  : left;
+    }
+    th, td{
+        font-size: 125%;
+        border-style: solid;
+        border-width : 0 1px 1px 0;
+        border-color : #888 #aaa;
+        padding: .25em .5em;
+    }
+    button {
+        font-size: 100%;
+        text-transform: uppercase;
+        padding: .25em 1em;
+    }
+    #errmsg {
+        border : 0;
+        color:#900;
+        width : 100%;
+        padding: .25em 1em;
+        font-weight: bold;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .nav {
+        color : #333;
+        background: #cfc;
+    }
+    .nav caption {
+        text-align: left;
+        font-size: 100%;
+        margin: .3em .625em;
+    }
+    .nav th, .nav td{
+        vertical-align: top;
+        font-size: 86%;
+        padding: .35em .73em;
+    }
+    textarea {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    table, textarea {
+        max-width: 100%;
+    }
+    details {
+        margin: 2em 0;
+    }
 </style>
 </head>
 <body size="1">
-<a href="https://github.com/itozyun/waht-browser-am-i/">github</a>, <a href="http://my-http-proxy-856.appspot.com/itozyun.github.io/what-browser-am-i/">http version</a>(<a href="http://bit.ly/3ft54YC">bit.ly/3ft54YC</a>)<hr>
-<noscript><p>Javascript disabled!</p></noscript>
-<script>/* what-browser-am-i@0.7.1
-(c) 2021-2024 itozyun(https://github.com/itozyun/what-browser-am-i#readme), MIT. */
-var ua={conpare:function(z,g){for(var A=0,B=(z+'').split('.'),M=(g+'').split('.'),w=B.length,E=M.length,K,b,N;'0'===B[w-1];)--w;for(;'0'===M[E-1];)--E;for(K=w<E?w:E;A<K;++A)if(b=B[A]-0,N=M[A]-0,b!==N)return b>N?1:-1;return w>E?1:w===E?0:-1}};
-(function(z,g,A,B,M,w,E){function K(h,n){var q=w(h.split(n)[1]);return 0<=q?q:0}function b(h,n){return 0<=h.indexOf(n)}function N(h){return b(h,'Linux armv')||b(h,'Linux aarch')||b(h,'Linux i686')||b(h,'Linux x86_64')}function da(h,n){for(var q in n)if(q===h)return!0}function c(h,n){var q=h.split(n)[1],C='',D=-1,ea;if(q){for(;ea=q.charCodeAt(++D);)if(48<=ea&&57>=ea||46===ea)C+=q.charAt(D);else break;for(D=C.length;D;)if(46===C.charCodeAt(--D))C=C.substr(0,D);else break}return C}function Wc(h){for(var n=
-arguments,q=1,C=n[0],D;q<n.length;++q)D=n[q],0>v(C,D)&&(C=D);return C}function fa(h){return h===h+''?h:h===h-0?''+h:h.min&&h.max?h.min+'~'+h.max:h.min?h.min+'~':'~'+h.max}function ha(){return'Android'===r||'FireOS'===r}function f(h,n,q){r=h;if(n||0<=n)t=n;if(q||0<=q)H=q}function l(h,n,q){V=h;if(n||0<=n)qc=n;if(q||0<=q)H=q}function m(h,n){p=h;if(n||0<=n)u=n}function d(h,n){ia=h;if(n||0<=n)rc=n}function Xc(){return'Mac68K'===k||'MacPowerPC'===k||'MacPPC'===k||'MacIntel'===k||'MacM1'===k}function ja(){return!(!O&&
-I)&&Yc||!!sc}function P(){return b(a,'UCWEB')}function ye(){if(ze)return f('PlayStation3',c(a,'PLAYSTATION 3; ')||c(a,'PLAYSTATION 3 ')),l('PlayStation',3,'GAME'),0>v(t,'4.10')&&m('Sony',t),!0;if(Ae)return f('PlayStation4',c(e,k+'/')),l('PlayStation',4,'GAME'),!0;if(Be)return f('PlayStation5',c(e,k+'/')),l('PlayStation',5,'GAME'),!0}function Ce(){if(De)return f('FreeBSD'),!0;if(Ee)return f('OpenBSD'),!0;if(Fe)return f('NetBSD'),!0}function Zc(){return!!$c||!!W&&9>w(W)&&'iOSWebView'===p&&11<=w(t)}
-function ad(){return'Chromium'===p||'ChromiumMobile'===p||'AndroidWebView'===p&&0>v(5,u)}function bd(){return'iOS'===r&&!X&&(cd||('iPad'===V||12>t)&&!!da('webkitFullscreenEnabled',A)||11<=t&&13>t&&!!B.mediaDevices)}function dd(){return b(a,' MC_FAUST')||b(a,' MC_DARWIN')||b(a,' DARWIN')||b(a,' KON_TIKI')||b(a,' Kon_Tiki2')||b(a,' MC_GAME')||b(a,' LIVINGSTONE')||b(a,' Lomonosov')||b(a,' MC_Cristo')||b(a,' NoteAir')||b(a,' MC_NovaPro')||b(a,' Poke2Color')}function ed(){return b(a,'BNRV300')||b(a,'BNRV350')||
-b(a,'BNRV500')||b(a,'BNRV510')||b(a,'BNRV520')||b(a,'BNRV700')||b(a,'BNRV1000')||b(a,'BNRV1100')||b(a,'BNRV1300')}function tc(){return dd()||b(a,'Kobo')||ed()||b(a,' PocketBook')||0<uc||!1}function Ge(){var h;if(He)return b(a,'Android 4.4;')?f('Android',{min:2.3},'PHONE'):4<=w(Q)?f('Android',Q,'PHONE'):f('Android',{min:2.2},'PHONE'),vc&&(x=!0),!0;if(Ie){h=b(a,'Tablet');Q?f('Android',Q,h?'TABLET':'PHONE'):(f('Android',{min:1.6},h?'TABLET':'PHONE'),x=!0);return!0}if(Q)return f('Android',Q,'PHONE'),
-!0;if(Je)return R?f('Android',{min:4.4},'PHONE'):Y&&!wc||S?f('Android',{min:4},'PHONE'):f('Android',0>v(L,5)?L:{min:5},'PHONE'),F=!0;if(Ke)return f('Android'),F=!0}var v=z.conpare,a=B.userAgent,e=B.appVersion,fd=w(e)||0,k=B.platform,sc=A.documentMode,Yc=!!A.all,ka=!!A.registerElement,xc=M.width,yc=M.height,Z=A.documentElement,gd=Z&&Z.style,zc=!!g.HTMLAudioElement,hd=g.performance,id=!!g.Int8Array,jd=void 0!==g.ontouchstart,cd=B.standalone,J=c(e,'Version/')||c(a,'Version/'),W=c(a,'FxiOS/'),T=K(a,'AppleWebKit/'),
-Ac,kd,la,ld,md,vc,r,p,u,ia,rc,V,qc,H,x,F,Me,O,Bc,I,Ne,Oe,y,Cc,ma,U,Pe,Dc,Ec,Qe,Fc,Gc,Hc,R,aa,nd,od,ze,Ae,Be,De,Ee,Fe,pd,Te,oa,$c,Ic,Jc,Ue,Ve,We,ba,qd,rd,G,Kc,sd,S,Y,wc,Ke,L,pa,td,ud,Lc,qa,X,vd,Xe,ra,Ze,$e,Mc,Nc,Oc,Pc,wd,af,xd,yd,uc,zd,Q,Ad,He,Ie,bf,Je,Bd,Cd,Dd,Ed,Fd,Gd,Hd,Id,Jd,Kd,Ld,Md,Nd,Od,Pd,Qd,Rd,Sd,Td,Ud,Vd,Wd,Xd,Yd,Zd,$d,ae,be,ce,de,ee,fe,ge,he,ie,je,ke,le,me,ne,oe,pe,qe,re,se,te,ue,sa,Qc,ta,va,wa,xa,ya,za,Aa,Ba,Ca,Da,ve,Ea,Fa,Ga,Ha,Ia,Ja,Ka,La,ca,Ma,Na,Oa,Pa,Qa,t,Ra,Sa,Rc,we,xe,Ta,Ua,Va,Wa,
-Xa,Ya,Za,Sc,$a,ab,bb,cb,db,eb,fb,gb,hb,ib,jb,kb,Tc,Uc,lb,mb,nb,Vc,ob,pb,qb,rb,sb,tb,ub,vb,wb,xb,yb,zb,Ab,Bb,Cb,Db,Eb,Fb,Gb,Hb,Ib,Jb,Kb,Lb,Mb,Nb,Ob,Pb,Qb,Rb,Sb,Tb,Ub,Vb,Wb,Xb,Yb,Zb,$b,ac,bc,cc,dc,ec,fc,gc,hc,ic,jc,kc,lc,mc,nc,oc,pc;if(Ac=!Yc){(function(){for(var Le in gd)if(0===Le.indexOf('Moz')){kd=!0;return}kd=void 0})();Ac=!!kd}la=Ac;ld=b(k,'Linux');md=N(k);vc=md&&!b(a,k)&&N(a);r='';p='';ia='';V='';H='';x=!1;F=!1;Me=2===fd&&b(a,'Sony/COM2/');O=g.operamini;Bc=Wc(c(a,'Opera Mini/'),c(a,'Opera Mobi/'))||
-O&&J;I=g.opera;Ne=I&&I.version&&I.version()||NaN;Oe=Wc(c(a,'Opera '),J,fd);y=sc?sc:g.XMLHttpRequest?A.getElementsByTagName?7:4:A.compatMode?6:(0).toFixed?5.5:g.attachEvent?5:4;Cc=K(e,'Trident/')+4;ma=c(a.toLowerCase(),'iris');U=c(a,'NintendoBrowser/');Pe=P()?c(a,' U2/'):'';Dc=P()?c(a,'; wds '):'';Ec=P()?c(a.split('_').join('.'),'; iPh OS '):'';Qe=P()?c(a,'; Adr '):'';Fc=c(a,'Windows Phone ')||c(e,'Windows Phone OS ');Gc=!ja()&&!!Z.msContentZoomFactor&&'ARM'===k;Hc=7<=y&&b(e,'ZuneWP');R=K(a,'SamsungBrowser/');
-if(aa=!R&&[].pop)(function(){for(var na,Re='GT-I9300 GT-I9305 SHV-E210 SGH-T999L SGH-I747 SGH-N064 SC-06D SGH-N035 SC-03E SCH-J021 SCL21 SCH-R530 SCH-I535 SCH-S960L SCH-S968C GT-I9308 SCH-I939 SHV-E210S GT-I8160 GT-I8260 GT-I8262 SM-G350 SM-G352 SM-G386F SM-G386T1GT-N7000 GT-N7005 SHV-E160 SC-05D SGH-N054 SGH-I717 SGH-T879 GT-I9220 GT-I9228 SCH-I889 GT-N7100 GT-N7105 SCH-I605 SCH-R950 SGH-I317 SGH-T889 SPH-L900 SCH-N719 GT-N7102 GT-N7108 SGH-N025 SC-02E SHV-E250 GT-N5100 GT-N5110 GT-N5120 GT-N8000 GT-N8005 GT-N8010 GT-N8013 GT-N8020 GT-I9100 GT-I9108 GT-I9210 SGH-I777 SGH-I757M SGH-I727 SGH-I927 SGH-T989 SHW-M250 SPH-D710 ISW11SC SC-02C SCH-R760 SCH-I929 GT-I9105 GT-I8190 GT-I8200 SM-G730A GT-P3100 GT-P3110 GT-P3113 SCH-I705 GT-P5100 GT-P5110 GT-P5113 SCH-I915 SM-G3508 SM-G3509 GT-S7580 GT-S7582 GT-S6310 GT-S6312 GT-S6313T'.split(' ');na=
-Re.pop();)if(b(a,na)){aa=2>w(J)?J:.9;return}for(var Se='SC-02F SGH-N075 GT-S7270 GT-S7272 GT-S7275R GT-I9150 GT-I9152 GT-I9200 GT-I9205 GT-I9500 GT-I9506 SC-04E SGH-N045 GT-I9190 GT-I9192 GT-I9295 GT-I9197 GT-I9198 SGH-I257M SCH-I435 GT-I8666 GT-I8552 GT-I8558 SHV-E500S/L GT-18552B SM-N900 N9000 N9002 SC-01F SCL22 SM-G7100 SM-G7102 SM-G7105 SM-N750 SM-P600 SM-P601 SM-P605 GT-I9301I GT-I9300RWI SGH-T399 SM-P900 SM-P901 SM-P90 SM-P905 GT-I9295 SGH-I537 SHV-E330S GT-I9507V GT-I9505 GT-I9515 SGH-I337 SM-T230 SM-T231 SM-T235 SM-T237 403SC SM-T330NU SM-T331NU SM-T337V SM-T530 SM-T531 SM-T535 M-T320 SM-T321 SM-T325 SM-T520 SM-T525 SM-T900 SM-T905 SM-T700 SM-T705 SM-T707V SM-T800 SM-T805 SM-T807 SM-A300 SM-A5000 SM-A5009 SM-A500F SM-A500F1 SM-A500FQ SM-A500FU SM-A500G SM-A500H SM-A500HQ SM-A500K SM-G850 SM-C115 SM-C111 SM-G750F SM-G7508 SM-G7508Q SM-G750H GT-I9301I SM-900 SC-04F SCL23 SM-G906S SM-G906K SM-G906L SM-G870A SM-N915 SC-02G SM-800'.split(' ');na=
-Se.pop();)if(b(a,na)){aa=J;return}aa=void 0})();nd=aa||NaN;od=c(a,'Tizen ');ze='PlayStation 3'===k;Ae='PlayStation 4'===k;Be='PlayStation 5'===k;De=b(a,'FreeBSD');Ee=b(a,'OpenBSD');Fe=b(a,'NetBSD');pd=b(a,'Xbox One');Te=!pd&&b(a,'Xbox');oa=la?c(a,'Goanna/'):'';$c=c(a,'Focus/')||c(a,'Klar/');Ic=c(a,'Firefox/');Jc=!!g._firefoxTV_playbackStateObserverJava;Ue=la?c(a,'rv:')||c(a.substr(a.indexOf(') Gecko/')-11),'; '):'';Ve=Jc?K(a,'diordnA '):0;We=b(a,'AmazonWebAppPlatform');ba=b(a,'AFTBTX4')?[7,2023]:
-b(a,'AFTMD002')?[7,2023]:b(a,'AFTSHN02')?[7,2023]:b(a,'AFTMD001')?[7,2023]:b(a,'AFTKA002')||b(a,'AFTKAUK002')?[7,2023]:b(a,'AFTHA004')?[7,2022]:b(a,'AFTTIFF43')?[7,2022]:b(a,'AFTANNA0')?[7,2022]:b(a,'AFTHA001')?[7,2022]:b(a,'AFTMON001')||b(a,'AFTMON002')?[7,2022]:b(a,'AFTJULI1')?[7,2021]:b(a,'AFTHA003')?[7,2021]:b(a,'AFTTI43')?[7,2021]:b(a,'AFTPR001')?[7,2020]:b(a,'AFTBU001')?[6,2020]:b(a,'AFTHA002')?[7,2021]:b(a,'AFTWMST22')?[7,2021]:b(a,'AFTTIFF55')?[6,2020]:b(a,'AFTWI001')?[7,2020]:b(a,'AFTDCT31')?
-[7,2020]:b(a,'AFTBAMR311')?[6,2020]:b(a,'AFTKMST12')?[6,2020]:b(a,'AFTLE')?[6,2019]:b(a,'AFTEUFF014')?[7,2019]:b(a,'AFTEU014')?[7,2019]:b(a,'AFTSO001')?[7,2019]:b(a,'AFTEU011')?[7,2019]:b(a,'AFTJMST12')?[6,2018]:b(a,'AFTRS')?[5,2017]:b(a,'AEOHY')?[7,2021]:b(a,'AFTLFT962X3')?[7,2021]:b(a,'AFTLBT962E2')?[7,2022]:b(a,'AFTKRT')?[8,2023]:b(a,'AFTKM')?[8,2023]:b(a,'AFTKA')?[7,2021]:b(a,'AFTSSS')?[7,2020]:b(a,'AFTSS')?[7,2020]:b(a,'AFTT')?[5,2020]:b(a,'AFTMM')?[6,2018]:b(a,'AFTN')?[6,2017]:b(a,'AFTS')?[5,
-2015]:b(a,'AFTM')?[5,2014]:b(a,'AFTB')?[5,2014]:b(a,'AFTGAZL')?[7,2022]:b(a,'AFTR')?[7,2019]:b(a,'AFTA')?[6,2018]:void 0;qd=ba&&ba[0];rd=c(a,'CriOS/');G=c(a,'Chrome/');Kc=c(e,'Iron/');sd=c(a,'Opera/');S=c(a,'OPR/');Y=!(!ja()&&Z.msContentZoomFactor)&&!!(g.chrome||g.chromium||g.opr);wc=Y&&534.3>=T;Ke=ld&&ka&&'11.0.696.34'===G;L=void 0!==gd.touchAction?0:ka?'4.4.3':id?B.connection?g.searchBoxJavaBridge_||Y?E.isNaN?4.1:4:4.2:4.4:g.SVGSVGElement?3:void 0!==g.onhashchange?zc?2.3:2.2:530<=T?2:1.5;pa=b(a,
-'KFTUWI')||b(a,'KFSNWI')?[8,13]:b(a,'KFSUWI')||b(a,'KFRAPWI')||b(a,'KFQUWI')?[8,12]:b(a,'KFTRWI')||b(a,'KFTRPWI')?[7,11]:b(a,'KFONWI')?[7,10]:b(a,'KFMUWI')?[6.3,9]:b(a,'KFKAWI')?[6,8]:b(a,'KFSUWI')||b(a,'KFAUWI')||b(a,'KFDOWI')?[5,7]:b(a,'KFGIWI')?[5,6]:b(a,'KFTBWI')||b(a,'KFMEWI')||b(a,'KFFOWI')?[5,5]:b(a,'KFARWI')||b(a,'KFSAWA')||b(a,'KFSAWI')?[5<=w(L)?5:4,4]:b(a,'KFSOWI')||b(a,'KFTHWA')||b(a,'KFTHWI')||b(a,'KFAPWA')||b(a,'KFAPWI')?[3,3]:b(a,'KFOT')||b(a,'KFTT')||b(a,'KFJWA')||b(a,'KFJWI')?[2,2]:
-b(a,'Kindle Fire')?[1,1]:void 0;td=pa&&pa[0];ud=c(a,'CrOS x86_64 ')||c(a,'CrOS aarch64 ')||c(a,'CrOS i686 ')||c(a,'CrOS armv7l ');Lc=g.puffinDevice;qa=Lc&&Lc.clientInfo;X=qa&&'iOS'===qa.os&&qa.osVersion;vd=c(a,'Puffin/');Xe=!!g.FNRBrowser;if(ra=md)(function(){for(var Ye in g)if(0===Ye.indexOf('SlexAPI_')){ra=!0;return}ra=void 0})();Ze=ra;$e=g.PointerEvent?13:g.HTMLDataListElement?12.2:Array.prototype.flat?12:B.sendBeacon?11.3:g.WebAssembly?11.2:g.HTMLMeterElement?10.3:g.Proxy?10.2:g.HTMLPictureElement?
-9.3:E.isNaN?9.2:g.SharedWorker?hd&&hd.now?8:8.4:A.execCommand?7.1:g.webkitURL?6.1:g.Worker?5.1:id?4.3:zc?4.1:3.2;Mc=0===k.indexOf('iPhone');Nc=0===k.indexOf('iPad');Oc=0===k.indexOf('iPod');Pc='MacIntel'===k&&void 0!==cd;wd=b(e,'YJApp-ANDROID');af=c(a.toLowerCase(),'ybrowser/');xd=c(a,'Lunascape/');yd=!!g.ReactNativeWebView;uc=b(a,'EBRD1301')?3:b(a,'EBRD1201')?2:b(a,'EBRD1101')?1:0;zd=0>v(3,L)&&!zc;Q=c(k,'Android ')||c(e,'Android ')||c(a,'Android ')||Qe;Ad=b(k,'Android')||b(e,'Android');He=(Ad||vc&&
-jd)&&la&&!oa;Ie=Ad&&!O&&!!I;bf=vc&&jd&&!!T;Je=yd||Ze||wd||bf||tc()||!tc()&&zd;Bd=c(a,'iCab');Cd=c(a,'KHTML/');Dd=c(a,'NetFront/');Ed=c(a,'Edge/');Fd=c(a,'EdgA/')||c(a,'EdgiOS/')||c(a,'Edg/');Gd=c(a,'Coast/');Hd=c(e,'OPT/');Id=c(e,'UCBrowser/');Jd=c(e,'Silk/');Kd=c(e,'Vivaldi/');Ld=c(e,'QQBrowser/');Md=c(e,'YaBrowser/');Nd=c(e,'coc_coc_browser/');Od=c(e,'Camino/');Pd=c(e,'AOLBUILD/')||c(e,'AOL/');Qd=c(e,'IceDragon/');Rd=c(e,'Iceweasel/');Sd=c(e,'TenFourFox/');Td=c(e,'Waterfox/');Ud=c(e,'GNUzilla/');
-Vd=c(e,'SeaMonkey/');Wd=c(e,'PaleMoon/');Xd=c(e,'Basilisk/');Yd=c(e,'Maxthon/')||c(e,'Maxthon ')||c(e,'MXiOS/');Zd=c(e,'Konqueror/');$d=c(e,'Midori/');ae=c(e,'OmniWeb/');be=c(e,'Roccat/');ce=c(e,'Epiphany/');de=c(e,'WebPositive/');ee=c(e,'Comodo Dragon/');fe=c(e,'Brave/');ge=c(e,'Rockmelt/');he=c(e,'Dooble/');ie=c(e,'Flock/');je=c(e,'Galeon/');ke=c(e,'Falkon/');le=c(e,'Iceape/');me=c(e,'K-Meleon/');ne=c(e,'NX/')||c(e,'NF/');oe=c(a,'Netscape6/')||c(a,'Netscape/')||c(a,'Navigator/');pe=c(e,'FBAV/')||
-c(e,'FBAN/');qe=c(e,'Line/');re=c(e,'QtWebEngine/');se=c(e,'QtWebKit/');te=c(e,'DuckDuckGo/');ue=c(e,'Safari/');Me?(f('mylo',2),l('mylo',2,'PDA'),m('NetFront',3.4),Qc=!0):Qc=void 0;(sa=Qc)||('Nitro'===k?(f('NintendoDS'),l('NintendoDS',void 0,'GAME'),m('PrestoMobile',8.5),sa=!0):sa=void 0);(ta=sa)||('Nintendo DSi'===k?(f('NintendoDSi',c(a,k+'; Opera/')),l('NintendoDSi',void 0,'GAME'),m('PrestoMobile',9.5),ta=!0):ta=void 0);(va=ta)||('PSP'===k?(f('PlayStationPortable',c(a,'(PlayStation Portable); ')),
-l('PlayStationPortable',void 0,'GAME'),m('NetFront',3.2),va=!0):va=void 0);(xa=va)||('WinCE'===k?(f('WindowsCE',5>y?3:4.1,'PDA'),xa=!0):xa=void 0);(ya=xa)||(b(a,'Windows Mobile;')||ma?(f('WindowsMobile',6.1,'PDA'),ya=!0):ya=void 0);(za=ya)||(b(a,'BlackBerry')||b(a,'BB10')?(f('BlackBerry',J,'PHONE'),za=!0):za=void 0);(Aa=za)||('Nintendo 3DS'===k?(f('Nintendo3DS',U),l('Nintendo3DS',void 0,'GAME'),m('WebKit',T||535),d('NetFrontNX',U),Aa=!0):Aa=void 0);(Ba=Aa)||('New Nintendo 3DS'===k||b(a,'iPhone OS 6_0')&&
-320===xc&&240===yc?(f('NewNintendo3DS',U),l('NewNintendo3DS',void 0,'GAME'),Ba=!0):Ba=void 0);(Ca=Ba)||(I&&I.wiiremote?(f('Wii',c(e,k+'; U; ; ')),l('Wii',void 0,'GAME'),Ca=!0):Ca=void 0);if(!(Da=Ca))if(g.wiiu){ve=!!g.webkitCancelAnimationFrame;U?f('WiiU',U):(f('WiiU',ve?4:2.1),x=b(e,'Macintosh;')||b(e,'Windows NT')&&!b(e,'Touch'));l('WiiU',void 0,'GAME');m('WebKit',c(e,'AppleWebKit/')||(ve?536:534));d('NetFrontNX',3);Da=!0}else Da=void 0;(Ea=Da)||(Gc||Hc||Dc||Fc?(Gc?(f('WindowsPhone',10,'PHONE'),
-x=!0):Hc?(f('WindowsPhone',11===y?8.1:10===y?8:9===y?7.5:7,'PHONE'),x=!0):f('WindowsPhone',Dc||Fc,'PHONE'),Ea=!0):Ea=void 0);(Fa=Ea)||(b(a,'Maemo')?(f('Maemo'),Fa=!0):Fa=void 0);(Ga=Fa)||(b(a,'MeeGo')?(f('MeeGo'),Ga=!0):Ga=void 0);(Ha=Ga)||(g.palmGetResource?(f('WebOS',c(a,'webOS/')||c(a,'WEBOS')||c(a,'hpwOS/'),b(a,'webOS.TV')||b(a,'/SmartTV')?'TV':'PHONE'),Ha=!0):Ha=void 0);(Ia=Ha)||(od?(f('Tizen',od,'PHONE'),m('SamsungInternet',R),d('SamsungInternet',R),Ia=!0):Ia=void 0);(Ja=Ia)||('PlayStation Vita'===
-k?(f('PlayStationVita',c(e,k+' ')),l('PlayStationVita',void 0,'GAME'),Ja=!0):Ja=void 0);(Ka=Ja||ye())||(!k&&b(e,'Nintendo Switch;')?(f('NintendoSwitch',U),l('NintendoSwitch',void 0,'GAME'),Ka=!0):Ka=void 0);(La=Ka||Ce())||(b(a,'SunOS')||b(a,'Sun Solaris')?(f('SunOS'),H='PC',La=!0):La=void 0);(ca=La)||(Te?(f('Xbox360'),l('Xbox360',void 0,'GAME'),ca=!0):pd?(f('XboxOne'),l('XboxOne',void 0,'GAME'),ca=!0):ca=void 0);(Ma=ca)||('WinCE'===k||b(a,'Windows Mobile;')||ma||Gc||Hc||Dc||Fc||0!==k.indexOf('Win')?
-Ma=void 0:(f('Windows',c(a,'Windows NT ')||c(a,'Windows '),'PC'),Ma=!0));(wa=Ma)||(Xc()?(f('Mac',c(a.split('_').join('.'),'Mac OS X '),'PC'),wa=!0):wa=void 0);(Na=wa)||(void 0!==g.onmoztimechange?(f('FirefoxOS',0>v(0,18.1)?'1.0.1':0>v(0,19)?1.1:0>v(0,27)?1.2:0>v(0,29)?1.3:0>v(0,31)?1.4:0>v(0,33)?2:0>v(0,35)?2.1:0>v(0,38)?2.2:0>v(0,45)?2.5:2.6,b(a,'Mobile')?'PHONE':b(a,'Tablet')?'TABLET':b(a,'TV')?'TV':void 0),Na=!0):Na=void 0);(Oa=Na)||(td||qd?(f('FireOS',td||qd),Oa=!0):Oa=void 0);(Pa=Oa)||(ud?(f('ChromeOS',
-ud,'PC'),Pa=!0):Pa=void 0);if(!(Qa=Pa))if(Mc||Nc||Oc||Pc||Ec||X){if(X)f('iOS',X);else if(r='iOS',Ec)t=Ec;else if((t=c(e.split('_').join('.'),'OS '))||(x=!0),!t||Xe)t=$e;Qa=!0}else Qa=void 0;Qa||Ge()||!ld||(f('Linux'),H='PC');if(!V){if(Mc||Nc||Oc||Pc){if(X){Sa=qa.model;switch(Sa.substr(0,4)){case 'iPho':l('iPhone',c(Sa,'iPhone'));break;case 'iPad':l('iPad',c(Sa,'iPad'));break;case 'iPod':l('iPod',c(Sa,'iPod'))}}else{Rc=1===g.devicePixelRatio;we=xc===1.5*yc||1.5*xc===yc;Mc?l('iPhone',we?Rc?{max:3}:
-{min:4,max:5}:{min:6}):Nc||Pc?l('iPad',Rc?{max:2}:{min:3}):Oc&&l('iPod',we?Rc?{max:3}:4:{min:5})}xe=!0}else xe=void 0;(Ta=xe)||(dd()?(l('BOOX',void 0,'EINK_READER'),Ta=!0):Ta=void 0);(Ra=Ta||void 0)||(ba||Jc||We?(Ve?(l('FireTV'),x=!0):l('FireTV',ba&&ba[1]),Ra=!0):Ra=void 0);(Ua=Ra||void 0)||(pa?(l('KindleFire',pa[1],'TABLET'),Ua=!0):Ua=void 0);(Va=Ua)||(b(a,'Kobo')?(l('Kobo',void 0,'EINK_READER'),Va=!0):Va=void 0);(Wa=Va||void 0)||(ed()?(l('Nook',void 0,'EINK_READER'),Wa=!0):Wa=void 0);(Xa=Wa)||(b(a,
-' PocketBook')?(l('PocketBook',void 0,'EINK_READER'),Xa=!0):Xa=void 0);(Ya=Xa)||(0<uc?(l('SonyReader',uc,'EINK_READER'),Ya=!0):Ya=void 0);Ya||!tc()&&zd&&l('Kindle',5,'EINK_READER')}if(!p){!O&&I?(m('PC'===H||'Wii'===r?'Presto':'PrestoMobile',Ne||Oe),Sc=!0):Sc=void 0;(Za=Sc)||(O||Bc?(m('OperaMini',Bc),d('Opera',u),Za=!0):Za=void 0);($a=Za)||(ja()?('PC'!==H?m('TridentMobile',y):Xc()?(5<=y?m('Tasman',y):m('Trident',y),d('IEForMac',y)):(m('Trident',y),10<=y&&6.2<=t&&7>t&&0===screenY&&innerHeight+1!==outerHeight&&
-d('ModernIE',y),7<=Cc&&Cc!==y&&d('InternetExplorer',Cc)),$a=!0):$a=void 0);(bb=$a)||(!ja()&&Z.msContentZoomFactor?(m('WindowsPhone'===r?'EdgeMobile':'EdgeHTML',c(e,'Edge/')),bb=!0):bb=void 0);(cb=bb)||(oa?(m('Goanna',oa),cb=!0):cb=void 0);(db=cb)||(la&&!oa?(m(ha()?'Fennec':'Gecko',Ue||Ic),db=!0):db=void 0);(eb=db)||(Bd?(m('iCab',Bd),d('iCab',u),eb=!0):eb=void 0);(fb=eb)||(Cd?(m('KHTML',Cd),fb=!0):fb=void 0);(gb=fb)||(Dd?(m('NetFront',Dd),d('NetFront',u),gb=!0):gb=void 0);(ab=gb)||(P()?(m('UCWEB',
-Pe),d('UC',u),ab=!0):ab=void 0);(hb=ab)||(R||ha()&&F&&nd?(m('SamsungInternet',R||nd),hb=!0):hb=void 0);(jb=hb)||(bd()?(m('SafariMobile',t),jb=!0):jb=void 0);(kb=jb)||('iOS'!==r||bd()||O||Bc||P()?kb=void 0:(m('iOSWebView',t),kb=!0));if(!(ib=kb)){Tc='Android'===r;if(Tc&&wc||Y||Tc&&ka||Tc&&(J||F)||G||S){Uc='Android'===r;Uc&&wc?(m('AndroidWebView',L),F&&(x=!0)):Y?(m(ha()?'ChromiumMobile':'Chromium',G||Kc),F&&(x=!0)):Uc&&ka?(m('AndroidWebView',L),F&&(x=!0)):Uc&&(J||F)?(m('AndroidWebView',L),F&&(x=!0)):
-(G||S)&&m(ha()?'ChromiumMobile':'Chromium',G);ib=!0}else ib=void 0}ib||T&&m('WebKit',T)}if(!ia){'EdgeHTML'===p||'EdgeMobile'===p||Ed||Fd?(d('Edge','EdgeHTML'===p||'EdgeMobile'===p?u:Ed||Fd),Vc=!0):Vc=void 0;(ob=Vc)||(Gd?(d('OperaCoast',Gd),ob=!0):ob=void 0);(pb=ob)||(Hd||'iOS'===r&&!da('isSecureContext',g)?(d('OperaTurbo',Hd),x||(x=!b(e,'Mobile/')),pb=!0):pb=void 0);(nb=pb)||(wd?(d('Yahoo',af),nb=!0):nb=void 0);(qb=nb)||(Id?(d('UC',Id),qb=!0):qb=void 0);(rb=qb)||(Jd?(d('SilK',Jd),rb=!0):rb=void 0);
-(sb=rb)||(Kd?(d('Vivaldi',Kd),sb=!0):sb=void 0);(tb=sb)||(Ld?(d('QQ',Ld),tb=!0):tb=void 0);(ub=tb)||(Md?(d('Yandex',Md),ub=!0):ub=void 0);(vb=ub)||(Nd?(d('coccoc',Nd),vb=!0):vb=void 0);(wb=vb)||(Od?(d('Camino',Od),wb=!0):wb=void 0);(xb=wb)||(b(a,'SE 2.X MetaSr 1.0')?(d('Sogou'),xb=!0):xb=void 0);(mb=xb)||(Zc()?(d('FirefoxFocus',$c||W),mb=!0):mb=void 0);(zb=mb)||(Pd?(d('AOL',Pd),zb=!0):zb=void 0);(Ab=zb)||(Qd?(d('IceDragon',Qd),Ab=!0):Ab=void 0);(Bb=Ab)||(Rd?(d('Iceweasel',Rd),Bb=!0):Bb=void 0);(Cb=
-Bb)||(Sd?(d('TenFourFox',Sd),Cb=!0):Cb=void 0);(Db=Cb)||(Td?(d('Waterfox',Td),Db=!0):Db=void 0);(Eb=Db)||(Ud?(d('GNUzilla',Ud),Eb=!0):Eb=void 0);(Fb=Eb)||(Vd?(d('SeaMonkey',Vd),Fb=!0):Fb=void 0);(Gb=Fb)||(Wd?(d('PaleMoon',Wd),Gb=!0):Gb=void 0);(Hb=Gb)||(Xd?(d('Basilisk',Xd),Hb=!0):Hb=void 0);(Ib=Hb)||(Yd||b(e,'Maxthon')?(d('Maxthon',Yd),Ib=!0):Ib=void 0);(Jb=Ib)||(b(e,'Avant Browser;')?(d('Avant'),Jb=!0):Jb=void 0);(Kb=Jb)||(Zd?(d('Konqueror',Zd),Kb=!0):Kb=void 0);(Lb=Kb)||($d?(d('Midori',$d),Lb=
-!0):Lb=void 0);(Mb=Lb)||(ae?(d('OmniWeb',ae),Mb=!0):Mb=void 0);(Nb=Mb)||(be?(d('Roccat',be),Nb=!0):Nb=void 0);(Ob=Nb)||(ce?(d('Epiphany',ce),Ob=!0):Ob=void 0);(Pb=Ob)||(de?(d('WebPositive',de),Pb=!0):Pb=void 0);(yb=Pb)||(Kc||b(a,' Iron ')?(d('Iron',Kc||G),yb=!0):yb=void 0);(Rb=yb)||(ee?(d('ComodoDragon',ee),Rb=!0):Rb=void 0);(Sb=Rb)||(fe||b(a,' Brave ')||'iOSWebView'===p&&da('sameOrigin',g)?(d('Brave',fe||('Chromium'===r||'ChromiumMobile'===r?G:void 0)),Sb=!0):Sb=void 0);(Tb=Sb)||(ge?(d('Rockmelt',
-ge),Tb=!0):Tb=void 0);(Ub=Tb)||('iOSWebView'===p&&da('enableWebGL',g)?(d('Dolphin'),Ub=!0):Ub=void 0);(Qb=Ub)||(Lc||vd?(d('Puffin',vd),Qb=!0):Qb=void 0);(Vb=Qb)||(he?(d('Dooble',he),Vb=!0):Vb=void 0);(Wb=Vb)||(ie?(d('Flock',ie),Wb=!0):Wb=void 0);(Xb=Wb)||(je?(d('Galeon',je),Xb=!0):Xb=void 0);(Yb=Xb)||(ke?(d('Falkon',ke),Yb=!0):Yb=void 0);(Zb=Yb)||(le?(d('Iceape',le),Zb=!0):Zb=void 0);($b=Zb)||(me?(d('KMeleon',me),$b=!0):$b=void 0);(ac=$b)||(ne?(d('NetFrontNX',ne),ac=!0):ac=void 0);(bc=ac)||(oe?(d('NetscapeNavigator',
-oe),bc=!0):bc=void 0);(lb=bc)||(ma?(d('Iris',ma),lb=!0):lb=void 0);(ec=lb)||(pe?(d('Facebook',pe),ec=!0):ec=void 0);(fc=ec)||(qe?(d('LINE',qe),fc=!0):fc=void 0);(gc=fc)||(re?(d('QtWebEngine',re),gc=!0):gc=void 0);(hc=gc)||(se?(d('QtWebKit',se),hc=!0):hc=void 0);(ic=hc)||(te?(d('DuckDuckGo',te),ic=!0):ic=void 0);(dc=ic)||(xd||yd?(d('Lunascape',xd),dc=!0):dc=void 0);(jc=dc)||('Gecko'===p&&0>v(u,1.8)&&!Ic?(d('Mozilla',u),jc=!0):jc=void 0);(cc=jc)||('Gecko'===p||'Fennec'===p||Jc||!Zc()&&W?(d('Firefox',
-'Gecko'===r||'Fennec'===r?t:Ic||W),cc=!0):cc=void 0);(mc=cc)||(null===g.onoperadetachedviewchange?(d('OperaGX',S),mc=!0):mc=void 0);(lc=mc)||(sd||S||'Presto'===p||'PrestoMobile'===p?(d('Opera','Presto'===p||'PrestoMobile'===p?u:sd||S),lc=!0):lc=void 0);(nc=lc)||('Trident'===p||'TridentMobile'===p||'Tasman'===p?(d('InternetExplorer',u),nc=!0):nc=void 0);(oc=nc)||('SamsungInternet'===p?(d('SamsungInternet',u),oc=!0):oc=void 0);(kc=oc)||(rd||G||ad()?(d('Chrome',ad()?u:G||rd),kc=!0):kc=void 0);(pc=kc)||
-('AndroidWebView'===p&&0>v(u,5)?(d('AndroidBrowser',u),pc=!0):pc=void 0);pc||ue&&d('Safari',ue)}r&&(z.PLATFORM=r,t&&(z.PLATFORM_VERSION=fa(t)));V&&(z.DEVICE=V,qc&&(z.DEVICE_GENERATION=fa(qc)));H&&(z.DEVICE_TYPE=H);p&&(z.ENGINE=p,u&&(z.ENGINE_VERSION=fa(u)));ia&&(z.BRAND=ia,rc&&(z.BRAND_VERSION=fa(rc)));z.PCSITE_REQUESTED=x})(ua,this,document,navigator,screen,parseFloat,Number);
+<a href="https://github.com/itozyun/waht-browser-am-i/">github</a>, <a href="http://my-http-proxy-856.appspot.com/itozyun.github.io/what-browser-am-i/">http version</a>(<a href="http://bit.ly/3ft54YC">bit.ly/3ft54YC</a>),
+index, <a href="who.html">who</a>
+<hr>
+<marquee>Browsers cloak their identities and play the masquerade, yet our affection for them remains.</marquee>
+<div class="outer">
+<noscript><p style="color:#600">JavaScript is disabled! Please enable JS and try again.</p></noscript>
+<input size="40" name="errmsg" id="errmsg" tabindex="-1" readonly="">
+<script language="JavaScript1.2">/*@cc_on Array.prototype.push||(Array.prototype.push=function(){for(var b=arguments,a=0,c=b.length,d=this.length;a<c;++a)this[d+a]=b[a];return this.length});
+Array.prototype.pop||(Array.prototype.pop=function(){var a=this.length,b=this[a-1];a&&--this.length;return b});
+Array.prototype.splice||(Array.prototype.splice=function(c,e){var f=arguments,d=f.length-2-e,g=this.slice(c,c+e),b;if(0<d){var a=this.length-1;for(b=c+e;a>=b;--a)this[a+d]=this[a]}else if(0>d){a=c+e;for(b=this.length;a<b;++a)this[a+d]=this[a];this.length+=d}a=2;for(b=f.length;a<b;++a)this[a-2+c]=f[a];return g});
+Array.prototype.unshift||(Array.prototype.unshift=function(){for(var c=arguments,b=c.length,d=this.length+=b-1,a=d;a>=b;--a)this[a]=this[a-b];for(a=0;a<b;++a)this[a]=c[a];return d});
+Array.prototype.shift||(Array.prototype.shift=function(){var b=this.length;if(b){for(var c=this[0],a=1;a<b;++a)this[a-1]=this[a];--this.length;return c}}); @*/
+Array.prototype.indexOf||(Array.prototype.indexOf=function(c,a){var b=this.length>>>0;if(0===b||a&&(a=a||0,a=a===-1/0?0:(0>a?-a:a)|0,b<=a))return-1;for(a=0<=a?a:0<b+a?b+a:0;a<b;++a)if(this[a]===c)return a;return-1});
+/* what-browser-am-i@0.7.1
+(c) 2021-2025 itozyun(https://github.com/itozyun/what-browser-am-i#readme), MIT. */
+(function(q, B, S, Cd, Z, Mc) {
+  function I(d) {
+    return D.ENGINE === d;
+  }
+  function N(d) {
+    return -1 === D.conpare(D.ENGINE_VERSION, d);
+  }
+  function ja() {
+    return I("Presto");
+  }
+  function va() {
+    return I("PrestoMobile");
+  }
+  function wa() {
+    return (I("Trident") || I("TridentMobile")) && N(5);
+  }
+  function W(d) {
+    return B.getElementsByName ? B.getElementsByName(d)[0] : B[d] || q[d];
+  }
+  function Dd() {
+    var d, m;
+    for (d in Nc) {
+      if (m = W(d)) {
+        m.selectedIndex = Nc[d];
+      }
+    }
+    for (d in Oc) {
+      if (m = W(d)) {
+        m.value = Oc[d];
+      }
+    }
+    if (d = W("whopcsiterequested")) {
+      d.checked = !!D.PCSITE_REQUESTED;
+    }
+  }
+  function Pc(d, m) {
+    if (void 0 !== d[m]) {
+      return !0;
+    }
+    for (var r in d) {
+      if (r === m) {
+        return !0;
+      }
+    }
+    return !1;
+  }
+  function kf(d, m) {
+    function r(b, n, c) {
+      var k, l, h;
+      l = void 0 !== b.__proto__ ? b.__proto__ : b === c ? null : b === (k = b.constructor.prototype) ? c : k;
+      if (!l) {
+        return Pc(b, n);
+      }
+      k = l[n];
+      h = b[n];
+      h !== h !== (k !== k) ? n = !0 : h !== h ? (k = l, c = r(k, n, c), k[n] = !0, b = b[n], b = b !== b, c ? k[n] = NaN : delete k[n], n = b) : h !== k ? n = !0 : Pc(l, n) ? (c = r(l, n, c), l[n] = !k, b = h === b[n], c ? l[n] = k : delete l[n], n = b) : n = Pc(b, n);
+      return n;
+    }
+    return r(d, m, Object.prototype);
+  }
+  function lf(d) {
+    var m, r, b, n;
+    if (Object.keys) {
+      return Object.keys(d);
+    }
+    r = [];
+    for (m in d) {
+      b = d;
+      n = m;
+      (b.hasOwnProperty ? b.hasOwnProperty(n) : kf(b, n)) && r.push(m);
+    }
+    return r;
+  }
+  function mf(d) {
+    function m(c) {
+      return 10 > c ? "0" + c : c;
+    }
+    function r(c) {
+      c = "000" + c;
+      return c.substr(c.length - 4);
+    }
+    function b(c) {
+      c = "00000" + c;
+      return c.substr(c.length - 6);
+    }
+    var n = d.getUTCFullYear();
+    return (0 >= n ? "-" + b(-n) : 1E4 <= n ? "+" + b(n) : r(n)) + "-" + m(d.getUTCMonth() + 1) + "-" + m(d.getUTCDate()) + "T" + m(d.getUTCHours()) + ":" + m(d.getUTCMinutes()) + ":" + m(d.getUTCSeconds()) + "." + function(c) {
+      c = "00" + c;
+      return c.substr(c.length - 3);
+    }(d.getUTCMilliseconds()) + "Z";
+  }
+  function nf(d) {
+    function m(k) {
+      for (var l = {"\b":"\\b", "\t":"\\t", "\n":"\\n", "\f":"\\f", "\r":"\\r", '"':'\\"', "\\":"\\\\"}, h = 0, f = k.length, p, e, g = ['"'], w = 0; h < f; ++h) {
+        p = k.charAt(h);
+        if (l[p]) {
+          p = l[p];
+        } else if (e = p.charCodeAt(0), 92 === e || 34 === e || 31 > e || 126 < e && 160 > e || 173 === e || 1535 < e && 1541 > e || 6068 === e || 6069 === e || 8203 < e && 8208 > e || 8231 < e && 8240 > e || 8287 < e && 8304 > e || 65279 === e || 65519 < e && 65536 > e) {
+          p = "000" + e.toString(16), p = "\\u" + p.substr(p.length - 4);
+        }
+        g[++w] = p;
+      }
+      return g.join("") + '"';
+    }
+    function r(k, l, h, f, p) {
+      var e = f, g, w, E, H;
+      g = -1;
+      k = l[k];
+      if (0 === k) {
+        return "0";
+      }
+      if ("" === k) {
+        return '""';
+      }
+      if (null == k) {
+        return "null";
+      }
+      if (k && "object" === typeof k) {
+        l = k.constructor;
+        if (l === Date) {
+          return b(+k) ? '"' + mf(k) + '"' : "null";
+        }
+        if (l === String) {
+          return m("" + k);
+        }
+        if (l === Mc) {
+          return b(k) ? "" + k : "null";
+        }
+        if (l === Boolean) {
+          return "" + k;
+        }
+      }
+      switch(typeof k) {
+        case "string":
+          return m(k);
+        case "number":
+          return b(k) ? "" + k : "null";
+        case "boolean":
+          return "" + k;
+        case "object":
+          if (-1 === n.indexOf(k)) {
+            n.push(k);
+            w = n.length;
+          } else {
+            c = !0;
+            break;
+          }
+          e += p;
+          l = [];
+          if (k && k.constructor === Array) {
+            E = 0;
+            for (g = k.length; E < g; ++E) {
+              l[E] = r(E, k, h, e, p);
+              if (c) {
+                return;
+              }
+              n.length = w;
+            }
+            return "[" + (0 === g ? "" : e ? "\n" + e + l.join(",\n" + e) + "\n" + f : l.join(",")) + "]";
+          }
+          for (E in k) {
+            H = r(E, k, h, e, p);
+            if (c) {
+              return;
+            }
+            n.length = w;
+            H && (l[++g] = m(E) + (e ? ": " : ":") + H);
+          }
+          return "{" + (0 > g ? "" : e ? "\n" + e + l.join(",\n" + e) + "\n" + f : l.join(",")) + "}";
+        default:
+          return "null";
+      }
+    }
+    var b = isFinite, n = [], c = !1;
+    return r("_", {_:d}, null, "", "    ");
+  }
+  function aa(d) {
+    return "symbol" === typeof d ? d.toString() : d;
+  }
+  function Ed(d) {
+    var m = d.prototype ? d.prototype.__proto__ && d.prototype.__proto__.constructor : null;
+    return d !== m ? m : null;
+  }
+  function xa(d) {
+    return d.charAt(0).toUpperCase() === d.charAt(0);
+  }
+  function Fd(d, m) {
+    function r(g) {
+      g = g.split("");
+      for (var w = 0, E = g.length, H; w < E; ++w) {
+        H = g[w], g[w] = H === H.toUpperCase() ? H.toLowerCase() : H.toUpperCase();
+      }
+      return g.join("");
+    }
+    var b = "Object Function Array String Number Boolean Symbol EventTarget Node Element HTMLElement HTMLAudioElement Event".split(" "), n = "Object Function Array String Number Boolean Math".split(" "), c = "prototype" === m, k = "function" !== typeof d, l = [], h = Object.getOwnPropertyNames ? Object.getOwnPropertyNames(d) : [], f = k && !c ? [] : lf(d), p = Object.getOwnPropertySymbols ? Object.getOwnPropertySymbols(d) : [], e;
+    if (!c) {
+      if (k) {
+        for (e in d) {
+          0 <= e || f.push(e);
+        }
+      } else {
+        xa(m) && l.push(["__super__", !0]);
+      }
+    }
+    k || f.length || h.length || !xa(m) || h.push("prototype");
+    c = 0;
+    for (k = f.length; c < k; ++c) {
+      e = f[c];
+      0 <= e || l.push([e, !1]);
+    }
+    c = 0;
+    for (k = h.length; c < k; ++c) {
+      e = h[c], -1 === f.indexOf(e) && (0 <= e || l.push([e, !0]));
+    }
+    p.sort(function(g, w) {
+      return r(g.toString()) < r(w.toString()) ? -1 : 1;
+    });
+    l.sort(function(g, w) {
+      return r(g[0]) < r(w[0]) ? -1 : 1;
+    });
+    if (d === q) {
+      for (; b.length;) {
+        for (e = b.pop(), c = 0, k = l.length; c < k; ++c) {
+          if (e === l[c][0]) {
+            e = l[c];
+            l.splice(c, 1);
+            l.unshift(e);
+            break;
+          }
+        }
+      }
+      for (; n.length;) {
+        b = !1;
+        e = n.pop();
+        c = 0;
+        for (k = l.length; c < k; ++c) {
+          if (e === l[c][0]) {
+            b = !0;
+            break;
+          }
+        }
+        b || l.unshift([e, !0]);
+      }
+      do {
+        for (n = !1, c = 0, k = l.length; c < k; ++c) {
+          if (e = l[c][0], xa(e) && "function" === typeof d[e] && "XPCNativeWrapper" !== e && (b = Ed(d[e])) && b !== Object) {
+            for (h = c; h < k; ++h) {
+              if (e = l[h], xa(e[0]) && d[e[0]] === b) {
+                l.splice(h, 1);
+                l.splice(c, 0, e);
+                ++c;
+                n = !0;
+                break;
+              }
+            }
+          }
+        }
+      } while (n);
+    }
+    c = 0;
+    for (k = p.length; c < k; ++c) {
+      l.push([p[c], !0]);
+    }
+    ka += l.length;
+    return l;
+  }
+  function Qc() {
+    var d = null, m = null, r, b, n, c, k, p, e, g, w;
+    ++Gd;
+    Hd = 0;
+    for (Rc && la.push(aa(ba), [">_<"]); O.length;) {
+      n = O[O.length - 1];
+      c = ya[ya.length - 1];
+      for (la = za[za.length - 1]; n.length;) {
+        k = C.g;
+        for (var l = 0, h = O.length, f = ""; l < h; ++l) {
+          (d = O[l][0]) && (f += "." + aa(d[0]));
+        }
+        k.value = C.h = f.substr(1);
+        k = n.shift();
+        ba = k[0];
+        Id = k[1];
+        Rc = !0;
+        f = b = d = void 0;
+        p = c;
+        l = la;
+        h = ba;
+        e = Id;
+        g = {};
+        w = h;
+        if ("external" === h && wa()) {
+          l.push(h, [h]);
+        } else if (0 <= "Packages sun java globalStorage localStorage sessionStorage".split(" ").indexOf(h) && I("Gecko") && N(1.9)) {
+          l.push(h, [h]);
+        } else {
+          if (r = "localStorage" === h) {
+            r = (ja() || va()) && 0 <= D.conpare(D.ENGINE_VERSION, "10.50");
+          }
+          if (r && (ja() || va()) && N(11)) {
+            l.push(h, [h]);
+          } else if ("history.current" === C.h && I("Gecko") && N(1.9)) {
+            l.push(h, [h]);
+          } else if (0 < C.h.indexOf(".constructor.constructor") && (ja() || va()) && N("10.50")) {
+            l.push(h, [h]);
+          } else if ("__super__" !== h || (f = Ed(p)) && f !== Object) {
+            if ("__on_loop__" === h) {
+              ++T;
+            } else if (h === C.i) {
+              ++T;
+            } else if (of && p === q && (b = W(h)) && Sc(b)) {
+              ++T;
+            } else if (p === B && (b = W(h)) && Sc(b)) {
+              ++T;
+            } else if ("function" !== typeof p || "arguments" !== h && "callee" !== h && "caller" !== h) {
+              if ("function" !== typeof p || "name" !== h && "length" !== h) {
+                if ("__super__" !== h && (f = Jd(p, h, g), h = aa(h)), f === g) {
+                  l.push(h, [g.error.name || "o_O"]);
+                } else if (r = Tc.indexOf(f), 0 <= r) {
+                  f !== Function.prototype[h] && ("constructor" === h ? l.push(h, [Aa[r]]) : "function" === typeof f ? f !== Function ? l.push(h, ["ref:" + Aa[r]]) : "__super__" === h && --ka : l.push(h, ["ref:" + aa(h)])), ++T;
+                } else if (f === C.j && (f = C.l), e && (h = "- " + h), null === f) {
+                  l.push(h, null);
+                } else if (void 0 === f) {
+                  l.push(h, ["undefined"]);
+                } else if (f !== f) {
+                  l.push(h, ["NaN"]);
+                } else if (f === q || "global" === w) {
+                  l.push(h, ["window"]);
+                } else if ("clientInformation" === w && f === S) {
+                  l.push(h, ["navigator"]);
+                } else if ("prototype" !== w && Sc(f) && f !== B) {
+                  l.push(h, [f.constructor.name]);
+                } else {
+                  switch(typeof f) {
+                    case "undefined":
+                      l.push(h, [h]);
+                      break;
+                    case "boolean":
+                    case "number":
+                    case "string":
+                      l.push(h, f);
+                      break;
+                    case "symbol":
+                      l.push(h, aa(f));
+                      break;
+                    case "object":
+                      Tc.push(f);
+                      Aa.push(w);
+                      if (f && f.constructor === Array && "prototype" !== w) {
+                        e = [];
+                        w = 0;
+                        for (r = f.length; w < r; ++w) {
+                          e[w] = f[w];
+                        }
+                        f = e;
+                        l.push(h + "[]", f);
+                      } else {
+                        d = !0;
+                      }
+                      break;
+                    case "function":
+                      Tc.push(f);
+                      Aa.push(w);
+                      d = !0;
+                      break;
+                    default:
+                      ++T;
+                  }
+                }
+              } else {
+                ++T;
+              }
+            } else {
+              Kd[h] || (l.push(h, [h]), Kd[h] = !0), ++T;
+            }
+          } else {
+            --ka;
+          }
+        }
+        d = d ? f : null;
+        Rc = !1;
+        if (d) {
+          "function" === typeof d ? (m = [+Jd(d, "length", {}) || "Error!"], ba = aa(ba) + "()") : m = [];
+          la.push(aa(ba), m);
+          break;
+        }
+        if (ja() && N(7.2) && 10 < ++Hd) {
+          break;
+        }
+      }
+      d ? (n.unshift(k), O.push(Fd(d, ba)), ya.push(d), za.push(m)) : (--O.length, --ya.length, --za.length, (n = O[O.length - 1]) && n.shift());
+      d = m = null;
+    }
+    O.length || (m = Ld, n = (q.JSON ? JSON.stringify(m, null, "    ") : nf(m)).split("&").join("&amp;").split("<").join("&lt;"), m = "Complete! retry: " + Gd + " time: " + (+new Date() - pf + " props: " + ka + " skipped:" + T), I("Servo") ? (n = B.createElement("pre"), c = B.body.getElementsByTagName("table")[0], c.parentNode.insertBefore(n, c), n.innerHTML = m) : (W("propertiesList").value = n, C.g.value = m), clearInterval(qf));
+  }
+  var D = {conpare:function(d, m) {
+    for (var r = 0, b = (d + "").split("."), n = (m + "").split("."), c = b.length, k = n.length, l, h, f; !+b[c - 1];) {
+      --c;
+    }
+    for (; !+n[k - 1];) {
+      --k;
+    }
+    for (l = c < k ? c : k; r < l; ++r) {
+      if (h = +b[r], f = +n[r], h !== f) {
+        return h > f ? 1 : -1;
+      }
+    }
+    return c > k ? 1 : c === k ? 0 : -1;
+  }}, ka, Ld, C, Xf, Yf, Zf, $f, ag, Nc, Oc, V, Sc, Gd, pf, T, of, Tc, Aa, Kd, ba, Id, ya, O, la, za, Rc, Hd, Jd, qf;
+  (function(d) {
+    function m(t, x) {
+      return t && x ? d.conpare(t, x) : NaN;
+    }
+    function r(t, x) {
+      var z = Z(t.split(x)[1]);
+      return 0 <= z ? z : 0;
+    }
+    function b(t, x) {
+      return 0 <= t.indexOf(x);
+    }
+    function n(t) {
+      return b(t, "Linux armv") || b(t, "Linux aarch") || b(t, "Linux i686") || b(t, "Linux x86_64");
+    }
+    function c(t, x) {
+      var z = t.split(x)[1], M = "", P = -1, Ba;
+      if (z) {
+        for (; Ba = z.charCodeAt(++P);) {
+          if (48 <= Ba && 57 >= Ba || 46 === Ba) {
+            M += z.charAt(P);
+          } else {
+            break;
+          }
+        }
+        for (P = M.length; P;) {
+          if (46 === M.charCodeAt(--P)) {
+            M = M.substr(0, P);
+          } else {
+            break;
+          }
+        }
+      }
+      return M;
+    }
+    function k(t) {
+      for (var x = arguments, z = 1, M = t, P; z < x.length; ++z) {
+        if (P = x[z], !M || 0 > m(M, P)) {
+          M = P;
+        }
+      }
+      return M;
+    }
+    function l(t) {
+      return t === "" + t ? t : t === +t ? "" + t : t.min && t.max ? t.min + "~" + t.max : t.min ? t.min + "~" : "~" + t.max;
+    }
+    function h() {
+      return "Android" === L || "FireOS" === L;
+    }
+    function f(t, x, z) {
+      L = t;
+      if (x || 0 <= x) {
+        F = x;
+      }
+      if (z || 0 <= z) {
+        X = z;
+      }
+    }
+    function p(t, x, z) {
+      ma = t;
+      if (x || 0 <= x) {
+        Uc = x;
+      }
+      if (z || 0 <= z) {
+        X = z;
+      }
+    }
+    function e(t, x) {
+      u = t;
+      if (x || 0 <= x) {
+        A = x;
+      }
+    }
+    function g(t, x) {
+      Ca = t;
+      if (x || 0 <= x) {
+        Vc = x;
+      }
+    }
+    function w() {
+      return "Mac68K" === v || "MacPowerPC" === v || "MacPPC" === v || "MacIntel" === v || "MacM1" === v;
+    }
+    function E() {
+      return !(!da && Y) && Md || !!Wc;
+    }
+    function H() {
+      return b(a, "UCWEB");
+    }
+    function rf() {
+      if (sf) {
+        return f("PlayStation3", c(a, "PLAYSTATION 3; ") || c(a, "PLAYSTATION 3 ")), p("PlayStation", 3, "GAME"), 0 > m(F, "4.10") && e("Sony", F), !0;
+      }
+      if (tf) {
+        return f("PlayStation4", c(y, v + "/")), p("PlayStation", 4, "GAME"), !0;
+      }
+      if (uf) {
+        return f("PlayStation5", c(y, v + "/")), p("PlayStation", 5, "GAME"), !0;
+      }
+    }
+    function vf() {
+      if (wf) {
+        return f("FreeBSD"), !0;
+      }
+      if (xf) {
+        return f("OpenBSD"), !0;
+      }
+      if (yf) {
+        return f("NetBSD"), !0;
+      }
+    }
+    function Nd() {
+      return !!Od || !!na && 9 > Z(na) && "iOSWebView" === u && 11 <= Z(F);
+    }
+    function Pd() {
+      return "Chromium" === u || "ChromiumMobile" === u || "AndroidWebView" === u && 0 > m(5, A);
+    }
+    function Da(t, x) {
+      if (void 0 !== t[x]) {
+        return !0;
+      }
+      for (var z in t) {
+        if (z === x) {
+          return !0;
+        }
+      }
+      return !1;
+    }
+    function Qd() {
+      return "iOS" === L && !oa && (Rd || ("iPad" === ma || 12 > F) && Da(B, "webkitFullscreenEnabled") || 11 <= F && 13 > F && !!S.mediaDevices);
+    }
+    function Sd() {
+      return b(a, " MC_FAUST") || b(a, " MC_DARWIN") || b(a, " DARWIN") || b(a, " KON_TIKI") || b(a, " Kon_Tiki2") || b(a, " MC_GAME") || b(a, " LIVINGSTONE") || b(a, " Lomonosov") || b(a, " MC_Cristo") || b(a, " NoteAir") || b(a, " MC_NovaPro") || b(a, " Poke2Color");
+    }
+    function Td() {
+      return b(a, "BNRV300") || b(a, "BNRV350") || b(a, "BNRV500") || b(a, "BNRV510") || b(a, "BNRV520") || b(a, "BNRV700") || b(a, "BNRV1000") || b(a, "BNRV1100") || b(a, "BNRV1300");
+    }
+    function Xc() {
+      return Sd() || b(a, "Kobo") || Td() || b(a, " PocketBook") || 0 < Yc || !1;
+    }
+    function zf() {
+      var t;
+      if (Af) {
+        return b(a, "Android 4.4;") ? f("Android", "2.2~3", "PHONE") : 4 <= Z(ea) ? f("Android", ea, "PHONE") : f("Android", "2.2~3", "PHONE"), Zc && (J = !0), !0;
+      }
+      if (Bf) {
+        t = b(a, "Tablet");
+        ea ? f("Android", ea, t ? "TABLET" : "PHONE") : (f("Android", "1.6~", t ? "TABLET" : "PHONE"), J = !0);
+        return !0;
+      }
+      if (ea) {
+        return f("Android", ea, "PHONE"), !0;
+      }
+      if (Cf) {
+        return fa ? f("Android", "4.4~", "PHONE") : pa && !$c || ha ? f("Android", "4~", "PHONE") : f("Android", 0 > m(ca, 5) ? ca : "5~", "PHONE"), U = !0;
+      }
+      if (Df) {
+        return f("Android"), U = !0;
+      }
+    }
+    var A, Vc, Uc, L = "", u = "", Ca = "", ma = "", X = "", J = !1, U = !1, a = S.userAgent, y = S.appVersion, Ud = Z(y) || 0, v = S.platform, Wc = B.documentMode, Md = !!B.all, Ea = !!B.registerElement, ad = Cd.width, bd = Cd.height, qa = B.documentElement, Vd = qa && qa.style, cd = !!q.HTMLAudioElement, Wd = q.performance, Xd = !!q.Int8Array, Yd = void 0 !== q.ontouchstart, Rd = S.standalone, Q = c(y, "Version/") || c(a, "Version/"), na = c(a, "FxiOS/"), G = r(a, "AppleWebKit/"), ra = !1, Zd, 
+    Y, sa, ta, pa, Fa, dd, Ga, Ha, $d, Ia, ed, Ja, Ka, La, Ma, Na, Oa, Pa, Qa, Ra, Sa, Ta, Ua, Va, Wa, Xa, Ya, Za, $a, ua, ab, bb, cb, db, eb, fb, gb, hb, ib, jb, kb, lb, mb, fd, nb, ob, pb, qb, rb, sb, tb, ub, vb, wb, xb, yb, zb, Ab, Bb, gd, hd, Cb, Db, Eb, id, Fb, Gb, Hb, Ib, Jb, Kb, Lb, Mb, Nb, Ob, Pb, Qb, Rb, Sb, Tb, Ub, Vb, Wb, Xb, Yb, Zb, $b, ac, bc, cc, dc, ec, fc, gc, hc, ic, jc, kc, lc, mc, nc, oc, pc, qc, rc, sc, tc, uc, vc, wc, xc, yc, zc, Ac, Bc, Cc, Dc, Ec, Fc, Gc, ae, Zc, Ff, da, jd, 
+    Gf, Hf, K, kd, Hc, ia, If, ld, md, Jf, nd, od, pd, fa, be, ce, sf, tf, uf, wf, xf, yf, de, Mf, Jc, Od, qd, rd, Nf, Of, Pf, ee, fe, R, sd, ge, ha, $c, Df, ca, he, ie, oa, je, Qf, Sf, Tf, td, ud, vd, wd, ke, Uf, le, me, Yc, ne, ea, Af, Bf, Vf, Cf, oe, pe, qe, xd, yd, Wf, zd, re, se, te, ue, ve, we, xe, ye, ze, Ae, Be, Ce, De, Ee, Fe, Ge, He, Ie, Je, Ke, Le, Me, Ne, Oe, Pe, Qe, Re, Se, Te, Ue, Ve, We, Xe, Ye, Ze, $e, af, bf, cf, df, ef, ff, F, Kc, Ad, gf, hf;
+    if (!Md) {
+      for (var Ef in Vd) {
+        if (0 === Ef.indexOf("Moz")) {
+          ra = !0;
+          break;
+        }
+      }
+    }
+    ae = b(v, "Linux");
+    Zc = (Zd = n(v)) && !b(a, v) && n(a);
+    Ff = 2 === Ud && b(a, "Sony/COM2/");
+    da = q.operamini;
+    jd = k(c(a, "Opera Mini/"), c(a, "Opera Mobi/")) || da && Q;
+    Gf = (Y = q.opera) && Y.version && Y.version() || NaN;
+    Hf = k(c(a, "Opera "), Q, Ud);
+    K = Wc ? Wc : q.XMLHttpRequest ? B.getElementsByTagName ? 7 : 4 : B.compatMode ? 6 : (0).toFixed ? 5.5 : q.attachEvent ? 5 : 4;
+    kd = r(y, "Trident/") + 4;
+    Hc = c(a.toLowerCase(), "iris");
+    ia = c(a, "NintendoBrowser/");
+    If = H() ? c(a, " U2/") : "";
+    ld = H() ? c(a, "; wds ") : "";
+    md = H() ? c(a.split("_").join("."), "; iPh OS ") : "";
+    Jf = H() ? c(a, "; Adr ") : "";
+    nd = c(a, "Windows Phone ") || c(y, "Windows Phone OS ");
+    od = !E() && !!qa.msContentZoomFactor && "ARM" === v;
+    pd = 7 <= K && b(y, "ZuneWP");
+    fa = r(a, "SamsungBrowser/");
+    if (sa = !fa && [].pop) {
+      (function() {
+        for (var Ic, Kf = "GT-I9300 GT-I9305 SHV-E210 SGH-T999L SGH-I747 SGH-N064 SC-06D SGH-N035 SC-03E SCH-J021 SCL21 SCH-R530 SCH-I535 SCH-S960L SCH-S968C GT-I9308 SCH-I939 SHV-E210S GT-I8160 GT-I8260 GT-I8262 SM-G350 SM-G352 SM-G386F SM-G386T1GT-N7000 GT-N7005 SHV-E160 SC-05D SGH-N054 SGH-I717 SGH-T879 GT-I9220 GT-I9228 SCH-I889 GT-N7100 GT-N7105 SCH-I605 SCH-R950 SGH-I317 SGH-T889 SPH-L900 SCH-N719 GT-N7102 GT-N7108 SGH-N025 SC-02E SHV-E250 GT-N5100 GT-N5110 GT-N5120 GT-N8000 GT-N8005 GT-N8010 GT-N8013 GT-N8020 GT-I9100 GT-I9108 GT-I9210 SGH-I777 SGH-I757M SGH-I727 SGH-I927 SGH-T989 SHW-M250 SPH-D710 ISW11SC SC-02C SCH-R760 SCH-I929 GT-I9105 GT-I8190 GT-I8200 SM-G730A GT-P3100 GT-P3110 GT-P3113 SCH-I705 GT-P5100 GT-P5110 GT-P5113 SCH-I915 SM-G3508 SM-G3509 GT-S7580 GT-S7582 GT-S6310 GT-S6312 GT-S6313T".split(" "); Ic = 
+        Kf.pop();) {
+          if (b(a, Ic)) {
+            sa = 2 > Z(Q) ? Q : .9;
+            return;
+          }
+        }
+        for (var Lf = "SC-02F SGH-N075 GT-S7270 GT-S7272 GT-S7275R GT-I9150 GT-I9152 GT-I9200 GT-I9205 GT-I9500 GT-I9506 SC-04E SGH-N045 GT-I9190 GT-I9192 GT-I9295 GT-I9197 GT-I9198 SGH-I257M SCH-I435 GT-I8666 GT-I8552 GT-I8558 SHV-E500S/L GT-18552B SM-N900 N9000 N9002 SC-01F SCL22 SM-G7100 SM-G7102 SM-G7105 SM-N750 SM-P600 SM-P601 SM-P605 GT-I9301I GT-I9300RWI SGH-T399 SM-P900 SM-P901 SM-P90 SM-P905 GT-I9295 SGH-I537 SHV-E330S GT-I9507V GT-I9505 GT-I9515 SGH-I337 SM-T230 SM-T231 SM-T235 SM-T237 403SC SM-T330NU SM-T331NU SM-T337V SM-T530 SM-T531 SM-T535 M-T320 SM-T321 SM-T325 SM-T520 SM-T525 SM-T900 SM-T905 SM-T700 SM-T705 SM-T707V SM-T800 SM-T805 SM-T807 SM-A300 SM-A5000 SM-A5009 SM-A500F SM-A500F1 SM-A500FQ SM-A500FU SM-A500G SM-A500H SM-A500HQ SM-A500K SM-G850 SM-C115 SM-C111 SM-G750F SM-G7508 SM-G7508Q SM-G750H GT-I9301I SM-900 SC-04F SCL23 SM-G906S SM-G906K SM-G906L SM-G870A SM-N915 SC-02G SM-800".split(" "); Ic = 
+        Lf.pop();) {
+          if (b(a, Ic)) {
+            sa = Q;
+            return;
+          }
+        }
+        sa = void 0;
+      })();
+    }
+    be = sa || NaN;
+    ce = c(a, "Tizen ");
+    sf = "PlayStation 3" === v;
+    tf = "PlayStation 4" === v;
+    uf = "PlayStation 5" === v;
+    wf = b(a, "FreeBSD");
+    xf = b(a, "OpenBSD");
+    yf = b(a, "NetBSD");
+    de = b(a, "Xbox One");
+    Mf = !de && b(a, "Xbox");
+    Jc = ra ? c(a, "Goanna/") : "";
+    Od = c(a, "Focus/") || c(a, "Klar/");
+    qd = c(a, "Firefox/");
+    rd = !!q._firefoxTV_playbackStateObserverJava;
+    Nf = ra ? c(a, "rv:") || c(a.substr(a.indexOf(") Gecko/") - 11), "; ") : "";
+    Of = rd ? r(a, "diordnA ") : 0;
+    Pf = b(a, "AmazonWebAppPlatform");
+    ee = (ta = b(a, "AFTBTX4") ? [7, 2023] : b(a, "AFTMD002") ? [7, 2023] : b(a, "AFTSHN02") ? [7, 2023] : b(a, "AFTMD001") ? [7, 2023] : b(a, "AFTKA002") || b(a, "AFTKAUK002") ? [7, 2023] : b(a, "AFTHA004") ? [7, 2022] : b(a, "AFTTIFF43") ? [7, 2022] : b(a, "AFTANNA0") ? [7, 2022] : b(a, "AFTHA001") ? [7, 2022] : b(a, "AFTMON001") || b(a, "AFTMON002") ? [7, 2022] : b(a, "AFTJULI1") ? [7, 2021] : b(a, "AFTHA003") ? [7, 2021] : b(a, "AFTTI43") ? [7, 2021] : b(a, "AFTPR001") ? [7, 2020] : b(a, "AFTBU001") ? 
+    [6, 2020] : b(a, "AFTHA002") ? [7, 2021] : b(a, "AFTWMST22") ? [7, 2021] : b(a, "AFTTIFF55") ? [6, 2020] : b(a, "AFTWI001") ? [7, 2020] : b(a, "AFTDCT31") ? [7, 2020] : b(a, "AFTBAMR311") ? [6, 2020] : b(a, "AFTKMST12") ? [6, 2020] : b(a, "AFTLE") ? [6, 2019] : b(a, "AFTEUFF014") ? [7, 2019] : b(a, "AFTEU014") ? [7, 2019] : b(a, "AFTSO001") ? [7, 2019] : b(a, "AFTEU011") ? [7, 2019] : b(a, "AFTJMST12") ? [6, 2018] : b(a, "AFTRS") ? [5, 2017] : b(a, "AEOHY") ? [7, 2021] : b(a, "AFTLFT962X3") ? 
+    [7, 2021] : b(a, "AFTLBT962E2") ? [7, 2022] : b(a, "AFTKRT") ? [8, 2023] : b(a, "AFTKM") ? [8, 2023] : b(a, "AFTKA") ? [7, 2021] : b(a, "AFTSSS") ? [7, 2020] : b(a, "AFTSS") ? [7, 2020] : b(a, "AFTT") ? [5, 2020] : b(a, "AFTMM") ? [6, 2018] : b(a, "AFTN") ? [6, 2017] : b(a, "AFTS") ? [5, 2015] : b(a, "AFTM") ? [5, 2014] : b(a, "AFTB") ? [5, 2014] : b(a, "AFTGAZL") ? [7, 2022] : b(a, "AFTR") ? [7, 2019] : b(a, "AFTA") ? [6, 2018] : void 0) && ta[0];
+    fe = c(a, "CriOS/");
+    R = c(y, "Chrome/");
+    sd = c(a, "Iron/");
+    ge = c(a, "Opera/");
+    ha = c(a, "OPR/");
+    $c = (pa = !(!E() && qa.msContentZoomFactor) && !!(q.chrome || q.chromium || q.opr)) && 534.3 >= G;
+    Df = ae && Ea && "11.0.696.34" === R;
+    ca = void 0 !== Vd.touchAction ? 0 : Ea ? "4.4.3" : Xd ? S.connection ? q.searchBoxJavaBridge_ || pa ? Mc.isNaN ? 4.1 : 4 : 4.2 : 4.4 : q.SVGSVGElement ? 3 : void 0 !== q.onhashchange ? cd ? 2.3 : 2.2 : 530 <= G ? 2 : 1.5;
+    he = (Fa = b(a, "KFTUWI") || b(a, "KFSNWI") ? [8, 13] : b(a, "KFSUWI") || b(a, "KFRAPWI") || b(a, "KFQUWI") ? [8, 12] : b(a, "KFTRWI") || b(a, "KFTRPWI") ? [7, 11] : b(a, "KFONWI") ? [7, 10] : b(a, "KFMUWI") ? [6.3, 9] : b(a, "KFKAWI") ? [6, 8] : b(a, "KFSUWI") || b(a, "KFAUWI") || b(a, "KFDOWI") ? [5, 7] : b(a, "KFGIWI") ? [5, 6] : b(a, "KFTBWI") || b(a, "KFMEWI") || b(a, "KFFOWI") ? [5, 5] : b(a, "KFARWI") || b(a, "KFSAWA") || b(a, "KFSAWI") ? [5 <= Z(ca) ? 5 : 4, 4] : b(a, "KFSOWI") || b(a, 
+    "KFTHWA") || b(a, "KFTHWI") || b(a, "KFAPWA") || b(a, "KFAPWI") ? [3, 3] : b(a, "KFOT") || b(a, "KFTT") || b(a, "KFJWA") || b(a, "KFJWI") ? [2, 2] : b(a, "Kindle Fire") ? [1, 1] : void 0) && Fa[0];
+    ie = c(a, "CrOS x86_64 ") || c(a, "CrOS aarch64 ") || c(a, "CrOS i686 ") || c(a, "CrOS armv7l ");
+    oa = (Ga = (dd = q.puffinDevice) && dd.clientInfo) && "iOS" === Ga.os && Ga.osVersion;
+    je = c(a, "Puffin/");
+    Qf = !!q.FNRBrowser;
+    if (Ha = Zd) {
+      (function() {
+        for (var Rf in q) {
+          if (0 === Rf.indexOf("SlexAPI_")) {
+            Ha = !0;
+            return;
+          }
+        }
+        Ha = void 0;
+      })();
+    }
+    Sf = Ha;
+    Tf = q.PointerEvent ? 13 : q.HTMLDataListElement ? 12.2 : Array.prototype.flat ? 12 : S.sendBeacon ? 11.3 : q.WebAssembly ? 11.2 : q.HTMLMeterElement ? 10.3 : q.Proxy ? 10.2 : q.HTMLPictureElement ? 9.3 : Mc.isNaN ? 9.2 : q.SharedWorker ? Wd && Wd.now ? 8 : 8.4 : B.execCommand ? 7.1 : q.webkitURL ? 6.1 : q.Worker ? 5.1 : Xd ? 4.3 : cd ? 4.1 : 3.2;
+    td = 0 === v.indexOf("iPhone");
+    ud = 0 === v.indexOf("iPad");
+    vd = 0 === v.indexOf("iPod");
+    wd = "MacIntel" === v && void 0 !== Rd;
+    ke = b(y, "YJApp-ANDROID");
+    Uf = c(a.toLowerCase(), "ybrowser/");
+    le = c(y, "Lunascape ") || c(a, "Lunascape/");
+    me = !!q.ReactNativeWebView;
+    Yc = b(a, "EBRD1301") ? 3 : b(a, "EBRD1201") ? 2 : b(a, "EBRD1101") ? 1 : 0;
+    ne = 0 > m(3, ca) && !cd;
+    ea = c(v, "Android ") || c(y, "Android ") || c(a, "Android ") || Jf;
+    Af = (($d = b(v, "Android") || b(y, "Android")) || Zc && Yd) && ra && !Jc;
+    Bf = $d && !da && !!Y;
+    Vf = Zc && Yd && !!G;
+    Cf = me || Sf || ke || Vf || Xc() || !Xc() && ne;
+    oe = c(a, "iCab");
+    pe = c(a, "KHTML/");
+    qe = c(a, "NetFront/");
+    xd = c(y, "Falkon/");
+    yd = c(a, "Otter/");
+    Wf = c(a, "QtWebEngine/");
+    zd = c(a, "QupZilla/");
+    re = c(a, "Servo/");
+    se = c(a, "Edge/");
+    te = c(a, "EdgA/") || c(a, "EdgiOS/") || c(a, "Edg/");
+    ue = c(y, "Coast/");
+    ve = c(y, "OPT/");
+    we = c(a, "UCBrowser/");
+    xe = c(y, "Silk/");
+    ye = c(a, "Vivaldi/");
+    ze = c(a, "QQBrowser/");
+    Ae = c(a, "YaBrowser/");
+    Be = c(a, "coc_coc_browser/");
+    Ce = c(a, "Camino/");
+    De = c(a, "AOLBUILD/") || c(a, "AOL/") || c(a, "AOL ");
+    Ee = c(a, "IceDragon/");
+    Fe = c(a, "Iceweasel/");
+    Ge = c(a, "TenFourFox/");
+    He = c(a, "Waterfox/");
+    Ie = c(a, "GNUzilla/");
+    Je = c(a, "SeaMonkey/");
+    Ke = c(a, "PaleMoon/");
+    Le = c(a, "Basilisk/");
+    Me = c(a, "Maxthon/") || c(a, "Maxthon ") || c(a, "MXiOS/");
+    Ne = c(a, "Konqueror/");
+    Oe = c(a, "Midori/");
+    Pe = c(a, "OmniWeb/");
+    Qe = c(a, "Roccat/");
+    Re = c(a, "Epiphany/");
+    Se = c(a, "WebPositive/");
+    Te = c(a, "Comodo Dragon/");
+    Ue = c(a, "Brave/");
+    Ve = c(a, "Rockmelt/");
+    We = c(a, "Dooble/");
+    Xe = c(a, "Flock/");
+    Ye = c(a, "Galeon/");
+    Ze = c(a, "Iceape/");
+    $e = c(a, "K-Meleon/");
+    af = c(y, "NX/") || c(y, "NF/");
+    bf = c(a, "Netscape6/") || c(a, "Netscape/") || c(a, "Navigator/");
+    cf = c(a, "FBAV/") || c(a, "FBAN/");
+    df = c(y, "Line/");
+    ef = c(a, "DuckDuckGo/");
+    Ff ? (f("mylo", 2), p("mylo", 2, "PDA"), e("NetFront", 3.4), ed = !0) : ed = void 0;
+    (Ia = ed) || ("Nitro" === v ? (f("NintendoDS"), p("NintendoDS", void 0, "GAME"), e("PrestoMobile", 8.5), Ia = !0) : Ia = void 0);
+    (Ja = Ia) || ("Nintendo DSi" === v ? (f("NintendoDSi", c(a, v + "; Opera/")), p("NintendoDSi", void 0, "GAME"), e("PrestoMobile", 9.5), Ja = !0) : Ja = void 0);
+    (Ka = Ja) || ("PSP" === v ? (f("PlayStationPortable", c(a, "(PlayStation Portable); ")), p("PlayStationPortable", void 0, "GAME"), e("NetFront", 3.2), Ka = !0) : Ka = void 0);
+    (Ma = Ka) || ("WinCE" === v ? (f("WindowsCE", 5 > K ? 3 : 4.1, "PDA"), Ma = !0) : Ma = void 0);
+    (Na = Ma) || (b(a, "Windows Mobile;") || Hc ? (f("WindowsMobile", 6.1, "PDA"), Na = !0) : Na = void 0);
+    (Oa = Na) || (b(a, "BlackBerry") || b(a, "BB10") ? (f("BlackBerry", Q, "PHONE"), Oa = !0) : Oa = void 0);
+    (Pa = Oa) || ("Nintendo 3DS" === v ? (f("Nintendo3DS", ia), p("Nintendo3DS", void 0, "GAME"), e("WebKit", G || 535), g("NetFrontNX", ia), Pa = !0) : Pa = void 0);
+    (Qa = Pa) || ("New Nintendo 3DS" === v || b(a, "iPhone OS 6_0") && 320 === ad && 240 === bd ? (f("NewNintendo3DS", ia), p("NewNintendo3DS", void 0, "GAME"), Qa = !0) : Qa = void 0);
+    (Ra = Qa) || (Y && Y.wiiremote ? (f("Wii", c(y, v + "; U; ; ")), p("Wii", void 0, "GAME"), Ra = !0) : Ra = void 0);
+    if (!(Sa = Ra)) {
+      if (q.wiiu) {
+        ff = !!q.webkitCancelAnimationFrame;
+        ia ? f("WiiU", ia) : (f("WiiU", ff ? 4 : 2.1), J = b(y, "Macintosh;") || b(y, "Windows NT") && !b(y, "Touch"));
+        p("WiiU", void 0, "GAME");
+        e("WebKit", c(y, "AppleWebKit/") || (ff ? 536 : 534));
+        g("NetFrontNX", 3);
+        Sa = !0;
+      } else {
+        Sa = void 0;
+      }
+    }
+    (Ta = Sa) || (od || pd || ld || nd ? (od ? (f("WindowsPhone", 10, "PHONE"), J = !0) : pd ? (f("WindowsPhone", 11 === K ? 8.1 : 10 === K ? 8 : 9 === K ? 7.5 : 7, "PHONE"), J = !0) : f("WindowsPhone", ld || nd, "PHONE"), Ta = !0) : Ta = void 0);
+    (Ua = Ta) || (b(a, "Maemo") ? (f("Maemo"), Ua = !0) : Ua = void 0);
+    (Va = Ua) || (b(a, "MeeGo") ? (f("MeeGo"), Va = !0) : Va = void 0);
+    (Wa = Va) || (q.palmGetResource ? (f("WebOS", c(a, "webOS/") || c(a, "WEBOS") || c(a, "hpwOS/"), b(a, "webOS.TV") || b(a, "/SmartTV") ? "TV" : "PHONE"), Wa = !0) : Wa = void 0);
+    (Xa = Wa) || (ce ? (f("Tizen", ce, "PHONE"), e("SamsungInternet", fa), g("SamsungInternet", fa), Xa = !0) : Xa = void 0);
+    (Ya = Xa) || ("PlayStation Vita" === v ? (f("PlayStationVita", c(y, v + " ")), p("PlayStationVita", void 0, "GAME"), Ya = !0) : Ya = void 0);
+    (Za = Ya || rf()) || (!v && b(y, "Nintendo Switch;") ? (f("NintendoSwitch", ia), p("NintendoSwitch", void 0, "GAME"), Za = !0) : Za = void 0);
+    ($a = Za || vf()) || (b(a, "SunOS") || b(a, "Sun Solaris") ? (f("SunOS"), X = "PC", $a = !0) : $a = void 0);
+    (ua = $a) || (Mf ? (f("Xbox360"), p("Xbox360", void 0, "GAME"), ua = !0) : de ? (f("XboxOne"), p("XboxOne", void 0, "GAME"), ua = !0) : ua = void 0);
+    (ab = ua) || ("WinCE" === v || b(a, "Windows Mobile;") || Hc || od || pd || ld || nd || 0 !== v.indexOf("Win") ? ab = void 0 : (f("Windows", c(a, "Windows NT ") || c(a, "Windows "), "PC"), ab = !0));
+    (La = ab) || (w() ? (f("Mac", c(a.split("_").join("."), "Mac OS X "), "PC"), La = !0) : La = void 0);
+    (bb = La) || (void 0 !== q.onmoztimechange ? (f("FirefoxOS", 0 > m(0, 18.1) ? "1.0.1" : 0 > m(0, 19) ? 1.1 : 0 > m(0, 27) ? 1.2 : 0 > m(0, 29) ? 1.3 : 0 > m(0, 31) ? 1.4 : 0 > m(0, 33) ? 2 : 0 > m(0, 35) ? 2.1 : 0 > m(0, 38) ? 2.2 : 0 > m(0, 45) ? 2.5 : 2.6, b(a, "Mobile") ? "PHONE" : b(a, "Tablet") ? "TABLET" : b(a, "TV") ? "TV" : "PHONE"), bb = !0) : bb = void 0);
+    (cb = bb) || (he || ee ? (f("FireOS", he || ee), cb = !0) : cb = void 0);
+    (db = cb) || (ie ? (f("ChromeOS", ie, "PC"), db = !0) : db = void 0);
+    if (!(eb = db)) {
+      if (td || ud || vd || wd || md || oa) {
+        if (oa) {
+          f("iOS", oa);
+        } else if (L = "iOS", md) {
+          F = md;
+        } else if ((F = c(y.split("_").join("."), "OS ")) || (J = !0), !F || Qf) {
+          F = Tf;
+        }
+        eb = !0;
+      } else {
+        eb = void 0;
+      }
+    }
+    eb || zf() || !ae || (f("Linux"), X = "PC");
+    if (!ma) {
+      if (td || ud || vd || wd) {
+        if (oa) {
+          Kc = Ga.model;
+          switch(Kc.substr(0, 4)) {
+            case "iPho":
+              p("iPhone", c(Kc, "iPhone"));
+              break;
+            case "iPad":
+              p("iPad", c(Kc, "iPad"));
+              break;
+            case "iPod":
+              p("iPod", c(Kc, "iPod"));
+          }
+        } else {
+          Ad = 1 === q.devicePixelRatio;
+          gf = ad === 1.5 * bd || 1.5 * ad === bd;
+          td ? p("iPhone", gf ? Ad ? "1~3" : "4~5" : "6~") : ud || wd ? p("iPad", Ad ? "~2" : "3~") : vd && p("iPod", gf ? Ad ? "~3" : 4 : "5~");
+        }
+        hf = !0;
+      } else {
+        hf = void 0;
+      }
+      (gb = hf) || (Sd() ? (p("BOOX", void 0, "EINK_READER"), gb = !0) : gb = void 0);
+      (fb = gb || void 0) || (ta || rd || Pf ? (Of ? (p("FireTV", void 0, "TV"), J = !0) : p("FireTV", ta && ta[1], "TV"), fb = !0) : fb = void 0);
+      (hb = fb || void 0) || (Fa ? (p("KindleFire", Fa[1], "TABLET"), hb = !0) : hb = void 0);
+      (ib = hb) || (b(a, "Kobo") ? (p("Kobo", void 0, "EINK_READER"), ib = !0) : ib = void 0);
+      (jb = ib || void 0) || (Td() ? (p("Nook", void 0, "EINK_READER"), jb = !0) : jb = void 0);
+      (kb = jb) || (b(a, " PocketBook") ? (p("PocketBook", void 0, "EINK_READER"), kb = !0) : kb = void 0);
+      (lb = kb) || (0 < Yc ? (p("SonyReader", Yc, "EINK_READER"), lb = !0) : lb = void 0);
+      lb || !Xc() && ne && p("Kindle", 5, "EINK_READER");
+    }
+    u || (!da && Y ? (e("PC" === X || "Wii" === L ? "Presto" : "PrestoMobile", Gf || Hf), fd = !0) : fd = void 0, (mb = fd) || (da || jd ? (e("OperaMini", jd), g("Opera", A), mb = !0) : mb = void 0), (nb = mb) || (E() ? ("PC" !== X ? e("TridentMobile", K) : w() ? (5 <= K ? e("Tasman", K) : e("Trident", K), g("IEForMac", K)) : (e("Trident", K), 10 <= K && 6.2 <= F && 7 > F && 0 === screenY && innerHeight + 1 !== outerHeight && g("ModernIE", K), 7 <= kd && kd !== K && g("InternetExplorer", kd)), nb = 
+    !0) : nb = void 0), (pb = nb) || (!E() && qa.msContentZoomFactor ? (e("WindowsPhone" === L ? "EdgeMobile" : "EdgeHTML", c(y, "Edge/")), pb = !0) : pb = void 0), (qb = pb) || (Jc ? (e("Goanna", Jc), qb = !0) : qb = void 0), (rb = qb) || (ra && !Jc ? (e(h() ? "Fennec" : "Gecko", Nf || qd), rb = !0) : rb = void 0), (sb = rb) || (oe ? (e("iCab", oe), g("iCab", A), sb = !0) : sb = void 0), (tb = sb) || (pe ? (e("KHTML", pe), tb = !0) : tb = void 0), (ub = tb) || (qe ? (e("NetFront", qe), g("NetFront", 
+    A), ub = !0) : ub = void 0), (ob = ub) || (H() ? (e("UCWEB", If), g("UC", A), ob = !0) : ob = void 0), (wb = ob) || (xd || yd || Wf ? (e("QtWebEngine", R), wb = !0) : wb = void 0), (xb = wb) || (zd ? (e("QtWebKit", G), xb = !0) : xb = void 0), (yb = xb) || (re ? (e("Servo", re), g("Servo", A), yb = !0) : yb = void 0), (vb = yb) || (fa || h() && U && be ? (e("SamsungInternet", fa || be), vb = !0) : vb = void 0), (Ab = vb) || (Qd() ? (e("SafariMobile", F), Ab = !0) : Ab = void 0), (Bb = Ab) || 
+    ("iOS" !== L || Qd() || da || jd || H() ? Bb = void 0 : (e("iOSWebView", F), Bb = !0)), (zb = Bb) || ((gd = "Android" === L) && $c || pa || gd && Ea || gd && (Q || U) || R || ha ? ((hd = "Android" === L) && $c ? (e("AndroidWebView", ca), U && (J = !0)) : pa ? (e(h() ? "ChromiumMobile" : "Chromium", R || sd), U && (J = !0)) : hd && Ea ? (e("AndroidWebView", ca), U && (J = !0)) : hd && (Q || U) ? (e("AndroidWebView", ca), U && (J = !0)) : (R || ha) && e(h() ? "ChromiumMobile" : "Chromium", R), 
+    zb = !0) : zb = void 0), zb || G && e("WebKit", G));
+    Ca || ("EdgeHTML" === u || "EdgeMobile" === u || se || te ? (g("Edge", "EdgeHTML" === u || "EdgeMobile" === u ? A : se || te), id = !0) : id = void 0, (Fb = id) || (ue ? (g("OperaCoast", ue), Fb = !0) : Fb = void 0), (Gb = Fb) || (ve || "iOS" === L && !Da(q, "isSecureContext") ? (g("OperaTurbo", ve), J || (J = !b(y, "Mobile/")), Gb = !0) : Gb = void 0), (Eb = Gb) || (ke ? (g("Yahoo", Uf), Eb = !0) : Eb = void 0), (Hb = Eb) || (we ? (g("UC", we), Hb = !0) : Hb = void 0), (Ib = Hb) || (xe ? (g("SilK", 
+    xe), Ib = !0) : Ib = void 0), (Jb = Ib) || (ye ? (g("Vivaldi", ye), Jb = !0) : Jb = void 0), (Kb = Jb) || (ze ? (g("QQ", ze), Kb = !0) : Kb = void 0), (Lb = Kb) || (Ae ? (g("Yandex", Ae), Lb = !0) : Lb = void 0), (Mb = Lb) || (Be ? (g("coccoc", Be), Mb = !0) : Mb = void 0), (Nb = Mb) || (Ce ? (g("Camino", Ce), Nb = !0) : Nb = void 0), (Ob = Nb) || (b(a, "SE 2.X MetaSr 1.0") ? (g("Sogou"), Ob = !0) : Ob = void 0), (Db = Ob) || (Nd() ? (g("FirefoxFocus", Od || na), Db = !0) : Db = void 0), (Rb = 
+    Db) || (De ? (g("AOL", De), Rb = !0) : Rb = void 0), (Qb = Rb) || (yd ? (g("Otter", yd), Qb = !0) : Qb = void 0), (Sb = Qb) || (zd ? (g("QupZilla", zd), Sb = !0) : Sb = void 0), (Tb = Sb) || (Ee ? (g("IceDragon", Ee), Tb = !0) : Tb = void 0), (Ub = Tb) || (Fe ? (g("Iceweasel", Fe), Ub = !0) : Ub = void 0), (Vb = Ub) || (Ge ? (g("TenFourFox", Ge), Vb = !0) : Vb = void 0), (Wb = Vb) || (He ? (g("Waterfox", He), Wb = !0) : Wb = void 0), (Xb = Wb) || (Ie ? (g("GNUzilla", Ie), Xb = !0) : Xb = void 0), 
+    (Yb = Xb) || (Je ? (g("SeaMonkey", Je), Yb = !0) : Yb = void 0), (Zb = Yb) || (Ke ? (g("PaleMoon", Ke), Zb = !0) : Zb = void 0), ($b = Zb) || (Le ? (g("Basilisk", Le), $b = !0) : $b = void 0), (ac = $b) || (Me || b(a, "Maxthon") ? (g("Maxthon", Me), ac = !0) : ac = void 0), (bc = ac) || (b(a, "Avant Browser;") ? (g("Avant"), bc = !0) : bc = void 0), (cc = bc) || (Ne ? (g("Konqueror", Ne), cc = !0) : cc = void 0), (dc = cc) || (Oe ? (g("Midori", Oe), dc = !0) : dc = void 0), (ec = dc) || (Pe ? 
+    (g("OmniWeb", Pe), ec = !0) : ec = void 0), (fc = ec) || (Qe ? (g("Roccat", Qe), fc = !0) : fc = void 0), (gc = fc) || (Re ? (g("Epiphany", Re), gc = !0) : gc = void 0), (hc = gc) || (Se ? (g("WebPositive", Se), hc = !0) : hc = void 0), (Pb = hc) || (sd || b(a, " Iron ") ? (g("Iron", sd || R), Pb = !0) : Pb = void 0), (jc = Pb) || (Te ? (g("ComodoDragon", Te), jc = !0) : jc = void 0), (kc = jc) || (Ue || b(a, " Brave ") || "iOSWebView" === u && Da(q, "sameOrigin") ? (g("Brave", Ue || ("Chromium" === 
+    u || "ChromiumMobile" === u ? R : void 0)), kc = !0) : kc = void 0), (lc = kc) || (Ve ? (g("Rockmelt", Ve), lc = !0) : lc = void 0), (mc = lc) || ("iOSWebView" === u && Da(q, "enableWebGL") ? (g("Dolphin"), mc = !0) : mc = void 0), (ic = mc) || (dd || je ? (g("Puffin", je), ic = !0) : ic = void 0), (oc = ic) || (We ? (g("Dooble", We), oc = !0) : oc = void 0), (pc = oc) || (Xe ? (g("Flock", Xe), pc = !0) : pc = void 0), (qc = pc) || (Ye ? (g("Galeon", Ye), qc = !0) : qc = void 0), (nc = qc) || 
+    (xd || "QtWebEngine" === u ? (g("Falkon", xd), nc = !0) : nc = void 0), (rc = nc) || (Ze ? (g("Iceape", Ze), rc = !0) : rc = void 0), (sc = rc) || ($e ? (g("KMeleon", $e), sc = !0) : sc = void 0), (tc = sc) || (af ? (g("NetFrontNX", af), tc = !0) : tc = void 0), (uc = tc) || (bf ? (g("NetscapeNavigator", bf), uc = !0) : uc = void 0), (Cb = uc) || (Hc ? (g("Iris", Hc), Cb = !0) : Cb = void 0), (xc = Cb) || (cf ? (g("Facebook", cf), xc = !0) : xc = void 0), (yc = xc) || (df ? (g("LINE", df), yc = 
+    !0) : yc = void 0), (zc = yc) || (ef ? (g("DuckDuckGo", ef), zc = !0) : zc = void 0), (wc = zc) || (le || me ? (g("Lunascape", le), wc = !0) : wc = void 0), (Ac = wc) || ("Gecko" === u && 0 > m(A, 1.8) && !qd ? (g("Mozilla", A), Ac = !0) : Ac = void 0), (vc = Ac) || ("Gecko" === u || "Fennec" === u || rd || !Nd() && na ? (g("Firefox", "Gecko" === u || "Fennec" === u ? A : qd || na), vc = !0) : vc = void 0), (Dc = vc) || (null === q.onoperadetachedviewchange ? (g("OperaGX", ha), Dc = !0) : Dc = 
+    void 0), (Cc = Dc) || (ge || ha || "Presto" === u || "PrestoMobile" === u ? (g("Opera", "Presto" === u || "PrestoMobile" === u ? A : ge || ha), Cc = !0) : Cc = void 0), (Ec = Cc) || ("Trident" === u || "TridentMobile" === u || "Tasman" === u ? (g("InternetExplorer", A), Ec = !0) : Ec = void 0), (Fc = Ec) || ("SamsungInternet" === u ? (g("SamsungInternet", A), Fc = !0) : Fc = void 0), (Bc = Fc) || (fe || R || Pd() ? (g("Chrome", Pd() ? A : R || fe), Bc = !0) : Bc = void 0), (Gc = Bc) || ("AndroidWebView" === 
+    u && 0 > m(A, 5) ? (g("AndroidBrowser", A), Gc = !0) : Gc = void 0), Gc || (("WebKit" === u || "SafariMobile" === u || "iOSWebView" === u) && b(a, "Safari/") || Q) && g("Safari", Q || (73 > G ? .8 : 85 > G ? .9 : 100 > G ? 1 : 125 > G ? 1.1 : 312 > G ? 1.2 : 412 > G ? 1.3 : 419.3 >= G ? 2 : 525.13 >= G ? 3 : 525.25 >= G ? 3.1 : 3.2)));
+    L && (d.PLATFORM = L, F && (d.PLATFORM_VERSION = l(F)));
+    ma && (d.DEVICE = ma, Uc && (d.DEVICE_GENERATION = l(Uc)));
+    X && (d.DEVICE_TYPE = X);
+    u && (d.ENGINE = u, A && (d.ENGINE_VERSION = l(A)));
+    Ca && (d.BRAND = Ca, Vc && (d.BRAND_VERSION = l(Vc)));
+    d.PCSITE_REQUESTED = J;
+  })(D);
+  C = {m:1, h:"", i:"errmsg"};
+  C.g = W(C.i);
+  C.g.value = "";
+  C.l = q.onerror;
+  C.j = function(d, m, r) {
+    I("Gecko") && N(1) || (d = C.h + " " + d + " #" + r + ", " + m, C.g ? C.g.value = d : alert(d));
+  };
+  q.onerror = C.j;
+  Xf = "AndroidBrowser;Android Browser;AOL;AOL;Avant;Avant;Basilisk;Basilisk;Brave;Brave;Camino;Camino;Chrome;Chrome;coccoc;coccoc;ComodoDragon;Comodo Dragon;Dolphin;Dolphin;Dooble;Dooble;DuckDuckGo;DuckDuckGo;Edge;Edge;Epiphany;Epiphany;Facebook;Facebook;Falkon;Falkon;Firefox;Firefox;FirefoxFocus;Firefox Focus;Flock;Flock;Galeon;Galeon;GNUzilla;GNUzilla;iCab;iCab;Iceape;Iceape;IceDragon;IceDragon;Iceweasel;Iceweasel;InternetExplorer;Internet Explorer;IEForMac;Internet Explorer for Mac;Iris;Iris;Iron;Iron;KMeleon;K-Meleon;Konqueror;Konqueror;LINE;LINE;Lunascape;Lunascape;Maxthon;Maxthon;Midori;Midori;ModernIE;Modern IE;Mozilla;Mozilla;NetFront;NetFront\u00ae;NetFrontNX;NetFront\u00ae Browser NX;NetscapeNavigator;Netscape Navigator;OmniWeb;OmniWeb;Opera;Opera;OperaCoast;Opera Coast;OperaGX;Opera GX;OperaTouch;Opera Touch;OperaTurbo;Opera Turbo;Otter;Otter;PaleMoon;PaleMoon;Puffin;Puffin;QQ;QQ;QupZilla;QupZilla;Roccat;Roccat;Rockmelt;Rockmelt;Safari;Safari;SamsungInternet;Samsung Internet;SeaMonkey;SeaMonkey;Servo;Servo;SilK;Silk;Sleipnir;Sleipnir;Sogou;Sogou;TenFourFox;TenFourFox;UC;UC;;Unknown;Vivaldi;Vivaldi;Waterfox;Waterfox;WebPositive;WebPositive;Yahoo;Yahoo;Yandex;Yandex".split(";");
+  Yf = "CAR;CAR;EINK_READER;EINK READER;GAME;GAME;MEDIA_PLAYER;MEDIA PLAYER;PC;PC;PDA;PDA;PHONE;PHONE;TABLET;TABLET;TV;TV;;UNKNOWN".split(";");
+  Zf = "BOOX;BOOX;Cybook;Cybook;eClicto;eClicto;Fidibook;Fidibook;FireTV;FireTV;Hisense;Hisense;icarus;icarus;iPad;iPad;iPhone;iPhone;iPod;iPod;Kindle;Kindle;KindleFire;KindleFire;Kobo;Kobo;Likebook;Likebook;Manta;Manta;Movistar;Movistar;NewNintendo3DS;NewNintendo3DS;Nintendo3DS;Nintendo3DS;NintendoDS;NintendoDS;NintendoDSi;NintendoDSi;NintendoSwitch;NintendoSwitch;Nook;Nook;PlayStation;PlayStation;PlayStationPortable;PlayStationPortable;PlayStationVita;PlayStationVita;PocketBook;PocketBook;mylo;SONY mylo;SonyReader;SonyReader;Tolino;Tolino;;Unknown;Wii;Wii;WiiU;WiiU;Xbox360;Xbox360;XboxOne;XboxOne;XboxSeries;XboxSeries".split(";");
+  $f = "AndroidWebView;Android WebView;Chromium;Chromium;ChromiumMobile;Chromium Mobile;EdgeMobile;Edge Mobile;EdgeHTML;EdgeHTML;Escudo;Escudo;Fennec;Fennec;flow;flow;Gecko;Gecko;Goanna;Goanna;iCab;iCab;iOSWebView;iOS WebView;KHTML;KHTML;lexbor;lexbor;Litehtml;Litehtml;Naglfar;Naglfar;NetFront;NetFront;Netscape;Netscape;OperaMini;Opera Mini;Presto;Presto;PrestoMobile;Presto Mobile;QtWebEngine;Qt WebEngine;QtWebKit;Qt WebKit;SafariMobile;Safari Mobile;SamsungInternet;Samsung Internet;Serenity;Serenity;Servo;Servo;Sony;Sony;Tasman;Tasman;Trident;Trident;TridentMobile;Trident Mobile;TridentPocket;Trident Pocket;UCWEB;UCWEB;;Unknown;WebKit;WebKit".split(";");
+  ag = "Android;Android;AndroidTV;Android TV;BlackBerry;BlackBerry;ChromeOS;ChromeOS;FeaturePhone;Feature Phone;Fedora;Fedora;FirefoxOS;FirefoxOS;FireOS;FireOS;FreeBSD;FreeBSD;Gentoo;Gentoo;GoogleTV;Google TV;iOS;iOS;iPadOS;iPadOS;KaiOS;KaiOS;Kindle;Kindle;Linux;Linux;Mac;Mac;Maemo;Maemo;MeeGo;MeeGo;Mint;Mint;NetBSD;NetBSD;NewNintendo3DS;New NINTENDO 3DS\u2122;Nintendo3DS;NINTENDO 3DS\u2122;NintendoDSi;NINTENDO DSi\u2122;NintendoDS;NINTENDO DS\u2122;NintendoSwitch;NINTENDO SWITCH\u2122;OpenBSD;OpenBSD;PlayStation3;PlayStation\u00ae3;PlayStation4;PlayStation\u00ae4;PlayStation5;PlayStation\u00ae5;PlayStationPortable;PlayStation\u00aePortable;PlayStationVita;PlayStation\u00aeVita;Kobo;Rakuten Kobo;mylo;SONY mylo;SonyReader;SONY Reader\u00ae;SunOS;SunOS;SymbianS60;Symbian OS S60;Tizen;Tizen;Ubuntu;Ubuntu;;Unknown;WatchOS;WatchOS;WebOS;WebOS;WiiU;WiiU\u2122;Wii;Wii\u2122;Windows;Windows;WindowsCE;Windows CE;WindowsMobile;Windows Mobile;WindowsPhone;Windows Phone;Windows16;Windows16;Xbox360;Xbox 360\u2122;XboxOne;Xbox One\u2122;XboxSeries;Xbox SeriesX|S".split(";");
+  Nc = {};
+  Oc = {};
+  (function() {
+    function d(b, n, c, k, l) {
+      var h = "who" + b.toLocaleLowerCase().split(" ").join("").split("_").join(""), f = h + "version", p = "", e = 0, g = n.length, w, E;
+      c = c || "unknown";
+      for (k = k || "-"; e < g; e += 2) {
+        E = n[e] || "unknown";
+        (w = E === c) && (Nc[h] = e / 2);
+        p += '<option value="' + E + '"' + (w ? " selected" : "") + ">" + n[e + 1] + "</option>";
+      }
+      l || (Oc[f] = k);
+      return '<tr><th><label for="' + h + '">' + b + "</label><td" + (l ? " colspan=2" : "") + "><select" + m(h) + ">" + p + "</select>" + (l ? "" : I("Servo") ? '<td align="right">' + k : '<td><input type="text" value="' + k + '"' + m(f) + ">");
+    }
+    function m(b) {
+      return ' name="' + b + '" id="' + b + '"';
+    }
+    B.write('<form name="who" onsubmit=""><table border=1 cellspacing=0><thead><tr><th><th>Name<th>Version(Generation)<tbody>' + d("Platfrom", ag, D.PLATFORM, D.PLATFORM_VERSION) + d("Device", Zf, D.DEVICE, D.DEVICE_GENERATION) + d("Device Type", Yf, D.DEVICE_TYPE, "", !0) + d("Engine", $f, D.ENGINE, D.ENGINE_VERSION) + d("Brand", Xf, D.BRAND, D.BRAND_VERSION) + '<tr><th><label for="whopcsiterequested">PC Site Requested</label><td colspan=2 align="right"><input type="checkbox"' + m("whopcsiterequested") + 
+    (D.PCSITE_REQUESTED ? " checked" : "") + "></table><button" + m("whoreset") + ' type="reset">Reset</button></form>');
+    var r = W("whoreset");
+    r && (r.onclick = Dd);
+    Dd();
+  })();
+  V = "userAgent appVersion appCodeName appName buildID securitypolicy oscpu platform product productSub vendor vendorSub".split(" ");
+  for (var Lc = 0, bg = V.length, Bd = [], jf; Lc < bg; ++Lc) {
+    (jf = S[V[Lc]]) && Bd.push("<tr><th>" + V[Lc] + "<td>" + jf.split("&").join("&amp;").split("<").join("&lt;"));
+  }
+  Bd.length && B.write('<details><summary>navigator</summary><table class="nav" border=1 cellspacing=0>' + Bd.join("") + "</table></details>");
+  wa() || I("Tasman") ? V = function(d) {
+    return !(!d || !d.insertAdjacentHTML);
+  } : ((V = !q.Node) || (V = I("NetFront") && N(4)), V = V || I("Gecko") && N(1.9) || (ja() || va()) && N(8) ? function(d) {
+    return !(!d || !d.nodeType);
+  } : new Function("v", "return v instanceof Node"));
+  Sc = V;
+  I("Servo") || B.write('<textarea readonly name="propertiesList" cols=80></textarea>');
+  C.m = 2;
+  Gd = -1;
+  pf = +new Date();
+  T = ka = 0;
+  of = !!q["opera-8-to-10-copies-meta-tags-to-window"];
+  Tc = [];
+  Aa = [];
+  Kd = {};
+  ba = "";
+  Id = !1;
+  ya = [q];
+  O = [Fd(q, "window")];
+  la = Ld = [];
+  za = [la];
+  Rc = !1;
+  Hd = 0;
+  if (wa() || I("Tasman")) {
+    q.__on_loop__ = Qc, Qc = "__on_loop__()";
+  }
+  Jd = wa() ? function(d, m) {
+    return d[m];
+  } : new Function("o,p,s", "try{return o[p]}catch(E){s.error=E;return s}");
+  qf = setInterval(Qc, 16);
+})(this, document, navigator, screen, parseFloat, Number);
+
 </script>
-<script>
-(function(ua){
-    function getEngineVersionOf( targetEngine ){
-        var engine  = ua.ENGINE,
-            version = ua.ENGINE_VERSION;
-
-        if( engine === targetEngine ){
-            if( version === version + '' ){
-                return parseFloat( version );
-            } else {
-                return version;
-            };
-        };
-    };
-
-    function getPlatformVersionOf( targetPlatform ){
-        var platform = ua.PLATFORM,
-            version  = ua.PLATFORM_VERSION;
-
-        if( platform === targetPlatform ){
-            if( version === version + '' ){
-                return parseFloat( version );
-            } else {
-                return version;
-            };
-        };
-    };
-
-    function print(html){
-        document.write(html);
-    };
-    function inObject( name, obj ){
-        if( obj[ name ] !== undefined ){
-            return true;
-        };
-        for( var k in obj ){
-            if( k === name ) return true;
-        };
-    };
-
-    var k, ary = [
-        '<table border=1 cellspacing=0>' +
-            '<thead>' +
-                '<tr>' +
-                    '<th><th>Name<th>Version string' +
-            '<tbody>'
-    ];
-
-    if( !Array.prototype.push ){
-        ary.push = function( elm ){
-            this[ this.length ] = elm;
-        };
-    };
-
-    ua = ua || {};
-
-    if( ua.PLATFORM ){
-        ary.push(
-            '<tr>' +
-                '<th>ua.PLATFORM<td>' + ua.PLATFORM + '<td align=right>' + ua.PLATFORM_VERSION
-        );
-    };
-    if( ua.DEVICE ){
-        ary.push(
-            '<tr>' +
-                '<th>ua.DEVICE<td>' + ua.DEVICE + '<td align=right>' + ua.DEVICE_GENERATION
-        );
-    };
-    if( ua.DEVICE_TYPE ){
-        ary.push(
-            '<tr>' +
-                '<th>ua.DEVICE_TYPE<td  colspan=2>' + ua.DEVICE_TYPE
-        );
-    };
-    if( ua.ENGINE ){
-        ary.push(
-            '<tr>' +
-                '<th>ua.ENGINE<td>' + ua.ENGINE + '<td align=right>' + ua.ENGINE_VERSION
-        );
-    };
-    if( ua.BRAND ){
-        ary.push(
-            '<tr>' +
-                '<th>ua.BRAND<td>' + ua.BRAND + '<td align=right>' + ua.BRAND_VERSION
-        );
-    };
-    if( ua.PCSITE_REQUESTED ){
-        ary.push(
-            '<tr>' +
-                '<th>ua.PCSITE_REQUESTED<td colspan=2>○'
-        );
-    };
-
-    print(
-        '<h1>ua</h1>' + ary.join( '' ) + '</table>'
-    );
-
-    print(
-        '<h1>navigator</h1>' +
-        '<dl>' +
-            '<dt>userAgent' +
-            '<dd>' + navigator.userAgent +
-            '<dt>platform' +
-            '<dd>' + navigator.platform +       
-            '<dt>appCodeName' +
-            '<dd>' + navigator.appCodeName + 
-            '<dt>appName' +
-            '<dd>' + navigator.appName +
-            '<dt>appVersion' +
-            '<dd>' + navigator.appVersion +
-            '<dt>vendor' +
-            '<dd>' + navigator.vendor +
-            '<dt>window.chrome' +
-            '<dd>' + ( window.chrome ? 'v' : '-' ) +
-            '<dt>window.chromium' +
-            '<dd>' + ( window.chromium ? 'v' : '-' ) +
-            '<dt>window.opera' +
-            '<dd>' + ( window.opera ? 'v' : '-' ) +
-            '<dt>window.opr' +
-            '<dd>' + ( window.opr ? 'v' : '-' ) +
-            '<dt>window.operamini' +
-            '<dd>' + ( window.operamini ? JSON.stringify( operamini ) : '-' ) +
-            '<dt>window.OperaIce' + // Coast
-            '<dd>' + ( window.OperaIce ? JSON.stringify( OperaIce ) : '-' ) +
-            '<dt>window.oprt' +
-            '<dd>' + ( window.oprt ? JSON.stringify( oprt ) : '-' ) +
-            '<dt>window.searchBoxJavaBridge_' +
-            '<dd>' + ( window.searchBoxJavaBridge_ ? 'v' : '-' ) +
-            '<dt>window.puffinDevice' +
-            '<dd>' + ( window.puffinDevice ? JSON.stringify( puffinDevice ) : '-' ) +
-            '<dt>window.yandex' +
-            '<dd>' + ( window.yandex ? JSON.stringify( yandex ) : '-' ) +
-            '<dt>window.__ybro' +
-            '<dd>' + ( window.__ybro ? JSON.stringify( __ybro ) : '-' ) +
-            '<dt>window.webkit' +
-            '<dd>' + ( window.webkit ? JSON.stringify( webkit ) : '-' ) +
-            '<dt>window.FNRBrowser' +
-            '<dd>' + ( window.FNRBrowser ? JSON.stringify( FNRBrowser ) : '-' ) +
-            '<dt>window.maxthon' +
-            '<dd>' + ( window.maxthon ? JSON.stringify( maxthon ) : '-' ) +
-            '<dt>document.fullscreenEnabled(webkitFullscreenEnabled)' +
-            '<dd>' + ( inObject( 'fullscreenEnabled', document ) ? document.fullscreenEnabled + '(' : '-(' ) + ( inObject( 'webkitFullscreenEnabled', document ) ? document.webkitFullscreenEnabled + ')' : '-)' ) +
-            '<dt>window.requestFileSystem(webkitRequestFileSystem)' +
-            '<dd>' + ( window.requestFileSystem ? 'v (' : '- (' ) + ( window.webkitRequestFileSystem ? 'v)' : '-)' ) +
-            '<dt>navigator.standalone' +
-            '<dd>' + ( inObject( 'standalone', navigator ) ? navigator.standalone : '-' ) +
-            '<dt>window.matchMedia("(display-mode: standalone)").matches' +
-            '<dd>' + ( window.matchMedia && matchMedia('(display-mode: standalone)') && matchMedia('(display-mode: standalone)').matches ? 'v' : '-' ) +
-            '<dt>window.matchMedia("(display-mode: browser)").matches' +
-            '<dd>' + ( window.matchMedia && matchMedia('(display-mode: browser)') && matchMedia('(display-mode: browser)').matches ? 'v' : '-' ) +
-        '</dl>' +
-
-        '<h1>Short URL</h1>' +
-        '<a href="https://goo.gl/PFu3uN">https://goo.gl/PFu3uN</a> <a href="https://goo.gl/VyVM9s">http://goo.gl/VyVM9s</a>'
-    );
-
-    var patchForOpera = !!window[ 'opera-8-to-10-copies-meta-tags-to-window' ]; // Opera 8~10.1x, 10.54 で発生しない
-    var ary = [], dic = {}, name, nameBefore, value, str;
-
-    var iOS12members = [
-'addEventListener', 'alert', 'applicationCache', 'atob', 'blur', 'btoa',
-'caches', 'cancelAnimationFrame', 'captureEvents', 'clearInterval', 'clearTimeout', 'clientInformation', 'close', 'closed', 'confirm', 'crypto', 'customElements',
-'defaultStatus', 'defaultstatus', 'devicePixelRatio', 'dispatchEvent', 'document',
-'event',
-'fetch', 'find', 'focus', 'frameElement', 'frames',
-'getComputedStyle', 'getMatchedCSSRules', 'getSelection',
-'history',
-'indexedDB', 'innerHeight', 'innerWidth', 'isSecureContext',
-'length', 'localStorage', 'location', 'locationbar',
-'matchMedia', 'menubar', 'moveBy', 'moveTo',
-'name', 'navigator',
-'offscreenBuffering', 'onabort', 'onanimationcancel', 'onanimationend', 'onanimationiteration', 'onanimationstart', 'onbeforeunload', 'onblur', 'oncanplay', 'oncanplaythrough', 'onchange', 'onclick', 'oncontextmenu', 'oncuechange', 'ondblclick', 'ondrag', 'ondragend', 'ondragenter', 'ondragleave', 'ondragover', 'ondragstart', 'ondrop', 'ondurationchange', 'onemptied', 'onended', 'onerror', 'onfocus', 'onhashchange', 'oninput', 'oninvalid', 'onkeydown', 'onkeypress', 'onkeyup', 'onlanguagechange', 'onload', 'onloadeddata', 'onloadedmetadata', 'onloadstart', 'onmessage', 'onmousedown', 'onmouseenter', 'onmouseleave', 'onmousemove', 'onmouseout', 'onmouseover', 'onmouseup', 'onmousewheel', 'onoffline', 'ononline', 'onpagehide', 'onpageshow', 'onpause', 'onplay', 'onplaying', 'onpopstate', 'onprogress', 'onratechange', 'onrejectionhandled', 'onreset', 'onresize', 'onscroll', 'onseeked', 'onseeking', 'onselect', 'onstalled', 'onstorage', 'onsubmit', 'onsuspend', 'ontimeupdate', 'ontoggle', 'ontransitioncancel', 'ontransitionend', 'ontransitionrun', 'ontransitionstart', 'onunhandledrejection', 'onunload', 'onvolumechange', 'onwaiting', 'open', 'openDatabase', 'opener', 'orientation', 'origin', 'outerHeight', 'outerWidth',
-'pageXOffset', 'pageYOffset', 'parent', 'performance', 'personalbar', 'postMessage', 'print', 'prompt',
-'queueMicrotask',
-'releaseEvents', 'removeEventListener', 'requestAnimationFrame', 'resizeBy', 'resizeTo',
-'screenLeft', 'screenTop', 'screenX', 'screenY', 'screen', 'scroll', 'scrollBy', 'scrollTo', 'scrollX', 'scrollY', 'scrollbars', 'self', 'sessionStorage', 'setInterval', 'setTimeout', 'speechSynthesis', 'status', 'statusbar', 'stop', 'styleMedia',
-'toolbar', 'top',
-'webkitCancelAnimationFrame', 'webkitCancelRequestAnimationFrame', 'webkitConvertPointFromNodeToPage', 'webkitConvertPointFromPageToNode', 'webkitIndexedDB', 'webkitRequestAnimationFrame', 'window'
-    ];
-
-    if( true || getEngineVersionOf( 'Trident' ) < 5 || getEngineVersionOf( 'TridentMobile' ) < 5 || getEngineVersionOf( 'Tasman' ) ){
-        collectProps( ary );
-    } else {
-        (new Function( 'collectProps', 'ary', 'try{collectProps(ary)}catch(O_o){ary.length=0;ary[0]=O_o}' ))( collectProps, ary );
-        if( ary.length === 1 ) ary[ 1 ] = 'ERROR AT ' + name + ', BEFORE IS ' + nameBefore;
-    };
-
-    function collectProps( ary ){
-        var k, prop, n, j;
-        
-        for( name in window ){
-            k = name;
-            if( patchForOpera && document.getElementsByName( k )[ 0 ] && document.getElementsByName( k )[ 0 ].tagName === 'META' ){
-                continue;
-            } else if( k === 'opener' && 5 <= getEngineVersionOf( 'AndroidWebView' ) ){ // Chrome for WebView で get するとエラー
-                ary.push( k );
-            } else if( ( k === 'fullScreen' ) && getEngineVersionOf( 'Gecko' ) < 1.4 ){
-                ary.push( k );
-            } else {
-                prop = window[ k ];
-                if( prop !== ua ){
-                    if( k === 'external' && getEngineVersionOf( 'Trident' ) < 5 ){
-                        k = { k : k, v : prop };
-                    } else if( ( k === 'Packages' || k === 'sun' || k === 'java' || k === 'globalStorage' ) && getEngineVersionOf( 'Gecko' ) < 1.9 ){ // NN9 で for in ループを回すとエラー
-                        k = { k : k, v : prop };
-                    } else if( k === 'localStorage' && 10.5 <= getEngineVersionOf( 'Presto' ) && getEngineVersionOf( 'Presto' ) < 11 ){ // Opera 10.54 で for in ループを回すとエラー
-                        k = { k : k, v : prop };
-                    } else if( ( k === 'localStorage' || k === 'sessionStorage' ) && getEngineVersionOf( 'Gecko' ) < 1.9 ){ // NN9 で for in ループを回すとエラー
-                        k = { k : k, v : prop };
-                    } else if( prop && ( 0 < ' object function'.indexOf( typeof prop ) ) ){
-                        n = 0;
-                        for( j in prop ) ++n;
-                        k = typeof prop === 'function' ? k + '()' : k;
-                        if( n ) k = { k : k, n : n };
-                    } else {
-                        k = { k : k, v : prop };
-                    };
-                    ary.push( k );
-                };
-            };
-            nameBefore = name;
-        };
-    };
-
-    ary.sort();
-
-    for( var i = -1, k; k = ary[ ++i ]; ){
-        var c = ( ( k && k.k ) || ( typeof k === 'string' ? k : '' ) ).charAt( 0 ).toLowerCase();
-
-        if( 'a'.charCodeAt( 0 ) > c.charCodeAt( 0 ) || c.charCodeAt( 0 ) > 'z'.charCodeAt( 0 ) ){
-            c = '-';
-        };
-        dic[ c ] = dic[ c ] || [];
-        dic[ c ][ dic[ c ].length ] = k;
-    };
-
-    print( '<h1>window members(' + ary.length +')</h1>' );
-
-    for( k in dic ){
-        ary = dic[ k ];
-        print( '<h2>' + k + ' (' + ary.length + ')</h2>' );
-        for( var i = -1, _ary = []; k = ary[ ++i ]; ){
-            var hit = false;
-            for( var j = -1, content; iOS12members[ ++j ]; ){
-                if( ( k.k || k ) === iOS12members[ j ] ){
-                    hit = true;
-                    break;
-                };
-            };
-            str = typeof k.v === 'string' ? '"' : '';
-            content = k.v != null ? '=' + str + k.v + str : 0 <= k.n ? '[' + k.n + ']' : '';
-            if( hit ){
-                _ary[ _ary.length ] = '<b>' + ( k.k || k ) + content + '</b>';
-            } else {
-                _ary[ _ary.length ] = ( k.k || k ) + content;
-            };
-        };
-        print( '<p>' + _ary.join( ', ' ) + '</p>' );
-    };
-})(ua);
-</script>
-
+</div>
 </body></html>

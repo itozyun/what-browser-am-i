@@ -2,10 +2,10 @@ goog.provide( 'iAm.Android' );
 
 goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
-goog.require( 'iAm._platformVersion.gt' );
-goog.require( 'iAm._platformVersion.gte' );
-goog.require( 'iAm._platformVersion.lt' );
-goog.require( 'iAm._platformVersion.lte' );
+goog.require( 'iAm._platformVersionGt' );
+goog.require( 'iAm._platformVersionGte' );
+goog.require( 'iAm._platformVersionLt' );
+goog.require( 'iAm._platformVersionLte' );
 
 /**
  * @return {boolean}
@@ -19,7 +19,7 @@ iAm.Android = function(){
  * @return {boolean}
  */
 iAm.Android.gt = function( version ){
-    return iAm.Android() && iAm._platformVersion.gt( version );
+    return iAm.Android() && iAm._platformVersionGt( version );
 };
 
 /**
@@ -27,7 +27,7 @@ iAm.Android.gt = function( version ){
  * @return {boolean}
  */
 iAm.Android.gte = function( version ){
-    return iAm.Android() && iAm._platformVersion.gte( version );
+    return iAm.Android() && iAm._platformVersionGte( version );
 };
 
 /**
@@ -35,7 +35,7 @@ iAm.Android.gte = function( version ){
  * @return {boolean}
  */
 iAm.Android.lt = function( version ){
-    return iAm.Android() && iAm._platformVersion.lt( version );
+    return iAm.Android() && iAm._platformVersionLt( version );
 };
 
 /**
@@ -43,5 +43,5 @@ iAm.Android.lt = function( version ){
  * @return {boolean}
  */
 iAm.Android.lte = function( version ){
-    return iAm.Android() && iAm._platformVersion.lte( version );
+    return iAm.Android() && iAm._platformVersionLte( version );
 };

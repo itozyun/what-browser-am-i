@@ -6,10 +6,10 @@ goog.provide( 'iAm.KHTML.lte' );
 
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.gt' );
-goog.require( 'iAm._engineVersion.gte' );
-goog.require( 'iAm._engineVersion.lt' );
-goog.require( 'iAm._engineVersion.lte' );
+goog.require( 'iAm._engineVersionGt' );
+goog.require( 'iAm._engineVersionGte' );
+goog.require( 'iAm._engineVersionLt' );
+goog.require( 'iAm._engineVersionLte' );
 
 /**
  * @return {boolean}
@@ -27,7 +27,7 @@ iAm.KHTML = function(){
  * @return {boolean}
  */
 iAm.KHTML.gt = function( version ){
-    return iAm.KHTML() && iAm._engineVersion.gt( version );
+    return iAm.KHTML() && iAm._engineVersionGt( version );
 };
 
 /**
@@ -35,7 +35,7 @@ iAm.KHTML.gt = function( version ){
  * @return {boolean}
  */
 iAm.KHTML.gte = function( version ){
-    return iAm.KHTML() && iAm._engineVersion.gte( version );
+    return iAm.KHTML() && iAm._engineVersionGte( version );
 };
 
 /**
@@ -43,7 +43,7 @@ iAm.KHTML.gte = function( version ){
  * @return {boolean}
  */
 iAm.KHTML.lt = function( version ){
-    return iAm.KHTML() && iAm._engineVersion.lt( version );
+    return iAm.KHTML() && iAm._engineVersionLt( version );
 };
 
 /**
@@ -51,5 +51,5 @@ iAm.KHTML.lt = function( version ){
  * @return {boolean}
  */
 iAm.KHTML.lte = function( version ){
-    return iAm.KHTML() && iAm._engineVersion.lte( version );
+    return iAm.KHTML() && iAm._engineVersionLte( version );
 };

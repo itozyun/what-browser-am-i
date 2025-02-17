@@ -2,10 +2,10 @@ goog.provide( 'iAm.Movistar' );
 
 goog.require( 'iAm.EnumDevice' );
 goog.require( 'iAm._deviceIs' );
-goog.require( 'iAm._deviceVersion.gt' );
-goog.require( 'iAm._deviceVersion.gte' );
-goog.require( 'iAm._deviceVersion.lt' );
-goog.require( 'iAm._deviceVersion.lte' );
+goog.require( 'iAm._deviceVersionGt' );
+goog.require( 'iAm._deviceVersionGte' );
+goog.require( 'iAm._deviceVersionLt' );
+goog.require( 'iAm._deviceVersionLte' );
 
 /**
  * @return {boolean}
@@ -19,7 +19,7 @@ iAm.Movistar = function(){
  * @return {boolean}
  */
 iAm.Movistar.gt = function( version ){
-    return iAm.Movistar() && iAm._deviceVersion.gt( version );
+    return iAm.Movistar() && iAm._deviceVersionGt( version );
 };
 
 /**
@@ -27,7 +27,7 @@ iAm.Movistar.gt = function( version ){
  * @return {boolean}
  */
 iAm.Movistar.gte = function( version ){
-    return iAm.Movistar() && iAm._deviceVersion.gte( version );
+    return iAm.Movistar() && iAm._deviceVersionGte( version );
 };
 
 /**
@@ -35,7 +35,7 @@ iAm.Movistar.gte = function( version ){
  * @return {boolean}
  */
 iAm.Movistar.lt = function( version ){
-    return iAm.Movistar() && iAm._deviceVersion.lt( version );
+    return iAm.Movistar() && iAm._deviceVersionLt( version );
 };
 
 /**
@@ -43,5 +43,5 @@ iAm.Movistar.lt = function( version ){
  * @return {boolean}
  */
 iAm.Movistar.lte = function( version ){
-    return iAm.Movistar() && iAm._deviceVersion.lte( version );
+    return iAm.Movistar() && iAm._deviceVersionLte( version );
 };

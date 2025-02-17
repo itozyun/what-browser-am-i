@@ -45,7 +45,7 @@ declare namespace iAm {
     const QtWebKit:Common;
 
     const SamsungInternet:Common;
-    const Selvo:Common;
+    const Servo:Common;
     const Tasman:Common;
 
     const Trident:Common;

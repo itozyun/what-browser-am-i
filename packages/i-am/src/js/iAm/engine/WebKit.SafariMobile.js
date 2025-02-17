@@ -27,10 +27,10 @@ goog.provide( 'iAm.iOSWebView.lte' );
 goog.require( 'iAm.QtWebKit' );
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.gt' );
-goog.require( 'iAm._engineVersion.gte' );
-goog.require( 'iAm._engineVersion.lt' );
-goog.require( 'iAm._engineVersion.lte' );
+goog.require( 'iAm._engineVersionGt' );
+goog.require( 'iAm._engineVersionGte' );
+goog.require( 'iAm._engineVersionLt' );
+goog.require( 'iAm._engineVersionLte' );
 
 /**
  * @return {boolean}
@@ -59,7 +59,7 @@ iAm.WebKit.Based = function(){
  * @return {boolean}
  */
 iAm.WebKit.gt = function( version ){
-    return iAm.WebKit() && iAm._engineVersion.gt( version );
+    return iAm.WebKit() && iAm._engineVersionGt( version );
 };
 
 /**
@@ -67,7 +67,7 @@ iAm.WebKit.gt = function( version ){
  * @return {boolean}
  */
 iAm.WebKit.gte = function( version ){
-    return iAm.WebKit() && iAm._engineVersion.gte( version );
+    return iAm.WebKit() && iAm._engineVersionGte( version );
 };
 
 /**
@@ -75,7 +75,7 @@ iAm.WebKit.gte = function( version ){
  * @return {boolean}
  */
 iAm.WebKit.lt = function( version ){
-    return iAm.WebKit() && iAm._engineVersion.lt( version );
+    return iAm.WebKit() && iAm._engineVersionLt( version );
 };
 
 /**
@@ -83,7 +83,7 @@ iAm.WebKit.lt = function( version ){
  * @return {boolean}
  */
 iAm.WebKit.lte = function( version ){
-    return iAm.WebKit() && iAm._engineVersion.lte( version );
+    return iAm.WebKit() && iAm._engineVersionLte( version );
 };
 
 /*----------------------------------------------------------------------------//
@@ -98,7 +98,7 @@ iAm.WebKit.asSafari = {};
  * @return {boolean}
  */
 iAm.WebKit.asSafari.gt = function( version ){
-    return iAm.WebKit() && iAm._safariVersion.gt( version );
+    return iAm.WebKit() && iAm._safariVersionGt( version );
 };
 
 /**
@@ -106,7 +106,7 @@ iAm.WebKit.asSafari.gt = function( version ){
  * @return {boolean}
  */
 iAm.WebKit.asSafari.gte = function( version ){
-    return iAm.WebKit() && iAm._safariVersion.gte( version );
+    return iAm.WebKit() && iAm._safariVersionGte( version );
 };
 
 /**
@@ -114,7 +114,7 @@ iAm.WebKit.asSafari.gte = function( version ){
  * @return {boolean}
  */
 iAm.WebKit.asSafari.lt = function( version ){
-    return iAm.WebKit() && iAm._safariVersion.lt( version );
+    return iAm.WebKit() && iAm._safariVersionLt( version );
 };
 
 /**
@@ -122,7 +122,7 @@ iAm.WebKit.asSafari.lt = function( version ){
  * @return {boolean}
  */
 iAm.WebKit.asSafari.lte = function( version ){
-    return iAm.WebKit() && iAm._safariVersion.lte( version );
+    return iAm.WebKit() && iAm._safariVersionLte( version );
 };
 
 /*----------------------------------------------------------------------------//
@@ -141,7 +141,7 @@ iAm.AnySafariMobile = function(){
  * @return {boolean}
  */
 iAm.AnySafariMobile.gt = function( version ){
-    return iAm.AnySafariMobile() && iAm._engineVersion.gt( version );
+    return iAm.AnySafariMobile() && iAm._engineVersionGt( version );
 };
 
 /**
@@ -149,7 +149,7 @@ iAm.AnySafariMobile.gt = function( version ){
  * @return {boolean}
  */
 iAm.AnySafariMobile.gte = function( version ){
-    return iAm.AnySafariMobile() && iAm._engineVersion.gte( version );
+    return iAm.AnySafariMobile() && iAm._engineVersionGte( version );
 };
 
 /**
@@ -157,7 +157,7 @@ iAm.AnySafariMobile.gte = function( version ){
  * @return {boolean}
  */
 iAm.AnySafariMobile.lt = function( version ){
-    return iAm.AnySafariMobile() && iAm._engineVersion.lt( version );
+    return iAm.AnySafariMobile() && iAm._engineVersionLt( version );
 };
 
 /**
@@ -165,7 +165,7 @@ iAm.AnySafariMobile.lt = function( version ){
  * @return {boolean}
  */
 iAm.AnySafariMobile.lte = function( version ){
-    return iAm.AnySafariMobile() && iAm._engineVersion.lte( version );
+    return iAm.AnySafariMobile() && iAm._engineVersionLte( version );
 };
 
 /*----------------------------------------------------------------------------//
@@ -184,7 +184,7 @@ iAm.SafariMobile = function(){
  * @return {boolean}
  */
 iAm.SafariMobile.gt = function( version ){
-    return iAm.SafariMobile() && iAm._engineVersion.gt( version );
+    return iAm.SafariMobile() && iAm._engineVersionGt( version );
 };
 
 /**
@@ -192,7 +192,7 @@ iAm.SafariMobile.gt = function( version ){
  * @return {boolean}
  */
 iAm.SafariMobile.gte = function( version ){
-    return iAm.SafariMobile() && iAm._engineVersion.gte( version );
+    return iAm.SafariMobile() && iAm._engineVersionGte( version );
 };
 
 /**
@@ -200,7 +200,7 @@ iAm.SafariMobile.gte = function( version ){
  * @return {boolean}
  */
 iAm.SafariMobile.lt = function( version ){
-    return iAm.SafariMobile() && iAm._engineVersion.lt( version );
+    return iAm.SafariMobile() && iAm._engineVersionLt( version );
 };
 
 /**
@@ -208,7 +208,7 @@ iAm.SafariMobile.lt = function( version ){
  * @return {boolean}
  */
 iAm.SafariMobile.lte = function( version ){
-    return iAm.SafariMobile() && iAm._engineVersion.lte( version );
+    return iAm.SafariMobile() && iAm._engineVersionLte( version );
 };
 
 /*----------------------------------------------------------------------------//
@@ -227,7 +227,7 @@ iAm.iOSWebView = function(){
  * @return {boolean}
  */
 iAm.iOSWebView.gt = function( version ){
-    return iAm.iOSWebView() && iAm._engineVersion.gt( version );
+    return iAm.iOSWebView() && iAm._engineVersionGt( version );
 };
 
 /**
@@ -235,7 +235,7 @@ iAm.iOSWebView.gt = function( version ){
  * @return {boolean}
  */
 iAm.iOSWebView.gte = function( version ){
-    return iAm.iOSWebView() && iAm._engineVersion.gte( version );
+    return iAm.iOSWebView() && iAm._engineVersionGte( version );
 };
 
 /**
@@ -243,7 +243,7 @@ iAm.iOSWebView.gte = function( version ){
  * @return {boolean}
  */
 iAm.iOSWebView.lt = function( version ){
-    return iAm.iOSWebView() && iAm._engineVersion.lt( version );
+    return iAm.iOSWebView() && iAm._engineVersionLt( version );
 };
 
 /**
@@ -251,5 +251,5 @@ iAm.iOSWebView.lt = function( version ){
  * @return {boolean}
  */
 iAm.iOSWebView.lte = function( version ){
-    return iAm.iOSWebView() && iAm._engineVersion.lte( version );
+    return iAm.iOSWebView() && iAm._engineVersionLte( version );
 };

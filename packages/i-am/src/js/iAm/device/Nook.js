@@ -2,10 +2,10 @@ goog.provide( 'iAm.Nook' );
 
 goog.require( 'iAm.EnumDevice' );
 goog.require( 'iAm._deviceIs' );
-goog.require( 'iAm._deviceVersion.gt' );
-goog.require( 'iAm._deviceVersion.gte' );
-goog.require( 'iAm._deviceVersion.lt' );
-goog.require( 'iAm._deviceVersion.lte' );
+goog.require( 'iAm._deviceVersionGt' );
+goog.require( 'iAm._deviceVersionGte' );
+goog.require( 'iAm._deviceVersionLt' );
+goog.require( 'iAm._deviceVersionLte' );
 
 /**
  * @return {boolean}
@@ -19,7 +19,7 @@ iAm.Nook = function(){
  * @return {boolean}
  */
 iAm.Nook.gt = function( version ){
-    return iAm.Nook() && iAm._deviceVersion.gt( version );
+    return iAm.Nook() && iAm._deviceVersionGt( version );
 };
 
 /**
@@ -27,7 +27,7 @@ iAm.Nook.gt = function( version ){
  * @return {boolean}
  */
 iAm.Nook.gte = function( version ){
-    return iAm.Nook() && iAm._deviceVersion.gte( version );
+    return iAm.Nook() && iAm._deviceVersionGte( version );
 };
 
 /**
@@ -35,7 +35,7 @@ iAm.Nook.gte = function( version ){
  * @return {boolean}
  */
 iAm.Nook.lt = function( version ){
-    return iAm.Nook() && iAm._deviceVersion.lt( version );
+    return iAm.Nook() && iAm._deviceVersionLt( version );
 };
 
 /**
@@ -43,5 +43,5 @@ iAm.Nook.lt = function( version ){
  * @return {boolean}
  */
 iAm.Nook.lte = function( version ){
-    return iAm.Nook() && iAm._deviceVersion.lte( version );
+    return iAm.Nook() && iAm._deviceVersionLte( version );
 };

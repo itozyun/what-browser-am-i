@@ -1,6 +1,6 @@
 goog.provide( 'page.index' );
 
-goog.provide( 'ua' );
+goog.require( 'ua' );
 goog.require( 'global.errorEventHandler' );
 goog.require( 'pageItems.result' );
 goog.require( 'pageItems.clientInfo' );

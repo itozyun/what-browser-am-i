@@ -6,10 +6,10 @@ goog.provide( 'iAm.Goanna.lte' );
 
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.gt' );
-goog.require( 'iAm._engineVersion.gte' );
-goog.require( 'iAm._engineVersion.lt' );
-goog.require( 'iAm._engineVersion.lte' );
+goog.require( 'iAm._engineVersionGt' );
+goog.require( 'iAm._engineVersionGte' );
+goog.require( 'iAm._engineVersionLt' );
+goog.require( 'iAm._engineVersionLte' );
 
 /**
  * @return {boolean}
@@ -27,7 +27,7 @@ iAm.Goanna = function(){
  * @return {boolean}
  */
 iAm.Goanna.gt = function( version ){
-    return iAm.Goanna() && iAm._engineVersion.gt( version );
+    return iAm.Goanna() && iAm._engineVersionGt( version );
 };
 
 /**
@@ -35,7 +35,7 @@ iAm.Goanna.gt = function( version ){
  * @return {boolean}
  */
 iAm.Goanna.gte = function( version ){
-    return iAm.Goanna() && iAm._engineVersion.gte( version );
+    return iAm.Goanna() && iAm._engineVersionGte( version );
 };
 
 /**
@@ -43,7 +43,7 @@ iAm.Goanna.gte = function( version ){
  * @return {boolean}
  */
 iAm.Goanna.lt = function( version ){
-    return iAm.Goanna() && iAm._engineVersion.lt( version );
+    return iAm.Goanna() && iAm._engineVersionLt( version );
 };
 
 /**
@@ -51,5 +51,5 @@ iAm.Goanna.lt = function( version ){
  * @return {boolean}
  */
 iAm.Goanna.lte = function( version ){
-    return iAm.Goanna() && iAm._engineVersion.lte( version );
+    return iAm.Goanna() && iAm._engineVersionLte( version );
 };

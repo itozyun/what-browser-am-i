@@ -1,5 +1,8 @@
 goog.provide( 'who.util' );
 
+goog.require( 'core.isString' );
+goog.require( 'core.isNumber' );
+
 /** バージョンの比較
  * @param {string|number|void} v1 
  * @param {string|number|void} v2 

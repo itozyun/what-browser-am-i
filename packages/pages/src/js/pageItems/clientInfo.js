@@ -2,17 +2,16 @@ goog.provide( 'pageItems.clientInfo' );
 
 goog.require( 'util.print' );
 
-goog.scope(
-    function(){
+
         var navigarorProperties = [ 'userAgent', 'appVersion', 'appCodeName', 'appName', 'buildID', 'securitypolicy', 'oscpu', 'platform', 'product', 'productSub', 'vendor', 'vendorSub' ];
-        var i = 0, l = navigarorProperties.length;
+        var j = 0, l = navigarorProperties.length;
         var html = [], value;
 
-        for( ; i < l; ++i ){
-            value = navigator[ navigarorProperties[ i ] ];
+        for( ; j < l; ++j ){
+            value = navigator[ navigarorProperties[ j ] ];
             if( value ){
                 html.push(
-                    '<tr><th>' + navigarorProperties[ i ] +
+                    '<tr><th>' + navigarorProperties[ j ] +
                     '<td>' + value.split( '&' ).join( '&amp;' ).split( '<' ).join( '&lt;' )
                 );
             };
@@ -27,5 +26,4 @@ goog.scope(
                 '</details>'
             );
         };
-    }
-);
+

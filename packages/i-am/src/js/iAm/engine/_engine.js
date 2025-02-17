@@ -1,8 +1,8 @@
 goog.provide( 'iAm._engineIs' );
-goog.provide( 'iAm._engineVersion.gt' );
-goog.provide( 'iAm._engineVersion.gte' );
-goog.provide( 'iAm._engineVersion.lt' );
-goog.provide( 'iAm._engineVersion.lte' );
+goog.provide( 'iAm._engineVersionGt' );
+goog.provide( 'iAm._engineVersionGte' );
+goog.provide( 'iAm._engineVersionLt' );
+goog.provide( 'iAm._engineVersionLte' );
 
 goog.require( 'iAm.DEFINE.ASSUME_ENGINE' );
 goog.require( 'iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION' );
@@ -11,7 +11,7 @@ goog.require( 'iAm.EnumIndex' );
 goog.require( 'iAm.conpare' );
 
 /**
- * @packege
+ * @package
  * @param {string | number} engineName 
  * @return {boolean}
  */
@@ -23,11 +23,11 @@ iAm._engineIs = function( engineName ){
 };
 
 /**
- * @packege
+ * @package
  * @param {string | number} version 
  * @return {boolean}
  */
-iAm._engineVersion.gt = function( version ){
+iAm._engineVersionGt = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
         if( iAm.conpare( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION, version ) === 1 ){
             return true;
@@ -42,11 +42,11 @@ iAm._engineVersion.gt = function( version ){
 };
 
 /**
- * @packege
+ * @package
  * @param {string | number} version 
  * @return {boolean}
  */
-iAm._engineVersion.gte = function( version ){
+iAm._engineVersionGte = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
         if( 0 <= iAm.conpare( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION, version ) ){
             return true;
@@ -61,11 +61,11 @@ iAm._engineVersion.gte = function( version ){
 };
 
 /**
- * @packege
+ * @package
  * @param {string | number} version 
  * @return {boolean}
  */
-iAm._engineVersion.lt = function( version ){
+iAm._engineVersionLt = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
         if( 0 <= iAm.conpare( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION, version ) ){
             return false;
@@ -80,11 +80,11 @@ iAm._engineVersion.lt = function( version ){
 };
 
 /**
- * @packege
+ * @package
  * @param {string | number} version 
  * @return {boolean}
  */
-iAm._engineVersion.lte = function( version ){
+iAm._engineVersionLte = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
         if( iAm.conpare( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION, version ) === 1 ){
             return false;
@@ -111,11 +111,11 @@ if( iAm.DEFINE.ASSUME_MAX_ENGINE_VERSION ){
 var asSafariVersion = webKitVersionToSafariVersion( ua[ iAm.EnumIndex.ENGINE_VERSION ] );
 
 /**
- * @packege
+ * @package
  * @param {string | number} version 
  * @return {boolean}
  */
-iAm._safariVersion.gt = function( version ){
+iAm._safariVersionGt = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
         if( iAm.conpare( iAm.MIN_SAFARI_VERSION, version ) === 1 ){
             return true;
@@ -130,11 +130,11 @@ iAm._safariVersion.gt = function( version ){
 };
 
 /**
- * @packege
+ * @package
  * @param {string | number} version 
  * @return {boolean}
  */
-iAm._safariVersion.gte = function( version ){
+iAm._safariVersionGte = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
         if( 0 <= iAm.conpare( iAm.MIN_SAFARI_VERSION, version ) ){
             return true;
@@ -149,11 +149,11 @@ iAm._safariVersion.gte = function( version ){
 };
 
 /**
- * @packege
+ * @package
  * @param {string | number} version 
  * @return {boolean}
  */
-iAm._safariVersion.lt = function( version ){
+iAm._safariVersionLt = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
         if( 0 <= iAm.conpare( iAm.MIN_SAFARI_VERSION, version ) ){
             return false;
@@ -168,11 +168,11 @@ iAm._safariVersion.lt = function( version ){
 };
 
 /**
- * @packege
+ * @package
  * @param {string | number} version 
  * @return {boolean}
  */
-iAm._safariVersion.lte = function( version ){
+iAm._safariVersionLte = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_ENGINE_VERSION ){
         if( iAm.conpare( iAm.MIN_SAFARI_VERSION, version ) === 1 ){
             return false;

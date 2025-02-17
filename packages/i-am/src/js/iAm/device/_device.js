@@ -1,8 +1,8 @@
 goog.provide( 'iAm._deviceIs' );
-goog.provide( 'iAm._deviceVersion.gt' );
-goog.provide( 'iAm._deviceVersion.gte' );
-goog.provide( 'iAm._deviceVersion.lt' );
-goog.provide( 'iAm._deviceVersion.lte' );
+goog.provide( 'iAm._deviceVersionGt' );
+goog.provide( 'iAm._deviceVersionGte' );
+goog.provide( 'iAm._deviceVersionLt' );
+goog.provide( 'iAm._deviceVersionLte' );
 
 goog.require( 'iAm.DEFINE.ASSUME_DEVICE' );
 goog.require( 'iAm.DEFINE.ASSUME_MIN_DEVICE_VERSION' );
@@ -11,7 +11,7 @@ goog.require( 'iAm.EnumIndex' );
 goog.require( 'iAm.conpare' );
 
 /**
- * @packege
+ * @package
  * @param {string | number} deviceName 
  * @return {boolean}
  */
@@ -23,11 +23,11 @@ iAm._deviceIs = function( deviceName ){
 };
 
 /**
- * @packege
+ * @package
  * @param {string | number} version 
  * @return {boolean}
  */
-iAm._deviceVersion.gt = function( version ){
+iAm._deviceVersionGt = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_DEVICE_VERSION ){
         if( iAm.conpare( iAm.DEFINE.ASSUME_MIN_DEVICE_VERSION, version ) === 1 ){
             return true;
@@ -42,11 +42,11 @@ iAm._deviceVersion.gt = function( version ){
 };
 
 /**
- * @packege
+ * @package
  * @param {string | number} version 
  * @return {boolean}
  */
-iAm._deviceVersion.gte = function( version ){
+iAm._deviceVersionGte = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_DEVICE_VERSION ){
         if( 0 <= iAm.conpare( iAm.DEFINE.ASSUME_MIN_DEVICE_VERSION, version ) ){
             return true;
@@ -61,11 +61,11 @@ iAm._deviceVersion.gte = function( version ){
 };
 
 /**
- * @packege
+ * @package
  * @param {string | number} version 
  * @return {boolean}
  */
-iAm._deviceVersion.lt = function( version ){
+iAm._deviceVersionLt = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_DEVICE_VERSION ){
         if( 0 <= iAm.conpare( iAm.DEFINE.ASSUME_MIN_DEVICE_VERSION, version ) ){
             return false;
@@ -80,11 +80,11 @@ iAm._deviceVersion.lt = function( version ){
 };
 
 /**
- * @packege
+ * @package
  * @param {string | number} version 
  * @return {boolean}
  */
-iAm._deviceVersion.lte = function( version ){
+iAm._deviceVersionLte = function( version ){
     if( iAm.DEFINE.ASSUME_MIN_DEVICE_VERSION ){
         if( iAm.conpare( iAm.DEFINE.ASSUME_MIN_DEVICE_VERSION, version ) === 1 ){
             return false;

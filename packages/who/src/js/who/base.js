@@ -6,7 +6,6 @@ goog.provide( 'who.base.finalizeEngine' );
 goog.provide( 'who.base.finalizeBrand' );
 goog.provide( 'who.base.finalizePcSiteRequested' );
 
-goog.require( 'core.all' );
 goog.require( 'who.result' );
 goog.require( 'iAm.EnumIndex' );
 goog.require( 'who.util' );

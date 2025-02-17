@@ -2,6 +2,7 @@ goog.provide( 'who.brand.Brave.NAVIGATOR_VERSION' );
 goog.provide( 'who.brand.Brave.is' );
 goog.provide( 'who.brand.Brave.detect' );
 
+goog.require( 'core.hasProperty' );
 goog.require( 'who.base' );
 goog.require( 'who.brand.Chrome.NAVIGATOR_VERSION' );
 

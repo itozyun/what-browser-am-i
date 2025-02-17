@@ -16,10 +16,10 @@ goog.provide( 'iAm.TridentMobile.lte' );
 
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.gt' );
-goog.require( 'iAm._engineVersion.gte' );
-goog.require( 'iAm._engineVersion.lt' );
-goog.require( 'iAm._engineVersion.lte' );
+goog.require( 'iAm._engineVersionGt' );
+goog.require( 'iAm._engineVersionGte' );
+goog.require( 'iAm._engineVersionLt' );
+goog.require( 'iAm._engineVersionLte' );
 
 /*----------------------------------------------------------------------------//
  *  Trident
@@ -37,7 +37,7 @@ iAm.Trident = function(){
  * @return {boolean}
  */
 iAm.Trident.gt = function( version ){
-    return iAm.Trident() && iAm._engineVersion.gt( version );
+    return iAm.Trident() && iAm._engineVersionGt( version );
 };
 
 /**
@@ -45,7 +45,7 @@ iAm.Trident.gt = function( version ){
  * @return {boolean}
  */
 iAm.Trident.gte = function( version ){
-    return iAm.Trident() && iAm._engineVersion.gte( version );
+    return iAm.Trident() && iAm._engineVersionGte( version );
 };
 
 /**
@@ -53,7 +53,7 @@ iAm.Trident.gte = function( version ){
  * @return {boolean}
  */
 iAm.Trident.lt = function( version ){
-    return iAm.Trident() && iAm._engineVersion.lt( version );
+    return iAm.Trident() && iAm._engineVersionLt( version );
 };
 
 /**
@@ -61,7 +61,7 @@ iAm.Trident.lt = function( version ){
  * @return {boolean}
  */
 iAm.Trident.lte = function( version ){
-    return iAm.Trident() && iAm._engineVersion.lte( version );
+    return iAm.Trident() && iAm._engineVersionLte( version );
 };
 
 /*----------------------------------------------------------------------------//
@@ -80,7 +80,7 @@ iAm.AnyTrident = function(){
  * @return {boolean}
  */
 iAm.AnyTrident.gt = function( version ){
-    return iAm.AnyTrident() && iAm._engineVersion.gt( version );
+    return iAm.AnyTrident() && iAm._engineVersionGt( version );
 };
 
 /**
@@ -88,7 +88,7 @@ iAm.AnyTrident.gt = function( version ){
  * @return {boolean}
  */
 iAm.AnyTrident.gte = function( version ){
-    return iAm.AnyTrident() && iAm._engineVersion.gte( version );
+    return iAm.AnyTrident() && iAm._engineVersionGte( version );
 };
 
 /**
@@ -96,7 +96,7 @@ iAm.AnyTrident.gte = function( version ){
  * @return {boolean}
  */
 iAm.AnyTrident.lt = function( version ){
-    return iAm.AnyTrident() && iAm._engineVersion.lt( version );
+    return iAm.AnyTrident() && iAm._engineVersionLt( version );
 };
 
 /**
@@ -104,7 +104,7 @@ iAm.AnyTrident.lt = function( version ){
  * @return {boolean}
  */
 iAm.AnyTrident.lte = function( version ){
-    return iAm.AnyTrident() && iAm._engineVersion.lte( version );
+    return iAm.AnyTrident() && iAm._engineVersionLte( version );
 };
 
 /*----------------------------------------------------------------------------//
@@ -123,7 +123,7 @@ iAm.TridentMobile = function(){
  * @return {boolean}
  */
 iAm.TridentMobile.gt = function( version ){
-    return iAm.TridentMobile() && iAm._engineVersion.gt( version );
+    return iAm.TridentMobile() && iAm._engineVersionGt( version );
 };
 
 /**
@@ -131,7 +131,7 @@ iAm.TridentMobile.gt = function( version ){
  * @return {boolean}
  */
 iAm.TridentMobile.gte = function( version ){
-    return iAm.TridentMobile() && iAm._engineVersion.gte( version );
+    return iAm.TridentMobile() && iAm._engineVersionGte( version );
 };
 
 /**
@@ -139,7 +139,7 @@ iAm.TridentMobile.gte = function( version ){
  * @return {boolean}
  */
 iAm.TridentMobile.lt = function( version ){
-    return iAm.TridentMobile() && iAm._engineVersion.lt( version );
+    return iAm.TridentMobile() && iAm._engineVersionLt( version );
 };
 
 /**
@@ -147,5 +147,5 @@ iAm.TridentMobile.lt = function( version ){
  * @return {boolean}
  */
 iAm.TridentMobile.lte = function( version ){
-    return iAm.TridentMobile() && iAm._engineVersion.lte( version );
+    return iAm.TridentMobile() && iAm._engineVersionLte( version );
 };

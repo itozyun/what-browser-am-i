@@ -4,6 +4,7 @@ goog.provide( 'who.engine.iOSWebView.is' );
 goog.provide( 'who.engine.iOSWebView.detect' );
 goog.provide( 'who.engine.iOSWebView.IMPLEMENT_VERSION' );
 
+goog.require( 'core.hasProperty' );
 goog.require( 'who.base' );
 goog.require( 'who.brand.Puffin.iOSImplementVersion' );
 goog.require( 'who.engine.OperaMini.is' );

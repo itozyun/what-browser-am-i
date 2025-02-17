@@ -2,10 +2,10 @@ goog.provide( 'iAm.PlayStation' );
 
 goog.require( 'iAm.EnumDevice' );
 goog.require( 'iAm._deviceIs' );
-goog.require( 'iAm._deviceVersion.gt' );
-goog.require( 'iAm._deviceVersion.gte' );
-goog.require( 'iAm._deviceVersion.lt' );
-goog.require( 'iAm._deviceVersion.lte' );
+goog.require( 'iAm._deviceVersionGt' );
+goog.require( 'iAm._deviceVersionGte' );
+goog.require( 'iAm._deviceVersionLt' );
+goog.require( 'iAm._deviceVersionLte' );
 
 /**
  * @return {boolean}
@@ -19,7 +19,7 @@ iAm.PlayStation = function(){
  * @return {boolean}
  */
 iAm.PlayStation.gt = function( version ){
-    return iAm.PlayStation() && iAm._deviceVersion.gt( version );
+    return iAm.PlayStation() && iAm._deviceVersionGt( version );
 };
 
 /**
@@ -27,7 +27,7 @@ iAm.PlayStation.gt = function( version ){
  * @return {boolean}
  */
 iAm.PlayStation.gte = function( version ){
-    return iAm.PlayStation() && iAm._deviceVersion.gte( version );
+    return iAm.PlayStation() && iAm._deviceVersionGte( version );
 };
 
 /**
@@ -35,7 +35,7 @@ iAm.PlayStation.gte = function( version ){
  * @return {boolean}
  */
 iAm.PlayStation.lt = function( version ){
-    return iAm.PlayStation() && iAm._deviceVersion.lt( version );
+    return iAm.PlayStation() && iAm._deviceVersionLt( version );
 };
 
 /**
@@ -43,5 +43,5 @@ iAm.PlayStation.lt = function( version ){
  * @return {boolean}
  */
 iAm.PlayStation.lte = function( version ){
-    return iAm.PlayStation() && iAm._deviceVersion.lte( version );
+    return iAm.PlayStation() && iAm._deviceVersionLte( version );
 };

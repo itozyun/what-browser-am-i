@@ -1,6 +1,7 @@
 goog.provide( 'who.brand.Dolphin.is' );
 goog.provide( 'who.brand.Dolphin.detect' );
 
+goog.require( 'core.hasProperty' );
 goog.require( 'who.base' );
 
 /*----------------------------------------------------------------------------//

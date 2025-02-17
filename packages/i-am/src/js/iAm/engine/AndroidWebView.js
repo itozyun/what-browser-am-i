@@ -6,10 +6,10 @@ goog.provide( 'iAm.AndroidWebView.lte' );
 
 goog.require( 'iAm.EnumEngine' );
 goog.require( 'iAm._engineIs' );
-goog.require( 'iAm._engineVersion.gt' );
-goog.require( 'iAm._engineVersion.gte' );
-goog.require( 'iAm._engineVersion.lt' );
-goog.require( 'iAm._engineVersion.lte' );
+goog.require( 'iAm._engineVersionGt' );
+goog.require( 'iAm._engineVersionGte' );
+goog.require( 'iAm._engineVersionLt' );
+goog.require( 'iAm._engineVersionLte' );
 
 /**
  * @return {boolean}
@@ -27,7 +27,7 @@ iAm.AndroidWebView = function(){
  * @return {boolean}
  */
 iAm.AndroidWebView.gt = function( version ){
-    return iAm.AndroidWebView() && iAm._engineVersion.gt( version );
+    return iAm.AndroidWebView() && iAm._engineVersionGt( version );
 };
 
 /**
@@ -35,7 +35,7 @@ iAm.AndroidWebView.gt = function( version ){
  * @return {boolean}
  */
 iAm.AndroidWebView.gte = function( version ){
-    return iAm.AndroidWebView() && iAm._engineVersion.gte( version );
+    return iAm.AndroidWebView() && iAm._engineVersionGte( version );
 };
 
 /**
@@ -43,7 +43,7 @@ iAm.AndroidWebView.gte = function( version ){
  * @return {boolean}
  */
 iAm.AndroidWebView.lt = function( version ){
-    return iAm.AndroidWebView() && iAm._engineVersion.lt( version );
+    return iAm.AndroidWebView() && iAm._engineVersionLt( version );
 };
 
 /**
@@ -51,5 +51,5 @@ iAm.AndroidWebView.lt = function( version ){
  * @return {boolean}
  */
 iAm.AndroidWebView.lte = function( version ){
-    return iAm.AndroidWebView() && iAm._engineVersion.lte( version );
+    return iAm.AndroidWebView() && iAm._engineVersionLte( version );
 };

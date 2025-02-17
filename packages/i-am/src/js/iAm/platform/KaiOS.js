@@ -2,10 +2,10 @@ goog.provide( 'iAm.KaiOS' );
 
 goog.require( 'iAm.EnumPlatform' );
 goog.require( 'iAm._platformIs' );
-goog.require( 'iAm._platformVersion.gt' );
-goog.require( 'iAm._platformVersion.gte' );
-goog.require( 'iAm._platformVersion.lt' );
-goog.require( 'iAm._platformVersion.lte' );
+goog.require( 'iAm._platformVersionGt' );
+goog.require( 'iAm._platformVersionGte' );
+goog.require( 'iAm._platformVersionLt' );
+goog.require( 'iAm._platformVersionLte' );
 
 /**
  * @return {boolean}
@@ -19,7 +19,7 @@ iAm.KaiOS = function(){
  * @return {boolean}
  */
 iAm.KaiOS.gt = function( version ){
-    return iAm.KaiOS() && iAm._platformVersion.gt( version );
+    return iAm.KaiOS() && iAm._platformVersionGt( version );
 };
 
 /**
@@ -27,7 +27,7 @@ iAm.KaiOS.gt = function( version ){
  * @return {boolean}
  */
 iAm.KaiOS.gte = function( version ){
-    return iAm.KaiOS() && iAm._platformVersion.gte( version );
+    return iAm.KaiOS() && iAm._platformVersionGte( version );
 };
 
 /**
@@ -35,7 +35,7 @@ iAm.KaiOS.gte = function( version ){
  * @return {boolean}
  */
 iAm.KaiOS.lt = function( version ){
-    return iAm.KaiOS() && iAm._platformVersion.lt( version );
+    return iAm.KaiOS() && iAm._platformVersionLt( version );
 };
 
 /**
@@ -43,5 +43,5 @@ iAm.KaiOS.lt = function( version ){
  * @return {boolean}
  */
 iAm.KaiOS.lte = function( version ){
-    return iAm.KaiOS() && iAm._platformVersion.lte( version );
+    return iAm.KaiOS() && iAm._platformVersionLte( version );
 };
