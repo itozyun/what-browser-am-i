@@ -1,12 +1,11 @@
-/**
- * @provideGoog
- */
+/** @provideGoog */
 
 /** @const */
 var goog = goog || {};
 
 goog.provide = function(name) {};
 goog.require = function(namespace) {};
+goog.requireType = function(namespace) {};
 goog.scope = function(fn) {};
 
 /**
