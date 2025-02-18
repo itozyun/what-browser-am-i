@@ -5,8 +5,8 @@ goog.provide( 'iAm._platformVersionLt' );
 goog.provide( 'iAm._platformVersionLte' );
 
 goog.require( 'iAm.DEFINE.ASSUME_PLATFORM' );
-goog.require( 'iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION' );
-goog.require( 'iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION' );
+goog.require( 'iAm.DEFINE.ASSUME_GTE_PLATFORM_VERSION' );
+goog.require( 'iAm.DEFINE.ASSUME_LT__PLATFORM_VERSION' );
 goog.require( 'iAm.EnumIndex' );
 goog.require( 'iAm.conpare' );
 
@@ -28,13 +28,13 @@ iAm._platformIs = function( platformName ){
  * @return {boolean}
  */
 iAm._platformVersionGt = function( version ){
-    if( iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION ){
-        if( iAm.conpare( iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION, version ) === 1 ){
+    if( iAm.DEFINE.ASSUME_GTE_PLATFORM_VERSION ){
+        if( iAm.conpare( iAm.DEFINE.ASSUME_GTE_PLATFORM_VERSION, version ) === 1 ){
             return true;
         };
     };
-    if( iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION ){
-        if( iAm.conpare( iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION, version ) <= 0 ){
+    if( iAm.DEFINE.ASSUME_LT__PLATFORM_VERSION ){
+        if( iAm.conpare( iAm.DEFINE.ASSUME_LT__PLATFORM_VERSION, version ) <= 0 ){
             return false;
         };
     };
@@ -47,13 +47,13 @@ iAm._platformVersionGt = function( version ){
  * @return {boolean}
  */
 iAm._platformVersionGte = function( version ){
-    if( iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION ){
-        if( 0 <= iAm.conpare( iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION, version ) ){
+    if( iAm.DEFINE.ASSUME_GTE_PLATFORM_VERSION ){
+        if( 0 <= iAm.conpare( iAm.DEFINE.ASSUME_GTE_PLATFORM_VERSION, version ) ){
             return true;
         };
     };
-    if( iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION ){
-        if( iAm.conpare( iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION, version ) === -1 ){
+    if( iAm.DEFINE.ASSUME_LT__PLATFORM_VERSION ){
+        if( iAm.conpare( iAm.DEFINE.ASSUME_LT__PLATFORM_VERSION, version ) <= 0 ){
             return false;
         };
     };
@@ -66,13 +66,13 @@ iAm._platformVersionGte = function( version ){
  * @return {boolean}
  */
 iAm._platformVersionLt = function( version ){
-    if( iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION ){
-        if( 0 <= iAm.conpare( iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION, version ) ){
+    if( iAm.DEFINE.ASSUME_GTE_PLATFORM_VERSION ){
+        if( 0 <= iAm.conpare( iAm.DEFINE.ASSUME_GTE_PLATFORM_VERSION, version ) ){
             return false;
         };
     };
-    if( iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION ){
-        if( iAm.conpare( iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION, version ) === -1 ){
+    if( iAm.DEFINE.ASSUME_LT__PLATFORM_VERSION ){
+        if( iAm.conpare( iAm.DEFINE.ASSUME_LT__PLATFORM_VERSION, version ) <= 0 ){
             return true;
         };
     };
@@ -85,13 +85,13 @@ iAm._platformVersionLt = function( version ){
  * @return {boolean}
  */
 iAm._platformVersionLte = function( version ){
-    if( iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION ){
-        if( iAm.conpare( iAm.DEFINE.ASSUME_MIN_PLATFORM_VERSION, version ) === 1 ){
+    if( iAm.DEFINE.ASSUME_GTE_PLATFORM_VERSION ){
+        if( iAm.conpare( iAm.DEFINE.ASSUME_GTE_PLATFORM_VERSION, version ) === 1 ){
             return false;
         };
     };
-    if( iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION ){
-        if( iAm.conpare( iAm.DEFINE.ASSUME_MAX_PLATFORM_VERSION, version ) <= 0 ){
+    if( iAm.DEFINE.ASSUME_LT__PLATFORM_VERSION ){
+        if( iAm.conpare( iAm.DEFINE.ASSUME_LT__PLATFORM_VERSION, version ) <= 0 ){
             return true;
         };
     };

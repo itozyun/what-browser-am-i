@@ -5,8 +5,8 @@ goog.provide( 'iAm._deviceVersionLt' );
 goog.provide( 'iAm._deviceVersionLte' );
 
 goog.require( 'iAm.DEFINE.ASSUME_DEVICE' );
-goog.require( 'iAm.DEFINE.ASSUME_MIN_DEVICE_VERSION' );
-goog.require( 'iAm.DEFINE.ASSUME_MAX_DEVICE_VERSION' );
+goog.require( 'iAm.DEFINE.ASSUME_GTE_DEVICE_VERSION' );
+goog.require( 'iAm.DEFINE.ASSUME_LT__DEVICE_VERSION' );
 goog.require( 'iAm.EnumIndex' );
 goog.require( 'iAm.conpare' );
 
@@ -28,13 +28,13 @@ iAm._deviceIs = function( deviceName ){
  * @return {boolean}
  */
 iAm._deviceVersionGt = function( version ){
-    if( iAm.DEFINE.ASSUME_MIN_DEVICE_VERSION ){
-        if( iAm.conpare( iAm.DEFINE.ASSUME_MIN_DEVICE_VERSION, version ) === 1 ){
+    if( iAm.DEFINE.ASSUME_GTE_DEVICE_VERSION ){
+        if( iAm.conpare( iAm.DEFINE.ASSUME_GTE_DEVICE_VERSION, version ) === 1 ){
             return true;
         };
     };
-    if( iAm.DEFINE.ASSUME_MAX_DEVICE_VERSION ){
-        if( iAm.conpare( iAm.DEFINE.ASSUME_MAX_DEVICE_VERSION, version ) <= 0 ){
+    if( iAm.DEFINE.ASSUME_LT__DEVICE_VERSION ){
+        if( iAm.conpare( iAm.DEFINE.ASSUME_LT__DEVICE_VERSION, version ) <= 0 ){
             return false;
         };
     };
@@ -47,13 +47,13 @@ iAm._deviceVersionGt = function( version ){
  * @return {boolean}
  */
 iAm._deviceVersionGte = function( version ){
-    if( iAm.DEFINE.ASSUME_MIN_DEVICE_VERSION ){
-        if( 0 <= iAm.conpare( iAm.DEFINE.ASSUME_MIN_DEVICE_VERSION, version ) ){
+    if( iAm.DEFINE.ASSUME_GTE_DEVICE_VERSION ){
+        if( 0 <= iAm.conpare( iAm.DEFINE.ASSUME_GTE_DEVICE_VERSION, version ) ){
             return true;
         };
     };
-    if( iAm.DEFINE.ASSUME_MAX_DEVICE_VERSION ){
-        if( iAm.conpare( iAm.DEFINE.ASSUME_MAX_DEVICE_VERSION, version ) === -1 ){
+    if( iAm.DEFINE.ASSUME_LT__DEVICE_VERSION ){
+        if( iAm.conpare( iAm.DEFINE.ASSUME_LT__DEVICE_VERSION, version ) <= 0 ){
             return false;
         };
     };
@@ -66,13 +66,13 @@ iAm._deviceVersionGte = function( version ){
  * @return {boolean}
  */
 iAm._deviceVersionLt = function( version ){
-    if( iAm.DEFINE.ASSUME_MIN_DEVICE_VERSION ){
-        if( 0 <= iAm.conpare( iAm.DEFINE.ASSUME_MIN_DEVICE_VERSION, version ) ){
+    if( iAm.DEFINE.ASSUME_GTE_DEVICE_VERSION ){
+        if( 0 <= iAm.conpare( iAm.DEFINE.ASSUME_GTE_DEVICE_VERSION, version ) ){
             return false;
         };
     };
-    if( iAm.DEFINE.ASSUME_MAX_DEVICE_VERSION ){
-        if( iAm.conpare( iAm.DEFINE.ASSUME_MAX_DEVICE_VERSION, version ) === -1 ){
+    if( iAm.DEFINE.ASSUME_LT__DEVICE_VERSION ){
+        if( iAm.conpare( iAm.DEFINE.ASSUME_LT__DEVICE_VERSION, version ) <= 0 ){
             return true;
         };
     };
@@ -85,13 +85,13 @@ iAm._deviceVersionLt = function( version ){
  * @return {boolean}
  */
 iAm._deviceVersionLte = function( version ){
-    if( iAm.DEFINE.ASSUME_MIN_DEVICE_VERSION ){
-        if( iAm.conpare( iAm.DEFINE.ASSUME_MIN_DEVICE_VERSION, version ) === 1 ){
+    if( iAm.DEFINE.ASSUME_GTE_DEVICE_VERSION ){
+        if( iAm.conpare( iAm.DEFINE.ASSUME_GTE_DEVICE_VERSION, version ) === 1 ){
             return false;
         };
     };
-    if( iAm.DEFINE.ASSUME_MAX_DEVICE_VERSION ){
-        if( iAm.conpare( iAm.DEFINE.ASSUME_MAX_DEVICE_VERSION, version ) <= 0 ){
+    if( iAm.DEFINE.ASSUME_LT__DEVICE_VERSION ){
+        if( iAm.conpare( iAm.DEFINE.ASSUME_LT__DEVICE_VERSION, version ) <= 0 ){
             return true;
         };
     };
