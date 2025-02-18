@@ -1,8 +1,8 @@
 type VersionRange = {
-    Gt(version:(string|number)):boolean;
-    Gte(version:(string|number)):boolean;
-    Lt(version:(string|number)):boolean;
-    Lte(version:(string|number)):boolean;
+    gt(version:(string|number)):boolean;
+    gte(version:(string|number)):boolean;
+    lt(version:(string|number)):boolean;
+    lte(version:(string|number)):boolean;
 };
 
 type Common = VersionRange & {

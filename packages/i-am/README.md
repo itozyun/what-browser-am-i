@@ -5,8 +5,9 @@
 2. Closure Compiler でのコンパイル(ビルド)時にブラウザとバージョン(レンジ)を指定して最適化する
 
 ~~~js
+goog.require('iAm.all');
 
-if(iAm.Trident.Lt(9)){
+if (iAm.AnyTrident.lt(9)) {
     // for IE ~8
 } else {
     // for IE 9+ and Other Browsers
