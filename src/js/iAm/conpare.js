@@ -1,7 +1,5 @@
 goog.provide( 'iAm.conpare' );
 
-// 続くクロージャへの参照を残さないように、global.js で定義する。
-
 /** バージョンの比較
  * @param {string|number} v1 
  * @param {string|number} v2 
