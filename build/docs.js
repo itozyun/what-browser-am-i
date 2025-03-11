@@ -14,7 +14,7 @@ function compileDocs( target ){
     return function(){
         return src(
                 [
-                    './src/closure-primitives/base.js',
+                    './.submodules/es2-json/src/closure-primitives/base.js',
                     './.submodules/es2-json/.submodules/es2-core/src/js/**/*.js',
                     './.submodules/es2-json/src/js/**/*.js',
                     tempDir + '/' + uaObjectName + '.js',
@@ -46,7 +46,7 @@ function compileDocs( target ){
     };
 };
 
-function addEs2ToES3( target ){
+function transformES2ToES3( target ){
     return function(){
         return src( tempDir + '/' + target + '.js'
             ).pipe(
@@ -108,7 +108,7 @@ module.exports = series(
                         list.push(
                             {
                                 displayName : name.split( '$R' ).join( '®' ).split( '$TM' ).join( '™' ).split( '$_' ).join( '-' )
-                                                .split( '_' ).join( ' ' ).split( '$VL' ).join( '|' ),
+                                                  .split( '_' ).join( ' ' ).split( '$VL' ).join( '|' ),
                                 value       : values[ name ]
                             }
                         );
@@ -142,11 +142,11 @@ catalog.${category}ValueToDisplayLabel = ${JSON.stringify( result, null, '    ' 
 
     compileDocs( 'who' ),
     finalize( true, isPrettify, tempDir, 'who.js' ),
-    addEs2ToES3( 'who' ),
+    transformES2ToES3( 'who' ),
     buildHTML( 'who' ),
 
     compileDocs( 'index' ),
     finalize( true, isPrettify, tempDir, 'index.js' ),
-    addEs2ToES3( 'index' ),
+    transformES2ToES3( 'index' ),
     buildHTML( 'index' )
 );

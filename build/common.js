@@ -57,7 +57,7 @@ module.exports.compileWho = function( isGoogModule, isNodeModule, minify, uaObje
     return function(){
         return src(
                 [
-                    './src/closure-primitives/base.js',
+                    './.submodules/es2-json/src/closure-primitives/base.js',
                     './.submodules/es2-json/.submodules/es2-core/src/js/**/*.js',
                     './src/js/**/*.js'
                 ]
