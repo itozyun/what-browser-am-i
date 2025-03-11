@@ -15,7 +15,7 @@ who.device.Fidibook.is = function(){
 /** @return {boolean|void} */
 who.device.Fidibook.detect = function(){
     if( who.device.Fidibook.is() ){
-        who.base.setDevice( iAm.EnumDevice.Fidibook, undefined, iAm.EnumDeviceType.EINK_READER );
+        who.base.setDevice( iAm.EnumDevice.Fidibook, undefined, iAm.EnumDeviceType.EInkReader );
         return true;
     };
 };

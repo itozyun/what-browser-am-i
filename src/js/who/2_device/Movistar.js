@@ -15,7 +15,7 @@ who.device.Movistar.is = function(){
 /** @return {boolean|void} */
 who.device.Movistar.detect = function(){
     if( who.device.Movistar.is() ){
-        who.base.setDevice( iAm.EnumDevice.Movistar, undefined, iAm.EnumDeviceType.EINK_READER );
+        who.base.setDevice( iAm.EnumDevice.Movistar, undefined, iAm.EnumDeviceType.EInkReader );
         return true;
     };
 };

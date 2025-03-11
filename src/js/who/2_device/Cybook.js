@@ -32,7 +32,7 @@ who.device.Cybook.is = function(){
 /** @return {boolean|void} */
 who.device.Cybook.detect = function(){
     if( who.device.Cybook.is() ){
-        who.base.setDevice( iAm.EnumDevice.Cybook, undefined, iAm.EnumDeviceType.EINK_READER );
+        who.base.setDevice( iAm.EnumDevice.Cybook, undefined, iAm.EnumDeviceType.EInkReader );
         return true;
     };
 };

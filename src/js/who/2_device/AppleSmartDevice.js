@@ -49,13 +49,13 @@ who.device.AppleSmartDevice.detect = function(){
 
             switch( puffinModel.substr( 0, 4 ) ){
                 case 'iPho' :
-                    who.base.setDevice( iAm.EnumDevice.iPhone, who.util.getVersionString( puffinModel, 'iPhone' ) );
+                    who.base.setDevice( iAm.EnumDevice.iPhone, who.util.getVersionString( puffinModel, 'iPhone' ), iAm.EnumDeviceType.Phone );
                     break;
                 case 'iPad' :
-                    who.base.setDevice( iAm.EnumDevice.iPad, who.util.getVersionString( puffinModel, 'iPad' ) );
+                    who.base.setDevice( iAm.EnumDevice.iPad, who.util.getVersionString( puffinModel, 'iPad' ), iAm.EnumDeviceType.Tablet );
                     break;
                 case 'iPod' :
-                    who.base.setDevice( iAm.EnumDevice.iPod, who.util.getVersionString( puffinModel, 'iPod' ) );
+                    who.base.setDevice( iAm.EnumDevice.iPod, who.util.getVersionString( puffinModel, 'iPod' ), iAm.EnumDeviceType.MediaPlayer );
                     break;
             };
         } else {
@@ -64,11 +64,11 @@ who.device.AppleSmartDevice.detect = function(){
             var is43Model  = who.env.screenWidth === who.env.screenHeight * 1.5 || who.env.screenWidth * 1.5 === who.env.screenHeight;
     
             if( isIPhone ){ // iPhone or iPhone Simulator
-                who.base.setDevice( iAm.EnumDevice.iPhone, is43Model ? ( dpRatioIs1 ? '1~3' : '4~5' ) : '6~' );
+                who.base.setDevice( iAm.EnumDevice.iPhone, is43Model ? ( dpRatioIs1 ? '1~3' : '4~5' ) : '6~', iAm.EnumDeviceType.Phone );
             } else if( isIPad || isIPadOSPcSiteRequested ){ // iPad or iPad Simulator
-                who.base.setDevice( iAm.EnumDevice.iPad, dpRatioIs1 ? '~2' : '3~' );
+                who.base.setDevice( iAm.EnumDevice.iPad, dpRatioIs1 ? '~2' : '3~', iAm.EnumDeviceType.Tablet );
             } else if( isIPod ){
-                who.base.setDevice( iAm.EnumDevice.iPod, is43Model ? ( dpRatioIs1 ? '~3' : 4 ) : '5~' );
+                who.base.setDevice( iAm.EnumDevice.iPod, is43Model ? ( dpRatioIs1 ? '~3' : 4 ) : '5~', iAm.EnumDeviceType.MediaPlayer );
             };
         };
         return true;

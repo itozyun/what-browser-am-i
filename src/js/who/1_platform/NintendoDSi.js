@@ -25,7 +25,7 @@ who.platform.NintendoDSi.detect = function(){
             iAm.EnumPlatform.NINTENDO_DSi$TM,
             who.util.getVersionString( who.env.strUserAgent, who.env.strPlatform + '; Opera/' )
         );
-        who.base.setDevice( iAm.EnumDevice.NintendoDSi, undefined, iAm.EnumDeviceType.GAME );
+        who.base.setDevice( iAm.EnumDevice.NintendoDSi, undefined, iAm.EnumDeviceType.Game );
         who.base.setEngine( iAm.EnumEngine.Presto_Mobile, 9.5 );
         return true;
     };

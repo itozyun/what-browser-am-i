@@ -17,7 +17,7 @@ who.device.Kobo.is = function(){
 /** @return {boolean|void} */
 who.device.Kobo.detect = function(){
     if( who.device.Kobo.is() ){
-        who.base.setDevice( iAm.EnumDevice.Kobo, undefined, iAm.EnumDeviceType.EINK_READER );
+        who.base.setDevice( iAm.EnumDevice.Kobo, undefined, iAm.EnumDeviceType.EInkReader );
         return true;
     };
 };

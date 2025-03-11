@@ -36,13 +36,13 @@ who.platform.WindowsPhone.is = function(){
 who.platform.WindowsPhone.detect = function(){
     if( who.platform.WindowsPhone.is() ){
         if( isWP10PcSiteRequested ){
-            who.base.setPlatform( iAm.EnumPlatform.Windows_Phone, 10, iAm.EnumDeviceType.PHONE );
+            who.base.setPlatform( iAm.EnumPlatform.Windows_Phone, 10, iAm.EnumDeviceType.Phone );
             who.result.isPcSiteRequested = true;
         } else if( isWPPcSiteRequested ){
-            who.base.setPlatform( iAm.EnumPlatform.Windows_Phone, _tridentVersionToWindowsPhoneVersion( implementVersionTrident ), iAm.EnumDeviceType.PHONE );
+            who.base.setPlatform( iAm.EnumPlatform.Windows_Phone, _tridentVersionToWindowsPhoneVersion( implementVersionTrident ), iAm.EnumDeviceType.Phone );
             who.result.isPcSiteRequested = true;
         } else {
-            who.base.setPlatform( iAm.EnumPlatform.Windows_Phone, windowsPhoneVersionWithUCWEB || windowsPhoneVersion, iAm.EnumDeviceType.PHONE );
+            who.base.setPlatform( iAm.EnumPlatform.Windows_Phone, windowsPhoneVersionWithUCWEB || windowsPhoneVersion, iAm.EnumDeviceType.Phone );
         };
         return true;
     };

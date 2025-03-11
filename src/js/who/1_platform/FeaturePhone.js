@@ -19,7 +19,7 @@ who.platform.FeaturePhone.is = function(){
 who.platform.FeaturePhone.detect = function(){
     if( who.platform.FeaturePhone.is() ){
         who.base.setPlatform( iAm.EnumPlatform.Feature_Phone );
-        who.result.deviceType = iAm.EnumDeviceType.PHONE;
+        who.result.deviceType = iAm.EnumDeviceType.Phone;
         return true;
     };
 };

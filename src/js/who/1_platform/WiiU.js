@@ -37,7 +37,7 @@ who.platform.WiiU.detect = function(){
             who.result.isPcSiteRequested = who.util.hasSubstring( who.env.strAppVersion, 'Macintosh;' ) ||
                                          ( who.util.hasSubstring( who.env.strAppVersion, 'Windows NT' ) && !who.util.hasSubstring( who.env.strAppVersion, 'Touch' ) );
         };
-        who.base.setDevice( iAm.EnumDevice.WiiU, undefined, iAm.EnumDeviceType.GAME );
+        who.base.setDevice( iAm.EnumDevice.WiiU, undefined, iAm.EnumDeviceType.Game );
         who.base.setEngine(
             iAm.EnumEngine.WebKit,
             who.util.getVersionString( who.env.strAppVersion, 'AppleWebKit/' ) || ( hasWebkitCancelAnimationFrame ? 536 : 534 )

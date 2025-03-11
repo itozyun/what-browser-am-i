@@ -20,7 +20,7 @@ who.device.eClicto.is = function(){
 /** @return {boolean|void} */
 who.device.eClicto.detect = function(){
     if( who.device.eClicto.is() ){
-        who.base.setDevice( iAm.EnumDevice.eClicto, undefined, iAm.EnumDeviceType.EINK_READER );
+        who.base.setDevice( iAm.EnumDevice.eClicto, undefined, iAm.EnumDeviceType.EInkReader );
         return true;
     };
 };

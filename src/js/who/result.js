@@ -27,7 +27,7 @@ who.result.deviceName = iAm.EnumDevice.Unknown;
 who.result.deviceGeneration;
 
 /** @type {string|number} */
-who.result.deviceType = iAm.EnumDeviceType.UNKNOWN;
+who.result.deviceType = iAm.EnumDeviceType.Unknown;
 
 /** @type {boolean} */
 who.result.isPcSiteRequested = false;

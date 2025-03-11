@@ -27,11 +27,11 @@ who.platform.Xbox.is = function(){
 who.platform.Xbox.detect = function(){
     if( _isXbox360 ){
         who.base.setPlatform( iAm.EnumPlatform.Xbox_360$TM );
-        who.base.setDevice( iAm.EnumDevice.Xbox360, undefined, iAm.EnumDeviceType.GAME );
+        who.base.setDevice( iAm.EnumDevice.Xbox360, undefined, iAm.EnumDeviceType.Game );
         return true;
     } else if( _isXboxOne ){
         who.base.setPlatform( iAm.EnumPlatform.Xbox_One$TM );
-        who.base.setDevice( iAm.EnumDevice.XboxOne, undefined, iAm.EnumDeviceType.GAME );
+        who.base.setDevice( iAm.EnumDevice.XboxOne, undefined, iAm.EnumDeviceType.Game );
         return true;
     };
 };

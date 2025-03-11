@@ -45,7 +45,7 @@ who.device.PocketBook.is = function(){
 /** @return {boolean|void} */
 who.device.PocketBook.detect = function(){
     if( who.device.PocketBook.is() ){
-        who.base.setDevice( iAm.EnumDevice.PocketBook, undefined, iAm.EnumDeviceType.EINK_READER );
+        who.base.setDevice( iAm.EnumDevice.PocketBook, undefined, iAm.EnumDeviceType.EInkReader );
         return true;
     };
 };

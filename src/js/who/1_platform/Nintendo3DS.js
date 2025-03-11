@@ -28,7 +28,7 @@ who.platform.Nintendo3DS.is = function(){
 who.platform.Nintendo3DS.detect = function(){
     if( who.platform.Nintendo3DS.is() ){
         who.base.setPlatform( iAm.EnumPlatform.NINTENDO_3DS$TM, who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
-        who.base.setDevice( iAm.EnumDevice.Nintendo3DS, undefined, iAm.EnumDeviceType.GAME );
+        who.base.setDevice( iAm.EnumDevice.Nintendo3DS, undefined, iAm.EnumDeviceType.Game );
         who.base.setEngine( iAm.EnumEngine.WebKit, who.env.numberWebKit || 535 );
         who.base.setBrand( iAm.EnumBrand.NetFront$R_Browser_NX, who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
         return true;

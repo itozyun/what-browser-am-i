@@ -289,7 +289,7 @@ who.device.BOOX.is = function(){
 /** @return {boolean|void} */
 who.device.BOOX.detect = function(){
     if( who.device.BOOX.is() ){
-        who.base.setDevice( iAm.EnumDevice.BOOX, undefined, iAm.EnumDeviceType.EINK_READER );
+        who.base.setDevice( iAm.EnumDevice.BOOX, undefined, iAm.EnumDeviceType.EInkReader );
         return true;
     };
 };

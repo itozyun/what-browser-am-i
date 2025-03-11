@@ -49,18 +49,18 @@ who.platform.PlayStation.detect = function(){
             iAm.EnumPlatform.PlayStation$R3,
             who.util.getVersionString( who.env.strUserAgent, 'PLAYSTATION 3; ' ) || who.util.getVersionString( who.env.strUserAgent, 'PLAYSTATION 3 ' )
         );
-        who.base.setDevice( iAm.EnumDevice.PlayStation, 3, iAm.EnumDeviceType.GAME );
+        who.base.setDevice( iAm.EnumDevice.PlayStation, 3, iAm.EnumDeviceType.Game );
         if( who.util.conpareVersion( who.result.platformVersion, '4.10' ) < 0 ){
             who.base.setEngine( iAm.EnumEngine.Sony, who.result.platformVersion );
         };
         return true;
     } else if( _isPlayStation4 ){
         who.base.setPlatform( iAm.EnumPlatform.PlayStation$R4, who.util.getVersionString( who.env.strAppVersion, who.env.strPlatform + '/' ) );
-        who.base.setDevice( iAm.EnumDevice.PlayStation, 4, iAm.EnumDeviceType.GAME );
+        who.base.setDevice( iAm.EnumDevice.PlayStation, 4, iAm.EnumDeviceType.Game );
         return true;
     } else if( _isPlayStation5 ){
         who.base.setPlatform( iAm.EnumPlatform.PlayStation$R5, who.util.getVersionString( who.env.strAppVersion, who.env.strPlatform + '/' ) );
-        who.base.setDevice( iAm.EnumDevice.PlayStation, 5, iAm.EnumDeviceType.GAME );
+        who.base.setDevice( iAm.EnumDevice.PlayStation, 5, iAm.EnumDeviceType.Game );
         return true;
     };
 };

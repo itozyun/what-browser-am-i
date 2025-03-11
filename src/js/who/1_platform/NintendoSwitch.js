@@ -19,7 +19,7 @@ who.platform.NintendoSwitch.is = function(){
 who.platform.NintendoSwitch.detect = function(){
     if( who.platform.NintendoSwitch.is() ){
         who.base.setPlatform( iAm.EnumPlatform.NINTENDO_SWITCH$TM, who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
-        who.base.setDevice( iAm.EnumDevice.NintendoSwitch, undefined, iAm.EnumDeviceType.GAME );
+        who.base.setDevice( iAm.EnumDevice.NintendoSwitch, undefined, iAm.EnumDeviceType.Game );
         return true;
     };
 };

@@ -23,7 +23,7 @@ who.platform.WebOS.detect = function(){
                 || who.util.getVersionString( who.env.strUserAgent, 'hpwOS/' )
             , who.util.hasSubstring( who.env.strUserAgent, 'webOS.TV' ) || who.util.hasSubstring( who.env.strUserAgent, '/SmartTV' )
                 ? iAm.EnumDeviceType.TV
-                : iAm.EnumDeviceType.PHONE
+                : iAm.EnumDeviceType.Phone
         );
         return true;
     };

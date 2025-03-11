@@ -16,7 +16,7 @@ who.platform.BlackBerry.is = function(){
 /** @return {boolean|void} */
 who.platform.BlackBerry.detect = function(){
     if( who.platform.BlackBerry.is() ){
-        who.base.setPlatform( iAm.EnumPlatform.BlackBerry, who.env.Something.NAVIGATOR_VERSION, iAm.EnumDeviceType.PHONE );
+        who.base.setPlatform( iAm.EnumPlatform.BlackBerry, who.env.Something.NAVIGATOR_VERSION, iAm.EnumDeviceType.Phone );
         return true;
     };
 };

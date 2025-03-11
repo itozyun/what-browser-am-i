@@ -22,7 +22,7 @@ who.platform.PlayStationPortable.detect = function(){
             iAm.EnumPlatform.PlayStation$RPortable,
             who.util.getVersionString( who.env.strUserAgent, '(PlayStation Portable); ' )
         );
-        who.base.setDevice( iAm.EnumDevice.PlayStationPortable, undefined, iAm.EnumDeviceType.GAME );
+        who.base.setDevice( iAm.EnumDevice.PlayStationPortable, undefined, iAm.EnumDeviceType.Game );
         who.base.setEngine( iAm.EnumEngine.NetFront, 3.2 ); // DHTML ブラウザではないので 3.3 未満、リリース時期から推測
         return true;
     };

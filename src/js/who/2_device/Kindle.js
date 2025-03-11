@@ -43,7 +43,7 @@ who.device.Kindle.detect = function(){
         who.base.setDevice(
             iAm.EnumDevice.Kindle,
             _androidWebViewVersionToKindleVersion( who.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION ),
-            iAm.EnumDeviceType.EINK_READER
+            iAm.EnumDeviceType.EInkReader
         );
         return true;
     };

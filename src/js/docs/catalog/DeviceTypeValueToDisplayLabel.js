@@ -3,24 +3,24 @@
 goog.provide( "catalog.DeviceTypeValueToDisplayLabel" );
 
 catalog.DeviceTypeValueToDisplayLabel = [
-    "CAR",
-    "CAR",
-    "EINK_READER",
-    "EINK READER",
-    "GAME",
-    "GAME",
-    "MEDIA_PLAYER",
-    "MEDIA PLAYER",
+    "Car",
+    "Car",
+    "EInkReader",
+    "EInkReader",
+    "Game",
+    "Game",
+    "MediaPlayer",
+    "MediaPlayer",
     "PC",
     "PC",
     "PDA",
     "PDA",
-    "PHONE",
-    "PHONE",
-    "TABLET",
-    "TABLET",
+    "Phone",
+    "Phone",
+    "Tablet",
+    "Tablet",
     "TV",
     "TV",
     "",
-    "UNKNOWN"
+    "Unknown"
 ]

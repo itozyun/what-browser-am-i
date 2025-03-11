@@ -27,7 +27,7 @@ who.platform.PlayStationVita.detect = function(){
             iAm.EnumPlatform.PlayStation$RVita,
             who.util.getVersionString( who.env.strAppVersion, who.env.strPlatform + ' ' )
         );
-        who.base.setDevice( iAm.EnumDevice.PlayStationVita, undefined, iAm.EnumDeviceType.GAME );
+        who.base.setDevice( iAm.EnumDevice.PlayStationVita, undefined, iAm.EnumDeviceType.Game );
         return true;
     };
 };

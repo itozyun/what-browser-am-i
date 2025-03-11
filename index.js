@@ -95,14 +95,14 @@ const enums =  {
     "DeviceType": {
         "Unknown": 0,
         "PC": 1,
-        "PHONE": 2,
-        "TABLET": 3,
-        "EINK_READER": 4,
-        "MEDIA_PLAYER": 5,
+        "Phone": 2,
+        "Tablet": 3,
+        "EInkReader": 4,
+        "MediaPlayer": 5,
         "TV": 6,
-        "GAME": 7,
+        "Game": 7,
         "PDA": 8,
-        "CAR": 9
+        "Car": 9
     },
     "Engine": {
         "Unknown": 0,

@@ -24,7 +24,7 @@ who.platform.NewNintendo3DS.is = function(){
 who.platform.NewNintendo3DS.detect = function(){
     if( who.platform.NewNintendo3DS.is() ){
         who.base.setPlatform( iAm.EnumPlatform.New_NINTENDO_3DS$TM, who.platform.Nintendo3DS.NINTENDO_BROWSER_NAVIGATOR_VERSION );
-        who.base.setDevice( iAm.EnumDevice.NewNintendo3DS, undefined, iAm.EnumDeviceType.GAME );
+        who.base.setDevice( iAm.EnumDevice.NewNintendo3DS, undefined, iAm.EnumDeviceType.Game );
         return true;
     };
 };

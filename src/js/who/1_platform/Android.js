@@ -79,13 +79,13 @@ who.platform.Android.detect = function(){
         // バージョン 41 以降の Android 版 Firefox では platform トークンに Android バージョンが含まれます。
         // 相互運用性向上のため、Android 4 以前のバージョンでブラウザが動作している場合は 4.4 と出力します。
         if( who.util.hasSubstring( who.env.strUserAgent, 'Android 4.4;' ) ){
-            who.base.setPlatform( iAm.EnumPlatform.Android, '2.2~3', iAm.EnumDeviceType.PHONE );
+            who.base.setPlatform( iAm.EnumPlatform.Android, '2.2~3', iAm.EnumDeviceType.Phone );
         } else
         // Android バージョン 4 以降では実際のバージョン番号が出力されます。
         if( 4 <= parseFloat( _versionAndroid ) ){
-            who.base.setPlatform( iAm.EnumPlatform.Android, _versionAndroid, iAm.EnumDeviceType.PHONE );
+            who.base.setPlatform( iAm.EnumPlatform.Android, _versionAndroid, iAm.EnumDeviceType.Phone );
         } else {
-            who.base.setPlatform( iAm.EnumPlatform.Android, '2.2~3', iAm.EnumDeviceType.PHONE );
+            who.base.setPlatform( iAm.EnumPlatform.Android, '2.2~3', iAm.EnumDeviceType.Phone );
         };
         if( who.env.isConflictingLinuxCPUStringsFound ){
             who.result.isPcSiteRequested = true;
@@ -99,9 +99,9 @@ who.platform.Android.detect = function(){
         var isTablet = who.util.hasSubstring( who.env.strUserAgent, 'Tablet' );
 
         if( _versionAndroid ){
-            who.base.setPlatform( iAm.EnumPlatform.Android, _versionAndroid, isTablet ? iAm.EnumDeviceType.TABLET : iAm.EnumDeviceType.PHONE );
+            who.base.setPlatform( iAm.EnumPlatform.Android, _versionAndroid, isTablet ? iAm.EnumDeviceType.Tablet : iAm.EnumDeviceType.Phone );
         } else {
-            who.base.setPlatform( iAm.EnumPlatform.Android, '1.6~', isTablet ? iAm.EnumDeviceType.TABLET : iAm.EnumDeviceType.PHONE );
+            who.base.setPlatform( iAm.EnumPlatform.Android, '1.6~', isTablet ? iAm.EnumDeviceType.Tablet : iAm.EnumDeviceType.Phone );
             who.result.isPcSiteRequested = true;
         };
         return true;
@@ -110,7 +110,7 @@ who.platform.Android.detect = function(){
      *  Android OS
      */
     if( _versionAndroid ){
-        who.base.setPlatform( iAm.EnumPlatform.Android, _versionAndroid, iAm.EnumDeviceType.PHONE );
+        who.base.setPlatform( iAm.EnumPlatform.Android, _versionAndroid, iAm.EnumDeviceType.Phone );
         return true;
     } else
     /*----------------------------------------------------------------------------//
@@ -128,10 +128,10 @@ who.platform.Android.detect = function(){
         // Audio でタッチが必要か？の判定にとても困る...
         // ua には Linux x86_64 になっている who.env.strPlatform と矛盾する. ATOM CPU の場合は？
         if( who.engine.SamsungInternet.NAVIGATOR_VERSION ){ // SamsungBrowser/2.0+ が Android4.4.4 から登場する
-            who.base.setPlatform( iAm.EnumPlatform.Android, '4.4~', iAm.EnumDeviceType.PHONE );
+            who.base.setPlatform( iAm.EnumPlatform.Android, '4.4~', iAm.EnumDeviceType.Phone );
         } else
         if( ( hasChromeObject && !maybeAOSP ) || who.brand.Opera.OPR_NAVIGATOR_VERSION ){
-            who.base.setPlatform( iAm.EnumPlatform.Android, '4~', iAm.EnumDeviceType.PHONE );
+            who.base.setPlatform( iAm.EnumPlatform.Android, '4~', iAm.EnumDeviceType.Phone );
         } else {
             var implVersion = who.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION;
 
@@ -150,7 +150,7 @@ who.platform.Android.detect = function(){
                 who.util.conpareVersion( implVersion, 5 ) < 0
                     ? implVersion
                     : '5~',
-                iAm.EnumDeviceType.PHONE
+                iAm.EnumDeviceType.Phone
             );
         };
         who.result.surelyPcSiteRequested = true;

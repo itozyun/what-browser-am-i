@@ -20,7 +20,7 @@ who.platform.NintendoDS.is = function(){
 who.platform.NintendoDS.detect = function(){
     if( who.platform.NintendoDS.is() ){
         who.base.setPlatform( iAm.EnumPlatform.NINTENDO_DS$TM );
-        who.base.setDevice( iAm.EnumDevice.NintendoDS, undefined, iAm.EnumDeviceType.GAME );
+        who.base.setDevice( iAm.EnumDevice.NintendoDS, undefined, iAm.EnumDeviceType.Game );
         who.base.setEngine( iAm.EnumEngine.Presto_Mobile, 8.5 );
         return true;
     };

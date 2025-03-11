@@ -23,12 +23,12 @@ who.platform.FirefoxOS.detect = function(){
             _geckoVersionToFirefoxOSVersion( who.engine.Gecko.IMPLEMENT_VERSION ),
         // https://developer.mozilla.org/ja/docs/Web/HTTP/Gecko_user_agent_string_reference#Firefox_OS
             who.util.hasSubstring( who.env.strUserAgent, 'Mobile' )
-                ? iAm.EnumDeviceType.PHONE
+                ? iAm.EnumDeviceType.Phone
           : who.util.hasSubstring( who.env.strUserAgent, 'Tablet' )
-                ? iAm.EnumDeviceType.TABLET
+                ? iAm.EnumDeviceType.Tablet
           : who.util.hasSubstring( who.env.strUserAgent, 'TV' )
                 ? iAm.EnumDeviceType.TV
-                : iAm.EnumDeviceType.PHONE
+                : iAm.EnumDeviceType.Phone
         );
         // isFirefoxOS = window.pkcs11        /* 1.1 */
         //            || window.SpecialPowers /* 1.4, 2.0, 2.1, 2.2 */

@@ -28,7 +28,7 @@ who.platform.Wii.detect = function(){
             iAm.EnumPlatform.Wii$TM,
             who.util.getVersionString( who.env.strAppVersion, who.env.strPlatform + '; U; ; ' )
         );
-        who.base.setDevice( iAm.EnumDevice.Wii, undefined, iAm.EnumDeviceType.GAME );
+        who.base.setDevice( iAm.EnumDevice.Wii, undefined, iAm.EnumDeviceType.Game );
         return true;
     };
 };
