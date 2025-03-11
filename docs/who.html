@@ -117,60 +117,60 @@ Array.prototype.push||(Array.prototype.push=function(){for(var b=arguments,a=0,c
 Array.prototype.indexOf||(Array.prototype.indexOf=function(c,a){var b=this.length>>>0;if(0===b||a&&(a=a||0,a=a===-1/0?0:(0>a?-a:a)|0,b<=a))return-1;for(a=0<=a?a:0<b+a?b+a:0;a<b;++a)if(this[a]===c)return a;return-1});
 /* what-browser-am-i@0.7.1
 (c) 2021-2025 itozyun(https://github.com/itozyun/what-browser-am-i#readme), MIT. */
-(function(g, C, M, hd, P, id) {
-  function Y(k) {
-    return C.getElementsByName ? C.getElementsByName(k)[0] : C[k] || g[k];
+(function(kd, R, ld, Z, S, yc) {
+  function aa(h) {
+    return R.getElementsByName ? R.getElementsByName(h)[0] : R[h] || kd[h];
   }
-  function jd() {
-    var k, p;
-    for (k in vc) {
-      if (p = Y(k)) {
-        p.selectedIndex = vc[k];
+  function md() {
+    var h, e;
+    for (h in zc) {
+      if (e = aa(h)) {
+        e.selectedIndex = zc[h];
       }
     }
-    for (k in wc) {
-      if (p = Y(k)) {
-        p.value = wc[k];
+    for (h in Ac) {
+      if (e = aa(h)) {
+        e.value = Ac[h];
       }
     }
-    if (k = Y("whopcsiterequested")) {
-      k.checked = !!v.PCSITE_REQUESTED;
+    if (h = aa("whopcsiterequested")) {
+      h.checked = !!y.PCSITE_REQUESTED;
     }
   }
-  var v = {conpare:function(k, p) {
-    for (var z = 0, b = (k + "").split("."), H = (p + "").split("."), c = b.length, y = H.length, F, D, e; !+b[c - 1];) {
-      --c;
+  var y = {conpare:function(h, e) {
+    for (var w = 0, t = (h + "").split("."), H = (e + "").split("."), x = t.length, B = H.length, r, E, b; !+t[x - 1];) {
+      --x;
     }
-    for (; !+H[y - 1];) {
-      --y;
+    for (; !+H[B - 1];) {
+      --B;
     }
-    for (F = c < y ? c : y; z < F; ++z) {
-      if (D = +b[z], e = +H[z], D !== e) {
-        return D > e ? 1 : -1;
+    for (r = x < B ? x : B; w < r; ++w) {
+      if (E = +t[w], b = +H[w], E !== b) {
+        return E > b ? 1 : -1;
       }
     }
-    return c > y ? 1 : c === y ? 0 : -1;
-  }}, ed, of, pf, qf, rf, sf, vc, wc;
-  (function(k) {
-    function p(f, q) {
-      return f && q ? k.conpare(f, q) : NaN;
+    return x > B ? 1 : x === B ? 0 : -1;
+  }}, id, sf, tf, uf, vf, wf, zc, Ac;
+  (function(h, e, w, t, H, x, B) {
+    function r(g, n) {
+      return g && n ? h.conpare(g, n) : NaN;
     }
-    function z(f, q) {
-      var t = P(f.split(q)[1]);
-      return 0 <= t ? t : 0;
+    function E(g, n) {
+      var u = x(g.split(n)[1]);
+      return 0 <= u ? u : 0;
     }
-    function b(f, q) {
-      return 0 <= f.indexOf(q);
+    function b(g, n) {
+      return 0 <= g.indexOf(n);
     }
-    function H(f) {
-      return b(f, "Linux armv") || b(f, "Linux aarch") || b(f, "Linux i686") || b(f, "Linux x86_64");
+    function ba(g) {
+      return b(g, "Linux armv") || b(g, "Linux aarch") || b(g, "Linux i686") || b(g, "Linux x86_64");
     }
-    function c(f, q) {
-      var t = f.split(q)[1], G = "", I = -1, ka;
-      if (t) {
-        for (; ka = t.charCodeAt(++I);) {
-          if (48 <= ka && 57 >= ka || 46 === ka) {
-            G += t.charAt(I);
+    function c(g, n) {
+      var u = g.split(n)[1], G = "", I = -1, ma;
+      if (u) {
+        for (; ma = u.charCodeAt(++I);) {
+          if (48 <= ma && 57 >= ma || 46 === ma) {
+            G += u.charAt(I);
           } else {
             break;
           }
@@ -185,435 +185,438 @@ Array.prototype.indexOf||(Array.prototype.indexOf=function(c,a){var b=this.lengt
       }
       return G;
     }
-    function y(f) {
-      for (var q = arguments, t = 1, G = f, I; t < q.length; ++t) {
-        if (I = q[t], !G || 0 > p(G, I)) {
+    function na(g) {
+      for (var n = arguments, u = 1, G = g, I; u < n.length; ++u) {
+        if (I = n[u], !G || 0 > r(G, I)) {
           G = I;
         }
       }
       return G;
     }
-    function F(f) {
-      return f === "" + f ? f : f === +f ? "" + f : f.min && f.max ? f.min + "~" + f.max : f.min ? f.min + "~" : "~" + f.max;
+    function O(g) {
+      return g === "" + g ? g : g === +g ? "" + g : g.min && g.max ? g.min + "~" + g.max : g.min ? g.min + "~" : "~" + g.max;
     }
-    function D() {
-      return "Android" === E || "FireOS" === E;
+    function P() {
+      return "Android" === F || "FireOS" === F;
     }
-    function e(f, q, t) {
-      E = f;
-      if (q || 0 <= q) {
-        w = q;
+    function f(g, n, u) {
+      F = g;
+      if (n || 0 <= n) {
+        z = n;
       }
-      if (t || 0 <= t) {
-        N = t;
-      }
-    }
-    function m(f, q, t) {
-      Z = f;
-      if (q || 0 <= q) {
-        xc = q;
-      }
-      if (t || 0 <= t) {
-        N = t;
+      if (u || 0 <= u) {
+        M = u;
       }
     }
-    function h(f, q) {
-      l = f;
-      if (q || 0 <= q) {
-        u = q;
+    function p(g, n, u) {
+      ca = g;
+      if (n || 0 <= n) {
+        Bc = n;
+      }
+      if (u || 0 <= u) {
+        M = u;
       }
     }
-    function d(f, q) {
-      la = f;
-      if (q || 0 <= q) {
-        yc = q;
+    function l(g, n) {
+      k = g;
+      if (n || 0 <= n) {
+        v = n;
       }
     }
-    function aa() {
-      return "Mac68K" === n || "MacPowerPC" === n || "MacPPC" === n || "MacIntel" === n || "MacM1" === n;
+    function d(g, n) {
+      oa = g;
+      if (n || 0 <= n) {
+        Cc = n;
+      }
     }
-    function Q() {
-      return !(!S && O) && kd || !!zc;
+    function nd() {
+      return "Mac68K" === m || "MacPowerPC" === m || "MacPPC" === m || "MacIntel" === m || "MacM1" === m;
     }
-    function T() {
+    function pa() {
+      return !(!T && N) && od || !!Dc;
+    }
+    function U() {
       return b(a, "UCWEB");
-    }
-    function Ie() {
-      if (Je) {
-        return e("PlayStation3", c(a, "PLAYSTATION 3; ") || c(a, "PLAYSTATION 3 ")), m("PlayStation", 3, "GAME"), 0 > p(w, "4.10") && h("Sony", w), !0;
-      }
-      if (Ke) {
-        return e("PlayStation4", c(r, n + "/")), m("PlayStation", 4, "GAME"), !0;
-      }
-      if (Le) {
-        return e("PlayStation5", c(r, n + "/")), m("PlayStation", 5, "GAME"), !0;
-      }
     }
     function Me() {
       if (Ne) {
-        return e("FreeBSD"), !0;
+        return f("PlayStation3", c(a, "PLAYSTATION 3; ") || c(a, "PLAYSTATION 3 ")), p("PlayStation", 3, "GAME"), 0 > r(z, "4.10") && l("Sony", z), !0;
       }
       if (Oe) {
-        return e("OpenBSD"), !0;
+        return f("PlayStation4", c(q, m + "/")), p("PlayStation", 4, "GAME"), !0;
       }
       if (Pe) {
-        return e("NetBSD"), !0;
+        return f("PlayStation5", c(q, m + "/")), p("PlayStation", 5, "GAME"), !0;
       }
     }
-    function ld() {
-      return !!md || !!ba && 9 > P(ba) && "iOSWebView" === l && 11 <= P(w);
+    function Qe() {
+      if (Re) {
+        return f("FreeBSD"), !0;
+      }
+      if (Se) {
+        return f("OpenBSD"), !0;
+      }
+      if (Te) {
+        return f("NetBSD"), !0;
+      }
     }
-    function nd() {
-      return "Chromium" === l || "ChromiumMobile" === l || "AndroidWebView" === l && 0 > p(5, u);
+    function pd() {
+      return !!qd || !!da && 9 > x(da) && "iOSWebView" === k && 11 <= x(z);
     }
-    function ma(f, q) {
-      if (void 0 !== f[q]) {
+    function rd() {
+      return "Chromium" === k || "ChromiumMobile" === k || "AndroidWebView" === k && 0 > r(5, v);
+    }
+    function qa(g, n) {
+      if (void 0 !== g[n]) {
         return !0;
       }
-      for (var t in f) {
-        if (t === q) {
+      for (var u in g) {
+        if (u === n) {
           return !0;
         }
       }
       return !1;
     }
-    function od() {
-      return "iOS" === E && !ca && (pd || ("iPad" === Z || 12 > w) && ma(C, "webkitFullscreenEnabled") || 11 <= w && 13 > w && !!M.mediaDevices);
+    function sd() {
+      return "iOS" === F && !ea && (td || ("iPad" === ca || 12 > z) && qa(w, "webkitFullscreenEnabled") || 11 <= z && 13 > z && !!t.mediaDevices);
     }
-    function qd() {
+    function ud() {
       return b(a, " MC_FAUST") || b(a, " MC_DARWIN") || b(a, " DARWIN") || b(a, " KON_TIKI") || b(a, " Kon_Tiki2") || b(a, " MC_GAME") || b(a, " LIVINGSTONE") || b(a, " Lomonosov") || b(a, " MC_Cristo") || b(a, " NoteAir") || b(a, " MC_NovaPro") || b(a, " Poke2Color");
     }
-    function rd() {
+    function vd() {
       return b(a, "BNRV300") || b(a, "BNRV350") || b(a, "BNRV500") || b(a, "BNRV510") || b(a, "BNRV520") || b(a, "BNRV700") || b(a, "BNRV1000") || b(a, "BNRV1100") || b(a, "BNRV1300");
     }
-    function Ac() {
-      return qd() || b(a, "Kobo") || rd() || b(a, " PocketBook") || 0 < Bc || !1;
+    function Ec() {
+      return ud() || b(a, "Kobo") || vd() || b(a, " PocketBook") || 0 < Fc || !1;
     }
-    function Qe() {
-      var f;
-      if (Re) {
-        return b(a, "Android 4.4;") ? e("Android", "2.2~3", "PHONE") : 4 <= P(U) ? e("Android", U, "PHONE") : e("Android", "2.2~3", "PHONE"), Cc && (A = !0), !0;
+    function Ue() {
+      var g;
+      if (Ve) {
+        return b(a, "Android 4.4;") ? f("Android", "2.2~3", "PHONE") : 4 <= x(V) ? f("Android", V, "PHONE") : f("Android", "2.2~3", "PHONE"), Gc && (C = !0), !0;
       }
-      if (Se) {
-        f = b(a, "Tablet");
-        U ? e("Android", U, f ? "TABLET" : "PHONE") : (e("Android", "1.6~", f ? "TABLET" : "PHONE"), A = !0);
+      if (We) {
+        g = b(a, "Tablet");
+        V ? f("Android", V, g ? "TABLET" : "PHONE") : (f("Android", "1.6~", g ? "TABLET" : "PHONE"), C = !0);
         return !0;
       }
-      if (U) {
-        return e("Android", U, "PHONE"), !0;
+      if (V) {
+        return f("Android", V, "PHONE"), !0;
       }
-      if (Te) {
-        return V ? e("Android", "4.4~", "PHONE") : da && !Dc || W ? e("Android", "4~", "PHONE") : e("Android", 0 > p(R, 5) ? R : "5~", "PHONE"), L = !0;
+      if (Xe) {
+        return W ? f("Android", "4.4~", "PHONE") : fa && !Hc || X ? f("Android", "4~", "PHONE") : f("Android", 0 > r(Q, 5) ? Q : "5~", "PHONE"), L = !0;
       }
-      if (Ue) {
-        return e("Android"), L = !0;
+      if (Ye) {
+        return f("Android"), L = !0;
       }
     }
-    var u, yc, xc, E = "", l = "", la = "", Z = "", N = "", A = !1, L = !1, a = M.userAgent, r = M.appVersion, sd = P(r) || 0, n = M.platform, zc = C.documentMode, kd = !!C.all, na = !!C.registerElement, Ec = hd.width, Fc = hd.height, ea = C.documentElement, td = ea && ea.style, Gc = !!g.HTMLAudioElement, ud = g.performance, vd = !!g.Int8Array, wd = void 0 !== g.ontouchstart, pd = M.standalone, J = c(r, "Version/") || c(a, "Version/"), ba = c(a, "FxiOS/"), x = z(a, "AppleWebKit/"), fa = !1, xd, O, 
-    ha, ia, da, oa, Hc, pa, qa, yd, ra, Ic, sa, ta, ua, va, wa, xa, ya, za, Aa, Ba, Ca, Da, Ea, Fa, Ga, Ha, Ia, Ja, ja, Ka, La, Ma, Na, Oa, Pa, Qa, Ra, Sa, Ta, Ua, Va, Wa, Jc, Xa, Ya, Za, $a, ab, bb, cb, db, eb, fb, gb, hb, ib, jb, kb, Kc, Lc, lb, mb, nb, Mc, ob, pb, qb, rb, sb, tb, ub, vb, wb, xb, yb, zb, Ab, Bb, Cb, Db, Eb, Fb, Gb, Hb, Ib, Jb, Kb, Lb, Mb, Nb, Ob, Pb, Qb, Rb, Sb, Tb, Ub, Vb, Wb, Xb, Yb, Zb, $b, ac, bc, cc, dc, ec, fc, gc, hc, ic, jc, kc, lc, mc, nc, oc, pc, zd, Cc, We, S, Nc, Xe, 
-    Ye, B, Oc, qc, X, Ze, Pc, Qc, $e, Rc, Sc, Tc, V, Ad, Bd, Je, Ke, Le, Ne, Oe, Pe, Cd, cf, sc, md, Uc, Vc, df, ef, ff, Dd, Ed, K, Wc, Fd, W, Dc, Ue, R, Gd, Hd, ca, Id, gf, jf, kf, Xc, Yc, Zc, $c, Jd, lf, Kd, Ld, Bc, Md, U, Re, Se, mf, Te, Nd, Od, Pd, ad, bd, nf, cd, Qd, Rd, Sd, Td, Ud, Vd, Wd, Xd, Yd, Zd, $d, ae, be, ce, de, ee, fe, ge, he, ie, je, ke, le, me, ne, oe, pe, qe, re, se, te, ue, ve, we, xe, ye, ze, Ae, Be, Ce, De, Ee, w, tc, dd, Fe, Ge;
-    if (!kd) {
-      for (var Ve in td) {
-        if (0 === Ve.indexOf("Moz")) {
-          fa = !0;
+    var v, Cc, Bc, F = "", k = "", oa = "", ca = "", M = "", C = !1, L = !1, a = t.userAgent, q = t.appVersion, wd = x(q) || 0, m = t.platform, Dc = w.documentMode, od = !!w.all, ra = !!w.registerElement, Ic = H.width, Jc = H.height, ha = w.documentElement, xd = ha && ha.style, Kc = !!e.HTMLAudioElement, yd = e.performance, zd = !!e.Int8Array, Ad = void 0 !== e.ontouchstart, td = t.standalone, J = c(q, "Version/") || c(a, "Version/"), da = c(a, "FxiOS/"), A = E(a, "AppleWebKit/"), ia = !1, Bd, N, 
+    ja, ka, fa, sa, Lc, ta, ua, Cd, va, Mc, wa, xa, ya, za, Aa, Ba, Ca, Da, Ea, Fa, Ga, Ha, Ia, Ja, Ka, La, Ma, Na, la, Oa, Pa, Qa, Ra, Sa, Ta, Ua, Va, Wa, Xa, Ya, Za, $a, Nc, ab, bb, cb, db, eb, fb, gb, hb, ib, jb, kb, lb, mb, nb, ob, Oc, Pc, pb, qb, rb, Qc, sb, tb, ub, vb, wb, xb, yb, zb, Ab, Bb, Cb, Db, Eb, Fb, Gb, Hb, Ib, Jb, Kb, Lb, Mb, Nb, Ob, Pb, Qb, Rb, Sb, Tb, Ub, Vb, Wb, Xb, Yb, Zb, $b, ac, bc, cc, dc, ec, fc, gc, hc, ic, jc, kc, lc, mc, nc, oc, pc, qc, rc, sc, tc, Dd, Gc, $e, T, Rc, af, 
+    bf, D, Sc, uc, Y, cf, Tc, Uc, df, Vc, Wc, Xc, W, Ed, Fd, Ne, Oe, Pe, Re, Se, Te, Gd, gf, wc, qd, Yc, Zc, hf, jf, kf, Hd, Id, K, $c, Jd, X, Hc, Ye, Q, Kd, Ld, ea, Md, lf, nf, of, ad, bd, cd, dd, Nd, pf, Od, Pd, Fc, Qd, V, Ve, We, qf, Xe, Rd, Sd, Td, ed, fd, rf, gd, Ud, Vd, Wd, Xd, Yd, Zd, $d, ae, be, ce, de, ee, fe, ge, he, ie, je, ke, le, me, ne, oe, pe, qe, re, se, te, ue, ve, we, xe, ye, ze, Ae, Be, Ce, De, Ee, Fe, Ge, He, Ie, z, xc, hd, Je, Ke;
+    if (!od) {
+      for (var Ze in xd) {
+        if (0 === Ze.indexOf("Moz")) {
+          ia = !0;
           break;
         }
       }
     }
-    zd = b(n, "Linux");
-    Cc = (xd = H(n)) && !b(a, n) && H(a);
-    We = 2 === sd && b(a, "Sony/COM2/");
-    S = g.operamini;
-    Nc = y(c(a, "Opera Mini/"), c(a, "Opera Mobi/")) || S && J;
-    Xe = (O = g.opera) && O.version && O.version() || NaN;
-    Ye = y(c(a, "Opera "), J, sd);
-    B = zc ? zc : g.XMLHttpRequest ? C.getElementsByTagName ? 7 : 4 : C.compatMode ? 6 : (0).toFixed ? 5.5 : g.attachEvent ? 5 : 4;
-    Oc = z(r, "Trident/") + 4;
-    qc = c(a.toLowerCase(), "iris");
-    X = c(a, "NintendoBrowser/");
-    Ze = T() ? c(a, " U2/") : "";
-    Pc = T() ? c(a, "; wds ") : "";
-    Qc = T() ? c(a.split("_").join("."), "; iPh OS ") : "";
-    $e = T() ? c(a, "; Adr ") : "";
-    Rc = c(a, "Windows Phone ") || c(r, "Windows Phone OS ");
-    Sc = !Q() && !!ea.msContentZoomFactor && "ARM" === n;
-    Tc = 7 <= B && b(r, "ZuneWP");
-    V = z(a, "SamsungBrowser/");
-    if (ha = !V && [].pop) {
+    Dd = b(m, "Linux");
+    Gc = (Bd = ba(m)) && !b(a, m) && ba(a);
+    $e = 2 === wd && b(a, "Sony/COM2/");
+    T = e.operamini;
+    Rc = na(c(a, "Opera Mini/"), c(a, "Opera Mobi/")) || T && J;
+    af = (N = e.opera) && N.version && N.version() || NaN;
+    bf = na(c(a, "Opera "), J, wd);
+    D = Dc ? Dc : e.XMLHttpRequest ? w.getElementsByTagName ? 7 : 4 : w.compatMode ? 6 : (0).toFixed ? 5.5 : e.attachEvent ? 5 : 4;
+    Sc = E(q, "Trident/") + 4;
+    uc = c(a.toLowerCase(), "iris");
+    Y = c(a, "NintendoBrowser/");
+    cf = U() ? c(a, " U2/") : "";
+    Tc = U() ? c(a, "; wds ") : "";
+    Uc = U() ? c(a.split("_").join("."), "; iPh OS ") : "";
+    df = U() ? c(a, "; Adr ") : "";
+    Vc = c(a, "Windows Phone ") || c(q, "Windows Phone OS ");
+    Wc = !pa() && !!ha.msContentZoomFactor && "ARM" === m;
+    Xc = 7 <= D && b(q, "ZuneWP");
+    W = E(a, "SamsungBrowser/");
+    if (ja = !W && [].pop) {
       (function() {
-        for (var rc, af = "GT-I9300 GT-I9305 SHV-E210 SGH-T999L SGH-I747 SGH-N064 SC-06D SGH-N035 SC-03E SCH-J021 SCL21 SCH-R530 SCH-I535 SCH-S960L SCH-S968C GT-I9308 SCH-I939 SHV-E210S GT-I8160 GT-I8260 GT-I8262 SM-G350 SM-G352 SM-G386F SM-G386T1GT-N7000 GT-N7005 SHV-E160 SC-05D SGH-N054 SGH-I717 SGH-T879 GT-I9220 GT-I9228 SCH-I889 GT-N7100 GT-N7105 SCH-I605 SCH-R950 SGH-I317 SGH-T889 SPH-L900 SCH-N719 GT-N7102 GT-N7108 SGH-N025 SC-02E SHV-E250 GT-N5100 GT-N5110 GT-N5120 GT-N8000 GT-N8005 GT-N8010 GT-N8013 GT-N8020 GT-I9100 GT-I9108 GT-I9210 SGH-I777 SGH-I757M SGH-I727 SGH-I927 SGH-T989 SHW-M250 SPH-D710 ISW11SC SC-02C SCH-R760 SCH-I929 GT-I9105 GT-I8190 GT-I8200 SM-G730A GT-P3100 GT-P3110 GT-P3113 SCH-I705 GT-P5100 GT-P5110 GT-P5113 SCH-I915 SM-G3508 SM-G3509 GT-S7580 GT-S7582 GT-S6310 GT-S6312 GT-S6313T".split(" "); rc = 
-        af.pop();) {
-          if (b(a, rc)) {
-            ha = 2 > P(J) ? J : .9;
+        for (var vc, ef = "GT-I9300 GT-I9305 SHV-E210 SGH-T999L SGH-I747 SGH-N064 SC-06D SGH-N035 SC-03E SCH-J021 SCL21 SCH-R530 SCH-I535 SCH-S960L SCH-S968C GT-I9308 SCH-I939 SHV-E210S GT-I8160 GT-I8260 GT-I8262 SM-G350 SM-G352 SM-G386F SM-G386T1GT-N7000 GT-N7005 SHV-E160 SC-05D SGH-N054 SGH-I717 SGH-T879 GT-I9220 GT-I9228 SCH-I889 GT-N7100 GT-N7105 SCH-I605 SCH-R950 SGH-I317 SGH-T889 SPH-L900 SCH-N719 GT-N7102 GT-N7108 SGH-N025 SC-02E SHV-E250 GT-N5100 GT-N5110 GT-N5120 GT-N8000 GT-N8005 GT-N8010 GT-N8013 GT-N8020 GT-I9100 GT-I9108 GT-I9210 SGH-I777 SGH-I757M SGH-I727 SGH-I927 SGH-T989 SHW-M250 SPH-D710 ISW11SC SC-02C SCH-R760 SCH-I929 GT-I9105 GT-I8190 GT-I8200 SM-G730A GT-P3100 GT-P3110 GT-P3113 SCH-I705 GT-P5100 GT-P5110 GT-P5113 SCH-I915 SM-G3508 SM-G3509 GT-S7580 GT-S7582 GT-S6310 GT-S6312 GT-S6313T".split(" "); vc = 
+        ef.pop();) {
+          if (b(a, vc)) {
+            ja = 2 > x(J) ? J : .9;
             return;
           }
         }
-        for (var bf = "SC-02F SGH-N075 GT-S7270 GT-S7272 GT-S7275R GT-I9150 GT-I9152 GT-I9200 GT-I9205 GT-I9500 GT-I9506 SC-04E SGH-N045 GT-I9190 GT-I9192 GT-I9295 GT-I9197 GT-I9198 SGH-I257M SCH-I435 GT-I8666 GT-I8552 GT-I8558 SHV-E500S/L GT-18552B SM-N900 N9000 N9002 SC-01F SCL22 SM-G7100 SM-G7102 SM-G7105 SM-N750 SM-P600 SM-P601 SM-P605 GT-I9301I GT-I9300RWI SGH-T399 SM-P900 SM-P901 SM-P90 SM-P905 GT-I9295 SGH-I537 SHV-E330S GT-I9507V GT-I9505 GT-I9515 SGH-I337 SM-T230 SM-T231 SM-T235 SM-T237 403SC SM-T330NU SM-T331NU SM-T337V SM-T530 SM-T531 SM-T535 M-T320 SM-T321 SM-T325 SM-T520 SM-T525 SM-T900 SM-T905 SM-T700 SM-T705 SM-T707V SM-T800 SM-T805 SM-T807 SM-A300 SM-A5000 SM-A5009 SM-A500F SM-A500F1 SM-A500FQ SM-A500FU SM-A500G SM-A500H SM-A500HQ SM-A500K SM-G850 SM-C115 SM-C111 SM-G750F SM-G7508 SM-G7508Q SM-G750H GT-I9301I SM-900 SC-04F SCL23 SM-G906S SM-G906K SM-G906L SM-G870A SM-N915 SC-02G SM-800".split(" "); rc = 
-        bf.pop();) {
-          if (b(a, rc)) {
-            ha = J;
+        for (var ff = "SC-02F SGH-N075 GT-S7270 GT-S7272 GT-S7275R GT-I9150 GT-I9152 GT-I9200 GT-I9205 GT-I9500 GT-I9506 SC-04E SGH-N045 GT-I9190 GT-I9192 GT-I9295 GT-I9197 GT-I9198 SGH-I257M SCH-I435 GT-I8666 GT-I8552 GT-I8558 SHV-E500S/L GT-18552B SM-N900 N9000 N9002 SC-01F SCL22 SM-G7100 SM-G7102 SM-G7105 SM-N750 SM-P600 SM-P601 SM-P605 GT-I9301I GT-I9300RWI SGH-T399 SM-P900 SM-P901 SM-P90 SM-P905 GT-I9295 SGH-I537 SHV-E330S GT-I9507V GT-I9505 GT-I9515 SGH-I337 SM-T230 SM-T231 SM-T235 SM-T237 403SC SM-T330NU SM-T331NU SM-T337V SM-T530 SM-T531 SM-T535 M-T320 SM-T321 SM-T325 SM-T520 SM-T525 SM-T900 SM-T905 SM-T700 SM-T705 SM-T707V SM-T800 SM-T805 SM-T807 SM-A300 SM-A5000 SM-A5009 SM-A500F SM-A500F1 SM-A500FQ SM-A500FU SM-A500G SM-A500H SM-A500HQ SM-A500K SM-G850 SM-C115 SM-C111 SM-G750F SM-G7508 SM-G7508Q SM-G750H GT-I9301I SM-900 SC-04F SCL23 SM-G906S SM-G906K SM-G906L SM-G870A SM-N915 SC-02G SM-800".split(" "); vc = 
+        ff.pop();) {
+          if (b(a, vc)) {
+            ja = J;
             return;
           }
         }
-        ha = void 0;
+        ja = void 0;
       })();
     }
-    Ad = ha || NaN;
-    Bd = c(a, "Tizen ");
-    Je = "PlayStation 3" === n;
-    Ke = "PlayStation 4" === n;
-    Le = "PlayStation 5" === n;
-    Ne = b(a, "FreeBSD");
-    Oe = b(a, "OpenBSD");
-    Pe = b(a, "NetBSD");
-    Cd = b(a, "Xbox One");
-    cf = !Cd && b(a, "Xbox");
-    sc = fa ? c(a, "Goanna/") : "";
-    md = c(a, "Focus/") || c(a, "Klar/");
-    Uc = c(a, "Firefox/");
-    Vc = !!g._firefoxTV_playbackStateObserverJava;
-    df = fa ? c(a, "rv:") || c(a.substr(a.indexOf(") Gecko/") - 11), "; ") : "";
-    ef = Vc ? z(a, "diordnA ") : 0;
-    ff = b(a, "AmazonWebAppPlatform");
-    Dd = (ia = b(a, "AFTBTX4") ? [7, 2023] : b(a, "AFTMD002") ? [7, 2023] : b(a, "AFTSHN02") ? [7, 2023] : b(a, "AFTMD001") ? [7, 2023] : b(a, "AFTKA002") || b(a, "AFTKAUK002") ? [7, 2023] : b(a, "AFTHA004") ? [7, 2022] : b(a, "AFTTIFF43") ? [7, 2022] : b(a, "AFTANNA0") ? [7, 2022] : b(a, "AFTHA001") ? [7, 2022] : b(a, "AFTMON001") || b(a, "AFTMON002") ? [7, 2022] : b(a, "AFTJULI1") ? [7, 2021] : b(a, "AFTHA003") ? [7, 2021] : b(a, "AFTTI43") ? [7, 2021] : b(a, "AFTPR001") ? [7, 2020] : b(a, "AFTBU001") ? 
+    Ed = ja || NaN;
+    Fd = c(a, "Tizen ");
+    Ne = "PlayStation 3" === m;
+    Oe = "PlayStation 4" === m;
+    Pe = "PlayStation 5" === m;
+    Re = b(a, "FreeBSD");
+    Se = b(a, "OpenBSD");
+    Te = b(a, "NetBSD");
+    Gd = b(a, "Xbox One");
+    gf = !Gd && b(a, "Xbox");
+    wc = ia ? c(a, "Goanna/") : "";
+    qd = c(a, "Focus/") || c(a, "Klar/");
+    Yc = c(a, "Firefox/");
+    Zc = !!e._firefoxTV_playbackStateObserverJava;
+    hf = ia ? c(a, "rv:") || c(a.substr(a.indexOf(") Gecko/") - 11), "; ") : "";
+    jf = Zc ? E(a, "diordnA ") : 0;
+    kf = b(a, "AmazonWebAppPlatform");
+    Hd = (ka = b(a, "AFTBTX4") ? [7, 2023] : b(a, "AFTMD002") ? [7, 2023] : b(a, "AFTSHN02") ? [7, 2023] : b(a, "AFTMD001") ? [7, 2023] : b(a, "AFTKA002") || b(a, "AFTKAUK002") ? [7, 2023] : b(a, "AFTHA004") ? [7, 2022] : b(a, "AFTTIFF43") ? [7, 2022] : b(a, "AFTANNA0") ? [7, 2022] : b(a, "AFTHA001") ? [7, 2022] : b(a, "AFTMON001") || b(a, "AFTMON002") ? [7, 2022] : b(a, "AFTJULI1") ? [7, 2021] : b(a, "AFTHA003") ? [7, 2021] : b(a, "AFTTI43") ? [7, 2021] : b(a, "AFTPR001") ? [7, 2020] : b(a, "AFTBU001") ? 
     [6, 2020] : b(a, "AFTHA002") ? [7, 2021] : b(a, "AFTWMST22") ? [7, 2021] : b(a, "AFTTIFF55") ? [6, 2020] : b(a, "AFTWI001") ? [7, 2020] : b(a, "AFTDCT31") ? [7, 2020] : b(a, "AFTBAMR311") ? [6, 2020] : b(a, "AFTKMST12") ? [6, 2020] : b(a, "AFTLE") ? [6, 2019] : b(a, "AFTEUFF014") ? [7, 2019] : b(a, "AFTEU014") ? [7, 2019] : b(a, "AFTSO001") ? [7, 2019] : b(a, "AFTEU011") ? [7, 2019] : b(a, "AFTJMST12") ? [6, 2018] : b(a, "AFTRS") ? [5, 2017] : b(a, "AEOHY") ? [7, 2021] : b(a, "AFTLFT962X3") ? 
-    [7, 2021] : b(a, "AFTLBT962E2") ? [7, 2022] : b(a, "AFTKRT") ? [8, 2023] : b(a, "AFTKM") ? [8, 2023] : b(a, "AFTKA") ? [7, 2021] : b(a, "AFTSSS") ? [7, 2020] : b(a, "AFTSS") ? [7, 2020] : b(a, "AFTT") ? [5, 2020] : b(a, "AFTMM") ? [6, 2018] : b(a, "AFTN") ? [6, 2017] : b(a, "AFTS") ? [5, 2015] : b(a, "AFTM") ? [5, 2014] : b(a, "AFTB") ? [5, 2014] : b(a, "AFTGAZL") ? [7, 2022] : b(a, "AFTR") ? [7, 2019] : b(a, "AFTA") ? [6, 2018] : void 0) && ia[0];
-    Ed = c(a, "CriOS/");
-    K = c(r, "Chrome/");
-    Wc = c(a, "Iron/");
-    Fd = c(a, "Opera/");
-    W = c(a, "OPR/");
-    Dc = (da = !(!Q() && ea.msContentZoomFactor) && !!(g.chrome || g.chromium || g.opr)) && 534.3 >= x;
-    Ue = zd && na && "11.0.696.34" === K;
-    R = void 0 !== td.touchAction ? 0 : na ? "4.4.3" : vd ? M.connection ? g.searchBoxJavaBridge_ || da ? id.isNaN ? 4.1 : 4 : 4.2 : 4.4 : g.SVGSVGElement ? 3 : void 0 !== g.onhashchange ? Gc ? 2.3 : 2.2 : 530 <= x ? 2 : 1.5;
-    Gd = (oa = b(a, "KFTUWI") || b(a, "KFSNWI") ? [8, 13] : b(a, "KFSUWI") || b(a, "KFRAPWI") || b(a, "KFQUWI") ? [8, 12] : b(a, "KFTRWI") || b(a, "KFTRPWI") ? [7, 11] : b(a, "KFONWI") ? [7, 10] : b(a, "KFMUWI") ? [6.3, 9] : b(a, "KFKAWI") ? [6, 8] : b(a, "KFSUWI") || b(a, "KFAUWI") || b(a, "KFDOWI") ? [5, 7] : b(a, "KFGIWI") ? [5, 6] : b(a, "KFTBWI") || b(a, "KFMEWI") || b(a, "KFFOWI") ? [5, 5] : b(a, "KFARWI") || b(a, "KFSAWA") || b(a, "KFSAWI") ? [5 <= P(R) ? 5 : 4, 4] : b(a, "KFSOWI") || b(a, 
-    "KFTHWA") || b(a, "KFTHWI") || b(a, "KFAPWA") || b(a, "KFAPWI") ? [3, 3] : b(a, "KFOT") || b(a, "KFTT") || b(a, "KFJWA") || b(a, "KFJWI") ? [2, 2] : b(a, "Kindle Fire") ? [1, 1] : void 0) && oa[0];
-    Hd = c(a, "CrOS x86_64 ") || c(a, "CrOS aarch64 ") || c(a, "CrOS i686 ") || c(a, "CrOS armv7l ");
-    ca = (pa = (Hc = g.puffinDevice) && Hc.clientInfo) && "iOS" === pa.os && pa.osVersion;
-    Id = c(a, "Puffin/");
-    gf = !!g.FNRBrowser;
-    if (qa = xd) {
+    [7, 2021] : b(a, "AFTLBT962E2") ? [7, 2022] : b(a, "AFTKRT") ? [8, 2023] : b(a, "AFTKM") ? [8, 2023] : b(a, "AFTKA") ? [7, 2021] : b(a, "AFTSSS") ? [7, 2020] : b(a, "AFTSS") ? [7, 2020] : b(a, "AFTT") ? [5, 2020] : b(a, "AFTMM") ? [6, 2018] : b(a, "AFTN") ? [6, 2017] : b(a, "AFTS") ? [5, 2015] : b(a, "AFTM") ? [5, 2014] : b(a, "AFTB") ? [5, 2014] : b(a, "AFTGAZL") ? [7, 2022] : b(a, "AFTR") ? [7, 2019] : b(a, "AFTA") ? [6, 2018] : void 0) && ka[0];
+    Id = c(a, "CriOS/");
+    K = c(q, "Chrome/");
+    $c = c(a, "Iron/");
+    Jd = c(a, "Opera/");
+    X = c(a, "OPR/");
+    Hc = (fa = !(!pa() && ha.msContentZoomFactor) && !!(e.chrome || e.chromium || e.opr)) && 534.3 >= A;
+    Ye = Dd && ra && "11.0.696.34" === K;
+    Q = void 0 !== xd.touchAction ? 0 : ra ? "4.4.3" : zd ? t.connection ? e.searchBoxJavaBridge_ || fa ? B.isNaN ? 4.1 : 4 : 4.2 : 4.4 : e.SVGSVGElement ? 3 : void 0 !== e.onhashchange ? Kc ? 2.3 : 2.2 : 530 <= A ? 2 : 1.5;
+    Kd = (sa = b(a, "KFTUWI") || b(a, "KFSNWI") ? [8, 13] : b(a, "KFSUWI") || b(a, "KFRAPWI") || b(a, "KFQUWI") ? [8, 12] : b(a, "KFTRWI") || b(a, "KFTRPWI") ? [7, 11] : b(a, "KFONWI") ? [7, 10] : b(a, "KFMUWI") ? [6.3, 9] : b(a, "KFKAWI") ? [6, 8] : b(a, "KFSUWI") || b(a, "KFAUWI") || b(a, "KFDOWI") ? [5, 7] : b(a, "KFGIWI") ? [5, 6] : b(a, "KFTBWI") || b(a, "KFMEWI") || b(a, "KFFOWI") ? [5, 5] : b(a, "KFARWI") || b(a, "KFSAWA") || b(a, "KFSAWI") ? [5 <= x(Q) ? 5 : 4, 4] : b(a, "KFSOWI") || b(a, 
+    "KFTHWA") || b(a, "KFTHWI") || b(a, "KFAPWA") || b(a, "KFAPWI") ? [3, 3] : b(a, "KFOT") || b(a, "KFTT") || b(a, "KFJWA") || b(a, "KFJWI") ? [2, 2] : b(a, "Kindle Fire") ? [1, 1] : void 0) && sa[0];
+    Ld = c(a, "CrOS x86_64 ") || c(a, "CrOS aarch64 ") || c(a, "CrOS i686 ") || c(a, "CrOS armv7l ");
+    ea = (ta = (Lc = e.puffinDevice) && Lc.clientInfo) && "iOS" === ta.os && ta.osVersion;
+    Md = c(a, "Puffin/");
+    lf = !!e.FNRBrowser;
+    if (ua = Bd) {
       (function() {
-        for (var hf in g) {
-          if (0 === hf.indexOf("SlexAPI_")) {
-            qa = !0;
+        for (var mf in e) {
+          if (0 === mf.indexOf("SlexAPI_")) {
+            ua = !0;
             return;
           }
         }
-        qa = void 0;
+        ua = void 0;
       })();
     }
-    jf = qa;
-    kf = g.PointerEvent ? 13 : g.HTMLDataListElement ? 12.2 : Array.prototype.flat ? 12 : M.sendBeacon ? 11.3 : g.WebAssembly ? 11.2 : g.HTMLMeterElement ? 10.3 : g.Proxy ? 10.2 : g.HTMLPictureElement ? 9.3 : id.isNaN ? 9.2 : g.SharedWorker ? ud && ud.now ? 8 : 8.4 : C.execCommand ? 7.1 : g.webkitURL ? 6.1 : g.Worker ? 5.1 : vd ? 4.3 : Gc ? 4.1 : 3.2;
-    Xc = 0 === n.indexOf("iPhone");
-    Yc = 0 === n.indexOf("iPad");
-    Zc = 0 === n.indexOf("iPod");
-    $c = "MacIntel" === n && void 0 !== pd;
-    Jd = b(r, "YJApp-ANDROID");
-    lf = c(a.toLowerCase(), "ybrowser/");
-    Kd = c(r, "Lunascape ") || c(a, "Lunascape/");
-    Ld = !!g.ReactNativeWebView;
-    Bc = b(a, "EBRD1301") ? 3 : b(a, "EBRD1201") ? 2 : b(a, "EBRD1101") ? 1 : 0;
-    Md = 0 > p(3, R) && !Gc;
-    U = c(n, "Android ") || c(r, "Android ") || c(a, "Android ") || $e;
-    Re = ((yd = b(n, "Android") || b(r, "Android")) || Cc && wd) && fa && !sc;
-    Se = yd && !S && !!O;
-    mf = Cc && wd && !!x;
-    Te = Ld || jf || Jd || mf || Ac() || !Ac() && Md;
-    Nd = c(a, "iCab");
-    Od = c(a, "KHTML/");
-    Pd = c(a, "NetFront/");
-    ad = c(r, "Falkon/");
-    bd = c(a, "Otter/");
-    nf = c(a, "QtWebEngine/");
-    cd = c(a, "QupZilla/");
-    Qd = c(a, "Servo/");
-    Rd = c(a, "Edge/");
-    Sd = c(a, "EdgA/") || c(a, "EdgiOS/") || c(a, "Edg/");
-    Td = c(r, "Coast/");
-    Ud = c(r, "OPT/");
-    Vd = c(a, "UCBrowser/");
-    Wd = c(r, "Silk/");
-    Xd = c(a, "Vivaldi/");
-    Yd = c(a, "QQBrowser/");
-    Zd = c(a, "YaBrowser/");
-    $d = c(a, "coc_coc_browser/");
-    ae = c(a, "Camino/");
-    be = c(a, "AOLBUILD/") || c(a, "AOL/") || c(a, "AOL ");
-    ce = c(a, "IceDragon/");
-    de = c(a, "Iceweasel/");
-    ee = c(a, "TenFourFox/");
-    fe = c(a, "Waterfox/");
-    ge = c(a, "GNUzilla/");
-    he = c(a, "SeaMonkey/");
-    ie = c(a, "PaleMoon/");
-    je = c(a, "Basilisk/");
-    ke = c(a, "Maxthon/") || c(a, "Maxthon ") || c(a, "MXiOS/");
-    le = c(a, "Konqueror/");
-    me = c(a, "Midori/");
-    ne = c(a, "OmniWeb/");
-    oe = c(a, "Roccat/");
-    pe = c(a, "Epiphany/");
-    qe = c(a, "WebPositive/");
-    re = c(a, "Comodo Dragon/");
-    se = c(a, "Brave/");
-    te = c(a, "Rockmelt/");
-    ue = c(a, "Dooble/");
-    ve = c(a, "Flock/");
-    we = c(a, "Galeon/");
-    xe = c(a, "Iceape/");
-    ye = c(a, "K-Meleon/");
-    ze = c(r, "NX/") || c(r, "NF/");
-    Ae = c(a, "Netscape6/") || c(a, "Netscape/") || c(a, "Navigator/");
-    Be = c(a, "FBAV/") || c(a, "FBAN/");
-    Ce = c(r, "Line/");
-    De = c(a, "DuckDuckGo/");
-    We ? (e("mylo", 2), m("mylo", 2, "PDA"), h("NetFront", 3.4), Ic = !0) : Ic = void 0;
-    (ra = Ic) || ("Nitro" === n ? (e("NintendoDS"), m("NintendoDS", void 0, "GAME"), h("PrestoMobile", 8.5), ra = !0) : ra = void 0);
-    (sa = ra) || ("Nintendo DSi" === n ? (e("NintendoDSi", c(a, n + "; Opera/")), m("NintendoDSi", void 0, "GAME"), h("PrestoMobile", 9.5), sa = !0) : sa = void 0);
-    (ta = sa) || ("PSP" === n ? (e("PlayStationPortable", c(a, "(PlayStation Portable); ")), m("PlayStationPortable", void 0, "GAME"), h("NetFront", 3.2), ta = !0) : ta = void 0);
-    (va = ta) || ("WinCE" === n ? (e("WindowsCE", 5 > B ? 3 : 4.1, "PDA"), va = !0) : va = void 0);
-    (wa = va) || (b(a, "Windows Mobile;") || qc ? (e("WindowsMobile", 6.1, "PDA"), wa = !0) : wa = void 0);
-    (xa = wa) || (b(a, "BlackBerry") || b(a, "BB10") ? (e("BlackBerry", J, "PHONE"), xa = !0) : xa = void 0);
-    (ya = xa) || ("Nintendo 3DS" === n ? (e("Nintendo3DS", X), m("Nintendo3DS", void 0, "GAME"), h("WebKit", x || 535), d("NetFrontNX", X), ya = !0) : ya = void 0);
-    (za = ya) || ("New Nintendo 3DS" === n || b(a, "iPhone OS 6_0") && 320 === Ec && 240 === Fc ? (e("NewNintendo3DS", X), m("NewNintendo3DS", void 0, "GAME"), za = !0) : za = void 0);
-    (Aa = za) || (O && O.wiiremote ? (e("Wii", c(r, n + "; U; ; ")), m("Wii", void 0, "GAME"), Aa = !0) : Aa = void 0);
-    if (!(Ba = Aa)) {
-      if (g.wiiu) {
-        Ee = !!g.webkitCancelAnimationFrame;
-        X ? e("WiiU", X) : (e("WiiU", Ee ? 4 : 2.1), A = b(r, "Macintosh;") || b(r, "Windows NT") && !b(r, "Touch"));
-        m("WiiU", void 0, "GAME");
-        h("WebKit", c(r, "AppleWebKit/") || (Ee ? 536 : 534));
+    nf = ua;
+    of = e.PointerEvent ? 13 : e.HTMLDataListElement ? 12.2 : Array.prototype.flat ? 12 : t.sendBeacon ? 11.3 : e.WebAssembly ? 11.2 : e.HTMLMeterElement ? 10.3 : e.Proxy ? 10.2 : e.HTMLPictureElement ? 9.3 : B.isNaN ? 9.2 : e.SharedWorker ? yd && yd.now ? 8 : 8.4 : w.execCommand ? 7.1 : e.webkitURL ? 6.1 : e.Worker ? 5.1 : zd ? 4.3 : Kc ? 4.1 : 3.2;
+    ad = 0 === m.indexOf("iPhone");
+    bd = 0 === m.indexOf("iPad");
+    cd = 0 === m.indexOf("iPod");
+    dd = "MacIntel" === m && void 0 !== td;
+    Nd = b(q, "YJApp-ANDROID");
+    pf = c(a.toLowerCase(), "ybrowser/");
+    Od = c(q, "Lunascape ") || c(a, "Lunascape/");
+    Pd = !!e.ReactNativeWebView;
+    Fc = b(a, "EBRD1301") ? 3 : b(a, "EBRD1201") ? 2 : b(a, "EBRD1101") ? 1 : 0;
+    Qd = 0 > r(3, Q) && !Kc;
+    V = c(m, "Android ") || c(q, "Android ") || c(a, "Android ") || df;
+    Ve = ((Cd = b(m, "Android") || b(q, "Android")) || Gc && Ad) && ia && !wc;
+    We = Cd && !T && !!N;
+    qf = Gc && Ad && !!A;
+    Xe = Pd || nf || Nd || qf || Ec() || !Ec() && Qd;
+    Rd = c(a, "iCab");
+    Sd = c(a, "KHTML/");
+    Td = c(a, "NetFront/");
+    ed = c(q, "Falkon/");
+    fd = c(a, "Otter/");
+    rf = c(a, "QtWebEngine/");
+    gd = c(a, "QupZilla/");
+    Ud = c(a, "Servo/");
+    Vd = c(a, "Edge/");
+    Wd = c(a, "EdgA/") || c(a, "EdgiOS/") || c(a, "Edg/");
+    Xd = c(q, "Coast/");
+    Yd = c(q, "OPT/");
+    Zd = c(a, "UCBrowser/");
+    $d = c(q, "Silk/");
+    ae = c(a, "Vivaldi/");
+    be = c(a, "QQBrowser/");
+    ce = c(a, "YaBrowser/");
+    de = c(a, "coc_coc_browser/");
+    ee = c(a, "Camino/");
+    fe = c(a, "AOLBUILD/") || c(a, "AOL/") || c(a, "AOL ");
+    ge = c(a, "IceDragon/");
+    he = c(a, "Iceweasel/");
+    ie = c(a, "TenFourFox/");
+    je = c(a, "Waterfox/");
+    ke = c(a, "GNUzilla/");
+    le = c(a, "SeaMonkey/");
+    me = c(a, "PaleMoon/");
+    ne = c(a, "Basilisk/");
+    oe = c(a, "Maxthon/") || c(a, "Maxthon ") || c(a, "MXiOS/");
+    pe = c(a, "Konqueror/");
+    qe = c(a, "Midori/");
+    re = c(a, "OmniWeb/");
+    se = c(a, "Roccat/");
+    te = c(a, "Epiphany/");
+    ue = c(a, "WebPositive/");
+    ve = c(a, "Comodo Dragon/");
+    we = c(a, "Brave/");
+    xe = c(a, "Rockmelt/");
+    ye = c(a, "Dooble/");
+    ze = c(a, "Flock/");
+    Ae = c(a, "Galeon/");
+    Be = c(a, "Iceape/");
+    Ce = c(a, "K-Meleon/");
+    De = c(q, "NX/") || c(q, "NF/");
+    Ee = c(a, "Netscape6/") || c(a, "Netscape/") || c(a, "Navigator/");
+    Fe = c(a, "FBAV/") || c(a, "FBAN/");
+    Ge = c(q, "Line/");
+    He = c(a, "DuckDuckGo/");
+    $e ? (f("mylo", 2), p("mylo", 2, "PDA"), l("NetFront", 3.4), Mc = !0) : Mc = void 0;
+    (va = Mc) || ("Nitro" === m ? (f("NintendoDS"), p("NintendoDS", void 0, "GAME"), l("PrestoMobile", 8.5), va = !0) : va = void 0);
+    (wa = va) || ("Nintendo DSi" === m ? (f("NintendoDSi", c(a, m + "; Opera/")), p("NintendoDSi", void 0, "GAME"), l("PrestoMobile", 9.5), wa = !0) : wa = void 0);
+    (xa = wa) || ("PSP" === m ? (f("PlayStationPortable", c(a, "(PlayStation Portable); ")), p("PlayStationPortable", void 0, "GAME"), l("NetFront", 3.2), xa = !0) : xa = void 0);
+    (za = xa) || ("WinCE" === m ? (f("WindowsCE", 5 > D ? 3 : 4.1, "PDA"), za = !0) : za = void 0);
+    (Aa = za) || (b(a, "Windows Mobile;") || uc ? (f("WindowsMobile", 6.1, "PDA"), Aa = !0) : Aa = void 0);
+    (Ba = Aa) || (b(a, "BlackBerry") || b(a, "BB10") ? (f("BlackBerry", J, "PHONE"), Ba = !0) : Ba = void 0);
+    (Ca = Ba) || ("Nintendo 3DS" === m ? (f("Nintendo3DS", Y), p("Nintendo3DS", void 0, "GAME"), l("WebKit", A || 535), d("NetFrontNX", Y), Ca = !0) : Ca = void 0);
+    (Da = Ca) || ("New Nintendo 3DS" === m || b(a, "iPhone OS 6_0") && 320 === Ic && 240 === Jc ? (f("NewNintendo3DS", Y), p("NewNintendo3DS", void 0, "GAME"), Da = !0) : Da = void 0);
+    (Ea = Da) || (N && N.wiiremote ? (f("Wii", c(q, m + "; U; ; ")), p("Wii", void 0, "GAME"), Ea = !0) : Ea = void 0);
+    if (!(Fa = Ea)) {
+      if (e.wiiu) {
+        Ie = !!e.webkitCancelAnimationFrame;
+        Y ? f("WiiU", Y) : (f("WiiU", Ie ? 4 : 2.1), C = b(q, "Macintosh;") || b(q, "Windows NT") && !b(q, "Touch"));
+        p("WiiU", void 0, "GAME");
+        l("WebKit", c(q, "AppleWebKit/") || (Ie ? 536 : 534));
         d("NetFrontNX", 3);
-        Ba = !0;
+        Fa = !0;
       } else {
-        Ba = void 0;
+        Fa = void 0;
       }
     }
-    (Ca = Ba) || (Sc || Tc || Pc || Rc ? (Sc ? (e("WindowsPhone", 10, "PHONE"), A = !0) : Tc ? (e("WindowsPhone", 11 === B ? 8.1 : 10 === B ? 8 : 9 === B ? 7.5 : 7, "PHONE"), A = !0) : e("WindowsPhone", Pc || Rc, "PHONE"), Ca = !0) : Ca = void 0);
-    (Da = Ca) || (b(a, "Maemo") ? (e("Maemo"), Da = !0) : Da = void 0);
-    (Ea = Da) || (b(a, "MeeGo") ? (e("MeeGo"), Ea = !0) : Ea = void 0);
-    (Fa = Ea) || (g.palmGetResource ? (e("WebOS", c(a, "webOS/") || c(a, "WEBOS") || c(a, "hpwOS/"), b(a, "webOS.TV") || b(a, "/SmartTV") ? "TV" : "PHONE"), Fa = !0) : Fa = void 0);
-    (Ga = Fa) || (Bd ? (e("Tizen", Bd, "PHONE"), h("SamsungInternet", V), d("SamsungInternet", V), Ga = !0) : Ga = void 0);
-    (Ha = Ga) || ("PlayStation Vita" === n ? (e("PlayStationVita", c(r, n + " ")), m("PlayStationVita", void 0, "GAME"), Ha = !0) : Ha = void 0);
-    (Ia = Ha || Ie()) || (!n && b(r, "Nintendo Switch;") ? (e("NintendoSwitch", X), m("NintendoSwitch", void 0, "GAME"), Ia = !0) : Ia = void 0);
-    (Ja = Ia || Me()) || (b(a, "SunOS") || b(a, "Sun Solaris") ? (e("SunOS"), N = "PC", Ja = !0) : Ja = void 0);
-    (ja = Ja) || (cf ? (e("Xbox360"), m("Xbox360", void 0, "GAME"), ja = !0) : Cd ? (e("XboxOne"), m("XboxOne", void 0, "GAME"), ja = !0) : ja = void 0);
-    (Ka = ja) || ("WinCE" === n || b(a, "Windows Mobile;") || qc || Sc || Tc || Pc || Rc || 0 !== n.indexOf("Win") ? Ka = void 0 : (e("Windows", c(a, "Windows NT ") || c(a, "Windows "), "PC"), Ka = !0));
-    (ua = Ka) || (aa() ? (e("Mac", c(a.split("_").join("."), "Mac OS X "), "PC"), ua = !0) : ua = void 0);
-    (La = ua) || (void 0 !== g.onmoztimechange ? (e("FirefoxOS", 0 > p(0, 18.1) ? "1.0.1" : 0 > p(0, 19) ? 1.1 : 0 > p(0, 27) ? 1.2 : 0 > p(0, 29) ? 1.3 : 0 > p(0, 31) ? 1.4 : 0 > p(0, 33) ? 2 : 0 > p(0, 35) ? 2.1 : 0 > p(0, 38) ? 2.2 : 0 > p(0, 45) ? 2.5 : 2.6, b(a, "Mobile") ? "PHONE" : b(a, "Tablet") ? "TABLET" : b(a, "TV") ? "TV" : "PHONE"), La = !0) : La = void 0);
-    (Ma = La) || (Gd || Dd ? (e("FireOS", Gd || Dd), Ma = !0) : Ma = void 0);
-    (Na = Ma) || (Hd ? (e("ChromeOS", Hd, "PC"), Na = !0) : Na = void 0);
-    if (!(Oa = Na)) {
-      if (Xc || Yc || Zc || $c || Qc || ca) {
-        if (ca) {
-          e("iOS", ca);
-        } else if (E = "iOS", Qc) {
-          w = Qc;
-        } else if ((w = c(r.split("_").join("."), "OS ")) || (A = !0), !w || gf) {
-          w = kf;
+    (Ga = Fa) || (Wc || Xc || Tc || Vc ? (Wc ? (f("WindowsPhone", 10, "PHONE"), C = !0) : Xc ? (f("WindowsPhone", 11 === D ? 8.1 : 10 === D ? 8 : 9 === D ? 7.5 : 7, "PHONE"), C = !0) : f("WindowsPhone", Tc || Vc, "PHONE"), Ga = !0) : Ga = void 0);
+    (Ha = Ga) || (b(a, "Maemo") ? (f("Maemo"), Ha = !0) : Ha = void 0);
+    (Ia = Ha) || (b(a, "MeeGo") ? (f("MeeGo"), Ia = !0) : Ia = void 0);
+    (Ja = Ia) || (e.palmGetResource ? (f("WebOS", c(a, "webOS/") || c(a, "WEBOS") || c(a, "hpwOS/"), b(a, "webOS.TV") || b(a, "/SmartTV") ? "TV" : "PHONE"), Ja = !0) : Ja = void 0);
+    (Ka = Ja) || (Fd ? (f("Tizen", Fd, "PHONE"), l("SamsungInternet", W), d("SamsungInternet", W), Ka = !0) : Ka = void 0);
+    (La = Ka) || ("PlayStation Vita" === m ? (f("PlayStationVita", c(q, m + " ")), p("PlayStationVita", void 0, "GAME"), La = !0) : La = void 0);
+    (Ma = La || Me()) || (!m && b(q, "Nintendo Switch;") ? (f("NintendoSwitch", Y), p("NintendoSwitch", void 0, "GAME"), Ma = !0) : Ma = void 0);
+    (Na = Ma || Qe()) || (b(a, "SunOS") || b(a, "Sun Solaris") ? (f("SunOS"), M = "PC", Na = !0) : Na = void 0);
+    (la = Na) || (gf ? (f("Xbox360"), p("Xbox360", void 0, "GAME"), la = !0) : Gd ? (f("XboxOne"), p("XboxOne", void 0, "GAME"), la = !0) : la = void 0);
+    (Oa = la) || ("WinCE" === m || b(a, "Windows Mobile;") || uc || Wc || Xc || Tc || Vc || 0 !== m.indexOf("Win") ? Oa = void 0 : (f("Windows", c(a, "Windows NT ") || c(a, "Windows "), "PC"), Oa = !0));
+    (ya = Oa) || (nd() ? (f("Mac", c(a.split("_").join("."), "Mac OS X "), "PC"), ya = !0) : ya = void 0);
+    (Pa = ya) || (void 0 !== e.onmoztimechange ? (f("FirefoxOS", 0 > r(0, 18.1) ? "1.0.1" : 0 > r(0, 19) ? 1.1 : 0 > r(0, 27) ? 1.2 : 0 > r(0, 29) ? 1.3 : 0 > r(0, 31) ? 1.4 : 0 > r(0, 33) ? 2 : 0 > r(0, 35) ? 2.1 : 0 > r(0, 38) ? 2.2 : 0 > r(0, 45) ? 2.5 : 2.6, b(a, "Mobile") ? "PHONE" : b(a, "Tablet") ? "TABLET" : b(a, "TV") ? "TV" : "PHONE"), Pa = !0) : Pa = void 0);
+    (Qa = Pa) || (Kd || Hd ? (f("FireOS", Kd || Hd), Qa = !0) : Qa = void 0);
+    (Ra = Qa) || (Ld ? (f("ChromeOS", Ld, "PC"), Ra = !0) : Ra = void 0);
+    if (!(Sa = Ra)) {
+      if (ad || bd || cd || dd || Uc || ea) {
+        if (ea) {
+          f("iOS", ea);
+        } else if (F = "iOS", Uc) {
+          z = Uc;
+        } else if ((z = c(q.split("_").join("."), "OS ")) || (C = !0), !z || lf) {
+          z = of;
         }
-        Oa = !0;
+        Sa = !0;
       } else {
-        Oa = void 0;
+        Sa = void 0;
       }
     }
-    Oa || Qe() || !zd || (e("Linux"), N = "PC");
-    if (!Z) {
-      if (Xc || Yc || Zc || $c) {
-        if (ca) {
-          tc = pa.model;
-          switch(tc.substr(0, 4)) {
+    Sa || Ue() || !Dd || (f("Linux"), M = "PC");
+    if (!ca) {
+      if (ad || bd || cd || dd) {
+        if (ea) {
+          xc = ta.model;
+          switch(xc.substr(0, 4)) {
             case "iPho":
-              m("iPhone", c(tc, "iPhone"));
+              p("iPhone", c(xc, "iPhone"));
               break;
             case "iPad":
-              m("iPad", c(tc, "iPad"));
+              p("iPad", c(xc, "iPad"));
               break;
             case "iPod":
-              m("iPod", c(tc, "iPod"));
+              p("iPod", c(xc, "iPod"));
           }
         } else {
-          dd = 1 === g.devicePixelRatio;
-          Fe = Ec === 1.5 * Fc || 1.5 * Ec === Fc;
-          Xc ? m("iPhone", Fe ? dd ? "1~3" : "4~5" : "6~") : Yc || $c ? m("iPad", dd ? "~2" : "3~") : Zc && m("iPod", Fe ? dd ? "~3" : 4 : "5~");
+          hd = 1 === e.devicePixelRatio;
+          Je = Ic === 1.5 * Jc || 1.5 * Ic === Jc;
+          ad ? p("iPhone", Je ? hd ? "1~3" : "4~5" : "6~") : bd || dd ? p("iPad", hd ? "~2" : "3~") : cd && p("iPod", Je ? hd ? "~3" : 4 : "5~");
         }
-        Ge = !0;
+        Ke = !0;
       } else {
-        Ge = void 0;
+        Ke = void 0;
       }
-      (Qa = Ge) || (qd() ? (m("BOOX", void 0, "EINK_READER"), Qa = !0) : Qa = void 0);
-      (Pa = Qa || void 0) || (ia || Vc || ff ? (ef ? (m("FireTV", void 0, "TV"), A = !0) : m("FireTV", ia && ia[1], "TV"), Pa = !0) : Pa = void 0);
-      (Ra = Pa || void 0) || (oa ? (m("KindleFire", oa[1], "TABLET"), Ra = !0) : Ra = void 0);
-      (Sa = Ra) || (b(a, "Kobo") ? (m("Kobo", void 0, "EINK_READER"), Sa = !0) : Sa = void 0);
-      (Ta = Sa || void 0) || (rd() ? (m("Nook", void 0, "EINK_READER"), Ta = !0) : Ta = void 0);
-      (Ua = Ta) || (b(a, " PocketBook") ? (m("PocketBook", void 0, "EINK_READER"), Ua = !0) : Ua = void 0);
-      (Va = Ua) || (0 < Bc ? (m("SonyReader", Bc, "EINK_READER"), Va = !0) : Va = void 0);
-      Va || !Ac() && Md && m("Kindle", 5, "EINK_READER");
+      (Ua = Ke) || (ud() ? (p("BOOX", void 0, "EINK_READER"), Ua = !0) : Ua = void 0);
+      (Ta = Ua || void 0) || (ka || Zc || kf ? (jf ? (p("FireTV", void 0, "TV"), C = !0) : p("FireTV", ka && ka[1], "TV"), Ta = !0) : Ta = void 0);
+      (Va = Ta || void 0) || (sa ? (p("KindleFire", sa[1], "TABLET"), Va = !0) : Va = void 0);
+      (Wa = Va) || (b(a, "Kobo") ? (p("Kobo", void 0, "EINK_READER"), Wa = !0) : Wa = void 0);
+      (Xa = Wa || void 0) || (vd() ? (p("Nook", void 0, "EINK_READER"), Xa = !0) : Xa = void 0);
+      (Ya = Xa) || (b(a, " PocketBook") ? (p("PocketBook", void 0, "EINK_READER"), Ya = !0) : Ya = void 0);
+      (Za = Ya) || (0 < Fc ? (p("SonyReader", Fc, "EINK_READER"), Za = !0) : Za = void 0);
+      Za || !Ec() && Qd && p("Kindle", 5, "EINK_READER");
     }
-    l || (!S && O ? (h("PC" === N || "Wii" === E ? "Presto" : "PrestoMobile", Xe || Ye), Jc = !0) : Jc = void 0, (Wa = Jc) || (S || Nc ? (h("OperaMini", Nc), d("Opera", u), Wa = !0) : Wa = void 0), (Xa = Wa) || (Q() ? ("PC" !== N ? h("TridentMobile", B) : aa() ? (5 <= B ? h("Tasman", B) : h("Trident", B), d("IEForMac", B)) : (h("Trident", B), 10 <= B && 6.2 <= w && 7 > w && 0 === screenY && innerHeight + 1 !== outerHeight && d("ModernIE", B), 7 <= Oc && Oc !== B && d("InternetExplorer", Oc)), Xa = 
-    !0) : Xa = void 0), (Za = Xa) || (!Q() && ea.msContentZoomFactor ? (h("WindowsPhone" === E ? "EdgeMobile" : "EdgeHTML", c(r, "Edge/")), Za = !0) : Za = void 0), ($a = Za) || (sc ? (h("Goanna", sc), $a = !0) : $a = void 0), (ab = $a) || (fa && !sc ? (h(D() ? "Fennec" : "Gecko", df || Uc), ab = !0) : ab = void 0), (bb = ab) || (Nd ? (h("iCab", Nd), d("iCab", u), bb = !0) : bb = void 0), (cb = bb) || (Od ? (h("KHTML", Od), cb = !0) : cb = void 0), (db = cb) || (Pd ? (h("NetFront", Pd), d("NetFront", 
-    u), db = !0) : db = void 0), (Ya = db) || (T() ? (h("UCWEB", Ze), d("UC", u), Ya = !0) : Ya = void 0), (fb = Ya) || (ad || bd || nf ? (h("QtWebEngine", K), fb = !0) : fb = void 0), (gb = fb) || (cd ? (h("QtWebKit", x), gb = !0) : gb = void 0), (hb = gb) || (Qd ? (h("Servo", Qd), d("Servo", u), hb = !0) : hb = void 0), (eb = hb) || (V || D() && L && Ad ? (h("SamsungInternet", V || Ad), eb = !0) : eb = void 0), (jb = eb) || (od() ? (h("SafariMobile", w), jb = !0) : jb = void 0), (kb = jb) || ("iOS" !== 
-    E || od() || S || Nc || T() ? kb = void 0 : (h("iOSWebView", w), kb = !0)), (ib = kb) || ((Kc = "Android" === E) && Dc || da || Kc && na || Kc && (J || L) || K || W ? ((Lc = "Android" === E) && Dc ? (h("AndroidWebView", R), L && (A = !0)) : da ? (h(D() ? "ChromiumMobile" : "Chromium", K || Wc), L && (A = !0)) : Lc && na ? (h("AndroidWebView", R), L && (A = !0)) : Lc && (J || L) ? (h("AndroidWebView", R), L && (A = !0)) : (K || W) && h(D() ? "ChromiumMobile" : "Chromium", K), ib = !0) : ib = void 0), 
-    ib || x && h("WebKit", x));
-    la || ("EdgeHTML" === l || "EdgeMobile" === l || Rd || Sd ? (d("Edge", "EdgeHTML" === l || "EdgeMobile" === l ? u : Rd || Sd), Mc = !0) : Mc = void 0, (ob = Mc) || (Td ? (d("OperaCoast", Td), ob = !0) : ob = void 0), (pb = ob) || (Ud || "iOS" === E && !ma(g, "isSecureContext") ? (d("OperaTurbo", Ud), A || (A = !b(r, "Mobile/")), pb = !0) : pb = void 0), (nb = pb) || (Jd ? (d("Yahoo", lf), nb = !0) : nb = void 0), (qb = nb) || (Vd ? (d("UC", Vd), qb = !0) : qb = void 0), (rb = qb) || (Wd ? (d("SilK", 
-    Wd), rb = !0) : rb = void 0), (sb = rb) || (Xd ? (d("Vivaldi", Xd), sb = !0) : sb = void 0), (tb = sb) || (Yd ? (d("QQ", Yd), tb = !0) : tb = void 0), (ub = tb) || (Zd ? (d("Yandex", Zd), ub = !0) : ub = void 0), (vb = ub) || ($d ? (d("coccoc", $d), vb = !0) : vb = void 0), (wb = vb) || (ae ? (d("Camino", ae), wb = !0) : wb = void 0), (xb = wb) || (b(a, "SE 2.X MetaSr 1.0") ? (d("Sogou"), xb = !0) : xb = void 0), (mb = xb) || (ld() ? (d("FirefoxFocus", md || ba), mb = !0) : mb = void 0), (Ab = 
-    mb) || (be ? (d("AOL", be), Ab = !0) : Ab = void 0), (zb = Ab) || (bd ? (d("Otter", bd), zb = !0) : zb = void 0), (Bb = zb) || (cd ? (d("QupZilla", cd), Bb = !0) : Bb = void 0), (Cb = Bb) || (ce ? (d("IceDragon", ce), Cb = !0) : Cb = void 0), (Db = Cb) || (de ? (d("Iceweasel", de), Db = !0) : Db = void 0), (Eb = Db) || (ee ? (d("TenFourFox", ee), Eb = !0) : Eb = void 0), (Fb = Eb) || (fe ? (d("Waterfox", fe), Fb = !0) : Fb = void 0), (Gb = Fb) || (ge ? (d("GNUzilla", ge), Gb = !0) : Gb = void 0), 
-    (Hb = Gb) || (he ? (d("SeaMonkey", he), Hb = !0) : Hb = void 0), (Ib = Hb) || (ie ? (d("PaleMoon", ie), Ib = !0) : Ib = void 0), (Jb = Ib) || (je ? (d("Basilisk", je), Jb = !0) : Jb = void 0), (Kb = Jb) || (ke || b(a, "Maxthon") ? (d("Maxthon", ke), Kb = !0) : Kb = void 0), (Lb = Kb) || (b(a, "Avant Browser;") ? (d("Avant"), Lb = !0) : Lb = void 0), (Mb = Lb) || (le ? (d("Konqueror", le), Mb = !0) : Mb = void 0), (Nb = Mb) || (me ? (d("Midori", me), Nb = !0) : Nb = void 0), (Ob = Nb) || (ne ? 
-    (d("OmniWeb", ne), Ob = !0) : Ob = void 0), (Pb = Ob) || (oe ? (d("Roccat", oe), Pb = !0) : Pb = void 0), (Qb = Pb) || (pe ? (d("Epiphany", pe), Qb = !0) : Qb = void 0), (Rb = Qb) || (qe ? (d("WebPositive", qe), Rb = !0) : Rb = void 0), (yb = Rb) || (Wc || b(a, " Iron ") ? (d("Iron", Wc || K), yb = !0) : yb = void 0), (Tb = yb) || (re ? (d("ComodoDragon", re), Tb = !0) : Tb = void 0), (Ub = Tb) || (se || b(a, " Brave ") || "iOSWebView" === l && ma(g, "sameOrigin") ? (d("Brave", se || ("Chromium" === 
-    l || "ChromiumMobile" === l ? K : void 0)), Ub = !0) : Ub = void 0), (Vb = Ub) || (te ? (d("Rockmelt", te), Vb = !0) : Vb = void 0), (Wb = Vb) || ("iOSWebView" === l && ma(g, "enableWebGL") ? (d("Dolphin"), Wb = !0) : Wb = void 0), (Sb = Wb) || (Hc || Id ? (d("Puffin", Id), Sb = !0) : Sb = void 0), (Yb = Sb) || (ue ? (d("Dooble", ue), Yb = !0) : Yb = void 0), (Zb = Yb) || (ve ? (d("Flock", ve), Zb = !0) : Zb = void 0), ($b = Zb) || (we ? (d("Galeon", we), $b = !0) : $b = void 0), (Xb = $b) || 
-    (ad || "QtWebEngine" === l ? (d("Falkon", ad), Xb = !0) : Xb = void 0), (ac = Xb) || (xe ? (d("Iceape", xe), ac = !0) : ac = void 0), (bc = ac) || (ye ? (d("KMeleon", ye), bc = !0) : bc = void 0), (cc = bc) || (ze ? (d("NetFrontNX", ze), cc = !0) : cc = void 0), (dc = cc) || (Ae ? (d("NetscapeNavigator", Ae), dc = !0) : dc = void 0), (lb = dc) || (qc ? (d("Iris", qc), lb = !0) : lb = void 0), (gc = lb) || (Be ? (d("Facebook", Be), gc = !0) : gc = void 0), (hc = gc) || (Ce ? (d("LINE", Ce), hc = 
-    !0) : hc = void 0), (ic = hc) || (De ? (d("DuckDuckGo", De), ic = !0) : ic = void 0), (fc = ic) || (Kd || Ld ? (d("Lunascape", Kd), fc = !0) : fc = void 0), (jc = fc) || ("Gecko" === l && 0 > p(u, 1.8) && !Uc ? (d("Mozilla", u), jc = !0) : jc = void 0), (ec = jc) || ("Gecko" === l || "Fennec" === l || Vc || !ld() && ba ? (d("Firefox", "Gecko" === l || "Fennec" === l ? u : Uc || ba), ec = !0) : ec = void 0), (mc = ec) || (null === g.onoperadetachedviewchange ? (d("OperaGX", W), mc = !0) : mc = 
-    void 0), (lc = mc) || (Fd || W || "Presto" === l || "PrestoMobile" === l ? (d("Opera", "Presto" === l || "PrestoMobile" === l ? u : Fd || W), lc = !0) : lc = void 0), (nc = lc) || ("Trident" === l || "TridentMobile" === l || "Tasman" === l ? (d("InternetExplorer", u), nc = !0) : nc = void 0), (oc = nc) || ("SamsungInternet" === l ? (d("SamsungInternet", u), oc = !0) : oc = void 0), (kc = oc) || (Ed || K || nd() ? (d("Chrome", nd() ? u : K || Ed), kc = !0) : kc = void 0), (pc = kc) || ("AndroidWebView" === 
-    l && 0 > p(u, 5) ? (d("AndroidBrowser", u), pc = !0) : pc = void 0), pc || (("WebKit" === l || "SafariMobile" === l || "iOSWebView" === l) && b(a, "Safari/") || J) && d("Safari", J || (73 > x ? .8 : 85 > x ? .9 : 100 > x ? 1 : 125 > x ? 1.1 : 312 > x ? 1.2 : 412 > x ? 1.3 : 419.3 >= x ? 2 : 525.13 >= x ? 3 : 525.25 >= x ? 3.1 : 3.2)));
-    E && (k.PLATFORM = E, w && (k.PLATFORM_VERSION = F(w)));
-    Z && (k.DEVICE = Z, xc && (k.DEVICE_GENERATION = F(xc)));
-    N && (k.DEVICE_TYPE = N);
-    l && (k.ENGINE = l, u && (k.ENGINE_VERSION = F(u)));
-    la && (k.BRAND = la, yc && (k.BRAND_VERSION = F(yc)));
-    k.PCSITE_REQUESTED = A;
-  })(v);
-  ed = Y("errmsg");
-  ed.value = "";
-  g.onerror = function(k, p, z) {
-    var b;
-    if (b = "Gecko" === v.ENGINE) {
-      b = -1 === v.conpare(v.ENGINE_VERSION, 1);
+    k || (!T && N ? (l("PC" === M || "Wii" === F ? "Presto" : "PrestoMobile", af || bf), Nc = !0) : Nc = void 0, ($a = Nc) || (T || Rc ? (l("OperaMini", Rc), d("Opera", v), $a = !0) : $a = void 0), (ab = $a) || (pa() ? ("PC" !== M ? l("TridentMobile", D) : nd() ? (5 <= D ? l("Tasman", D) : l("Trident", D), d("IEForMac", D)) : (l("Trident", D), 10 <= D && 6.2 <= z && 7 > z && 0 === screenY && innerHeight + 1 !== outerHeight && d("ModernIE", D), 7 <= Sc && Sc !== D && d("InternetExplorer", Sc)), ab = 
+    !0) : ab = void 0), (cb = ab) || (!pa() && ha.msContentZoomFactor ? (l("WindowsPhone" === F ? "EdgeMobile" : "EdgeHTML", c(q, "Edge/")), cb = !0) : cb = void 0), (db = cb) || (wc ? (l("Goanna", wc), db = !0) : db = void 0), (eb = db) || (ia && !wc ? (l(P() ? "Fennec" : "Gecko", hf || Yc), eb = !0) : eb = void 0), (fb = eb) || (Rd ? (l("iCab", Rd), d("iCab", v), fb = !0) : fb = void 0), (gb = fb) || (Sd ? (l("KHTML", Sd), gb = !0) : gb = void 0), (hb = gb) || (Td ? (l("NetFront", Td), d("NetFront", 
+    v), hb = !0) : hb = void 0), (bb = hb) || (U() ? (l("UCWEB", cf), d("UC", v), bb = !0) : bb = void 0), (jb = bb) || (ed || fd || rf ? (l("QtWebEngine", K), jb = !0) : jb = void 0), (kb = jb) || (gd ? (l("QtWebKit", A), kb = !0) : kb = void 0), (lb = kb) || (Ud ? (l("Servo", Ud), d("Servo", v), lb = !0) : lb = void 0), (ib = lb) || (W || P() && L && Ed ? (l("SamsungInternet", W || Ed), ib = !0) : ib = void 0), (nb = ib) || (sd() ? (l("SafariMobile", z), nb = !0) : nb = void 0), (ob = nb) || ("iOS" !== 
+    F || sd() || T || Rc || U() ? ob = void 0 : (l("iOSWebView", z), ob = !0)), (mb = ob) || ((Oc = "Android" === F) && Hc || fa || Oc && ra || Oc && (J || L) || K || X ? ((Pc = "Android" === F) && Hc ? (l("AndroidWebView", Q), L && (C = !0)) : fa ? (l(P() ? "ChromiumMobile" : "Chromium", K || $c), L && (C = !0)) : Pc && ra ? (l("AndroidWebView", Q), L && (C = !0)) : Pc && (J || L) ? (l("AndroidWebView", Q), L && (C = !0)) : (K || X) && l(P() ? "ChromiumMobile" : "Chromium", K), mb = !0) : mb = void 0), 
+    mb || A && l("WebKit", A));
+    oa || ("EdgeHTML" === k || "EdgeMobile" === k || Vd || Wd ? (d("Edge", "EdgeHTML" === k || "EdgeMobile" === k ? v : Vd || Wd), Qc = !0) : Qc = void 0, (sb = Qc) || (Xd ? (d("OperaCoast", Xd), sb = !0) : sb = void 0), (tb = sb) || (Yd || "iOS" === F && !qa(e, "isSecureContext") ? (d("OperaTurbo", Yd), C || (C = !b(q, "Mobile/")), tb = !0) : tb = void 0), (rb = tb) || (Nd ? (d("Yahoo", pf), rb = !0) : rb = void 0), (ub = rb) || (Zd ? (d("UC", Zd), ub = !0) : ub = void 0), (vb = ub) || ($d ? (d("SilK", 
+    $d), vb = !0) : vb = void 0), (wb = vb) || (ae ? (d("Vivaldi", ae), wb = !0) : wb = void 0), (xb = wb) || (be ? (d("QQ", be), xb = !0) : xb = void 0), (yb = xb) || (ce ? (d("Yandex", ce), yb = !0) : yb = void 0), (zb = yb) || (de ? (d("coccoc", de), zb = !0) : zb = void 0), (Ab = zb) || (ee ? (d("Camino", ee), Ab = !0) : Ab = void 0), (Bb = Ab) || (b(a, "SE 2.X MetaSr 1.0") ? (d("Sogou"), Bb = !0) : Bb = void 0), (qb = Bb) || (pd() ? (d("FirefoxFocus", qd || da), qb = !0) : qb = void 0), (Eb = 
+    qb) || (fe ? (d("AOL", fe), Eb = !0) : Eb = void 0), (Db = Eb) || (fd ? (d("Otter", fd), Db = !0) : Db = void 0), (Fb = Db) || (gd ? (d("QupZilla", gd), Fb = !0) : Fb = void 0), (Gb = Fb) || (ge ? (d("IceDragon", ge), Gb = !0) : Gb = void 0), (Hb = Gb) || (he ? (d("Iceweasel", he), Hb = !0) : Hb = void 0), (Ib = Hb) || (ie ? (d("TenFourFox", ie), Ib = !0) : Ib = void 0), (Jb = Ib) || (je ? (d("Waterfox", je), Jb = !0) : Jb = void 0), (Kb = Jb) || (ke ? (d("GNUzilla", ke), Kb = !0) : Kb = void 0), 
+    (Lb = Kb) || (le ? (d("SeaMonkey", le), Lb = !0) : Lb = void 0), (Mb = Lb) || (me ? (d("PaleMoon", me), Mb = !0) : Mb = void 0), (Nb = Mb) || (ne ? (d("Basilisk", ne), Nb = !0) : Nb = void 0), (Ob = Nb) || (oe || b(a, "Maxthon") ? (d("Maxthon", oe), Ob = !0) : Ob = void 0), (Pb = Ob) || (b(a, "Avant Browser;") ? (d("Avant"), Pb = !0) : Pb = void 0), (Qb = Pb) || (pe ? (d("Konqueror", pe), Qb = !0) : Qb = void 0), (Rb = Qb) || (qe ? (d("Midori", qe), Rb = !0) : Rb = void 0), (Sb = Rb) || (re ? 
+    (d("OmniWeb", re), Sb = !0) : Sb = void 0), (Tb = Sb) || (se ? (d("Roccat", se), Tb = !0) : Tb = void 0), (Ub = Tb) || (te ? (d("Epiphany", te), Ub = !0) : Ub = void 0), (Vb = Ub) || (ue ? (d("WebPositive", ue), Vb = !0) : Vb = void 0), (Cb = Vb) || ($c || b(a, " Iron ") ? (d("Iron", $c || K), Cb = !0) : Cb = void 0), (Xb = Cb) || (ve ? (d("ComodoDragon", ve), Xb = !0) : Xb = void 0), (Yb = Xb) || (we || b(a, " Brave ") || "iOSWebView" === k && qa(e, "sameOrigin") ? (d("Brave", we || ("Chromium" === 
+    k || "ChromiumMobile" === k ? K : void 0)), Yb = !0) : Yb = void 0), (Zb = Yb) || (xe ? (d("Rockmelt", xe), Zb = !0) : Zb = void 0), ($b = Zb) || ("iOSWebView" === k && qa(e, "enableWebGL") ? (d("Dolphin"), $b = !0) : $b = void 0), (Wb = $b) || (Lc || Md ? (d("Puffin", Md), Wb = !0) : Wb = void 0), (bc = Wb) || (ye ? (d("Dooble", ye), bc = !0) : bc = void 0), (cc = bc) || (ze ? (d("Flock", ze), cc = !0) : cc = void 0), (dc = cc) || (Ae ? (d("Galeon", Ae), dc = !0) : dc = void 0), (ac = dc) || 
+    (ed || "QtWebEngine" === k ? (d("Falkon", ed), ac = !0) : ac = void 0), (ec = ac) || (Be ? (d("Iceape", Be), ec = !0) : ec = void 0), (fc = ec) || (Ce ? (d("KMeleon", Ce), fc = !0) : fc = void 0), (gc = fc) || (De ? (d("NetFrontNX", De), gc = !0) : gc = void 0), (hc = gc) || (Ee ? (d("NetscapeNavigator", Ee), hc = !0) : hc = void 0), (pb = hc) || (uc ? (d("Iris", uc), pb = !0) : pb = void 0), (kc = pb) || (Fe ? (d("Facebook", Fe), kc = !0) : kc = void 0), (lc = kc) || (Ge ? (d("LINE", Ge), lc = 
+    !0) : lc = void 0), (mc = lc) || (He ? (d("DuckDuckGo", He), mc = !0) : mc = void 0), (jc = mc) || (Od || Pd ? (d("Lunascape", Od), jc = !0) : jc = void 0), (nc = jc) || ("Gecko" === k && 0 > r(v, 1.8) && !Yc ? (d("Mozilla", v), nc = !0) : nc = void 0), (ic = nc) || ("Gecko" === k || "Fennec" === k || Zc || !pd() && da ? (d("Firefox", "Gecko" === k || "Fennec" === k ? v : Yc || da), ic = !0) : ic = void 0), (qc = ic) || (null === e.onoperadetachedviewchange ? (d("OperaGX", X), qc = !0) : qc = 
+    void 0), (pc = qc) || (Jd || X || "Presto" === k || "PrestoMobile" === k ? (d("Opera", "Presto" === k || "PrestoMobile" === k ? v : Jd || X), pc = !0) : pc = void 0), (rc = pc) || ("Trident" === k || "TridentMobile" === k || "Tasman" === k ? (d("InternetExplorer", v), rc = !0) : rc = void 0), (sc = rc) || ("SamsungInternet" === k ? (d("SamsungInternet", v), sc = !0) : sc = void 0), (oc = sc) || (Id || K || rd() ? (d("Chrome", rd() ? v : K || Id), oc = !0) : oc = void 0), (tc = oc) || ("AndroidWebView" === 
+    k && 0 > r(v, 5) ? (d("AndroidBrowser", v), tc = !0) : tc = void 0), tc || (("WebKit" === k || "SafariMobile" === k || "iOSWebView" === k) && b(a, "Safari/") || J) && d("Safari", J || (73 > A ? .8 : 85 > A ? .9 : 100 > A ? 1 : 125 > A ? 1.1 : 312 > A ? 1.2 : 412 > A ? 1.3 : 419.3 >= A ? 2 : 525.13 >= A ? 3 : 525.25 >= A ? 3.1 : 3.2)));
+    F && (h.PLATFORM = F, z && (h.PLATFORM_VERSION = O(z)));
+    ca && (h.DEVICE = ca, Bc && (h.DEVICE_GENERATION = O(Bc)));
+    M && (h.DEVICE_TYPE = M);
+    k && (h.ENGINE = k, v && (h.ENGINE_VERSION = O(v)));
+    oa && (h.BRAND = oa, Cc && (h.BRAND_VERSION = O(Cc)));
+    h.PCSITE_REQUESTED = C;
+  })(y, this, R, ld, Z, S, yc);
+  id = aa("errmsg");
+  id.value = "";
+  kd.onerror = function(h, e, w) {
+    var t;
+    if (t = "Gecko" === y.ENGINE) {
+      t = -1 === y.conpare(y.ENGINE_VERSION, 1);
     }
-    b || (k = " " + k + " #" + z + ", " + p, ed ? ed.value = k : alert(k));
+    t || (h = " " + h + " #" + w + ", " + e, id ? id.value = h : alert(h));
   };
-  of = "AndroidBrowser;Android Browser;AOL;AOL;Avant;Avant;Basilisk;Basilisk;Brave;Brave;Camino;Camino;Chrome;Chrome;coccoc;coccoc;ComodoDragon;Comodo Dragon;Dolphin;Dolphin;Dooble;Dooble;DuckDuckGo;DuckDuckGo;Edge;Edge;Epiphany;Epiphany;Facebook;Facebook;Falkon;Falkon;Firefox;Firefox;FirefoxFocus;Firefox Focus;Flock;Flock;Galeon;Galeon;GNUzilla;GNUzilla;iCab;iCab;Iceape;Iceape;IceDragon;IceDragon;Iceweasel;Iceweasel;InternetExplorer;Internet Explorer;IEForMac;Internet Explorer for Mac;Iris;Iris;Iron;Iron;KMeleon;K-Meleon;Konqueror;Konqueror;LINE;LINE;Lunascape;Lunascape;Maxthon;Maxthon;Midori;Midori;ModernIE;Modern IE;Mozilla;Mozilla;NetFront;NetFront\u00ae;NetFrontNX;NetFront\u00ae Browser NX;NetscapeNavigator;Netscape Navigator;OmniWeb;OmniWeb;Opera;Opera;OperaCoast;Opera Coast;OperaGX;Opera GX;OperaTouch;Opera Touch;OperaTurbo;Opera Turbo;Otter;Otter;PaleMoon;PaleMoon;Puffin;Puffin;QQ;QQ;QupZilla;QupZilla;Roccat;Roccat;Rockmelt;Rockmelt;Safari;Safari;SamsungInternet;Samsung Internet;SeaMonkey;SeaMonkey;Servo;Servo;SilK;Silk;Sleipnir;Sleipnir;Sogou;Sogou;TenFourFox;TenFourFox;UC;UC;;Unknown;Vivaldi;Vivaldi;Waterfox;Waterfox;WebPositive;WebPositive;Yahoo;Yahoo;Yandex;Yandex".split(";");
-  pf = "CAR;CAR;EINK_READER;EINK READER;GAME;GAME;MEDIA_PLAYER;MEDIA PLAYER;PC;PC;PDA;PDA;PHONE;PHONE;TABLET;TABLET;TV;TV;;UNKNOWN".split(";");
-  qf = "BOOX;BOOX;Cybook;Cybook;eClicto;eClicto;Fidibook;Fidibook;FireTV;FireTV;Hisense;Hisense;icarus;icarus;iPad;iPad;iPhone;iPhone;iPod;iPod;Kindle;Kindle;KindleFire;KindleFire;Kobo;Kobo;Likebook;Likebook;Manta;Manta;Movistar;Movistar;NewNintendo3DS;NewNintendo3DS;Nintendo3DS;Nintendo3DS;NintendoDS;NintendoDS;NintendoDSi;NintendoDSi;NintendoSwitch;NintendoSwitch;Nook;Nook;PlayStation;PlayStation;PlayStationPortable;PlayStationPortable;PlayStationVita;PlayStationVita;PocketBook;PocketBook;mylo;SONY mylo;SonyReader;SonyReader;Tolino;Tolino;;Unknown;Wii;Wii;WiiU;WiiU;Xbox360;Xbox360;XboxOne;XboxOne;XboxSeries;XboxSeries".split(";");
-  rf = "AndroidWebView;Android WebView;Chromium;Chromium;ChromiumMobile;Chromium Mobile;EdgeMobile;Edge Mobile;EdgeHTML;EdgeHTML;Escudo;Escudo;Fennec;Fennec;flow;flow;Gecko;Gecko;Goanna;Goanna;iCab;iCab;iOSWebView;iOS WebView;KHTML;KHTML;lexbor;lexbor;Litehtml;Litehtml;Naglfar;Naglfar;NetFront;NetFront;Netscape;Netscape;OperaMini;Opera Mini;Presto;Presto;PrestoMobile;Presto Mobile;QtWebEngine;Qt WebEngine;QtWebKit;Qt WebKit;SafariMobile;Safari Mobile;SamsungInternet;Samsung Internet;Serenity;Serenity;Servo;Servo;Sony;Sony;Tasman;Tasman;Trident;Trident;TridentMobile;Trident Mobile;TridentPocket;Trident Pocket;UCWEB;UCWEB;;Unknown;WebKit;WebKit".split(";");
-  sf = "Android;Android;AndroidTV;Android TV;BlackBerry;BlackBerry;ChromeOS;ChromeOS;FeaturePhone;Feature Phone;Fedora;Fedora;FirefoxOS;FirefoxOS;FireOS;FireOS;FreeBSD;FreeBSD;Gentoo;Gentoo;GoogleTV;Google TV;iOS;iOS;iPadOS;iPadOS;KaiOS;KaiOS;Kindle;Kindle;Linux;Linux;Mac;Mac;Maemo;Maemo;MeeGo;MeeGo;Mint;Mint;NetBSD;NetBSD;NewNintendo3DS;New NINTENDO 3DS\u2122;Nintendo3DS;NINTENDO 3DS\u2122;NintendoDSi;NINTENDO DSi\u2122;NintendoDS;NINTENDO DS\u2122;NintendoSwitch;NINTENDO SWITCH\u2122;OpenBSD;OpenBSD;PlayStation3;PlayStation\u00ae3;PlayStation4;PlayStation\u00ae4;PlayStation5;PlayStation\u00ae5;PlayStationPortable;PlayStation\u00aePortable;PlayStationVita;PlayStation\u00aeVita;Kobo;Rakuten Kobo;mylo;SONY mylo;SonyReader;SONY Reader\u00ae;SunOS;SunOS;SymbianS60;Symbian OS S60;Tizen;Tizen;Ubuntu;Ubuntu;;Unknown;WatchOS;WatchOS;WebOS;WebOS;WiiU;WiiU\u2122;Wii;Wii\u2122;Windows;Windows;WindowsCE;Windows CE;WindowsMobile;Windows Mobile;WindowsPhone;Windows Phone;Windows16;Windows16;Xbox360;Xbox 360\u2122;XboxOne;Xbox One\u2122;XboxSeries;Xbox SeriesX|S".split(";");
-  vc = {};
-  wc = {};
+  sf = "AndroidBrowser;Android Browser;AOL;AOL;Avant;Avant;Basilisk;Basilisk;Brave;Brave;Camino;Camino;Chrome;Chrome;coccoc;coccoc;ComodoDragon;Comodo Dragon;Dolphin;Dolphin;Dooble;Dooble;DuckDuckGo;DuckDuckGo;Edge;Edge;Epiphany;Epiphany;Facebook;Facebook;Falkon;Falkon;Firefox;Firefox;FirefoxFocus;Firefox Focus;Flock;Flock;Galeon;Galeon;GNUzilla;GNUzilla;iCab;iCab;Iceape;Iceape;IceDragon;IceDragon;Iceweasel;Iceweasel;InternetExplorer;Internet Explorer;IEForMac;Internet Explorer for Mac;Iris;Iris;Iron;Iron;KMeleon;K-Meleon;Konqueror;Konqueror;LINE;LINE;Lunascape;Lunascape;Maxthon;Maxthon;Midori;Midori;ModernIE;Modern IE;Mozilla;Mozilla;NetFront;NetFront\u00ae;NetFrontNX;NetFront\u00ae Browser NX;NetscapeNavigator;Netscape Navigator;OmniWeb;OmniWeb;Opera;Opera;OperaCoast;Opera Coast;OperaGX;Opera GX;OperaTouch;Opera Touch;OperaTurbo;Opera Turbo;Otter;Otter;PaleMoon;PaleMoon;Puffin;Puffin;QQ;QQ;QupZilla;QupZilla;Roccat;Roccat;Rockmelt;Rockmelt;Safari;Safari;SamsungInternet;Samsung Internet;SeaMonkey;SeaMonkey;Servo;Servo;SilK;Silk;Sleipnir;Sleipnir;Sogou;Sogou;TenFourFox;TenFourFox;UC;UC;;Unknown;Vivaldi;Vivaldi;Waterfox;Waterfox;WebPositive;WebPositive;Yahoo;Yahoo;Yandex;Yandex".split(";");
+  tf = "CAR;CAR;EINK_READER;EINK READER;GAME;GAME;MEDIA_PLAYER;MEDIA PLAYER;PC;PC;PDA;PDA;PHONE;PHONE;TABLET;TABLET;TV;TV;;UNKNOWN".split(";");
+  uf = "BOOX;BOOX;Cybook;Cybook;eClicto;eClicto;Fidibook;Fidibook;FireTV;FireTV;Hisense;Hisense;icarus;icarus;iPad;iPad;iPhone;iPhone;iPod;iPod;Kindle;Kindle;KindleFire;KindleFire;Kobo;Kobo;Likebook;Likebook;Manta;Manta;Movistar;Movistar;NewNintendo3DS;NewNintendo3DS;Nintendo3DS;Nintendo3DS;NintendoDS;NintendoDS;NintendoDSi;NintendoDSi;NintendoSwitch;NintendoSwitch;Nook;Nook;PlayStation;PlayStation;PlayStationPortable;PlayStationPortable;PlayStationVita;PlayStationVita;PocketBook;PocketBook;mylo;SONY mylo;SonyReader;SonyReader;Tolino;Tolino;;Unknown;Wii;Wii;WiiU;WiiU;Xbox360;Xbox360;XboxOne;XboxOne;XboxSeries;XboxSeries".split(";");
+  vf = "AndroidWebView;Android WebView;Chromium;Chromium;ChromiumMobile;Chromium Mobile;EdgeMobile;Edge Mobile;EdgeHTML;EdgeHTML;Escudo;Escudo;Fennec;Fennec;flow;flow;Gecko;Gecko;Goanna;Goanna;iCab;iCab;iOSWebView;iOS WebView;KHTML;KHTML;lexbor;lexbor;Litehtml;Litehtml;Naglfar;Naglfar;NetFront;NetFront;Netscape;Netscape;OperaMini;Opera Mini;Presto;Presto;PrestoMobile;Presto Mobile;QtWebEngine;Qt WebEngine;QtWebKit;Qt WebKit;SafariMobile;Safari Mobile;SamsungInternet;Samsung Internet;Serenity;Serenity;Servo;Servo;Sony;Sony;Tasman;Tasman;Trident;Trident;TridentMobile;Trident Mobile;TridentPocket;Trident Pocket;UCWEB;UCWEB;;Unknown;WebKit;WebKit".split(";");
+  wf = "Android;Android;AndroidTV;Android TV;BlackBerry;BlackBerry;ChromeOS;ChromeOS;FeaturePhone;Feature Phone;Fedora;Fedora;FirefoxOS;FirefoxOS;FireOS;FireOS;FreeBSD;FreeBSD;Gentoo;Gentoo;GoogleTV;Google TV;iOS;iOS;iPadOS;iPadOS;KaiOS;KaiOS;Kindle;Kindle;Linux;Linux;Mac;Mac;Maemo;Maemo;MeeGo;MeeGo;Mint;Mint;NetBSD;NetBSD;NewNintendo3DS;New NINTENDO 3DS\u2122;Nintendo3DS;NINTENDO 3DS\u2122;NintendoDSi;NINTENDO DSi\u2122;NintendoDS;NINTENDO DS\u2122;NintendoSwitch;NINTENDO SWITCH\u2122;OpenBSD;OpenBSD;PlayStation3;PlayStation\u00ae3;PlayStation4;PlayStation\u00ae4;PlayStation5;PlayStation\u00ae5;PlayStationPortable;PlayStation\u00aePortable;PlayStationVita;PlayStation\u00aeVita;Kobo;Rakuten Kobo;mylo;SONY mylo;SonyReader;SONY Reader\u00ae;SunOS;SunOS;SymbianS60;Symbian OS S60;Tizen;Tizen;Ubuntu;Ubuntu;;Unknown;WatchOS;WatchOS;WebOS;WebOS;WiiU;WiiU\u2122;Wii;Wii\u2122;Windows;Windows;WindowsCE;Windows CE;WindowsMobile;Windows Mobile;WindowsPhone;Windows Phone;Windows16;Windows16;Xbox360;Xbox 360\u2122;XboxOne;Xbox One\u2122;XboxSeries;Xbox SeriesX|S".split(";");
+  zc = {};
+  Ac = {};
   (function() {
-    function k(b, H, c, y, F) {
-      var D = "who" + b.toLocaleLowerCase().split(" ").join("").split("_").join(""), e = D + "version", m = "", h = 0, d = H.length, aa, Q;
-      c = c || "unknown";
-      for (y = y || "-"; h < d; h += 2) {
-        Q = H[h] || "unknown";
-        (aa = Q === c) && (vc[D] = h / 2);
-        m += '<option value="' + Q + '"' + (aa ? " selected" : "") + ">" + H[h + 1] + "</option>";
+    function h(t, H, x, B, r) {
+      var E = "who" + t.toLocaleLowerCase().split(" ").join("").split("_").join(""), b = E + "version", ba = "", c = 0, na = H.length, O, P;
+      x = x || "unknown";
+      for (B = B || "-"; c < na; c += 2) {
+        P = H[c] || "unknown";
+        (O = P === x) && (zc[E] = c / 2);
+        ba += '<option value="' + P + '"' + (O ? " selected" : "") + ">" + H[c + 1] + "</option>";
       }
-      F || (wc[e] = y);
-      return '<tr><th><label for="' + D + '">' + b + "</label><td" + (F ? " colspan=2" : "") + "><select" + p(D) + ">" + m + "</select>" + (F ? "" : "Servo" === v.ENGINE ? '<td align="right">' + y : '<td><input type="text" value="' + y + '"' + p(e) + ">");
+      r || (Ac[b] = B);
+      return '<tr><th><label for="' + E + '">' + t + "</label><td" + (r ? " colspan=2" : "") + "><select" + e(E) + ">" + ba + "</select>" + (r ? "" : "Servo" === y.ENGINE ? '<td align="right">' + B : '<td><input type="text" value="' + B + '"' + e(b) + ">");
     }
-    function p(b) {
-      return ' name="' + b + '" id="' + b + '"';
+    function e(t) {
+      return ' name="' + t + '" id="' + t + '"';
     }
-    C.write('<form name="who" onsubmit=""><table border=1 cellspacing=0><thead><tr><th><th>Name<th>Version(Generation)<tbody>' + k("Platfrom", sf, v.PLATFORM, v.PLATFORM_VERSION) + k("Device", qf, v.DEVICE, v.DEVICE_GENERATION) + k("Device Type", pf, v.DEVICE_TYPE, "", !0) + k("Engine", rf, v.ENGINE, v.ENGINE_VERSION) + k("Brand", of, v.BRAND, v.BRAND_VERSION) + '<tr><th><label for="whopcsiterequested">PC Site Requested</label><td colspan=2 align="right"><input type="checkbox"' + p("whopcsiterequested") + 
-    (v.PCSITE_REQUESTED ? " checked" : "") + "></table><button" + p("whoreset") + ' type="reset">Reset</button></form>');
-    var z = Y("whoreset");
-    z && (z.onclick = jd);
-    jd();
+    R.write('<form name="who" onsubmit=""><table border=1 cellspacing=0><thead><tr><th><th>Name<th>Version(Generation)<tbody>' + h("Platfrom", wf, y.PLATFORM, y.PLATFORM_VERSION) + h("Device", uf, y.DEVICE, y.DEVICE_GENERATION) + h("Device Type", tf, y.DEVICE_TYPE, "", !0) + h("Engine", vf, y.ENGINE, y.ENGINE_VERSION) + h("Brand", sf, y.BRAND, y.BRAND_VERSION) + '<tr><th><label for="whopcsiterequested">PC Site Requested</label><td colspan=2 align="right"><input type="checkbox"' + e("whopcsiterequested") + 
+    (y.PCSITE_REQUESTED ? " checked" : "") + "></table><button" + e("whoreset") + ' type="reset">Reset</button></form>');
+    var w = aa("whoreset");
+    w && (w.onclick = md);
+    md();
   })();
-  for (var fd = "userAgent appVersion appCodeName appName buildID securitypolicy oscpu platform product productSub vendor vendorSub".split(" "), uc = 0, tf = fd.length, gd = [], He; uc < tf; ++uc) {
-    (He = M[fd[uc]]) && gd.push("<tr><th>" + fd[uc] + "<td>" + He.split("&").join("&amp;").split("<").join("&lt;"));
+  Z = "userAgent appVersion appCodeName appName buildID securitypolicy oscpu platform product productSub vendor vendorSub".split(" ");
+  S = 0;
+  yc = Z.length;
+  for (var jd = [], Le; S < yc; ++S) {
+    (Le = ld[Z[S]]) && jd.push("<tr><th>" + Z[S] + "<td>" + Le.split("&").join("&amp;").split("<").join("&lt;"));
   }
-  gd.length && C.write('<details><summary>navigator</summary><table class="nav" border=1 cellspacing=0>' + gd.join("") + "</table></details>");
+  jd.length && R.write('<details><summary>navigator</summary><table class="nav" border=1 cellspacing=0>' + jd.join("") + "</table></details>");
 })(this, document, navigator, screen, parseFloat, Number);
 
 </script>
