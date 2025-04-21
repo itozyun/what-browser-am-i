@@ -138,3 +138,13 @@ who.util.toVersionNumber = function( v ){
     };
     return /** @type {number} */ (v);
 };
+
+/**
+ * detectPlatform 終了後に device, engine, brand で使用
+ * 
+ * @return {boolean}
+ */
+who.util.isAndroidBased = function(){
+    return who.result.platformName === iAm.EnumPlatform.Android ||
+           who.result.platformName === iAm.EnumPlatform.FireOS; // TODO Google_TV, Android_TV
+};

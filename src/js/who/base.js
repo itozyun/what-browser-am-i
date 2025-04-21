@@ -12,14 +12,6 @@ goog.require( 'who.util' );
 goog.require( 'who.env' );
 
 /**
- * detectPlatform の決定後に device, engine, brand で使用
- */
-who.base.isAndroidBased = function(){
-    return who.result.platformName === iAm.EnumPlatform.Android ||
-           who.result.platformName === iAm.EnumPlatform.FireOS; // TODO Google_TV, Android_TV
-};
-
-/**
  * 
  * @param {string|number} platform 
  * @param {string|number=} opt_platformVersion 
@@ -41,9 +33,6 @@ who.base.finalizePlatform = function(){
         ua[ iAm.EnumIndex.PLATFORM ] = who.result.platformName;
         if( who.result.platformVersion ){
             ua[ iAm.EnumIndex.PLATFORM_VERSION ] = who.util.toVersionString( who.result.platformVersion );
-            // ua[ who.result.platformName ] = who.util.toVersionNumber( who.result.platformVersion );
-        } else {
-            // ua[ who.result.platformName ] = true;
         };
     };
 };
@@ -70,9 +59,6 @@ who.base.finalizeDevice = function(){
         ua[ iAm.EnumIndex.DEVICE ] = who.result.deviceName;
         if( who.result.deviceGeneration ){
             ua[ iAm.EnumIndex.DEVICE_GENERATION ] = who.util.toVersionString( who.result.deviceGeneration );
-            // ua[ who.result.deviceName ] = who.util.toVersionNumber( who.result.deviceGeneration );
-        } else {
-            // ua[ who.result.deviceName ] = true;
         };
     };
 };
@@ -80,9 +66,6 @@ who.base.finalizeDevice = function(){
 who.base.finalizeDeviceType = function(){
     if( who.result.deviceType ){
         ua[ iAm.EnumIndex.DEVICE_TYPE ] = who.result.deviceType;
-        // ua[ who.result.deviceName ] = who.util.toVersionNumber( who.result.deviceGeneration );
-    } else {
-        // ua[ who.result.deviceName ] = true;
     };
 };
 
@@ -104,9 +87,6 @@ who.base.finalizeEngine = function(){
         ua[ iAm.EnumIndex.ENGINE ] = who.result.engineName;
         if( who.result.engineVersion ){
             ua[ iAm.EnumIndex.ENGINE_VERSION ] = who.util.toVersionString( who.result.engineVersion );
-            // ua[ who.result.engineName ] = who.util.toVersionNumber( who.result.engineVersion );
-        } else {
-            // ua[ who.result.engineName ] = true;
         };
     };
 };
@@ -129,9 +109,6 @@ who.base.finalizeBrand = function(){
         ua[ iAm.EnumIndex.BRAND ] = who.result.brandName;
         if( who.result.brandVersion ){
             ua[ iAm.EnumIndex.BRAND_VERSION ] = who.util.toVersionString( who.result.brandVersion );
-            // ua[ who.result.brandName ] = who.util.toVersionNumber( who.result.brandVersion );
-        } else {
-            // ua[ who.result.brandName ] = true;
         };
     };
 };

@@ -2,6 +2,9 @@ goog.provide( 'who.env' );
 
 goog.require( 'who.util' );
 
+/** @type {boolean} */
+who.env.surelyPcSiteRequested = false;
+
 /** @const {string} */
 who.env.strUserAgent  = navigator.userAgent;
 /** @const {string} */

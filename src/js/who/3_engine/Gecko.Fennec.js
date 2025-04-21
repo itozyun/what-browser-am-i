@@ -32,7 +32,7 @@ who.engine.Gecko.is = function(){
 who.engine.Gecko.detect = function(){
     if( who.engine.Gecko.is() ){
         who.base.setEngine(
-            who.base.isAndroidBased() ? iAm.EnumEngine.Fennec : iAm.EnumEngine.Gecko, // TODO KaiOS
+            who.util.isAndroidBased() ? iAm.EnumEngine.Fennec : iAm.EnumEngine.Gecko, // TODO KaiOS
             who.engine.Gecko.NAVIGATOR_VERSION ||
             who.brand.Firefox.NAVIGATOR_VERSION // Android9 + Firefox67.0 + PC_MODE で rv: が存在しない！
         );

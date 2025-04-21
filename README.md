@@ -1,15 +1,12 @@
 # what-browser-am-i
 
+## who
+
 Library for client-side web browser judgment. It has been developed to work with a wide range of DHTML browsers and Flash Player embedded browsers like NetFront on PlayStation Portable, both old and new.
 
-1. 1_platform/* は 1_platform, 2_device, 3_engine, 4_brand に依存する
-2. 2_device/* は 2_device, 3_engine, 4_brand に依存する
-3. 3_engine/* は 3_engine, 4_brand に依存する
-4. 4_brand/* は 4_brand に依存する
+## iAm
 
-例 platform は device.isEinkAndroid を利用することが出来る
-   device.*.is 関数内で platfrom の調査結果を使う場合、p_platformName === PLATFORM.iOS を使用する．platfrom.iOS.is() は不可.
-   p_platformName 等の調査結果を使用する is() 関数は @package を付けて、上位のモジュールから呼ばれないようにする
+Closure Compiler の使用が前提。環境別にコードを切り替える為の判定用関数群。エンジンとバージョンの組み合わせ毎に最適化したコードを得る
 
 Prior to August 7, 2020, [development was done at itozyun/web-doc-base](https://github.com/itozyun/web-doc-base/commit/0fc3de23cc6c073efe5959ffb9e5381635f89811).
 
@@ -123,7 +120,7 @@ isFirefoxGte35 = whatBrowserAmI.Gecko && 0 <= whatBrowserAmI.conpare(whatBrowser
 ### 5.1 Preparation
 
 ~~~
-git clone https://github.com/itozyun/what-browser-am-i
+git clone --recursive https://github.com/itozyun/what-browser-am-i
 npm install
 ~~~
 

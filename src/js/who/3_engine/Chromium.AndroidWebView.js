@@ -104,7 +104,7 @@ who.engine.ChromiumOrAndroidWebView.is = function(){
     /*----------------------------------------------------------------------------//
      *  Android WebView + PC_site requested
      */
-    } else if( isAndroid && ( who.env.Something.NAVIGATOR_VERSION || who.result.surelyPcSiteRequested ) ){
+    } else if( isAndroid && ( who.env.Something.NAVIGATOR_VERSION || who.env.surelyPcSiteRequested ) ){
         return true;
     /*----------------------------------------------------------------------------//
      *  Chromium or ChromiumMobile (without .chrome)
@@ -126,16 +126,16 @@ who.engine.ChromiumOrAndroidWebView.detect = function(){
         // Android 3.x-4.1 の Android WebView で window.chrome がいるので AOSP の判定を Chromium より先に
         if( isAndroid && who.engine.ChromiumOrAndroidWebView.maybeAOSP ){
             who.base.setEngine( iAm.EnumEngine.Android_WebView, who.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION );
-            if( who.result.surelyPcSiteRequested ) who.result.isPcSiteRequested = true;
+            if( who.env.surelyPcSiteRequested ) who.result.isPcSiteRequested = true;
         /*----------------------------------------------------------------------------//
          *  Chromium or ChromiumMobile
          */
         } else if( _hasChromeObject ){
             who.base.setEngine(
-                who.base.isAndroidBased() ? iAm.EnumEngine.Chromium_Mobile : iAm.EnumEngine.Chromium,
+                who.util.isAndroidBased() ? iAm.EnumEngine.Chromium_Mobile : iAm.EnumEngine.Chromium,
                 who.brand.Chrome.NAVIGATOR_VERSION || who.brand.Iron.NAVIGATOR_VERSION // TODO who.engine.ChromiumOrAndroidWebView.CHROMIUM_IMPLEMENT_VERSION
             );
-            if( who.result.surelyPcSiteRequested ) who.result.isPcSiteRequested = true;
+            if( who.env.surelyPcSiteRequested ) who.result.isPcSiteRequested = true;
         /*----------------------------------------------------------------------------//
          *  Android WebView(Chrome WebView)
          */
@@ -150,15 +150,15 @@ who.engine.ChromiumOrAndroidWebView.detect = function(){
             // if( !( window.requestFileSystem || window.webkitRequestFileSystem ) ){
                 // isAndroidChromeWebView = true;
             // };
-            if( who.result.surelyPcSiteRequested ){
+            if( who.env.surelyPcSiteRequested ){
                 who.result.isPcSiteRequested = true;
             };
         /*----------------------------------------------------------------------------//
          *  Android WebView + PC_site requested
          */
-        } else if( isAndroid && ( who.env.Something.NAVIGATOR_VERSION || who.result.surelyPcSiteRequested ) ){
+        } else if( isAndroid && ( who.env.Something.NAVIGATOR_VERSION || who.env.surelyPcSiteRequested ) ){
             who.base.setEngine( iAm.EnumEngine.Android_WebView, who.engine.ChromiumOrAndroidWebView.ANDROID_WEBVIEW_IMPLEMENT_VERSION );
-            if( who.result.surelyPcSiteRequested ){
+            if( who.env.surelyPcSiteRequested ){
                 who.result.isPcSiteRequested = true;
             };
         /*----------------------------------------------------------------------------//
@@ -166,7 +166,7 @@ who.engine.ChromiumOrAndroidWebView.detect = function(){
          */
         } else if( who.brand.Chrome.NAVIGATOR_VERSION || who.brand.Opera.OPR_NAVIGATOR_VERSION ){
             who.base.setEngine(
-                who.base.isAndroidBased() ? iAm.EnumEngine.Chromium_Mobile : iAm.EnumEngine.Chromium,
+                who.util.isAndroidBased() ? iAm.EnumEngine.Chromium_Mobile : iAm.EnumEngine.Chromium,
                 who.brand.Chrome.NAVIGATOR_VERSION // TODO who.engine.ChromiumOrAndroidWebView.CHROMIUM_IMPLEMENT_VERSION
             );
         };

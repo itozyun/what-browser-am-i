@@ -154,7 +154,7 @@ who.engine.SamsungInternet.LT2_NAVIGATOR_VERSION = !who.engine.SamsungInternet.N
  * @return {boolean} */
 who.engine.SamsungInternet.is = function(){
     return !!who.engine.SamsungInternet.NAVIGATOR_VERSION ||
-           who.base.isAndroidBased() && who.result.surelyPcSiteRequested && !!who.engine.SamsungInternet.LT2_NAVIGATOR_VERSION;
+           who.util.isAndroidBased() && who.env.surelyPcSiteRequested && !!who.engine.SamsungInternet.LT2_NAVIGATOR_VERSION;
 };
 
 /** @return {boolean|void} */

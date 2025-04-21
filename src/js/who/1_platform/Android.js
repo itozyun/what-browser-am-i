@@ -153,7 +153,7 @@ who.platform.Android.detect = function(){
                 iAm.EnumDeviceType.Phone
             );
         };
-        who.result.surelyPcSiteRequested = true;
+        who.env.surelyPcSiteRequested = true;
         return true;
     } else
     /*----------------------------------------------------------------------------//
@@ -161,7 +161,7 @@ who.platform.Android.detect = function(){
      */
     if( who.engine.ChromiumOrAndroidWebView.maybeChromeWebView ){
         who.base.setPlatform( iAm.EnumPlatform.Android );
-        who.result.surelyPcSiteRequested = true;
+        who.env.surelyPcSiteRequested = true;
         return true;
     };
 };

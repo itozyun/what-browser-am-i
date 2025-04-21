@@ -31,6 +31,3 @@ who.result.deviceType = iAm.EnumDeviceType.Unknown;
 
 /** @type {boolean} */
 who.result.isPcSiteRequested = false;
-
-/** @type {boolean} */
-who.result.surelyPcSiteRequested = false;
