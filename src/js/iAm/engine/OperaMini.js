@@ -15,7 +15,7 @@ goog.require( 'iAm._engineVersionLte' );
  * @return {boolean}
  */
 iAm.OperaMini = function(){
-    return iAm._engineIs( iAm.EnumEngine.OperaMini );
+    return iAm._engineIs( iAm.EnumEngine.Opera_Mini );
 };
 
 /*----------------------------------------------------------------------------//

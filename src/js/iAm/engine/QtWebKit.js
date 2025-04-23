@@ -15,7 +15,7 @@ goog.require( 'iAm._engineVersionLte' );
  * @return {boolean}
  */
 iAm.QtWebKit = function(){
-    return iAm._engineIs( iAm.EnumEngine.QtWebKit );
+    return iAm._engineIs( iAm.EnumEngine.Qt_WebKit );
 };
 
 /*----------------------------------------------------------------------------//

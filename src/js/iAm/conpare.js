@@ -16,7 +16,11 @@ iAm.conpare = function( v1, v2 ){
     /** @type {number} */
     var l2 = a2.length;
     /** @type {number} */
-    var l, n1, n2;
+    var l;
+    /** @type {number} */
+    var n1;
+    /** @type {number} */
+    var n2;
 
     while( !( + a1[ l1 - 1 ] ) ){
         --l1;

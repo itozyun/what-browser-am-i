@@ -15,7 +15,7 @@ goog.require( 'iAm._engineVersionLte' );
  * @return {boolean}
  */
 iAm.SamsungInternet = function(){
-    return iAm._engineIs( iAm.EnumEngine.SamsungInternet );
+    return iAm._engineIs( iAm.EnumEngine.Samsung_Internet );
 };
 
 /*----------------------------------------------------------------------------//

@@ -38,7 +38,7 @@ iAm.Gecko = function(){
  * @return {boolean}
  */
 iAm.Gecko.Based = function(){
-    return iAm.AnyGecko() || iAm.Goanne();
+    return iAm.AnyGecko() || iAm.Goanna();
 };
 
 /*----------------------------------------------------------------------------//
