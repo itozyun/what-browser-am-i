@@ -17,7 +17,7 @@
     "prepare": "gulp dist"
   },
   "devDependencies": {
-    "es2-postprocessor": "^0.13.1",
+    "es2-postprocessor": "^0.14.0",
     "es2-to-es3": "^0.9.2",
     "google-closure-compiler": "^20240317.0.0",
     "gulp": "^4.0.2",
