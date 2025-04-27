@@ -110,7 +110,7 @@ who.util.maxVersion = function( _args ){
 };
 
 /**
- * @param {string|number|VersionRange} v 
+ * @param {string|number} v 
  * @return {string} 
  */
 who.util.toVersionString = function( v ){
@@ -120,12 +120,7 @@ who.util.toVersionString = function( v ){
     if( core.isNumber( v ) ){
         return '' + v;
     };
-    v = /** @type {VersionRange} */ (v);
-    return v.min && v.max
-               ? v.min + '~' + v.max
-               : v.min
-                   ? v.min + '~'
-                   : '~' + v.max;
+    return '';
 };
 
 /**

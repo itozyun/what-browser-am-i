@@ -38,7 +38,7 @@ iAm._deviceVersionGt = function( version ){
             return false;
         };
     };
-    return ua.conpare( ua[ iAm.EnumIndex.DEVICE_VERSION ], version ) === 1;
+    return ua.conpare( /** @type {string | number} */ (ua[ iAm.EnumIndex.DEVICE_GENERATION ]), version ) === 1;
 };
 
 /**
@@ -57,7 +57,7 @@ iAm._deviceVersionGte = function( version ){
             return false;
         };
     };
-    return 0 <= ua.conpare( ua[ iAm.EnumIndex.DEVICE_VERSION ], version );
+    return 0 <= ua.conpare( /** @type {string | number} */ (ua[ iAm.EnumIndex.DEVICE_GENERATION ]), version );
 };
 
 /**
@@ -76,7 +76,7 @@ iAm._deviceVersionLt = function( version ){
             return true;
         };
     };
-    return ua.conpare( ua[ iAm.EnumIndex.DEVICE_VERSION ], version ) === -1;
+    return ua.conpare( /** @type {string | number} */ (ua[ iAm.EnumIndex.DEVICE_GENERATION ]), version ) === -1;
 };
 
 /**
@@ -95,5 +95,5 @@ iAm._deviceVersionLte = function( version ){
             return true;
         };
     };
-    return 0 <= ua.conpare( ua[ iAm.EnumIndex.DEVICE_VERSION ], version );
+    return 0 <= ua.conpare( /** @type {string | number} */ (ua[ iAm.EnumIndex.DEVICE_GENERATION ]), version );
 };

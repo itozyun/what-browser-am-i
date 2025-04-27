@@ -3,7 +3,7 @@ const { src, dest, series }  = require( 'gulp' ),
       es2ToES3               = require( 'es2-to-es3' ),
       fs                     = require('fs'),
       JSDOM                  = require('jsdom').JSDOM,
-      globalVariables        = 'document,navigator,screen,parseFloat,Number',
+      globalVariables        = 'document,navigator,screen,parseFloat,Number,Object,Function,Array,Date',
       { getEnumValues, compileWho, finalize, tempDir } = require('./common.js');
 
 let minify       = false;

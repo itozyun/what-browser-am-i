@@ -90,3 +90,13 @@ goog.require( 'iAm.Movistar' );
 goog.require( 'iAm.Nook' );
 goog.require( 'iAm.PocketBook' );
 goog.require( 'iAm.Tolino' );
+
+goog.require( 'iAm.isPC' );
+goog.require( 'iAm.isPhone' );
+goog.require( 'iAm.isTablet' );
+goog.require( 'iAm.isEInkReader' );
+goog.require( 'iAm.isMediaPlayer' );
+goog.require( 'iAm.isTV' );
+goog.require( 'iAm.isGame' );
+goog.require( 'iAm.isPDA' );
+goog.require( 'iAm.isCar' );

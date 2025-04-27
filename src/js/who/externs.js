@@ -3,7 +3,7 @@
  */
 
 /**
- * @const {!Object|undefined}
+ * @const {!Object | void}
  */
 var puffinDevice = {
     clientInfo : {
@@ -14,7 +14,7 @@ var puffinDevice = {
 };
 
 /**
- * @type {function(!Event)}
+ * @type {!function(!Event) | void}
  */
 Window.prototype.onmoztimechange = function(e){};
 
@@ -39,33 +39,33 @@ var innerHeight;
 var outerHeight;
 
 /**
- * @const {!Object|undefined}
+ * @const {!Object | void}
  */
 var chrome = {};
 
 /**
- * @const {!Object|undefined}
+ * @const {!Object | void}
  */
 var chromium = {};
 
 /**
- * @const {!Object|undefined}
+ * @const {!Object | void}
  */
 var opr = {};
 
 /**
- * @const {!Object|undefined}
+ * @const {!Object | void}
  */
 var __opera = {};
 
 /**
  * iOS 12.2 Sleipnir
- * @const {!Object|undefined}
+ * @const {!Object | void}
  */
 var FNRBrowser = {}
 
 /**
- * @const {!Object|undefined}
+ * @const {!Object | void}
  */
 var operamini = {};
 
@@ -75,7 +75,7 @@ var operamini = {};
 var palmGetResource = function(){};
 
 /**
- * @const {!Object|undefined}
+ * @const {!Object | void}
  */
 var searchBoxJavaBridge_ = {};
 
@@ -86,28 +86,28 @@ HTMLElement.prototype.msContentZoomFactor;
 
 /**
  * FireTV Firefox
- * @type {!Object|undefined}
+ * @type {!Object | void}
  */
 var _firefoxTV_playbackStateObserverJava = {}
 
 /**
  * Maybe Lunascape Android
- * @const {!Object|undefined}
+ * @const {!Object | void}
  */
 var ReactNativeWebView = {}
 
 /**
  * Opera GX LVL2 (core: 68.0.3618.206)
- * @type {function(!Event)}
+ * @type {!function(!Event) | void}
  */
-window.onoperadetachedviewchange = function(){};
+window.onoperadetachedviewchange;
 
 /**
- * @const {!Object|undefined}
+ * @const {!Object | void}
  */
 opera.wiiremote = {};
 
  /**
- * @const {!Object|undefined}
+ * @const {!Object | void}
  */
 var wiiu = {};

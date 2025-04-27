@@ -78,11 +78,11 @@ goog.scope(
                         '<tr>' +
                             '<th><th>Name' + '<th>Version(Generation)' +
                     '<tbody>' +
-                        createRow( 'Platfrom'   , catalog.PlatformValueToDisplayLabel  , ua[ iAm.EnumIndex.PLATFORM    ], ua[ iAm.EnumIndex.PLATFORM_VERSION  ] ) +
-                        createRow( 'Device'     , catalog.DeviceValueToDisplayLabel    , ua[ iAm.EnumIndex.DEVICE      ], ua[ iAm.EnumIndex.DEVICE_GENERATION ] ) +
-                        createRow( 'Device Type', catalog.DeviceTypeValueToDisplayLabel, ua[ iAm.EnumIndex.DEVICE_TYPE ], ''                                   , true ) +
-                        createRow( 'Engine'     , catalog.EngineValueToDisplayLabel    , ua[ iAm.EnumIndex.ENGINE      ], ua[ iAm.EnumIndex.ENGINE_VERSION    ] ) +
-                        createRow( 'Brand'      , catalog.BrandValueToDisplayLabel     , ua[ iAm.EnumIndex.BRAND       ], ua[ iAm.EnumIndex.BRAND_VERSION     ] ) +
+                        createRow( 'Platfrom'   , catalog.PlatformValueToDisplayLabel  , /** @type {string} */ (ua[ iAm.EnumIndex.PLATFORM    ]), /** @type {string | number} */ (ua[ iAm.EnumIndex.PLATFORM_VERSION  ]) ) +
+                        createRow( 'Device'     , catalog.DeviceValueToDisplayLabel    , /** @type {string} */ (ua[ iAm.EnumIndex.DEVICE      ]), /** @type {string | number} */ (ua[ iAm.EnumIndex.DEVICE_GENERATION ]) ) +
+                        createRow( 'Device Type', catalog.DeviceTypeValueToDisplayLabel, /** @type {string} */ (ua[ iAm.EnumIndex.DEVICE_TYPE ]), ''                                                              , true ) +
+                        createRow( 'Engine'     , catalog.EngineValueToDisplayLabel    , /** @type {string} */ (ua[ iAm.EnumIndex.ENGINE      ]), /** @type {string | number} */ (ua[ iAm.EnumIndex.ENGINE_VERSION    ]) ) +
+                        createRow( 'Brand'      , catalog.BrandValueToDisplayLabel     , /** @type {string} */ (ua[ iAm.EnumIndex.BRAND       ]), /** @type {string | number} */ (ua[ iAm.EnumIndex.BRAND_VERSION     ]) ) +
                         '<tr>' +
                             '<th><label for="' + PREFIXED_PCSITE_REQUESTED + '">PC Site Requested</label>' +
                             '<td colspan=2 align="right"><input type="checkbox"' + nameAndID( PREFIXED_PCSITE_REQUESTED ) + ( ua[ iAm.EnumIndex.PCSITE_REQUESTED ] ? ' checked' : '' ) + '>' +

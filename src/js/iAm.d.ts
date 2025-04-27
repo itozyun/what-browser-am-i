@@ -1,16 +1,18 @@
-type VersionRange = {
-    gt(version:(string|number)):boolean;
-    gte(version:(string|number)):boolean;
-    lt(version:(string|number)):boolean;
-    lte(version:(string|number)):boolean;
+type CommonMethods = {
+    gt(version:(string | number)):boolean;
+    gte(version:(string | number)):boolean;
+    lt(version:(string | number)):boolean;
+    lte(version:(string | number)):boolean;
 };
 
-type Common = VersionRange & {
+type is = {
     (): boolean;
 };
 
+type Common = CommonMethods & is;
+
 type HasBased = Common & {
-    Based(version: string | number): boolean;
+    Based(): boolean;
 };
 
 declare namespace iAm {
@@ -54,7 +56,7 @@ declare namespace iAm {
 
     const UCWEB:Common;
 
-    const WebKit:HasBased & {asSafari:VersionRange};
+    const WebKit:HasBased & {asSafari:CommonMethods};
     const AnySafariMobile:Common;
     const SafariMobile:Common;
     const iOSWebView:Common;
@@ -131,4 +133,14 @@ declare namespace iAm {
     const Nook:Common;
     const PocketBook:Common;
     const Tolino:Common;
+
+    const isPC:is;
+    const isPhone:is;
+    const isTablet:is;
+    const isEInkReader:is;
+    const isMediaPlayer:is;
+    const isTV:is;
+    const isGame:is;
+    const isPDA:is;
+    const isCar:is;
 };

@@ -42,7 +42,7 @@ iAm._engineVersionGt = function( version ){
             return false;
         };
     };
-    return ua.conpare( ua[ iAm.EnumIndex.ENGINE_VERSION ], version ) === 1;
+    return ua.conpare( /** @type {string | number} */ (ua[ iAm.EnumIndex.ENGINE_VERSION ]), version ) === 1;
 };
 
 /**
@@ -61,7 +61,7 @@ iAm._engineVersionGte = function( version ){
             return false;
         };
     };
-    return 0 <= ua.conpare( ua[ iAm.EnumIndex.ENGINE_VERSION ], version );
+    return 0 <= ua.conpare( /** @type {string | number} */ (ua[ iAm.EnumIndex.ENGINE_VERSION ]), version );
 };
 
 /**
@@ -80,7 +80,7 @@ iAm._engineVersionLt = function( version ){
             return true;
         };
     };
-    return ua.conpare( ua[ iAm.EnumIndex.ENGINE_VERSION ], version ) === -1;
+    return ua.conpare( /** @type {string | number} */ (ua[ iAm.EnumIndex.ENGINE_VERSION ]), version ) === -1;
 };
 
 /**
@@ -99,7 +99,7 @@ iAm._engineVersionLte = function( version ){
             return true;
         };
     };
-    return 0 <= ua.conpare( ua[ iAm.EnumIndex.ENGINE_VERSION ], version );
+    return 0 <= ua.conpare( /** @type {string | number} */ (ua[ iAm.EnumIndex.ENGINE_VERSION ]), version );
 };
 
 
@@ -192,7 +192,7 @@ var _ASSUME_LT__SAFARI_VERSION = iAm.DEFINE.ASSUME_LT__ENGINE_VERSION ? _webKitV
 /**
  * @private
  * @const {string | number} */
-var _AS_SAFARI_VERSION = _webKitVersionToSafariVersion( ua[ iAm.EnumIndex.ENGINE_VERSION ] );
+var _AS_SAFARI_VERSION = _webKitVersionToSafariVersion( /** @const {string | number} */ (ua[ iAm.EnumIndex.ENGINE_VERSION ]) );
 
 /**
  * 
