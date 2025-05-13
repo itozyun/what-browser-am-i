@@ -19,11 +19,13 @@ var ua = {};
 /** @const {boolean}          */ ua.PCSITE_REQUESTED  = false;
 
 /**
- * -1: version1 < version2, 0: version1 == version2, 1: version1 > version2
+ * -1: version1 < version2
+ *  0: version1 == version2
+ *  1: version1 > version2
  * 
  * @nosideeffects
  * @param {number | string} version1
  * @param {number | string} version2
- * @return {number}
+ * @return {number} -1 or 0 or 1
  */
 ua.conpare = function(version1, version2){};
