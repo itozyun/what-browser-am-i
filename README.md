@@ -1,5 +1,12 @@
 # what-browser-am-i
 
+クライアント側用のブラウザ判定コード(who)と、環境別に処理を切り替える為の判定用関数群(iAm)
+
+iAm はビルドタイムでの静的最適化にも使用でき、Closure Compiler を使った開発でエンジン×バージョン毎に最適化したコードを得る
+
+1. `<head>` タグ内で読み込むクライアント側ブラウザ判定コード
+2. ブラウザ判定を元に処理を切り替える．
+
 ## who
 
 Library for client-side web browser judgment. It has been developed to work with a wide range of DHTML browsers and Flash Player embedded browsers like NetFront on PlayStation Portable, both old and new.
@@ -155,4 +162,4 @@ gulp dist
 
 what-browser-am-i is licensed under [MIT License](https://opensource.org/licenses/MIT).
 
-(C) 2021-2024 [itozyun](https://github.com/itozyun)([outcloud.blogspot.com](//outcloud.blogspot.com/))
+(C) 2021-2026 [itozyun](https://github.com/itozyun)([outcloud.blogspot.com](//outcloud.blogspot.com/))

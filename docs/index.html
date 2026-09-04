@@ -120,7 +120,7 @@ Array.prototype.unshift||(Array.prototype.unshift=function(){for(var c=arguments
 Array.prototype.shift||(Array.prototype.shift=function(){var b=this.length;if(b){for(var c=this[0],a=1;a<b;++a)this[a-1]=this[a];--this.length;return c}}); @*/
 Array.prototype.indexOf||(Array.prototype.indexOf=function(c,a){var b=this.length>>>0;if(0===b||a&&(a=a||0,a=a===-1/0?0:(0>a?-a:a)|0,b<=a))return-1;for(a=0<=a?a:0<b+a?b+a:0;a<b;++a)if(this[a]===c)return a;return-1});
 /* what-browser-am-i@0.7.1
-(c) 2021-2025 itozyun(https://github.com/itozyun/what-browser-am-i#readme), MIT. */
+(c) 2021-2026 itozyun(https://github.com/itozyun/what-browser-am-i#readme), MIT. */
 (function(N, O, Uc, oa, fa, Ld, V, pa, Vc, Wc) {
   function J(e) {
     return F.ENGINE === e;
@@ -480,9 +480,8 @@ Array.prototype.indexOf||(Array.prototype.indexOf=function(c,a){var b=this.lengt
                       Ha.push(y);
                       if (g && g.constructor === Vc && "prototype" !== y) {
                         c = [];
-                        y = 0;
-                        for (l = g.length; y < l; ++y) {
-                          c[y] = g[y];
+                        for (y = g.length; y;) {
+                          c[--y] = g[y];
                         }
                         g = c;
                         n.push(a + "[]", g);
